@@ -67,6 +67,7 @@ SELECTCASE RESULT
     ;상점
     CASE 105
         SIF !FLAG:속박상태
+            CALL MAIN_SHOP
             RETURN 0
     ;요리
     CASE 106
@@ -80,8 +81,10 @@ SELECTCASE RESULT
             RETURN 0
     ;SAVE
     CASE 200
+        SAVEGAME
     ;LOAD
     CASE 300
+        LOADGAME
     CASEELSE
         PRINTW 제시된 숫자를 입력해주세요.
 ENDSELECT
