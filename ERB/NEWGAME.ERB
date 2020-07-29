@@ -1,0 +1,140 @@
+﻿@EVENTFIRST
+
+LOADGLOBAL
+;세이브파일의 현 버전 설정
+FLAG:LAST_LAOVERSION = GAMEBASE_VERSION
+
+;전역변수 초기화
+ASSI = 0
+DAY = 1
+MASTER = 0
+
+CALL MESSAGE_OPENING
+
+CALL COMMANDER_MAKING
+
+;보너스 퀴즈
+PRINTL 스타트 퀴즈가 있습니다.
+PRINTL 10문제가 있으며
+PRINTL 각 문항마다 초기자금 + 5000의 혜택이 있습니다.
+CALL ASK_YN("합니다", "ㄴㄴ안함")
+IF RESULT == 0
+    CALL START_QUIZ
+ELSE
+    MONEY:0 = 0
+ENDIF
+
+PRINTW 부디 후회 없는 삶을 살아주세요.
+
+BEGIN SHOP
+
+@MESSAGE_OPENING
+
+PRINTW ...
+PRINTW ..
+PRINTW .
+PRINTFORML 당신은 눈을 떴다.
+PRINTFORML 딱히, 잠에서 깼다는 건 아니고 정신을 차렸다는 뜻도 아니다.
+PRINTFORML 인간이 하루에 1만번 이상을 반복하는 행위
+PRINTFORML 그런 행위를 했을 뿐인 당신의 눈 앞에는
+PRINTFORML 불과 1밀리 초 전의 모습을 찾아볼 수 없었다.
+PRINTFORML 처음보는 방, 그 한 쪽에 틀어져있는 TV의 뉴스에선 바이오로이드, 철충 등의 익숙한 단어들이 들렸다.
+PRINTFORML 바이오로이드들이 존재하는 세계, 철충이 존재하는 세계, 그러나 멸망하지 않은 세계
+PRINTFORML 당신이 알지만 다른 세계
+PRINTFORMW . . .
+PRINTFORML 그런 세계 속에서
+PRINTFORMW 당신은 일단 행동하기로 했다.
+
+@COMMANDER_MAKING
+#DIM BODYSIZE
+
+$SET_BODYSIZE
+DRAWLINE
+PRINTFORML 당신의 체형을 선택해주세요.
+PRINTFORML [0] 소년
+PRINTFORML [1] 청년
+PRINTFORML [2] 중년
+INPUT
+;TODO 문자열 입력 가능할지 고려
+IF GROUPMATCH(RESULT, 0,1,2)
+    IF RESULT == 0
+        PRINTFORML 소년의 몸으로 시작합니다.
+    ELSEIF RESULT == 1
+        PRINTFORML 청년의 몸으로 시작합니다.
+    ELSEIF RESULT == 2
+        PRINTFORML 중년의 몸으로 시작합니다.
+    ENDIF
+    BODYSIZE = RESULT
+    CALL ASK_YN("그래", "아니야")
+    SIF RESULT == 1
+        GOTO SET_BODYSIZE
+ELSE
+    PRINTL 제시된 목록에서 선택해주세요.
+    GOTO SET_BODYSIZE
+ENDIF
+TALENT:MASTER:체형 = BODYSIZE
+
+$SET_NAME
+PRINTL 당신의 이름(NAME)은?
+IF STRLENS(NAME:MASTER)
+	PRINTFORM 현재의 이름：%NAME:MASTER%      
+	PRINTBUTTON "[변경하지 않음]",""
+	PRINTL
+ENDIF
+INPUTS
+IF RESULTS == ""
+	NAME:MASTER = %NAME:MASTER%
+ELSEIF GROUPMATCH(RESULTS, "복","규동","아이샤","오렌지","에이드","돈부리")
+    PRINTL 특정 이름은 막혀 있습니다.
+    GOTO SET_NAME
+ELSE
+	NAME:MASTER = %RESULTS%
+ENDIF
+
+$SET_CALLNAME
+PRINTL 당신의 통칭(CALLNAME)은?
+IF STRLENS(CALLNAME:MASTER)
+	PRINTFORM 현재의 통칭：%CALLNAME:MASTER%      
+	PRINTBUTTON "[변경하지 않음]",""
+	PRINTL
+ENDIF
+INPUTS
+IF RESULTS == ""
+	CALLNAME:MASTER = %CALLNAME:MASTER%
+ELSEIF GROUPMATCH(RESULTS, "복","규동","아이샤","오렌지","에이드","돈부리")
+    PRINTL 특정 이름은 막혀 있습니다.
+    GOTO SET_CALLNAME
+ELSE
+	CALLNAME:MASTER = %RESULTS%
+ENDIF
+
+@START_QUIZ
+VARSET LOCALS
+
+LOCALS:0 = 에라라오PE는 모바일 게임 '라스트오리진'의 팬게임이다.
+LOCALS:1 = '라스트오리진'은 한국산 모바일게임이다.
+LOCALS:2 = 바이오로이드는 기계다.
+LOCALS:3 = 매크로 혹은 직접 입력 상관없이 도배를 하게 되면 예기치 못한 오류가 생길 수 있다.
+LOCALS:4 = 에라라오PE의 배경은 '라스트오리진' 세계관의 과거 이야기이다.
+LOCALS:5 = 바이오로이드는 인공 생명체이며, 성장은 못하지만 음식섭취 및 배설, 임신이 가능하고 감정또한 존재한다.
+LOCALS:6 = 에라라오PE를 종료하지 않은 채 장시간 방치 후 게임을 이어하면 계정데이터 일부가 초기화될 가능성이 있다.
+LOCALS:7 = 에라라오PE(≒카톡)는 트래픽 걱정이 없다.
+LOCALS:8 = 남성호르몬의 문제로 인해 남성 바이오로이드는 만들지 않는다.
+LOCALS:9 = 철충은 AGS와 바이오로이드를 감염시킨다.
+
+FOR LOCAL, 0, 9
+    DRAWLINE
+    PRINTFORML %LOCALS:LOCAL%
+    SIF LOCAL == 7
+        PRINTFORML (트래픽 : 서버에서 개인에게 전송되는 데이터의 양)
+    CALL ASK_YN("YES","NO")
+    IF (GROUPMATCH(LOCAL, 0,1,3,5,6,8) && RESULT == 0) || (GROUPMATCH(LOCAL, 2,4,7,9) && RESULT == 1)
+        PRINTL 정답입니다.
+        PRINTW 소지금 + 5000
+        MONEY:0 += 5000 
+    ELSE
+        PRINTW 오답입니다.
+    ENDIF
+NEXT
+DRAWLINE
+PRINTFORML 모든 문제가 끝났습니다.

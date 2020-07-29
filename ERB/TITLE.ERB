@@ -18,7 +18,7 @@ LOADGLOBAL
 
 ;타이틀 표시
 $TITLE_SELECT
-DRAWLINE 
+DRAWLINEFORM =
 
 ALIGNMENT CENTER
 PRINTL
@@ -34,8 +34,7 @@ PRINTL
 PRINTFORML %GAMEBASE_INFO%
 ALIGNMENT LEFT
 
-
-DRAWLINE 
+DRAWLINEFORM =
 
 ;선택지 표시._Rename.csv로 지정한 값을 읽을 수 없기에 여기서 지정할 필요가 있다.
 PRINTL [0] 처음부터 시작한다
@@ -84,5 +83,5 @@ SELECTCASE RAND:6
         TITLE_NAME = TITLE6
 ENDSELECT
 
-TITLE_HTML = <img src='%TITLE_NAME%' height='1080' width='1920' ypos='170'>
+TITLE_HTML = <img src='%TITLE_NAME%' height='1080' width='1920' ypos='200'>
 RETURNF TITLE_HTML
