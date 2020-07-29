@@ -1,0 +1,87 @@
+﻿;홈화면 관련
+@SHOW_SHOP
+
+CALL SHOP_STATUS
+
+CALLF SHOW_SHOP_MENU
+
+@SHOW_SHOP_MENU
+#FUNCTION
+PRINTL - 메인 메뉴 -
+SIF TARGET
+    PRINTLC [100] 연애
+PRINTLC [101] 상태보기
+PRINTLC [102] 휴식
+IF !FLAG:속박상태
+    SIF TIME == 0;낮
+        PRINTLC [103] 출격
+    PRINTLC [104] 대상변경
+    PRINTLC [105] 상점
+ENDIF
+PRINTLC [106] 요리
+IF !FLAG:속박상태
+    SIF TIME == 0,;낮
+        PRINTLC [107] 헤어진다
+    PRINTLC [108] 사령관 이름 변경
+ENDIF
+PRINTL
+
+PRINTL
+PRINTL - 오프라인 모드 -
+PRINTLC [200] SAVE
+PRINTLC [300] LOAD
+PRINTL
+
+PRINTL
+IF DAY >= 30 && !FLAG:속박상태
+    PRINTFORML - 연장점검 {DAY}일째 -
+ELSE
+    PRINTL - 서버 점검중 -
+ENDIF
+SETCOLOR 125, 125, 125
+PRINTLC 종료
+PRINTLC 랭킹 보기
+PRINTLC 처음부터
+RESETCOLOR
+
+@USERSHOP
+SELECTCASE RESULT
+    ;연애
+    CASE 100
+        IF TARGET
+            BEGIN TRAIN
+            RETURN 1
+        ENDIF
+    ;상태보기
+    CASE 101
+    ;휴식
+    CASE 102
+    ;출격
+    CASE 103
+        SIF !FLAG:속박상태 && TIME == 0
+            RETURN 0
+    ;대상변경
+    CASE 104
+        SIF !FLAG:속박상태
+            RETURN 0
+    ;상점
+    CASE 105
+        SIF !FLAG:속박상태
+            RETURN 0
+    ;요리
+    CASE 106
+    ;헤어진다
+    CASE 107
+        SIF !FLAG:속박상태 && TIME == 0
+            RETURN 0
+    ;사령관 이름 변경
+    CASE 108
+        SIF !FLAG:속박상태
+            RETURN 0
+    ;SAVE
+    CASE 200
+    ;LOAD
+    CASE 300
+    CASEELSE
+        PRINTW 제시된 숫자를 입력해주세요.
+ENDSELECT
