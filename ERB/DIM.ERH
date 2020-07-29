@@ -1,2 +1,4 @@
 ﻿;전역 변수 파일
 #DIMS CONST eraLAO_VER = "0.01 beta"
+
+#DIM TOTAL_CHARANUM = 150
