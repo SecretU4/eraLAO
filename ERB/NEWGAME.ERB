@@ -9,6 +9,7 @@ ASSI = 0
 DAY = 1
 MASTER = 0
 TARGET = 0
+MONEY:0 = 100000
 
 CALL MESSAGE_OPENING
 
@@ -24,7 +25,6 @@ CALL ASK_YN("합니다", "ㄴㄴ안함")
 IF RESULT == 0
     CALL START_QUIZ
 ELSE
-    MONEY:0 = 0
 ENDIF
 
 PRINTW 부디 후회 없는 삶을 살아주세요.
