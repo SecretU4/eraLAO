@@ -11,7 +11,7 @@ SAVEGLOBAL
 LOADGLOBAL
 
 [IF_NDEBUG]
-    TITLE_HTML = <p align='right'>
+    TITLE_HTML = <p align='center'>
     TITLE_HTML += TITLE_PICTURE()
 	HTML_PRINT TITLE_HTML
 [ENDIF]
@@ -83,5 +83,5 @@ SELECTCASE RAND:6
         TITLE_NAME = TITLE6
 ENDSELECT
 
-TITLE_HTML = <img src='%TITLE_NAME%' height='1080' width='1920' ypos='200'>
+TITLE_HTML = <img src='%TITLE_NAME%' height='3000' ypos='-3100'>
 RETURNF TITLE_HTML
