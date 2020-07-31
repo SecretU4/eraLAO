@@ -1,4 +1,7 @@
-﻿;홈화면 관련
+﻿;==================================
+;홈화면 관련
+;SYSTEM_CALL 이곳이 메인 화면임
+;==================================
 @SHOW_SHOP
 
 CALL SHOP_STATUS
@@ -27,23 +30,32 @@ ENDIF
 PRINTL
 
 PRINTL
-PRINTL - 오프라인 모드 -
-PRINTLC [200] SAVE
-PRINTLC [300] LOAD
-PRINTL
-
-PRINTL
 IF DAY >= 30 && !FLAG:속박상태
     PRINTFORML - 연장점검 {DAY}일째 -
 ELSE
     PRINTL - 서버 점검중 -
 ENDIF
 SETCOLOR 125, 125, 125
-PRINTLC 종료
 PRINTLC 랭킹 보기
 PRINTLC 처음부터
 RESETCOLOR
+PRINTL
 
+PRINTL
+PRINTL - 오프라인 모드 -
+PRINTLC [200] SAVE
+PRINTLC [300] LOAD
+PRINTL
+
+
+PRINTL
+PRINTL - 시스템 콘솔 -
+;PRINTLC [500] 처음부터 ;TODO 미실장
+PRINTLC [999] 종료
+RESETCOLOR
+;==================================
+;SYSTEM_CALL @SHOW_SHOP 이후 넘어옴
+;==================================
 @USERSHOP
 SELECTCASE RESULT
     ;연애
@@ -81,10 +93,17 @@ SELECTCASE RESULT
             RETURN 0
     ;SAVE
     CASE 200
-        SAVEGAME
+        CALL SAVEGAME_EX
     ;LOAD
     CASE 300
-        LOADGAME
+        CALL LOADGAME_EX
+    ;처음부터
+    CASE 500
+        PRINTL 처음부터 하는 기능은 아직 미실장입니다.
+    CASE 999
+        PRINTL 게임을 종료합니다.
+        PRINTW 아무 키나 눌러 계속...
+        QUIT
     CASEELSE
         PRINTW 제시된 숫자를 입력해주세요.
 ENDSELECT

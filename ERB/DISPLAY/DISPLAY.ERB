@@ -4,9 +4,11 @@
 
 IF FLAG:히든메시지
     LOCALS = ???
-ELSEIF ITEM:200 == 0
+ELSEIF FLAG:자택상황 == 0
     LOCALS = 원룸
-ELSEIF ITEM:200 == 1
+ELSEIF FLAG:자택상황 == 1
+    LOCALS = 주택
+ELSEIF FLAG:자택상황 == 2
     LOCALS = 저택
 ELSE
     LOCALS = 미확인
@@ -16,12 +18,13 @@ RETURNF LOCALS
 
 ;SHOP 메뉴(홈화면)의 정보창 함수
 @SHOP_STATUS
+MONEYSTR MONEY:0
 DRAWLINEFORM =
 IF FLAG:히든메시지
-    PRINTFORML ??? 일째 ?? %HOME_NAME()% 소지금: {MONEY:0} 보유 바이오로이드 수 : 1/1
+    PRINTFORML ??? 일째 ?? %HOME_NAME()% 소지금: %RESULTS% 보유 바이오로이드 수 : 1/1
     PRINTFORML 당신의 이름 : %CALLNAME:(FLAG:히든메시지)%의 %CALLNAME:MASTER% 현재 선택 대상 : 당신만의 %CALLNAME:(FLAG:히든메시지)%
 ELSE
-    PRINTFORML {DAY} 일째 \@ TIME ? 밤 # 낮 \@ %HOME_NAME()% 소지금: {MONEY:0} 보유 바이오로이드 수 : {CHARA_STOCK}/{CHARA_STORAGE} 출격 상태 : {CHARA_SORTIE}/{FULL_SORITE}
+    PRINTFORML {DAY} 일째 \@ TIME ? 밤 # 낮 \@ %HOME_NAME()% 소지금: %RESULTS% 보유 바이오로이드 수 : {CHARA_STOCK}/{FLAG:캐릭터보유고} 출격 상태 : {CHARA_SORTIE}/{FULL_SORITE}
     PRINTFORML 당신의 이름 : %NAME:MASTER% 현재 선택 대상 : \@ TARGET == MASTER ? 없음 # %CALLNAME:TARGET% \@
 ENDIF
 DRAWLINEFORM =
