@@ -1,15 +1,69 @@
-;====================================
+﻿;===========================================================
+;파일명: STOCK.ERB
 ;주식 관련 정보 처리
-;====================================
+;===========================================================
 ;주식시장 메인
-;------------------------------------
+;-----------------------------------------------------------
 @STOCK_MARKET
-THROW 미실장
-;------------------------------------
+DRAWLINEFORM =
+;CALL SHOW_STOCKHAVE
+PRINTL 
+$LOOP_STOCK
+CALL SHOW_STOCKMARKET
+INPUT
+SELECTCASE RESULT
+    CASE IS < MINIMUM_STOCKNO
+        PRINTW 해당하는 종목코드가 없습니다.
+        GOTO LOOP_STOCK
+    CASE 999
+        RETURN 0
+    CASE IS > MAXIMUM_STOCKNO
+        PRINTW 해당하는 종목코드가 없습니다.
+        GOTO LOOP_STOCK
+    CASEELSE
+        PRINTFORML TICKER: %ITEMNAME:RESULT% 소유 수: {ITEM:RESULT}
+        CALL STOCK_TRADE(RESULT)
+        GOTO LOOP_STOCK
+ENDSELECT
+;-----------------------------------------------------------
 ;주식 가격 처리
-;------------------------------------
+;ARG = STOCK_ID
+;-----------------------------------------------------------
 @SET_STOCKPRICE(ARG)
 #FUNCTION
 LOCAL = STOCK_PRICE:ARG
 LOCAL += (RAND(1,1000000) - LOCAL/51 ) / 5
 RETURNF LOCAL
+;-----------------------------------------------------------
+;주식 가격 기본값 처리
+;-----------------------------------------------------------
+@UPDATE_STOCK
+#DIM STOCK_ID
+
+MAXIMUM_STOCKNO = MINIMUM_STOCKNO + STOCK_IN_MARKET - 1
+FOR STOCK_ID, MINIMUM_STOCKNO, MAXIMUM_STOCKNO
+    STOCK_PRICE:(STOCK_ID-100) = MAX(STOCK_PRICE:(STOCK_ID-100), ITEMPRICE:STOCK_ID)
+NEXT
+;-----------------------------------------------------------
+;주식시장 현황 표시
+;-----------------------------------------------------------
+@SHOW_STOCKMARKET
+#DIM STOCK_ID
+DRAWLINEFORM =
+FOR STOCK_ID, MINIMUM_STOCKNO, MAXIMUM_STOCKNO
+    MONEYSTR STOCK_PRICE:(STOCK_ID-100)
+    PRINTL
+    PRINTFORM [{STOCK_ID}] 
+    PRINTFORMC %STR:STOCK_ID, 25, LEFT%
+    PRINTFORMC 현재가: %RESULTS, 10%
+NEXT
+PRINTL
+DRAWLINE
+PRINTFORML [999] 돌아가기
+DRAWLINEFORM =
+;-----------------------------------------------------------
+;주식 거래 함수
+;ARG = STOCK_ID
+;-----------------------------------------------------------
+@STOCK_TRADE(ARG)
+PRINTW 미실장입니다.

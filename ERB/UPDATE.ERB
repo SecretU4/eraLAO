@@ -1,6 +1,6 @@
-;====================================
+;================================================
 ;정보나 데이터베이스 업데이트시의 처리
-;====================================
+;================================================
 @UPDATE
 #DIM C_ID
 
@@ -16,14 +16,3 @@ FOR C_ID, 1, TOTAL_CHARANUM
 NEXT
 
 CALL UPDATE_STOCK
-;-------------------------------------
-;주식 가격 기본값 처리
-;-------------------------------------
-@UPDATE_STOCK
-#DIM STOCK_ID
-#DIM MAXIMUM_STOCKNO
-
-MAXIMUM_STOCKNO = MINIMUM_STOCKNO + STOCK_IN_MARKET - 1
-FOR STOCK_ID, MINIMUM_STOCKNO, MAXIMUM_STOCKNO
-    STOCK_PRICE:STOCK_ID = MAX(STOCK_PRICE:STOCK_ID, ITEMPRICE:STOCK_ID)
-NEXT
