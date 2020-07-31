@@ -4,7 +4,7 @@ CALLNAME,메이,
 
 TALENT,등급,4,;SS
 TALENT,종류,2,;기동
-TALENT,직업,1,;군인
+TALENT,군인,1,
 
 TALENT,체형,0,;로리
 TALENT,가슴사이즈,3,;거유
