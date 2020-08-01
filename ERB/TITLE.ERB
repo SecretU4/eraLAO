@@ -1,15 +1,20 @@
-﻿@SYSTEM_TITLE
+﻿;===========================================================
+;파일명: TITLE.ERB
+;게임 구동시 타이틀 처리
+;===========================================================
+;함수명: SYSTEM_TITLE
+;SYSTEM CALL 게임 구동시 자동. 없으면 표준 타이틀.
+;GLOBAL 변수는 RESETDATA나 LOADDATA에 의해 초기화・덧쓰기되지 않는다.
+;===========================================================
+@SYSTEM_TITLE
 #DIMS TITLE_HTML
-;@SYSTEM_TITLE가 정의되고 있으면, 표준의 타이틀 화면 대신에 SYSTEM_TITLE가 불린다.
 
-;이 타이밍에 글로벌 변수를 읽어 두면 잡기 엎지름이 없어진다.
-;GLOBAL는 RESETDATA나 LOADDATA에 의해 초기화・덧쓰기되지 않는다.
-;필요에 따라서 코멘트 아웃을 해제하는 것.
 LOADGLOBAL
 RESULT = GLOBAL
 SAVEGLOBAL
-LOADGLOBAL
 
+$TITLE_SELECT
+;디버그 모드가 아닐때 타이틀 화상을 표시함
 [IF_NDEBUG]
     TITLE_HTML = <p align='center'>
     TITLE_HTML += TITLE_PICTURE()
@@ -17,7 +22,6 @@ LOADGLOBAL
 [ENDIF]
 
 ;타이틀 표시
-$TITLE_SELECT
 DRAWLINEFORM =
 
 ALIGNMENT CENTER
@@ -52,6 +56,7 @@ IF RESULT == 0
 	RETURN
 ELSEIF RESULT == 1
 	CALL LOADGAME_EX
+    CLEARLINE 5000
 	GOTO TITLE_SELECT
 	;LOADGAME_EX로 LOAD를 실시하지 못하고 돌아왔을 경우, 다시 한 번 더 선택한다.
 ELSE
@@ -63,6 +68,10 @@ ENDIF
 ;SYSTEM_TITLE중에서 RETURN 하면 다음에 실행하는 행이 없어져, 에러가 된다.
 ;반드시 BEGIN 명령이나 LOADGAME를 실시하는 것.
 
+;===========================================================
+;함수명: TITLE_PICTURE
+;HTML 기반 타이틀 화상 처리용 HTML 문자열 생성
+;===========================================================
 @TITLE_PICTURE
 #FUNCTIONS
 #DIMS TITLE_HTML
