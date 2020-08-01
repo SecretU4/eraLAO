@@ -37,7 +37,6 @@ ELSE
 ENDIF
 SETCOLOR 125, 125, 125
 PRINTLC 랭킹 보기
-PRINTLC 처음부터
 RESETCOLOR
 PRINTL
 
@@ -50,7 +49,7 @@ PRINTL
 
 PRINTL
 PRINTL - 시스템 콘솔 -
-;PRINTLC [500] 처음부터 ;TODO 미실장
+PRINTLC [500] 처음부터
 PRINTLC [999] 종료
 RESETCOLOR
 ;==================================
@@ -99,10 +98,14 @@ SELECTCASE RESULT
         CALL LOADGAME_EX
     ;처음부터
     CASE 500
-        PRINTL 처음부터 하는 기능은 아직 미실장입니다.
+        PRINTL 정말로 처음부터 시작하시겠습니까?
+        CALL ASK_YN
+        IF RESULT == 0
+            CALL NEWGAME
+        ENDIF
     CASE 999
         PRINTL 게임을 종료합니다.
-        PRINTW 아무 키나 눌러 계속...
+        PRINTW 엔터 키를 눌러 계속...
         QUIT
     CASEELSE
         PRINTW 제시된 숫자를 입력해주세요.
