@@ -50,8 +50,11 @@ PRINTL
 PRINTL
 PRINTL - 시스템 콘솔 -
 PRINTLC [500] 처음부터
-PRINTLC [999] 종료
+SIF GAMEBASE_VERSION != FLAG:LAST_LAOVERSION
+    SETCOLOR 250,0,0
+PRINTLC [600] UPDATE
 RESETCOLOR
+PRINTLC [999] 종료
 ;==================================
 ;SYSTEM_CALL @SHOW_SHOP 이후 넘어옴
 ;==================================
@@ -103,6 +106,9 @@ SELECTCASE RESULT
         IF RESULT == 0
             CALL NEWGAME
         ENDIF
+    ;UPDATE
+    CASE 600
+        CALL UPDATE
     CASE 999
         PRINTL 게임을 종료합니다.
         PRINTW 엔터 키를 눌러 계속...
