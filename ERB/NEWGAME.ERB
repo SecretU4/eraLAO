@@ -175,21 +175,18 @@ PRINTFORML 모든 문제가 끝났습니다.
 ;===========================================================
 @ADD_ALL_CHARA
 
-COUNT = 1
 FOR LOCAL, 1, TOTAL_CHARANUM
 	SIF !EXISTCSV(LOCAL)
 		CONTINUE
 	ADDCHARA LOCAL
-    SORTCHARA
-    RCHAR_NO:LOCAL = COUNT
-	; TARGET = COUNT
-	; CALL SET_MINIMUM_EXP_ALL(COUNT)
+	; TARGET = GETCHARA(LOCAL)
+	; CALL SET_MINIMUM_EXP_ALL(GETCHARA(LOCAL))
     RESULT = 0
     TRYCALLFORM MSG_CHARA_No{LOCAL}
     SIF RESULT
-        CFLAG:C_ID:개별대사유무 = 1
-    COUNT ++
+        CFLAG:GETCHARA(LOCAL):개별대사유무 = 1
 NEXT
+SORTCHARA
 
 ;===========================================================
 ;함수명:NEWGAME

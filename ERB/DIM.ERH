@@ -7,9 +7,6 @@
 #DIM SAVEDATA CHARA_STOCK
 #DIM SAVEDATA CHARA_SORTIE
 #DIM SAVEDATA FULL_SORITE = 5
-;캐릭터 CSV에 빈 목록이 앞으로 밀려 처리되는것을 보완하기 위한 변수
-;RCHAR_NO:(csv상 캐릭터번호) = 인게임상 캐릭터번호
-#DIM RCHAR_NO, 225
 
 ;주식 관련 변수
 #DIM CONST MINIMUM_STOCKNO = 100
