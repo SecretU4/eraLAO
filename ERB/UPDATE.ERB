@@ -2,15 +2,7 @@
 ;정보나 데이터베이스 업데이트시의 처리
 ;================================================
 @UPDATE
-#DIM C_ID
 
-;캐릭터 추가 처리
-FOR C_ID, 1, TOTAL_CHARANUM
-    IF GETCHARA(C_ID) == -1
-    	ADDCHARA C_ID
-        RESULT = 0
-        TRYCALLFORM MSG_CHARA_No{NO:C_ID}
-        SIF RESULT
-            CFLAG:C_ID:개별대사유무 = 1
-    ENDIF
-NEXT
+CALL ADD_ALL_CHARA
+
+PRINTW 업데이트를 완료하였습니다.

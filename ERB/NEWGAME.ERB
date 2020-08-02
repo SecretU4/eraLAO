@@ -171,19 +171,24 @@ PRINTFORML 모든 문제가 끝났습니다.
 ;===========================================================
 ;함수명:ADD_ALL_CHARA
 ;현재 데이터베이스상 존재하는 캐릭터를 체크 및 구동 메모리에 추가
+;LOCAL = CSV상 번호, COUNT = 인게임 호출번호
 ;===========================================================
 @ADD_ALL_CHARA
 
+COUNT = 1
 FOR LOCAL, 1, TOTAL_CHARANUM
 	SIF !EXISTCSV(LOCAL)
 		CONTINUE
 	ADDCHARA LOCAL
-	; TARGET = LOCAL
-	; CALL SET_MINIMUM_EXP_ALL(LOCAL)
-	; RESULT = 0
-	; TRYCALLFORM M_KOJO_K{NO:LOCAL}
-	; SIF RESULT
-	; 	CFLAG:LOCAL:대사실장상황 = 1
+    SORTCHARA
+    현캐릭터정렬:LOCAL = COUNT
+	; TARGET = COUNT
+	; CALL SET_MINIMUM_EXP_ALL(COUNT)
+    RESULT = 0
+    TRYCALLFORM MSG_CHARA_No{LOCAL}
+    SIF RESULT
+        CFLAG:C_ID:개별대사유무 = 1
+    COUNT ++
 NEXT
 
 ;===========================================================
