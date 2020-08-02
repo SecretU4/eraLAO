@@ -1,0 +1,16 @@
+﻿NO,123,
+NAME,마법소녀 매지컬 모모,
+CALLNAME,모모,
+TALENT,소속,20,;D엔터
+
+BASE,기분,0,
+
+TALENT,등급,3,;S
+TALENT,분류,2,;기동
+TALENT,체형,1,;보통체구
+TALENT,긍정도,1,;긍정적
+
+ABL,전투lv,0,
+ABL,조리lv,0,
+EXP,출격경험,0,
+EXP,요리경험,0,

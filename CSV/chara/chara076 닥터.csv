@@ -1,0 +1,16 @@
+﻿NO,76,
+NAME,닥터,
+CALLNAME,닥터,
+TALENT,소속,12,;080
+
+BASE,기분,0,
+
+TALENT,등급,4,;SS
+TALENT,분류,3,;중장
+TALENT,체형,0,;작은체구
+TALENT,지능,1,;지식
+
+ABL,전투lv,0,
+ABL,조리lv,0,
+EXP,출격경험,0,
+EXP,요리경험,0,

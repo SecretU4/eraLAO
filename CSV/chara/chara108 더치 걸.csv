@@ -1,0 +1,17 @@
+﻿NO,108,
+NAME,더치 걸,
+CALLNAME,더치 걸,
+TALENT,소속,17,;골든워커즈
+
+BASE,기분,0,
+
+TALENT,등급,1,;B
+TALENT,분류,1,;경장
+TALENT,체형,0,;작은체구
+TALENT,긍정도,-1,;비관적
+TALENT,느긋함,1,
+
+ABL,전투lv,0,
+ABL,조리lv,0,
+EXP,출격경험,0,
+EXP,요리경험,0,

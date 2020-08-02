@@ -1,0 +1,20 @@
+﻿NO,21,
+NAME,불굴의 마리,
+CALLNAME,마리,
+TALENT,소속,5,;스틸라인
+
+BASE,기분,0,
+
+TALENT,등급,4,;SS
+TALENT,분류,1,;경장
+TALENT,체형,2,;큰체구
+TALENT,지휘관,1,
+TALENT,군인,1,
+TALENT,쿨데레,1,
+TALENT,나이속성,1,;누님
+TALENT,쇼타콘,1,
+
+ABL,전투lv,2,
+ABL,조리lv,0,
+EXP,출격경험,25,
+EXP,요리경험,0,
