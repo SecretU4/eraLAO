@@ -3,14 +3,8 @@ NAME,네오딤,
 CALLNAME,네오딤,
 TALENT,소속,11,;버뮤다
 
-BASE,기분,0,
-
 TALENT,등급,4,;SS
 TALENT,분류,2,;기동
 TALENT,체형,1,;보통체구
 TALENT,쿨데레,1,
 
-ABL,전투lv,0,
-ABL,조리lv,0,
-EXP,출격경험,0,
-EXP,요리경험,0,

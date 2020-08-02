@@ -3,8 +3,6 @@ NAME,T-8W 발키리,
 CALLNAME,발키리,
 TALENT,소속,6,;발할라
 
-BASE,기분,0,
-
 TALENT,등급,3,;S
 TALENT,분류,1,;경장
 TALENT,체형,1,;보통체구
@@ -14,6 +12,4 @@ TALENT,쿨데레,1,
 TALENT,오드아이,1,
 
 ABL,전투lv,2,
-ABL,조리lv,0,
 EXP,출격경험,25,
-EXP,요리경험,0,

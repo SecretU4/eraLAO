@@ -3,8 +3,6 @@ NAME,X-05 에밀리,
 CALLNAME,에밀리,
 TALENT,소속,9,;캐노니어
 
-BASE,기분,0,
-
 TALENT,등급,4,;SS
 TALENT,분류,3,;중장
 TALENT,체형,1,;보통체구
@@ -13,6 +11,4 @@ TALENT,지능,-1,;무식
 TALENT,억압,1,
 
 ABL,전투lv,2,
-ABL,조리lv,0,
 EXP,출격경험,25,
-EXP,요리경험,0,

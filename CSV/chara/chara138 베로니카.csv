@@ -3,16 +3,9 @@ NAME,베로니카,
 CALLNAME,베로니카,
 TALENT,소속,21,;코헤이
 
-BASE,기분,0,
-
 TALENT,등급,3,;S
 TALENT,분류,1,;경장
 TALENT,체형,1,;보통체구
 TALENT,애주가,1,
-
-ABL,전투lv,0,
-ABL,조리lv,0,
-EXP,출격경험,0,
-EXP,요리경험,0,
 
 CSTR,1,성도님,;마스터호칭

@@ -3,8 +3,6 @@ NAME,소완,
 CALLNAME,소완,
 TALENT,소속,3,;애니웨어
 
-BASE,기분,0,
-
 TALENT,등급,4,;SS
 TALENT,분류,1,;경장
 TALENT,체형,1,;보통체구
@@ -12,7 +10,5 @@ TALENT,메이드,1,
 TALENT,얀데레,1,
 TALENT,요리사,1,
 
-ABL,전투lv,0,
 ABL,조리lv,5,
-EXP,출격경험,0,
 EXP,요리경험,1000,
