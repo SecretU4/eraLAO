@@ -54,14 +54,18 @@ PRINTL 구매하시겠습니까?
 CALL ASK_YN
 IF RESULT == 0
     IF MONEY:0 < ITEMPRICE:C_ITEMID
-        PRINTW 소지금이 부족합니다.
+        PRINTW 돈이 부족합니다.
         RETURN 1
     ELSEIF ITEM:C_ITEMID > 0
-        PRINTW 이미 보유하고 있는 바이오로이드입니다.
+        PRINTW 이미 보유중인 바이오로이드입니다.
+        RETURN 1
+    ELSEIF FLAG:캐릭터보유고 <= FLAG:현캐릭터수
+        PRINTW 공간이 부족합니다.
         RETURN 1
     ENDIF
     MONEY:0 -= ITEMPRICE:C_ITEMID
     ITEM:C_ITEMID += 1
+    FLAG:현캐릭터수 ++
     CFLAG:R_ID:보유이력 = 1
     ITEMSALES:C_ITEMID = 0
     PRINTFORMW %캐릭터를% 구매하였습니다.
