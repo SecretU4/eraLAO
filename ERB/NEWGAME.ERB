@@ -71,9 +71,9 @@ PRINTFORMW 당신은 일단 행동하기로 했다.
 ;주인공 생성 함수
 ;===========================================================
 @COMMANDER_MAKING
-#DIM BODYSIZE
+#DIM MASTER_AGE
 
-$SET_BODYSIZE
+$SET_AGE
 DRAWLINE
 PRINTFORML 당신의 체형을 선택해주세요.
 PRINTFORML [0] 소년
@@ -89,15 +89,15 @@ IF GROUPMATCH(RESULT, 0,1,2)
     ELSEIF RESULT == 2
         PRINTFORML 중년의 몸으로 시작합니다.
     ENDIF
-    BODYSIZE = RESULT
+    MASTER_AGE = RESULT
     CALL ASK_YN("그래", "아니야")
     SIF RESULT == 1
-        GOTO SET_BODYSIZE
+        GOTO SET_AGE
 ELSE
     PRINTL 제시된 목록에서 선택해주세요.
-    GOTO SET_BODYSIZE
+    GOTO SET_AGE
 ENDIF
-TALENT:MASTER:체형 = BODYSIZE
+TALENT:MASTER:나이 = MASTER_AGE
 
 $SET_NAME
 PRINTL 당신의 이름(NAME)은?
