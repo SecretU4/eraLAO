@@ -184,12 +184,11 @@ MONEY:0 = 100000000
 ;원룸으로 설정
 FLAG:캐릭터보유고 = 2
 
-NAME:MASTER = "아이샤"
-CALLNAME:MASTER = "아이샤"
+NAME:MASTER = 아이샤
+CALLNAME:MASTER = 아이샤
 
 ;게임 시작시 변수 데이터 처리
 CALL ADD_ALL_CHARA
-CALL UPDATE_STOCK
 
 CALL SET_EX_ITEM_SALES(200, 203)
 
@@ -200,7 +199,7 @@ BEGIN SHOP
 @COMMANDER_NAMESET
 IF GROUPMATCH(NAME:MASTER, "복","규동","아이샤","오렌지","에이드","돈부리")
     SETCOLOR 250, 0, 0
-    PRINTW 치터는 이름을 변경하면 안돼지!
+    PRINTW 치터는 이름을 바꾸면 안돼지!
     RESETCOLOR
     RETURN
 ENDIF
