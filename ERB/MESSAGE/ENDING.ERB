@@ -1,0 +1,68 @@
+﻿@ENDING(ARG)
+#DIM REAL_NUM
+
+;만약을 위한 TARGET 설정
+IF ARG != -1
+    REAL_NUM = GETCHARA(ARG)
+    TARGET = ARG
+ENDIF
+CALL ENDING_BEGIN(ARG)
+
+TRYCCALLFORM MSG_CHARA_No{REAL_NUM}_ENDING
+;    PRINTW 개별 엔딩 구상이 끝났습니다.
+CATCH
+    PRINTW 개별 엔딩 구상이 없어 범용 엔딩 구상으로 넘어갑니다.
+    CALL MSG_CHARA_NoX_ENDING(ARG)
+ENDCATCH
+PRINTW 아쉽게도 엔딩 기능은 미실장입니다. 즐겜!
+RETURN 1
+;작성 완료시
+;RETURN 0
+
+@MSG_CHARA_NoX_ENDING(ARG)
+#DIM REAL_NUM
+REAL_NUM = GETCHARA(ARG)
+
+PRINTFORML %CALLNAME:TARGET%의 구상입니다. 오, 정신붕괴도가 {TALENT:정신쇠약} 이었네요!
+PRINTFORML %CALLNAME:TARGET%의 호감도는 {CFLAG:호감도} 였던 것 같네요.
+PRINTW 이런, 범용 구상도 없네요!
+
+@ENDING_BEGIN(ARG)
+#DIM REAL_NUM
+REAL_NUM = GETCHARA(TARGET)
+
+TALENT:혼인 = 1
+
+;정신붕괴
+IF TALENT:정신쇠약 == 2
+    PRINTFORML %타겟은% 아무 말 없이 반지를 받아들였다.
+    FLAG:엔딩플래그 = 2
+;사랑
+ELSEIF TALENT:사랑
+    PRINTFORML %타겟은% 눈물을 글썽이며 손에 반지를 받아들였다.
+    FLAG:엔딩플래그 = 1
+    ;리제, 50% 확률
+    IF REAL_NUM == 7 && RAND:1
+        FLAG:엔딩플래그 = 4
+    ;팬텀
+    ELSEIF REAL_NUM == 73 && EXP:출격경험 > 6
+        FLAG:엔딩플래그 = 3
+    ;아자젤
+    ELSEIF REAL_NUM == 126 && CFLAG:etc1 > 99 && CFLAG:etc2 == 0
+        FLAG:엔딩플래그 = 3
+    ;슬레이프니르
+    ELSEIF REAL_NUM == 91 && (TALENT:슈퍼스타 || CFLAG:etc4 == 1)
+        FLAG:엔딩플래그 = 3
+    ;더치 걸
+    ELSEIF REAL_NUM == 108
+        IF CFLAG:[[닥터]]:호감도 > 499 && TALENT:[[닥터]]:정신쇠약 == 0
+            FLAG:엔딩플래그 = 4
+            TALENT:TARGET:체헝 = 1
+        ELSE
+            TALENT:혼인 --
+            TALENT:입양 = 1
+        ENDIF
+    ENDIF
+ENDIF
+
+RETURN 0
