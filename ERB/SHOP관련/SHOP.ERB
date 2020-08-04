@@ -72,17 +72,18 @@ SELECTCASE RESULT
     CASE 102
     ;출격
     CASE 103
-        SIF !FLAG:속박상태 && TIME == 0
+        SIF FLAG:속박상태 || TIME == 1
             RETURN 0
     ;대상변경
     CASE 104
-        SIF !FLAG:속박상태
+        SIF FLAG:속박상태
             RETURN 0
     ;상점
     CASE 105
-        SIF !FLAG:속박상태
-            CALL MAIN_SHOP
+        SIF FLAG:속박상태
             RETURN 0
+        CALL MAIN_SHOP
+        RETURN 1
     ;요리
     CASE 106
     ;헤어진다
@@ -91,9 +92,10 @@ SELECTCASE RESULT
             RETURN 0
     ;사령관 이름 변경
     CASE 108
-        SIF !FLAG:속박상태
+        SIF FLAG:속박상태
             RETURN 0
         CALL COMMANDER_NAMESET
+        RETURN 1
     ;SAVE
     CASE 200
         CALL SAVEGAME_EX
