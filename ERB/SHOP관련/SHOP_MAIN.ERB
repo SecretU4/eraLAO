@@ -23,14 +23,19 @@ WHILE RESULT != 0
         CASE 2
             CALL ITEM_SHOP
         CASE 3
-            CALL REAL_ESTATE
+            CALL EX_ITEM_SHOP(200,205)
         CASE 4
-            CALL SPECIAL_TALENT_SHOP
+            CALL EX_ITEM_SHOP(50,99)
         CASE 5
             CALL STOCK_MARKET
     ENDSELECT
 WEND
 
+;===========================================================
+;함수명: SHOW_SALES_LIST
+;현재 판매중(ITEMSALES:COUNT > 0)인 아이템 표시
+;ARG:0 = INDEX_START, ARG:1 = INDEX_END, ARGS = 옵션(미실장)
+;===========================================================
 @SHOW_SALES_LIST(ARG:0, ARG:1, ARGS = "")
 FOR COUNT, ARG:0, ARG:1
     SIF ITEMNAME:COUNT == ""
@@ -38,10 +43,15 @@ FOR COUNT, ARG:0, ARG:1
     MONEYSTR ITEMPRICE:COUNT
     SIF ITEMSALES:COUNT < 1
         SETCOLOR 125,125,125
-    PRINTFORMC [{COUNT-(ARG:0), 3, LEFT}] %ITEMNAME:COUNT, 8% %RESULTS, 15% 
+    PRINTFORMLC [{COUNT-(ARG:0)}] %ITEMNAME:COUNT, 8% %RESULTS, 7% 
     RESETCOLOR
 NEXT
 
+;===========================================================
+;함수명: SET_ITEM_SALES
+;아이템명이 정해지지 않은 번호를 제외한 아이템의 재고를 5로 함.
+;ARG:0 = INDEX_START, ARG:1 = INDEX_END
+;===========================================================
 @SET_ITEM_SALES(ARG:0, ARG:1)
 FOR LOCAL, ARG:0, ARG:1
     IF ITEMNAME:LOCAL == ""
@@ -50,7 +60,14 @@ FOR LOCAL, ARG:0, ARG:1
         ITEMSALES:LOCAL = 5
     ENDIF
 NEXT
+RETURN 1
 
+;===========================================================
+;함수명: SET_EX_ITEM_SALES
+;아이템명이 정해지지 않은 번호를 제외한 아이템의 재고를 1로 함.
+;이미 재고가 있거나 1보다 큰 경우는 패스.
+;ARG:0 = INDEX_START, ARG:1 = INDEX_END
+;===========================================================
 @SET_EX_ITEM_SALES(ARG:0, ARG:1)
 FOR LOCAL, ARG:0, ARG:1
     IF ITEMNAME:LOCAL == ""
@@ -61,62 +78,89 @@ FOR LOCAL, ARG:0, ARG:1
         ITEMSALES:LOCAL = 1
     ENDIF
 NEXT
+RETURN 1
 
+;===========================================================
+;함수명: ITEM_SHOP
+;일반적인 아이템을 구매할 수 있는 화면
+;===========================================================
 @ITEM_SHOP
 #DIM INDEX_START = 0
 #DIM INDEX_END = 50
 #DIM STR_START = 200
 WHILE RESULT != 0
+    DRAWLINE
+    ;추후 하루 지날때마다로 이관
     CALL SET_ITEM_SALES(INDEX_START, INDEX_END)
 
     CALL SHOW_SALES_LIST(INDEX_START, INDEX_END)
+    PRINTL
+    PRINTL
     PRINTFORML [0] 돌아간다
     PRINTL
     DRAWLINE
     INPUT
     IF RESULT == 0
-        RETURN 1
-    ELSE ITEMSALES:RESULT > 0
+    ELSEIF ITEMNAME:(RESULT + INDEX_START) != ""
         CALL BUY_ITEM(RESULT, INDEX_START, STR_START)
-        SIF RESULT
+        SIF RESULT > 0
             CALL USE_ITEM(RESULT)
+    ELSE
+        PRINTW 제시된 숫자를 골라주세요.
     ENDIF
 WEND
 
-@REAL_ESTATE
-#DIM INDEX_START = 200
-#DIM INDEX_END = 203
+;===========================================================
+;함수명: EX_ITEM_SHOP
+;일반적인 아이템이 아닌 특수 아이템을 구매할 수 있는 화면
+;ARG:0 = INDEX_START, ARG:1 = INDEX_END, ARGS = 옵션(미실장)
+;===========================================================
+@EX_ITEM_SHOP(ARG, ARG:1, ARGS = "")
+#DIM INDEX_START
+#DIM INDEX_END
+INDEX_START = ARG
+INDEX_END = ARG:1
 
 ;추후 하루 지날때마다로 이관
 ITEMSALES:203 = 1
-WHILE RESULT != 0
-    CALL SHOW_SALES_LIST(INDEX_START, INDEX_END)
-    PRINTFORML [0] 돌아간다
-    INPUT
-    IF RESULT == 0
-        RETURN 1
-    ELSE ITEMSALES:RESULT > 0
-        CALL BUY_ITEM(RESULT, INDEX_START)
-    ENDIF
-WEND
-@SPECIAL_TALENT_SHOP
-#DIM INDEX_START = 51
-#DIM INDEX_END = 99
 CALL SET_EX_ITEM_SALES(INDEX_START, INDEX_END)
 
-CALL SHOW_SALES_LIST(INDEX_START, INDEX_END)
-INPUT
+WHILE RESULT != 0
+    DRAWLINE
+    CALL SHOW_SALES_LIST(INDEX_START, INDEX_END)
+    PRINTL
+    PRINTL
+    PRINTFORML [0] 돌아간다
+    PRINTL
+    DRAWLINE
 
+    INPUT
+    IF RESULT == 0
+    ELSEIF ITEMNAME:(RESULT + INDEX_START) != ""
+        CALL BUY_ITEM(RESULT, INDEX_START)
+        SIF RESULT > 0
+            CALL USE_ITEM(RESULT)
+    ELSE
+        PRINTW 제시된 숫자를 골라주세요.
+    ENDIF
+WEND
 
+;===========================================================
+;함수명: BUY_ITEM
+;바이오로이드 제외 모든 아이템의 구매 가부 확인 화면. 조건절 처리도 여기서 한다.
+;아이템의 세부정보 화면도 이곳에서.
+;추후 복잡해지면 함수의 세분화가 필요할듯(복수구매 등)
+;ARG:0 = INDEX_START, ARG:1 = INDEX_END, ARG:2 = (존재시) STR 인덱스값
+;===========================================================
 @BUY_ITEM(ARG, ARG:1=0, ARG:2=0)
 
 SIF ARG:1
-    ARG -= ARG:1
+    ARG += ARG:1
 MONEYSTR ITEMPRICE:ARG
 PRINTFORML 품목명: %ITEMNAME:ARG% 가격: %RESULTS% 재고: {ITEMSALES:ARG} 개
 PRINTL
-SIF ARG:2 && STR(ARG + ARG:2) != ""
-    PRINTSL STR(ARG + ARG:2)
+SIF ARG:2 && STR:(ARG + ARG:2) != ""
+    PRINTSL STR:(ARG + ARG:2)
 PRINTL
 DRAWLINE
 PRINTFORML %아이템을% 구매하시겠습니까?
@@ -124,14 +168,14 @@ CALL ASK_YN
 IF RESULT == 0
     IF MONEY:0 < ITEMPRICE:ARG
         PRINTFORMW 돈이 부족합니다.
-        RETURN 0
-    ELSEIF ITEMSALES:ARG <= 0
-        PRINTFORMW %ITEMNAME:ARG%의 재고가 없습니다.
-        RETURN 0
+        RETURN -1
     ;부동산용 분기
     ELSEIF (ARG == 201 && FLAG:캐릭터보유고 > 5) || (ARG == 202 && FLAG:캐릭터보유고 > 10)
         PRINTFORMW 더 작은 집으로 이사할 수는 없습니다.
-        RETURN 0
+        RETURN -1
+    ELSEIF ITEMSALES:ARG <= 0
+        PRINTFORMW %ITEMNAME:ARG%의 재고가 없습니다.
+        RETURN -1
     ENDIF
     MONEY:0 -= ITEMPRICE:ARG
     ITEMSALES:ARG --
@@ -140,10 +184,20 @@ IF RESULT == 0
     RETURN ARG
 ELSE
     PRINTFORMW %아이템을% 구매하지 않았습니다.
-    RETURN 0
+    RETURN -1
 ENDIF
 
+;===========================================================
+;함수명: USE_ITEM
+;ARG로 받은 아이템을 사용하는 함수.
+;추후 복수 사용 가능한 아이템 처리 필요
+;아이템 효과 처리는 이곳에서 실시함.
+;ARG = ITEM.CSV상 인덱스값
+;ITEM_EFFECT:0 = +호감도 1: -공포 2: -스트레스 3: 마음속상처
+;여기서 TARGET값은 CURRENT_BIOLIST에서 RETURN 받으며 그 값은 CSV가 아닌 현 캐릭터값
+;===========================================================
 @USE_ITEM(ARG)
+#DIM ITEM_EFFECT, 4
 
 WHILE 1
     IF GROUPMATCH(ARG, 1,2,3,4)
@@ -160,39 +214,91 @@ WHILE 1
     IF RESULT
         PRINTFORML %아이템을% 사용하지 않았습니다.
         RETURN 1
+    ELSE
+        BREAK
     ENDIF
 WEND
 
+;이미 아이템은 소지중이며, 아이템 효과 처리는 여기에서.
 SELECTCASE ARG
     ;약혼반지
     CASE 1
-        PRINTFORMW %CALLNAME:TARGET%에게 프로포즈합니다.
-    ;합성 롤리팝
-    CASE 2
+        ;약혼반지 조건 처리해야 하는 사항:
+        ;기본조건: 사랑/공포 30 미만/스트레스 200미만 + 혼인/입양 아님
+        ;   + 리제는 연모 이상인 사람 5명 미만시에만 가능
+        ;   + 에밀리는 CFLAG:etc1 == 1일때만 가능
+        ;특수조건: 정신붕괴 + 혼인 아님
+        PRINTFORMW %CALLNAME:TARGET%에게 반지를 건냈다.
+        CALL ENDING(ARG)
+        TEM:ARG --
+    ;합성 롤리팝, 초콜릿, 수제 케이크
+    CASE 2, 3, 4
         PRINTFORML %아이템을% %CALLNAME:TARGET%에게 선물합니다.
-    ;초콜릿
-    CASE 3
-        PRINTFORML %아이템을% %CALLNAME:TARGET%에게 선물합니다.
-    ;수제 케이크
-    CASE 4
-        PRINTFORML %아이템을% %CALLNAME:TARGET%에게 선물합니다.
+        IF ARG == 2
+            ITEM_EFFECT = 10, -1, -10
+        ELSEIF ARG == 3
+            ITEM_EFFECT = 25, -5, -25
+        ELSEIF ARG == 4
+            ITEM_EFFECT = 50, -10, -50, 1
+        ENDIF
+
+        CFLAG:TARGET:호감도 += ITEM_EFFECT:0
+
+        IF (CFLAG:공포 + ITEM_EFFECT:1) < 0
+            CFLAG:공포 = 0
+            ITEM_EFFECT:1 += CFLAG:공포
+        ELSE
+            CFLAG:TARGET:공포 += ITEM_EFFECT:1
+        ENDIF
+
+        IF (CFLAG:스트레스 + ITEM_EFFECT:2) < 0
+            CFLAG:스트레스 = 0
+            ITEM_EFFECT:2 += CFLAG:스트레스
+        ELSE
+            CFLAG:TARGET:스트레스 += ITEM_EFFECT:2
+        ENDIF
+
+        PRINTFORM %CALLNAME:TARGET%의 
+        SIF ITEM_EFFECT:0 > 0
+            PRINTFORM 호감도가 {ITEM_EFFECT:0} 상승, 
+        SIF ITEM_EFFECT:1 < 0 && ARG != 4
+            PRINTFORM 공포가 {(ITEM_EFFECT:1) * -1} 감소, 
+        SIF ITEM_EFFECT:2 < 0
+            PRINTFORML 스트레스가 {(ITEM_EFFECT:2) * -1} 감소하였습니다.
+
+        IF ITEM_EFFECT:3 != 0 && TALENT:TARGET:정신쇠약 == 1
+            ;원판 확률은 약 5%
+            IF CFLAG:TARGET:공포 <= 0 && RAND:18
+                PRINTFORML %CALLNAME:TARGET%의 상처받은 마음 속 상처를 씻어냈습니다.
+                SIF GETCHARA(TARGET) == 51 && CFLAG:TARGET:etc4 < 5
+                    CFLAG:TARGET:etc4 ++
+            ELSE
+                PRINTFORML %CALLNAME:TARGET%의 상처받은 마음은 치유되지 않았습니다.
+            ENDIF
+        ENDIF
+
+        IF CFLAG:TARGET:스트레스 < 200 && TALENT:TARGET:짜증
+            TALENT:TARGET:짜증 = 0
+            PRINTFORML %CALLNAME:TARGET%의 짜증이 풀린 것 같습니다.
+        ENDIF
+        ITEM:ARG --
     ;특수능력
     CASE 51, 52, 53
         PRINTFORMW 능력 %아이템을% 얻었습니다.
     ;주택
     CASE 201
-        PRINTL 주택으로 이사합니다. 저장소가 5개가 되었습니다.
+        PRINTW 주택으로 이사합니다. 저장소가 5개가 되었습니다.
         FLAG:캐릭터보유고 = 5
     ;저택
     CASE 202
-        PRINTL 저택으로 이사합니다. 저장소가 10개가 되었습니다.
+        PRINTW 저택으로 이사합니다. 저장소가 10개가 되었습니다.
         FLAG:캐릭터보유고 = 10
     ;방추가
     CASE 203
-        PRINTL 방을 추가했습니다. 저장소가 1개 늘어납니다.
+        PRINTW 방을 추가했습니다. 저장소가 1개 늘어납니다.
         FLAG:캐릭터보유고 ++
     CASEELSE
-        PRINTW 목록에 없는 아이템입니다.
+        PRINTW 목록에 없는 아이템입니다. 개발자에게 문의하세요.
         RETURN 1
 ENDSELECT
 RETURN 0
