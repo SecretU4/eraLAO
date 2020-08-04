@@ -13,26 +13,25 @@ PRINTFORML [4] 특수능력
 PRINTFORML [5] 주식시장
 PRINTL
 PRINTFORML [0] 돌아가기
-$SELECT_SHOPMENU
-INPUT
-SELECTCASE RESULT
-    CASE 0
-        RETURN 0
-    CASE 1
-        CALL BIOCHARA_SHOP
-    CASE 2
-        CALL ITEM_SHOP
-    CASE 3
-        CALL REAL_ESTATE
-    CASE 4
-        CALL SPECIAL_TALENT_SHOP
-    CASE 5
-        CALL STOCK_MARKET
-    CASEELSE
-        GOTO SELECT_SHOPMENU
-ENDSELECT
+WHILE RESULT != 0
+    INPUT
+    SELECTCASE RESULT
+        CASE 0
+            RETURN 0
+        CASE 1
+            CALL BIOCHARA_SHOP
+        CASE 2
+            CALL ITEM_SHOP
+        CASE 3
+            CALL REAL_ESTATE
+        CASE 4
+            CALL SPECIAL_TALENT_SHOP
+        CASE 5
+            CALL STOCK_MARKET
+    ENDSELECT
+WEND
 
-@SHOW_SALES_LIST(ARG:0, ARG:1, ARG:2=0)
+@SHOW_SALES_LIST(ARG:0, ARG:1, ARGS = "")
 FOR COUNT, ARG:0, ARG:1
     SIF ITEMNAME:COUNT == ""
         CONTINUE
@@ -66,9 +65,23 @@ NEXT
 @ITEM_SHOP
 #DIM INDEX_START = 0
 #DIM INDEX_END = 50
-CALL SET_ITEM_SALES(INDEX_START, INDEX_END)
+#DIM STR_START = 200
+WHILE RESULT != 0
+    CALL SET_ITEM_SALES(INDEX_START, INDEX_END)
 
-CALL SHOW_SALES_LIST(INDEX_START, INDEX_END)
+    CALL SHOW_SALES_LIST(INDEX_START, INDEX_END)
+    PRINTFORML [0] 돌아간다
+    PRINTL
+    DRAWLINE
+    INPUT
+    IF RESULT == 0
+        RETURN 1
+    ELSE ITEMSALES:RESULT > 0
+        CALL BUY_ITEM(RESULT, INDEX_START, STR_START)
+        SIF RESULT
+            CALL USE_ITEM(RESULT)
+    ENDIF
+WEND
 
 @REAL_ESTATE
 #DIM INDEX_START = 200
@@ -76,12 +89,110 @@ CALL SHOW_SALES_LIST(INDEX_START, INDEX_END)
 
 ;추후 하루 지날때마다로 이관
 ITEMSALES:203 = 1
-
-CALL SHOW_SALES_LIST(INDEX_START, INDEX_END)
-
+WHILE RESULT != 0
+    CALL SHOW_SALES_LIST(INDEX_START, INDEX_END)
+    PRINTFORML [0] 돌아간다
+    INPUT
+    IF RESULT == 0
+        RETURN 1
+    ELSE ITEMSALES:RESULT > 0
+        CALL BUY_ITEM(RESULT, INDEX_START)
+    ENDIF
+WEND
 @SPECIAL_TALENT_SHOP
 #DIM INDEX_START = 51
 #DIM INDEX_END = 99
 CALL SET_EX_ITEM_SALES(INDEX_START, INDEX_END)
 
 CALL SHOW_SALES_LIST(INDEX_START, INDEX_END)
+INPUT
+
+
+@BUY_ITEM(ARG, ARG:1=0, ARG:2=0)
+
+SIF ARG:1
+    ARG -= ARG:1
+MONEYSTR ITEMPRICE:ARG
+PRINTFORML 품목명: %ITEMNAME:ARG% 가격: %RESULTS% 재고: {ITEMSALES:ARG} 개
+PRINTL
+SIF ARG:2 && STR(ARG + ARG:2) != ""
+    PRINTSL STR(ARG + ARG:2)
+PRINTL
+DRAWLINE
+PRINTFORML %아이템을% 구매하시겠습니까?
+CALL ASK_YN
+IF RESULT == 0
+    IF MONEY:0 < ITEMPRICE:ARG
+        PRINTFORMW 돈이 부족합니다.
+        RETURN 0
+    ELSEIF ITEMSALES:ARG <= 0
+        PRINTFORMW %ITEMNAME:ARG%의 재고가 없습니다.
+        RETURN 0
+    ;부동산용 분기
+    ELSEIF (ARG == 201 && FLAG:캐릭터보유고 > 5) || (ARG == 202 && FLAG:캐릭터보유고 > 10)
+        PRINTFORMW 더 작은 집으로 이사할 수는 없습니다.
+        RETURN 0
+    ENDIF
+    MONEY:0 -= ITEMPRICE:ARG
+    ITEMSALES:ARG --
+    ITEM:ARG ++
+    PRINTFORMW %아이템을% 구매하였습니다.
+    RETURN ARG
+ELSE
+    PRINTFORMW %아이템을% 구매하지 않았습니다.
+    RETURN 0
+ENDIF
+
+@USE_ITEM(ARG)
+
+WHILE 1
+    IF GROUPMATCH(ARG, 1,2,3,4)
+        PRINTFORML %아이템을% 누구에게 선물하시겠습니까?
+        CALL CURRENT_BIOLIST
+        INPUT
+        TARGET = RESULT
+        PRINTFORML %아이템을% %CALLNAME:TARGET%에게 선물합니다.
+        CALL ASK_YN("예", "다시 생각좀...")
+    ELSE
+        RESULT = 0
+    ENDIF
+
+    IF RESULT
+        PRINTFORML %아이템을% 사용하지 않았습니다.
+        RETURN 1
+    ENDIF
+WEND
+
+SELECTCASE ARG
+    ;약혼반지
+    CASE 1
+        PRINTFORMW %CALLNAME:TARGET%에게 프로포즈합니다.
+    ;합성 롤리팝
+    CASE 2
+        PRINTFORML %아이템을% %CALLNAME:TARGET%에게 선물합니다.
+    ;초콜릿
+    CASE 3
+        PRINTFORML %아이템을% %CALLNAME:TARGET%에게 선물합니다.
+    ;수제 케이크
+    CASE 4
+        PRINTFORML %아이템을% %CALLNAME:TARGET%에게 선물합니다.
+    ;특수능력
+    CASE 51, 52, 53
+        PRINTFORMW 능력 %아이템을% 얻었습니다.
+    ;주택
+    CASE 201
+        PRINTL 주택으로 이사합니다. 저장소가 5개가 되었습니다.
+        FLAG:캐릭터보유고 = 5
+    ;저택
+    CASE 202
+        PRINTL 저택으로 이사합니다. 저장소가 10개가 되었습니다.
+        FLAG:캐릭터보유고 = 10
+    ;방추가
+    CASE 203
+        PRINTL 방을 추가했습니다. 저장소가 1개 늘어납니다.
+        FLAG:캐릭터보유고 ++
+    CASEELSE
+        PRINTW 목록에 없는 아이템입니다.
+        RETURN 1
+ENDSELECT
+RETURN 0
