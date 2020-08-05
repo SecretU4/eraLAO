@@ -1,0 +1,66 @@
+﻿@CURRENT_BIOLIST
+#DIM CSV_ID
+#DIM COUNT_CHECK,255
+PRINTL
+DRAWLINEFORM =
+PRINTL
+COUNT = 0
+FOR LOCAL, 1, CHARANUM
+    CSV_ID = NO:LOCAL
+    IF ITEM:(CSV_ID + CHARANUM_START_ITEM) > 0
+        PRINTFORM [{COUNT}] 
+        ;노랑, 별
+        IF TALENT:LOCAL:혼인
+            SETCOLOR 255,255,102
+            LOCALS = %NAME:LOCAL%
+            LOCALS += UNICODE(0x2606)
+        ;보라
+        ELSEIF TALENT:LOCAL:입양
+            SETCOLOR 204,153,255
+            LOCALS = %NAME:LOCAL%
+        ;짙은 분홍, 하트
+        ELSEIF TALENT:LOCAL:사랑
+            SETCOLOR 255,102,255
+            LOCALS = %NAME:LOCAL%
+            LOCALS += UNICODE(0x2665)
+        ;옅은 분홍
+        ELSEIF TALENT:LOCAL:연모
+            SETCOLOR 255,204,255
+            LOCALS = %NAME:LOCAL%
+        ELSE
+            LOCALS = %NAME:LOCAL%
+        ENDIF
+        PRINTFORM %LOCALS% 
+        RESETCOLOR
+        PRINTFORM 호감도 : {CFLAG:LOCAL:호감도} 
+        PRINTFORM 스트레스 : {CFLAG:LOCAL:스트레스} 
+        PRINTFORML 공포 : {CFLAG:LOCAL:공포} 
+        ALIGNMENT RIGHT
+        IF CFLAG:LOCAL:출격중
+            ;하늘색
+            SETCOLOR 102,255,255
+            PRINTPLAINFORM [출격중] 
+            RESETCOLOR
+        ENDIF
+            PRINTL
+        ALIGNMENT LEFT
+        COUNT_CHECK:COUNT = LOCAL
+        COUNT ++
+    ENDIF
+NEXT
+PRINTL
+DRAWLINE
+PRINTL
+PRINTFORML [999] 돌아간다
+WHILE 1
+    PRINTL
+    DRAWLINEFORM =
+    INPUT
+    IF RESULT == 999
+        RETURN 0
+    ELSEIF RESULT > COUNT
+        PRINTW 일치하는 숫자가 없습니다.
+    ELSE
+        RETURN COUNT_CHECK:RESULT
+    ENDIF
+WEND
