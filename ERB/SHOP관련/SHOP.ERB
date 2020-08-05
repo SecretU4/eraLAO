@@ -68,16 +68,20 @@ SELECTCASE RESULT
         ENDIF
     ;상태보기
     CASE 101
+        PRINTW 미실장입니다.
     ;휴식
     CASE 102
+        PRINTW 미실장입니다.
     ;출격
     CASE 103
         SIF FLAG:속박상태 || TIME == 1
             RETURN 0
+        PRINTW 미실장입니다.
     ;대상변경
     CASE 104
         SIF FLAG:속박상태
             RETURN 0
+        PRINTW 미실장입니다.
     ;상점
     CASE 105
         SIF FLAG:속박상태
@@ -86,10 +90,12 @@ SELECTCASE RESULT
         RETURN 1
     ;요리
     CASE 106
+        PRINTW 미실장입니다.
     ;헤어진다
     CASE 107
         SIF !FLAG:속박상태 && TIME == 0
             RETURN 0
+        PRINTW 미실장입니다.
     ;사령관 이름 변경
     CASE 108
         SIF FLAG:속박상태
