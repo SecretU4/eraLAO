@@ -1,6 +1,28 @@
 ﻿;===========================================================
 ;파일명: STOCK.ERB
 ;주식 관련 정보 처리
+[SKIPSTART]
+주요 변수 설명
+지역변수
+LOCAL: 아무 때나 잠시 필요할 때 쓰는 변수.
+RESULT: 함수 호출 후나 INPUT 입력 후 그 결과값이 저장되는 변수. 함수 A 호출 후 함수 B 호출시 B의 값이 덮어쓰기되니 유의
+STOCK_ID: ITEM.CSV상 정의된 번호 기반 변수. SYSTEM 내장 변수를 불러올 때 쓰임
+PRICE_CODE: DIM.ERH 기반 변수에서 특정 종목 정보를 불러오기 위한 변수. STOCK_PRICE, STOCK_BOUGHT_PRICE 등 호출시 사용
+
+GLOBAL(전역) 변수
+DIM.ERH
+ - MINIMUM_STOCKNO: ITEM.CSV에서 주식 목록이 시작되는 인덱스값. 현재 100
+ - STOCK_IN_MARKET: 현재 주식 종목 수
+ - MAXIMUM_STOCKNO: UPDATE_STOCK 호출시 저장되는 변수. MINIMUM_STOCKINFO + STOCK_IN_MARKET
+ - STOCK_PRICE: 각 주식의 현재가를 저장하는 배열 변수. 배열 항수는 STOCK_IN_MARKET 에서 관할
+ - STOCK_BOUGHT_PRICE: 각 주식의 평단을 저장하는 배열 변수. 배열 항수는 STOCK_IN_MARKET 에서 관할
+ - STOCK_COLOR: 주식의 등락 여부 판별. -1 하락 0 보합 1 상승
+SYSTEM 내장
+ - ITEM: ITEM.CSV에서 선언된 변수. `번호, ITEMNAME, ITEMPRICE` 형태이며 ITEM:번호 로 호출.
+ - ITEMPRICE: ITEM.CSV에 선언된 해당 번호 아이템의 가격
+ - ITEMNAME: ITEM.CSV에 선언된 해당 번호 아이템의 이름
+ - ITEMSALES: 현재 구매 가능한 재고 수
+[SKIPEND]
 ;===========================================================
 ;주식시장 메인
 ;-----------------------------------------------------------
@@ -27,12 +49,19 @@ SELECTCASE STOCK_ID
     CASEELSE
         PRICE_CODE = STOCK_ID - MINIMUM_STOCKNO
         PRINTFORMLC TICKER: %ITEMNAME:STOCK_ID% 
+        MONEYSTR STOCK_PRICE:PRICE_CODE
+        PRINTFORMLC 현재가:  %RESULTS%
+        PRINTFORMLC 구매 가능 주: {ITEMSALES:STOCK_ID}주
+        PRINTL
+        PRINTFORMLC 보유: {ITEM:STOCK_ID}주
         IF STOCK_BOUGHT_PRICE:PRICE_CODE > 0
             MONEYSTR STOCK_BOUGHT_PRICE:PRICE_CODE
             PRINTFORMLC 평균단가: %RESULTS% 
         ENDIF
-        PRINTFORMLC 소유 수: {ITEM:STOCK_ID}
-        CALL STOCK_TRADE(STOCK_ID)
+        PRINTL
+        DRAWLINE
+        PRINTL
+        CALL STOCK_TRADE(PRICE_CODE,STOCK_ID)
         GOTO LOOP_STOCK
 ENDSELECT
 
@@ -42,12 +71,27 @@ ENDSELECT
 ;-----------------------------------------------------------
 @SET_STOCKPRICE(ARG, ARG:1)
 #FUNCTION
-LOCAL = STOCK_PRICE:ARG
-;주식 가격 첫설정시
-SIF STOCK_PRICE:ARG == 0
-    LOCAL += ITEMPRICE:(ARG:1)
+#DIM PREV_PRICE
 
-LOCAL += (RAND(100) * LOCAL - (LOCAL / 51) )/50
+PREV_PRICE = STOCK_PRICE:ARG
+;주식 가격 첫설정시
+IF STOCK_PRICE:ARG == 0
+    PREV_PRICE = ITEMPRICE:(ARG:1)
+    ITEMSALES:(ARG:1) = 50
+ENDIF
+
+LOCAL = RAND(99) * LOCAL / 500 - (5 * LOCAL / 51 ) + PREV_PRICE
+LOCAL = MAX(LOCAL, ITEMPRICE:(ARG:1))
+
+;등락처리
+IF PREV_PRICE > LOCAL
+    STOCK_COLOR:ARG = -1
+ELSEIF PREV_PRICE < LOCAL
+    STOCK_COLOR:ARG = 1
+ELSE
+    STOCK_COLOR:ARG = 0
+ENDIF
+
 RETURNF LOCAL
 
 ;-----------------------------------------------------------
@@ -58,14 +102,16 @@ RETURNF LOCAL
 @UPDATE_STOCK
 #DIM STOCK_ID
 #DIM PRICE_CODE
-#DIM PRICE
 
 MAXIMUM_STOCKNO = MINIMUM_STOCKNO + STOCK_IN_MARKET
 
 FOR STOCK_ID, MINIMUM_STOCKNO, MAXIMUM_STOCKNO
     PRICE_CODE = (STOCK_ID - MINIMUM_STOCKNO)
-    PRICE = SET_STOCKPRICE(PRICE_CODE, STOCK_ID) 
-    STOCK_PRICE:PRICE_CODE = MAX(PRICE, ITEMPRICE:STOCK_ID)
+    STOCK_PRICE:PRICE_CODE = SET_STOCKPRICE(PRICE_CODE, STOCK_ID) 
+    ;거래가능량 추가 처리
+    ITEMSALES:STOCK_ID += RAND:99 - RAND:99
+    SIF ITEMSALES:STOCK_ID < 0
+        ITEMSALES:STOCK_ID = 0
 NEXT
 
 ;-----------------------------------------------------------
@@ -83,9 +129,29 @@ FOR STOCK_ID, MINIMUM_STOCKNO, MAXIMUM_STOCKNO
     PRINTL
     PRINTFORM [{STOCK_ID}] 
     PRINTFORMC %STR:STOCK_ID, 25, LEFT%
+    SELECTCASE STOCK_COLOR:PRICE_CODE
+        ;하락
+        CASE -1
+            SETCOLOR 0, 0, 255
+        ;보합 무색
+        CASE 0
+        ;상승
+        CASE 1
+            SETCOLOR 255, 0, 0
+    ENDSELECT
     PRINTFORMC 현재가: %RESULTS, 10%
-    SIF ITEM:STOCK_ID > 0
+    RESETCOLOR
+    IF ITEM:STOCK_ID > 0
+        SELECTCASE (STOCK_PRICE:PRICE_CODE - STOCK_BOUGHT_PRICE:PRICE_CODE)
+            CASE IS < 0
+                SETCOLOR 255, 0, 0
+            CASE IS > 0
+                SETCOLOR 0, 0, 255
+            CASEELSE
+        ENDSELECT
         PRINTFORMC 잔고: {ITEM:STOCK_ID, 5} 주
+        RESETCOLOR
+    ENDIF
 NEXT
 PRINTL
 DRAWLINE
@@ -94,13 +160,85 @@ DRAWLINEFORM =
 
 ;-----------------------------------------------------------
 ;주식 잔고 표시
+;현재 미사용
 ;-----------------------------------------------------------
 @SHOW_STOCKSTORAGE
 PRINTW 미실장입니다.
 
 ;-----------------------------------------------------------
 ;주식 거래 함수
-;ARG = STOCK_ID
+;ARG = PRICE_CODE ARG:1 = STOCK_ID
 ;-----------------------------------------------------------
-@STOCK_TRADE(ARG)
-PRINTW 미실장입니다.
+@STOCK_TRADE(ARG, ARG:1)
+#DIMS 주문
+#DIM 주문량
+#DIM 범위
+
+RESULT = 0
+
+WHILE !GROUPMATCH(RESULT, 1,2)
+    PRINTBUTTON @"[매수한다]", 1
+    PRINTBUTTON @"[매도한다]", 2
+    PRINTBUTTON @"[돌아간다]", 0
+    INPUT
+    IF RESULT == 0
+        RETURN 0
+    ELSE
+        PRINTL 제시된 버튼을 눌러 주세요.
+    ENDIF
+WEND
+
+IF RESULT == 1
+    주문 = 매수
+    범위 = MIN((MONEY:0 / STOCK_PRICE:ARG), ITEMSALES:(ARG:1))
+ELSEIF RESULT == 2
+    주문 = 매도
+    범위 = ITEM:(ARG:1)
+ENDIF
+
+PRINTFORML %조사처리(STR:(ARG:1),"를")% %주문%합니다.
+PRINTFORML 원하시는 거래 수량을 입력해주세요. 최대 {범위}주
+WHILE 1
+    INPUT
+    주문량 = RESULT
+    IF 주문량 > ITEMSALES:(ARG:1)
+        PRINTW 현재 호가량보다 더 많이 주문하실 수는 없습니다.
+    ELSEIF 주문 == "매도" && 주문량 > ITEM:(ARG:1)
+        PRINTW 현재 보유 주식보다 많이 매도하실 수는 없습니다.
+    ELSEIF 주문 == "매수" && MONEY:0 < (STOCK_PRICE:ARG * 주문량)
+        PRINTW 보유금이 부족합니다.
+    ELSEIF 주문량 == 0
+        RETURN 0
+    ELSE
+        PRINTFORML %조사처리(STR:(ARG:1),"를")% {주문량}주 %주문%하시겠습니까?
+        CALL ASK_YN
+        SIF RESULT == 1
+            RETURN 0
+        BREAK
+    ENDIF
+WEND
+
+;실제 주문의 처리
+SELECTCASE 주문
+    CASE "매도"
+        MONEY:0 += STOCK_PRICE:ARG * 주문량
+        ITEM:(ARG:1) -= 주문량
+        ITEMSALES:(ARG:1) += 주문량
+        SIF ITEM:(ARG:1) == 0
+            STOCK_BOUGHT_PRICE:ARG = 0
+    CASE "매수"
+        ;평균단가 재처리
+        IF STOCK_BOUGHT_PRICE:ARG
+            LOCAL = STOCK_BOUGHT_PRICE:ARG * ITEM:(ARG:1)
+        ELSE
+            LOCAL = 0
+        ENDIF
+        LOCAL += STOCK_PRICE:ARG * 주문량
+
+        MONEY:0 -= STOCK_PRICE:ARG * 주문량
+        ITEMSALES:(ARG:1) -= 주문량
+        ITEM:(ARG:1) += 주문량
+        STOCK_BOUGHT_PRICE:ARG = LOCAL / ITEM:(ARG:1)
+ENDSELECT
+PRINTW 거래를 완료했습니다.
+RETURN 1
