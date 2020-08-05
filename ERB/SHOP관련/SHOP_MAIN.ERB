@@ -43,9 +43,9 @@ FOR COUNT, ARG:0, ARG:1
     MONEYSTR ITEMPRICE:COUNT
     IF ITEMSALES:COUNT < 1
         SETCOLOR 125,125,125
-        PRINTPLAINFORM [{COUNT-(ARG:0)}]
+        PRINTPLAINFORM [{COUNT-(ARG:0), 3}]
     ELSE
-        PRINTFORM [{COUNT-(ARG:0)}]
+        PRINTFORM [{COUNT-(ARG:0), 3}]
     ENDIF
     PRINTFORMLC %ITEMNAME:COUNT, 8% %RESULTS, 7% 
     RESETCOLOR
@@ -208,8 +208,9 @@ WHILE 1
     IF GROUPMATCH(ARG, 1,2,3,4)
         PRINTFORML %아이템을% 누구에게 선물하시겠습니까?
         CALL CURRENT_BIOLIST
-        INPUT
         TARGET = RESULT
+        SIF RESULT == 999
+            RETURN -1
         PRINTFORML %아이템을% %CALLNAME:TARGET%에게 선물합니다.
         CALL ASK_YN("예", "다시 생각좀...")
     ELSE
@@ -228,14 +229,37 @@ WEND
 SELECTCASE ARG
     ;약혼반지
     CASE 1
-        ;약혼반지 조건 처리해야 하는 사항:
-        ;기본조건: 사랑/공포 30 미만/스트레스 200미만 + 혼인/입양 아님
-        ;   + 리제는 연모 이상인 사람 5명 미만시에만 가능
-        ;   + 에밀리는 CFLAG:etc1 == 1일때만 가능
         ;특수조건: 정신붕괴 + 혼인 아님
+        IF TALENT:TARGET:정신쇠약 > 1 && !TALENT:TARGET:혼인
+        ;기본조건: 사랑/공포 30 미만/스트레스 200미만 + 혼인/입양 아님
+        ELSEIF !TALENT:TARGET:혼인 && !TALENT:TARGET:입양
+            IF TALENT:TARGET:사랑 && CFLAG:TARGET:공포 < 30 && CFLAG:TARGET:스트레스 < 200
+                SELECTCASE GETCHARA(TARGET)
+                    ;리제는 연모 이상인 사람 5명 미만시에만 가능
+                    CASE 7
+                        IF FLAG:연모인수 >= 5
+                            PRINTFORMW %타겟은% 반지를 받아주지 않았습니다...
+                            RETURN -1
+                        ENDIF
+                    ;에밀리는 CFLAG:etc1 == 1일때만 가능
+                    CASE 68
+                        IF CFLAG:TARGET:etc1 != 1
+                            PRINTFORMW %타겟은% 반지를 받아주지 않았습니다...
+                            RETURN -1
+                        ENDIF
+                ENDSELECT
+            ELSE
+                PRINTFORMW %타겟은% 반지를 받아주지 않았습니다...
+                RETURN -1
+            ENDIF
+        ELSE
+            PRINTFORMW %타겟은% 반지를 받아주지 않았습니다...
+            RETURN -1
+        ENDIF
+                
         PRINTFORMW %CALLNAME:TARGET%에게 반지를 건냈다.
-        CALL ENDING(ARG)
-        TEM:ARG --
+        CALL ENDING(TARGET)
+        ITEM:ARG --
     ;합성 롤리팝, 초콜릿, 수제 케이크
     CASE 2, 3, 4
         PRINTFORML %아이템을% %CALLNAME:TARGET%에게 선물합니다.
