@@ -207,7 +207,7 @@ ENDIF
 WHILE 1
     IF GROUPMATCH(ARG, 1,2,3,4)
         PRINTFORML %아이템을% 누구에게 선물하시겠습니까?
-        CALL CURRENT_BIOLIST
+        CALL CURRENT_BIOLIST("선물")
         TARGET = RESULT
         SIF RESULT == 999
             RETURN -1
@@ -234,7 +234,7 @@ SELECTCASE ARG
         ;기본조건: 사랑/공포 30 미만/스트레스 200미만 + 혼인/입양 아님
         ELSEIF !TALENT:TARGET:혼인 && !TALENT:TARGET:입양
             IF TALENT:TARGET:사랑 && CFLAG:TARGET:공포 < 30 && CFLAG:TARGET:스트레스 < 200
-                SELECTCASE GETCHARA(TARGET)
+                SELECTCASE NO:TARGET
                     ;리제는 연모 이상인 사람 5명 미만시에만 가능
                     CASE 7
                         IF FLAG:연모인수 >= 5
@@ -258,7 +258,7 @@ SELECTCASE ARG
         ENDIF
                 
         PRINTFORMW %CALLNAME:TARGET%에게 반지를 건냈다.
-        CALL ENDING(TARGET)
+        CALL ENDING_MARRY_FLAG(TARGET)
         ITEM:ARG --
     ;합성 롤리팝, 초콜릿, 수제 케이크
     CASE 2, 3, 4
@@ -299,7 +299,7 @@ SELECTCASE ARG
             ;원판 확률은 약 5%
             IF CFLAG:TARGET:공포 <= 0 && RAND:18
                 PRINTFORML %CALLNAME:TARGET%의 상처받은 마음 속 상처를 씻어냈습니다.
-                SIF GETCHARA(TARGET) == 51 && CFLAG:TARGET:etc4 < 5
+                SIF NO:TARGET == 51 && CFLAG:TARGET:etc4 < 5
                     CFLAG:TARGET:etc4 ++
             ELSE
                 PRINTFORML %CALLNAME:TARGET%의 상처받은 마음은 치유되지 않았습니다.

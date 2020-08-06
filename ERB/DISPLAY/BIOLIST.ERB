@@ -1,14 +1,35 @@
-﻿@CURRENT_BIOLIST
+﻿;===========================================================
+;파일명: BIOLIST.ERB
+;바이오로이드 리스트 표시용
+;===========================================================
+;함수명: CURRENT_BIOLIST
+;현재 특정 행동이 가능한 바이오로이드 표시
+;ARGS = 호출한 조건
+;===========================================================
+@CURRENT_BIOLIST(ARGS="")
 #DIM CSV_ID
 #DIM COUNT_CHECK,255
 PRINTL
 DRAWLINEFORM =
+
+;목록의 상단에 표시되는 제목
+ALIGNMENT CENTER
+SELECTCASE ARGS
+    CASE "대상변경"
+        PRINTL 대상으로 할 바이오로이드를 선택하세요.
+    CASE "이별"
+        PRINTL 목록에서 선택해주세요.
+    CASEELSE
+ENDSELECT
+ALIGNMENT LEFT
+
 PRINTL
+DRAWLINE
 COUNT = 0
 FOR LOCAL, 1, CHARANUM
     CSV_ID = NO:LOCAL
     IF ITEM:(CSV_ID + CHARANUM_START_ITEM) > 0
-        PRINTFORM [{COUNT}] 
+        PRINTFORM [{COUNT+1}] 
         ;노랑, 별
         IF TALENT:LOCAL:혼인
             SETCOLOR 255,255,102
@@ -42,6 +63,7 @@ FOR LOCAL, 1, CHARANUM
             PRINTPLAINFORM [출격중] 
             RESETCOLOR
         ENDIF
+        ;실종일 때 처리 필요
             PRINTL
         ALIGNMENT LEFT
         COUNT_CHECK:COUNT = LOCAL
@@ -51,16 +73,22 @@ NEXT
 PRINTL
 DRAWLINE
 PRINTL
-PRINTFORML [999] 돌아간다
+PRINTFORM [999] 
+SELECTCASE ARGS
+    CASE "대상변경"
+        PRINTFORML 아무도 선택하지 않는다.
+    CASEELSE
+        PRINTFORML 돌아가기
+ENDSELECT
 WHILE 1
     PRINTL
     DRAWLINEFORM =
     INPUT
     IF RESULT == 999
         RETURN 0
-    ELSEIF RESULT > COUNT
-        PRINTW 일치하는 숫자가 없습니다.
+    ELSEIF (RESULT-1) > COUNT
+        PRINTW 제시된 숫자에서 선택해주세요.
     ELSE
-        RETURN COUNT_CHECK:RESULT
+        RETURN COUNT_CHECK:(RESULT-1)
     ENDIF
 WEND

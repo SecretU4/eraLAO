@@ -83,11 +83,7 @@ SELECTCASE RESULT
             RETURN -1
         PRINTL
         WHILE 1
-            DRAWLINEFORM =
-            ALIGNMENT CENTER
-            PRINTL 대상으로 할 바이오로이드를 선택하세요.
-            ALIGNMENT LEFT
-            CALL CURRENT_BIOLIST
+            CALL CURRENT_BIOLIST("대상변경")
             TARGET = RESULT
             IF CFLAG:RESULT:출격중
                 PRINTFORMW %타겟은% 현재 출격중입니다.
@@ -107,9 +103,10 @@ SELECTCASE RESULT
         PRINTW 미실장입니다.
     ;헤어진다
     CASE 107
-        SIF !FLAG:속박상태 && TIME == 0
+        SIF FLAG:속박상태 || TIME == 1
             RETURN -1
-        PRINTW 미실장입니다.
+        CALL FAREWELL
+        RETURN 1
     ;사령관 이름 변경
     CASE 108
         SIF FLAG:속박상태
