@@ -18,7 +18,7 @@ WHILE 1
     TARGET = RESULT
     CSV_ID = NO:RESULT
 
-    IF CSV_ID == 106 && CLFAG:TARGET:etc1 > 0 && CFLAG:TARGET:etc:1 < 4
+    IF CSV_ID == 106 && CFLAG:TARGET:etc1 > 0 && CFLAG:TARGET:etc:1 < 4
         PRINTFORML %타겟은% 이별 불가능한 상태입니다.
     ELSEIF CSV_ID == 108 && CFLAG:106:etc1 > 0 && CFLAG:106:etc1 < 4
         PRINTFORML %타겟은% 이별 불가능한 상태입니다.
