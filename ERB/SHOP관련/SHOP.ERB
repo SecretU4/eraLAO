@@ -82,15 +82,8 @@ SELECTCASE RESULT
         SIF FLAG:속박상태
             RETURN -1
         PRINTL
-        WHILE 1
-            CALL CURRENT_BIOLIST("대상변경")
-            TARGET = RESULT
-            IF CFLAG:RESULT:출격중
-                PRINTFORMW %타겟은% 현재 출격중입니다.
-            ELSE
-                BREAK
-            ENDIF
-        WEND
+        CALL CURRENT_BIOLIST("대상변경")
+        TARGET = RESULT
         RETURN 1
     ;상점
     CASE 105

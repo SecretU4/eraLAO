@@ -84,11 +84,17 @@ WHILE 1
     PRINTL
     DRAWLINEFORM =
     INPUT
+
     IF RESULT == 999
-        RETURN 0
+        RETURN -1
     ELSEIF (RESULT-1) > COUNT
         PRINTW 제시된 숫자에서 선택해주세요.
     ELSE
-        RETURN COUNT_CHECK:(RESULT-1)
+        LOCAL = COUNT_CHECK:(RESULT-1)
+        IF CFLAG:LOCAL:출격중
+            PRINTFORMW %조사처리(CALLNAME:LOCAL,"는")% 현재 출격중입니다.
+        ELSE
+            RETURN LOCAL
+        ENDIF
     ENDIF
 WEND
