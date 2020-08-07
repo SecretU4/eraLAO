@@ -59,14 +59,8 @@ FOR LOCAL, 1, CHARANUM
         PRINTFORM 스트레스 : {CFLAG:LOCAL:스트레스} 
         PRINTFORML 공포 : {CFLAG:LOCAL:공포} 
         ALIGNMENT RIGHT
-        IF CFLAG:LOCAL:출격중
-            ;하늘색
-            SETCOLOR 102,255,255
-            PRINTPLAINFORM [출격중] 
-            RESETCOLOR
-        ENDIF
-        ;실종일 때 처리 필요
-            PRINTL
+        CALL SHOW_SPECIAL_STATUS(LOCAL)
+        PRINTL
         ALIGNMENT LEFT
         COUNT_CHECK:COUNT = LOCAL
         COUNT ++
@@ -114,7 +108,10 @@ WEND
 ;===========================================================
 @BIO_INFO(ARG)
 
-PRINTFORML No.{NO:ARG} %NAME:ARG%
+PRINTFORM No.{NO:ARG} %NAME:ARG% 
+CALL SHOW_SPECIAL_STATUS(ARG)
+PRINTL
+
 IF ARG != 0
     PRINTFORMLC 소속: %STR:((TALENT:ARG:13) + 300)%
     PRINTFORM 등급: 
@@ -201,6 +198,9 @@ FOR LOCAL, 21, 99
                     LOCALS += "[정신붕괴]"
                 ENDIF
         ENDSELECT
+    ;실종 등 SPECIAL_STATUS에서 표시되는 것
+    ELSEIF GROUPMATCH(LOCAL, 79)
+        CONTINUE
     ELSE
         LOCALS += @"[%TALENTNAME:LOCAL%]"
     ENDIF
@@ -263,3 +263,24 @@ WHILE 대상 != -1
     ENDIF
 WEND
 RETURN 1
+
+;===========================================================
+;함수명: SEE_BIOSTATUS
+;출격중, 실종 등 캐릭터 특수상태 표출
+;ARG = 선택한 캐릭터 인게임 ID
+;===========================================================
+@SHOW_SPECIAL_STATUS(ARG)
+;출격중일때
+IF CFLAG:ARG:출격중
+    ;하늘색
+    SETCOLOR 102,255,255
+    PRINTPLAIN [출격중] 
+    RESETCOLOR
+;실종상태일 때
+ELSEIF TALENT:ARG:실종
+    ;회색
+    SETCOLOR 125,125,125
+    PRINTPLAIN [실종]
+    RESETCOLOR
+ENDIF
+        
