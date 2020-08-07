@@ -19,7 +19,9 @@ SELECTCASE ARGS
         PRINTL 대상으로 할 바이오로이드를 선택하세요.
     CASE "이별"
         PRINTL 목록에서 선택해주세요.
+    CASE "", "상태보기"
     CASEELSE
+        PRINTL 상정하지 않은 경우의 수
 ENDSELECT
 ALIGNMENT LEFT
 
@@ -73,28 +75,191 @@ NEXT
 PRINTL
 DRAWLINE
 PRINTL
-PRINTFORM [999] 
+SIF ARGS != "상태보기"
+    PRINT [0] 
 SELECTCASE ARGS
     CASE "대상변경"
-        PRINTFORML 아무도 선택하지 않는다.
+        PRINTL 아무도 선택하지 않는다.
+    CASE "상태보기"
+        PRINTL [999] 당신
+        PRINTL [0] 돌아가기
     CASEELSE
-        PRINTFORML 돌아가기
+        PRINTL 돌아가기
 ENDSELECT
 WHILE 1
     PRINTL
     DRAWLINEFORM =
     INPUT
 
-    IF RESULT == 999
+    IF RESULT == 0
         RETURN -1
+    ELSEIF ARGS == "상태보기" && RESULT == 999
+        RETURN 0
     ELSEIF (RESULT-1) > COUNT
         PRINTW 제시된 숫자에서 선택해주세요.
     ELSE
         LOCAL = COUNT_CHECK:(RESULT-1)
-        IF CFLAG:LOCAL:출격중
+        IF ARGS != "상태보기" && CFLAG:LOCAL:출격중
             PRINTFORMW %조사처리(CALLNAME:LOCAL,"는")% 현재 출격중입니다.
         ELSE
             RETURN LOCAL
         ENDIF
     ENDIF
 WEND
+
+;===========================================================
+;함수명: BIO_INFO
+;캐릭터 정보 표출
+;ARG = 인게임 캐릭터번호
+;===========================================================
+@BIO_INFO(ARG)
+
+PRINTFORML No.{NO:ARG} %NAME:ARG%
+IF ARG != 0
+    PRINTFORMLC 소속: %STR:((TALENT:ARG:13) + 300)%
+    PRINTFORM 등급: 
+    SELECTCASE TALENT:ARG:등급
+        CASE 1
+            PRINTLC B
+        CASE 2
+            PRINTLC A
+        CASE 3
+            PRINTLC S
+        CASE 4
+            PRINTLC SS
+        CASEELSE
+            PRINTLC ???
+    ENDSELECT
+    PRINTFORM 분류: 
+    SELECTCASE TALENT:ARG:분류
+        CASE 1
+            PRINTLC 경장
+        CASE 2
+            PRINTLC 기동
+        CASE 3
+            PRINTLC 중장
+        CASEELSE
+            PRINTLC ???
+    ENDSELECT
+    PRINTFORM 체형: 
+    SELECTCASE TALENT:ARG:체형
+        CASE 0
+            PRINTPLAIN [작은체구]
+        CASE 1
+            PRINTPLAIN [보통체구]
+        CASE 2
+            PRINTPLAIN [큰체구]
+    ENDSELECT
+    PRINTLC
+ELSE
+    PRINTFORM 체형: 
+    SELECTCASE TALENT:ARG:나이
+        CASE 0
+            PRINTPLAIN [소년] 
+        CASE 1
+            PRINTPLAIN [청년] 
+        CASE 2
+            PRINTPLAIN [중년] 
+    ENDSELECT
+ENDIF
+PRINTL
+SIF CSTR:ARG:캐릭터소개 != ""
+    PRINTSL %CSTR:ARG:캐릭터소개%
+PRINTL
+DRAWLINE
+PRINTL
+LOCALS = 능력: 
+FOR LOCAL, 21, 99
+    IF TALENTNAME:LOCAL == ""
+        CONTINUE
+    ELSEIF !TALENT:ARG:LOCAL
+        CONTINUE
+    ELSEIF GROUPMATCH(LOCAL, 30,62,70,72)
+        SELECTCASE LOCAL
+            CASE 30
+                IF TALENT:ARG:LOCAL == -1
+                    LOCALS += "[동생]"
+                ELSEIF TALENT:ARG:LOCAL == 1
+                    LOCALS += "[누님]"
+                ENDIF
+            CASE 62
+                IF TALENT:ARG:LOCAL == -1
+                    LOCALS += "[비관적]"
+                ELSEIF TALENT:ARG:LOCAL == 1
+                    LOCALS += "[긍정적]"
+                ENDIF
+            CASE 70
+                IF TALENT:ARG:LOCAL == -1
+                    LOCALS += "[무식]"
+                ELSEIF TALENT:ARG:LOCAL == 1
+                    LOCALS += "[지식]"
+                ENDIF
+            CASE 72
+                IF TALENT:ARG:LOCAL == 1
+                    LOCALS += "[정신쇠약]"
+                ELSEIF TALENT:ARG:LOCAL == 2
+                    LOCALS += "[정신붕괴]"
+                ENDIF
+        ENDSELECT
+    ELSE
+        LOCALS += @"[%TALENTNAME:LOCAL%]"
+    ENDIF
+NEXT
+PRINTSL LOCALS
+PRINTL
+DRAWLINE
+PRINTL
+IF ARG != 0
+    PRINTFORM 호감도 : {CFLAG:ARG:호감도} 
+    PRINTFORM 공포 : {CFLAG:ARG:공포} 
+    PRINTFORML 스트레스 : {CFLAG:ARG:스트레스} 
+    PRINTL
+    PRINTFORM 출격한 횟수 : {EXP:ARG:출격경험} 
+    PRINTFORM 전투 레벨 : {ABL:ARG:전투lv} 
+    PRINTFORML 출격으로 번 돈 : {CFLAG:ARG:출격수입} 
+ELSE
+    PRINTFORM 지휘 레벨 : {ABL:ARG:전투lv} 
+    PRINTFORML 출격시킨 횟수 : {EXP:ARG:출격경험} 
+ENDIF
+PRINTL
+PRINTFORM 요리한 횟수 : {EXP:ARG:요리경험} 
+PRINTFORM 요리 레벨 : {ABL:ARG:조리lv} 
+PRINTFORMLC 요리로 번 돈 : {CFLAG:ARG:요리수입}
+PRINTL
+DRAWLINE
+;개별 캐릭터 특수 수치
+SELECTCASE NO:ARG ;추후 타 캐릭터에서도 사용 가능해지면 상단에 항목 추가바람
+    CASE 0
+        PRINTFORM 요리로 번 총 액수 : {FLAG:총요리수입} 
+        PRINTFORML 출격으로 번 총 액수 : {FLAG:총출격수입}
+        PRINTL
+        PRINTFORM 바이오로이드를 판 횟수 : {FLAG:바이오판매횟수} 
+        PRINTFORML 바이오로이드를 버린 횟수 : {FLAG:바이오폐기횟수}
+        PRINTL
+        PRINTFORML 고백 받은 횟수 : {FLAG:고백받은인수}
+    CASE 91 ;슬레이프니르(땡컨)
+        PRINTFORML 가창경험 : {CFLAG:ARG:etc3}
+        ;PRINTFORML 가창경험 : {EXP:ARG:가창경험}
+    CASE 126 ;아자젤
+        PRINTFORML 설교 횟수 : {CFLAG:ARG:etc1}
+ENDSELECT
+PRINTL
+DRAWLINE
+
+;===========================================================
+;함수명: SEE_BIOSTATUS
+;캐릭터 정보 표출 목록 메인화면
+;대상 = 선택한 캐릭터 인게임 ID
+;===========================================================
+@SEE_BIOSTATUS
+#DIM 대상
+
+WHILE 대상 != -1
+    CALL CURRENT_BIOLIST("상태보기")
+    대상 = RESULT
+    IF 대상 != -1
+        CALL BIO_INFO(대상)
+        PRINTW 엔터 키를 누르면 전으로 돌아갑니다
+    ENDIF
+WEND
+RETURN 1

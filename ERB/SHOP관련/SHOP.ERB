@@ -68,7 +68,8 @@ SELECTCASE RESULT
         ENDIF
     ;상태보기
     CASE 101
-        PRINTW 미실장입니다.
+        CALL SEE_BIOSTATUS
+        RETURN 1
     ;휴식
     CASE 102
         PRINTW 미실장입니다.
@@ -84,6 +85,8 @@ SELECTCASE RESULT
         PRINTL
         CALL CURRENT_BIOLIST("대상변경")
         TARGET = RESULT
+        SIF TARGET == -1
+            TARGET = 0
         RETURN 1
     ;상점
     CASE 105
