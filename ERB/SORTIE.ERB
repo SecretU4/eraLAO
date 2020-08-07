@@ -21,7 +21,53 @@
     EXP:출격경험
     ABL:전투lv
 DIM.ERH
-    FULL_SORITE = 5
-
+    FULL_SORTIE = 5
 [SKIPEND]
+;===========================================================
+;함수명: SORTIE
+;출격 기능 메인 함수
+;출격대상 = 인게임 캐릭터 ID
+;===========================================================
 @SORTIE
+#DIM 출격대상
+
+IF FLAG:현출격인수 >= FULL_SORTIE
+    PRINTL 더이상 출격시킬 수 없습니다.
+    RETURN -1
+ENDIF
+WHILE 1
+    CALL CURRENT_BIOLIST("출격")
+    출격대상 = RESULT
+    IF 출격대상 == -1
+        RETURN -1
+    ;정신붕괴
+    ELSEIF TALENT:출격대상:정신쇠약 == 2
+        IF NO:출격대상 != 89
+            PRINTFORML %조사처리(NAME:출격대상,"은")% 출격 불가능한 상태입니다.
+            CONTINUE
+        ENDIF
+    ELSE
+        SELECTCASE NO:출격대상
+            ;오드리
+            CASE 106
+                IF CFLAG:출격대상:etc1 > 0 && CFLAG:출격대상:etc1 < 4
+                    PRINTFORML %조사처리(NAME:출격대상,"은")% 출격 불가능한 상태입니다.
+                    CONTINUE
+                ENDIF
+            ;더치걸
+            CASE 108
+                IF CFLAG:GETCHARA(106):etc1 > 0 && CFLAG:GETCHARA(106):etc1 < 4
+                    PRINTFORML %조사처리(NAME:출격대상,"은")% 출격 불가능한 상태입니다.
+                    CONTINUE
+                ENDIF
+        ENDSELECT
+    ENDIF
+    PRINTFORML %조사처리(NAME:출격대상,"을")% 출격시키겠습니까?
+    CALL ASK_YN("예", "아뇨")
+    IF RESULT == 0
+        BREAK
+    ENDIF
+WEND
+CFLAG:출격대상:출격중 = 1
+FLAG:현출격인수 ++
+RETURN 0
