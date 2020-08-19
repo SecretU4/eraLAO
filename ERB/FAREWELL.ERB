@@ -127,6 +127,8 @@ ITEM:(1000+ARG) = -1
 FLAG:현캐릭터수 --
 MONEY:0 += ARG:1
 CFLAG:판매여부 = 1
+SIF TALENT:MASTER:사랑꾼
+    TALENT:MASTER:사랑꾼 = 0
 
 MONEYSTR ARG:1
 PRINTFORMW %조사처리(NAME:TARGET,"는")% %RESULTS%에 팔렸습니다.
@@ -137,6 +139,8 @@ RETURN 1
 ITEM:(1000+ARG) = -1
 FLAG:현캐릭터수 --
 CFLAG:폐기여부 = 1
+SIF TALENT:MASTER:사랑꾼
+    TALENT:MASTER:사랑꾼 = 0
 
 PRINTFORMW %조사처리(NAME:TARGET,"를")% 폐기 완료했습니다.
 RETURN 1
