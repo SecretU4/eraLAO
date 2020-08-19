@@ -314,6 +314,13 @@ SELECTCASE ARG
     ;특수능력
     CASE 51, 52, 53
         PRINTFORMW 능력 %아이템을% 얻었습니다.
+        IF ARG == 51
+            TALENT:MASTER:관심법 = 1
+        ELSEIF ARG == 52
+            TALENT:MASTER:지휘능력 = 1
+        ELSEIF ARG == 53
+            TALENT:MASTER:메력 = 1
+        ENDIF
     ;주택
     CASE 201
         PRINTW 주택으로 이사합니다. 저장소가 5개가 되었습니다.
