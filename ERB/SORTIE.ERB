@@ -76,23 +76,33 @@ RETURN 0
 @DAYEND_SORTIE
 #DIM 출격대상
 #DIM 수입
+#DIM 총수입
+총수입 = 0
 
 FOR 출격대상, 1, CHARANUM
     IF CFLAG:출격대상:출격중
         IF (TALENT:출격대상:분류 == 2 && CFLAG:출격대상:출격중 > 2) || CFLAG:출격대상:출격중 > 3 ;기동은 출격일수 1일 감소
             CFLAG:출격대상:출격중 = 0
             EXP:출격대상:출격경험 ++
+            EXP:MASTER:출격경험 ++
             CFLAG:출격대상:스트레스 += 20
+            FLAG:현출격인수 --
 
             수입 = SORTIE_INCOME(출격대상)
             MONEY:0 += 수입
             CFLAG:출격대상:출격수입 += 수입
             FLAG:총출격수입 += 수입
+            총수입 += 수입
         ELSE
             CFLAG:출격대상:출격중 ++
         ENDIF
     ENDIF
 NEXT
+
+SIF FLAG:현출격인수 < 0 ;이상상황 처리용
+    THROW 현출격인수 플래그가 음수입니다.
+
+RETURN 총수입
 
 ; ARG = 인게임 캐릭터 번호
 @SORTIE_INCOME(ARG)
