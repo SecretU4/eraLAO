@@ -75,9 +75,78 @@ RETURN 0
 
 @DAYEND_SORTIE
 #DIM 출격대상
+#DIM 수입
 
 FOR 출격대상, 1, CHARANUM
     IF CFLAG:출격대상:출격중
-        EXP:출격대상:출격경험 ++
+        IF (TALENT:출격대상:분류 == 2 && CFLAG:출격대상:출격중 > 2) || CFLAG:출격대상:출격중 > 3 ;기동은 출격일수 1일 감소
+            CFLAG:출격대상:출격중 = 0
+            EXP:출격대상:출격경험 ++
+            CFLAG:출격대상:스트레스 += 20
+
+            수입 = SORTIE_INCOME(출격대상)
+            MONEY:0 += 수입
+            CFLAG:출격대상:출격수입 += 수입
+            FLAG:총출격수입 += 수입
+        ELSE
+            CFLAG:출격대상:출격중 ++
+        ENDIF
     ENDIF
 NEXT
+
+; ARG = 인게임 캐릭터 번호
+@SORTIE_INCOME(ARG)
+#FUNCTION
+#DIM 수입
+
+수입 = ITEMPRICE:(CHARANUM_START_ITEM + NO:ARG) / 50
+수입 += 수입 * RAND:100 / 100
+SIF TALENT:ARG:정신쇠약 == 2 ;정신붕괴
+    수입 = 0
+SIF TALENT:ARG:군인
+    수입 = 수입 * 6 / 5
+SIF TALENT:ARG:근육
+    수입 = 수입 * 13 / 10
+SIF TALENT:ARG:분류 == 3 ;중장
+    수입 = 수입 * 13 / 10
+SIF TALENT:ARG:짜증
+    수입 = 수입 / 2
+SIF TALENT:ARG:정신쇠약 == 1
+    수입 = 수입 / 2
+
+SELECTCASE ABL:ARG:전투lv
+    CASE 0
+    CASE 1
+        수입 = 수입 * 3 / 2
+    CASE 2
+        수입 = 수입 * 2
+    CASE 3
+        수입 = 수입 * 5 / 2
+    CASE 4
+        수입 = 수입 * 3
+    CASE 5
+        수입 = 수입 * 7 / 2
+    CASEELSE
+        THROW 상정되지 않은 전투lv {ABL:ARG:전투lv}
+ENDSELECT
+
+SELECTCASE ABL:MASTER:전투lv
+    CASE 0
+    CASE 1
+        수입 = 수입 * 3 / 2
+    CASE 2
+        수입 = 수입 * 2
+    CASE 3
+        수입 = 수입 * 5 / 2
+    CASE 4
+        수입 = 수입 * 3
+    CASE 5
+        수입 = 수입 * 7 / 2
+    CASEELSE
+        THROW 상정되지 않은 전투lv {ABL:MASTER:전투lv}
+ENDSELECT
+
+SIF TALENT:MASTER:지휘능력
+    수입 = 수입 * 3 / 2
+
+RETURNF 수입
