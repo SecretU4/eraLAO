@@ -35,21 +35,21 @@ FOR LOCAL, 1, CHARANUM
     IF ITEM:(CSV_ID + CHARANUM_START_ITEM) > 0
         PRINTFORM [{COUNT+1}] 
         ;노랑, 별
-        IF TALENT:LOCAL:혼인
+        IF TALENT:LOCAL:혼인 == 1
             SETCOLOR 255,255,102
             LOCALS = %NAME:LOCAL%
             LOCALS += UNICODE(0x2606)
         ;보라
-        ELSEIF TALENT:LOCAL:입양
+        ELSEIF TALENT:LOCAL:혼인 == 2 ;입양
             SETCOLOR 204,153,255
             LOCALS = %NAME:LOCAL%
         ;짙은 분홍, 하트
-        ELSEIF TALENT:LOCAL:사랑
+        ELSEIF TALENT:LOCAL:사랑 == 2 ;사랑
             SETCOLOR 255,102,255
             LOCALS = %NAME:LOCAL%
             LOCALS += UNICODE(0x2665)
         ;옅은 분홍
-        ELSEIF TALENT:LOCAL:연모
+        ELSEIF TALENT:LOCAL:사랑 == 1 ;연모
             SETCOLOR 255,204,255
             LOCALS = %NAME:LOCAL%
         ELSE

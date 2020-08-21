@@ -232,8 +232,8 @@ SELECTCASE ARG
         ;특수조건: 정신붕괴 + 혼인 아님
         IF TALENT:TARGET:정신쇠약 > 1 && !TALENT:TARGET:혼인
         ;기본조건: 사랑/공포 30 미만/스트레스 200미만 + 혼인/입양 아님
-        ELSEIF !TALENT:TARGET:혼인 && !TALENT:TARGET:입양
-            IF TALENT:TARGET:사랑 && CFLAG:TARGET:공포 < 30 && CFLAG:TARGET:스트레스 < 200
+        ELSEIF !TALENT:TARGET:혼인
+            IF TALENT:TARGET:사랑 == 2 && CFLAG:TARGET:공포 < 30 && CFLAG:TARGET:스트레스 < 200
                 SELECTCASE NO:TARGET
                     ;리제는 연모 이상인 사람 5명 미만시에만 가능
                     CASE 7

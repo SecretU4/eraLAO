@@ -40,7 +40,7 @@ IF TALENT:정신쇠약 == 2
     PRINTFORML %타겟은% 아무 말 없이 반지를 받아들였다.
     CFLAG:엔딩플래그 = 2
 ;사랑
-ELSEIF TALENT:사랑
+ELSEIF TALENT:사랑 == 2
     PRINTFORML %타겟은% 눈물을 글썽이며 손에 반지를 받아들였다.
     ;리제, 50% 확률
     IF REAL_NUM == 7 && RAND:1
@@ -60,8 +60,7 @@ ELSEIF TALENT:사랑
             CFLAG:엔딩플래그 = 4
             TALENT:ARG:체헝 = 1
         ELSE
-            TALENT:혼인 = 0
-            TALENT:입양 = 1
+            TALENT:혼인 = 2
         ENDIF
     ELSE
         CFLAG:엔딩플래그 = 1
@@ -78,23 +77,23 @@ REAL_NUM = NO:ARG
 TARGET = ARG
 SELECTCASE ARGS
     CASE "판매"
-        IF REAL_NUM == 123 && TALENT:ARG:연모
+        IF REAL_NUM == 123 && TALENT:ARG:사랑 == 1
             CFLAG:엔딩플래그 = 7
-        ELSEIF REAL_NUM == 138 && TALENT:ARG:사랑 && TALENT:ARG:혼인 && TALENT:ARG:정신쇠약 != 2
+        ELSEIF REAL_NUM == 138 && TALENT:ARG:사랑 == 2 && TALENT:ARG:혼인 && TALENT:ARG:정신쇠약 != 2
             CFLAG:엔딩플래그 = 24
         ENDIF
     CASE "폐기"
-        IF REAL_NUM == 89 && TALENT:ARG:연모
+        IF REAL_NUM == 89 && TALENT:ARG:사랑 == 1
             CFLAG:엔딩플래그 = 2
         ELSEIF REAL_NUM == 113 && TALENT:ARG:정신쇠약 == 2
             CFLAG:엔딩플래그 = 4
         ELSEIF REAL_NUM == 51
-            IF TALENT:ARG:연모 && TALENT:ARG:정신쇠약 == 1
+            IF TALENT:ARG:사랑 == 1 && TALENT:ARG:정신쇠약 == 1
                 CFLAG:엔딩플래그 = 6
-            ELSEIF TALENT:ARG:사랑 && EXP:ARG:출격경험 > 49
+            ELSEIF TALENT:ARG:사랑 == 2 && EXP:ARG:출격경험 > 49
                 CFLAG:엔딩플래그 = 10
             ENDIF
-        ELSEIF REAL_NUM == 138 && TALENT:ARG:사랑 && TALENT:ARG:혼인 && TALENT:ARG:정신쇠약 != 2
+        ELSEIF REAL_NUM == 138 && TALENT:ARG:사랑 == 2 && TALENT:ARG:혼인 && TALENT:ARG:정신쇠약 != 2
             CFLAG:엔딩플래그 = 24
         ENDIF
     CASEELSE
