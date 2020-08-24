@@ -650,7 +650,6 @@ DATALIST
 DATAFORM 「오늘 저녁엔 뭐 먹고 싶어?
 DATAFORM 당신은 요리하는 사람은 자신이 아니냐고 되묻는다.
 DATAFORM 「마...마음만은 해주고 싶을때도 있다고!」
-DATAFORM 
 ENDLIST
 DATALIST
 DATAFORM 「고마워하라구. 내가 전쟁보다 중요하게 여기는 건 사령관 뿐이니까」
@@ -817,6 +816,10 @@ ENDLIST
 ENDDATA
 CASE "Love"
 PRINTDATAW
+DATALIST
+DATAFORM 당신은 메이의 %TEXTR("가슴 점/가슴")%을 칭찬했다.
+DATAFORM %TEXTR("메이는 부끄러워하며 당신에게 가까이 붙었다./부끄러운지 고개를 숙이고는 눈을 마주치지 않았다.")%
+ENDLIST
 PRINTDATAW
 DATALIST
 DATAFORM 「그...사령관?」
@@ -843,6 +846,10 @@ DATAFORM 「너...너무 빤히 쳐다보지마...부끄러워...」
 DATAFORM 우물쭈물하면서도 당신을 시선에서 놓지 않는 메이였다.
 ENDLIST
 ENDDATA
+DATALIST
+DATAFORM 당신은 메이의 글래머스러운 몸매를 칭찬했다.
+DATAFORM 메이는 부끄러워하며 시선을 피했다.
+ENDLIST
 PRINTDATAW
 DATALIST
 DATAFORM 「근데 사령관, 나 말고 다른 애들한테도 그러는 건 아니지?」
@@ -870,6 +877,10 @@ ENDLIST
 ENDDATA
 CASE "Marryed"
 PRINTDATAW
+DATALIST
+DATAFORM 당신은 메이의 %TEXTR("가슴 점/가슴")%을 칭찬했다.
+DATAFORM %TEXTR("메이는 부끄러워하면서도 웃음을 띄우고는 당신에게 가까이 붙었다./부끄러운지 고개를 숙이고는 눈을 마주치지 않았다.")%
+ENDLIST
 PRINTDATAW
 DATAFORM 「그…저기…사령관? 그거 뿐이야?」
 DATALIST
@@ -883,6 +894,10 @@ DATAFORM 당신은 아무 말도 하지 않았다.
 DATAFORM 「어째 사령관 몸 안에서 핵융합이라도 일어나는거 같은데...?」
 ENDLIST
 ENDDATA
+DATALIST
+DATAFORM 당신은 메이의 글래머스러운 몸매를 칭찬했다.
+DATAFORM 메이는 부끄러워하며 시선을 피했다.
+ENDLIST
 PRINTDATAW
 DATALIST
 DATAFORM 「근데 사령관, 나 말고 다른 애들한테도 그러는 건 아니지?」
@@ -2299,7 +2314,6 @@ ENDSELECT
 CSTR:1 = ""
 
 @M_No51_COM15
-SELECTCASE CSTR:1
 IF FIRSTTIME(SELECTCOM)
 SELECTCASE CSTR:1
 CASE "Low"
@@ -2379,6 +2393,7 @@ PRINTFORMW 「......」
 ENDSELECT
 CSTR:1 = ""
 ELSE
+SELECTCASE CSTR:1
 CASE "Low"
 PRINTFORMW 메이의 입술에 당신의 입술을 맞췄다.
 PRINTFORMW 메이는 당신을 떨쳐냈다.
@@ -3305,7 +3320,6 @@ DATALIST
 DATAFORM 「아파아파아파아파아파아파아파아파아파아파아파-」
 DATAFORM 생기없는 목소리로 중얼거리는 메이의 모습에 당신은 순간 메이의 정신이 돌아온건가 생각이 들었다.
 ENDLIST
-DATAFORM 
 ENDDATA
 CASE "High"
 PRINTDATAW
@@ -3590,11 +3604,8 @@ ENDDATA
 ENDSELECT
 CSTR:1 = ""
 
-@M_No51_COM100
 
-@M_No51_COM101
 
-@M_No51_COM102
 
 @M_No51_EVENT_Morning
 SELECTCASE CSTR:1
