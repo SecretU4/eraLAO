@@ -1,0 +1,39 @@
+﻿;=============================================================
+;SYSTEM_CALL
+;@COMxx 리턴값 0이 아닐때
+;=============================================================
+;20200825 기준 변수 설명
+;TFLAG TRAIN(연애) 종료시 리셋, 연애 도중 증감 기록용
+;SOURCE @COMxx 실행시 작성한 값을 가져옴. @SOURCE_CHECK 종료시 리셋
+;CFLAG 캐릭터별 1차원 숫자형 변수 저장.
+;TIME:2 원본 datetime. 소요시간 처리
+;-------------------------------------------------------------
+@SOURCE_CHECK
+#DIM 호감도값
+#DIM 신뢰도값
+#DIM 스트레스값
+#DIM 공포값
+#DIM 소요시간값
+
+TFLAG:호감도증감 += SOURCE:호감도
+TFLAG:신뢰도증감 += SOURCE:신뢰도
+TFLAG:스트레스증감 += SOURCE:스트레스
+TFLAG:공포증감 += SOURCE:공포
+
+CFLAG:호감도 += SOURCE:호감도
+CFLAG:신뢰도 += SOURCE:신뢰도
+CFLAG:스트레스 += SOURCE:스트레스
+CFLAG:공포 += SOURCE:공포
+
+SOURCE:소요시간 ++
+
+IF SOURCE:소요시간 == 0
+ELSEIF SOURCE:소요시간 > 0
+    TFLAG:소요시간증감 += SOURCE:소요시간
+    TIME:2 += SOURCE:소요시간
+ELSE
+    THROW 당신이 시간을 달리고 있습니다. 타임리프중이 아니라면 개발자에게 문의바랍니다.
+ENDIF
+
+SIF TFLAG:고백함
+    CFLAG:고백함 = TFLAG:고백함
