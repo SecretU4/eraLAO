@@ -2,22 +2,18 @@
 @COM101
 
 IF CFLAG:호감도 > 49
-    TFLAG:호감도 += 10
-    TFLAG:스트레스 -= 5
-    TFLAG:공포 -= 1
+    SOURCE:호감도 += 10
+    SOURCE:스트레스 -= 5
+    SOURCE:공포 -= 1
     EXP:가창경험 ++ ; etc3 ++
 ELSE 
-    TFLAG:소요시간 -= 1
-    TFLAG:스트레스 += 1
+    SOURCE:소요시간 -= 1
+    SOURCE:스트레스 += 1
 ENDIF
 ;슬레이프니르 etc2는 FIRSTTIME()으로 이관됨
 
-CALL COM101_MSG
-
 @COM101_MSG
 PRINTFORML 당신은 %CALLNAME:TARGET%에게 노래를 시켰다.
-
-CALL BIO_COM_MSG
 
 @COM_ABLE101
 SIF NO:TARGET == 91

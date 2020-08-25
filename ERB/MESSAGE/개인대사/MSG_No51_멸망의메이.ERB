@@ -1,0 +1,22 @@
+﻿;대사 존재 유무 판정
+@MSG_CHARA_No51
+RETURN 1
+
+;연애모드시 대사 표출 유무
+@EVENTTRAIN
+;표출 여부 설정
+SIF NO:TARGET != 51
+    RETURN 0
+
+DRAWLINE
+
+;첫데이트 유무 설정
+TRYCALLFORM M_No51_TRAIN_START_{CFLAG:조교여부}
+
+;첫데이트시
+@M_No51_TRAIN_START_0
+
+CFLAG:조교여부 = 1
+
+;일반 데이트 시작시
+@M_No51_TRAIN_START_1

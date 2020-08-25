@@ -2,20 +2,16 @@
 @COM94
 
 IF TALENT:사랑
-    TFLAG:호감도 += 20
-    TFLAG:스트레스 -= 5
-    TFLAG:공포 -= 1
+    SOURCE:호감도 += 20
+    SOURCE:스트레스 -= 5
+    SOURCE:공포 -= 1
 ELSE
-    TFLAG:공포 += 10
-    TFLAG:스트레스 += 20
+    SOURCE:공포 += 10
+    SOURCE:스트레스 += 20
 ENDIF
-
-CALL COM94_MSG
 
 @COM94_MSG
 PRINTFORML 당신은 %CALLNAME:TARGET%에게 발을 마사지 해주겠다고 했다.
-
-CALL BIO_COM_MSG
 
 @COM_ABLE94
 RETURN 0

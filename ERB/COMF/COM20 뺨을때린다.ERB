@@ -2,11 +2,11 @@
 @COM20
 
 SIF TALENT:변태
-    TFLAG:호감도 += 5
+    SOURCE:호감도 += 5
 
-TFLAG:공포 += 20
-TFLAG:스트레스 += 50
-TFLAG:소요시간 += 3
+SOURCE:공포 += 20
+SOURCE:스트레스 += 50
+SOURCE:소요시간 += 3
 
 SELECTCASE NO:TARGET
     CASE 21
@@ -15,12 +15,8 @@ SELECTCASE NO:TARGET
         CFLAG:etc2 ++ ;아자젤 줘팸 횟수 카운트
 ENDSELECT
 
-CALL COM20_MSG
-
 @COM20_MSG
 PRINTFORML 당신은 %CALLNAME:TARGET%의 뺨을 때렸다.
-
-CALL BIO_COM_MSG
 
 @COM_ABLE20
 RETURN 1

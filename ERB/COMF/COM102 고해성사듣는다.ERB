@@ -1,19 +1,15 @@
 ﻿; 고해성사듣는다
 @COM102
 
-TFLAG:호감도 += 1
+SOURCE:호감도 += 1
 
 IF TALENT:사랑 && !TALENT:짜증 && !TALENT:정신쇠약 && CFLAG:공포 < 150
     SIF CFLAG:etc1 < 19 ; 베로니카 고해성사 횟수 카운트
         CFLAG:etc1 += 1
 ENDIF
 
-CALL COM102_MSG
-
 @COM102_MSG
 PRINTFORML 당신은 %CALLNAME:TARGET%에게 과거를 물어봤다.
-
-CALL BIO_COM_MSG
 
 @COM_ABLE102
 SIF NO:TARGET == 138

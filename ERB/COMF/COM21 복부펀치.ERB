@@ -1,9 +1,9 @@
 ﻿; 복부펀치
 @COM21
 
-TFLAG:공포 += 30
-TFLAG:스트레스 += 50
-TFLAG:소요시간 += 3
+SOURCE:공포 += 30
+SOURCE:스트레스 += 50
+SOURCE:소요시간 += 3
 
 SELECTCASE NO:TARGET
     CASE 21
@@ -12,12 +12,8 @@ SELECTCASE NO:TARGET
         CFLAG:etc2 ++ ;아자젤 줘팸 횟수 카운트
 ENDSELECT
 
-CALL COM21_MSG
-
 @COM21_MSG
 PRINTFORML 당신은 %CALLNAME:TARGET%의 배에 주먹을 날렸다.
-
-CALL BIO_COM_MSG
 
 @COM_ABLE21
 RETURN 1

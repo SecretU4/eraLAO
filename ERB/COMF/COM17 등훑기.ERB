@@ -1,20 +1,16 @@
 ﻿; 등훑기
 @COM17
 
-IF TALNET:사랑
-    TFLAG:호감도 += 20
-    TFLAG:스트레스 -= 5
+IF TALENT:사랑
+    SOURCE:호감도 += 20
+    SOURCE:스트레스 -= 5
 ELSE
-    TFLAG:공포 += 10
-    TFLAG:스트레스 += 20
+    SOURCE:공포 += 10
+    SOURCE:스트레스 += 20
 ENDIF
-
-CALL COM17_MSG
 
 @COM17_MSG
 PRINTFORML 당신은 %CALLNAME:TARGET%의 등을 손가락으로 훑었다.
-
-CALL BIO_COM_MSG
 
 @COM_ABLE17
 RETURN 1

@@ -2,19 +2,15 @@
 @COM7
 
 IF CFLAG:호감도 > 999
-    TFLAG:호감도 += 10
-    TFLAG:스트레스 -= 5
+    SOURCE:호감도 += 10
+    SOURCE:스트레스 -= 5
 ELSE
-    TFLAG:호감도 += 3
-    TFLAG:스트레스 += 10
+    SOURCE:호감도 += 3
+    SOURCE:스트레스 += 10
 ENDIF
-
-CALL COM7_MSG
 
 @COM7_MSG
 PRINTFORML 당신은 %CALLNAME:TARGET%에게 당신의 무릎에 누우라고 했다.
-
-CALL BIO_COM_MSG
 
 @COM_ABLE7
 RETURN 1

@@ -2,20 +2,16 @@
 @COM11
 
 IF CFLAG:호감도 > 999
-    TFLAG:호감도 += 10
-    TFLAG:스트레스 -= 5
-    TFLAG:공포 -= 1
+    SOURCE:호감도 += 10
+    SOURCE:스트레스 -= 5
+    SOURCE:공포 -= 1
 ELSE
-    TFLAG:공포 += 5
-    TFLAG:스트레스 += 10
+    SOURCE:공포 += 5
+    SOURCE:스트레스 += 10
 ENDIF
-
-CALL COM11_MSG
 
 @COM11_MSG
 PRINTFORML 당신은 누워서 %타겟을% 불렀다.
-
-CALL BIO_COM_MSG
 
 @COM_ABLE11
 RETURN 1

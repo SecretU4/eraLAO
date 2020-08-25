@@ -3,17 +3,13 @@
 
 IF !TALENT:짜증 && !TALENT:정신쇠약
     CFLAG:etc1 += 1 ;아자젤 설교 횟수 카운트
-    TFLAG:호감도 += 1
+    SOURCE:호감도 += 1
 ELSE
-    TFLAG:소요시간 -= 1
+    SOURCE:소요시간 -= 1
 ENDIF
-
-CALL COM100_MSG
 
 @COM100_MSG
 PRINTFORML 당신은 %CALLNAME:TARGET%의 설교를 듣기로 했다.
-
-CALL BIO_COM_MSG
 
 @COM_ABLE100
 SIF NO:TARGET == 126

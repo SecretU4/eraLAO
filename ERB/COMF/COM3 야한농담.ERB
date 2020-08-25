@@ -2,18 +2,14 @@
 @COM3
 
 IF CFLAG:호감도 > 199
-    TFLAG:호감도 += 5
-    TFLAG:공포 -= 1
+    SOURCE:호감도 += 5
+    SOURCE:공포 -= 1
 ELSE
-    TFLAG:스트레스 += 5
+    SOURCE:스트레스 += 5
 ENDIF
-
-CALL COM3_MSG
 
 @COM3_MSG
 PRINTFORML 당신은 %CALLNAME:TARGET%의 특정 부분을 칭찬했다.
-
-CALL BIO_COM_MSG
 
 @COM_ABLE3
 RETURN 1

@@ -2,20 +2,16 @@
 @COM92
 
 IF CFLAG:호감도 > 799
-    TFLAG:호감도 += 15
-    TFLAG:스트레스 -= 5
-    TFLAG:공포 -= 1
+    SOURCE:호감도 += 15
+    SOURCE:스트레스 -= 5
+    SOURCE:공포 -= 1
 ELSE
-    TFLAG:공포 += 10
-    TFLAG:스트레스 += 20
+    SOURCE:공포 += 10
+    SOURCE:스트레스 += 20
 ENDIF
-
-CALL COM92_MSG
 
 @COM92_MSG
 PRINTFORML 당신은 %CALLNAME:TARGET%의 이마에 당신의 이마를 댔다.
-
-CALL BIO_COM_MSG
 
 @COM_ABLE92
 RETURN 0
