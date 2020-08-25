@@ -2,7 +2,7 @@
 #DIM REAL_NUM
 
 ;만약을 위한 TARGET 설정
-IF ARG =! -1
+IF ARG != -1
     REAL_NUM = GETCHARA(ARG)
     TARGET = ARG
 ENDIF
@@ -143,18 +143,86 @@ TARGET = -1
 ;bit 1값은 약혼반지 관련으로 ENDING_MARRY_FLAG에서 처리됨
 FOR LOCAL, 2, 63
     IF GETBIT(CFLAG:MASTER:엔딩플래그, LOCAL)
-        SETBIT 비트값, LOCAL
         SELECTCASE LOCAL
             CASE 19, 20, 21 ;범용구상
                 RETURN 0
-            CASE 2
-                TARGET = 89
-                CFLAG:89:엔딩플래그 = 
-                CFLAG:MASTER:엔딩플래그 = CFLAG:MASTER:엔딩플래그 ^ 비트값
+            CASE 2 ;세이렌
+                TARGET = GETCHARA(89)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 3, 8 ;리제
+                TARGET = GETCHARA(7)
+                IF LOCAL == 3
+                    CFLAG:TARGET:엔딩플래그 = 3
+                ELSEIF LOCAL == 8
+                    CFLAG:TARGET:엔딩플래그 = 5
+                ENDIF
+            CASE 4 ;켈베로스
+                TARGET = GETCHARA(113)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 5 ;소완
+                TARGET = GETCHARA(12)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 6, 10 ;메이
+                TARGET = GETCHARA(51)
+                IF LOCAL == 6
+                    CFLAG:TARGET:엔딩플래그 = 3
+                ELSEIF LOCAL == 10
+                    CFLAG:TARGET:엔딩플래그 = 4
+                ENDIF
+            CASE 7 ;모모
+                TARGET = GETCHARA(123)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 9 ;더치 걸
+                TARGET = GETCHARA(108)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 11 ;마리
+                TARGET = GETCHARA(21)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 12 ;레오나
+                TARGET = GETCHARA(31)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 13 ;발키리
+                TARGET = GETCHARA(32)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 14 ;팬텀
+                TARGET = GETCHARA(73)
+                CFLAG:TARGET:엔딩플래그 = 4
+            CASE 15, 22 ;에밀리
+                TARGET = GETCHARA(68)
+                IF LOCAL == 15
+                    CFLAG:TARGET:엔딩플래그 = 4
+                ELSEIF LOCAL == 22
+                    CFLAG:TARGET:엔딩플래그 = 5
+                ENDIF
+            CASE 16, 17 ;유미
+                TARGET = GETCHARA(132)
+                IF LOCAL == 16
+                    CFLAG:TARGET:엔딩플래그 = 3
+                ELSEIF LOCAL == 17
+                    CFLAG:TARGET:엔딩플래그 = 4
+                ENDIF
+            CASE 18 ;닥터
+                TARGET = GETCHARA(76)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 23 ;오드리
+                TARGET = GETCHARA(106)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 24 ;베로니카
+                TARGET = GETCHARA(138)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 25 ;네오딤
+                TARGET = GETCHARA(71)
+                CFLAG:TARGET:엔딩플래그 = 3
             CASEELSE
                 THROW 미확인 엔딩 번호 {LOCAL}
         ENDSELECT
+        CLEARBIT CFLAG:MASTER:엔딩플래그, LOCAL
+        RETURN 1
     ENDIF
-    비트값 = 0
 NEXT
+;이상상황 처리용
+PRINTV CFLAG:MASTER:엔딩플래그
+PRINTL 이 문구가 보인다면
+PRINTW ENDING에 문제가 생긴 것이니 개발자에게 문의하세요
+
 RETURN 1
