@@ -14,6 +14,9 @@ IF RESULT
     TRYCCALLFORM M_No{REAL_NUM}_ENDING
         IF !RESULT
             CALL ENDING_COMMON(ARG)
+        ELSE
+            ;개별 엔딩플래그 초기화
+            CFLAG:엔딩플래그 = 0
         ENDIF
     CATCH
         CALL ENDING_COMMON(ARG)
