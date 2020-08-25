@@ -243,7 +243,7 @@ SELECTCASE ARG
                         ENDIF
                     ;에밀리는 CFLAG:etc1 == 1일때만 가능
                     CASE 68
-                        IF CFLAG:TARGET:etc1 != 1
+                        IF !GETBIT(CFLAG:TARGET:개별선택지유무, 0)
                             PRINTFORMW %타겟은% 반지를 받아주지 않았습니다...
                             RETURN -1
                         ENDIF
