@@ -1,2 +1,17 @@
 ﻿; 무릎베개해준다
 @COM7
+
+TFLAG:호감도 +=
+TFLAG:스트레스 +=
+TFLAG:공포 +=
+
+CALL COM7_MSG
+
+@COM7_MSG
+PRINTFORML %%CALLNAME:TARGET%%
+
+CALL BIO_COM_MSG(7)
+
+@COM_ABLE7
+RETURN 1
+

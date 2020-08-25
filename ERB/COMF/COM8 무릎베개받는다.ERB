@@ -1,2 +1,17 @@
 ﻿; 무릎베개받는다
 @COM8
+
+TFLAG:호감도 +=
+TFLAG:스트레스 +=
+TFLAG:공포 +=
+
+CALL COM8_MSG
+
+@COM8_MSG
+PRINTFORML %%CALLNAME:TARGET%%
+
+CALL BIO_COM_MSG(8)
+
+@COM_ABLE8
+RETURN 1
+

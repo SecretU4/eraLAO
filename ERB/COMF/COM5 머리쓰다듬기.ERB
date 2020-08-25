@@ -1,2 +1,17 @@
 ﻿; 머리쓰다듬기
 @COM5
+
+TFLAG:호감도 +=
+TFLAG:스트레스 +=
+TFLAG:공포 +=
+
+CALL COM5_MSG
+
+@COM5_MSG
+PRINTFORML %%CALLNAME:TARGET%%
+
+CALL BIO_COM_MSG(5)
+
+@COM_ABLE5
+RETURN 1
+
