@@ -306,10 +306,6 @@ SELECTCASE ARG
             ENDIF
         ENDIF
 
-        IF CFLAG:TARGET:스트레스 < 200 && TALENT:TARGET:짜증
-            TALENT:TARGET:짜증 = 0
-            PRINTFORML %CALLNAME:TARGET%의 짜증이 풀린 것 같습니다.
-        ENDIF
         ITEM:ARG --
     ;특수능력
     CASE 51, 52, 53
@@ -337,4 +333,15 @@ SELECTCASE ARG
         PRINTW 목록에 없는 아이템입니다. 개발자에게 문의하세요.
         RETURN -1
 ENDSELECT
+
+;파라미터 정리
+SIF CFLAG:TARGET:스트레스 < 0
+    CFLAG:TARGET:스트레스 = 0
+SIF CFLAG:TARGET:공포 < 0
+    CFLAG:TARGET:공포 = 0
+
+IF TALENT:TARGET:짜증 && CFLAG:TARGET:스트레스 < 200
+    TALENT:TARGET:짜증 = 0
+    PRINTFORMW %CALLNAME:TARGET%의 짜증이 풀린 것 같습니다.
+ENDIF
 RETURN 0
