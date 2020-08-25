@@ -1,5 +1,37 @@
-﻿;SYSTEM_CALL
-;연애 커맨드 진입시
+﻿;----------------------------------------------
+;기초 메시지 line 설정
+;ARG = 인게임 캐릭터번호
+;----------------------------------------------
+@SET_MSG_CSTR(ARG)
+
+IF TALENT:ARG:백치
+    CSTR:ARG:1 = regress
+ELSEIF TALENT:ARG:정신쇠약 == 2
+    CSTR:ARG:1 = Break
+ELSEIF TALENT:ARG:정신쇠약 == 1
+    CSTR:ARG:1 = Weak
+ELSEIF TALENT:ARG:혼인
+    CSTR:ARG:1 = Marryed
+ELSEIF TALENT:ARG:사랑 == 2
+    CSTR:ARG:1 = Love
+ELSEIF TALENT:ARG:혼인 == 1 || TALENT:ARG:사랑
+    CSTR:ARG:1 = Affection
+ELSEIF CFLAG:ARG:공포 > 199
+    CSTR:ARG:1 = Fear
+ELSEIF TALENT:ARG:짜증
+    CSTR:ARG:1 = Annoyed
+ELSEIF CFLAG:ARG:호감도 > 499
+    CSTR:ARG:1 = High
+ELSEIF CFLAG:ARG:호감도 < 500
+    CSTR:ARG:1 = Low
+ELSE
+    CSTR:ARG:1 = 
+ENDIF
+
+;================================================
+;SYSTEM_CALL
+;연애 커맨드 진입시 (BEGIN TRAIN)
+;================================================
 @EVENTTRAIN
 
 CALL SET_MSG_CSTR(TARGET)
@@ -117,32 +149,9 @@ ENDIF
 
 TRYCALLFORM M_No{NO:TARGET}_TRAIN_START_{CFLAG:조교여부}
 
-@SET_MSG_CSTR(ARG)
-
-IF TALENT:ARG:백치
-    CSTR:ARG:1 = regress
-ELSEIF TALENT:ARG:정신쇠약 == 2
-    CSTR:ARG:1 = Break
-ELSEIF TALENT:ARG:정신쇠약 == 1
-    CSTR:ARG:1 = Weak
-ELSEIF TALENT:ARG:혼인
-    CSTR:ARG:1 = Marryed
-ELSEIF TALENT:ARG:사랑 == 2
-    CSTR:ARG:1 = Love
-ELSEIF TALENT:ARG:혼인 == 1 || TALENT:ARG:사랑
-    CSTR:ARG:1 = Affection
-ELSEIF CFLAG:ARG:공포 > 199
-    CSTR:ARG:1 = Fear
-ELSEIF TALENT:ARG:짜증
-    CSTR:ARG:1 = Annoyed
-ELSEIF CFLAG:ARG:호감도 > 499
-    CSTR:ARG:1 = High
-ELSEIF CFLAG:ARG:호감도 < 500
-    CSTR:ARG:1 = Low
-ELSE
-    CSTR:ARG:1 = 
-ENDIF
-
+;----------------------------------------------
+;COM 실행시 메시지 라인 설정 함수
+;----------------------------------------------
 @BIO_COM_MSG
 
 CALL SET_MSG_CSTR(TARGET)
@@ -231,8 +240,10 @@ SIF CSTR:1 == ""
 PRINTFORMW %CSTR:1%
 TRYCALLFORM M_No{NO:TARGET}_COM{SELECTCOM}
 
+;----------------------------------------------
 ;question 대용 클래스
 ;ARG = 인게임 캐릭터 ID
+;----------------------------------------------
 @Personal_MSG_Select(ARG)
 #DIM 대상
 대상 = ARG
