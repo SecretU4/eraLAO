@@ -1,0 +1,37 @@
+﻿;ARG = NO:TARGET, ARG:1 = 원본상의 일러스트 번호
+@ILLURST(ARG, ARG:1)
+SIF ARG:1 == -1
+    RETURN 0
+
+SELECTCASE ARG
+    CASE 7
+        IF ARG:1 == 0 ;연애시작, 고백
+            PRINTL 리제 0번 그림
+            RETURN 1
+        ELSEIF ARG:1 == 2 ;연애시작
+            PRINTL 리제 2번 그림
+            RETURN 1
+        ENDIF
+    CASE 12
+        IF ARG:1 == 3 ;연애시작
+            PRINTL 소완 3번 그림
+            RETURN 1
+        ENDIF
+    CASE 51
+        IF ARG:1 == 1 ;연애시작, 정신붕괴
+            PRINTL 메이 1번 그림
+            RETURN 1
+        ELSEIF ARG:1 == 4 ;연애시작, fLove
+            PRINTL 메이 4번 그림
+            RETURN 1
+        ENDIF
+    CASE 138
+        IF ARG:1 == 5 ;첫 연애시작
+            PRINTL 베로니카 5번 그림
+            RETURN 1
+        ELSEIF ARG:1 == 6 ;연애시작, 고백
+            PRINTL 베로니카 6번 그림
+            RETURN 1
+        ENDIF
+ENDSELECT
+RETURN 0
