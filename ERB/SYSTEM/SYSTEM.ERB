@@ -2,6 +2,9 @@
 ;BEGIN TURNEND 호출시
 @EVENTTURNEND
 
+SIF CFLAG:MASTER:엔딩플래그
+    CALL ENDING(-1)
+
 IF TIME == 0
     TIME = 1
 
