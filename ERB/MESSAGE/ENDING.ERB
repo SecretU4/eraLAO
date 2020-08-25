@@ -1,39 +1,75 @@
 ﻿@ENDING(ARG)
 #DIM REAL_NUM
-THROW 공사중
 
 ;만약을 위한 TARGET 설정
-IF ARG != -1
+IF ARG =! -1
     REAL_NUM = GETCHARA(ARG)
     TARGET = ARG
 ENDIF
 
-TRYCCALLFORM M_No{REAL_NUM}_ENDING
-;    PRINTW 개별 엔딩 구상이 끝났습니다.
-CATCH
-    PRINTW 개별 엔딩 구상이 없어 범용 엔딩 구상으로 넘어갑니다.
-    CALL MSG_CHARA_NoX_ENDING(ARG)
-ENDCATCH
-PRINTW 아쉽게도 엔딩 기능은 미실장입니다. 즐겜!
-RETURN 1
-;작성 완료시
-;RETURN 0
+CALL Classify_EndingFlag
 
-@MSG_CHARA_NoX_ENDING(ARG)
+IF RESULT
+    TRYCCALLFORM M_No{REAL_NUM}_ENDING
+        IF !RESULT
+            CALL ENDING_COMMON(ARG)
+        ENDIF
+    CATCH
+        CALL ENDING_COMMON(ARG)
+    ENDCATCH
+ELSE
+    CALL ENDING_COMMON(ARG)
+ENDIF
+;일단 날짜변경으로 보냄
+BEGIN TURNEND
+
+;ARG = 인게임 캐릭터번호
+@ENDING_COMMON(ARG)
 #DIM REAL_NUM
 REAL_NUM = NO:ARG
 
-PRINTFORML %CALLNAME:TARGET%의 구상입니다. 오, 정신붕괴도가 {TALENT:정신쇠약} 이었네요!
-PRINTFORML %CALLNAME:TARGET%의 호감도는 {CFLAG:호감도} 였던 것 같네요.
-PRINTW 이런, 범용 구상도 없네요!
+FOR LOCAL, 19, 21
+    IF GETBIT(CFLAG:MASTER:엔딩플래그, LOCAL)
+        SELECTCASE LOCAL
+            CASE 19 ;EndingA
+                PRINTW 당신이 바이오로이드들과 함께 행복한 시간들을 보낸지 어연 오랜 시간이 지났다.
+                PRINTW 평소 인간들의 행태에 대해 소문을 듣던 바이오로이드들은 겁을 먹었지만
+                PRINTW 당신은 그런 아이들을 아낌없이 보살펴주며 따뜻하게 대해 주었다.
+                PRINTW 어느덧 당신에 대한 소문은 돌고 돌아 사람들에게 전해졌으며
+                PRINTW 누구나 할 것 없이 바이오로이드들의 선망의 대상이 되었다.
+                PRINTW 누군가는 당신의 아낌없는 사랑에 대해 칭찬하고
+                PRINTW 누군가는 당신의 행동을 이해할 수 없다며 미친 사람 취급했다.
+                PRINTW 하지만 당신은 그런 소문들을 전혀 신경쓰지 않았다.
+                PRINTW 중요한건 이 사랑스러운 아이들과 함께 지내는 시간이리라.
+                PRINTW 당신은 오늘도 사랑하는 바이오로이드들과 함께
+                PRINTW 새로운 아침을 맞이하고 있었다.
+                PRINTL 공용 엔딩 No.1
+                PRINTL 바이오로이드들의 이상향.
+                PRINTPLAIN 당신은 [사랑꾼]을 얻었다.
+                TALENT:MASTER:사랑꾼 = 1
+            CASE 20 ;EndingB
+
+            ; exc = 2
+            CASE 21 ;EndingC
+
+            ; exc = 3
+        ENDSELECT
+        CLEARBIT CFLAG:MASTER:엔딩플래그, LOCAL
+        WAIT
+    ENDIF
+NEXT
+RETURN 1
 
 ;ARG = 인게임 캐릭터번호
+;약혼반지 구입시 수치 변환처리도 여기서
 @ENDING_MARRY_FLAG(ARG)
 #DIM REAL_NUM
 REAL_NUM = NO:ARG
 
 TARGET = ARG
 TALENT:혼인 = 1
+
+SETBIT CFLAG:MASTER:엔딩플래그, 1
 
 ;정신붕괴
 IF TALENT:정신쇠약 == 2
@@ -62,8 +98,6 @@ ELSEIF TALENT:사랑 == 2
         ELSE
             TALENT:혼인 = 2
         ENDIF
-    ELSE
-        CFLAG:엔딩플래그 = 1
     ENDIF
 ENDIF
 
@@ -78,26 +112,49 @@ TARGET = ARG
 SELECTCASE ARGS
     CASE "판매"
         IF REAL_NUM == 123 && TALENT:ARG:사랑 == 1
-            CFLAG:엔딩플래그 = 7
+            SETBIT CFLAG:MASTER:엔딩플래그, 7
         ELSEIF REAL_NUM == 138 && TALENT:ARG:사랑 == 2 && TALENT:ARG:혼인 && TALENT:ARG:정신쇠약 != 2
-            CFLAG:엔딩플래그 = 24
+            SETBIT CFLAG:MASTER:엔딩플래그, 24
         ENDIF
     CASE "폐기"
         IF REAL_NUM == 89 && TALENT:ARG:사랑 == 1
-            CFLAG:엔딩플래그 = 2
+            SETBIT CFLAG:MASTER:엔딩플래그, 2
         ELSEIF REAL_NUM == 113 && TALENT:ARG:정신쇠약 == 2
-            CFLAG:엔딩플래그 = 4
+            SETBIT CFLAG:MASTER:엔딩플래그, 4
         ELSEIF REAL_NUM == 51
             IF TALENT:ARG:사랑 == 1 && TALENT:ARG:정신쇠약 == 1
-                CFLAG:엔딩플래그 = 6
+                SETBIT CFLAG:MASTER:엔딩플래그, 6
             ELSEIF TALENT:ARG:사랑 == 2 && EXP:ARG:출격경험 > 49
-                CFLAG:엔딩플래그 = 10
+                SETBIT CFLAG:MASTER:엔딩플래그, 10
             ENDIF
         ELSEIF REAL_NUM == 138 && TALENT:ARG:사랑 == 2 && TALENT:ARG:혼인 && TALENT:ARG:정신쇠약 != 2
-            CFLAG:엔딩플래그 = 24
+            SETBIT CFLAG:MASTER:엔딩플래그, 24
         ENDIF
     CASEELSE
         THROW 상정외 %ARGS% 입니다.
 ENDSELECT
 
 RETURN 0
+
+@Classify_EndingFlag
+#DIM 비트값
+TARGET = -1
+
+;bit 1값은 약혼반지 관련으로 ENDING_MARRY_FLAG에서 처리됨
+FOR LOCAL, 2, 63
+    IF GETBIT(CFLAG:MASTER:엔딩플래그, LOCAL)
+        SETBIT 비트값, LOCAL
+        SELECTCASE LOCAL
+            CASE 19, 20, 21 ;범용구상
+                RETURN 0
+            CASE 2
+                TARGET = 89
+                CFLAG:89:엔딩플래그 = 
+                CFLAG:MASTER:엔딩플래그 = CFLAG:MASTER:엔딩플래그 ^ 비트값
+            CASEELSE
+                THROW 미확인 엔딩 번호 {LOCAL}
+        ENDSELECT
+    ENDIF
+    비트값 = 0
+NEXT
+RETURN 1
