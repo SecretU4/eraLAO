@@ -1,26 +1,42 @@
 ;=================================================
 ;이곳에 없는 EVENT 메시지 - 20200825 기준
 ;이별(폐기,판매) - ENDING.ERB/@ENDING_FAREWELL_FLAG
+;-------------------------------------------------
+;주요 사용 함수
+;MESSAGE_COM.ERB/@SET_MSG_CSTR(ARG)
+; - ARG의 메시지 line 설정 함수
 ;=================================================
 ;날짜변경시 개별 메시지
 ;TARGET(대상) 이 있어야 출력
+;-------------------------------------------------
 @MSG_Morning
+
+CALL SET_MSG_CSTR(ARG)
+
+SIF FLAG:속박상태
+    CSTR:1 = Hidden
 
 TRYCALLFORM M_No{NO:TARGET}_EVENT_Morning
 
 RETURN 1
-
+;-------------------------------------------------
 ;출격시 개별 메시지
 ;ARG = 인게임 캐릭터번호
+;-------------------------------------------------
 @MSG_Sortie(ARG)
+
+CALL SET_MSG_CSTR(ARG)
 
 TRYCALLFORM M_No{NO:ARG}_EVENT_Sortie
 
 RETURN 1
-
+;-------------------------------------------------
 ;출격 복귀시 개별 메시지
 ;ARG = 인게임 캐릭터번호
+;-------------------------------------------------
 @MSG_Sortie_Return(ARG)
+
+CALL SET_MSG_CSTR(ARG)
 
 TRYCALLFORM M_No{NO:ARG}_EVENT_Sortie_Return
 
