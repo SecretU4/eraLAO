@@ -26,6 +26,38 @@ REDRAW LOCAL:0
 RETURN RESULT
 
 ;-------------------------------------------------
+;선택지를 표시해 입력 결과를 돌려주는 함수 조건을 채우지 않는 선택지를 회색 표시로 해 무효로 하는 것이 가능
+;인수에 대사와 조건(0으로 무효, 비0으로 유효)을 지정. 최대 6개까지
+;반환값은 선택한 선택지의 번호
+;-------------------------------------------------
+@ASK_M(ARGS:0, ARG:0, ARGS:1, ARG:1, ARGS:2, ARG:2, ARGS:3, ARG:3, ARGS:4, ARG:4, ARGS:5, ARG:5, ARGS:6, ARG:6)
+#DIM CONST 선택지상한 = 6
+CURRENTREDRAW
+LOCAL:0 = RESULT
+REDRAW 0
+FOR LOCAL:0, 0, (선택지상한 + 1)
+	IF ARGS:(LOCAL:0) != ""
+		IF ARG:(LOCAL:0)
+			PRINTBUTTON @"{LOCAL:0, 2, RIGHT}[%ARGS:(LOCAL:0)%]", LOCAL:0
+		ELSE
+			SETCOLOR 0x606060
+			PRINTPLAINFORM {LOCAL:0, 2, RIGHT}[%ARGS:(LOCAL:0)%]
+			RESETCOLOR
+		ENDIF
+		PRINTL 
+	ENDIF
+NEXT
+$INPUT_LOOP
+INPUT
+IF RESULT < 0 || RESULT > 선택지상한 || ARGS:RESULT == "" || !ARG:RESULT
+	PRINTW 제시된 숫자에서 선택해주세요.
+	CLEARLINE 2
+	GOTO INPUT_LOOP
+ENDIF
+REDRAW LOCAL:0
+RETURN RESULT
+
+;-------------------------------------------------
 ;미독판정 함수 @FIRSTTIME
 ;식중에서 사용하는 함수입니다.
 ;ARGS는 이벤트 번호, ARG는 진이라면 첫회 판정을 갱신하지 않는, ARG:1은 캐릭터등록번호(생략 하면(자) TARGET,-1라면 MASTER)
