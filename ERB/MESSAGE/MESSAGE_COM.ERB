@@ -89,7 +89,7 @@ LOCAL = -1
 IF CFLAG:개별그림유무
     SELECTCASE NO:TARGET
         CASE 7
-            IF CSTR:1 = "Confession"
+            IF CSTR:1 == "Confession"
                 LOCAL = 0
             ELSE
                 LOCAL = 2
@@ -99,11 +99,11 @@ IF CFLAG:개별그림유무
         CASE 51
             IF TALENT:정신쇠약 == 2
                 LOCAL = 1
-            ELSEIF CSTR:1 = "fLove"
+            ELSEIF CSTR:1 == "fLove"
                 LOCAL = 4
             ENDIF
         CASE 138
-            IF CSTR:1 = "Confession"
+            IF CSTR:1 == "Confession"
                 LOCAL = 6
             ELSEIF !CFLAG:조교여부
                 LOCAL = 5
