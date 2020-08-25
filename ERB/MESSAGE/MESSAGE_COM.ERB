@@ -249,7 +249,7 @@ SELECTCASE NO:대상
                 CSTR:대상:1 = No
                 CFLAG:대상:선택지확인 = CFLAG:대상:선택지확인 ^ 1
             ELSEIF RESULT == 2
-                CFLAG:대상:엔딩플래그 = 5
+                SETBIT CFLAG:MASTER:엔딩플래그, 22
                 CALL ENDING(대상)
             ENDIF
         ENDIF
