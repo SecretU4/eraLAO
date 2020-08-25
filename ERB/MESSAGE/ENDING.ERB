@@ -114,12 +114,16 @@ REAL_NUM = NO:ARG
 TARGET = ARG
 SELECTCASE ARGS
     CASE "판매"
+        TRYCALLFORM M_No{REAL_NUM}_Sell
+        
         IF REAL_NUM == 123 && TALENT:ARG:사랑 == 1
             SETBIT CFLAG:MASTER:엔딩플래그, 7
         ELSEIF REAL_NUM == 138 && TALENT:ARG:사랑 == 2 && TALENT:ARG:혼인 && TALENT:ARG:정신쇠약 != 2
             SETBIT CFLAG:MASTER:엔딩플래그, 24
         ENDIF
     CASE "폐기"
+        TRYCALLFORM M_No{REAL_NUM}_Disuse
+
         IF REAL_NUM == 89 && TALENT:ARG:사랑 == 1
             SETBIT CFLAG:MASTER:엔딩플래그, 2
         ELSEIF REAL_NUM == 113 && TALENT:ARG:정신쇠약 == 2
