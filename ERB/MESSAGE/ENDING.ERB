@@ -7,7 +7,8 @@ IF ARG =! -1
     TARGET = ARG
 ENDIF
 
-CALL Classify_EndingFlag
+SIF CFLAG:MASTER:엔딩플래그
+    CALL Classify_EndingFlag
 
 IF RESULT
     TRYCCALLFORM M_No{REAL_NUM}_ENDING
@@ -69,8 +70,6 @@ REAL_NUM = NO:ARG
 TARGET = ARG
 TALENT:혼인 = 1
 
-SETBIT CFLAG:MASTER:엔딩플래그, 1
-
 ;정신붕괴
 IF TALENT:정신쇠약 == 2
     PRINTFORML %타겟은% 아무 말 없이 반지를 받아들였다.
@@ -78,6 +77,7 @@ IF TALENT:정신쇠약 == 2
 ;사랑
 ELSEIF TALENT:사랑 == 2
     PRINTFORML %타겟은% 눈물을 글썽이며 손에 반지를 받아들였다.
+    CFLAG:엔딩플래그 = 1
     ;리제, 50% 확률
     IF REAL_NUM == 7 && RAND:1
         CFLAG:엔딩플래그 = 4
