@@ -1,17 +1,23 @@
 ﻿; 목덜미핥기
 @COM16
 
-TFLAG:호감도 +=
-TFLAG:스트레스 +=
-TFLAG:공포 +=
+IF TALENT:사랑
+    TFLAG:호감도 += 20
+    TFLAG:스트레스 -= 5
+ELSE
+    TFLAG:공포 += 10
+    TFLAG:스트레스 += 20
+ENDIF
 
 CALL COM16_MSG
 
 @COM16_MSG
-PRINTFORML %%CALLNAME:TARGET%%
+PRINTFORML 당신은 %CALLNAME:TARGET%의 목에 혀를 기었다.
 
-CALL BIO_COM_MSG(16)
+CALL BIO_COM_MSG
 
 @COM_ABLE16
+SIF NO:TARGET == 108
+    RETURN 0
 RETURN 1
 

@@ -1,16 +1,16 @@
 ﻿; 잡담
 @COM2
 
-TFLAG:호감도 +=
-TFLAG:스트레스 +=
-TFLAG:공포 +=
+TFLAG:호감도 += 5
+TFLAG:스트레스 -= 2
+TFLAG:공포 -= 1
 
 CALL COM2_MSG
 
 @COM2_MSG
-PRINTFORML %%CALLNAME:TARGET%%
+PRINTFORML 당신은 %타겟과% 실없는 이야기를 주고받았다.
 
-CALL BIO_COM_MSG(2)
+CALL BIO_COM_MSG
 
 @COM_ABLE2
 RETURN 1

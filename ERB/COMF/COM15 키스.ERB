@@ -1,17 +1,24 @@
 ﻿; 키스
 @COM15
 
-TFLAG:호감도 +=
-TFLAG:스트레스 +=
-TFLAG:공포 +=
+IF CFLAG:호감도 > 799
+    TFLAG:호감도 += 15
+    TFLAG:스트레스 -= 5
+    TFLAG:공포 -= 1
+ELSE
+    TFLAG:공포 += 10
+    TFLAG:스트레스 += 20
+ENDIF
 
 CALL COM15_MSG
 
 @COM15_MSG
-PRINTFORML %%CALLNAME:TARGET%%
+PRINTFORML 당신은 %CALLNAME:TARGET%의 입술에 당신의 입술을 맞췄다.
 
-CALL BIO_COM_MSG(15)
+CALL BIO_COM_MSG
 
 @COM_ABLE15
+SIF NO:TARGET == 108
+    RETURN 0
 RETURN 1
 

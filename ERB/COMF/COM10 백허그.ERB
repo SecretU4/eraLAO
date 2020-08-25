@@ -1,16 +1,21 @@
 ﻿; 백허그
 @COM10
 
-TFLAG:호감도 +=
-TFLAG:스트레스 +=
-TFLAG:공포 +=
+IF CFLAG:호감도 > 799
+    TFLAG:호감도 += 10
+    TFLAG:스트레스 -= 5
+    TFLAG:공포 -= 1
+ELSE
+    TFLAG:공포 += 5
+    TFLAG:스트레스 += 10
+ENDIF
 
 CALL COM10_MSG
 
 @COM10_MSG
-PRINTFORML %%CALLNAME:TARGET%%
+PRINTFORML 당신은 %타겟을% 뒤에서 끌어안았다.
 
-CALL BIO_COM_MSG(10)
+CALL BIO_COM_MSG
 
 @COM_ABLE10
 RETURN 1

@@ -1,16 +1,20 @@
 ﻿; 간지럽히기
 @COM6
 
-TFLAG:호감도 +=
-TFLAG:스트레스 +=
-TFLAG:공포 +=
+IF CFLAG:호감도 > 49
+    TFLAG:호감도 += 10
+    TFLAG:스트레스 -= 5
+ELSE
+    TFLAG:호감도 += 3
+    TFLAG:스트레스 += 5
+ENDIF
 
 CALL COM6_MSG
 
 @COM6_MSG
-PRINTFORML %%CALLNAME:TARGET%%
+PRINTFORML 당신은 %CALLNAME:TARGET%의 옆구리를 찔렀다.
 
-CALL BIO_COM_MSG(6)
+CALL BIO_COM_MSG
 
 @COM_ABLE6
 RETURN 1

@@ -1,16 +1,21 @@
 ﻿; 포옹한다
 @COM9
 
-TFLAG:호감도 +=
-TFLAG:스트레스 +=
-TFLAG:공포 +=
+IF CFLAG:호감도 > 299
+    TFLAG:호감도 += 10
+    TFLAG:스트레스 -= 5
+    TFLAG:공포 -= 1
+ELSE
+    TFLAG:공포 += 3
+    TFLAG:스트레스 += 10
+ENDIF
 
 CALL COM9_MSG
 
 @COM9_MSG
-PRINTFORML %%CALLNAME:TARGET%%
+PRINTFORML 당신은 %타겟을% 끌어안았다.
 
-CALL BIO_COM_MSG(9)
+CALL BIO_COM_MSG
 
 @COM_ABLE9
 RETURN 1

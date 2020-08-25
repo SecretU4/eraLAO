@@ -1,16 +1,21 @@
 ﻿; 손을잡는다
 @COM4
 
-TFLAG:호감도 +=
-TFLAG:스트레스 +=
-TFLAG:공포 +=
+IF CFLAG:호감도 > 49
+    TFLAG:호감도 += 10
+    TFLAG:스트레스 -= 5
+    TFLAG:공포 -= 1
+ELSE
+    TFLAG:호감도 += 3
+    TFLAG:스트레스 += 5
+ENDIF
 
 CALL COM4_MSG
 
 @COM4_MSG
-PRINTFORML %%CALLNAME:TARGET%%
+PRINTFORML 당신은 %CALLNAME:TARGET%의 손에 살며시 손을 겹쳤다.
 
-CALL BIO_COM_MSG(4)
+CALL BIO_COM_MSG
 
 @COM_ABLE4
 RETURN 1

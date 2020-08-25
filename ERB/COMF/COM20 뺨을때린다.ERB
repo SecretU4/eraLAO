@@ -1,16 +1,26 @@
 ﻿; 뺨을때린다
 @COM20
 
-TFLAG:호감도 +=
-TFLAG:스트레스 +=
-TFLAG:공포 +=
+SIF TALENT:변태
+    TFLAG:호감도 += 5
+
+TFLAG:공포 += 20
+TFLAG:스트레스 += 50
+TFLAG:소요시간 += 3
+
+SELECTCASE NO:TARGET
+    CASE 21
+        CFLAG:etc1 ++ ;마리 엔딩 3 카운트
+    CASE 126
+        CFLAG:etc2 ++ ;아자젤 줘팸 횟수 카운트
+ENDSELECT
 
 CALL COM20_MSG
 
 @COM20_MSG
-PRINTFORML %%CALLNAME:TARGET%%
+PRINTFORML 당신은 %CALLNAME:TARGET%의 뺨을 때렸다.
 
-CALL BIO_COM_MSG(20)
+CALL BIO_COM_MSG
 
 @COM_ABLE20
 RETURN 1

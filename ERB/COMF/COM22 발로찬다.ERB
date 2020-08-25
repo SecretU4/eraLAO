@@ -1,16 +1,23 @@
 ﻿; 발로찬다
 @COM22
 
-TFLAG:호감도 +=
-TFLAG:스트레스 +=
-TFLAG:공포 +=
+TFLAG:공포 += 30
+TFLAG:스트레스 += 50
+TFLAG:소요시간 += 3
+
+SELECTCASE NO:TARGET
+    CASE 21
+        CFLAG:etc1 ++ ;마리 엔딩 3 카운트
+    CASE 126
+        CFLAG:etc2 ++ ;아자젤 줘팸 횟수 카운트
+ENDSELECT
 
 CALL COM22_MSG
 
 @COM22_MSG
-PRINTFORML %%CALLNAME:TARGET%%
+PRINTFORML 당신은 %타겟을% 발로 밀어 찼다.
 
-CALL BIO_COM_MSG(22)
+CALL BIO_COM_MSG
 
 @COM_ABLE22
 RETURN 1

@@ -1,17 +1,24 @@
 ﻿; 파후파후
 @COM18
 
-TFLAG:호감도 +=
-TFLAG:스트레스 +=
-TFLAG:공포 +=
+IF TALENT:사랑
+    TFLAG:호감도 += 20
+    TFLAG:스트레스 -= 5
+    TFLAG:공포 -= 1
+ELSE
+    TFLAG:공포 += 10
+    TFLAG:스트레스 += 20
+ENDIF
 
 CALL COM18_MSG
 
 @COM18_MSG
-PRINTFORML %%CALLNAME:TARGET%%
+PRINTFORML 당신은 %CALLNAME:TARGET%의 가슴에 얼굴을 묻었다.
 
-CALL BIO_COM_MSG(18)
+CALL BIO_COM_MSG
 
 @COM_ABLE18
+SIF NO:TARGET == 108
+    RETURN 0
 RETURN 1
 

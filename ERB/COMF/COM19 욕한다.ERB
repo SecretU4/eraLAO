@@ -1,16 +1,29 @@
 ﻿; 욕한다
 @COM19
 
-TFLAG:호감도 +=
-TFLAG:스트레스 +=
-TFLAG:공포 +=
+SIF TALENT:변태
+    TFLAG:호감도 += 5
+
+;에밀리 연모아님
+IF NO:TARGET == 68 && !TALENT:사랑
+ELSE
+    TFLAG:공포 += 10
+    TFLAG:스트레스 += 20
+ENDIF
+
+SELECTCASE NO:TARGET
+    CASE 21
+        CFLAG:etc1 ++ ;마리 엔딩 3 카운트
+    CASE 126
+        CFLAG:etc2 ++ ;아자젤 줘팸 횟수 카운트
+ENDSELECT
 
 CALL COM19_MSG
 
 @COM19_MSG
-PRINTFORML %%CALLNAME:TARGET%%
+PRINTFORML 당신은 %CALLNAME:TARGET%에게 소리를 지르며 욕을 했다.
 
-CALL BIO_COM_MSG(19)
+CALL BIO_COM_MSG
 
 @COM_ABLE19
 RETURN 1

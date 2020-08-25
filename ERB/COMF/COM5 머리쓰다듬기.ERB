@@ -1,16 +1,21 @@
 ﻿; 머리쓰다듬기
 @COM5
 
-TFLAG:호감도 +=
-TFLAG:스트레스 +=
-TFLAG:공포 +=
+IF CFLAG:호감도 > 49
+    TFLAG:호감도 += 10
+    TFLAG:스트레스 -= 5
+    TFLAG:공포 -= 1
+ELSE
+    TFLAG:호감도 += 3
+    TFLAG:스트레스 += 5
+ENDIF
 
 CALL COM5_MSG
 
 @COM5_MSG
-PRINTFORML %%CALLNAME:TARGET%%
+PRINTFORML 당신은 %CALLNAME:TARGET%의 머리를 쓰다듬었다.
 
-CALL BIO_COM_MSG(5)
+CALL BIO_COM_MSG
 
 @COM_ABLE5
 RETURN 1

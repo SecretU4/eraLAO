@@ -1,16 +1,24 @@
 ﻿; 뽀뽀한다
 @COM12
 
-TFLAG:호감도 +=
-TFLAG:스트레스 +=
-TFLAG:공포 +=
+IF CFLAG:호감도 > 499
+    TFLAG:호감도 += 10
+    TFLAG:스트레스 -= 5
+    TFLAG:공포 -= 1
+ELSE
+    TFLAG:공포 += 5
+    TFLAG:스트레스 += 10
+ENDIF
 
 CALL COM12_MSG
 
 @COM12_MSG
-PRINTFORML %%CALLNAME:TARGET%%
 
-CALL BIO_COM_MSG(12)
+PRINT 당신은 
+PRINTS CALLNAME:TARGET
+PRINTFORML 의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+
+CALL BIO_COM_MSG
 
 @COM_ABLE12
 RETURN 1
