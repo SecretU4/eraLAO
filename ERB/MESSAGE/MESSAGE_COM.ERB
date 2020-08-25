@@ -87,7 +87,7 @@ IF SELECTCOM == 2
 ENDIF
 
 SIF GROUPMATCH(CSTR:1, "High","Low")
-    CSTR:1 = LOCALS
+    CSTR:1 = %LOCALS%
 
 SELECTCASE NO:TARGET
     CASE 21 ;마리
@@ -134,9 +134,9 @@ SELECTCASE NO:TARGET
         IF GROUPMATCH(SELECTCOM, 2,3,12)
             IF TALENT:사랑
                 IF TALENT:TARGET:체형 == 0
-                    LOCALS = Young
+                    CSTR:1 = Young
                 ELSEIF TALENT:TARGET:체형 == 1
-                    LOCALS = Adult
+                    CSTR:1 = Adult
                 ENDIF
             ENDIF
         ENDIF
@@ -154,4 +154,5 @@ ENDSELECT
 SIF CSTR:1 == ""
     CSTR:1 = %LOCALS%
 
+PRINTFORMW %CSTR:1%
 TRYCALLFORM M_No{NO:TARGET}_COM{SELECTCOM}
