@@ -3,8 +3,25 @@
 ;이별(폐기,판매) - ENDING.ERB/@ENDING_FAREWELL_FLAG
 ;=================================================
 ;날짜변경시 개별 메시지
+;TARGET(대상) 이 있어야 출력
 @MSG_Morning
 
 TRYCALLFORM M_No{NO:TARGET}_EVENT_Morning
+
+RETURN 1
+
+;출격시 개별 메시지
+;ARG = 인게임 캐릭터번호
+@MSG_Sortie(ARG)
+
+TRYCALLFORM M_No{NO:ARG}_EVENT_Sortie
+
+RETURN 1
+
+;출격 복귀시 개별 메시지
+;ARG = 인게임 캐릭터번호
+@MSG_Sortie_Return(ARG)
+
+TRYCALLFORM M_No{NO:ARG}_EVENT_Sortie_Return
 
 RETURN 1

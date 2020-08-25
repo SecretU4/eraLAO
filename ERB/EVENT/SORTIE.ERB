@@ -69,6 +69,9 @@ WHILE 1
         BREAK
     ENDIF
 WEND
+
+CALL MSG_Sortie(출격대상)
+
 CFLAG:출격대상:출격중 = 1
 FLAG:현출격인수 ++
 RETURN 0
@@ -93,6 +96,9 @@ FOR 출격대상, 1, CHARANUM
             CFLAG:출격대상:출격수입 += 수입
             FLAG:총출격수입 += 수입
             총수입 += 수입
+
+            CALL MSG_Sortie_Return(출격대상)
+
         ELSE
             CFLAG:출격대상:출격중 ++
         ENDIF
