@@ -5,6 +5,16 @@
 CALL SET_MSG_CSTR(TARGET)
 
 SELECTCASE NO:TARGET
+    CASE 21 ;마리
+        IF !CFLAG:조교여부
+            IF TALENT:MASTER:나이 == 0
+                CFLAG:호감도 += 500
+                TALENT:변태 = 1
+                CSTR:1 = Yboy
+            ELSE
+                CSTR:1 = Nboy
+            ENDIF
+        ENDIF
     CASE 51
         IF TALENT:정신쇠약 == 2 && !CFLAG:etc2
             CSTR:1 = fBreak
@@ -29,6 +39,17 @@ SELECTCASE NO:TARGET
         ELSEIF TALENT:짜증 && TALENT:사랑 == 2
             CSTR:1 = Annoyed2
         ENDIF
+    CASE 76
+        IF CSTR:1 == "Affection" || CSTR:1 == "Marryed"
+            IF TALENT:체형 == 0
+                CSTR:1 = Young
+            ELSEIF TALENT:체형 == 1
+                CSTR:1 = Adult
+            ENDIF
+        ENDIF
+    CASE 91
+        SIF !CFLAG:조교여부
+            CFLAG:개별선택지유무 = 1
     CASE 108
         IF TALENT:혼인 == 2
             CSTR:1 = Marryed
@@ -37,8 +58,61 @@ SELECTCASE NO:TARGET
         ENDIF
 ENDSELECT
 
-IF TALENT:사랑 == 1 && !TALENT:정신쇠약 && CFLAG:고백함 == 0
-    CSTR:1 = Confession
+SIF CFLAG:개별선택지유무
+    CALL Personal_MSG_Select(TARGET)
+
+;Confession(고백) 가부 판별
+IF TALENT:사랑 && CFLAG:고백함 == 0
+    LOCALS = 
+    IF NO:TARGET == 68 ;에밀리는 정신쇠약 있어도 사랑이면 가능
+        SIF TALENT:사랑 == 2
+            LOCALS = Confession
+    ELSEIF !TALENT:정신쇠약
+        LOCALS = Confession
+        SELECTCASE NO:TARGET
+            CASE 21 ;마리
+                IF TALENT:MASTER:나이 == 0
+                    LOCALS += "/Yboy"
+                ELSE
+                    LOCALS += "/Nboy"
+                ENDIF
+            CASE 52
+                SIF TALENT:긍정도 == -1
+                    TALENT:긍정도 = 0
+        ENDSELECT
+    ENDIF
+    SIF LOCALS != ""
+        CSTR:1 = %LOCALS%
+ENDIF
+
+LOCAL = -1
+IF CFLAG:개별그림유무
+    SELECTCASE NO:TARGET
+        CASE 7
+            IF CSTR:1 = "Confession"
+                LOCAL = 0
+            ELSE
+                LOCAL = 2
+            ENDIF
+        CASE 12
+            LOCAL = 3
+        CASE 51
+            IF TALENT:정신쇠약 == 2
+                LOCAL = 1
+            ELSEIF CSTR:1 = "fLove"
+                LOCAL = 4
+            ENDIF
+        CASE 138
+            IF CSTR:1 = "Confession"
+                LOCAL = 6
+            ELSEIF !CFLAG:조교여부
+                LOCAL = 5
+            ENDIF
+    ENDSELECT
+    ;미실장이기에 디버그용으로만 열어둠
+    [IF_DEBUG]
+    CALL ILLURST(NO:TARGET, LOCAL)
+    [ENDIF]
 ENDIF
 
 TRYCALLFORM M_No{NO:TARGET}_TRAIN_START_{CFLAG:조교여부}
@@ -156,3 +230,41 @@ SIF CSTR:1 == ""
 
 PRINTFORMW %CSTR:1%
 TRYCALLFORM M_No{NO:TARGET}_COM{SELECTCOM}
+
+;question 대용 클래스
+;ARG = 인게임 캐릭터 ID
+@Personal_MSG_Select(ARG)
+#DIM 대상
+대상 = ARG
+SELECTCASE NO:대상
+    CASE 68 ;에밀리
+        IF CFLAG:대상:개별선택지유무 == 1
+            PRINTW TODO 에밀리 문장 추가
+            CALL ASK_M("고백을 받아들인다.", 1, "고백을 받아들이지 않는다.", 1, "?????", 1)
+            ;CFLAG:선택지확인 = 에밀리 etc1 고백 가부 판별
+            IF RESULT == 0
+                CSTR:대상:1 = Yes
+                SETBIT CFLAG:대상:선택지확인, 0
+            ELSEIF RESULT == 1
+                CSTR:대상:1 = No
+                CFLAG:대상:선택지확인 = CFLAG:대상:선택지확인 ^ 1
+            ELSEIF RESULT == 2
+                CFLAG:대상:엔딩플래그 = 5
+                CALL ENDING(대상)
+            ENDIF
+        ENDIF
+    CASE 91 ;땡컨
+        IF CFLAG:대상:개별선택지유무 == 1
+            PRINTW TODO 슬레이프니르 문장 추가
+            CALL ASK_M("슈퍼스타가 된다.", 1, "군인 신분을 유지한다.", 1)
+            IF RESULT == 0
+                TALENT:대상:군인 = 0
+                TALENT:대상:슈퍼스타 = 1
+                ABL:대상:전투lv = 0
+                EXP:대상:출격경험 = 0
+                CSTR:대상:1 = Star
+            ELSEIF RESULT == 1
+                CSTR:대상:1 = BR
+            ENDIF
+        ENDIF
+ENDSELECT
