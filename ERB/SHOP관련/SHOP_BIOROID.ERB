@@ -21,6 +21,7 @@ WHILE RESULT != 0
     ENDIF
 WEND
 
+;ARG = ITEM 내 캐릭터번호 시작, ARG:1 = ITEM 내 캐릭터번호 종료
 @SET_BIO_SALES(ARG, ARG:1)
 FOR LOCAL, ARG, ARG:1
     COUNT = 1
@@ -28,7 +29,7 @@ FOR LOCAL, ARG, ARG:1
     IF GETCHARA(LOCAL:1) != -1
         IF ITEMNAME:LOCAL == ""
             CONTINUE
-        ELSEIF CFLAG:COUNT:보유이력
+        ELSEIF ITEM:LOCAL == -1 ;이미 구매한 적 있음
             CONTINUE
         ENDIF
         ITEMSALES:LOCAL = 1
@@ -63,9 +64,8 @@ IF RESULT == 0
         RETURN 1
     ENDIF
     MONEY:0 -= ITEMPRICE:C_ITEMID
-    ITEM:C_ITEMID += 1
+    ITEM:C_ITEMID = 1
     FLAG:현캐릭터수 ++
-    CFLAG:R_ID:보유이력 = 1
     ITEMSALES:C_ITEMID = 0
     PRINTFORMW %캐릭터를% 구매하였습니다.
 ELSE
