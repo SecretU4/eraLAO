@@ -27,7 +27,7 @@ PRINTW 저장된 세이브를 불러왔습니다.
 ;================================================
 @SAVEINFO
 IF FLAG:히든메시지
-    PUTFORM ??? 일째 ? %HOME_NAME()% 이름: %CALLNAME:(FLAG:히든메시지)%의 %CALLNAME:MASTER% 대상 : 당신만의 %CALLNAME:(FLAG:히든메시지)% %eraLAO_VER()%
+    PUTFORM ???일째 ? %HOME_NAME()% %CALLNAME:(FLAG:히든메시지)%의 %CALLNAME:MASTER% 대상 : 당신만의 %CALLNAME:(FLAG:히든메시지)% v%eraLAO_VER()%
 ELSE
-    PUTFORM {DAY} 일째 \@ TIME ? 밤 # 낮 \@ %HOME_NAME()% 이름 : %NAME:MASTER% 대상 : \@ TARGET == MASTER ? 없음 # %CALLNAME:TARGET% \@ %eraLAO_VER()%
+    PUTFORM {DAY, 3, RIGHT}일째 \@ TIME ? 밤 # 낮 \@ %HOME_NAME()% %NAME:MASTER% 대상 : \@ TARGET == MASTER ? 없음 # %CALLNAME:TARGET% \@ v%eraLAO_VER()%
 ENDIF
