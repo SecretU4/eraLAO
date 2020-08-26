@@ -143,3 +143,9 @@ SWAPCHARA INGAME_ID, CHARANUM
 ;가장 마지막에 오게 된 원 캐릭터 삭제
 DELCHARA CHARANUM
 
+;리셋한 캐릭터의 대사 여부 체크
+RESULT = 0
+TRYCALLFORM IS_M_No{ARG}
+SIF RESULT
+	CFLAG:INGAME_ID:개별대사유무 = 1
+
