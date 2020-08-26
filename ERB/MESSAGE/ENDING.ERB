@@ -336,6 +336,7 @@ RETURN -1
 @Ending_Result
 #DIM 그림번호
 
+;LOCAL = exc, LOCAL:1 = 1일때 원판에서 추가처리
 SELECTCASE NO:TARGET
     CASE 7 ;리제
         IF CFLAG:엔딩플래그 == 1
@@ -343,11 +344,11 @@ SELECTCASE NO:TARGET
         ELSEIF CFLAG:엔딩플래그 == 2
             그림번호 = 10
         ELSEIF CFLAG:엔딩플래그 == 3
-            그림번호 = 6
+            그림번호 = 6 ;TODO 아마도 그림 2개인듯
             LOCAL = 1
         ELSEIF CFLAG:캐릭터히든 ;리제 히든
             그림번호 = 11
-            LOCAL = 2
+            FLAG:히든메시지 = TARGET ;exc = 2
         ELSEIF CFLAG:엔딩플래그 == 4
             그림번호 = 12
             LOCAL = 3
@@ -370,12 +371,14 @@ SELECTCASE NO:TARGET
             그림번호 = 2
         ELSEIF CFLAG:엔딩플래그 == 4
             그림번호 = 9
+            LOCAL:1 = 1
         ENDIF
     CASE 68 ;에밀리
         IF CFLAG:엔딩플래그 == 2
             LOCAL = 1
         ELSEIF GROUPMATCH(CFLAG:엔딩플래그, 4,5)
             LOCAL = 3
+        ENDIF
     CASE 71 ;네오딤
         IF CFLAG:엔딩플래그 == 3
             CALL RESET_CHARA(71)
@@ -417,12 +420,15 @@ SELECTCASE NO:TARGET
             그림번호 = 14
         ELSEIF CFLAG:엔딩플래그 == 2
             그림번호 = 15
+            LOCAL:1 = 1
         ELSEIF CFLAG:엔딩플래그 == 3
             ;왜 3번 엔딩이 2개야...
             ;여행
-            그림번호 = 16
-            ;달콤한꿈
-            ; 그림번호 = 17
+                ; 그림번호 = 16
+                ; LOCAL:1 = 1
+            ; 달콤한꿈
+                ; 그림번호 = 17
+                ; LOCAL:1 = 1
         ; ELSEIF 아침마다 베로니카 수색 이벤트가 진행됩니다
         ;     CFLAG:etc2 = 1 ;etc2 = 베로니카 실종 일수
         ;     TALENT:실종 = 1 ;exc = 8
@@ -433,5 +439,26 @@ ENDSELECT
 SIF CFLAG:TARGET:개별그림유무
     CALL ILLUST(TARGET, 그림번호, "ENDING")
 
+SIF FLAG:히든메시지 ;exc == 2
+    CALL IS_DREAMING
 
 RETURN 0
+
+;나, 꿈꾸고 있니?
+;200826 현재 리제 히든시 호출
+@IS_DREAMING
+
+PRINTW 이건 꿈 일거야...
+CALL ASK_M("잠에서 깬다.", 1, "현실을 받아들인다.", 1)
+IF RESULT == 0 ;잠에서 깸
+    FLAG:히든메시지 = 0
+ELSE ;현실 받아들임
+    FLAG:속박상태 = 1
+    ;현 TARGET 제외 전부 삭제
+    FOR LOCAL, 1, CHARANUM
+        SIF GETCHARA(LOCAL) == 7
+            CONTINUE
+        ITEM:(GETCHARA(LOCAL) + CHARANUM_START_ITEM) = -1
+        SETBIT CFLAG:(GETCHARA(LOCAL)):이별사유, 3
+    NEXT
+ENDIF
