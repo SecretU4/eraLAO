@@ -10,20 +10,146 @@
 ;-------------------------------------------------------------
 @SOURCE_CHECK
 #DIM 호감도값
-#DIM 신뢰도값
+;#DIM 신뢰도값
 #DIM 스트레스값
 #DIM 공포값
-#DIM 소요시간값
+;#DIM 소요시간값
+
+;LOCAL:0 = 호감도변동 = f LOCAL:1 = 스트레스변동 = s LOCAL:2 = 공포변동 = fr
+VARSET LOCAL, 10, 5
+
+;호감도 배율 처리
+SIF TALENT:짜증
+    LOCAL:0 = LOCAL:0 / 2
+SIF TALENT:사랑
+    LOCAL:0 = LOCAL:0 * 2
+SIF TALENT:혼인 == 1
+    LOCAL:0 = LOCAL:0 * 2
+SIF TALENT:정신쇠약 == 1
+    LOCAL:0 = LOCAL:0 / 2
+SIF TALENT:얀데레
+    LOCAL:0 = LOCAL:0 * 13 / 10
+SIF TALENT:메가데레
+    LOCAL:0 = LOCAL:0 * 13 / 10
+SELECTCASE TALENT:MASTER:나이
+    CASE 0 ;소년
+        SIF TALENT:체형 == 0 ;작은체구
+            LOCAL:0 = LOCAL:0 * 6 / 5
+        SIF TALENT:체형 == 2 ;큰체구
+            LOCAL:0 = LOCAL:0 * 10 / 9
+        SIF TALENT:나이속성 == 1 ;누님
+            LOCAL:0 = LOCAL:0 * 6 / 5
+        SIF TALENT:쇼타콘
+            LOCAL:0 = LOCAL:0 * 6 / 5
+    CASE 1 ;청년
+    CASE 2 ;중년
+        SIF TALENT:딜프
+            LOCAL:0 = LOCAL:0 * 6 / 5
+ENDSELECT
+SIF TALENT:MASTER:매력
+    LOCAL:0 = LOCAL:0 * 3 / 2
+SIF TALENT:억압
+    LOCAL:0 = LOCAL:0 * 10 / 7
+
+LOCAL:0 = LOCAL:0 / 10
+
+;스트레스 배율 처리
+IF SOURCE:스트레스 < 0
+    SIF TALENT:사랑 == 2
+        LOCAL:1 = LOCAL:1 * 2
+    SIF TALENT:정신쇠약 == 1
+        LOCAL:1 = LOCAL:1 / 2
+ELSEIF SOURCE:스트레스 > 0
+    SIF TALENT:사랑 == 1
+        LOCAL:1 = LOCAL:1 * 4 / 5
+    SIF TALENT:사랑 == 2
+        LOCAL:1 = LOCAL:1 / 2
+    SIF TALENT:혼인 == 1
+        LOCAL:1 = LOCAL:1 / 10
+    SIF TALENT:정신쇠약 == 1
+        LOCAL:1 = LOCAL:1 * 2
+    SIF TALENT:메가데레
+        LOCAL:1 = LOCAL:1 / 2
+    SIF TALENT:긍정도 == 1
+        LOCAL:1 = LOCAL:1 * 4 / 5
+    SIF TALENT:긍정도 == -1
+        LOCAL:1 = LOCAL:1 * 6 / 5
+    SIF TALENT:겁쟁이
+        LOCAL:1 = LOCAL:1 * 6 / 5
+ENDIF
+
+LOCAL:1 = LOCAL:1 / 10
+
+;공포 배율 처리
+IF SOURCE:공포 > 0
+    SIF TALENT:사랑 == 1
+        LOCAL:2 = LOCAL:2 * 4 / 5
+    SIF TALENT:사랑 == 2
+        LOCAL:2 = LOCAL:2 / 2
+    SIF TALENT:혼인 == 1
+        LOCAL:2 = LOCAL:2 / 10
+    SIF TALENT:정신쇠약 == 1
+        LOCAL:2 = LOCAL:2 * 2
+    SIF TALENT:얀데레
+        LOCAL:2 = LOCAL:2 * 10 / 3
+    SIF TALENT:메가데레
+        LOCAL:2 = LOCAL:2 / 2
+    SIF TALENT:긍정도 == 1
+        LOCAL:2 = LOCAL:2 * 4 / 5
+    SIF TALENT:긍정도 == -1
+        LOCAL:2 = LOCAL:2 * 6 / 5
+    SIF TALENT:변태
+        LOCAL:2 = LOCAL:2 / 2
+    SIF TALENT:군인
+        LOCAL:2 = LOCAL:2 * 7 / 10
+    SIF TALENT:겁쟁이
+        LOCAL:2 = LOCAL:2 * 13 / 10
+    SELECTCASE TALENT:MASTER:나이
+        CASE 0 ;소년   
+            LOCAL:2 = LOCAL:2 * 4 / 5
+        CASE 1 ;청년
+        CASE 2 ;중년
+            LOCAL:2 = LOCAL:2 * 6 / 5
+    ENDSELECT
+ENDIF
+
+LOCAL:2 = LOCAL:2 / 10
+
+SIF TALENT:정신쇠약 == 2
+    VARSET LOCAL, 0, 5
+IF !FLAG:속박상태
+    SOURCE:호감도 = SOURCE:호감도 * LOCAL:0
+    SOURCE:스트레스 = SOURCE:스트레스 * LOCAL:1
+    SOURCE:공포 = SOURCE:공포 * LOCAL:2
+ELSE
+    SOURCE:호감도 = 1000
+    SOURCE:스트레스 = -1000
+    SOURCE:공포 = -1000
+ENDIF
 
 TFLAG:호감도증감 += SOURCE:호감도
-TFLAG:신뢰도증감 += SOURCE:신뢰도
+;TFLAG:신뢰도증감 += SOURCE:신뢰도
 TFLAG:스트레스증감 += SOURCE:스트레스
 TFLAG:공포증감 += SOURCE:공포
 
 CFLAG:호감도 += SOURCE:호감도
-CFLAG:신뢰도 += SOURCE:신뢰도
+;CFLAG:신뢰도 += SOURCE:신뢰도
 CFLAG:스트레스 += SOURCE:스트레스
 CFLAG:공포 += SOURCE:공포
+
+PRINTFORML %CALLNAME:TARGET%의
+IF TALENT:MASTER:관심법
+    PRINTFORML 호감도 {SOURCE:호감도}
+    PRINTFORML 스트레스 {SOURCE:스트레스}
+    PRINTFORMW 공포 {SOURCE:공포}
+ELSE
+    PRINTFORML 호감도 + ???
+    PRINTFORML 스트레스 + ???
+    PRINTFORMW 공포 + ???
+ENDIF
+
+SIF TFLAG:고백함
+    CFLAG:고백함 = TFLAG:고백함
 
 SOURCE:소요시간 ++
 
@@ -35,5 +161,6 @@ ELSE
     THROW 당신이 시간을 달리고 있습니다. 타임리프중이 아니라면 개발자에게 문의바랍니다.
 ENDIF
 
-SIF TFLAG:고백함
-    CFLAG:고백함 = TFLAG:고백함
+;횟수 오버시 강제 탈출
+SIF TIME:2 >= TIMELIMIT
+    BEGIN AFTERTRAIN
