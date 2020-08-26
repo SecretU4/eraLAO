@@ -128,3 +128,18 @@ FOR LOCAL, 0, RESULT
 		PRINTFORML %LOCALS:LOCAL%
 	ENDIF
 NEXT
+;===================================================
+;캐릭터를 CSV 초기값으로 바꾸는 함수
+;ARG = CSV상 캐릭터 번호
+;===================================================
+@RESET_CHARA(ARG)
+#DIM INGAME_ID
+
+INGAME_ID = GETCHARA(ARG)
+;일단 새 캐릭터로 추가
+ADDCHARA ARG
+;원 캐릭터와 새 캐릭터의 인게임 번호 교체
+SWAPCHARA INGAME_ID, CHARANUM
+;가장 마지막에 오게 된 원 캐릭터 삭제
+DELCHARA CHARANUM
+
