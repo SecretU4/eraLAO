@@ -22,10 +22,22 @@ CALL UPDATE_STOCK
 
 BEGIN SHOP
 
+;========================================================================
 ;버전명 출력
+;========================================================================
 @eraLAO_VER()
 #FUNCTIONS
 
 LOCALS = {GAMEBASE_VERSION/100}.{(GAMEBASE_VERSION%100)/10}{GAMEBASE_VERSION%10}
 
 RETURNF LOCALS
+;========================================================================
+;버전 변경시 추가/초기화 사항 처리
+;========================================================================
+@VERSION_UP
+
+SIF FLAG:LAST_LAOVERSION == GAMEBASE_VERSION
+    RETURN 0
+
+FLAG:LAST_LAOVERSION = GAMEBASE_VERSION
+RETURN 1
