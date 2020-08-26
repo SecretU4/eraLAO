@@ -5,5 +5,97 @@
 CALL SET_MSG_CSTR(TARGET)
 TRYCALLFORM M_No{NO:TARGET}_TRAIN_END
 
+;일반적인 에라가 아니라서 통과
 ;BEGIN ABLUP
+CALL ABL_CHECK
+
 BEGIN TURNEND
+
+;에라엔진의 ABLUP 대용
+;수치에 따른 캐릭터 기능 취득 처리
+@ABL_CHECK
+
+;공포 299 초과시 정신쇠약 취득
+IF !TALENT:정신쇠약 && CFLAG:공포 > 299
+    PRINTFORML %CALLNAME:TARGET%의 정신이 쇠약해진 것 같다.
+    PRINTS 타겟은
+    PRINTPLAIN [정신쇠약]
+    PRINTW 을 취득했다.
+    TALENT:정신쇠약 = 1
+ENDIF
+
+;에밀리 제외 공포 800 초과시 정신붕괴 취득
+IF NO:TALENT == 68
+ELSEIF !TALENT:정신쇠약 != 2 && CFLAG:공포 > 800
+    PRINTFORML %CALLNAME:TARGET%의 정신이 망가진 것 같다.
+    PRINTS 타겟은
+    PRINTPLAIN [정신붕괴]
+    PRINTW 를 취득했다.
+    TALENT:정신쇠약 = 2
+    CFLAG:호감도 = 0
+    CFLAG:스트레스 = 0
+    CFLAG:공포 = 0
+ENDIF
+
+;스트레스 299 초과시 짜증 취득, 200 미만시 짜증 소멸
+IF !TALENT:짜증 && CFLAG:스트레스 > 299
+    PRINTFORML %타겟은% 진절머리가 난 것 같다.
+    PRINTS 타겟은
+    PRINTPLAIN [짜증]
+    PRINTW 을 취득했다.
+    TALENT:짜증 = 1
+ELSEIF TALENT:짜증 && CFLAG:스트레스 < 200
+    PRINTFORML %타겟은% 화가 풀린 것 같다.
+    PRINTFORM %CALLNAME:TARGET%의
+    PRINTPLAIN [짜증]
+    PRINTW 이 소멸했다.
+    TALENT:짜증 = 0
+ENDIF
+
+;짜증 아님, 호감도 999 초과, 공포 100 미만, 정신쇠약 아닐때 연모
+IF !TALENT:짜증 && !TALENT:정신쇠약
+    IF !TALENT:사랑 && CFLAG:호감도 > 999 && CFLAG:공포 < 100
+        PRINTFORML %타겟은% 당신에게 특별한 감정을 느낀 것 같다.
+        PRINTS 타겟은
+        PRINTPLAIN [연모]
+        PRINTW 를 취득했다.
+        TALENT:사랑 = 1
+        IF TALENT:억압
+            PRINTFORML %타겟을% 속박하고 있던 무언가가 풀렸습니다.
+            PRINTFORM %CALLNAME:TARGET%의
+            PRINTPLAIN [억압]
+            PRINTW 이 소멸했다.
+            TALENT:억압 = 0
+        ENDIF
+    ;짜증 아님, 공포 50 미만, 정신쇠약 아닐때가 사랑 최저조건
+    ELSEIF TALENT:사랑 != 2 && CFLAG:공포 < 50
+        ;에밀리는 호감도가 7999 초과이기만 하면 됨
+        IF NO:TARGET == 68 && CFLAG:호감도 > 7999
+            PRINTFORML %타겟은% 당신에게 특별한 감정을 느낀 것 같다.
+            PRINTS 타겟은
+            PRINTPLAIN [사랑]
+            PRINTW 을 취득했다.
+            TALENT:사랑 = 2
+        ;나머지는 호감도 9999 초과
+        ELSEIF CFLAG:호감도 > 9999
+            PRINTFORML %타겟은% 당신에게 특별한 감정을 느낀 것 같다.
+            PRINTS 타겟은
+            PRINTPLAIN [사랑]
+            PRINTW 을 취득했다.
+            TALENT:사랑 = 2
+            IF TALENT:긍정도 == -1
+                PRINTFORM %CALLNAME:TARGET%의
+                PRINTPLAIN [비관적]
+                PRINTW 이 소멸했다.
+                TALENT:긍정도 = 0
+            ENDIF
+        ENDIF
+    ENDIF
+ENDIF
+
+;고백받은인수 5명 초과시 매력 취득
+IF FLAG:고백받은인수 > 5 && !TALENT:MASTER:매력
+    TALENT:MASTER:매력 = 1
+    PRINTPLAIN 당신은 [매력]
+    PRINTW 을 얻었다
+ENDIF
