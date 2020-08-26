@@ -13,7 +13,7 @@ ENDIF
 IF RESULT == -1
     THROW 잘못된 엔딩플래그값 발견됨
 ELSEIF RESULT ;CFLAG:MASTER 엔딩플래그 비트 위치값
-    TRYCCALLFORM M_No{GETCHARA(ARG)}_ENDING
+    TRYCCALLFORM M_No{NO:TARGET}_ENDING
         IF !RESULT
             ;개별 엔딩 메시지는 있으나 해당 CFLAG값이 대응하지 않는 경우
             CALL ENDING_COMMON
@@ -477,7 +477,7 @@ ENDIF
 
 IF GROUPMATCH(NO:TARGET, 7,68,123,126)
     CALL Goodbye_CHARA(TARGET, 4)
-    TARGET = -1
+    TARGET = 0
 ENDIF
 
 ;게임 지속 불가능 처리
