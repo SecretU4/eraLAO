@@ -283,8 +283,10 @@ SIF 꼬릿말 != ""
 SELECTCASE NO:대상
     CASE 68 ;에밀리
         IF CFLAG:대상:개별선택지유무 == 1
+            ;일단 초기화
+            CFLAG:대상:개별선택지유무 = 0
             PRINTW TODO 에밀리 문장 추가
-            CALL ASK_M("고백을 받아들인다.", 1, "고백을 받아들이지 않는다.", 1, "?????", 1)
+            CALL ASK_M("에밀리의 마음을 받아들였다.", 1, "에밀리의 마음을 받아들이지 않았다.", 1, "?????", 1)
             ;CFLAG:선택지확인 = 에밀리 etc1 고백 가부 판별
             IF RESULT == 0
                 CSTR:대상:1 = Yes
@@ -299,6 +301,9 @@ SELECTCASE NO:대상
         ENDIF
     CASE 91 ;땡컨
         IF CFLAG:대상:개별선택지유무 == 1
+            ;일단 초기화
+            CFLAG:대상:개별선택지유무 = 0
+
             PRINTW TODO 슬레이프니르 문장 추가
             CALL ASK_M("슈퍼스타가 된다.", 1, "군인 신분을 유지한다.", 1)
             IF RESULT == 0
