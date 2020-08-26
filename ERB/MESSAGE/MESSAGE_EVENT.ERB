@@ -11,6 +11,10 @@
 ;-------------------------------------------------
 @MSG_Morning
 
+;대상 없이 밤 > 낮시 에러상황 방지
+SIF TARGET == -1
+    RETURN 0
+
 CALL SET_MSG_CSTR(TARGET)
 
 SIF FLAG:속박상태
