@@ -258,8 +258,8 @@ SELECTCASE ARG
         ENDIF
                 
         PRINTFORMW %CALLNAME:TARGET%에게 반지를 건냈다.
-        CALL ENDING_MARRY_FLAG(TARGET)
         ITEM:ARG --
+        CALL ENDING_MARRY_FLAG(TARGET)
     ;합성 롤리팝, 초콜릿, 수제 케이크
     CASE 2, 3, 4
         PRINTFORML %아이템을% %CALLNAME:TARGET%에게 선물합니다.
