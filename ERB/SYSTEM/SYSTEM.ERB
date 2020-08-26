@@ -7,7 +7,6 @@ SIF CFLAG:MASTER:엔딩플래그
 
 IF TIME == 0
     TIME = 1
-
 ELSEIF TIME == 1
     TIME = 0
     DAY ++
@@ -15,5 +14,8 @@ ELSEIF TIME == 1
     SIF TARGET > 0
         CALL MSG_Morning
 ENDIF
+
+;주식 가격은 GLOBAL 변수로 관리하기에 아무 세이브에서 시간이 바뀔때마다 변동
+CALL UPDATE_STOCK
 
 BEGIN SHOP
