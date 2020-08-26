@@ -1,36 +1,40 @@
 ﻿@ENDING(ARG)
-#DIM REAL_NUM
 
 ;만약을 위한 TARGET 설정
-IF ARG != -1
-    REAL_NUM = GETCHARA(ARG)
+SIF ARG != -1
     TARGET = ARG
+
+IF CFLAG:MASTER:엔딩플래그
+    CALL Classify_EndingFlag
+ELSE
+    CALL Ending_Result
 ENDIF
 
-SIF CFLAG:MASTER:엔딩플래그
-    CALL Classify_EndingFlag
-
-IF RESULT
-    TRYCCALLFORM M_No{REAL_NUM}_ENDING
+IF RESULT == -1
+    THROW 잘못된 엔딩플래그값 발견됨
+ELSEIF RESULT ;CFLAG:MASTER 엔딩플래그 비트 위치값
+    TRYCCALLFORM M_No{GETCHARA(ARG)}_ENDING
         IF !RESULT
-            CALL ENDING_COMMON(ARG)
+            ;개별 엔딩 메시지는 있으나 해당 CFLAG값이 대응하지 않는 경우
+            CALL ENDING_COMMON()
         ELSE
-            ;개별 엔딩플래그 초기화
+            CALL Ending_Result
+            ;엔딩플래그 초기화
             CFLAG:엔딩플래그 = 0
         ENDIF
     CATCH
-        CALL ENDING_COMMON(ARG)
+        ;개별 엔딩 메시지가 없는 경우
+        CALL ENDING_COMMON()
     ENDCATCH
 ELSE
-    CALL ENDING_COMMON(ARG)
+    ;처리할 RESULT값이 없는 경우
+    CALL ENDING_COMMON()
 ENDIF
 ;일단 날짜변경으로 보냄
 BEGIN TURNEND
 
 ;ARG = 인게임 캐릭터번호
-@ENDING_COMMON(ARG)
-#DIM REAL_NUM
-REAL_NUM = NO:ARG
+@ENDING_COMMON
 
 FOR LOCAL, 19, 21
     IF GETBIT(CFLAG:MASTER:엔딩플래그, LOCAL)
@@ -50,18 +54,93 @@ FOR LOCAL, 19, 21
                 PRINTL 공용 엔딩 No.1
                 PRINTL 바이오로이드들의 이상향.
                 PRINTPLAIN 당신은 [사랑꾼]을 얻었다.
-                TALENT:MASTER:사랑꾼 = 1
+                TALENT:MASTER:사랑꾼 = 1 ;exc = 1
             CASE 20 ;EndingB
-
-            ; exc = 2
+                PRINTW 바이오로이드들을 사고 폐기하기를 반복하는 날들을 보내던 당신.
+                PRINTW 그런 당신에 대한 소문은 어느덧 동네를 돌고 돌아 도시에 퍼지며
+                PRINTW 곧 인터넷 기사와 뉴스, SNS를 통해 순식간에 퍼져나갔다.
+                PRINTW 바이오로이드들과 그들을 사랑해주는 사람들은
+                PRINTW 당신의 시선을 마주치기만 해도 두려움에 떨었다.
+                PRINTW 사람들은 당신과 엮이지 않기 위해 어떻게든 거리를 두었으며
+                PRINTW 당신의 집 앞에서는 바이오로이드들을 위한 인권시위가 끊임없이 펼쳐졌다.
+                PRINTW 바이오로이드들을 학대하던 사람들조차 당신의 행동에 학을 떼며 혀를 차곤 했다.
+                PRINTW 하지만 당신은 전혀 신경쓰지 않았다.
+                PRINTW 바이오로이드는 사람이 아니다.
+                PRINTW 바꿔 말하면 바이오로이드에게 무슨 짓을 하더라도 법에 걸리지 않는다.
+                PRINTW 당신은 알수 없는 미소를 지으며
+                PRINTW 오늘도 당신의 집에 들어올 바이오로이드를 눈으로 고르고 있었다.
+                PRINTL 공용 엔딩 No.2
+                PRINTL The only thing they fear is you.
+                PRINTPLAIN 당신은 [냉혈한]을 얻었다.
+                TALENT:MASTER:냉혈한 = 1; exc = 2
             CASE 21 ;EndingC
-
-            ; exc = 3
+                PRINTW 땡전 한 푼 조차 가지지 못한채로 덧없는 인생을 시작한 당신은
+                PRINTW 어느새 남들이 선망하는 큰 돈을 거머쥔 상류층이 되어 있었다.
+                PRINTW 당신이 어떻게 막대한 부를 거머쥐게 되었는지
+                PRINTW 수많은 소문이 돌기 시작했다.
+                PRINTW 바이오로이드들을 부려 돈을 벌었다던가
+                PRINTW 환상의 요리사들도 무릎을 꿇고 예를 표할 기적의 요리를 만들어 팔았다던가
+                PRINTW 당신의 입김 한번에 회사의 생사를 가르는 대주주가 되었다던가
+                PRINTW ...혹은 바이오로이드들을 팔아 돈을 벌었다던가.
+                PRINTW 하지만 소문이 중요한가?
+                PRINTW 어떻게 돈을 벌었던간에 당신의 지갑 안이 마를 날이 없다는건 사실이다.
+                PRINTL 공용 엔딩 No.3
+                PRINTL 미다스의 손.
+                PRINTPLAIN 당신은 [대부호]를 얻었다.
+                TALENT:MASTER:대부호 = 1; exc = 3
         ENDSELECT
         CLEARBIT CFLAG:MASTER:엔딩플래그, LOCAL
         WAIT
+        RETURN 1
     ENDIF
 NEXT
+
+;개별 엔딩 메시지가 없던 경우의 처리
+SELECTCASE CFLAG:TARGET:엔딩플래그
+    CASE 1 ;약혼반지, 정상
+        PRINTFORMW 당신이 %CALLNAME:TARGET%에게 약혼반지를 선물한 지 하루가 지났다.
+        PRINTFORMW 어제 %CALLNAME:TARGET%의 모습은 참으로 장관이었다.
+        PRINTW 울다가 웃다가 갑자기 껴안질 않나.
+        PRINTW 요란한 그 모습에 나도 모르게 농담을 던졌더니,
+        PRINTW 이런 때에는 분위기 파악 좀 하라며 화를 내기까지 했다.
+        PRINTW 뭐, 이런 일도 저런 일도 있었지만
+        PRINTW 서로 미소지으며 지낼 수 있다면 문제될 것이 없을 것이다.
+        PRINTFORMW 그리 생각하고 있자, %타겟이% 자고있던 방에서 인기척이 느껴지기 시작했다.
+        PRINTW 오늘은 또 어떤 일들이 있을까?
+        PRINTFORMW %CALLNAME:TARGET%의 모습을 상상하자 저절로 입가에 미소가 걸렸다.
+        PRINTW ...
+        PRINTW ..
+        PRINTW .
+        PRINTL 공용 엔딩 No.A
+        PRINTW 검은 머리가 파뿌리가 될 때까지.
+    CASE 2 ;약혼반지, 정신붕괴
+        PRINTFORMW 무엇인가 중요한 것을 잃어버린 %CALLNAME:TARGET%에게 당신이 약혼반지를 선물한 지 하루가 지났다.
+        PRINTFORMW 어제 반지를 건네주고 난 이후, %타겟은% 어떤 반응도 하지 않게 되었다.
+        PRINTW 어디서부터 잘못된 것일까, 고민해보아도 답은 나오지 않는다.
+        PRINTW 반지를 건네어 준 것? 아니면 그 전?
+        PRINTFORMW 그것도 아니라면 %CALLNAME:TARGET%를 상점에서 처음 보았던 나 자신인걸까?
+        PRINTW 아무리 생각해보아도 답이 나오지 않던 당신은,
+        PRINTW 고장난 로봇처럼 거듭 생각할 뿐이었다.
+        PRINTW ...
+        PRINTW ..
+        PRINTW .
+        PRINTL 공용 엔딩 No.B
+        PRINTW 공허한 고뇌.
+    CASE 3,4,5 ;캐릭터마다 다른 특수엔딩
+        PRINTW 무슨 일이 있었는지는 알 수 없다.
+        PRINTW 하지만, 누군가 이 세상을 만든 이가 이런 일을 벌인 것만은 분명하다.
+        PRINTFORMW 당신은, %타겟과% 의미있는 시간을 보냈던 것 같지만,
+        PRINTW 이 상황을 만들어 낸 누군가는 그건 알 바 아니라 생각한 것 같다.
+        PRINTW 당신은 대략 정신이 멍해지고 말았다...
+        PRINTW ...
+        PRINTW ..
+        PRINTW .
+        PRINTL 공용 엔딩 No.???
+        PRINTL 나는 누구 여긴 어디.
+        PRINTPLAIN 당신은 [공허함]을 얻었다.
+        WAIT
+        PRINTW 농담이고, 아무래도 엔딩이 들어있지 않은 것 같다. 일어나서 인터넷에 올려보자.
+ENDSELECT
 RETURN 1
 
 ;ARG = 인게임 캐릭터번호
@@ -72,6 +151,8 @@ REAL_NUM = NO:ARG
 
 TARGET = ARG
 TALENT:혼인 = 1
+
+SETBIT CFLAG:MASTER:엔딩플래그, 1
 
 ;정신붕괴
 IF TALENT:정신쇠약 == 2
@@ -104,7 +185,7 @@ ELSEIF TALENT:사랑 == 2
     ENDIF
 ENDIF
 
-RETURN 0
+CALL ENDING(TARGET)
 
 ;ARG = 인게임 캐릭터번호, ARGS: 판매/폐기 구분
 @ENDING_FAREWELL_FLAG(ARG, ARGS)
@@ -146,17 +227,23 @@ ENDSELECT
 
 RETURN 0
 
+;--------------------------------------------------------------------------------
+;CFLAG:MASTER:엔딩플래그 값을 개별 엔딩플래그 값으로 변환 후 MASTER의 해당 값 초기화
+;변환 실행시 TARGET을 해당 엔딩의 캐릭터값으로, 해당 값이 있던 MASTER:엔딩플래그 bit 위치값 리턴
+;범용구상은 통과
+;--------------------------------------------------------------------------------
 @Classify_EndingFlag
 #DIM 비트값
 TARGET = -1
 
 ;bit 1값은 약혼반지 관련으로 ENDING_MARRY_FLAG에서 처리됨
-FOR LOCAL, 2, 63
+FOR LOCAL, 1, 63
     IF GETBIT(CFLAG:MASTER:엔딩플래그, LOCAL)
         SELECTCASE LOCAL
+            CASE 1 ;약혼반지 공용
             CASE 19, 20, 21 ;범용구상
                 RETURN 0
-            CASE 2 ;세이렌
+            CASE 2 ;세이렌 연모 폐기
                 TARGET = GETCHARA(89)
                 CFLAG:TARGET:엔딩플래그 = 3
             CASE 3, 8 ;리제
@@ -166,7 +253,7 @@ FOR LOCAL, 2, 63
                 ELSEIF LOCAL == 8
                     CFLAG:TARGET:엔딩플래그 = 5
                 ENDIF
-            CASE 4 ;켈베로스
+            CASE 4 ;켈베로스 정신붕괴 폐기
                 TARGET = GETCHARA(113)
                 CFLAG:TARGET:엔딩플래그 = 3
             CASE 5 ;소완
@@ -174,12 +261,12 @@ FOR LOCAL, 2, 63
                 CFLAG:TARGET:엔딩플래그 = 3
             CASE 6, 10 ;메이
                 TARGET = GETCHARA(51)
-                IF LOCAL == 6
+                IF LOCAL == 6 ;연모 정신쇠약 폐기
                     CFLAG:TARGET:엔딩플래그 = 3
-                ELSEIF LOCAL == 10
+                ELSEIF LOCAL == 10 ;사랑 출격경험 50 이상 폐기
                     CFLAG:TARGET:엔딩플래그 = 4
                 ENDIF
-            CASE 7 ;모모
+            CASE 7 ;모모 연모 판매
                 TARGET = GETCHARA(123)
                 CFLAG:TARGET:엔딩플래그 = 3
             CASE 9 ;더치 걸
@@ -201,7 +288,7 @@ FOR LOCAL, 2, 63
                 TARGET = GETCHARA(68)
                 IF LOCAL == 15
                     CFLAG:TARGET:엔딩플래그 = 4
-                ELSEIF LOCAL == 22
+                ELSEIF LOCAL == 22 ;연애시작 선택지
                     CFLAG:TARGET:엔딩플래그 = 5
                 ENDIF
             CASE 16, 17 ;유미
@@ -217,7 +304,7 @@ FOR LOCAL, 2, 63
             CASE 23 ;오드리
                 TARGET = GETCHARA(106)
                 CFLAG:TARGET:엔딩플래그 = 3
-            CASE 24 ;베로니카
+            CASE 24 ;베로니카 사랑 혼인 이별
                 TARGET = GETCHARA(138)
                 CFLAG:TARGET:엔딩플래그 = 3
             CASE 25 ;네오딤
@@ -227,12 +314,26 @@ FOR LOCAL, 2, 63
                 THROW 미확인 엔딩 번호 {LOCAL}
         ENDSELECT
         CLEARBIT CFLAG:MASTER:엔딩플래그, LOCAL
-        RETURN 1
+        RETURN LOCAL
     ENDIF
 NEXT
 ;이상상황 처리용
-PRINTV CFLAG:MASTER:엔딩플래그
 PRINTL 이 문구가 보인다면
-PRINTW ENDING에 문제가 생긴 것이니 개발자에게 문의하세요
+PRINTV CFLAG:MASTER:엔딩플래그
+PRINTW 라는 ENDING에 문제가 생긴 것이니 개발자에게 문의하세요
 
-RETURN 1
+RETURN -1
+
+;==================================================================
+;엔딩 결과물 처리
+;상정한 처리 조건
+;1. 개별 엔딩 구상이 있고, 이를 처리 완료했을 때
+;   이 경우 CFLAG:TARGET:엔딩플래그 초기화 전에 호출됨
+;2. @ENDING을 들어왔는데 CFLAG:MASTER:엔딩플래그 값이 없을 때
+;   TURNEND에서 해당 값이 있어야 들어오기 때문에, 상당히 특수한 경우일듯 함
+;==================================================================
+@Ending_Result
+
+
+
+RETURN 0
