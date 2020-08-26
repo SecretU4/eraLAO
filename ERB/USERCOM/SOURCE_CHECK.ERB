@@ -148,8 +148,10 @@ ELSE
     PRINTFORMW 공포 + ???
 ENDIF
 
-SIF TFLAG:고백함
+IF TFLAG:고백함
     CFLAG:고백함 = TFLAG:고백함
+    FLAG:고백받은인수 ++
+ENDIF
 
 SOURCE:소요시간 ++
 
