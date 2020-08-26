@@ -117,6 +117,10 @@ IF TALENT:사랑 && CFLAG:고백함 == 0
         CSTR:1 = %LOCALS%
 ENDIF
 
+;hidden 대응
+SIF FLAG:히든메시지
+    RETURN 0
+
 LOCAL = -1
 IF CFLAG:개별그림유무
     SELECTCASE NO:TARGET
@@ -143,7 +147,7 @@ IF CFLAG:개별그림유무
     ENDSELECT
     ;미실장이기에 디버그용으로만 열어둠
     [IF_DEBUG]
-    CALL ILLURST(NO:TARGET, LOCAL)
+    CALL ILLUST(TARGET, LOCAL, "DATESTART")
     [ENDIF]
 ENDIF
 
@@ -237,7 +241,18 @@ ENDSELECT
 SIF CSTR:1 == ""
     CSTR:1 = %LOCALS%
 
-PRINTFORMW %CSTR:1%
+IF CFLAG:개별그림유무
+    SELECTCASE NO:TARGET
+
+    ENDSELECT
+    ;미실장이기에 디버그용으로만 열어둠
+    [IF_DEBUG]
+    CALL ILLUST(TARGET, LOCAL, "DATECOM")
+    [ENDIF]
+ENDIF
+
+DEBUGPRINTFORML %CSTR:1%
+
 TRYCALLFORM M_No{NO:TARGET}_COM{SELECTCOM}
 
 ;----------------------------------------------

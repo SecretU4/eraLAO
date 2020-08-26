@@ -1,37 +1,107 @@
-﻿;ARG = NO:TARGET, ARG:1 = 원본상의 일러스트 번호
-@ILLURST(ARG, ARG:1)
-SIF ARG:1 == -1
+﻿;ARG = 인게임 캐릭터번호, ARG:1 = 원본상의 일러스트 번호
+;ARGS = 호출 위치, LOCALS = 출력할 파일명
+@ILLUST(ARG, ARG:1, ARGS)
+#DIM CSV_ID
+CSV_ID = NO:ARG
+
+SIF ARG == -1
     RETURN 0
 
-SELECTCASE ARG
-    CASE 7
-        IF ARG:1 == 0 ;연애시작, 고백
-            PRINTL 리제 0번 그림
-            RETURN 1
-        ELSEIF ARG:1 == 2 ;연애시작
-            PRINTL 리제 2번 그림
-            RETURN 1
-        ENDIF
-    CASE 12
-        IF ARG:1 == 3 ;연애시작
-            PRINTL 소완 3번 그림
-            RETURN 1
-        ENDIF
-    CASE 51
-        IF ARG:1 == 1 ;연애시작, 정신붕괴
-            PRINTL 메이 1번 그림
-            RETURN 1
-        ELSEIF ARG:1 == 4 ;연애시작, fLove
-            PRINTL 메이 4번 그림
-            RETURN 1
-        ENDIF
-    CASE 138
-        IF ARG:1 == 5 ;첫 연애시작
-            PRINTL 베로니카 5번 그림
-            RETURN 1
-        ELSEIF ARG:1 == 6 ;연애시작, 고백
-            PRINTL 베로니카 6번 그림
-            RETURN 1
-        ENDIF
-ENDSELECT
-RETURN 0
+IF ARGS == "DATESTART"
+    SELECTCASE ARG:1
+        CASE 1 ;메이, 연애시작, 정신붕괴
+            IF CSV_ID != 51
+                RETURN 0
+            ELSE
+                SIF TALENT:ARG:정신쇠약 != 2
+                    RETURN 0
+                LOCALS = 메이붕괴
+            ENDIF
+        CASE 2 ;리제, 연애시작
+            IF CSV_ID != 7
+                RETURN 0
+            ELSEIF CSTR:ARG:1 == "Confession" ;고백시 일러 표출 X
+                RETURN 0
+            ELSEIF TALENT:ARG:정신쇠약 == 2
+                LOCALS = 8_break
+            ELSEIF TALENT:ARG:정신쇠약 == 1
+                LOCALS = 7_weak
+            ELSEIF TALENT:ARG:짜증
+                LOCALS = 5_annoyed
+            ELSEIF TALENT:ARG:혼인 == 1
+                LOCALS = 4_marryed
+            ELSEIF CFLAG:ARG:공포 > 149
+                LOCALS = 6_fear
+            ELSEIF TALENT:ARG:사랑 ;원판은 연모시에만
+                LOCALS = 3_affection
+            ELSEIF CFLAG:ARG:호감도 > 499
+                LOCALS = 2_high
+            ELSE
+                LOCALS = 1_low
+            ENDIF
+        CASE 3 ;소완, 연애시작
+            IF CSV_ID != 12
+                RETURN 0
+            ELSEIF TALENT:ARG:정신쇠약 == 2
+                LOCALS = 8_break
+            ELSEIF TALENT:ARG:정신쇠약 == 1
+                LOCALS = 7_weak
+            ELSEIF TALENT:ARG:짜증
+                LOCALS = 5_annoyed
+            ELSEIF TALENT:ARG:혼인 == 1
+                LOCALS = 4_marryed
+            ELSEIF CFLAG:ARG:공포 > 149
+                LOCALS = 6_fear
+            ELSEIF TALENT:ARG:사랑 ;원판은 연모시에만
+                LOCALS = 3_affection
+            ELSEIF CFLAG:ARG:호감도 > 499
+                LOCALS = 2_high
+            ELSE
+                LOCALS = 1_low
+            ENDIF
+        CASE 4 ;메이, 연애시작, fLove
+            IF CSV_ID != 51
+                RETURN 0
+            ELSE
+                SIF CSTR:ARG:1 != "fLove"
+                    RETURN 0
+                LOCALS = 오프닝1
+            ENDIF
+        CASE 5 ;베로니카, 연애시작, First
+            IF CSV_ID != 138
+                RETURN 0
+            ELSE
+                SIF CFLAG:ARG:조교여부
+                    RETURN 0
+                LOCALS = 베로니카_연애시작시
+            ENDIF
+        CASE 6 ;베로니카, 연애시작, 고백
+            IF CSV_ID != 138
+                RETURN 0
+            ELSE
+                SIF CSTR:ARG:1 != "Confession"
+                    RETURN 0
+                LOCALS = 베로니카_이벤트_confession
+            ENDIF
+        CASEELSE
+            DEBUGPRINTFORML %ARGS% 조건에 맞지 않는 {ARG:1}
+            RETURN 0
+    ENDSELECT
+
+ELSEIF ARGS == "DATECOM"
+    SELECTCASE ARG:1
+        CASE 0
+        CASE 1
+        CASEELSE
+            DEBUGPRINTFORML %ARGS% 조건에 맞지 않는 {ARG:1}
+            RETURN 0
+    ENDSELECT
+ENDIF
+
+CALL PRINT_ILLUST(LOCALS)
+RETURN 1
+
+;ARGS = 출력 대상 파일 문자열
+@PRINT_ILLUST(ARGS)
+PRINT 아직 화상 표시는 불가합니다. 
+PRINTFORML 출력 대상 파일: %ARGS%
