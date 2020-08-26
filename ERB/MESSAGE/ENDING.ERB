@@ -16,7 +16,7 @@ ELSEIF RESULT ;CFLAG:MASTER 엔딩플래그 비트 위치값
     TRYCCALLFORM M_No{GETCHARA(ARG)}_ENDING
         IF !RESULT
             ;개별 엔딩 메시지는 있으나 해당 CFLAG값이 대응하지 않는 경우
-            CALL ENDING_COMMON()
+            CALL ENDING_COMMON
         ELSE
             CALL Ending_Result
             ;엔딩플래그 초기화
@@ -24,16 +24,16 @@ ELSEIF RESULT ;CFLAG:MASTER 엔딩플래그 비트 위치값
         ENDIF
     CATCH
         ;개별 엔딩 메시지가 없는 경우
-        CALL ENDING_COMMON()
+        CALL ENDING_COMMON
     ENDCATCH
 ELSE
     ;처리할 RESULT값이 없는 경우
-    CALL ENDING_COMMON()
+    CALL ENDING_COMMON
 ENDIF
 ;일단 날짜변경으로 보냄
 BEGIN TURNEND
 
-;ARG = 인게임 캐릭터번호
+;범용엔딩 처리
 @ENDING_COMMON
 
 FOR LOCAL, 19, 21
@@ -330,10 +330,108 @@ RETURN -1
 ;1. 개별 엔딩 구상이 있고, 이를 처리 완료했을 때
 ;   이 경우 CFLAG:TARGET:엔딩플래그 초기화 전에 호출됨
 ;2. @ENDING을 들어왔는데 CFLAG:MASTER:엔딩플래그 값이 없을 때
-;   TURNEND에서 해당 값이 있어야 들어오기 때문에, 상당히 특수한 경우일듯 함
+;   TURNEND에서는 해당 값이 있어야 @ENDING을 들어오기 때문에, 상당히 특수한 경우일듯 함
+;개별 구상 파일에서 처리하기 까다로우므로 화상 처리도 일단 여기서.
 ;==================================================================
 @Ending_Result
+#DIM 그림번호
 
+SELECTCASE NO:TARGET
+    CASE 7 ;리제
+        IF CFLAG:엔딩플래그 == 1
+            그림번호 = 3
+        ELSEIF CFLAG:엔딩플래그 == 2
+            그림번호 = 10
+        ELSEIF CFLAG:엔딩플래그 == 3
+            그림번호 = 6
+            LOCAL = 1
+        ELSEIF CFLAG:캐릭터히든 ;리제 히든
+            그림번호 = 11
+            LOCAL = 2
+        ELSEIF CFLAG:엔딩플래그 == 4
+            그림번호 = 12
+            LOCAL = 3
+        ENDIF
+    CASE 12 ;소완
+        SIF CFLAG:엔딩플래그 == -1 ;소완 배드
+            LOCAL = 1
+        SIF CFLAG:엔딩플래그 == 1
+            그림번호 = 13
+    CASE 21 ;마리
+        SIF CFLAG:엔딩플래그 == 3
+            LOCAL = 1
+    CASE 31, 32 ;레오나, 발키리
+        SIF CFLAG:엔딩플래그 == 3
+            TALENT:혼인 = 1 ;exc = 4
+    CASE 51 ;메이
+        IF CFLAG:엔딩플래그 == 1
+            그림번호 = 1
+        ELSEIF CFLAG:엔딩플래그 == 2
+            그림번호 = 2
+        ELSEIF CFLAG:엔딩플래그 == 4
+            그림번호 = 9
+        ENDIF
+    CASE 68 ;에밀리
+        IF CFLAG:엔딩플래그 == 2
+            LOCAL = 1
+        ELSEIF GROUPMATCH(CFLAG:엔딩플래그, 4,5)
+            LOCAL = 3
+    CASE 71 ;네오딤
+        IF CFLAG:엔딩플래그 == 3
+            CALL RESET_CHARA(71)
+            CFLAG:etc1 = 0 ;exc = 9, ;etc1 = 불명
+        ENDIF
+    CASE 73 ;팬텀
+        SIF CFLAG:엔딩플래그 == 4
+            TALENT:혼인 = 1 ;exc = 5
+    CASE 76 ;닥터
+        SIF CFLAG:엔딩플래그 == 3
+            LOCAL = 3
+    CASE 89 ;세이렌
+        IF CFLAG:엔딩플래그 == 1
+            그림번호 = 4
+        ELSEIF CFLAG:엔딩플래그 == 2
+            그림번호 = 5
+        ENDIF
+    CASE 106 ;오드리
+        SIF CFLAG:엔딩플래그 == 3
+            CFLAG:etc1 = 5 ;exc = 7, etc1= 더치 걸 이벤트 일수
+    CASE 108 ;더치걸
+        SIF CFLAG:엔딩플래그 == 3
+            LOCAL = 1
+    CASE 123 ;모모
+        IF CFLAG:엔딩플래그 == 1
+            그림번호 = 7
+        ; ELSEIF 모모는 이제 당신의 속박에서 벗어났다
+        ;     그림번호 = 8
+        ;     LOCAL = 3
+        ENDIF
+    CASE 126 ;아자젤
+        ; SIF 중요한 무언가가
+        ;     LOCAL = 3
+    CASE 132 ;유미
+        SIF GROUPMATCH(CFLAG:엔딩플래그, 3,4)
+            TALENT:의존증 = 1 ;exc = 6
+    CASE 138 ;베로니카
+        IF CFLAG:엔딩플래그 == 1
+            그림번호 = 14
+        ELSEIF CFLAG:엔딩플래그 == 2
+            그림번호 = 15
+        ELSEIF CFLAG:엔딩플래그 == 3
+            ;왜 3번 엔딩이 2개야...
+            ;여행
+            그림번호 = 16
+            ;달콤한꿈
+            ; 그림번호 = 17
+        ; ELSEIF 아침마다 베로니카 수색 이벤트가 진행됩니다
+        ;     CFLAG:etc2 = 1 ;etc2 = 베로니카 실종 일수
+        ;     TALENT:실종 = 1 ;exc = 8
+        ENDIF 
+ENDSELECT
+
+;화상 처리
+SIF CFLAG:TARGET:개별그림유무
+    CALL ILLUST(TARGET, 그림번호, "ENDING")
 
 
 RETURN 0
