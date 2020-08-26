@@ -157,6 +157,8 @@ TRYCALLFORM M_No{NO:TARGET}_TRAIN_START_{CFLAG:조교여부}
 ;COM 실행시 메시지 라인 설정 함수
 ;----------------------------------------------
 @BIO_COM_MSG
+#DIMS 꼬릿말
+꼬릿말 = 
 
 CALL SET_MSG_CSTR(TARGET)
 
@@ -238,6 +240,14 @@ SELECTCASE NO:TARGET
         ENDIF
 ENDSELECT
 
+;꼬릿말 처리
+IF NO:TARGET == 21 && CFLAG:etc1 > 9 && CSTR:1 == "Yboy"
+    꼬릿말 = %CALLNAME:TARGET%의 상태가 어딘가 이상하다/이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다
+    IF GROUPMATCH(SELECTCOM, 20,21,22)
+        CSTR:1 += "/Danger"
+    ENDIF
+ENDIF
+
 SIF CSTR:1 == ""
     CSTR:1 = %LOCALS%
 
@@ -254,6 +264,9 @@ ENDIF
 DEBUGPRINTFORML %CSTR:1%
 
 TRYCALLFORM M_No{NO:TARGET}_COM{SELECTCOM}
+PRINTL
+SIF 꼬릿말 != ""
+    CALL SPLIT_MSG(꼬릿말, 1)
 
 ;----------------------------------------------
 ;question 대용 클래스
