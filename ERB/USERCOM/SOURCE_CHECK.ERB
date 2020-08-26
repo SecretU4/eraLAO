@@ -160,7 +160,3 @@ ELSEIF SOURCE:소요시간 > 0
 ELSE
     THROW 당신이 시간을 달리고 있습니다. 타임리프중이 아니라면 개발자에게 문의바랍니다.
 ENDIF
-
-;횟수 오버시 강제 탈출
-SIF TIME:2 >= TIMELIMIT
-    BEGIN AFTERTRAIN
