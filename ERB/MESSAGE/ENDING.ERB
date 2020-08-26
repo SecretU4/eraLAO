@@ -332,6 +332,10 @@ RETURN -1
 ;2. @ENDING을 들어왔는데 CFLAG:MASTER:엔딩플래그 값이 없을 때
 ;   TURNEND에서는 해당 값이 있어야 @ENDING을 들어오기 때문에, 상당히 특수한 경우일듯 함
 ;개별 구상 파일에서 처리하기 까다로우므로 화상 처리도 일단 여기서.
+;변수 쓰임새 현황
+;LOCAL (= exc) 1:게임오버 3:해당캐릭터삭제
+;LOCAL:1 1일때 루프를 한 번더 돎. 정확한 역할은 모름
+;그림번호 @ILLUST 함수에 사용
 ;==================================================================
 @Ending_Result
 #DIM 그림번호
@@ -345,22 +349,22 @@ SELECTCASE NO:TARGET
             그림번호 = 10
         ELSEIF CFLAG:엔딩플래그 == 3
             그림번호 = 6 ;TODO 아마도 그림 2개인듯
-            LOCAL = 1
+            LOCAL = 1 ;exc = 1
         ELSEIF CFLAG:캐릭터히든 ;리제 히든
             그림번호 = 11
             FLAG:히든메시지 = TARGET ;exc = 2
         ELSEIF CFLAG:엔딩플래그 == 4
             그림번호 = 12
-            LOCAL = 3
+            LOCAL = 3 ;exc = 3
         ENDIF
     CASE 12 ;소완
         SIF CFLAG:엔딩플래그 == -1 ;소완 배드
-            LOCAL = 1
+            LOCAL = 1 ;exc = 1
         SIF CFLAG:엔딩플래그 == 1
             그림번호 = 13
     CASE 21 ;마리
         SIF CFLAG:엔딩플래그 == 3
-            LOCAL = 1
+            LOCAL = 1 ;exc = 1
     CASE 31, 32 ;레오나, 발키리
         SIF CFLAG:엔딩플래그 == 3
             TALENT:혼인 = 1 ;exc = 4
@@ -375,9 +379,9 @@ SELECTCASE NO:TARGET
         ENDIF
     CASE 68 ;에밀리
         IF CFLAG:엔딩플래그 == 2
-            LOCAL = 1
+            LOCAL = 1 ;exc = 1
         ELSEIF GROUPMATCH(CFLAG:엔딩플래그, 4,5)
-            LOCAL = 3
+            LOCAL = 3 ;exc = 3
         ENDIF
     CASE 71 ;네오딤
         IF CFLAG:엔딩플래그 == 3
@@ -389,7 +393,7 @@ SELECTCASE NO:TARGET
             TALENT:혼인 = 1 ;exc = 5
     CASE 76 ;닥터
         SIF CFLAG:엔딩플래그 == 3
-            LOCAL = 3
+            LOCAL = 3 ;exc = 3
     CASE 89 ;세이렌
         IF CFLAG:엔딩플래그 == 1
             그림번호 = 4
@@ -401,17 +405,17 @@ SELECTCASE NO:TARGET
             CFLAG:etc1 = 5 ;exc = 7, etc1= 더치 걸 이벤트 일수
     CASE 108 ;더치걸
         SIF CFLAG:엔딩플래그 == 3
-            LOCAL = 1
+            LOCAL = 1 ;exc = 1
     CASE 123 ;모모
         IF CFLAG:엔딩플래그 == 1
             그림번호 = 7
         ; ELSEIF 모모는 이제 당신의 속박에서 벗어났다
         ;     그림번호 = 8
-        ;     LOCAL = 3
+        ;     LOCAL = 3 ;exc = 3
         ENDIF
     CASE 126 ;아자젤
         ; SIF 중요한 무언가가
-        ;     LOCAL = 3
+        ;     LOCAL = 3 ;exc = 3
     CASE 132 ;유미
         SIF GROUPMATCH(CFLAG:엔딩플래그, 3,4)
             TALENT:의존증 = 1 ;exc = 6
@@ -442,6 +446,12 @@ SIF CFLAG:TARGET:개별그림유무
 SIF FLAG:히든메시지 ;exc == 2
     CALL IS_DREAMING
 
+;그림은 보여주고 가야하니 이곳에
+IF LOCAL == 1
+    CALL GAMEOVER
+ELSEIF LOCAL == 3 ;exc == 3
+    CALL ENDING_CHARA_Goodbye
+ENDIF
 RETURN 0
 
 ;나, 꿈꾸고 있니?
@@ -456,9 +466,29 @@ ELSE ;현실 받아들임
     FLAG:속박상태 = 1
     ;현 TARGET 제외 전부 삭제
     FOR LOCAL, 1, CHARANUM
-        SIF GETCHARA(LOCAL) == 7
+        SIF NO:LOCAL == 7
             CONTINUE
-        ITEM:(GETCHARA(LOCAL) + CHARANUM_START_ITEM) = -1
-        SETBIT CFLAG:(GETCHARA(LOCAL)):이별사유, 3
+        CALL Goodbye_CHARA(LOCAL, 3)
     NEXT
 ENDIF
+
+;원본 momo2 api 대응
+@ENDING_CHARA_Goodbye
+
+IF GROUPMATCH(NO:TARGET, 7,68,123,126)
+    CALL Goodbye_CHARA(TARGET, 4)
+    TARGET = -1
+ENDIF
+
+;게임 지속 불가능 처리
+@GAMEOVER
+PRINTW ...
+PRINTW ..
+PRINT .
+PRINTW ★★★당신은 사라졌습니다★★★
+SETCOLOR 255,0,0
+PRINTW ----------GAME OVER----------
+RESETCOLOR
+RESETDATA
+CLEARLINE LINECOUNT
+BEGIN TITLE
