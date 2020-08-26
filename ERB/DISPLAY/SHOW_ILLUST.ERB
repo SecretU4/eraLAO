@@ -90,8 +90,27 @@ IF ARGS == "DATESTART"
 
 ELSEIF ARGS == "DATECOM"
     SELECTCASE ARG:1
-        CASE 0
-        CASE 1
+        CASE 1 ;메이 파후파후
+            IF SELECTCOM != 18 || CSV_ID != 51
+                RETURN 0
+            ELSEIF TALENT:ARG:짜증 || TALENT:ARG:정신쇠약 || !TALENT:ARG:사랑
+                RETURN 0
+            ELSE
+                LOCALS = 메이파후
+            ENDIF
+        CASE 3 ;유미 배만지기
+            IF SELECTCOM != 13 || CSV_ID != 132
+                RETURN 0
+            ELSEIF GROUPMATCH(CSTR:ARG:1, "High","Affection")
+                LOCALS = 술배
+            ELSE
+                RETURN 0
+            ENDIF
+        ;순차대사 이식시 추가바람
+        ;배설기관
+        ;LOCALS = X문은_배설기관_1
+        ;불경한
+        ;LOCALS = 뚝배기
         CASEELSE
             DEBUGPRINTFORML %ARGS% 조건에 맞지 않는 {ARG:1}
             RETURN 0

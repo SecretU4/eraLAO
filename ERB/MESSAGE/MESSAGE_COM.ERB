@@ -238,6 +238,11 @@ SELECTCASE NO:TARGET
         ELSEIF TALENT:혼인 == 1
             CSTR:1 = Love
         ENDIF
+    CASE 138
+        IF SELECTCOM == 102
+            IF CFLAG:etc1 == 18 ;TODO 순차대사 이식시 사용
+            ENDIF
+        ENDIF
 ENDSELECT
 
 ;꼬릿말 처리
