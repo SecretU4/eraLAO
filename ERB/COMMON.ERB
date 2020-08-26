@@ -149,3 +149,16 @@ TRYCALLFORM IS_M_No{ARG}
 SIF RESULT
 	CFLAG:INGAME_ID:개별대사유무 = 1
 
+;===================================================
+;캐릭터를 현 보유 목록에서 제외하는 함수
+;ARG = 인게임 캐릭터ID, ARG:1 = 이별사유 bit 위치
+;===================================================
+@Goodbye_CHARA(ARG, ARG:1)
+
+SIF GROUPMATCH(ARG, 0,-1)
+	THROW 제외 불가한 {ARG}
+
+ITEM:(NO:ARG + CHARANUM_START_ITEM) = -1
+FLAG:현캐릭터수 --
+SETBIT CFLAG:이별대상:이별사유, ARG:1
+RETURN 1
