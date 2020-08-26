@@ -110,3 +110,21 @@ SIF CHOICES == "＿"
 	CHOICES = 
 RESULT = L_RESULT
 RETURNF CHOICES
+
+;-------------------------------------------------------------
+;"AAA/BBB" 형태의 문자열을 PRINTL AAA PRINTL BBB 형태로 출력함
+;ARGS = 대상 문자열, ARG 0=W 1=L
+;-------------------------------------------------------------
+@SPLIT_MSG(ARGS, ARG=1)
+
+SPLIT ARGS, "/", LOCALS
+
+FOR LOCAL, 0, RESULT
+	IF LOCALS:LOCAL == ""
+		CONTINUE
+	ELSEIF ARG == 0 || (ARG == 1 && RESULT == LOCAL)
+		PRINTFORMW %LOCALS:LOCAL%
+	ELSEIF ARG == 1
+		PRINTFORML %LOCALS:LOCAL%
+	ENDIF
+NEXT
