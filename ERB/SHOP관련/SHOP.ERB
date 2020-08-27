@@ -77,7 +77,8 @@ SELECTCASE RESULT
     CASE 103
         SIF FLAG:속박상태 || TIME == 1
             RETURN -1
-        PRINTW 미실장입니다.
+        CALL SORTIE
+        RETURN 1
     ;대상변경
     CASE 104
         SIF FLAG:속박상태
