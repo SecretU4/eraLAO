@@ -101,7 +101,8 @@ FOR 출격대상, 1, CHARANUM
             총수입 += 수입
 
             CALL BattleLV_UP(출격대상)
-            TFLAG:전투레벨변동인구 += RESULT
+            SIF RESULT
+                TFLAG:전투레벨변동인구 ++
 
             SIF !FLAG:속박상태
                 CALL MSG_Sortie_Return(출격대상, 수입)
@@ -175,7 +176,7 @@ SIF TALENT:MASTER:지휘능력
 RETURNF 수입
 
 ;출격경험 증가로 인한 출격lv 제어 함수
-;레벨이 변한 경우 1, 아니면 0 반환
+;레벨이 변한 경우 해당 레벨값, 아니면 0 반환
 ;ARG = 인게임 캐릭터번호
 @BattleLV_UP(ARG)
 
@@ -185,16 +186,38 @@ IF ARG != MASTER
         RETURN 1
     ELSEIF EXP:ARG:출격경험 > 24 && ABL:ARG:전투lv < 2
         ABL:ARG:전투lv = 2
-        RETURN 1
+        RETURN 2
     ELSEIF EXP:ARG:출격경험 > 64 && ABL:ARG:전투lv < 3
         ABL:ARG:전투lv = 3
-        RETURN 1
+        RETURN 3
     ELSEIF EXP:ARG:출격경험 > 114 && ABL:ARG:전투lv < 4
         ABL:ARG:전투lv = 4
-        RETURN 1
+        RETURN 4
     ELSEIF EXP:ARG:출격경험 > 184 && ABL:ARG:전투lv < 5
         ABL:ARG:전투lv = 5
+        RETURN 5
+    ELSE
+        RETURN 0
+    ENDIF
+ELSE ;MASTER 지휘레벨 처리, 지휘능력 취득은 -1 반환인것에 유의
+    IF EXP:ARG:출격경험 > 19 && ABL:ARG:전투lv < 1
+        ABL:ARG:전투lv = 1
         RETURN 1
+    ELSEIF EXP:ARG:출격경험 > 69 && ABL:ARG:전투lv < 2
+        ABL:ARG:전투lv = 2
+        RETURN 2
+    ELSEIF EXP:ARG:출격경험 > 169 && ABL:ARG:전투lv < 3
+        ABL:ARG:전투lv = 3
+        RETURN 3
+    ELSEIF EXP:ARG:출격경험 > 369 && ABL:ARG:전투lv < 4
+        ABL:ARG:전투lv = 4
+        RETURN 4
+    ELSEIF EXP:ARG:출격경험 > 719 && ABL:ARG:전투lv < 5
+        ABL:ARG:전투lv = 5
+        RETURN 5
+    ELSEIF EXP:ARG:출격경험 > 999 && !TALENT:ARG:지휘능력
+        TALENT:ARG:지휘능력 = 1
+        RETURN -1
     ELSE
         RETURN 0
     ENDIF
