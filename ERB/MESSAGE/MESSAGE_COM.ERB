@@ -58,7 +58,7 @@ SELECTCASE NO:TARGET
             CSTR:1 = Heal
         ELSEIF CFLAG:etc3 < 5 && CFLAG:etc3 > 0 && !CFLAG:etc5
             CSTR:1 = fWeak
-        ELSEIF TALENT:사랑 == 2 && !CFLAG:etc1
+        ELSEIF TALENT:사랑 == 2 && !CFLAG:etc1 ;메이 fLove 취득대사 유무
             CSTR:1 = fLove
         ENDIF
     CASE 68
