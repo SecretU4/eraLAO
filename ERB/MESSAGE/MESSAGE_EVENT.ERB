@@ -45,7 +45,6 @@ CALL SET_MSG_CSTR(ARG)
 TRYCALLFORM M_No{NO:ARG}_EVENT_Sortie_Return
 
 PRINTFORML %ARG가% 출격에서 복귀했습니다.
-MONEYSTR ARG:1
-PRINTFORMW 전투원이 구해온 물건을 팔아 총 %RESULTS%을 벌었습니다.
+PRINTFORMW 전투원이 구해온 물건을 팔아 총 %MONEYSTR(ARG:1)%을 벌었습니다.
 
 RETURN 1
