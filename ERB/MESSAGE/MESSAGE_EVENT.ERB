@@ -36,12 +36,16 @@ TRYCALLFORM M_No{NO:ARG}_EVENT_Sortie
 RETURN 1
 ;-------------------------------------------------
 ;출격 복귀시 개별 메시지
-;ARG = 인게임 캐릭터번호
+;ARG = 인게임 캐릭터번호, ARG:1 = 출격 수입
 ;-------------------------------------------------
-@MSG_Sortie_Return(ARG)
+@MSG_Sortie_Return(ARG, ARG:1)
 
 CALL SET_MSG_CSTR(ARG)
 
 TRYCALLFORM M_No{NO:ARG}_EVENT_Sortie_Return
+
+PRINTFORML %ARG가% 출격에서 복귀했습니다.
+MONEYSTR ARG:1
+PRINTFORMW 전투원이 구해온 물건을 팔아 총 %RESULTS%을 벌었습니다.
 
 RETURN 1
