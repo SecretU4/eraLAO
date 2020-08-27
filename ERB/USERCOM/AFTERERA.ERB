@@ -19,37 +19,35 @@ BEGIN TURNEND
 @ABL_CHECK
 
 ;공포 299 초과시 정신쇠약 취득
-IF !TALENT:정신쇠약 && CFLAG:공포 > 299
+CALL GET_WeakMind(TARGET)
+IF RESULT == 1
     PRINTFORML %CALLNAME:TARGET%의 정신이 쇠약해진 것 같다.
     PRINTS 타겟은
     PRINTPLAIN [정신쇠약]
     PRINTW 을 취득했다.
-    TALENT:정신쇠약 = 1
 ENDIF
 
 ;에밀리 제외 공포 800 초과시 정신붕괴 취득
-IF NO:TALENT == 68
-ELSEIF !TALENT:정신쇠약 != 2 && CFLAG:공포 > 800
+CALL GET_MindBreak(TARGET)
+IF RESULT == 1
     PRINTFORML %CALLNAME:TARGET%의 정신이 망가진 것 같다.
     PRINTS 타겟은
     PRINTPLAIN [정신붕괴]
     PRINTW 를 취득했다.
-    CALL GET_MindBreak(TARGET)
 ENDIF
 
 ;스트레스 299 초과시 짜증 취득, 200 미만시 짜증 소멸
-IF !TALENT:짜증 && CFLAG:스트레스 > 299
+CALL GET_Annoyed(TARGET)
+IF RESULT == 1
     PRINTFORML %타겟은% 진절머리가 난 것 같다.
     PRINTS 타겟은
     PRINTPLAIN [짜증]
     PRINTW 을 취득했다.
-    TALENT:짜증 = 1
-ELSEIF TALENT:짜증 && CFLAG:스트레스 < 200
+ELSEIF RESULT == -1
     PRINTFORML %타겟은% 화가 풀린 것 같다.
     PRINTFORM %CALLNAME:TARGET%의
     PRINTPLAIN [짜증]
     PRINTW 이 소멸했다.
-    TALENT:짜증 = 0
 ENDIF
 
 ;짜증 아님, 호감도 999 초과, 공포 100 미만, 정신쇠약 아닐때 연모
@@ -100,15 +98,56 @@ IF FLAG:고백받은인수 > 5 && !TALENT:MASTER:매력
     PRINTW 을 얻었다
 ENDIF
 
-;=========================================================
-;정신붕괴 취득 함수
-;본 함수에서는 조건 체크 없이 바로 취득처리됨에 유의
-;호감도, 공포, 스트레스가 0이 된다. 예외는 따로 작성해야 함
+;=============================================================
+;각종 능력의 획득/소멸 관련 함수
+;안에서 조건 확인 후 처리하기에 특수케이스는 따로 작성이 필요
+;처리되었다면 1(획득/소멸이라면 각 1,-1), 아니라면 0 반환
 ;ARG = 인게임 캐릭터번호
-;=========================================================
+;-------------------------------------------------------------
+;v0.9 현재 본 함수군을 사용하는 위치 목록
+;@EVENTEND - 연애커맨드/종료 대응
+;@EVENTTURNEND - 날짜변경/(uptime1|uptime2) 대응
+;=============================================================
+;-------------------------------------------------------------
+;정신쇠약 취득
+;공포 299 초과시
+;-------------------------------------------------------------
+@GET_WeakMind(ARG)
+IF !TALENT:ARG:정신쇠약 && CFLAG:ARG:공포 > 299
+    TALENT:ARG:정신쇠약 = 1
+    SIF NO:ARG == 51 && CFLAG:ARG:etc3 < 5 ;etc3 = 메이 쇠약 획득수
+        CFLAG:ARG:etc3 ++
+    RETURN 1
+ENDIF
+RETURN 0
+;-------------------------------------------------------------
+;정신붕괴 취득
+;공포 799 초과시
+;획득시 호감도, 공포, 스트레스가 0이 된다.
+;-------------------------------------------------------------
 @GET_MindBreak(ARG)
 
-TALENT:ARG:정신쇠약 = 2
-CFLAG:ARG:호감도 = 0
-CFLAG:ARG:스트레스 = 0
-CFLAG:ARG:공포 = 0
+IF !TALENT:ARG:정신쇠약 != 2 && CFLAG:ARG:공포 > 799
+    SIF NO:ARG == 68 && TALENT:ARG:사랑 == 2;에밀리는 사랑이면 제외
+        RETURN 0
+    TALENT:ARG:정신쇠약 = 2
+    CFLAG:ARG:호감도 = 0
+    CFLAG:ARG:스트레스 = 0
+    CFLAG:ARG:공포 = 0
+    RETURN 1
+ENDIF
+RETURN 0
+;-------------------------------------------------------------
+;짜증 취득/소멸
+;스트레스 299 초과시 짜증 취득, 200 미만시 짜증 소멸
+;-------------------------------------------------------------
+@GET_Annoyed(ARG)
+
+IF !TALENT:ARG:짜증 && CFLAG:ARG:스트레스 > 299
+    TALENT:ARG:짜증 = 1
+    RETURN 1
+ELSEIF TALENT:ARG:짜증 && CFLAGARG:스트레스 < 200
+    TALENT:ARG:짜증 = 0
+    RETURN -1
+ENDIF
+RETURN 0
