@@ -77,10 +77,9 @@ FLAG:현출격인수 ++
 RETURN 0
 
 @DAYEND_SORTIE
-#DIM 출격대상
-#DIM 수입
-#DIM 총수입
-총수입 = 0
+#DIM DYNAMIC 출격대상
+#DIM DYNAMIC 수입
+#DIM DYNAMIC 총수입
 
 FOR 출격대상, 1, CHARANUM
     IF CFLAG:출격대상:출격중
@@ -96,6 +95,9 @@ FOR 출격대상, 1, CHARANUM
             CFLAG:출격대상:출격수입 += 수입
             FLAG:총출격수입 += 수입
             총수입 += 수입
+
+            CALL BattleLV_UP(출격대상)
+            TFLAG:전투레벨변동인구 += RESULT
 
             SIF !FLAG:속박상태
                 CALL MSG_Sortie_Return(출격대상, 수입)
@@ -167,3 +169,29 @@ SIF TALENT:MASTER:지휘능력
     수입 = 수입 * 3 / 2
 
 RETURNF 수입
+
+;출격경험 증가로 인한 출격lv 제어 함수
+;레벨이 변한 경우 1, 아니면 0 반환
+;ARG = 인게임 캐릭터번호
+@BattleLV_UP(ARG)
+
+IF ARG != MASTER
+    IF EXP:ARG:출격경험 > 4 && ABL:ARG:전투lv < 1
+        ABL:ARG:전투lv = 1
+        RETURN 1
+    ELSEIF EXP:ARG:출격경험 > 24 && ABL:ARG:전투lv < 2
+        ABL:ARG:전투lv = 2
+        RETURN 1
+    ELSEIF EXP:ARG:출격경험 > 64 && ABL:ARG:전투lv < 3
+        ABL:ARG:전투lv = 3
+        RETURN 1
+    ELSEIF EXP:ARG:출격경험 > 114 && ABL:ARG:전투lv < 4
+        ABL:ARG:전투lv = 4
+        RETURN 1
+    ELSEIF EXP:ARG:출격경험 > 184 && ABL:ARG:전투lv < 5
+        ABL:ARG:전투lv = 5
+        RETURN 1
+    ELSE
+        RETURN 0
+    ENDIF
+ENDIF
