@@ -34,10 +34,7 @@ ELSEIF !TALENT:정신쇠약 != 2 && CFLAG:공포 > 800
     PRINTS 타겟은
     PRINTPLAIN [정신붕괴]
     PRINTW 를 취득했다.
-    TALENT:정신쇠약 = 2
-    CFLAG:호감도 = 0
-    CFLAG:스트레스 = 0
-    CFLAG:공포 = 0
+    CALL GET_MindBreak(TARGET)
 ENDIF
 
 ;스트레스 299 초과시 짜증 취득, 200 미만시 짜증 소멸
@@ -102,3 +99,16 @@ IF FLAG:고백받은인수 > 5 && !TALENT:MASTER:매력
     PRINTPLAIN 당신은 [매력]
     PRINTW 을 얻었다
 ENDIF
+
+;=========================================================
+;정신붕괴 취득 함수
+;본 함수에서는 조건 체크 없이 바로 취득처리됨에 유의
+;호감도, 공포, 스트레스가 0이 된다. 예외는 따로 작성해야 함
+;ARG = 인게임 캐릭터번호
+;=========================================================
+@GET_MindBreak(ARG)
+
+TALENT:ARG:정신쇠약 = 2
+CFLAG:ARG:호감도 = 0
+CFLAG:ARG:스트레스 = 0
+CFLAG:ARG:공포 = 0
