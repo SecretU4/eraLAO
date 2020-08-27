@@ -42,6 +42,8 @@ IF TIME == 0 ;낮 > 밤
 
 ELSEIF TIME == 1 ;밤 > 낮
     TIME = 0
+    ;원본 날짜변경/etc 대응
+    CALL DAYEND_SPECIAL
     DAY ++
     CALL DAYEND_SORTIE
     총수입:2 = RESULT
@@ -127,6 +129,7 @@ ELSEIF TIME == 1 ;밤 > 낮
                     CFLAG:주회:etc2 ++ ;etc2 = 리제 엔딩 4
                 ELSE
                     CFLAG:주회:etc2 = 0
+                ENDIF
             CASE 12 ;소완
                 IF TALENT:주회:정신쇠약 == 1 && 주회 != TARGET
                     CFLAG:주회:etc1 ++ ;etc1 = 소완 엔딩 3 카운트
@@ -221,17 +224,17 @@ ELSEIF TIME == 1 ;밤 > 낮
             PRINTL 전투레벨이 상승한 전투원이 있습니다.
         SIF TFLAG:정신붕괴인구
             PRINTL 보유중인 바이오로이드 중에 [정신붕괴]를 소지한 인원이 있어, 모든 바이오로이드의 공포가 소량 상승하였습니다.
-        SIF TFLALG:얀데레질투인구
+        SIF TFLAG:얀데레질투인구
             PRINTL [얀데레]를 소지한 인원이 질투로 인해 스트레스가 소량 상승하였습니다.
-        SIF TFLALG:비관적자학인구
+        SIF TFLAG:비관적자학인구
             PRINTL [비관적]을 소지한 인원이 자학으로 인해 스트레스가 소량 상승하였습니다.
-        SIF TFLALG:짜증획득인구
+        SIF TFLAG:짜증획득인구
             PRINTL 바이오로이드 중 누군가의 짜증이 난 것 같습니다.
-        SIF TFLALG:짜증소멸인구
+        SIF TFLAG:짜증소멸인구
             PRINTL 바이오로이드 중 누군가의 짜증이 풀린 것 같습니다.
-        SIF TFLALG:정신쇠약획득인구
+        SIF TFLAG:정신쇠약획득인구
             PRINTL  바이오로이드 중 누군가의 정신이 쇠약해진 것 같습니다.
-        SIF TFLALG:정신붕괴획득인구
+        SIF TFLAG:정신붕괴획득인구
             PRINTL  바이오로이드 중 누군가의 마음이 부숴진 것 같습니다.
         PRINTFORMW 보유한 전투원들의 유지비용으로 %MONEYSTR(총수입:1)%이 소모되었습니다.
         SIF GROUPMATCH(지휘lv증가, 1,2,3,4,5)
@@ -261,6 +264,34 @@ CALL UPDATE_STOCK
 
 BEGIN SHOP
 
+;========================================================================
+;원본 날짜변경/etc 대응
+;========================================================================
+@DAYEND_SPECIAL
+#DIM 주회
+FOR 주회, 1, CHARANUM
+    ;미보유 캐릭터 제외
+    SIF ITEM:(ITEM_BIO(NO:주회)) < 1
+        CONTINUE
+    SELECTCASE NO:주회
+        CASE 7 ;리제
+            IF CFLAG:주회:etc1 > 30 ;etc1 =
+                CFLAG:MASTER:엔딩플래그 = 3
+            ELSEIF CFLAG:주회:etc2 > 30 ;etc2 =
+                CFLAG:MASTER:엔딩플래그 = 8
+            ELSEIF CFLAG:주회:etc1 > 15
+                PRINTL 리제가 공포에 휩싸인 채 혼자서 중얼거리고 있다.
+                PRINTW 이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다.
+            ELSEIF CFLAG:주회:etc2 > 15
+                PRINTL 리제의 스트레스가 심각할 정도로 쌓인 것 같다.
+                PRINTW 이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다.
+            ENDIF
+    ENDSELECT
+NEXT
+
+SIF CFLAG:MASTER:엔딩플래그
+    CALL ENDING(-1)
+RETURN 1
 ;========================================================================
 ;버전명 출력
 ;========================================================================
