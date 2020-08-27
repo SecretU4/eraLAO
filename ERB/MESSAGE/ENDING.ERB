@@ -1,4 +1,10 @@
-﻿@ENDING(ARG)
+﻿;============================================================================================
+;함수명: ENDING(ARG)
+;원본 '엔딩' 대응
+;분류된 엔딩플래그를 총괄하는 함수
+;ARG = 인게임 캐릭터번호. -1인 경우 TURNEND에서 온 것
+;============================================================================================
+@ENDING(ARG)
 
 ;만약을 위한 TARGET 설정
 SIF ARG != -1
@@ -32,119 +38,12 @@ ELSE
 ENDIF
 ;일단 날짜변경으로 보냄
 BEGIN TURNEND
-
-;범용엔딩 처리
-@ENDING_COMMON
-
-FOR LOCAL, 19, 21
-    IF GETBIT(CFLAG:MASTER:엔딩플래그, LOCAL)
-        SELECTCASE LOCAL
-            CASE 19 ;EndingA
-                PRINTW 당신이 바이오로이드들과 함께 행복한 시간들을 보낸지 어연 오랜 시간이 지났다.
-                PRINTW 평소 인간들의 행태에 대해 소문을 듣던 바이오로이드들은 겁을 먹었지만
-                PRINTW 당신은 그런 아이들을 아낌없이 보살펴주며 따뜻하게 대해 주었다.
-                PRINTW 어느덧 당신에 대한 소문은 돌고 돌아 사람들에게 전해졌으며
-                PRINTW 누구나 할 것 없이 바이오로이드들의 선망의 대상이 되었다.
-                PRINTW 누군가는 당신의 아낌없는 사랑에 대해 칭찬하고
-                PRINTW 누군가는 당신의 행동을 이해할 수 없다며 미친 사람 취급했다.
-                PRINTW 하지만 당신은 그런 소문들을 전혀 신경쓰지 않았다.
-                PRINTW 중요한건 이 사랑스러운 아이들과 함께 지내는 시간이리라.
-                PRINTW 당신은 오늘도 사랑하는 바이오로이드들과 함께
-                PRINTW 새로운 아침을 맞이하고 있었다.
-                PRINTL 공용 엔딩 No.1
-                PRINTL 바이오로이드들의 이상향.
-                PRINTPLAIN 당신은 [사랑꾼]을 얻었다.
-                TALENT:MASTER:사랑꾼 = 1 ;exc = 1
-            CASE 20 ;EndingB
-                PRINTW 바이오로이드들을 사고 폐기하기를 반복하는 날들을 보내던 당신.
-                PRINTW 그런 당신에 대한 소문은 어느덧 동네를 돌고 돌아 도시에 퍼지며
-                PRINTW 곧 인터넷 기사와 뉴스, SNS를 통해 순식간에 퍼져나갔다.
-                PRINTW 바이오로이드들과 그들을 사랑해주는 사람들은
-                PRINTW 당신의 시선을 마주치기만 해도 두려움에 떨었다.
-                PRINTW 사람들은 당신과 엮이지 않기 위해 어떻게든 거리를 두었으며
-                PRINTW 당신의 집 앞에서는 바이오로이드들을 위한 인권시위가 끊임없이 펼쳐졌다.
-                PRINTW 바이오로이드들을 학대하던 사람들조차 당신의 행동에 학을 떼며 혀를 차곤 했다.
-                PRINTW 하지만 당신은 전혀 신경쓰지 않았다.
-                PRINTW 바이오로이드는 사람이 아니다.
-                PRINTW 바꿔 말하면 바이오로이드에게 무슨 짓을 하더라도 법에 걸리지 않는다.
-                PRINTW 당신은 알수 없는 미소를 지으며
-                PRINTW 오늘도 당신의 집에 들어올 바이오로이드를 눈으로 고르고 있었다.
-                PRINTL 공용 엔딩 No.2
-                PRINTL The only thing they fear is you.
-                PRINTPLAIN 당신은 [냉혈한]을 얻었다.
-                TALENT:MASTER:냉혈한 = 1; exc = 2
-            CASE 21 ;EndingC
-                PRINTW 땡전 한 푼 조차 가지지 못한채로 덧없는 인생을 시작한 당신은
-                PRINTW 어느새 남들이 선망하는 큰 돈을 거머쥔 상류층이 되어 있었다.
-                PRINTW 당신이 어떻게 막대한 부를 거머쥐게 되었는지
-                PRINTW 수많은 소문이 돌기 시작했다.
-                PRINTW 바이오로이드들을 부려 돈을 벌었다던가
-                PRINTW 환상의 요리사들도 무릎을 꿇고 예를 표할 기적의 요리를 만들어 팔았다던가
-                PRINTW 당신의 입김 한번에 회사의 생사를 가르는 대주주가 되었다던가
-                PRINTW ...혹은 바이오로이드들을 팔아 돈을 벌었다던가.
-                PRINTW 하지만 소문이 중요한가?
-                PRINTW 어떻게 돈을 벌었던간에 당신의 지갑 안이 마를 날이 없다는건 사실이다.
-                PRINTL 공용 엔딩 No.3
-                PRINTL 미다스의 손.
-                PRINTPLAIN 당신은 [대부호]를 얻었다.
-                TALENT:MASTER:대부호 = 1; exc = 3
-        ENDSELECT
-        CLEARBIT CFLAG:MASTER:엔딩플래그, LOCAL
-        WAIT
-        RETURN 1
-    ENDIF
-NEXT
-
-;개별 엔딩 메시지가 없던 경우의 처리
-SELECTCASE CFLAG:TARGET:엔딩플래그
-    CASE 1 ;약혼반지, 정상
-        PRINTFORMW 당신이 %CALLNAME:TARGET%에게 약혼반지를 선물한 지 하루가 지났다.
-        PRINTFORMW 어제 %CALLNAME:TARGET%의 모습은 참으로 장관이었다.
-        PRINTW 울다가 웃다가 갑자기 껴안질 않나.
-        PRINTW 요란한 그 모습에 나도 모르게 농담을 던졌더니,
-        PRINTW 이런 때에는 분위기 파악 좀 하라며 화를 내기까지 했다.
-        PRINTW 뭐, 이런 일도 저런 일도 있었지만
-        PRINTW 서로 미소지으며 지낼 수 있다면 문제될 것이 없을 것이다.
-        PRINTFORMW 그리 생각하고 있자, %타겟이% 자고있던 방에서 인기척이 느껴지기 시작했다.
-        PRINTW 오늘은 또 어떤 일들이 있을까?
-        PRINTFORMW %CALLNAME:TARGET%의 모습을 상상하자 저절로 입가에 미소가 걸렸다.
-        PRINTW ...
-        PRINTW ..
-        PRINTW .
-        PRINTL 공용 엔딩 No.A
-        PRINTW 검은 머리가 파뿌리가 될 때까지.
-    CASE 2 ;약혼반지, 정신붕괴
-        PRINTFORMW 무엇인가 중요한 것을 잃어버린 %CALLNAME:TARGET%에게 당신이 약혼반지를 선물한 지 하루가 지났다.
-        PRINTFORMW 어제 반지를 건네주고 난 이후, %타겟은% 어떤 반응도 하지 않게 되었다.
-        PRINTW 어디서부터 잘못된 것일까, 고민해보아도 답은 나오지 않는다.
-        PRINTW 반지를 건네어 준 것? 아니면 그 전?
-        PRINTFORMW 그것도 아니라면 %CALLNAME:TARGET%를 상점에서 처음 보았던 나 자신인걸까?
-        PRINTW 아무리 생각해보아도 답이 나오지 않던 당신은,
-        PRINTW 고장난 로봇처럼 거듭 생각할 뿐이었다.
-        PRINTW ...
-        PRINTW ..
-        PRINTW .
-        PRINTL 공용 엔딩 No.B
-        PRINTW 공허한 고뇌.
-    CASE 3,4,5 ;캐릭터마다 다른 특수엔딩
-        PRINTW 무슨 일이 있었는지는 알 수 없다.
-        PRINTW 하지만, 누군가 이 세상을 만든 이가 이런 일을 벌인 것만은 분명하다.
-        PRINTFORMW 당신은, %타겟과% 의미있는 시간을 보냈던 것 같지만,
-        PRINTW 이 상황을 만들어 낸 누군가는 그건 알 바 아니라 생각한 것 같다.
-        PRINTW 당신은 대략 정신이 멍해지고 말았다...
-        PRINTW ...
-        PRINTW ..
-        PRINTW .
-        PRINTL 공용 엔딩 No.???
-        PRINTL 나는 누구 여긴 어디.
-        PRINTPLAIN 당신은 [공허함]을 얻었다.
-        WAIT
-        PRINTW 농담이고, 아무래도 엔딩이 들어있지 않은 것 같다. 일어나서 인터넷에 올려보자.
-ENDSELECT
-RETURN 1
-
+;============================================================================================
+;함수명: ENDING_MARRY_FLAG(ARG)
+;마지막 수정: v0.9
+;약혼반지 사용시 메시지 + 엔딩플래그 및 수치 변환처리
 ;ARG = 인게임 캐릭터번호
-;약혼반지 구입시 수치 변환처리도 여기서
+;============================================================================================
 @ENDING_MARRY_FLAG(ARG)
 #DIM REAL_NUM
 REAL_NUM = NO:ARG
@@ -176,7 +75,7 @@ ELSEIF TALENT:사랑 == 2
         CFLAG:엔딩플래그 = 3
     ;더치 걸
     ELSEIF REAL_NUM == 108
-        IF CFLAG:[[닥터]]:호감도 > 499 && TALENT:[[닥터]]:정신쇠약 == 0
+        IF CFLAG:GETCHARA(76):호감도 > 499 && !TALENT:GETCHARA(76):정신쇠약 ;닥터의 조건
             CFLAG:엔딩플래그 = 4
             TALENT:ARG:체헝 = 1
         ELSE
@@ -187,7 +86,12 @@ ENDIF
 
 CALL ENDING(TARGET)
 
+;============================================================================================
+;함수명: ENDING_FAREWELL_FLAG(ARG, ARGS)
+;마지막 수정: v0.9
+;이별(판매/폐기)시 대사 및 엔딩플래그 처리
 ;ARG = 인게임 캐릭터번호, ARGS: 판매/폐기 구분
+;============================================================================================
 @ENDING_FAREWELL_FLAG(ARG, ARGS)
 #DIM REAL_NUM
 REAL_NUM = NO:ARG
@@ -226,283 +130,13 @@ SELECTCASE ARGS
 ENDSELECT
 
 RETURN 0
-
-;--------------------------------------------------------------------------------
-;CFLAG:MASTER:엔딩플래그 값을 개별 엔딩플래그 값으로 변환 후 MASTER의 해당 값 초기화
-;변환 실행시 TARGET을 해당 엔딩의 캐릭터값으로, 해당 값이 있던 MASTER:엔딩플래그 bit 위치값 리턴
-;범용구상은 통과
-;--------------------------------------------------------------------------------
-@Classify_EndingFlag
-#DIM 비트값
-TARGET = -1
-
-;bit 1값은 약혼반지 관련으로 ENDING_MARRY_FLAG에서 처리됨
-FOR LOCAL, 1, 63
-    IF GETBIT(CFLAG:MASTER:엔딩플래그, LOCAL)
-        SELECTCASE LOCAL
-            CASE 1 ;약혼반지 공용
-            CASE 19, 20, 21 ;범용구상
-                RETURN 0
-            CASE 2 ;세이렌 연모 폐기
-                TARGET = GETCHARA(89)
-                CFLAG:TARGET:엔딩플래그 = 3
-            CASE 3, 8 ;리제
-                TARGET = GETCHARA(7)
-                IF LOCAL == 3
-                    CFLAG:TARGET:엔딩플래그 = 3
-                ELSEIF LOCAL == 8
-                    CFLAG:TARGET:엔딩플래그 = 5
-                ENDIF
-            CASE 4 ;켈베로스 정신붕괴 폐기
-                TARGET = GETCHARA(113)
-                CFLAG:TARGET:엔딩플래그 = 3
-            CASE 5 ;소완
-                TARGET = GETCHARA(12)
-                CFLAG:TARGET:엔딩플래그 = 3
-            CASE 6, 10 ;메이
-                TARGET = GETCHARA(51)
-                IF LOCAL == 6 ;연모 정신쇠약 폐기
-                    CFLAG:TARGET:엔딩플래그 = 3
-                ELSEIF LOCAL == 10 ;사랑 출격경험 50 이상 폐기
-                    CFLAG:TARGET:엔딩플래그 = 4
-                ENDIF
-            CASE 7 ;모모 연모 판매
-                TARGET = GETCHARA(123)
-                CFLAG:TARGET:엔딩플래그 = 3
-            CASE 9 ;더치 걸
-                TARGET = GETCHARA(108)
-                CFLAG:TARGET:엔딩플래그 = 3
-            CASE 11 ;마리
-                TARGET = GETCHARA(21)
-                CFLAG:TARGET:엔딩플래그 = 3
-            CASE 12 ;레오나
-                TARGET = GETCHARA(31)
-                CFLAG:TARGET:엔딩플래그 = 3
-            CASE 13 ;발키리
-                TARGET = GETCHARA(32)
-                CFLAG:TARGET:엔딩플래그 = 3
-            CASE 14 ;팬텀
-                TARGET = GETCHARA(73)
-                CFLAG:TARGET:엔딩플래그 = 4
-            CASE 15, 22 ;에밀리
-                TARGET = GETCHARA(68)
-                IF LOCAL == 15
-                    CFLAG:TARGET:엔딩플래그 = 4
-                ELSEIF LOCAL == 22 ;연애시작 선택지
-                    CFLAG:TARGET:엔딩플래그 = 5
-                ENDIF
-            CASE 16, 17 ;유미
-                TARGET = GETCHARA(132)
-                IF LOCAL == 16
-                    CFLAG:TARGET:엔딩플래그 = 3
-                ELSEIF LOCAL == 17
-                    CFLAG:TARGET:엔딩플래그 = 4
-                ENDIF
-            CASE 18 ;닥터
-                TARGET = GETCHARA(76)
-                CFLAG:TARGET:엔딩플래그 = 3
-            CASE 23 ;오드리
-                TARGET = GETCHARA(106)
-                CFLAG:TARGET:엔딩플래그 = 3
-            CASE 24 ;베로니카 사랑 혼인 이별
-                TARGET = GETCHARA(138)
-                CFLAG:TARGET:엔딩플래그 = 3
-            CASE 25 ;네오딤
-                TARGET = GETCHARA(71)
-                CFLAG:TARGET:엔딩플래그 = 3
-            CASEELSE
-                THROW 미확인 엔딩 번호 {LOCAL}
-        ENDSELECT
-        CLEARBIT CFLAG:MASTER:엔딩플래그, LOCAL
-        RETURN LOCAL
-    ENDIF
-NEXT
-;이상상황 처리용
-PRINTL 이 문구가 보인다면
-PRINTV CFLAG:MASTER:엔딩플래그
-PRINTW 라는 ENDING에 문제가 생긴 것이니 개발자에게 문의하세요
-
-RETURN -1
-
-;==================================================================
-;엔딩 결과물 처리
-;상정한 처리 조건
-;1. 개별 엔딩 구상이 있고, 이를 처리 완료했을 때
-;   이 경우 CFLAG:TARGET:엔딩플래그 초기화 전에 호출됨
-;2. @ENDING을 들어왔는데 CFLAG:MASTER:엔딩플래그 값이 없을 때
-;   TURNEND에서는 해당 값이 있어야 @ENDING을 들어오기 때문에, 상당히 특수한 경우일듯 함
-;개별 구상 파일에서 처리하기 까다로우므로 화상 처리도 일단 여기서.
-;--------------------------------------------------------------------------------
-;변수 쓰임새 현황
-;LOCAL (= exc) 1:게임오버 3:해당캐릭터삭제
-;LOCAL:1 1일때 루프를 한 번더 돎. 정확한 역할은 모름
-;그림번호 @ILLUST 함수에 사용
-;==================================================================
-@Ending_Result
-#DIM 그림번호
-
-;LOCAL = exc, LOCAL:1 = 1일때 원판에서 추가처리
-SELECTCASE NO:TARGET
-    CASE 7 ;리제
-        IF CFLAG:엔딩플래그 == 1
-            그림번호 = 3
-        ELSEIF CFLAG:엔딩플래그 == 2
-            그림번호 = 10
-        ELSEIF CFLAG:엔딩플래그 == 3
-            그림번호 = 6 ;TODO 아마도 그림 2개인듯
-            LOCAL = 1 ;exc = 1
-        ELSEIF CFLAG:캐릭터히든 ;리제 히든
-            그림번호 = 11
-            FLAG:히든메시지 = TARGET ;exc = 2
-        ELSEIF CFLAG:엔딩플래그 == 4
-            그림번호 = 12
-            LOCAL = 3 ;exc = 3
-        ENDIF
-    CASE 12 ;소완
-        SIF CFLAG:엔딩플래그 == -1 ;소완 배드
-            LOCAL = 1 ;exc = 1
-        SIF CFLAG:엔딩플래그 == 1
-            그림번호 = 13
-    CASE 21 ;마리
-        SIF CFLAG:엔딩플래그 == 3
-            LOCAL = 1 ;exc = 1
-    CASE 31, 32 ;레오나, 발키리
-        SIF CFLAG:엔딩플래그 == 3
-            TALENT:혼인 = 1 ;exc = 4
-    CASE 51 ;메이
-        IF CFLAG:엔딩플래그 == 1
-            그림번호 = 1
-        ELSEIF CFLAG:엔딩플래그 == 2
-            그림번호 = 2
-        ELSEIF CFLAG:엔딩플래그 == 4
-            그림번호 = 9
-            LOCAL:1 = 1
-        ENDIF
-    CASE 68 ;에밀리
-        IF CFLAG:엔딩플래그 == 2
-            LOCAL = 1 ;exc = 1
-        ELSEIF GROUPMATCH(CFLAG:엔딩플래그, 4,5)
-            LOCAL = 3 ;exc = 3
-        ENDIF
-    CASE 71 ;네오딤
-        IF CFLAG:엔딩플래그 == 3
-            CALL RESET_CHARA(71) ;exc = 9
-            CFLAG:etc1 = 0 ;etc1 = 네오딤 스트레스 100상태 카운트
-        ENDIF
-    CASE 73 ;팬텀
-        SIF CFLAG:엔딩플래그 == 4
-            TALENT:혼인 = 1 ;exc = 5
-    CASE 76 ;닥터
-        SIF CFLAG:엔딩플래그 == 3
-            LOCAL = 3 ;exc = 3
-    CASE 89 ;세이렌
-        IF CFLAG:엔딩플래그 == 1
-            그림번호 = 4
-        ELSEIF CFLAG:엔딩플래그 == 2
-            그림번호 = 5
-        ENDIF
-    CASE 106 ;오드리
-        SIF CFLAG:엔딩플래그 == 3
-            CFLAG:etc1 = 5 ;exc = 7, etc1= 더치 걸 이벤트 일수
-    CASE 108 ;더치걸
-        SIF CFLAG:엔딩플래그 == 3
-            LOCAL = 1 ;exc = 1
-    CASE 123 ;모모
-        IF CFLAG:엔딩플래그 == 1
-            그림번호 = 7
-        ; ELSEIF 모모는 이제 당신의 속박에서 벗어났다
-        ;     그림번호 = 8
-        ;     LOCAL = 3 ;exc = 3
-        ENDIF
-    CASE 126 ;아자젤
-        ; SIF 중요한 무언가가
-        ;     LOCAL = 3 ;exc = 3
-    CASE 132 ;유미
-        SIF GROUPMATCH(CFLAG:엔딩플래그, 3,4)
-            TALENT:의존증 = 1 ;exc = 6
-    CASE 138 ;베로니카
-        IF CFLAG:엔딩플래그 == 1
-            그림번호 = 14
-        ELSEIF CFLAG:엔딩플래그 == 2
-            그림번호 = 15
-            LOCAL:1 = 1
-        ELSEIF CFLAG:엔딩플래그 == 3
-            ;왜 3번 엔딩이 2개야...
-            ;여행
-                ; 그림번호 = 16
-                ; LOCAL:1 = 1
-            ; 달콤한꿈
-                ; 그림번호 = 17
-                ; LOCAL:1 = 1
-        ; ELSEIF 아침마다 베로니카 수색 이벤트가 진행됩니다
-        ;     CFLAG:etc2 = 1 ;etc2 = 베로니카 실종 일수
-        ;     TALENT:실종 = 1 ;exc = 8
-        ENDIF 
-ENDSELECT
-
-;화상 처리
-SIF CFLAG:TARGET:개별그림유무
-    CALL ILLUST(TARGET, 그림번호, "ENDING")
-
-SIF FLAG:히든메시지 ;exc == 2
-    CALL IS_DREAMING
-
-;그림은 보여주고 가야하니 이곳에
-IF LOCAL == 1
-    CALL GAMEOVER
-ELSEIF LOCAL == 3 ;exc == 3
-    CALL ENDING_CHARA_Goodbye
-ENDIF
-RETURN 0
-
-;========================================================================
-;나, 꿈꾸고 있니?
-;200826 현재 리제 히든시 호출
-;========================================================================
-@IS_DREAMING
-
-PRINTW 이건 꿈 일거야...
-CALL ASK_M("잠에서 깬다.", 1, "현실을 받아들인다.", 1)
-IF RESULT == 0 ;잠에서 깸
-    FLAG:히든메시지 = 0
-ELSE ;현실 받아들임
-    FLAG:속박상태 = 1
-    ;현 TARGET 제외 전부 삭제
-    FOR LOCAL, 1, CHARANUM
-        SIF NO:LOCAL == 7
-            CONTINUE
-        CALL Goodbye_CHARA(LOCAL, 3)
-    NEXT
-ENDIF
-
-;========================================================================
-;원본 momo2 api 대응
-;========================================================================
-@ENDING_CHARA_Goodbye
-
-IF GROUPMATCH(NO:TARGET, 7,68,123,126)
-    CALL Goodbye_CHARA(TARGET, 4)
-    TARGET = 0
-ENDIF
-
-;========================================================================
-;게임 지속 불가능 처리
-;========================================================================
-@GAMEOVER
-PRINTW ...
-PRINTW ..
-PRINT .
-PRINTW ★★★당신은 사라졌습니다★★★
-SETCOLOR 255,0,0
-PRINTW ----------GAME OVER----------
-RESETCOLOR
-RESETDATA
-CLEARLINE LINECOUNT
-BEGIN TITLE
-
-;========================================================================
+;============================================================================================
+;함수명: ENDING_DAYEND_FLAG
+;마지막 수정: v0.9
 ;원본 날짜변경/etc 대응
-;========================================================================
+;날짜변경시 엔딩 관련 FLAG의 처리
+;일부 경우 메시지 출력이 포함되며, 엔딩플래그가 있으면 마지막에 @ENDING 호출
+;============================================================================================
 @ENDING_DAYEND_FLAG
 #DIM 주회
 FOR 주회, 1, CHARANUM
@@ -662,3 +296,406 @@ NEXT
 SIF CFLAG:MASTER:엔딩플래그
     CALL ENDING(-1)
 RETURN 1
+;============================================================================================
+;함수명: Classify_EndingFlag
+;마지막 수정: v0.9
+;CFLAG:MASTER:엔딩플래그의 bit 값을 개별 엔딩플래그 값으로 변환 후 MASTER의 해당 값 초기화
+;--------------------------------------------------------------------------------------------
+;범용구상은 통과 (19~21)
+;변환 실행시
+;TARGET = 해당 엔딩의 캐릭터값
+;RESULT = 해당 엔딩의 CFLAG:MASTER:엔딩플래그 bit 위치값
+;============================================================================================
+@Classify_EndingFlag
+#DIM 비트값
+TARGET = -1
+
+;bit 1값은 약혼반지 관련으로 ENDING_MARRY_FLAG에서 처리됨
+FOR LOCAL, 1, 63
+    IF GETBIT(CFLAG:MASTER:엔딩플래그, LOCAL)
+        SELECTCASE LOCAL
+            CASE 1 ;약혼반지 공용
+            CASE 19, 20, 21 ;범용구상
+                RETURN 0
+            CASE 2 ;세이렌 연모 폐기
+                TARGET = GETCHARA(89)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 3, 8 ;리제
+                TARGET = GETCHARA(7)
+                IF LOCAL == 3
+                    CFLAG:TARGET:엔딩플래그 = 3
+                ELSEIF LOCAL == 8
+                    CFLAG:TARGET:엔딩플래그 = 5
+                ENDIF
+            CASE 4 ;켈베로스 정신붕괴 폐기
+                TARGET = GETCHARA(113)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 5 ;소완
+                TARGET = GETCHARA(12)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 6, 10 ;메이
+                TARGET = GETCHARA(51)
+                IF LOCAL == 6 ;연모 정신쇠약 폐기
+                    CFLAG:TARGET:엔딩플래그 = 3
+                ELSEIF LOCAL == 10 ;사랑 출격경험 50 이상 폐기
+                    CFLAG:TARGET:엔딩플래그 = 4
+                ENDIF
+            CASE 7 ;모모 연모 판매
+                TARGET = GETCHARA(123)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 9 ;더치 걸
+                TARGET = GETCHARA(108)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 11 ;마리
+                TARGET = GETCHARA(21)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 12 ;레오나
+                TARGET = GETCHARA(31)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 13 ;발키리
+                TARGET = GETCHARA(32)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 14 ;팬텀
+                TARGET = GETCHARA(73)
+                CFLAG:TARGET:엔딩플래그 = 4
+            CASE 15, 22 ;에밀리
+                TARGET = GETCHARA(68)
+                IF LOCAL == 15
+                    CFLAG:TARGET:엔딩플래그 = 4
+                ELSEIF LOCAL == 22 ;연애시작 선택지
+                    CFLAG:TARGET:엔딩플래그 = 5
+                ENDIF
+            CASE 16, 17 ;유미
+                TARGET = GETCHARA(132)
+                IF LOCAL == 16
+                    CFLAG:TARGET:엔딩플래그 = 3
+                ELSEIF LOCAL == 17
+                    CFLAG:TARGET:엔딩플래그 = 4
+                ENDIF
+            CASE 18 ;닥터
+                TARGET = GETCHARA(76)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 23 ;오드리
+                TARGET = GETCHARA(106)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 24 ;베로니카 사랑 혼인 이별
+                TARGET = GETCHARA(138)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASE 25 ;네오딤
+                TARGET = GETCHARA(71)
+                CFLAG:TARGET:엔딩플래그 = 3
+            CASEELSE
+                THROW 미확인 엔딩 번호 {LOCAL}
+        ENDSELECT
+        CLEARBIT CFLAG:MASTER:엔딩플래그, LOCAL
+        RETURN LOCAL
+    ENDIF
+NEXT
+;이상상황 처리용
+PRINTL 이 문구가 보인다면
+PRINTV CFLAG:MASTER:엔딩플래그
+PRINTW 라는 ENDING에 문제가 생긴 것이니 개발자에게 문의하세요
+
+RETURN -1
+;============================================================================================
+;함수명: ENDING_CHARA_Goodbye
+;마지막 수정: v0.9
+;원본 api/momo2 대응
+;엔딩의 결과가 캐릭터와의 강제이별
+;============================================================================================
+@ENDING_CHARA_Goodbye
+
+IF GROUPMATCH(NO:TARGET, 7,68,123,126)
+    CALL Goodbye_CHARA(TARGET, 4)
+    TARGET = 0
+ENDIF
+;============================================================================================
+;함수명: Ending_Result
+;마지막 수정: v0.9
+;엔딩 결과물 처리
+;--------------------------------------------------------------------------------------------
+;상정한 처리 조건
+;1. 개별 엔딩 구상이 있고, 이를 처리 완료했을 때
+;   이 경우 CFLAG:TARGET:엔딩플래그 초기화 전에 호출됨
+;2. @ENDING을 들어왔는데 CFLAG:MASTER:엔딩플래그 값이 없을 때
+;   TURNEND에서는 해당 값이 있어야 @ENDING을 들어오기 때문에, 상당히 특수한 경우일듯 함
+;개별 구상 파일에서 처리하기 까다로우므로 화상 처리도 일단 여기서.
+;--------------------------------------------------------------------------------------------
+;변수 쓰임새 현황
+;LOCAL (= exc) 1:게임오버 3:해당캐릭터삭제
+;LOCAL:1 1일때 루프를 한 번더 돎. 정확한 역할은 모름
+;그림번호 @ILLUST 함수에 사용
+;============================================================================================
+@Ending_Result
+#DIM 그림번호
+
+;LOCAL = exc, LOCAL:1 = 1일때 원판에서 추가처리
+SELECTCASE NO:TARGET
+    CASE 7 ;리제
+        IF CFLAG:엔딩플래그 == 1
+            그림번호 = 3
+        ELSEIF CFLAG:엔딩플래그 == 2
+            그림번호 = 10
+        ELSEIF CFLAG:엔딩플래그 == 3
+            그림번호 = 6 ;TODO 아마도 그림 2개인듯
+            LOCAL = 1 ;exc = 1
+        ELSEIF CFLAG:캐릭터히든 ;리제 히든
+            그림번호 = 11
+            FLAG:히든메시지 = TARGET ;exc = 2
+        ELSEIF CFLAG:엔딩플래그 == 4
+            그림번호 = 12
+            LOCAL = 3 ;exc = 3
+        ENDIF
+    CASE 12 ;소완
+        SIF CFLAG:엔딩플래그 == -1 ;소완 배드
+            LOCAL = 1 ;exc = 1
+        SIF CFLAG:엔딩플래그 == 1
+            그림번호 = 13
+    CASE 21 ;마리
+        SIF CFLAG:엔딩플래그 == 3
+            LOCAL = 1 ;exc = 1
+    CASE 31, 32 ;레오나, 발키리
+        SIF CFLAG:엔딩플래그 == 3
+            TALENT:혼인 = 1 ;exc = 4
+    CASE 51 ;메이
+        IF CFLAG:엔딩플래그 == 1
+            그림번호 = 1
+        ELSEIF CFLAG:엔딩플래그 == 2
+            그림번호 = 2
+        ELSEIF CFLAG:엔딩플래그 == 4
+            그림번호 = 9
+            LOCAL:1 = 1
+        ENDIF
+    CASE 68 ;에밀리
+        IF CFLAG:엔딩플래그 == 2
+            LOCAL = 1 ;exc = 1
+        ELSEIF GROUPMATCH(CFLAG:엔딩플래그, 4,5)
+            LOCAL = 3 ;exc = 3
+        ENDIF
+    CASE 71 ;네오딤
+        IF CFLAG:엔딩플래그 == 3
+            CALL RESET_CHARA(71) ;exc = 9
+            CFLAG:etc1 = 0 ;etc1 = 네오딤 스트레스 100상태 카운트
+        ENDIF
+    CASE 73 ;팬텀
+        SIF CFLAG:엔딩플래그 == 4
+            TALENT:혼인 = 1 ;exc = 5
+    CASE 76 ;닥터
+        SIF CFLAG:엔딩플래그 == 3
+            LOCAL = 3 ;exc = 3
+    CASE 89 ;세이렌
+        IF CFLAG:엔딩플래그 == 1
+            그림번호 = 4
+        ELSEIF CFLAG:엔딩플래그 == 2
+            그림번호 = 5
+        ENDIF
+    CASE 106 ;오드리
+        SIF CFLAG:엔딩플래그 == 3
+            CFLAG:etc1 = 5 ;exc = 7, etc1= 더치 걸 이벤트 일수
+    CASE 108 ;더치걸
+        SIF CFLAG:엔딩플래그 == 3
+            LOCAL = 1 ;exc = 1
+    CASE 123 ;모모
+        IF CFLAG:엔딩플래그 == 1
+            그림번호 = 7
+        ; ELSEIF 모모는 이제 당신의 속박에서 벗어났다
+        ;     그림번호 = 8
+        ;     LOCAL = 3 ;exc = 3
+        ENDIF
+    CASE 126 ;아자젤
+        ; SIF 중요한 무언가가
+        ;     LOCAL = 3 ;exc = 3
+    CASE 132 ;유미
+        SIF GROUPMATCH(CFLAG:엔딩플래그, 3,4)
+            TALENT:의존증 = 1 ;exc = 6
+    CASE 138 ;베로니카
+        IF CFLAG:엔딩플래그 == 1
+            그림번호 = 14
+        ELSEIF CFLAG:엔딩플래그 == 2
+            그림번호 = 15
+            LOCAL:1 = 1
+        ELSEIF CFLAG:엔딩플래그 == 3
+            ;왜 3번 엔딩이 2개야...
+            ;여행
+                ; 그림번호 = 16
+                ; LOCAL:1 = 1
+            ; 달콤한꿈
+                ; 그림번호 = 17
+                ; LOCAL:1 = 1
+        ; ELSEIF 아침마다 베로니카 수색 이벤트가 진행됩니다
+        ;     CFLAG:etc2 = 1 ;etc2 = 베로니카 실종 일수
+        ;     TALENT:실종 = 1 ;exc = 8
+        ENDIF 
+ENDSELECT
+
+;화상 처리
+SIF CFLAG:TARGET:개별그림유무
+    CALL ILLUST(TARGET, 그림번호, "ENDING")
+
+SIF FLAG:히든메시지 ;exc == 2
+    CALL IS_DREAMING
+
+;그림은 보여주고 가야하니 이곳에
+IF LOCAL == 1
+    CALL GAMEOVER
+ELSEIF LOCAL == 3 ;exc == 3
+    CALL ENDING_CHARA_Goodbye
+ENDIF
+RETURN 0
+;============================================================================================
+;함수명 ENDING_COMMON
+;마지막 수정: v0.9
+;범용엔딩 처리
+;--------------------------------------------------------------------------------------------
+;처리 조건
+;CFLAG:MASTER:엔딩플래그의 BIT값이 19~21일 때 범용엔딩 처리
+;CFLAG:TARGET:엔딩플래그의 값을 개인 메시지에서 발견하지 못했을 때 범용엔딩 처리
+;개인 엔딩을 발견하지 못해 처리한 경우 본 함수에서 해당 플래그의 초기화는 실시하지 않음
+;============================================================================================
+@ENDING_COMMON
+
+FOR LOCAL, 19, 21
+    IF GETBIT(CFLAG:MASTER:엔딩플래그, LOCAL)
+        SELECTCASE LOCAL
+            CASE 19 ;EndingA
+                PRINTW 당신이 바이오로이드들과 함께 행복한 시간들을 보낸지 어연 오랜 시간이 지났다.
+                PRINTW 평소 인간들의 행태에 대해 소문을 듣던 바이오로이드들은 겁을 먹었지만
+                PRINTW 당신은 그런 아이들을 아낌없이 보살펴주며 따뜻하게 대해 주었다.
+                PRINTW 어느덧 당신에 대한 소문은 돌고 돌아 사람들에게 전해졌으며
+                PRINTW 누구나 할 것 없이 바이오로이드들의 선망의 대상이 되었다.
+                PRINTW 누군가는 당신의 아낌없는 사랑에 대해 칭찬하고
+                PRINTW 누군가는 당신의 행동을 이해할 수 없다며 미친 사람 취급했다.
+                PRINTW 하지만 당신은 그런 소문들을 전혀 신경쓰지 않았다.
+                PRINTW 중요한건 이 사랑스러운 아이들과 함께 지내는 시간이리라.
+                PRINTW 당신은 오늘도 사랑하는 바이오로이드들과 함께
+                PRINTW 새로운 아침을 맞이하고 있었다.
+                PRINTL 공용 엔딩 No.1
+                PRINTL 바이오로이드들의 이상향.
+                PRINTPLAIN 당신은 [사랑꾼]을 얻었다.
+                TALENT:MASTER:사랑꾼 = 1 ;exc = 1
+            CASE 20 ;EndingB
+                PRINTW 바이오로이드들을 사고 폐기하기를 반복하는 날들을 보내던 당신.
+                PRINTW 그런 당신에 대한 소문은 어느덧 동네를 돌고 돌아 도시에 퍼지며
+                PRINTW 곧 인터넷 기사와 뉴스, SNS를 통해 순식간에 퍼져나갔다.
+                PRINTW 바이오로이드들과 그들을 사랑해주는 사람들은
+                PRINTW 당신의 시선을 마주치기만 해도 두려움에 떨었다.
+                PRINTW 사람들은 당신과 엮이지 않기 위해 어떻게든 거리를 두었으며
+                PRINTW 당신의 집 앞에서는 바이오로이드들을 위한 인권시위가 끊임없이 펼쳐졌다.
+                PRINTW 바이오로이드들을 학대하던 사람들조차 당신의 행동에 학을 떼며 혀를 차곤 했다.
+                PRINTW 하지만 당신은 전혀 신경쓰지 않았다.
+                PRINTW 바이오로이드는 사람이 아니다.
+                PRINTW 바꿔 말하면 바이오로이드에게 무슨 짓을 하더라도 법에 걸리지 않는다.
+                PRINTW 당신은 알수 없는 미소를 지으며
+                PRINTW 오늘도 당신의 집에 들어올 바이오로이드를 눈으로 고르고 있었다.
+                PRINTL 공용 엔딩 No.2
+                PRINTL The only thing they fear is you.
+                PRINTPLAIN 당신은 [냉혈한]을 얻었다.
+                TALENT:MASTER:냉혈한 = 1; exc = 2
+            CASE 21 ;EndingC
+                PRINTW 땡전 한 푼 조차 가지지 못한채로 덧없는 인생을 시작한 당신은
+                PRINTW 어느새 남들이 선망하는 큰 돈을 거머쥔 상류층이 되어 있었다.
+                PRINTW 당신이 어떻게 막대한 부를 거머쥐게 되었는지
+                PRINTW 수많은 소문이 돌기 시작했다.
+                PRINTW 바이오로이드들을 부려 돈을 벌었다던가
+                PRINTW 환상의 요리사들도 무릎을 꿇고 예를 표할 기적의 요리를 만들어 팔았다던가
+                PRINTW 당신의 입김 한번에 회사의 생사를 가르는 대주주가 되었다던가
+                PRINTW ...혹은 바이오로이드들을 팔아 돈을 벌었다던가.
+                PRINTW 하지만 소문이 중요한가?
+                PRINTW 어떻게 돈을 벌었던간에 당신의 지갑 안이 마를 날이 없다는건 사실이다.
+                PRINTL 공용 엔딩 No.3
+                PRINTL 미다스의 손.
+                PRINTPLAIN 당신은 [대부호]를 얻었다.
+                TALENT:MASTER:대부호 = 1; exc = 3
+        ENDSELECT
+        CLEARBIT CFLAG:MASTER:엔딩플래그, LOCAL
+        WAIT
+        RETURN 1
+    ENDIF
+NEXT
+
+;개별 엔딩 메시지가 없던 경우의 처리
+SELECTCASE CFLAG:TARGET:엔딩플래그
+    CASE 1 ;약혼반지, 정상
+        PRINTFORMW 당신이 %CALLNAME:TARGET%에게 약혼반지를 선물한 지 하루가 지났다.
+        PRINTFORMW 어제 %CALLNAME:TARGET%의 모습은 참으로 장관이었다.
+        PRINTW 울다가 웃다가 갑자기 껴안질 않나.
+        PRINTW 요란한 그 모습에 나도 모르게 농담을 던졌더니,
+        PRINTW 이런 때에는 분위기 파악 좀 하라며 화를 내기까지 했다.
+        PRINTW 뭐, 이런 일도 저런 일도 있었지만
+        PRINTW 서로 미소지으며 지낼 수 있다면 문제될 것이 없을 것이다.
+        PRINTFORMW 그리 생각하고 있자, %타겟이% 자고있던 방에서 인기척이 느껴지기 시작했다.
+        PRINTW 오늘은 또 어떤 일들이 있을까?
+        PRINTFORMW %CALLNAME:TARGET%의 모습을 상상하자 저절로 입가에 미소가 걸렸다.
+        PRINTW ...
+        PRINTW ..
+        PRINTW .
+        PRINTL 공용 엔딩 No.A
+        PRINTW 검은 머리가 파뿌리가 될 때까지.
+    CASE 2 ;약혼반지, 정신붕괴
+        PRINTFORMW 무엇인가 중요한 것을 잃어버린 %CALLNAME:TARGET%에게 당신이 약혼반지를 선물한 지 하루가 지났다.
+        PRINTFORMW 어제 반지를 건네주고 난 이후, %타겟은% 어떤 반응도 하지 않게 되었다.
+        PRINTW 어디서부터 잘못된 것일까, 고민해보아도 답은 나오지 않는다.
+        PRINTW 반지를 건네어 준 것? 아니면 그 전?
+        PRINTFORMW 그것도 아니라면 %CALLNAME:TARGET%를 상점에서 처음 보았던 나 자신인걸까?
+        PRINTW 아무리 생각해보아도 답이 나오지 않던 당신은,
+        PRINTW 고장난 로봇처럼 거듭 생각할 뿐이었다.
+        PRINTW ...
+        PRINTW ..
+        PRINTW .
+        PRINTL 공용 엔딩 No.B
+        PRINTW 공허한 고뇌.
+    CASE 3,4,5 ;캐릭터마다 다른 특수엔딩
+        PRINTW 무슨 일이 있었는지는 알 수 없다.
+        PRINTW 하지만, 누군가 이 세상을 만든 이가 이런 일을 벌인 것만은 분명하다.
+        PRINTFORMW 당신은, %타겟과% 의미있는 시간을 보냈던 것 같지만,
+        PRINTW 이 상황을 만들어 낸 누군가는 그건 알 바 아니라 생각한 것 같다.
+        PRINTW 당신은 대략 정신이 멍해지고 말았다...
+        PRINTW ...
+        PRINTW ..
+        PRINTW .
+        PRINTL 공용 엔딩 No.???
+        PRINTL 나는 누구 여긴 어디.
+        PRINTPLAIN 당신은 [공허함]을 얻었다.
+        WAIT
+        PRINTW 농담이고, 아무래도 엔딩이 들어있지 않은 것 같다. 일어나서 인터넷에 올려보자.
+ENDSELECT
+RETURN 1
+;============================================================================================
+;함수명: IS_DREAMING
+;마지막 수정: v0.9
+;나, 꿈꾸고 있니?
+;(아마도) 극단적 엔딩의 마지막 만회기회 제공 역할
+;v0.9 현재 리제 히든시 호출하고, 해당 경우 리제를 제외한 캐릭터가 전부 강제이별 처리됨
+;============================================================================================
+@IS_DREAMING
+
+PRINTW 이건 꿈 일거야...
+CALL ASK_M("잠에서 깬다.", 1, "현실을 받아들인다.", 1)
+IF RESULT == 0 ;잠에서 깸
+    FLAG:히든메시지 = 0
+ELSE ;현실 받아들임
+    FLAG:속박상태 = 1
+    ;현 TARGET 제외 전부 삭제
+    FOR LOCAL, 1, CHARANUM
+        SIF NO:LOCAL == 7
+            CONTINUE
+        CALL Goodbye_CHARA(LOCAL, 3)
+    NEXT
+ENDIF
+;============================================================================================
+;함수명: GAMEOVER
+;마지막 수정: v0.9
+;게임 지속 불가능 처리
+;세이브를 삭제하진 않는다(아직은)
+;============================================================================================
+@GAMEOVER
+PRINTW ...
+PRINTW ..
+PRINT .
+PRINTW ★★★당신은 사라졌습니다★★★
+SETCOLOR 255,0,0
+PRINTW ----------GAME OVER----------
+RESETCOLOR
+RESETDATA
+CLEARLINE LINECOUNT
+BEGIN TITLE
