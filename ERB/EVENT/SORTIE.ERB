@@ -82,6 +82,10 @@ RETURN 0
 #DIM DYNAMIC 총수입
 
 FOR 출격대상, 1, CHARANUM
+    ;미보유 캐릭터 제외
+    SIF ITEM:(ITEM_BIO(NO:주회)) < 1
+        CONTINUE
+
     IF CFLAG:출격대상:출격중
         IF (TALENT:출격대상:분류 == 2 && CFLAG:출격대상:출격중 > 2) || CFLAG:출격대상:출격중 > 3 ;기동은 출격일수 1일 감소
             CFLAG:출격대상:출격중 = 0
