@@ -43,7 +43,7 @@ IF TIME == 0 ;낮 > 밤
 ELSEIF TIME == 1 ;밤 > 낮
     TIME = 0
     ;원본 날짜변경/etc 대응
-    CALL DAYEND_SPECIAL
+    CALL ENDING_DAYEND_FLAG
     DAY ++
     CALL DAYEND_SORTIE
     총수입:2 = RESULT

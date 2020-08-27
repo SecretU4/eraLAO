@@ -332,6 +332,7 @@ RETURN -1
 ;2. @ENDING을 들어왔는데 CFLAG:MASTER:엔딩플래그 값이 없을 때
 ;   TURNEND에서는 해당 값이 있어야 @ENDING을 들어오기 때문에, 상당히 특수한 경우일듯 함
 ;개별 구상 파일에서 처리하기 까다로우므로 화상 처리도 일단 여기서.
+;--------------------------------------------------------------------------------
 ;변수 쓰임새 현황
 ;LOCAL (= exc) 1:게임오버 3:해당캐릭터삭제
 ;LOCAL:1 1일때 루프를 한 번더 돎. 정확한 역할은 모름
@@ -454,8 +455,10 @@ ELSEIF LOCAL == 3 ;exc == 3
 ENDIF
 RETURN 0
 
+;========================================================================
 ;나, 꿈꾸고 있니?
 ;200826 현재 리제 히든시 호출
+;========================================================================
 @IS_DREAMING
 
 PRINTW 이건 꿈 일거야...
@@ -472,7 +475,9 @@ ELSE ;현실 받아들임
     NEXT
 ENDIF
 
+;========================================================================
 ;원본 momo2 api 대응
+;========================================================================
 @ENDING_CHARA_Goodbye
 
 IF GROUPMATCH(NO:TARGET, 7,68,123,126)
@@ -480,7 +485,9 @@ IF GROUPMATCH(NO:TARGET, 7,68,123,126)
     TARGET = 0
 ENDIF
 
+;========================================================================
 ;게임 지속 불가능 처리
+;========================================================================
 @GAMEOVER
 PRINTW ...
 PRINTW ..
@@ -492,3 +499,166 @@ RESETCOLOR
 RESETDATA
 CLEARLINE LINECOUNT
 BEGIN TITLE
+
+;========================================================================
+;원본 날짜변경/etc 대응
+;========================================================================
+@ENDING_DAYEND_FLAG
+#DIM 주회
+FOR 주회, 1, CHARANUM
+    ;미보유 캐릭터 제외
+    SIF ITEM:(ITEM_BIO(NO:주회)) < 1
+        CONTINUE
+    SELECTCASE NO:주회
+        CASE 7 ;리제
+            IF CFLAG:주회:etc1 > 30 ;etc1 =
+                SETBIT CFLAG:MASTER:엔딩플래그, 3
+            ELSEIF CFLAG:주회:etc2 > 30 ;etc2 =
+                SETBIT CFLAG:MASTER:엔딩플래그, 8
+            ELSEIF CFLAG:주회:etc1 > 15
+                PRINTL 리제가 공포에 휩싸인 채 혼자서 중얼거리고 있다.
+                PRINTW 이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다.
+            ELSEIF CFLAG:주회:etc2 > 15
+                PRINTL 리제의 스트레스가 심각할 정도로 쌓인 것 같다.
+                PRINTW 이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다.
+            ENDIF
+        CASE 12 ;소완
+            IF CFLAG:주회:etc1 > 30 ;etc1 = 
+                SETBIT CFLAG:MASTER:엔딩플래그, 5
+            ELSEIF CFLAG:주회:etc1 > 25
+                PRINTL 소완의 상태가 어딘가 이상하다.
+                PRINTW 이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다.
+            ENDIF
+        CASE 21 ;마리
+            SIF CFLAG:주회:etc1 > 19 ;etc1 =
+                SETBIT CFLAG:MASTER:엔딩플래그, 11
+        CASE 68 ;에밀리
+            SIF CFLAG:주회:etc2 > 4 ;etc2 =
+                SETBIT CFLAG:MASTER:엔딩플래그, 15
+        CASE 71 ;네오딤
+            IF CFLAG:주회:etc1 >= 5 ;etc1 =
+                SETBIT CFLAG:MASTER:엔딩플래그, 25
+            ELSEIF CFLAG:주회:etc1 > 0
+                PRINTL 당신은 네오딤의 자는 모습을 보면서 최근의 이상을 떠올린다.
+                PRINTL 이따금 의식이 갑자기 끊어진듯 멍한 태도를 보이는 것이었다.
+                PRINTL ...상관없겠지.
+                PRINTW 당신은 침대에 누웠다.
+            ENDIF
+        CASE 73 ;팬텀
+            SIF CFLAG:주회:etc3 > 19 && !TALENT:주회:혼인 ;etc3 =
+                SETBIT CFLAG:MASTER:엔딩플래그, 14
+        CASE 76 ;닥터
+            IF CFLAG:주회:etc4 > 19 ;etc4 =
+                SETBIT CFLAG:MASTER:엔딩플래그, 18
+            ELSEIF CFLAG:주회:etc4 > 15
+                PRINTL 저 멀리서 당신을 바라보는 닥터의 모습이 보인다.
+                PRINTW 닥터는 당신에게 불만이 있는 듯 하다.
+            ENDIF
+        CASE 106 ;오드리
+            SIF CFLAG:주회:etc1 == 4 ;etc1 =
+                SETBIT CFLAG:MASTER:엔딩플래그, 23
+        CASE 108 ;더치 걸
+            IF CFLAG:주회:etc1 > 15 ;etc1 =
+                SETBIT CFLAG:MASTER:엔딩플래그, 9
+            ELSEIF CFLAG:주회:etc1 > 10
+                PRINTL 더치 걸의 상태가 어딘가 이상하다.
+                PRINTW 이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다.
+            ENDIF
+        CASE 132 ;유미
+            IF CFLAG:주회:etc1 == 12 ;etc1 =
+                PRINTW
+                PRINTL 아침에 일어나 스마트폰을 열어보니 유미에게서 메세지가 와 있었다.
+                PRINTL「사령관님, 많이... 바쁘신가요?」
+                PRINTL「별 일은 아니에요. 그, 그냥... 요즘 저희 얼굴 본지가 좀 된 것 같아서...」
+                PRINTL「질척거리는 것 같다면 죄송해요...」';
+            ELSEIF CFLAG:주회:etc1 == 13
+                PRINTL 오늘 아침에 유미에게서 메세지가 와 있었다.
+                PRINTL「사령관님, 혹시... 지난번에 제가 보낸 메세지는 확인하셨나요?」
+                PRINTL「확인하셨다면... 제 얼굴 좀 보러 와주시면... 안 될까요?」
+                PRINTL「사령관님이 바쁘시다면 어쩔 수 없지만...」';
+            ELSEIF CFLAG:주회:etc1 == 14
+                PRINTL 「사령관님, 보고싶어요.
+                PRINTL 사령관님이 없는 저에게 내일이 올 수 있을까요?」
+                PRINTW 출처를 알 수 없는 이에게서 메세지가 와 있다.';
+            ELSEIF CFLAG:주회:etc1 > 14
+                SETBIT CFLAG:MASTER:엔딩플래그, 16
+            ELSEIF CFLAG:주회:etc2 == 12 ;etc2 =
+                PRINTL 아침에 일어나 스마트폰을 열어보니 유미에게서 메세지가 와 있다.
+                PRINTL「사령관님? 어디 있어요? 어디 있어요? 어디 있어요?」
+                PRINTL「뭐 해요? 저 잊어버리신 거 아니죠?」
+                PRINTL「저를 이렇게 만들어 버리고 영영 떠나가신 건 아니죠?」
+                PRINTW 당신은 화면을 껐다.
+            ELSEIF CFLAG:주회:etc2 == 13
+                PRINTL 아침에 유미에게서 메세지가 와 있었다.
+                PRINTL「깨진 유리창 이론이라고 알아요?」
+                PRINTL「이미 깨진 유리창은 점점 더 깨지기 쉬워지는 거.」
+                PRINTW「이쯤 되면 사령관님도 알아차리셨겠죠?」
+            ELSEIF CFLAG:주회:etc2 == 14
+                PRINTL 「어차피 안 보고 계시잖아요.」
+                PRINTL「저는 신경도 안 쓰시잖아요.」
+                PRINTL「이미 늦었어요.」
+                PRINTW 출처를 알 수 없는 이에게서 메세지가 와 있었다.
+            ELSEIF CFLAG:주회:etc2 > 14
+                SETBIT CFLAG:MASTER:엔딩플래그, 17
+            ENDIF
+        CASE 138 ;베로니카
+            IF CFLAG:주회:etc2 == 1 ;etc2 =
+                PRINTL 당신은 그녀를 찾기 위해 인근을 돌아다녔다.
+                PRINTL 그녀는 눈에 띄는 복장을 했기 때문에 주변 사람들을 탐문하면 찾을 수 있을지도 모른다.
+                PRINTW 악명높은 코헤이의 전투수녀 복장을 하고 있으니 누가 해코지는 할 리가 없다... 라고 당신은 계속 생각했다.
+            ELSEIF CFLAG:주회:etc2 == 2
+                PRINTL 집 근처의 사람들에게 베로니카에 대해 물었다.
+                PRINTL「그 수녀님 말입니까? 그러고 보니 최근 본 적이 없군요.」
+                PRINTW 당신은 주변을 샅샅이 돌아다녔지만, 별 소득 없이 돌아갔다.
+            ELSEIF CFLAG:주회:etc2 == 3
+                PRINTL 집 근처의 사람들에게 베로니카에 대해 물었다.
+                PRINTL「그 언니 말이죠? 옆 동네에 놀러 갔다가 봤어요!
+                PRINTL 빵집 앞에 서성이고 있었어요.
+                PRINTL 배가 고팠던 걸까요?」
+                PRINTW 당신은 주변을 샅샅이 돌아다녔지만, 별 소득 없이 돌아갔다.
+            ELSEIF CFLAG:주회:etc2 == 4
+                PRINTL 당신은 베로니카를 찾기 위해 지역신문에 광고를 냈다.
+                PRINTL「제 가게에 빵 도둑이 들었던 날이 있었는데, 아마 근처에 있던 그 수녀님이 때려잡긴 했습니다.
+                PRINTL 사례를 할까 했는데 그전에 도둑이 훔친 빵을 먹어 치우곤 도망가 버렸지요.
+                PRINTL 행색이 딱해서 신고하진 않았습니다.」
+                PRINTW 당신은 그 빵집 주변을 돌아다녔지만, 별 소득 없이 돌아갔다.
+            ELSEIF CFLAG:주회:etc2 == 5
+                PRINTL 인근의 다른 지역을 돌아다녔다.
+                PRINTL「그 수녀복 아가씨 말인가.
+                PRINTL 그저께 밤에 골목길에서 본 것 같네, 울면서 누군가를 계속 찾는 것 같았는데 그냥 미친 여자인지 알았어.」
+                PRINTL 주정뱅이로 보이는 남자가 말했다.
+                PRINTW 한동안 골목 근처를 돌아다녔지만 찾을 수 없었다.
+            ELSEIF CFLAG:주회:etc2 == 6
+                PRINTL 지역신문에 올린 광고를 보고 연락이 왔다.
+                PRINTL「우리 애를 데리러 놀이터에 갔다가 애랑 놀고 있는 걸 봤어요.
+                PRINTL 소꿉놀이를 하던 중에 난데없이 흙을 퍼먹길래 급하게 애를 데리고 나갔죠.
+                PRINTL 근데 찾으면 사례금 주나요?」
+                PRINTW 애엄마로 보이는 여자가 말했다.
+            ELSEIF CFLAG:주회:etc2 == 7
+                PRINTL 당신은 전에 들은 놀이터를 찾아가 탐문했다.「그 누나 자주 봤어! 아침에 보면 미끄럼틀 안에서 자고 있었어. 사탕을 주면 되게 좋아해! 히히, 예쁘긴 한데 냄새나~」
+                PRINTL 코를 막는 시늉을 하는 아이가 말했다.
+                PRINTW 당신은 놀이터 주변을 한동안 돌아다녔지만, 찾을 수 없었다.",
+            ELSEIF CFLAG:주회:etc2 == 8
+                PRINTL 지역신문에 올린 광고를 보고 연락이 왔다.
+                PRINTL「공원 벤치에서 비둘기에게 먹이를 주고 있는데, 갑자기 달려와 비둘기들이랑 같이 모이를 먹더군. 너무 충격적이라 잊히질 않아...」
+                PRINTL 노인으로 보이는 사람이 말했다.
+                PRINTW 당신은 공원 주변을 한동안 돌아다녔지만, 베로니카를 찾을 수 없었다.
+            ELSEIF CFLAG:주회:etc2 == 9
+                PRINTL 지역신문에 올린 광고를 보고 연락이 왔다.
+                PRINTL「코믹 행사에서 봤어요!
+                PRINTL 수녀 코스프레를 하는 줄 알고 사람들이 막 사진을 찍고 있었는데, 무시하고 가판대에 핫도그를 사는 걸 봤어요.
+                PRINTL 그런데 알고 보니 돈이 없어 가게주인에게 혼나고 있었어요.
+                PRINTW 손에 핫도그 하나 쥐고 눈물만 뚝뚝 흘리는 걸 보니 불쌍해서 그냥 주더군요.」
+            ELSEIF CFLAG:주회:etc2 == 10
+                PRINTL 그 행사가 있었다던 도시를 방문했다.
+                PRINTL 탐문하기에 지나치게 넓은 도시라 눈앞이 깜깜해졌다.
+                PRINTL 당신은 전단을 뿌리고 사람들에게 말을 걸어 봤지만 결정적인 단서는 나오지 않았다.
+                PRINTL
+                PRINTW 휴식 커맨드로 이어서 진행 가능합니다.
+            ENDIF
+    ENDSELECT
+NEXT
+
+SIF CFLAG:MASTER:엔딩플래그
+    CALL ENDING(-1)
+RETURN 1
