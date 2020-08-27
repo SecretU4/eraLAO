@@ -30,8 +30,7 @@ ELSEIF TIME == 1 ;밤 > 낮
 
     ;원본 uptime2 대응
     ;유지비 처리 및 메시지에 필요한 데이터 수집
-    CALL TURNEND_NIGHT_to_DAY_PRE
-    총수입:1 = RESULT
+    총수입:1 = TURNEND_NIGHT_to_DAY_PRE()
 
     ;캐릭터 스텟 및 능력 변동사항 처리
     FOR 주회, 1, CHARANUM
