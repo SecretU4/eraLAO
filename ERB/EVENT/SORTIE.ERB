@@ -83,7 +83,7 @@ RETURN 0
 
 FOR 출격대상, 1, CHARANUM
     ;미보유 캐릭터 제외
-    SIF ITEM:(ITEM_BIO(NO:주회)) < 1
+    SIF ITEM:(ITEM_BIO(NO:출격대상)) < 1
         CONTINUE
 
     IF CFLAG:출격대상:출격중
