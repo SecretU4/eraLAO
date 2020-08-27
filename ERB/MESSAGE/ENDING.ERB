@@ -385,8 +385,8 @@ SELECTCASE NO:TARGET
         ENDIF
     CASE 71 ;네오딤
         IF CFLAG:엔딩플래그 == 3
-            CALL RESET_CHARA(71)
-            CFLAG:etc1 = 0 ;exc = 9, ;etc1 = 불명
+            CALL RESET_CHARA(71) ;exc = 9
+            CFLAG:etc1 = 0 ;etc1 = TODO 불명
         ENDIF
     CASE 73 ;팬텀
         SIF CFLAG:엔딩플래그 == 4

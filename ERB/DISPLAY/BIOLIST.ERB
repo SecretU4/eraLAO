@@ -5,6 +5,7 @@
 ;함수명: CURRENT_BIOLIST
 ;현재 특정 행동이 가능한 바이오로이드 표시
 ;ARGS = 호출한 조건
+;반환값 = 선택한 캐릭터의 인게임 캐릭터번호
 ;===========================================================
 @CURRENT_BIOLIST(ARGS="")
 #DIM CSV_ID
@@ -32,7 +33,7 @@ DRAWLINE
 COUNT = 0
 FOR LOCAL, 1, CHARANUM
     CSV_ID = NO:LOCAL
-    IF ITEM:(CSV_ID + CHARANUM_START_ITEM) > 0
+    IF ITEM:(ITEM_BIO(CSV_ID)) > 0
         PRINTFORM [{COUNT+1}] 
         ;노랑, 별
         IF TALENT:LOCAL:혼인 == 1
