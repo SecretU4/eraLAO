@@ -69,6 +69,9 @@ FOR LOCAL, 1, CHARANUM
         COUNT ++
     ENDIF
 NEXT
+SIF !COUNT
+    PRINTW 표시 가능한 바이오로이드가 없습니다.
+
 PRINTL
 DRAWLINE
 PRINTL
