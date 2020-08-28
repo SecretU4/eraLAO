@@ -16,6 +16,10 @@ PREV_TARGET = TARGET
 WHILE 1
     CALL CURRENT_BIOLIST("이별")
     TARGET = RESULT
+    IF TARGET == 0
+        TARGET = PREV_TARGET
+        RETURN -1
+    ENDIF
     CSV_ID = NO:RESULT
 
     IF CSV_ID == 106 && CFLAG:TARGET:etc1 > 0 && CFLAG:TARGET:etc1 < 4
@@ -24,9 +28,6 @@ WHILE 1
         PRINTFORML %타겟은% 이별 불가능한 상태입니다.
     ELSEIF CSV_ID == 138 && TALENT:TARGET:실종
         PRINTFORML %타겟은% 이별 불가능한 상태입니다.
-    ELSEIF TARGET == -1
-        TARGET = PREV_TARGET
-        RETURN -1
     ELSE
         BREAK
     ENDIF

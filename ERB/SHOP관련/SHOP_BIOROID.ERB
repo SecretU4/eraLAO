@@ -17,7 +17,7 @@ WHILE RESULT != 0
     LOCAL = RESULT
     IF RESULT == 0
         BREAK
-    ELSEIF ITEMSALES:(ITEM_BIO(NO:LOCAL)) <= 0
+    ELSEIF ITEMSALES:(ITEM_BIO(LOCAL)) <= 0
         PRINTW 이미 구매한 이력이 있는 바이오로이드입니다.
     ELSEIF EXISTCSV(LOCAL)
         CALL BIO_BUY(LOCAL)
