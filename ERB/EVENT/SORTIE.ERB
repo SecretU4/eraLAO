@@ -123,7 +123,7 @@ RETURN 총수입
 #FUNCTION
 #DIM 수입
 
-수입 = ITEMPRICE(ITEM_BIO(NO:ARG)) / 50
+수입 = ITEMPRICE:(ITEM_BIO(NO:ARG)) / 50
 수입 += 수입 * RAND(1,99) / 100
 SIF TALENT:ARG:정신쇠약 == 2 ;정신붕괴
     수입 = 0

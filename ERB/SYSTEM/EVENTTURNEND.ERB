@@ -144,7 +144,7 @@ BEGIN SHOP
 #FUNCTION
 #DIM DYNAMIC 유지비
 
-유지비 = ITEMPRICE(ITEM_BIO(NO:ARG)) / 20
+유지비 = ITEMPRICE:(ITEM_BIO(NO:ARG)) / 20
 유지비 += 유지비 * RAND(1, 100)
 IF TALENT:ARG:분류 == 2 ;기동
     유지비 = 유지비 * 6 / 5
