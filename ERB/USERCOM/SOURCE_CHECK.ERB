@@ -16,7 +16,7 @@
 ;#DIM 소요시간값
 
 ;LOCAL:0 = 호감도변동 = f LOCAL:1 = 스트레스변동 = s LOCAL:2 = 공포변동 = fr
-VARSET LOCAL, 10, 5
+VARSET LOCAL, 1000, 0, 5
 
 ;호감도 배율 처리
 SIF TALENT:짜증
@@ -51,7 +51,7 @@ SIF TALENT:MASTER:매력
 SIF TALENT:억압
     LOCAL:0 = LOCAL:0 * 10 / 7
 
-LOCAL:0 = LOCAL:0 / 10
+LOCAL:0 = LOCAL:0 / 1000
 
 ;스트레스 배율 처리
 IF SOURCE:스트레스 < 0
@@ -78,7 +78,7 @@ ELSEIF SOURCE:스트레스 > 0
         LOCAL:1 = LOCAL:1 * 6 / 5
 ENDIF
 
-LOCAL:1 = LOCAL:1 / 10
+LOCAL:1 = LOCAL:1 / 1000
 
 ;공포 배율 처리
 IF SOURCE:공포 > 0
@@ -113,7 +113,7 @@ IF SOURCE:공포 > 0
     ENDSELECT
 ENDIF
 
-LOCAL:2 = LOCAL:2 / 10
+LOCAL:2 = LOCAL:2 / 1000
 
 SIF TALENT:정신쇠약 == 2
     VARSET LOCAL, 0, 5
