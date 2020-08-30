@@ -1,50 +1,60 @@
 ﻿;----------------------------------------------
-;기초 메시지 line 설정
+;함수명: SET_MSG_CSTR(ARG)
+;원본의 line 세팅과 같음
+;메시지 기본 조건절 처리
 ;ARG = 인게임 캐릭터번호
 ;----------------------------------------------
 @SET_MSG_CSTR(ARG)
 
 IF TALENT:ARG:백치
-    CSTR:ARG:1 = regress
+    CSTR:ARG:1 += "regress"
 ELSEIF TALENT:ARG:정신쇠약 == 2
-    CSTR:ARG:1 = Break
+    CSTR:ARG:1 += "Break"
 ELSEIF TALENT:ARG:정신쇠약 == 1
-    CSTR:ARG:1 = Weak
+    CSTR:ARG:1 += "Weak"
 ELSEIF TALENT:ARG:혼인
-    CSTR:ARG:1 = Marryed
+    CSTR:ARG:1 += "Marryed"
 ELSEIF TALENT:ARG:사랑 == 2
-    CSTR:ARG:1 = Love
+    CSTR:ARG:1 += "Love"
 ELSEIF TALENT:ARG:혼인 == 1 || TALENT:ARG:사랑
-    CSTR:ARG:1 = Affection
+    CSTR:ARG:1 += "Affection"
 ELSEIF CFLAG:ARG:공포 > 199
-    CSTR:ARG:1 = Fear
+    CSTR:ARG:1 += "Fear"
 ELSEIF TALENT:ARG:짜증
-    CSTR:ARG:1 = Annoyed
+    CSTR:ARG:1 += "Annoyed"
 ELSEIF CFLAG:ARG:호감도 > 499
-    CSTR:ARG:1 = High
+    CSTR:ARG:1 += "High"
 ELSEIF CFLAG:ARG:호감도 < 500
-    CSTR:ARG:1 = Low
+    CSTR:ARG:1 += "Low"
 ELSE
-    CSTR:ARG:1 = 
+    CSTR:ARG:1 += 
 ENDIF
 
 ;================================================
+;함수명: EVENTTRAIN
 ;SYSTEM_CALL
 ;연애 커맨드 진입시 (BEGIN TRAIN)
 ;================================================
 @EVENTTRAIN
 
+;초기화
+CSTR:1 = 
+
 CALL SET_MSG_CSTR(TARGET)
 
+SIF !CFLAG:조교여부 ;첫조교시
+    CSTR:1 = First
+
+;조건절 추가
 SELECTCASE NO:TARGET
     CASE 21 ;마리
         IF !CFLAG:조교여부
             IF TALENT:MASTER:나이 == 0
                 CFLAG:호감도 += 500
                 TALENT:변태 = 1
-                CSTR:1 = Yboy
+                CSTR:1 += "/Yboy"
             ELSE
-                CSTR:1 = Nboy
+                CSTR:1 += "/Nboy"
             ENDIF
         ENDIF
     CASE 51
@@ -74,9 +84,9 @@ SELECTCASE NO:TARGET
     CASE 76
         IF CSTR:1 == "Affection" || CSTR:1 == "Marryed"
             IF TALENT:체형 == 0
-                CSTR:1 = Young
+                CSTR:1 += "/Young"
             ELSEIF TALENT:체형 == 1
-                CSTR:1 = Adult
+                CSTR:1 = "/Adult"
             ENDIF
         ENDIF
     CASE 91
@@ -121,6 +131,7 @@ ENDIF
 SIF FLAG:히든메시지
     RETURN 0
 
+;그림 표시 설정
 LOCAL = -1
 IF CFLAG:개별그림유무
     SELECTCASE NO:TARGET
@@ -151,6 +162,8 @@ IF CFLAG:개별그림유무
     [ENDIF]
 ENDIF
 
+DEBUGPRINTFORML %CSTR:1% 조교여부 = {CFLAG:조교여부}
+
 TRYCALLFORM M_No{NO:TARGET}_TRAIN_START_{CFLAG:조교여부}
 
 ;----------------------------------------------
@@ -160,7 +173,15 @@ TRYCALLFORM M_No{NO:TARGET}_TRAIN_START_{CFLAG:조교여부}
 #DIMS 꼬릿말
 꼬릿말 = 
 
+CSTR:1 = 
+
+;아직 첫키스 말고 다른 경우의 첫시도 구상은 찾은 적이 없으므로
+SIF SELECTCOM == 15 && FIRSTTIME(SELECTCOM)
+    CSTR:1 = First/
+
 CALL SET_MSG_CSTR(TARGET)
+
+DEBUGPRINTFORML 스트레스 {SOURCE:스트레스} 호감도 {SOURCE:호감도}
 
 IF SOURCE:스트레스 > 0 || SOURCE:호감도 < 0
     LOCALS = Low
@@ -174,6 +195,7 @@ IF SELECTCOM == 2
     SIF CFLAG:호감도 < 400 && LOCALS == "High"
         LOCALS = Low
 ENDIF
+DEBUGPRINTFORML LOCAL = %LOCALS%, CSTR = %CSTR:1%
 
 SIF GROUPMATCH(CSTR:1, "High","Low")
     CSTR:1 = %LOCALS%
@@ -183,30 +205,30 @@ SELECTCASE NO:TARGET
         IF SELECTCOM == 2
             IF CSTR:1 == "Marryed" || LOCALS == "High"
                 IF TALENT:MASTER:나이 == 0
-                    CSTR:1 = Yboy
+                    CSTR:1 += "/Yboy"
                 ELSE
-                    CSTR:1 = Nboy
+                    CSTR:1 += "/Nboy"
                 ENDIF
             ENDIF
         ELSEIF SELECTCOM == 3
             IF LOCALS == "High"
                 IF TALENT:MASTER:나이 == 0
-                    CSTR:1 = Yboy
+                    CSTR:1 += "/Yboy"
                 ELSE
-                    CSTR:1 = Nboy
+                    CSTR:1 += "/Nboy"
                 ENDIF
             ENDIF
         ELSEIF GROUPMATCH(SELECTCOM, 5,9,14,16,20,21,22)
             IF TALENT:MASTER:나이 == 0
-                CSTR:1 = Yboy
+                CSTR:1 += "/Yboy"
             ELSE
-                CSTR:1 = Nboy
+                CSTR:1 += "/Nboy"
             ENDIF
         ELSEIF SELECTCOM == 15 && FIRSTTIME(SELECTCOM, 1)
             IF TALENT:MASTER:나이 == 0
-                CSTR:1 = Yboy
+                CSTR:1 += "/Yboy"
             ELSE
-                CSTR:1 = Nboy
+                CSTR:1 += "/Nboy"
             ENDIF
         ENDIF
     CASE 68

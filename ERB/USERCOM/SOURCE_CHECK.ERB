@@ -1,6 +1,7 @@
 ﻿;=============================================================
 ;SYSTEM_CALL
 ;@COMxx 리턴값 0이 아닐때
+;캐릭터 커맨드별 대사 처리도 여기서 호출
 ;=============================================================
 ;20200825 기준 변수 설명
 ;TFLAG TRAIN(연애) 종료시 리셋, 연애 도중 증감 기록용
@@ -136,6 +137,8 @@ CFLAG:호감도 += SOURCE:호감도
 ;CFLAG:신뢰도 += SOURCE:신뢰도
 CFLAG:스트레스 += SOURCE:스트레스
 CFLAG:공포 += SOURCE:공포
+
+CALL BIO_COM_MSG
 
 PRINTFORML %CALLNAME:TARGET%의
 IF TALENT:MASTER:관심법
