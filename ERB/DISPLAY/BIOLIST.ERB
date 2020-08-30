@@ -70,7 +70,7 @@ FOR LOCAL, 1, CHARANUM
     ENDIF
 NEXT
 SIF !COUNT
-    PRINTW 표시 가능한 바이오로이드가 없습니다.
+    PRINTL 표시 가능한 바이오로이드가 없습니다.
 
 PRINTL
 DRAWLINE
@@ -104,6 +104,8 @@ WHILE 1
             CASE "출격"
                 IF CFLAG:LOCAL:출격중
                     PRINTFORMW %조사처리(CALLNAME:LOCAL,"는")% 이미 출격중인 대상입니다.
+                ELSE
+                    RETURN LOCAL
                 ENDIF                
             CASE "상태보기"
                 RETURN LOCAL
@@ -269,7 +271,7 @@ DRAWLINE
 ;===========================================================
 @SEE_BIOSTATUS
 #DIM 대상
-
+대상 = 0
 WHILE 대상 != -1
     CALL CURRENT_BIOLIST("상태보기")
     대상 = RESULT
