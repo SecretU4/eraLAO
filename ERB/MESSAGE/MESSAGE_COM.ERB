@@ -100,7 +100,7 @@ SELECTCASE NO:TARGET
         ENDIF
 ENDSELECT
 
-SIF CFLAG:개별선택지유무
+SIF CFLAG:개별선택지유무 > 0
     CALL Personal_MSG_Select(TARGET)
 
 ;Confession(고백) 가부 판별
@@ -306,7 +306,7 @@ SELECTCASE NO:대상
     CASE 68 ;에밀리
         IF CFLAG:대상:개별선택지유무 == 1
             ;일단 초기화
-            CFLAG:대상:개별선택지유무 = 0
+            CFLAG:대상:개별선택지유무 = -1
             PRINTW TODO 에밀리 문장 추가
             CALL ASK_M("에밀리의 마음을 받아들였다.", 1, "에밀리의 마음을 받아들이지 않았다.", 1, "?????", 1)
             ;CFLAG:선택지확인 = 에밀리 etc1 고백 가부 판별
@@ -324,17 +324,20 @@ SELECTCASE NO:대상
     CASE 91 ;땡컨
         IF CFLAG:대상:개별선택지유무 == 1
             ;일단 초기화
-            CFLAG:대상:개별선택지유무 = 0
+            CFLAG:대상:개별선택지유무 = -1
 
             PRINTW TODO 슬레이프니르 문장 추가
             CALL ASK_M("슈퍼스타가 된다.", 1, "군인 신분을 유지한다.", 1)
+            ;CFLAG:선택지확인 = 땡컨 etc4 슈퍼스타 출력 유무
             IF RESULT == 0
+                SETBIT CFLAG:대상:선택지확인, 0
                 TALENT:대상:군인 = 0
                 TALENT:대상:슈퍼스타 = 1
                 ABL:대상:전투lv = 0
                 EXP:대상:출격경험 = 0
                 CSTR:대상:1 = Star
             ELSEIF RESULT == 1
+                CFLAG:대상:선택지확인 = CFLAG:대상:선택지확인 ^ 1
                 CSTR:대상:1 = BR
             ENDIF
         ENDIF
