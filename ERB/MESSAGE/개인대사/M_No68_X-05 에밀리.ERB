@@ -746,10 +746,17 @@ SELECTCASE CSTR:1
 	CASE "Love"
 		PRINTFORMW 당신은 에밀리의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
 		PRINTFORMW 에밀리의 뺨이 붉게 물들었다.
-		PRINTFORMW {「나도 사령관 %TEXTR("가슴/엉덩이")%가 좋아...」
-		PRINTFORMW 당신은 순간 에밀리의 칭찬에 말문이 막혔다.
-		PRINTFORMW 「어...? 이렇게 하는거 아니야?」/「그런 말 하면 나쁜 아이래...」
-		PRINTFORMW 「근데 난 사령관이 나쁜 아이여도 좋아,」}
+		PRINTDATAW
+			DATALIST
+				DATAFORM 「나도 사령관 %TEXTR("가슴/엉덩이")%가 좋아...」
+				DATAFORM 당신은 순간 에밀리의 칭찬에 말문이 막혔다.
+				DATAFORM 「어...? 이렇게 하는거 아니야?」
+			ENDLIST
+			DATALIST
+				DATAFORM 「그런 말 하면 나쁜 아이래...」
+				DATAFORM 「근데 난 사령관이 나쁜 아이여도 좋아.」
+			ENDLIST
+		ENDDATA
 	CASE "Marryed"
 		A = RAND:3
 		IF A == 0
