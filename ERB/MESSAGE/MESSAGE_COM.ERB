@@ -39,6 +39,7 @@ ENDIF
 
 ;초기화
 CSTR:1 = 
+LOCAL = 0
 
 CALL SET_MSG_CSTR(TARGET)
 
@@ -70,6 +71,31 @@ SELECTCASE NO:TARGET
             CSTR:1 = fWeak
         ELSEIF TALENT:사랑 == 2 && !CFLAG:etc1 ;메이 fLove 취득대사 유무
             CSTR:1 = fLove
+        ENDIF
+    CASE 52
+        IF CFLAG:공포 < 200 && !TALENT:짜증 && !TALENT:정신쇠약
+            IF ITEM:ITEM_BIO(51) > 0 && CFLAG:etc1 == 0 ;메이 이벤트
+                LOCAL = GETCHARA(51)
+                IF CFLAG:LOCAL:공포 < 200 && !TALENT:LOCAL:짜증 && !TALENT:LOCAL:정신쇠약
+                    IF TALENT:사랑 && TALENT:LOCAL:사랑 ;메이/나엔 모두 연모 이상, 원본에서는 연모만
+                        CFLAG:etc1 = 1
+                        CSTR:1 = mayE1
+                    ELSE
+                        CFLAG:etc1 = 1
+                        CSTR:1 = mayE2
+                    ENDIF
+                ENDIF
+            ELSEIF ITEM:ITEM_BIO(106) > 0 && CFLAG:etc2 != 2 && TALENT:사랑 ;오드리 이벤트, 원본에서는 연모만
+                LOCAL = GETCHARA(106)
+                IF CFLAG:LOCAL:공포 < 200 && !TALENT:LOCAL:짜증 && !TALENT:LOCAL:정신쇠약
+                    IF CFLAG:etc2 == 0
+                        CSTR:1 = audreyE1
+                    ELSEIF CFLAG:etc2 == 1
+                        CSTR:1 = audreyE2
+                    ENDIF
+                    CFLAG:etc2 += 1
+                ENDIF
+            ENDIF
         ENDIF
     CASE 68
         IF TALENT:정신쇠약 == 1 && TALENT:사랑 == 2
@@ -116,7 +142,7 @@ IF TALENT:사랑 && CFLAG:고백함 == 0
                 ELSE
                     LOCALS += "/Nboy"
                 ENDIF
-            CASE 52
+            CASE 52 ;나엔 비관적 삭제
                 SIF TALENT:긍정도 == -1
                     TALENT:긍정도 = 0
         ENDSELECT
