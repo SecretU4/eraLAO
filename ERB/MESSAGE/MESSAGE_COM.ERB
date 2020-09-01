@@ -79,10 +79,10 @@ SELECTCASE NO:TARGET
                 IF CFLAG:LOCAL:공포 < 200 && !TALENT:LOCAL:짜증 && !TALENT:LOCAL:정신쇠약
                     IF TALENT:사랑 && TALENT:LOCAL:사랑 ;메이/나엔 모두 연모 이상, 원본에서는 연모만
                         CFLAG:etc1 = 1
-                        CSTR:1 = mayE1
+                        CSTR:1 = mayE2
                     ELSE
                         CFLAG:etc1 = 1
-                        CSTR:1 = mayE2
+                        CSTR:1 = mayE1
                     ENDIF
                 ENDIF
             ELSEIF ITEM:ITEM_BIO(106) > 0 && CFLAG:etc2 != 2 && TALENT:사랑 ;오드리 이벤트, 원본에서는 연모만
