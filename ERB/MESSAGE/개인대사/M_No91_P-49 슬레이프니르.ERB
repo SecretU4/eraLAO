@@ -1,0 +1,2213 @@
+﻿@IS_M_No91
+RETURN 1
+
+@M_No91_TRAIN_START_0
+PRINTFORMW 당신의 P-49 슬레이프니르는...
+PRINTFORMW 1. 슈퍼 스타지!
+PRINTFORMW 2.블랙리버의 실험기야!
+CFLAG:조교여부 = 1
+
+@M_No91_TRAIN_START_1
+SELECTCASE CSTR:1
+CASE "Star"
+PRINTFORMW 1.)~슈퍼스타 루트 해금~
+PRINTFORMW 당신은 TV에서 노래를 부르는 아름다운 아이돌을 넋놓고 보고있었다.
+PRINTFORMW 띵동-
+PRINTFORMW 당신은 초인종이 울리는 소리를 듣고는 황급하게 현관으로 달려나갔다.
+PRINTFORMW 「바람보다, 빛보다도 빠르게 내가 왔어!」
+PRINTFORMW 현관문을 연 당신의 눈앞엔 방금까지 TV에서 보던 아이돌이 막 튀어나온 듯 서 있었다.
+PRINTFORMW 「전장의 아이돌, 여기서 강림했어. 따라올 준비 됐어? 」
+PRINTFORMW 「뭐야, 사령관은 완전 그... 내 팬인가 보구나?」
+PRINTFORMW  방에 놓여진 굿즈나, 막 TV로 보고있던 자신 기체의 공연 영상을 보는것을 본 슬레이프니르는 살짝 부끄러운 듯 볼을 긁적이면서 이야기했다.
+CASE "BR"
+PRINTFORMW 2.)~기본 구상으로 진행됩니다~
+PRINTFORMW 당신은 초인종이 울리는 소리를 듣고 하던 일을 황급하게 멈추고 현관으로 달려갔다.
+PRINTFORMW 기대하던 대로 얼마전에 발주한 P-49 슬레이프니르 모델이 당신을 반겼다 
+PRINTFORMW 「바람보다, 빛보다도 빠르게 내가 왔어!」 
+PRINTFORMW 「안녕 사령관, 잘 부탁해」
+PRINTFORMW (좋은 사람이면 좋겠는데...)
+PRINTFORMW 「뭐, 뭐야 이상한 짓 하려는 건 아니지?」
+PRINTFORMW 슬레이프니르가 못미더운듯 바라보며 이야기하자, 당신은 쓴웃음을 지으면서 그녀에게 인사를 했다.
+CASE "Confession"
+PRINTFORMW 당신을 눈치챈 슬레이프니르는 순간 얼굴을 밝게 폈지만, 허겁지겁 평소의 자신감 넘치는 미소로 되돌렸다.
+PRINTFORMW 「......사령관은 있지」
+PRINTFORMW 「난 바이오로이드일 뿐인데 상당히 그… 상냥했고」
+PRINTFORMW 「필요하다는 말을 들으면 기뻐… 그렇게 되면, 나라도 사령관한테 여러 가지 해 주고 싶어지잖아」
+PRINTFORMW 「그러니까 그… 가능한 한 곁에 있어 줘. 응?」
+PRINTFORMW 슬레이프니르는 울 것 같은 얼굴로 독백을 끝낸 후, 자신이 한 말의 뜻을 눈치채고 얼굴을 새빨갛게 물들였다.
+PRINTFORMW 「그, 그러니까! 이제 와서 멈추거나 하지마!」
+PRINTFORMW 입을 삐죽이며 화내고 있는 척 하지만, 얼굴은 홍시처럼 달아올라 당장 폭발할 것 같다.
+PRINTFORMW 아무래도 어떤 얼굴을 하면 좋을 지 모르는 것 같다.
+PRINTFORMW 당신은 쓴웃음 지으며 슬레이프니르의 몸을 상냥하게 꼭 껴안았고 슬레이프니르는 표정을 풀며 당신에게 몸을 맡겼다.
+TFLAG:고백함 = 1
+CASE "Superstar"
+PRINTFORMW 「사령관... 어때? 잘어울려?」
+PRINTFORMW 당신이 슬레이프니르를 보러가자 그녀는 콘서트복을 입고 뺨을 살짝 붉힌채 부끄러워 하고있었다.
+PRINTFORMW 「정말! 뭐라구 말 좀 해주면 어디가 덧나?」
+PRINTFORMW 당신은 멍하니 슬레이프니르를 지켜보고있자 그녀는 살짝 삐진듯 볼을 부풀렸다. 
+PRINTFORMW 당신이 너무 잘어울리고 이뻐서 말이 안나온다고 칭찬을 하고 나서야 슬레이프니르는 기분이 풀린 듯 했다.
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW 슬레이프니르는 군용장비를 벗고 콘서트용 조정을 마쳤다.
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「응? 아 어서와. 오늘은 뭘 할까?」
+DATAFORM 「어? 딱히 기다리거나 하진 않았는데?」
+ENDLIST
+DATALIST
+DATAFORM 「저기 사령관. 나 심심한데, 한바퀴만 돌고 오면 안돼?」
+DATAFORM 「응? 그야 당연히 지구 한바퀴지」
+ENDLIST
+DATAFORM 「뭐야 너무 느린거 아냐?」
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「오늘 좀 답답한데 나가서 내 속도를 보여줄까? 응?」
+DATAFORM 「마하 100 정도면 괜찮겠지?」
+ENDLIST
+DATALIST
+DATAFORM 「저... 사령관은 아무래도 풍만한 쪽이 더 좋아?」
+DATAFORM 「아니지? 날씬한 게 더 좋지?」
+ENDLIST
+DATALIST
+DATAFORM 「사령관, 혹시 사인 필요해?」
+DATAFORM 「나...... 한정판 챙겨뒀는데......」
+ENDLIST
+DATAFORM 「기다렸잖아! 왜 이제 온거야!」
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 몸에 갑작스런 충격을 느끼며 뒤로 쓰러졌다.
+DATAFORM 그런 당신의 위에 슬레이프니르가 올라탔다.
+DATAFORM 「기다렸잖아!」
+ENDLIST
+DATALIST
+DATAFORM 슬레이프니르는 당신을 발견하고 얼굴에 미소가 번지며 다가왔다.
+DATAFORM 「앗, 사령관! 여기와봐!」
+DATAFORM 「예전에 다른 슬레이프니르가 공연했던 영상을 찾았는데 같이 볼래?」
+ENDLIST
+DATALIST
+DATAFORM 슬레이프니르는 당신의 모습을 찾아내자, 만면에 웃는 얼굴을 띄워 달려들어 왔다.
+DATAFORM (따뜻해… 사령관의 냄새가 나…)
+DATAFORM (닿을 수 있는 것만으로도 이렇게 기뻐, 전투용 바이오로이드도 결국 여자라는 거구나…)
+ENDLIST
+DATALIST
+DATAFORM 「…」
+DATAFORM 잠자코 있던 슬레이프니르가 불쑥 말했다.
+DATAFORM 「있잖아, 왜 나야?」
+DATAFORM 「나보다 가슴도 크고 고분고분한 애도 얼마든지 있는데 말이야」
+ENDLIST
+DATALIST
+DATAFORM  ♩...
+DATAFORM ♩♪...
+DATAFORM ♩♪...♬
+DATAFORM  당신은 피리부는 사나이를 따라가는 아이처럼 노래를 부르는 슬레이프니르의 방문을 열었다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 몸에 갑작스런 충격을 느끼며 뒤로 쓰러졌다.
+DATAFORM 그런 당신의 위에 슬레이프니르가 올라탔다.
+DATAFORM 「안녕~ 언제나 느리네」
+ENDLIST
+DATALIST
+DATAFORM 슬레이프니르는 당신을 발견하고 얼굴에 미소가 번지며 다가왔다.
+DATAFORM 「앗, 사령관! 여기와봐!」
+DATAFORM 「예전에 다른 슬레이프니르가 공연했던 영상을 찾았는데 같이 볼래?」
+ENDLIST
+DATALIST
+DATAFORM 슬레이프니르는 당신의 모습을 찾아내자, 만면에 웃는 얼굴을 띄워 달려들어 왔다.
+DATAFORM       (따뜻해… 사령관의 냄새가 나…)
+DATAFORM       (닿을 수 있는 것만으로도 이렇게 기뻐, 전투용 바이오로이드도 결국 여자라는 거구나…)
+ENDLIST
+DATALIST
+DATAFORM 「앗, 잠깐만 조금 기다려줘」
+DATAFORM 「음∼♪ ……변태, 저 쪽 보고 있어!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「……………………」
+DATAFORM 얼어붙어 버릴 것 같은 차가운 시선을 느낀 것 같은 생각이 들었다.
+ENDLIST
+DATALIST
+DATAFORM 「…」
+DATAFORM 슬레이프니르는 돌아선 채 침묵을 지켰다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「!」
+DATAFORM 슬레이프니르에게 다가가자 일순간 무서워한 얼굴로 보았지만, 곧바로 평소의 건방진 미소로 돌아왔다.
+ENDLIST
+DATAFORM 「저, 적어도 아픈 건 하지 말아줬으면 해」
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATAFORM 「흐, 끄, 흐으윽…」
+DATAFORM 「힉, 미, 미안해요…」
+ENDDATA
+CASE "Break"
+PRINTFORMW 「...」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_TRAIN_END
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「벌써 시간이 이렇게 됐네.」
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「응? 벌써?」
+DATAFORM 「난 더 같이 있어도 괜찮은데?」
+ENDLIST
+DATAFORM 슬레이프니르는 얼굴을 붉게 물들인 채 힐끗힐끗 이쪽을 바라봤다.
+DATAFORM 「가는 거야? 어쩔 수 없네, 빨리 다시 와줘」
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「응? 벌써?」
+DATAFORM 「그럼 키스해줘!」
+ENDLIST
+DATALIST
+DATAFORM 「왠지 평소보다 빨리 가는데」
+DATAFORM 「혹시 다른 아이랑 노는 건 아니겠지?」
+DATAFORM 당신이 혹시 질투하냐고 묻자
+DATAFORM 「당연하잖아!」
+DATAFORM 당신은, 눈물을 글썽이며 토라진 슬레이프니르를 달래기위해 진을 썼다.
+ENDLIST
+DATALIST
+DATAFORM 「사령관, 잠깐 이쪽으로 와줘」
+DATAFORM 당신이 다가가자, 슬레이프니르가 목덜미에 달라붙어왔다.
+DATAFORM 「키스 마크」
+DATAFORM 키스 마크가 다른 바이오로이드에게 들키면 어떻게 하나 걱정하는 당신이었다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「저기, 팔베개해줘」
+DATAFORM 당신은 어쩔 수 없다는 듯 쓴웃음을 지으며 누웠고 슬레이프니르는 바짝 다가왔다.
+DATAFORM 팔베개를 받은 슬레이프니르는 당신의 목덜미, 가슴팍에 키스를 해줬다.
+ENDLIST
+DATALIST
+DATAFORM 「저기, 키스해줘」
+DATAFORM 슬레이프니르는 팔을 이쪽으로 뻗어왔다.
+DATAFORM 당신은 그 손을 잡아주고 부드럽게 입맞춤을 행했다.
+DATAFORM 「이렇게 사랑받아서 정말 기뻐. 행복해」
+DATAFORM 당신이 슬레이프니르의 머리를 쓰다듬어주자, 슬레이프니르는 안심한 표정으로 안겨왔다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATAFORM 슬레이프니르는 마치 당신이 존재하지 않는 듯이 자리를 떠났다.
+DATAFORM 당신이 자리를 떠나려고 하자, 등 뒤에서 얼어붙어 버릴 것 같은 차가운 시선을 느꼈다.
+DATAFORM 「이제 끝났지. 빨리 가」
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATAFORM 「아, 가, 가는거야?」
+DATAFORM 슬레이프니르는 눈물을 띄우면서 이쪽을 바라보고 있다.
+ENDDATA
+CASE "Weak"
+PRINTFORMW 「힉...」
+CASE "Break"
+PRINTFORMW 「...」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM2
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATAFORM 좀 답답한데 나가서 내 속도를 보여줄까? 응? 마하 100 정도면 괜찮겠지?」
+DATALIST
+DATAFORM 「마하 100이라구! 못믿는거야?」
+DATAFORM 당신은 적당히 맞장구 쳤다.
+ENDLIST
+DATALIST
+DATAFORM 「내 최고속도?」
+DATAFORM 「내가 누구라고 생각하는거야 어쩌면 마음먹으면 마하100쯤은 나올껄?」
+ENDLIST
+DATALIST
+DATAFORM 「내 몸매는 완벽한 유선형이지.」
+DATAFORM 「가슴? 음....일부러 줄인 거야.」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 슬레이프니르와 실없는 이야기를 주고받았다.
+PRINTDATAW
+DATAFORM 「사령관은 특별히 줄 안서도 날 만날 수 있게 해줄게!」
+DATALIST
+DATAFORM 「사령관. 노래 해줄까? 사령관만을 위한 특별 무대야!」
+DATAFORM 「∼♪」
+ENDLIST
+DATAFORM 「진짜라니까! 공기저항 때문에 크기를 조정한 거야」
+DATAFORM 「예전엔 내 사인을 받기 위해서 1000미터쯤 줄 서고 했는데...」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 슬레이프니르와 실없는 이야기를 주고받았다.
+PRINTFORMW %TEXTR("「그래서?」/「하아...응...」")%
+CASE "Fear"
+PRINTFORMW 당신은 슬레이프니르와 실없는 이야기를 주고받았다.
+PRINTFORMW %TEXTR("「아, 아하하하...」/「아, 미, 미안...」")%
+CASE "Break"
+PRINTFORMW 「...」
+CASE "High"
+PRINTDATAW
+DATAFORM 좀 답답한데 나가서 내 속도를 보여줄까? 응? 마하 100 정도면 괜찮겠지?」
+DATALIST
+DATAFORM 「마하 100이라구! 못믿는거야?」
+DATAFORM 당신은 적당히 맞장구 쳤다.
+ENDLIST
+DATALIST
+DATAFORM 「내 최고속도?」
+DATAFORM 「내가 누구라고 생각하는거야 어쩌면 마음먹으면 마하100쯤은 나올껄?」
+ENDLIST
+DATALIST
+DATAFORM 「내 몸매는 완벽한 유선형이지.」
+DATAFORM 「가슴? 음....일부러 줄인 거야.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 슬레이프니르와 실없는 이야기를 주고받았다.
+PRINTDATAW
+DATAFORM 「사령관은 특별히 줄 안서도 날 만날 수 있게 해줄게!」
+DATALIST
+DATAFORM 「사령관. 노래 해줄까? 사령관만을 위한 특별 무대야!」
+DATAFORM 「∼♪」
+ENDLIST
+DATAFORM 「진짜라니까! 공기저항 때문에 크기를 조정한 거야」
+DATAFORM 「예전엔 내 사인을 받기 위해서 1000미터쯤 줄 서고 했는데...」
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신은 슬레이프니르와 실없는 이야기를 주고받았다.
+PRINTFORMW %TEXTR("「아, 아하하하...」/「아, 미, 미안...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 슬레이프니르의 가슴을 칭찬했다.
+DATAFORM 슬레이프니르는 어떻게 반응해야 할지 몰라 곤란한 모습이다.
+DATAFORM %TEXTR("「무무무슌!! 뮤슌 짓이냑!」/「이런 걸로 내가 다, 당황할 것 같아?」")%
+ENDLIST
+DATALIST
+DATAFORM 당신은 슬레이프니르의 엉덩이를 칭찬했다.
+DATAFORM 슬레이프니르는 어떻게 반응해야 할지 몰라 곤란한 모습이다.
+DATAFORM 「뭐, 뭐야」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 슬레이프니르의 가슴을 칭찬했다.
+DATAFORM 슬레이프니르의 얼굴이 붉어지며 내 등짝을 때렸다.
+DATAFORM 「정말? 풍만한 게 더 좋은게 아니라?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 슬레이프니르의 골반을 칭찬했다.
+DATAFORM 슬레이프니르의 얼굴이 붉어지며 내 등짝을 때렸다.
+DATAFORM %TEXTR("「이 정도는 여유지!」/「뭘 이제와서~」")%
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 슬레이프니르의 가슴을 칭찬했다.
+DATAFORM 슬레이프니르는 자신있게 허리를 폈다.
+DATAFORM 「무려 기능성도 갖춘거야!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 슬레이프니르의 엉덩이를 칭찬했다.
+DATAFORM 슬레이프니르는 자신있게 허리를 폈다.
+DATAFORM %TEXTR("「2초만 만지게 해줄까?」/「뭘 이제와서~」")%
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 슬레이프니르의 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+PRINTFORMW %TEXTR("「그래서?」/「하아...응...」")%
+CASE "Fear"
+PRINTFORMW 당신은 슬레이프니르의 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+PRINTFORMW 슬레이프니르는 어색하게 웃었다.
+CASE "Weak"
+PRINTFORMW 당신은 슬레이프니르의 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+PRINTFORMW 슬레이프니르는 그저 떨고있다.
+CASE "Break"
+PRINTFORMW 「...」
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 슬레이프니르의 가슴을 칭찬했다.
+DATAFORM 슬레이프니르는 자신있게 허리를 폈다.
+DATAFORM 「무려 기능성도 갖춘거야!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 슬레이프니르의 엉덩이를 칭찬했다.
+DATAFORM 슬레이프니르는 자신있게 허리를 폈다.
+DATAFORM %TEXTR("「2초만 만지게 해줄까?」/「뭘 이제와서~」")%
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 살며시 슬레이프니르의 손에 손을 겹쳤다.
+PRINTFORMW 슬레이프니르는 조금 당황한 모습이다.
+PRINTFORMW %TEXTR("「갑자기 뭐야?」/「으, 사령관 혹시 땀 많아?」/「뭐, 상관은 없는데」")%
+CASE "High"
+PRINTFORMW 당신은 살며시 슬레이프니르의 손에 손을 겹쳤다.
+PRINTFORMW 슬레이프니르의 얼굴이 조금 붉어진 것 같다.
+PRINTFORMW %TEXTR("「뭐야, 그렇게 나랑 손 잡고 싶었어?」/「아이돌이랑 단 둘이서 손 잡는건 쉽지 않다구」/「뭐, 상관은 없는데」")%
+CASE "Affection"
+PRINTFORMW 당신은 살며시 슬레이프니르의 손에 손을 겹쳤다.
+PRINTFORMW 슬레이프니르의 얼굴이 붉어졌다.
+PRINTFORMW %TEXTR("「말해두는데, 난 놓을 생각 없다구?」/「그렇게 나랑 손 잡고 싶었어?」/「사령관 손 크고 뜨겁네」")%
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 살며시 슬레이프니르의 손에 손을 겹쳤다.
+DATAFORM 슬레이프니르는 얼굴을 조금 찌푸렸다.
+DATAFORM %TEXTR("「땀나서 싫은데」/「하아...」")%
+ENDLIST
+DATALIST
+DATAFORM 당신은 살며시 슬레이프니르의 손에 손을 겹쳤다.
+DATAFORM 슬레이프니르는 무표정이다.
+DATAFORM 「......」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW 당신은 살며시 슬레이프니르의 손에 손을 겹쳤다.
+PRINTFORMW 슬레이프니르의 몸이 흠칫 떨렸다.
+PRINTFORMW %TEXTR("「앗, 아 미안 놀라버렸네」/「앗, 아, 응」")%
+CASE "Weak"
+PRINTFORMW 당신은 살며시 슬레이프니르의 손에 손을 겹쳤다.
+PRINTFORMW 슬레이프니르의 몸이 흠칫 떨렸다.
+PRINTFORMW %TEXTR("「아...」/「힛...」")%
+CASE "Break"
+PRINTFORMW 「...」
+CASE "Marryed"
+PRINTFORMW 당신은 살며시 슬레이프니르의 손에 손을 겹쳤다.
+PRINTFORMW 슬레이프니르의 얼굴이 붉어졌다.
+PRINTFORMW %TEXTR("「말해두는데, 난 놓을 생각 없다구?」/「그렇게 나랑 손 잡고 싶었어?」/「사령관 손 크고 뜨겁네」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 슬레이프니르의 머리를 쓰다듬었다.
+PRINTFORMW 슬레이프니르는 가만히있다.
+PRINTFORMW %TEXTR("「뭐야, 뭔데?」/「...애 취급하는 건 아니지?」/「뭔가 기분나쁘면서... 나쁘지 않은 듯한...」")%
+CASE "High"
+PRINTFORMW 당신은 슬레이프니르의 머리를 쓰다듬었다.
+PRINTFORMW 슬레이프니르는 딱히 싫지 않은 듯 하다.
+PRINTFORMW %TEXTR("「나도 이젠 익숙해졌나봐」/「뭐, 상관은 없는데」/「으음...」")%
+CASE "Affection"
+PRINTFORMW 당신은 슬레이프니르의 머리를 쓰다듬었다.
+PRINTFORMW 슬레이프니르는 눈을 가늘게 뜨고 미소를 지었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관도 해줄까?」
+DATAFORM 「은근 기분 좋은데」
+ENDLIST
+DATAFORM 「이젠, 이걸 안하면 허전해」
+DATALIST
+DATAFORM 「얍!」
+DATAFORM 슬레이프니르는 당신의 품에 뛰어들어 안겼다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 슬레이프니르의 머리를 쓰다듬었다.
+PRINTFORMW 슬레이프니르는 눈을 가늘게 뜨고 미소를 지었다.
+PRINTDATAW
+DATAFORM 「이건 계속하는구나... 뭐, 싫다는 건 아니야」
+DATALIST
+DATAFORM 「사령관도 해줄까?」
+DATAFORM 「은근 기분 좋은데」
+ENDLIST
+DATAFORM 「이젠, 이걸 안하면 허전해」
+DATALIST
+DATAFORM 「얍!」
+DATAFORM 슬레이프니르는 당신의 품에 뛰어들어 안겼다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 슬레이프니르의 머리를 쓰다듬었다.
+DATAFORM 슬레이프니르는 얼굴을 조금 찌푸렸다.
+DATAFORM 「이럴 시간에 밖에 좀 날다오면 안돼?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 슬레이프니르의 머리를 쓰다듬었다.
+DATAFORM 슬레이프니르는 무표정이다.
+DATAFORM 「따분해」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW 당신은 슬레이프니르의 머리를 쓰다듬었다.
+PRINTFORMW 슬레이프니르의 몸이 흠칫 떨렸다.
+PRINTFORMW %TEXTR("「아, 아 머리. 난 또 아하하...」/(...휴)")%
+CASE "Weak"
+PRINTFORMW 당신은 슬레이프니르의 머리를 쓰다듬었다.
+PRINTFORMW 슬레이프니르의 몸이 흠칫 떨렸다.
+PRINTFORMW %TEXTR("「힛...」/「아...」")%
+CASE "Break"
+PRINTFORMW 「...」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM6
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 슬레이프니르의 옆구리를 찔렀다.
+PRINTFORMW 슬레이프니르는 비명에 가까운 소리를 내었다.
+PRINTFORMW %TEXTR("「히야악! 뭐야!」/「히야악!」/「하지마!」")%
+CASE "High"
+PRINTFORMW 당신은 슬레이프니르의 옆구리를 찔렀다.
+PRINTFORMW 슬레이프니르는 웃으며 내 손을 슬쩍 피하고, 당신에게 똑같이 행동했다.
+PRINTFORMW %TEXTR("「후후 어림도 없지!」/「복수야!」")%
+CASE "Annoyed"
+PRINTFORMW 당신은 슬레이프니르의 옆구리를 찔렀다.
+PRINTFORMW 슬레이프니르는 간단히 피했다.
+PRINTFORMW 「하지마, 사령관」
+CASE "Fear"
+PRINTFORMW 당신은 슬레이프니르의 옆구리를 찔렀다.
+PRINTFORMW 슬레이프니르는 놀란 나머지 소리를 지르려다 급히 입을 막았다.
+PRINTFORMW 「힉!...」
+CASE "Break"
+PRINTFORMW 「...」
+CASE "Affection"
+PRINTFORMW 당신은 슬레이프니르의 옆구리를 찔렀다.
+PRINTFORMW 슬레이프니르는 웃으며 내 손을 슬쩍 피하고, 당신에게 똑같이 행동했다.
+PRINTFORMW %TEXTR("「후후 어림도 없지!」/「복수야!」")%
+CASE "Marryed"
+PRINTFORMW 당신은 슬레이프니르의 옆구리를 찔렀다.
+PRINTFORMW 슬레이프니르는 웃으며 내 손을 슬쩍 피하고, 당신에게 똑같이 행동했다.
+PRINTFORMW %TEXTR("「후후 어림도 없지!」/「복수야!」")%
+CASE "Weak"
+PRINTFORMW 당신은 슬레이프니르의 옆구리를 찔렀다.
+PRINTFORMW 슬레이프니르는 놀란 나머지 소리를 지르려다 급히 입을 막았다.
+PRINTFORMW 「힉!...」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM7
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 슬레이프니르에게 자신의 무릎에 누우라고 했다.
+PRINTFORMW 슬레이프니르는 거절했다.
+PRINTFORMW %TEXTR("「어... 내가 왜?」/「그냥 밖에서 날다가 오면 안될까?」")%
+CASE "High"
+PRINTFORMW 당신은 슬레이프니르에게 자신의 다리에 누우라고 했다.
+PRINTFORMW 슬레이프니르는 주춤주춤 허벅지에 머리를 두고 힘을 뺐다.
+PRINTFORMW %TEXTR("「가끔씩은 이런 것도 괜찮을지도」/「으... 뭔가 익숙하지 않네」")%
+CASE "Affection"
+PRINTFORMW 당신은 슬레이프니르에게 자신의 다리에 누우라고 했다.
+PRINTFORMW 슬레이프니르는 편하게 누웠다.
+PRINTFORMW %TEXTR("「다음엔 내가 해줄까?」/「딱딱해~」")%
+CASE "Fear"
+PRINTFORMW 당신은 슬레이프니르에게 자신의 무릎에 누우라고 했다.
+PRINTFORMW 슬레이프니르는 시키는 대로 누웠지만 몸이 조금씩 떨리고 있었다.
+PRINTFORMW 「......」
+CASE "Break"
+PRINTFORMW 「...」
+CASE "Marryed"
+PRINTFORMW 당신은 슬레이프니르에게 자신의 다리에 누우라고 했다.
+PRINTFORMW 슬레이프니르는 편하게 누웠다.
+PRINTFORMW %TEXTR("「다음엔 내가 해줄까?」/「딱딱해~」")%
+CASE "Annoyed"
+PRINTFORMW 당신은 슬레이프니르에게 자신의 무릎에 누우라고 했다.
+PRINTFORMW 슬레이프니르는 거절했다.
+PRINTFORMW %TEXTR("「어... 내가 왜?」/「그냥 밖에서 날다가 오면 안될까?」")%
+CASE "Weak"
+PRINTFORMW 당신은 슬레이프니르에게 자신의 무릎에 누우라고 했다.
+PRINTFORMW 슬레이프니르는 시키는 대로 누웠지만 몸이 조금씩 떨리고 있었다.
+PRINTFORMW 「......」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM8
+SELECTCASE CSTR:1
+CASE "First/Low"
+PRINTFORMW 「내 다리에 눕게 해달라고? 나중에 해줄게.」
+PRINTFORMW 머릿속에 담고있던 욕망을 이야기하자 단칼에 거절당했다.
+CASE "First/High"
+PRINTFORMW 정신차릴땐 이미 슬레이프니르의 다리에 홀린듯 바라보고있었다. 그러자 그녀가 놀리듯 웃으면서 말했다.
+PRINTFORMW 「뭐야 사령관~ 내가 아니라 다리를 보러 온거였어?」
+PRINTFORMW 「무무무...뭐라고? 눕고... 싶은거야 사령관?」
+PRINTFORMW 솔직한 욕구를 말하자 슬레이프니르는 당황했지만 끝끝내 자신의 허벅지를 내주었다.
+PRINTFORMW 「숨이 너무 거칠잖아~」
+CASE "First/Affection"
+PRINTFORMW 「사령관~ 이리와볼래?」
+PRINTFORMW 슬레이프니르가 싱글벙글 웃으면서 당신에게 손짓했다. 
+PRINTFORMW 뭔데라며 당신이 다가가자 슬레이프니르는 자신의 허벅지를 두드리면서 이야기했다.
+PRINTFORMW 「자자 사양말고 누워, 정말 빤히 쳐다보고 그러면서 빼지 말기야?」
+PRINTFORMW 슬레이프니르의 손길에 따라 누우니 압도적인 허벅지의 육감이 당신을 천국으로 인도했다.
+CASE "First/Marryed"
+PRINTFORMW 「사령관~ 이리와볼래?」
+PRINTFORMW 슬레이프니르가 싱글벙글 웃으면서 당신에게 손짓했다. 
+PRINTFORMW 뭔데라며 당신이 다가가자 슬레이프니르는 자신의 허벅지를 두드리면서 이야기했다.
+PRINTFORMW 「자자 사양말고 누워, 정말 빤히 쳐다보고 그러면서 빼지 말기야?」
+PRINTFORMW 슬레이프니르의 손길에 따라 누우니 압도적인 허벅지의 육감이 당신을 천국으로 인도했다.
+CASE "First/Annoyed"
+PRINTFORMW 
+CASE "First/Fear"
+PRINTFORMW 
+CASE "First/Weak"
+PRINTFORMW 「...」
+CASE "First/Break"
+PRINTFORMW 「...」
+CASE "Low"
+PRINTFORMW 슬레이프니르에게 무릎베개를 부탁했다.
+PRINTFORMW 슬레이프니르는 거절했다.
+PRINTFORMW %TEXTR("「그걸? 내가 왜?」/「그냥 밖에서 날다가 오면 안될까?」")%
+CASE "High"
+PRINTFORMW 슬레이프니르에게 무릎베개를 부탁했다.
+PRINTFORMW 슬레이프니르는 내 머리를 몇번이고 상냥하게 쓰다듬었다.
+PRINTFORMW %TEXTR("「으... 몇번을 해도 익숙하지 않네」/「가끔씩은 이런 것도 괜찮을지도」")%
+CASE "Affection"
+PRINTFORMW 슬레이프니르에게 무릎베개를 부탁했다.
+PRINTFORMW 슬레이프니르는 내 머리를 몇번이고 상냥하게 쓰다듬었다.
+PRINTFORMW %TEXTR("「어때? 부드럽지?」/「졸리면 이대로 잘래?」")%
+CASE "Fear"
+PRINTFORMW 슬레이프니르에게 무릎베개를 부탁했다.
+PRINTFORMW 슬레이프니르의 무릎에 누웠지만 별다른 반응은 없었다.
+PRINTFORMW 「......」
+CASE "Break"
+PRINTFORMW 「...」
+CASE "Marryed"
+PRINTFORMW 슬레이프니르에게 무릎베개를 부탁했다.
+PRINTFORMW 슬레이프니르는 내 머리를 몇번이고 상냥하게 쓰다듬었다.
+PRINTFORMW %TEXTR("「어때? 부드럽지?」/「졸리면 이대로 잘래?」")%
+CASE "Annoyed"
+PRINTFORMW 슬레이프니르에게 무릎베개를 부탁했다.
+PRINTFORMW 슬레이프니르는 거절했다.
+PRINTFORMW %TEXTR("「그걸? 내가 왜?」/「그냥 밖에서 날다가 오면 안될까?」")%
+CASE "Weak"
+PRINTFORMW 슬레이프니르에게 무릎베개를 부탁했다.
+PRINTFORMW 슬레이프니르의 무릎에 누웠지만 별다른 반응은 없었다.
+PRINTFORMW 「......」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM9
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 슬레이프니르를 껴안았다.
+PRINTFORMW 슬레이프니르는 경직된 채 움직이지 않았다.
+PRINTFORMW %TEXTR("「뭐, 뭐야!」/「무무무슌!! 뮤슌 짓이냑!」")%
+CASE "High"
+PRINTFORMW 당신은 슬레이프니르를 껴안았다.
+PRINTFORMW 슬레이프니르는 당신의 등에 살짝 손을 댔다.
+PRINTFORMW %TEXTR("「으... 이런 건 좀 부끄러운데」/「사령관, 나 조금 오글거려...」")%
+CASE "Affection"
+PRINTFORMW 당신은 슬레이프니르를 껴안았다.
+PRINTFORMW 슬레이프니르는 당신의 가슴에 얼굴을 묻었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관 살짝 땀냄새나」
+DATAFORM 「아, 싫다는 건 아니야」
+ENDLIST
+DATAFORM 「이거 안심되네~」
+DATAFORM 「아음 졸려. 이대로 자도 돼?」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 슬레이프니르를 껴안았다.
+PRINTFORMW 슬레이프니르는 별 반응이 없다.
+PRINTFORMW 「이럴 시간에 밖에 좀 날다오면 안돼?」
+CASE "Fear"
+PRINTFORMW 당신은 슬레이프니르를 껴안았다.
+PRINTFORMW 슬레이프니르는 경직된 채 움직이지 않았다.
+PRINTFORMW 「......」
+CASE "Break"
+PRINTFORMW 「...」
+CASE "Marryed"
+PRINTFORMW 당신은 슬레이프니르를 껴안았다.
+PRINTFORMW 슬레이프니르는 당신의 가슴에 얼굴을 묻었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관 살짝 땀냄새나」
+DATAFORM 「아, 싫다는 건 아니야」
+ENDLIST
+DATAFORM 「이거 안심되네~」
+DATAFORM 「아음 졸려. 이대로 자도 돼?」
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신은 슬레이프니르를 껴안았다.
+PRINTFORMW 슬레이프니르는 경직된 채 움직이지 않았다.
+PRINTFORMW 「......」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM10
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 슬레이프니르를 껴안았다.
+PRINTFORMW 슬레이프니르는 경직된 채 움직이지 않았다.
+PRINTFORMW %TEXTR("「뭐, 뭐야!」/「무무무슌!! 뮤슌 짓이냑!」")%
+CASE "High"
+PRINTFORMW 당신은 슬레이프니르를 껴안았다.
+PRINTFORMW 슬레이프니르는 당신의 등에 살짝 손을 댔다.
+PRINTFORMW %TEXTR("「으... 이런 건 좀 부끄러운데」/「사령관, 나 조금 오글거려...」")%
+CASE "Affection"
+PRINTFORMW 당신은 슬레이프니르를 껴안았다.
+PRINTFORMW 슬레이프니르는 당신의 가슴에 얼굴을 묻었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관 살짝 땀냄새나」
+DATAFORM 「아, 싫다는 건 아니야」
+ENDLIST
+DATAFORM 「이거 안심되네~」
+DATAFORM 「아음 졸려. 이대로 자도 돼?」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 슬레이프니르를 껴안았다.
+PRINTFORMW 슬레이프니르는 별 반응이 없다.
+PRINTFORMW 「이럴 시간에 밖에 좀 날다오면 안돼?」
+CASE "Fear"
+PRINTFORMW 당신은 슬레이프니르를 껴안았다.
+PRINTFORMW 슬레이프니르는 경직된 채 움직이지 않았다.
+PRINTFORMW 「......」
+CASE "Break"
+PRINTFORMW 「...」
+CASE "Marryed"
+PRINTFORMW 당신은 슬레이프니르를 껴안았다.
+PRINTFORMW 슬레이프니르는 당신의 가슴에 얼굴을 묻었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관 살짝 땀냄새나」
+DATAFORM 「아, 싫다는 건 아니야」
+ENDLIST
+DATAFORM 「이거 안심되네~」
+DATAFORM 「아음 졸려. 이대로 자도 돼?」
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신은 슬레이프니르를 껴안았다.
+PRINTFORMW 슬레이프니르는 경직된 채 움직이지 않았다.
+PRINTFORMW 「......」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM11
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 누워서 슬레이프니르를 불렀다.
+PRINTFORMW 슬레이프니르는 거절했다.
+PRINTFORMW %TEXTR("「그, 그건 좀」/「그냥 밖에서 좀 날다오면 안될까?」")%
+CASE "High"
+PRINTFORMW 당신은 누워서 슬레이프니르를 불렀다.
+PRINTFORMW 슬레이프니르는 조심조심 누웠다.
+PRINTFORMW %TEXTR("「으... 이런 건 좀 부끄러운데」/「사령관, 나 조금 오글거려...」/「가끔씩은 이런 것도 괜찮을지도」")%
+CASE "Affection"
+PRINTFORMW 당신은 누워서 슬레이프니르를 불렀다.
+PRINTFORMW 슬레이프니르는 당신 옆에 누워 몸을 밀착시켰다.
+PRINTFORMW %TEXTR("「아음 졸려. 이대로 자도 돼?」/「이거 안심되네~」/「다음엔 내가 해줄까?」")%
+CASE "Annoyed"
+PRINTFORMW 당신은 누워서 슬레이프니르를 불렀다.
+PRINTFORMW 슬레이프니르는 거절했다.
+PRINTFORMW 「이럴 시간에 밖에 좀 날다오면 안돼?」
+CASE "Fear"
+PRINTFORMW 당신은 누워서 슬레이프니르를 불렀다.
+PRINTFORMW 슬레이프니르는 조심조심 옆에 누웠지만 그 몸은 살짝 떨리고 있었다.
+PRINTFORMW 「아......」
+CASE "Break"
+PRINTFORMW 「...」
+CASE "Marryed"
+PRINTFORMW 당신은 누워서 슬레이프니르를 불렀다.
+PRINTFORMW 슬레이프니르는 당신 옆에 누워 몸을 밀착시켰다.
+PRINTFORMW %TEXTR("「아음 졸려. 이대로 자도 돼?」/「이거 안심되네~」/「다음엔 내가 해줄까?」")%
+CASE "Weak"
+PRINTFORMW 당신은 누워서 슬레이프니르를 불렀다.
+PRINTFORMW 슬레이프니르는 조심조심 옆에 누웠지만 그 몸은 살짝 떨리고 있었다.
+PRINTFORMW 「아......」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM12
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 슬레이프니르의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+PRINTFORMW 슬레이프니르는 조금 불쾌해 보인다.
+PRINTFORMW %TEXTR("「흐아악! 뭐하는 짓이야!」/「으에엑...뭐 하는 거야」")%
+CASE "High"
+PRINTFORMW 당신은 슬레이프니르의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+PRINTFORMW 슬레이프니르는 부끄러운 것 같다.
+PRINTFORMW %TEXTR("「으... 이런 건 좀 부끄러운데」/「사령관, 나 조금 오글거려...」")%
+CASE "Affection"
+PRINTFORMW 당신은 슬레이프니르의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+PRINTFORMW 슬레이프니르는 보답이라면서 그대로 되돌려줬다.
+PRINTFORMW %TEXTR("「다음은? 뭘 할거야?」/「기습이야!」")%
+CASE "Annoyed"
+PRINTFORMW 당신은 슬레이프니르의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+PRINTFORMW 슬레이프니르는 별 반응이 없다.
+PRINTFORMW 「이럴 시간에 밖에 좀 날다오면 안돼?」
+CASE "Fear"
+PRINTFORMW 당신은 슬레이프니르의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+PRINTFORMW 슬레이프니르는 별 반응이 없다.
+PRINTFORMW 「힉...」
+CASE "Break"
+PRINTFORMW 「...」
+CASE "Marryed"
+PRINTFORMW 당신은 슬레이프니르의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+PRINTFORMW 슬레이프니르는 보답이라면서 그대로 되돌려줬다.
+PRINTFORMW %TEXTR("「다음은? 뭘 할거야?」/「기습이야!」")%
+CASE "Weak"
+PRINTFORMW 당신은 슬레이프니르의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+PRINTFORMW 슬레이프니르는 별 반응이 없다.
+PRINTFORMW 「힉...」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM13
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 슬레이프니르의 배를 주물럭 거렸다.
+PRINTFORMW 슬레이프니르는 비명에 가까운 소리를 내었다.
+PRINTFORMW %TEXTR("「무무무슌!! 뮤슌 짓이냑!」/「흐아악! 뭐하는 짓이야!」/「하지마!」")%
+CASE "High"
+PRINTFORMW 슬레이프니르의 배를 주물럭 거렸다.
+PRINTFORMW 슬레이프니르는 웃으며 내 등짝을 때렸다.
+PRINTFORMW %TEXTR("「나도 이젠 익숙해졌나봐」/「어? 혹시 나 살쪘어?」」/「어림도 없지!」")%
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 슬레이프니르의 배를 주물럭 거렸다.
+DATAFORM 슬레이프니르는 웃으며 당신의 등짝을 때렸다.
+DATAFORM 「아하하! 그만해!」
+ENDLIST
+DATALIST
+DATAFORM 슬레이프니르의 배를 주물럭 거렸다.
+DATAFORM 슬레이프니르는 웃으며 당신에게 돌려줬다.
+DATAFORM 「복수야!」
+ENDLIST
+DATALIST
+DATAFORM 슬레이프니르의 배를 주물럭 거렸다.
+DATAFORM 슬레이프니르는 웃으며 피했다.
+DATAFORM 「어림도 없지!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 슬레이프니르의 배를 주물럭 거렸다.
+PRINTFORMW 슬레이프니르는 정색하며 피했다.
+PRINTFORMW %TEXTR("「하지마」/「어딜 보는거야?」")%
+CASE "Fear"
+PRINTFORMW 슬레이프니르의 배를 주물럭 거렸다.
+PRINTFORMW 슬레이프니르는 놀란 나머지 소리를 지르려다 급히 입을 막았다.
+PRINTFORMW 「힉...!」
+CASE "Break"
+PRINTFORMW 「...」
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 슬레이프니르의 배를 주물럭 거렸다.
+DATAFORM 슬레이프니르는 웃으며 당신의 등짝을 때렸다.
+DATAFORM 「아하하! 그만해!」
+ENDLIST
+DATALIST
+DATAFORM 슬레이프니르의 배를 주물럭 거렸다.
+DATAFORM 슬레이프니르는 웃으며 당신에게 돌려줬다.
+DATAFORM 「복수야!」
+ENDLIST
+DATALIST
+DATAFORM 슬레이프니르의 배를 주물럭 거렸다.
+DATAFORM 슬레이프니르는 웃으며 피했다.
+DATAFORM 「어림도 없지!」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 슬레이프니르의 배를 주물럭 거렸다.
+PRINTFORMW 슬레이프니르는 놀란 나머지 소리를 지르려다 급히 입을 막았다.
+PRINTFORMW 「힉...!」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM14
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 슬레이프니르의 귀를 살짝 깨물었다.
+PRINTFORMW 슬레이프니르는 비명에 가까운 소리를 내었다.
+PRINTFORMW %TEXTR("「흐아악! 뭐하는 짓이야!」/「무무무슌!! 뮤슌 짓이냑!」")%
+CASE "High"
+PRINTFORMW 슬레이프니르의 귀를 살짝 깨물었다.
+PRINTFORMW 슬레이프니르는 작게 숨을 흘렸다.
+PRINTFORMW %TEXTR("「으... 이건 익숙해지지가 않아」/「으......」/「읏 간지러...」")%
+CASE "Annoyed"
+PRINTFORMW 슬레이프니르의 귀를 살짝 깨물었다.
+PRINTFORMW 슬레이프니르는 정색하며 피했다.
+PRINTFORMW 「하지마」
+CASE "Fear"
+PRINTFORMW 슬레이프니르의 귀를 살짝 깨물었다.
+PRINTFORMW 슬레이프니르는 놀란 나머지 소리를 지르려다 급히 입을 막았다.
+PRINTFORMW 「힉...!」
+CASE "Break"
+PRINTFORMW 「...」
+CASE "Affection"
+PRINTFORMW 슬레이프니르의 귀를 살짝 깨물었다.
+PRINTFORMW 슬레이프니르는 작게 숨을 흘렸다.
+PRINTFORMW %TEXTR("「으... 이건 익숙해지지가 않아」/「으......」/「읏 간지러...」")%
+CASE "Marryed"
+PRINTFORMW 슬레이프니르의 귀를 살짝 깨물었다.
+PRINTFORMW 슬레이프니르는 작게 숨을 흘렸다.
+PRINTFORMW %TEXTR("「으... 이건 익숙해지지가 않아」/「으......」/「읏 간지러...」")%
+CASE "Weak"
+PRINTFORMW 슬레이프니르의 귀를 살짝 깨물었다.
+PRINTFORMW 슬레이프니르는 놀란 나머지 소리를 지르려다 급히 입을 막았다.
+PRINTFORMW 「힉...!」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM15
+SELECTCASE CSTR:1
+CASE "First/Low"
+PRINTFORMW 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 슬레이프니르는 굳어버렸다.
+PRINTFORMW (뭣! 싫어... 내가 상상한 첫키스는 이런 게 아니었는데!)
+CASE "First/High"
+PRINTFORMW 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 슬레이프니르는 굳어버렸다.
+PRINTFORMW (아, 우아, 으 키스 해버렸어)
+CASE "First/Affection"
+PRINTFORMW 담소 도중 슬레이프니르의 얼굴을 쳐다보다 충동적으로 성큼, 그녀에게 다가갔다.
+PRINTFORMW 「응? 어? 어어?」
+PRINTFORMW 당신은 명명 백백하게 긴장하는 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW  즈큥!!
+PRINTFORMW 슬레이프니르는 홍당무가 되버린체 굳어버렸다.
+PRINTFORMW (사령관이랑 키스해 버렸어, 사령관이랑 키스해 버렸어, 아아앗!)
+CASE "First/Marryed"
+PRINTFORMW 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 슬레이프니르는 굳어버렸다.
+PRINTFORMW 「으... 왜 이제야 해준거야!」
+CASE "First/Annoyed"
+PRINTFORMW 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 슬레이프니르는 굳어버렸다.
+PRINTFORMW (뭣! 싫어... 내가 상상한 첫키스는 이런 게 아니었는데!)
+PRINTFORMW (최악이야)
+CASE "First/Fear"
+PRINTFORMW 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 슬레이프니르는 굳어버렸다.
+PRINTFORMW (흑... 처음이었는데)
+CASE "First/Break"
+PRINTFORMW 「...」
+CASE "First/Weak"
+PRINTFORMW 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 슬레이프니르는 굳어버렸다.
+PRINTFORMW (흑... 처음이었는데)
+CASE "Low"
+PRINTFORMW 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 슬레이프니르는 굳어버렸다.
+PRINTFORMW (싫어! 빨리 끝내줘!)
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+DATAFORM 슬레이프니르에게 거절의 기색은 없었다.
+DATAFORM (...사령관은 날 좋아하는 걸까?)
+ENDLIST
+DATALIST
+DATAFORM 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+DATAFORM 슬레이프니르는 가만히 받아들였다.
+DATAFORM (...기분 좋아)
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관. 키스하고 싶어, 키스해 줘」
+DATAFORM 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+DATAFORM 「으응, 사령관 좋아해」
+ENDLIST
+DATALIST
+DATAFORM 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+DATAFORM 「무슌!? 뭐하는... 으읏, 츗, 바보...」
+DATAFORM 슬레이프니르는 얼굴을 붉히면서 당신의 가슴에 얼굴을 파묻었다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 슬레이프니르는 당신의 가슴을 밀쳐냈다
+PRINTFORMW 「사령관. 분위기 파악 안해?」
+CASE "Fear"
+PRINTFORMW 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW (무서워)
+CASE "Break"
+PRINTFORMW 「...」
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관. 키스하고 싶어, 키스해 줘」
+DATAFORM 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+DATAFORM 「으응, 사령관 좋아해」
+ENDLIST
+DATALIST
+DATAFORM 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+DATAFORM 「무슌!? 뭐하는... 으읏, 츗, 바보...」
+DATAFORM 슬레이프니르는 얼굴을 붉히면서 당신의 가슴에 얼굴을 파묻었다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 슬레이프니르의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW (무서워)
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM16
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 슬레이프니르의 목에 혀를 기었다.
+PRINTFORMW 슬레이프니르는 비명에 가까운 소리를 내었다.
+PRINTFORMW %TEXTR("「흐아악! 뭐하는 짓이야!」/「으에엑...뭐 하는 거야」")%
+CASE "High"
+PRINTFORMW 슬레이프니르의 목에 혀를 기었다.
+PRINTFORMW 슬레이프니르는 작게 숨을 흘렸다.
+PRINTFORMW %TEXTR("「읏 간지러...」/「으... 이건 익숙해지지가 않아」/「으... 이런 건 좀 부끄러운데」")%
+CASE "Annoyed"
+PRINTFORMW 슬레이프니르의 목에 혀를 기었다.
+PRINTFORMW 슬레이프니르는 비명에 가까운 소리를 내었다.
+PRINTFORMW 「흐아악! 뭐하는 짓이야!」
+CASE "Fear"
+PRINTFORMW 슬레이프니르의 목에 혀를 기었다.
+PRINTFORMW 슬레이프니르의 눈가에 조금 눈물이 맺혔다.
+PRINTFORMW 「힉...!」
+CASE "Break"
+PRINTFORMW 「...」
+CASE "Affection"
+PRINTFORMW 슬레이프니르의 목에 혀를 기었다.
+PRINTFORMW 슬레이프니르는 작게 숨을 흘렸다.
+PRINTFORMW %TEXTR("「읏 간지러...」/「으... 이건 익숙해지지가 않아」/「으... 이런 건 좀 부끄러운데」")%
+CASE "Marryed"
+PRINTFORMW 슬레이프니르의 목에 혀를 기었다.
+PRINTFORMW 슬레이프니르는 작게 숨을 흘렸다.
+PRINTFORMW %TEXTR("「읏 간지러...」/「으... 이건 익숙해지지가 않아」/「으... 이런 건 좀 부끄러운데」")%
+CASE "Weak"
+PRINTFORMW 슬레이프니르의 목에 혀를 기었다.
+PRINTFORMW 슬레이프니르의 눈가에 조금 눈물이 맺혔다.
+PRINTFORMW 「힉...!」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM17
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 슬레이프니르의 등을 손가락으로 훑었다.
+PRINTFORMW 슬레이프니르는 비명에 가까운 소리를 내었다.
+PRINTFORMW %TEXTR("「힉...!」/「흐아악! 뭐하는 짓이야!」/「무무무슌!! 뮤슌 짓이냑!」")%
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 슬레이프니르의 등을 손가락으로 훑었다.
+DATAFORM 슬레이프니르는 웃으며 내 등짝을 때렸다.
+DATAFORM 「아하하! 간지러워! 그만해!」
+ENDLIST
+DATALIST
+DATAFORM 슬레이프니르의 등을 손가락으로 훑었다.
+DATAFORM 슬레이프니르는 웃으며 피했다.
+DATAFORM 「어림도 없지!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 슬레이프니르의 등을 손가락으로 훑었다.
+PRINTFORMW 슬레이프니르는 정색하며 피했다.
+PRINTFORMW 「하지마」
+CASE "Fear"
+PRINTFORMW 슬레이프니르의 등을 손가락으로 훑었다.
+PRINTFORMW 슬레이프니르의 눈가에 조금 눈물이 맺혔다.
+PRINTFORMW 「힉...!」
+CASE "Break"
+PRINTFORMW 「...」
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 슬레이프니르의 등을 손가락으로 훑었다.
+DATAFORM 슬레이프니르는 웃으며 내 등짝을 때렸다.
+DATAFORM 「아하하! 간지러워! 그만해!」
+ENDLIST
+DATALIST
+DATAFORM 슬레이프니르의 등을 손가락으로 훑었다.
+DATAFORM 슬레이프니르는 웃으며 피했다.
+DATAFORM 「어림도 없지!」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 슬레이프니르의 등을 손가락으로 훑었다.
+DATAFORM 슬레이프니르는 웃으며 내 등짝을 때렸다.
+DATAFORM 「아하하! 간지러워! 그만해!」
+ENDLIST
+DATALIST
+DATAFORM 슬레이프니르의 등을 손가락으로 훑었다.
+DATAFORM 슬레이프니르는 웃으며 피했다.
+DATAFORM 「어림도 없지!」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 슬레이프니르의 등을 손가락으로 훑었다.
+PRINTFORMW 슬레이프니르의 눈가에 조금 눈물이 맺혔다.
+PRINTFORMW 「힉...!」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM18
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 슬레이프니르의 가슴에 얼굴을 묻었다.
+PRINTFORMW 슬레이프니르는 굳은 채 가만히 있었다.
+PRINTFORMW {「무무무슌!! 뮤슌 짓이냑!」/「흐아악! 뭐하는 짓이야!」/「뭐, 뭐하는거야!」
+CASE "High"
+PRINTFORMW 슬레이프니르의 가슴에 얼굴을 묻었다.
+PRINTFORMW 슬레이프니르는 살며시 내 머리를 안았다.
+PRINTFORMW %TEXTR("「으, 사령관 아기같아」/「사령관? 잠들면 안돼」")%
+CASE "Marryed"
+PRINTFORMW 슬레이프니르의 가슴에 얼굴을 묻었다.
+PRINTFORMW 슬레이프니르는 살며시 내 머리를 안았다.
+PRINTFORMW 좋은 향기가 났다.
+PRINTFORMW %TEXTR("「후후, 버릇된거 아니야?」/「사령관, 이대로 좀 잘래?」")%
+CASE "Annoyed"
+PRINTFORMW 슬레이프니르에게 파후파후를 부탁했다.
+PRINTFORMW 슬레이프니르는 거절했다.
+PRINTFORMW 「내가 왜?」
+CASE "Fear"
+PRINTFORMW 슬레이프니르의 가슴에 얼굴을 묻었다.
+PRINTFORMW 슬레이프니르의 몸이 살짝 떨리는 게 느껴졌다.
+PRINTFORMW 「가, 가만히 있으면 되는거지?」
+CASE "Weak"
+PRINTFORMW 슬레이프니르의 가슴에 얼굴을 묻었다.
+PRINTFORMW 슬레이프니르의 몸이 살짝 떨리는 게 느껴졌다.
+PRINTFORMW 「흑, 흐윽...」
+CASE "Break"
+PRINTFORMW 「...」
+CASE "Affection"
+PRINTFORMW 슬레이프니르의 가슴에 얼굴을 묻었다.
+PRINTFORMW 슬레이프니르는 살며시 내 머리를 안았다.
+PRINTFORMW %TEXTR("「으, 사령관 아기같아」/「사령관? 잠들면 안돼」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM19
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 슬레이프니르에게 소리를 지르며 욕을 했다.
+PRINTFORMW 슬레이프니르의 눈에 눈물이 맺히며 고개를 숙였다.
+PRINTFORMW %TEXTR("「그렇게 말할 것 까진 없잖아!」/「흑, 너무해」")%
+CASE "Fear"
+PRINTFORMW 슬레이프니르에게 소리를 지르며 욕을 했다.
+PRINTFORMW 슬레이프니르의 눈에 눈물이 맺히며 고개를 숙였다.
+PRINTFORMW %TEXTR("「미안, 미안해. 죄송해요」/「흑... 흐윽...」")%
+CASE "Break"
+PRINTFORMW 「...」
+CASE "High"
+PRINTFORMW 슬레이프니르에게 소리를 지르며 욕을 했다.
+PRINTFORMW 슬레이프니르의 눈에 눈물이 맺히며 고개를 숙였다.
+PRINTFORMW %TEXTR("「그렇게 말할 것 까진 없잖아!」/「흑, 너무해」")%
+CASE "Affection"
+PRINTFORMW 슬레이프니르에게 소리를 지르며 욕을 했다.
+PRINTFORMW 슬레이프니르의 눈에 눈물이 맺히며 고개를 숙였다.
+PRINTFORMW %TEXTR("「그렇게 말할 것 까진 없잖아!」/「흑, 너무해」")%
+CASE "Marryed"
+PRINTFORMW 슬레이프니르에게 소리를 지르며 욕을 했다.
+PRINTFORMW 슬레이프니르의 눈에 눈물이 맺히며 고개를 숙였다.
+PRINTFORMW %TEXTR("「그렇게 말할 것 까진 없잖아!」/「흑, 너무해」")%
+CASE "Annoyed"
+PRINTFORMW 슬레이프니르에게 소리를 지르며 욕을 했다.
+PRINTFORMW 슬레이프니르의 눈에 눈물이 맺히며 고개를 숙였다.
+PRINTFORMW %TEXTR("「그렇게 말할 것 까진 없잖아!」/「흑, 너무해」")%
+CASE "Weak"
+PRINTFORMW 슬레이프니르에게 소리를 지르며 욕을 했다.
+PRINTFORMW 슬레이프니르의 눈에 눈물이 맺히며 고개를 숙였다.
+PRINTFORMW %TEXTR("「미안, 미안해. 죄송해요」/「흑... 흐윽...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM20
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 슬레이프니르의 뺨을 때렸다.
+PRINTFORMW 슬레이프니르는 뺨에 손을 댄 상태로 멍하게 날 쳐다봤다.
+PRINTFORMW %TEXTR("「어...? 왜...?」/「너무해...」")%
+CASE "Fear"
+PRINTFORMW 슬레이프니르의 뺨을 때렸다.
+PRINTFORMW 슬레이프니르는 뺨에 손을 댄 상태로 멍하게 날 쳐다봤다.
+PRINTFORMW %TEXTR("「흑... 흐윽...」/「아파... 흣, 윽」")%
+CASE "Break"
+PRINTFORMW 「...」
+CASE "High"
+PRINTFORMW 슬레이프니르의 뺨을 때렸다.
+PRINTFORMW 슬레이프니르는 뺨에 손을 댄 상태로 멍하게 날 쳐다봤다.
+PRINTFORMW %TEXTR("「어...? 왜...?」/「너무해...」")%
+CASE "Affection"
+PRINTFORMW 슬레이프니르의 뺨을 때렸다.
+PRINTFORMW 슬레이프니르는 뺨에 손을 댄 상태로 멍하게 날 쳐다봤다.
+PRINTFORMW %TEXTR("「어...? 왜...?」/「너무해...」")%
+CASE "Marryed"
+PRINTFORMW 슬레이프니르의 뺨을 때렸다.
+PRINTFORMW 슬레이프니르는 뺨에 손을 댄 상태로 멍하게 날 쳐다봤다.
+PRINTFORMW %TEXTR("「어...? 왜...?」/「너무해...」")%
+CASE "Annoyed"
+PRINTFORMW 슬레이프니르의 뺨을 때렸다.
+PRINTFORMW 슬레이프니르는 뺨에 손을 댄 상태로 멍하게 날 쳐다봤다.
+PRINTFORMW %TEXTR("「어...? 왜...?」/「너무해...」")%
+CASE "Weak"
+PRINTFORMW 슬레이프니르의 뺨을 때렸다.
+PRINTFORMW 슬레이프니르는 뺨에 손을 댄 상태로 멍하게 날 쳐다봤다.
+PRINTFORMW %TEXTR("「흑... 흐윽...」/「아파... 흣, 윽」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM21
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 슬레이프니르의 배에 주먹을 날렸다.
+PRINTFORMW 슬레이프니르는 쓰러져서 심하게 콜록대고 있다.
+PRINTFORMW %TEXTR("「아파... 흣, 윽」/「콜, 록, 카학. 왜 이러는 거야」")%
+CASE "Break"
+PRINTFORMW 「...」
+CASE "High"
+PRINTFORMW 슬레이프니르의 배에 주먹을 날렸다.
+PRINTFORMW 슬레이프니르는 쓰러져서 심하게 콜록대고 있다.
+PRINTFORMW %TEXTR("「아파... 흣, 윽」/「콜, 록, 카학. 왜 이러는 거야」")%
+CASE "Affection"
+PRINTFORMW 슬레이프니르의 배에 주먹을 날렸다.
+PRINTFORMW 슬레이프니르는 쓰러져서 심하게 콜록대고 있다.
+PRINTFORMW %TEXTR("「아파... 흣, 윽」/「콜, 록, 카학. 왜 이러는 거야」")%
+CASE "Marryed"
+PRINTFORMW 슬레이프니르의 배에 주먹을 날렸다.
+PRINTFORMW 슬레이프니르는 쓰러져서 심하게 콜록대고 있다.
+PRINTFORMW %TEXTR("「아파... 흣, 윽」/「콜, 록, 카학. 왜 이러는 거야」")%
+CASE "Annoyed"
+PRINTFORMW 슬레이프니르의 배에 주먹을 날렸다.
+PRINTFORMW 슬레이프니르는 쓰러져서 심하게 콜록대고 있다.
+PRINTFORMW %TEXTR("「아파... 흣, 윽」/「콜, 록, 카학. 왜 이러는 거야」")%
+CASE "Fear"
+PRINTFORMW 슬레이프니르의 배에 주먹을 날렸다.
+PRINTFORMW 슬레이프니르는 쓰러져서 심하게 콜록대고 있다.
+PRINTFORMW %TEXTR("「아파... 흣, 윽」/「콜, 록, 카학. 왜 이러는 거야」")%
+CASE "Weak"
+PRINTFORMW 슬레이프니르의 배에 주먹을 날렸다.
+PRINTFORMW 슬레이프니르는 쓰러져서 심하게 콜록대고 있다.
+PRINTFORMW %TEXTR("「아파... 흣, 윽」/「콜, 록, 카학. 왜 이러는 거야」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_COM22
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 슬레이프니르를 발로 밀어 찼다.
+PRINTFORMW 슬레이프니르는 쓰러져서 그저 바닥을 바라보고 있다.
+PRINTFORMW %TEXTR("「콜, 록, 카학. 왜 이러는 거야」/「아파, 힉. 왜 그러는 거야 사령관」")%
+CASE "Break"
+PRINTFORMW 「...」
+CASE "High"
+PRINTFORMW 슬레이프니르를 발로 밀어 찼다.
+PRINTFORMW 슬레이프니르는 쓰러져서 그저 바닥을 바라보고 있다.
+PRINTFORMW %TEXTR("「콜, 록, 카학. 왜 이러는 거야」/「아파, 힉. 왜 그러는 거야 사령관」")%
+CASE "Affection"
+PRINTFORMW 슬레이프니르를 발로 밀어 찼다.
+PRINTFORMW 슬레이프니르는 쓰러져서 그저 바닥을 바라보고 있다.
+PRINTFORMW %TEXTR("「콜, 록, 카학. 왜 이러는 거야」/「아파, 힉. 왜 그러는 거야 사령관」")%
+CASE "Marryed"
+PRINTFORMW 슬레이프니르를 발로 밀어 찼다.
+PRINTFORMW 슬레이프니르는 쓰러져서 그저 바닥을 바라보고 있다.
+PRINTFORMW %TEXTR("「콜, 록, 카학. 왜 이러는 거야」/「아파, 힉. 왜 그러는 거야 사령관」")%
+CASE "Annoyed"
+PRINTFORMW 슬레이프니르를 발로 밀어 찼다.
+PRINTFORMW 슬레이프니르는 쓰러져서 그저 바닥을 바라보고 있다.
+PRINTFORMW %TEXTR("「콜, 록, 카학. 왜 이러는 거야」/「아파, 힉. 왜 그러는 거야 사령관」")%
+CASE "Fear"
+PRINTFORMW 슬레이프니르를 발로 밀어 찼다.
+PRINTFORMW 슬레이프니르는 쓰러져서 그저 바닥을 바라보고 있다.
+PRINTFORMW %TEXTR("「콜, 록, 카학. 왜 이러는 거야」/「아파, 힉. 왜 그러는 거야 사령관」")%
+CASE "Weak"
+PRINTFORMW 슬레이프니르를 발로 밀어 찼다.
+PRINTFORMW 슬레이프니르는 쓰러져서 그저 바닥을 바라보고 있다.
+PRINTFORMW %TEXTR("「콜, 록, 카학. 왜 이러는 거야」/「아파, 힉. 왜 그러는 거야 사령관」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+
+@M_No91_COM101
+SELECTCASE CSTR:1
+CASE "First/Low"
+PRINTFORMW 「노래를 불러달라고?」
+PRINTFORMW 「미안, 나는 티비에 나오는 아이돌이 아닌걸.」
+PRINTFORMW 슬레이프니르는 매몰차게 거절했다.
+CASE "First/High"
+PRINTFORMW 「못 부른다고 비웃으면 가출해버릴 테니까 알아둬!」
+PRINTFORMW 슬레이프니르는 한참을 주의를 주고나서야 쭈뼛쭈뼛 노래를 부르기 시작했다.
+CASE "First/Affection"
+PRINTFORMW 「사령관, 나 사령관한테 노래 들려주고 싶어」
+PRINTFORMW 품에안겨 도란도란 이야기를 나누던중, 노래에 대한 이야기가 나오자 슬레이프니르는 배시시 웃으며 당신에게 이야기했다. 
+PRINTFORMW ... 
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW 아름다운 노랫소리가 끝나자 슬레이프니르는 조심스레 이야기했다 
+PRINTFORMW 「나 어땠어? 아이돌 같아?」
+CASE "First/Marryed"
+PRINTFORMW 「사령관, 나 사령관한테 노래 들려주고 싶어」
+PRINTFORMW 품에안겨 도란도란 이야기를 나누던중, 노래에 대한 이야기가 나오자 슬레이프니르는 배시시 웃으며 당신에게 이야기했다. 
+PRINTFORMW ... 
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW 아름다운 노랫소리가 끝나자 슬레이프니르는 조심스레 이야기했다 
+PRINTFORMW 「나 어땠어? 아이돌 같아?」
+CASE "First/Annoyed"
+PRINTFORMW 「뭐? 귀찮은데...」
+PRINTFORMW 「하아 알겠어...」
+PRINTFORMW ...♩
+PRINTFORMW ...♩♩
+PRINTFORMW ..♩♩♩
+PRINTFORMW 슬레이프니르는 귀찮은듯이 대충 노래를 불렀다.
+CASE "First/Fear"
+PRINTFORMW 「아,알겠어..!」
+PRINTFORMW 「모,못 불러도 화내지 말아줬으면 해...」
+PRINTFORMW ...♩
+PRINTFORMW ...♩♩
+PRINTFORMW ...♩♩♩
+PRINTFORMW 슬레이프니르는 사시나무 떨듯 당신의 눈치를 보며 노래를 불렀다.
+CASE "First/Weak"
+PRINTFORMW 당신을 가만히 올려다 보는 슬레이프니르.
+PRINTFORMW 이후 슬레이프니르는 고장난 오르골처럼 딱딱하게 노래를 불렀다.
+CASE "First/Break"
+PRINTFORMW 「...」
+CASE "Low"
+PRINTFORMW 「노래를 불러달라고?」
+PRINTFORMW 「미안, 나는 티비에 나오는 아이돌이 아닌걸.」
+PRINTFORMW 슬레이프니르는 매몰차게 거절했다.
+CASE "High"
+PRINTFORMW 「내 노래가 그렇게 좋아 사령관?」
+PRINTFORMW ♩...
+PRINTFORMW ♩♪...
+PRINTFORMW ♩♪......♬
+PRINTFORMW 슬레이프니르는 즐겁게 노래를 불렀다.
+CASE "Affection"
+PRINTFORMW %TEXTR("「내 노래가 그렇게 좋아 사령관?」/「사령관~ 나 사령관한테 노래 들려주고 싶어!」")%
+PRINTFORMW ♩...
+PRINTFORMW ♩♪...
+PRINTFORMW ♩♪......♬♥
+PRINTFORMW 슬레이프니르는 당신을 바라보며 사랑의 노래를 불렀다.
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「정말... 어쩔 수 없네」
+DATAFORM 슬레이프니르는 볼을 붉히며 우쭐한 표정을 지었다.
+ENDLIST
+DATALIST
+DATAFORM 「사령관도 내 노래에 흠뻑 빠졌구나?」
+DATAFORM 「오랜만에 듀엣 송 부를까?」
+ENDLIST
+ENDDATA
+PRINTFORMW ♩...
+PRINTFORMW ♩♪...
+PRINTFORMW ♩♪......♬♥
+PRINTFORMW 슬레이프니르는 당신을 바라보며 사랑의 노래를 불렀다.
+CASE "Annoyed"
+PRINTFORMW ...♩
+PRINTFORMW ...♩♩
+PRINTFORMW ..♩♩♩
+PRINTFORMW 슬레이프니르는 귀찮은듯이 대충 노래를 불렀다.
+CASE "Fear"
+PRINTFORMW ...♩
+PRINTFORMW ...♩♩
+PRINTFORMW ...♩♩♩
+PRINTFORMW 슬레이프니르는 사시나무 떨듯 당신의 눈치를 보며 노래를 불렀다.
+CASE "Weak"
+PRINTFORMW ....
+PRINTFORMW .....
+PRINTFORMW .....
+PRINTFORMW 슬레이프니르는 고장난 오르골처럼 딱딱하게 노래를 불렀다.
+CASE "Break"
+PRINTFORMW ....
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+
+@M_No91_EVENT_Morning
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 슬레이프니르의 목소리에 잠에서 깨어났다.
+DATAFORM %TEXTR("「사령관! 아침이야! 오늘은 어디 갈 일 없어?」/「사령관! 아침이야! 오늘은 뭐 해?」")%
+ENDLIST
+DATALIST
+DATAFORM 당신은 슬레이프니르의 목소리에 잠에서 깨어났다.
+DATAFORM %TEXTR("「사령관! 아침이야! 아아! 귀 막지 말라구!」/「사령관! 일어나! 아침이라구!」")%
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 슬레이프니르의 목소리에 잠에서 깨어났다.
+DATAFORM %TEXTR("「사령관. 해 떴다구? 뭐? 좀만 더 자고 싶다고? 으음...」/「사령관! 벌써 점심이 다 되어가잖아! 일~어~나~」")%
+ENDLIST
+DATALIST
+DATAFORM 당신은 슬레이프니르의 목소리에 잠에서 깨어났다.
+DATAFORM 「아! 일어났어? 저기 오늘은 우리 뭐 할까?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 슬레이프니르의 입맞춤으로 잠에서 깼다.
+DATAFORM 「조, 좋은 아침... 잘잤어?」
+ENDLIST
+DATALIST
+DATAFORM 당신이 눈을 뜨니 옆에는 슬레이프니르가 고른 숨을 내쉬며 자고 있었다.
+DATAFORM 한동안 가만히 바라보고 있자, 잠에서 깬 슬레이프니르는 당신과 눈이 마주치자 부끄러운 듯, 이불을 끌어올려 얼굴을 감췄다.
+DATAFORM 「조, 좋은 아침......혹시 봤어?」
+ENDLIST
+DATALIST
+DATAFORM 「저기, 사령관, 일어나」
+DATAFORM 당신이 눈을 뜨자 슬레이프니르가 눈앞에서 미소짓고 있었다.
+DATAFORM 「안녕, 있지, 키스해줘 키스…」
+DATAFORM 끈질기게 슬레이프니르가 졸라 오기에, 당신은 어쩔 수 없이 해달라는대로 했다.
+ENDLIST
+DATALIST
+DATAFORM 「쪽♪」
+DATAFORM 당신이 눈을 뜨자, 얼굴이 새빨갛게 물든 슬레이프니르가 들여다보고 있었다.
+DATAFORM 「이, 일어났어? 아침 밥 다 됐으니까 빨리와」
+DATAFORM 슬레이프니르는 그렇게 말하고 달려가 버렸다.
+DATAFORM ……?
+DATAFORM 당신은 의문을 보이면서도 눈을 비비며 일어났다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「...일어나 사령관」
+DATAFORM 당신이 눈을 뜨자 보인 것은, 분홍색 에이프런으로 몸을 가린 슬레이프니르의 모습이었다.
+DATAFORM 「어때? 이런 것도 좋지 않아?」
+DATAFORM 당신은 슬레이프니르의 머리를 쓰다듬으며 가볍게 키스를 해 주었다.
+DATAFORM 「자, 아침 밥 먹어」
+ENDLIST
+DATALIST
+DATAFORM 당신이 눈을 뜨니 옆에는 슬레이프니르가 고른 숨을 내쉬며 자고 있었다.
+DATAFORM 목 부근을 보니 새벽 동안 남긴 자국들이 선명히 남아있었다.
+DATAFORM 당신은 일부러 깨우지 않고 가만히 슬레이프니르가 자는 모습을 지켜봤다.
+ENDLIST
+DATALIST
+DATAFORM 「응... 쪽... 하아...」
+DATAFORM 「일어났어? 눈을 뜨게 하는 키스야」
+DATAFORM 그러면서 슬레이프니르는 입술만이 아니고 목덜미나 앞가슴에도 키스를 반복했다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 눈을 뜨니 이미 아침이 지나가 있었다.
+DATAFORM 아무래도 슬레이프니르는 날 깨우지 않은 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 문을 노크하는 소리에 당신의 눈이 떠졌다.
+DATAFORM 슬레이프니르는 내가 일어났는지 확인도 하지 않고 간 듯, 멀어지는 발소리만이 들려왔다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW 당신은 슬레이프니르의 목소리에 잠에서 깨어났다.
+PRINTFORMW 	  %TEXTR("「조, 좋은 아침. 정확히 어제 시킨 시간에 깨웠어」/「미, 미안. 내 목소리가 너무 컸어?」")%
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 슬레이프니르의 목소리에 잠에서 깨어났다.
+DATAFORM 「미안, 미안해요. 어제 사령관이 이 시간에 깨워달라고 해서...」
+ENDLIST
+DATALIST
+DATAFORM 당신이 눈을 뜨니 이미 아침이 지나가 있었다.
+DATAFORM 「미, 미안해. 깨우면 화낼거 같아서 못깨웠어. 때리지 말아줘」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_EVENT_Sortie
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW %TEXTR("「얼마 안 걸릴 거야. 창고 비워두라고.」/「최고의 무대를 만들어줄게!」")%
+CASE "Annoyed"
+PRINTFORMW %TEXTR("「기분전환이라도 해야지」/「갔다올게」")%
+CASE "Fear"
+PRINTFORMW 「다녀, 올게...」
+CASE "High"
+PRINTFORMW %TEXTR("「얼마 안 걸릴 거야. 창고 비워두라고.」/「최고의 무대를 만들어줄게!」")%
+CASE "Affection"
+PRINTFORMW %TEXTR("「얼마 안 걸릴 거야. 창고 비워두라고.」/「최고의 무대를 만들어줄게!」")%
+CASE "Marryed"
+PRINTFORMW %TEXTR("「얼마 안 걸릴 거야. 창고 비워두라고.」/「최고의 무대를 만들어줄게!」")%
+CASE "Weak"
+PRINTFORMW 「다녀, 올게...」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_EVENT_Sortie_Return
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「하아, 하. 시간은 얼마나 걸렸어?」
+CASE "Annoyed"
+PRINTFORMW %TEXTR("「재미 없어」/「하아, 시시했어」")%
+CASE "Fear"
+PRINTFORMW 「...나 왔어 사령관」
+CASE "High"
+PRINTFORMW 「하아, 하. 시간은 얼마나 걸렸어?」
+CASE "Affection"
+PRINTFORMW 「하아, 하. 시간은 얼마나 걸렸어?」
+CASE "Marryed"
+PRINTFORMW 「하아, 하. 시간은 얼마나 걸렸어?」
+CASE "Weak"
+PRINTFORMW 「...나 왔어 사령관」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_EVENT_Cook_Self
+IF ABL:MASTER:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「기대할게~」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「식사? 나도 도와줄까? 응?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「그, 그냥 내가 할까?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「기대할게~」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「식사? 나도 도와줄까? 응?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「그, 그냥 내가 할까?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「기대할게~」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「식사? 나도 도와줄까? 응?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「그, 그냥 내가 할까?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「기대할게~」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「식사? 나도 도와줄까? 응?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「그, 그냥 내가 할까?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「기대할게~」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「식사? 나도 도와줄까? 응?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「그, 그냥 내가 할까?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「기대할게~」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「식사? 나도 도와줄까? 응?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「그, 그냥 내가 할까?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No91_EVENT_Eat_Com
+IF ABL:MASTER:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW %TEXTR("「음... 미묘하네」/「사령관, 연습이 필요할 것 같아...」")%
+CASE "Annoyed"
+PRINTFORMW 「으엑」
+CASE "Fear"
+PRINTFORMW 「맛있어, 사령관」
+CASE "High"
+PRINTFORMW %TEXTR("「음... 미묘하네」/「사령관, 연습이 필요할 것 같아...」")%
+CASE "Affection"
+PRINTFORMW %TEXTR("「음... 미묘하네」/「사령관, 연습이 필요할 것 같아...」")%
+CASE "Marryed"
+PRINTFORMW %TEXTR("「음... 미묘하네」/「사령관, 연습이 필요할 것 같아...」")%
+CASE "Weak"
+PRINTFORMW 「맛있어, 사령관」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW %TEXTR("「오~ 대단한데?」/「우물... 맛있어! 의외네 사령관」")%
+CASE "Annoyed"
+PRINTFORMW 「맛은 있네」
+CASE "High"
+PRINTFORMW %TEXTR("「오~ 대단한데?」/「우물... 맛있어! 의외네 사령관」")%
+CASE "Affection"
+PRINTFORMW %TEXTR("「오~ 대단한데?」/「우물... 맛있어! 의외네 사령관」")%
+CASE "Marryed"
+PRINTFORMW %TEXTR("「오~ 대단한데?」/「우물... 맛있어! 의외네 사령관」")%
+CASE "Fear"
+PRINTFORMW 「맛있어, 사령관」
+CASE "Weak"
+PRINTFORMW 「맛있어, 사령관」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「뭐야! 엄청 맛있잖아!」
+CASE "Annoyed"
+PRINTFORMW 「...맛있어. 짜증나」
+CASE "Fear"
+PRINTFORMW 「마, 맛있어」
+CASE "High"
+PRINTFORMW 「뭐야! 엄청 맛있잖아!」
+CASE "Affection"
+PRINTFORMW 「뭐야! 엄청 맛있잖아!」
+CASE "Marryed"
+PRINTFORMW 「뭐야! 엄청 맛있잖아!」
+CASE "Weak"
+PRINTFORMW 「마, 맛있어」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No91_EVENT_Cook
+IF ABL:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「어? 요리?」
+PRINTFORMW 「...너무 기대하진 마」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 「어? 요리?」
+PRINTFORMW 「...너무 기대하진 마」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW ...
+PRINTFORMW ..
+PRINTFORMW .
+PRINTFORMW 
+PRINTFORMW 당신은 순간 정지된 사고를 겨우 움직였다.
+PRINTFORMW 접시 한가운데에는 '돌'이 자리 잡고 있다.
+PRINTFORMW 의미를 알 수 없다.
+PRINTFORMW %TEXTR("「유기농이야」/「안심해. 깨끗이 씻었어」")%
+CASE "Fear"
+PRINTFORMW %TEXTR("「요, 요리…? 잘 못해도 심한 일은 하지 마…」/「아, 알았어… 만들게」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 「어? 요리?」
+PRINTFORMW 「...너무 기대하진 마」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 「어? 요리?」
+PRINTFORMW 「...너무 기대하진 마」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW %TEXTR("「요, 요리…? 잘 못해도 심한 일은 하지 마…」/「아, 알았어… 만들게」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATAFORM 「오늘은 이걸로 할까」
+DATALIST
+DATAFORM 「어? 요리?」
+DATAFORM 「그렇게 내가 만든 요리를 먹고 싶어?」
+ENDLIST
+ENDDATA
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 「좋아, 잘 됐어」
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTDATAW
+DATAFORM 「오늘은 이걸로 할까」
+DATALIST
+DATAFORM 「어? 요리?」
+DATAFORM 「그렇게 내가 만든 요리를 먹고 싶어?」
+ENDLIST
+ENDDATA
+PRINTFORMW 「♪~」
+PRINTFORMW 「♪♪~」
+PRINTFORMW 「♪~♪~」
+PRINTFORMW 
+PRINTFORMW 「좋아, 잘 됐어」
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW ...
+PRINTFORMW ..
+PRINTFORMW .
+PRINTFORMW 
+PRINTFORMW 당신은 순간 정지된 사고를 겨우 움직였다.
+PRINTFORMW 물이 담긴 접시 한가운데에는 '돌'이 자리 잡고 있다.
+PRINTFORMW 의미를 알 수 없다.
+PRINTFORMW %TEXTR("「돌을 끓인 스프야. 미네랄이 풍부해」/「삶은 돌이야. 뜨거우니까 조심히 먹어」")%
+CASE "High"
+PRINTDATAW
+DATAFORM 「오늘은 이걸로 할까」
+DATALIST
+DATAFORM 「어? 요리?」
+DATAFORM 「그렇게 내가 만든 요리를 먹고 싶어?」
+ENDLIST
+ENDDATA
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 「좋아, 잘 됐어」
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTDATAW
+DATAFORM 「오늘은 이걸로 할까」
+DATALIST
+DATAFORM 「어? 요리?」
+DATAFORM 「그렇게 내가 만든 요리를 먹고 싶어?」
+ENDLIST
+ENDDATA
+PRINTFORMW 「♪~」
+PRINTFORMW 「♪♪~」
+PRINTFORMW 「♪~♪~」
+PRINTFORMW 
+PRINTFORMW 「좋아, 잘 됐어」
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW %TEXTR("「요, 요리…? 잘 못해도 심한 일은 하지 마…」/「아, 알았어… 만들게」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW %TEXTR("「요, 요리…? 잘 못해도 심한 일은 하지 마…」/「아, 알았어… 만들게」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「좋아!」
+PRINTFORMW 「기대하라구!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 「좋아!」
+PRINTFORMW 「기대하라구!」
+PRINTFORMW 「♪~」
+PRINTFORMW 「♪♪~」
+PRINTFORMW 「♪~♪~」
+PRINTFORMW 
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 당신은 순간 정지된 사고를 겨우 움직였다.
+PRINTFORMW 물이 담긴 접시 한가운데에는 '돌'이 자리 잡고 있다.
+PRINTFORMW 의미를 알 수 없다.
+PRINTFORMW %TEXTR("「지구 반대편에서 구해온 돌이야」/「클래식을 들으며 자란 돌이야」")%
+PRINTFORMW 당신은 현기증이 났다.
+CASE "High"
+PRINTFORMW 「좋아!」
+PRINTFORMW 「기대하라구!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 「좋아!」
+PRINTFORMW 「기대하라구!」
+PRINTFORMW 「♪~」
+PRINTFORMW 「♪♪~」
+PRINTFORMW 「♪~♪~」
+PRINTFORMW 
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW %TEXTR("「요, 요리…? 잘 못해도 심한 일은 하지 마…」/「아, 알았어… 만들게」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW %TEXTR("「요, 요리…? 잘 못해도 심한 일은 하지 마…」/「아, 알았어… 만들게」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No91_EVENT_Eat_Lunch
+IF ABL:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW %TEXTR("슬레이프니르가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+CASE "Affection"
+PRINTFORMW %TEXTR("슬레이프니르가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+PRINTFORMW 「...연습할거야」
+CASE "Annoyed"
+PRINTFORMW 당신은 순간 무언가의 의지로 돌을 먹을 뻔 했지만 가까스로 멈추는데 성공했다.
+CASE "Fear"
+PRINTFORMW %TEXTR("슬레이프니르가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+CASE "High"
+PRINTFORMW %TEXTR("슬레이프니르가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+CASE "Marryed"
+PRINTFORMW %TEXTR("슬레이프니르가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+PRINTFORMW 「...연습할거야」
+CASE "Weak"
+PRINTFORMW %TEXTR("슬레이프니르가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 슬레이프니르가 한 음식은 맛있었다.
+CASE "Affection"
+PRINTFORMW %TEXTR("「저기... 식욕을 채웠으니까 이제 뭐 할거야?」/「맛있었으면 칭찬하라구」")%
+CASE "Annoyed"
+PRINTFORMW 당신은 순간 무언가의 의지로 돌을 먹을 뻔 했지만 가까스로 멈추는데 성공했다.
+CASE "High"
+PRINTFORMW 슬레이프니르가 한 음식은 맛있었다.
+CASE "Marryed"
+PRINTFORMW %TEXTR("「저기... 식욕을 채웠으니까 이제 뭐 할거야?」/「맛있었으면 칭찬하라구」")%
+CASE "Fear"
+PRINTFORMW %TEXTR("슬레이프니르가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+CASE "Weak"
+PRINTFORMW %TEXTR("슬레이프니르가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 슬레이프니르가 만든 음식은 굉장히 맛있었다.
+PRINTFORMW 
+PRINTFORMW %TEXTR("「후후」/「그렇게 맛있어?」")%
+CASE "Affection"
+PRINTFORMW 슬레이프니르가 만든 음식은 굉장히 맛있었다.
+PRINTFORMW 
+PRINTFORMW %TEXTR("「맛있었으면 칭찬하라구」/「답례로 잔뜩 사랑해줘」")%
+CASE "Annoyed"
+PRINTFORMW 당신은 순간 무언가의 의지로 돌을 먹을 뻔 했지만 가까스로 멈추는데 성공했다.
+CASE "High"
+PRINTFORMW 슬레이프니르가 만든 음식은 굉장히 맛있었다.
+PRINTFORMW 
+PRINTFORMW %TEXTR("「후후」/「그렇게 맛있어?」")%
+CASE "Marryed"
+PRINTFORMW 슬레이프니르가 만든 음식은 굉장히 맛있었다.
+PRINTFORMW 
+PRINTFORMW %TEXTR("「맛있었으면 칭찬하라구」/「답례로 잔뜩 사랑해줘」")%
+CASE "Fear"
+PRINTFORMW %TEXTR("슬레이프니르가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+CASE "Weak"
+PRINTFORMW %TEXTR("슬레이프니르가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No91_Sell
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 슬레이프니르에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「그렇구나...」
+PRINTFORMW 「나름대로 즐거웠어」
+PRINTFORMW 「또 어디선가 만났으면 좋겠네」
+PRINTFORMW 「잘있어」
+CASE "High"
+PRINTFORMW 당신은 슬레이프니르에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「그렇구나...」
+PRINTFORMW 「...」
+PRINTFORMW 「흑...싫어... 좀 더 여기에 있고 싶어」
+CASE "Affection"
+PRINTFORMW 당신은 슬레이프니르에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「어...?」
+PRINTFORMW 「저기, 사령관? 농담이지?」
+PRINTFORMW 「왜? 내, 내가 뭐 잘못했어?」
+PRINTFORMW 「사령관? 싫어. 나 사령관이랑 있을래!」
+PRINTFORMW 「누구야 당신! 싫어! 이거 놔! 도와줘 사령관! 가지마!!!!!」
+PRINTFORMW 「사령관!!!!!!!!!!!!!!!!!」
+CASE "Weak"
+PRINTFORMW 당신은 슬레이프니르에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「응...」
+PRINTFORMW (차라리, 잘 된거야)
+CASE "Break"
+PRINTFORMW 당신은 슬레이프니르에게 사실을 전했다.
+PRINTFORMW 「...」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_Disuse
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 슬레이프니르에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「그렇구나...」
+PRINTFORMW 「저기, 사령관. 마지막으로 한 번만 날아보면 안될까?」
+PRINTFORMW ...
+PRINTFORMW 「응, 미안. 안되겠지」
+PRINTFORMW 「잠시동안이었지만 나름대로 재밌었어」
+PRINTFORMW 「잘있어」
+CASE "High"
+PRINTFORMW 당신은 슬레이프니르에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「그렇구나...」
+PRINTFORMW 「저기, 사령관. 마지막으로 한 번만 날아보면 안...될까?」
+PRINTFORMW ...
+PRINTFORMW 「응, 미안. 안되겠지」
+PRINTFORMW 「...흑, 흐윽, 끅」
+CASE "Affection"
+PRINTFORMW 당신은 슬레이프니르에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「어...?」
+PRINTFORMW 「저기, 사령관? 농담이지?」
+PRINTFORMW 「왜? 내, 내가 뭐 잘못했어?」
+PRINTFORMW 「응? 사령관?」
+PRINTFORMW 「싫어! 싫다고!」
+PRINTFORMW 「내가 더 잘할게! 버리지 말아줘」
+PRINTFORMW 「아아...!! 아아아아아아아아아아아아아아아아아아아!!!!!!」
+CASE "Weak"
+PRINTFORMW 당신은 슬레이프니르에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「응...」
+PRINTFORMW (차라리, 잘 된거야)
+CASE "Break"
+PRINTFORMW 당신은 슬레이프니르에게 사실을 전했다.
+PRINTFORMW 「...」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No91_ENDING
+SELECTCASE CFLAG:엔딩플래그
+CASE 1
+PRINTFORMW 당신은 심사숙고 끝에 슬레이프니르에게 결혼 반지를 선물하기로했다.
+PRINTFORMW 「뭐야 뭐야 사령관, 또 오늘은 얼마나 이쁜거 주려고?」
+PRINTFORMW 당신이 벨벳 상자를 선물해주자 슬레이프니르는 기대하는 눈치를 주며 열어 보았다.
+PRINTFORMW 「...어...?」
+PRINTFORMW 단순한 커플링이나, 귀걸이가 아닌 딱 봐도 엄선해서 가공한 듯한 반지였다.
+PRINTFORMW 슬레이프니르는 평소 으레 놀라거나 하며 장난치는 분위기가 아닌 진짜로 놀란 분위기였다.
+PRINTFORMW 「저기 사령관, 이런 반지가 의미하는 건... 알아?」
+PRINTFORMW 「나 나는, 애당초 전쟁을 하기위한 병기였고,」
+PRINTFORMW 손사래를 치는 슬레이프니르의 팔을 잡으며 당신은 그런건 괜찮으니까 결혼을 하자고 이야기했다.
+PRINTFORMW 「안 돼, 안 돼......」
+PRINTFORMW 「당신은 인간이잖아? 나같은 인간이 아닌것과 결혼하면 어떻게 해」
+PRINTFORMW 당신을 걱정하며 그녀는 얼굴을 새빨갛게 물들며 어느새 눈엔 눈물이 고였다.
+PRINTFORMW 「사령관... 나도 사령관과 계속 같이 있고싶어」
+PRINTFORMW 당신은 떨면서 자신의 마음을 밝히는 슬레이프니르에게 멈출 수 없는 연정을 느끼며 그녀를 강하게 끌어안았다. 
+PRINTFORMW 슬레이프니르는 분명히 군용 바이오로이드다.
+PRINTFORMW 그러나 당신이 끌어안은 그녀는,
+PRINTFORMW 단순히 사랑스러운 소녀였다.
+PRINTFORMW .............
+PRINTFORMW .........
+PRINTFORMW .....
+PRINTFORMW 여느 때와 같은 날.
+PRINTFORMW 한 나무 그늘 아래에서, 한 초고속 기동 전투용 소녀가 앉아, 노래를 흥얼거리고 있다.
+PRINTFORMW 그 무릎 위에 당신이 머리를 올리고 조용한 숨소리를 내고 있다.
+PRINTFORMW 슬레이프니르는 당신의 얼굴을 보며, 노래를 잠시 멈추고 가볍게 입맞춤을 했다.
+PRINTFORMW 평소의 건방지고 활발한 모습이 거짓말 같이, 조용한 시간이 흐른다.
+PRINTFORMW 당신은 문득 눈을 떠, 슬레이프니르의 배에 귀를 붙였다.
+PRINTFORMW 「들리지?」
+PRINTFORMW  미소짓는다.
+PRINTFORMW 「여자아이라면 좋겠네, 그렇지만 남자아이도 갖고 싶어」
+PRINTFORMW 당신은 조금 생각하며 슬레이프니르에게 속삭였다.
+PRINTFORMW 「정말... 조금은 자중하라구」
+PRINTFORMW 슬레이프니르는 쓴웃음 지으면서 당신의 머리카락을 어루만졌다.
+PRINTFORMW 「그래도, 기대할게…♪」
+PRINTFORMW 슬레이프니르 엔딩 No. 1
+RETURN 1
+CASE 2
+PRINTFORMW 당신은 슬레이프니르의 손가락에 반지를 끼웠다.
+PRINTFORMW 슬레이프니르는 그저 말 없이 무표정으로 당신을 쳐다 볼 뿐이었다.
+PRINTFORMW .............
+PRINTFORMW .........
+PRINTFORMW .....
+PRINTFORMW 드디어 원하던 소녀를 손에 넣은 것에 당신은 희열을 느꼈다.
+PRINTFORMW 나 말고는 이 소녀를 만질 수 없다.
+PRINTFORMW 나 말고는 이 소녀를 안을 수 없다.
+PRINTFORMW 그러한 쾌감이 당신의 머릿속을 가득 채웠고
+PRINTFORMW 소녀는 그런 당신을 그저 조용히 바라볼 뿐이었다.
+PRINTFORMW 슬레이프니르 엔딩 No. 2
+RETURN 1
+CASE 3
+PRINTFORMW 당신이 어느날 잠시 외출하고 오니 슬레이프니르가 사라져있었다.
+PRINTFORMW 당신은 당황해서 어쩔줄 몰라하던 와중에 전화로 연락하니 근처 공원으로 와달라는 이야기를 들었다.
+PRINTFORMW 서둘러서 공원으로 가니, 가무대가 설치되어있었고 그 위에 슬레이프니르가 있었다.
+PRINTFORMW 「사령관! 기다리고 있었어」
+PRINTFORMW 아이돌이란, 젊은이들에게 인기있는 연예인을 뜻한다.
+PRINTFORMW 눈 앞에 있는건 말그대로 아이돌이다.
+PRINTFORMW 그것도 나만을 위한 작은 콘서트를 열어주는 사랑스러운 아이돌.
+PRINTFORMW 「비록 최고로는 준비 못했지만, 기뻐해주었으면 좋겠어.」
+PRINTFORMW 슬레이프니르는 당신만의 최고의 스타가 되었다.
+PRINTFORMW ♩
+PRINTFORMW ♩♪
+PRINTFORMW ♩♪♬♥
+PRINTFORMW 슬레이프니르 엔딩 No. 3
+RETURN 1
+ENDSELECT
+RETURN 0
+

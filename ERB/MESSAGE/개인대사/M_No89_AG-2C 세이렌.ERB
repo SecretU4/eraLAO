@@ -1,0 +1,2605 @@
+﻿;C:\Users\ASUS\Documents\GitHub\eraLAO\ERB\MESSAGE\개인대사\M_No89_AG-2C 세이렌.ERB에서 불러옴
+@IS_M_No89
+RETURN 1
+
+@M_No89_TRAIN_START_0
+PRINTFORMW 「...아!」
+PRINTFORMW 「처음 뵙겠어요 사령관님, 저는 AG-2C 세이렌. 편하게 세이렌이라고 불러주세요!」
+PRINTFORMW 세이렌은 해맑게 웃으며 고개를 숙였다.
+CFLAG:조교여부 = 1
+
+@M_No89_TRAIN_START_1
+SELECTCASE CSTR:1
+	CASE "Confession"
+		PRINTFORMW 여느 때와 달리 세이렌은 창을 통해 밖을 바라보고 있었다.
+		PRINTFORMW 이윽고 당신이 온 것을 눈치챘는지 옅은 웃음을 띠며 당신을 돌아보았다.
+		PRINTFORMW 언제나 처럼 당신의 마음을 녹이는 그 미소였지만, 여느 때와 달리 분위기가 조금 달라보였다.
+		PRINTFORMW 「오셨나요 사령관님? 괜찮으시다면 잠시 제 옆에 앉아 주시겠어요?」
+		PRINTFORMW 당신의 세이렌의 옆에 앉아 오랜만에 창 너머로 펼쳐진 푸른 하늘을 올려다보았다.
+		PRINTFORMW 세이렌은 당신을 한번 바라본 후 고개를 돌려 당신과 같이 창밖을 내다보았다.
+		PRINTFORMW 이렇게 하늘을 보면서 바람을 맞고 있으면, 고민도, 걱정도 하나하나 바람을 타고 하늘로 날아가는 것 같아요.」
+		PRINTFORMW 「...」
+		PRINTFORMW 「그래도 최근엔 뭘 어떻게 해도 마음 속에 남아 있는 고민이 있지만요.」
+		PRINTFORMW 당신은 어떤 고민이냐고 세이렌에게 되물었다.
+		PRINTFORMW 「...정말로 좋아하는 사람이 생긴 것 같아요...」
+		PRINTFORMW 「그 분을 생각하면, 가슴이  두근거리고, 머릿속이 그 사람 생각으로 가득 차버려요... 」
+		PRINTFORMW 「그 분은 저를 어떻게 생각해주실까, 혹시 좋아하시는 분이 따로 있을까, 그 사람이 제가 되면 안될까...」
+		PRINTFORMW 상상외의 고민에 당신은 놀란 표정으로 고개를 돌렸다.
+		PRINTFORMW 「...」
+		PRINTFORMW 세이렌은 뭔가 결심한 듯 붉어진 얼굴로 당신과 천천히 눈을 맞춘 후 말을 이어나갔다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「...사령관님은...좋아하시는 분이 있으신가요?」
+		PRINTFORMW 당신은 조용히 세이렌을 당신의 품 안으로 당겨 안았다.
+		PRINTFORMW 세이렌은 살짝 당황 했는지, 그녀의 떨림이 당신에게 전해졌다.
+		PRINTFORMW 이윽고 당신은 그녀의 귓가에 그녀가 원했을 답을 주었다.
+		PRINTFORMW 「...」
+		PRINTFORMW 세이렌의 떨림이 이내 멎고, 당신을 작은 팔로 꼬옥 껴안았다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「...고마워요 사령관님, 이렇게 제 곁에 있어주셔서, 저와 함깨해주셔서...」
+		PRINTFORMW 「...사랑해요... 사령관님...」
+		PRINTFORMW 당신은 대답 대신 그녀의 머리를 감싸 안고 조금 더 깊이 품에 품었다.
+		PRINTFORMW 당신과 세이렌은 영원같이 긴 시간 동안 서로의 온기를 나누었다.
+		TFLAG:고백함 = 1
+	CASE "Low"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「오셨군요 사령관님,」
+			PRINTFORMW 「기다리고 있었어요」
+		ELSEIF A == 1
+			PRINTFORMW 「아, 사령관님 이셨군요.」
+			PRINTFORMW 「오늘의 일정은 어떻게 되시나요?」
+		ELSEIF A == 2
+			PRINTFORMW  문 너머에서 누군가의 노랫소리가 들려온다.
+			PRINTFORMW 「으앗!? 오...오셨나요 사령관님?」
+		ENDIF
+	CASE "High"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「오셨군요 사령관님,」
+			PRINTFORMW 「기다리고 있었어요! 오늘은 뭘 하실 건가요?」
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님, 저번 출격 때 네리씨한태서 배운 말장난이 있는데, 들어보시겠어요? 」
+			PRINTFORMW 세이렌의 개그는 생각보다 썰렁했다.
+		ELSEIF A == 2
+			PRINTFORMW  문 넘어에서 누군가의 노랫소리가 들려온다.
+			PRINTFORMW 「으앗!?...혹시 들으셨나요...?」
+		ENDIF
+	CASE "Affection"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 당신이 세이렌의 방에 들어갔을때 세이렌은 새근새근 잠들어 있었다.
+			PRINTFORMW  세이렌의 근처의 라디오에서 어디선가 들어본 듯한 노래가 들려왔다.
+			PRINTFORMW  세이렌이 엎드려 있는 책상 위에는 누군가를 대상으로 한 노랫가사가 적힌 종이가 몇장 있었다.
+			PRINTFORMW  당신이 세이렌의 머리를 가볍게 쓰다듬자, 세이렌은 깨어났는지 천천히 고개를 돌려 당신을 마주 보았다.
+			PRINTFORMW 「...사..사령관님?」
+			PRINTFORMW 「...햣!?」
+			PRINTFORMW 이윽고 세이렌은 뭔가를 깨달았는지 황급히 자리를 정리하기 시작했다.
+			PRINTFORMW 「...혹...혹시 보신건가요...?」
+			PRINTFORMW 허둥지둥 거리는 세이렌을 안심 시키기 위해, 당신은 조용히 그녀의 머리를 쓰다듬어 주었다.
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님...」
+			PRINTFORMW 「이전에 부대에서 운디네 씨에게 들었어요, 남성분들은 패셔너블하게 꾸미고 다니는 여성을 좋아한다고...」
+			PRINTFORMW 「혹시...사령관님도 그런 스타일을 좋아하시나요?」
+		ELSEIF A == 2
+			PRINTFORMW 「기다렸어요 사령관님...!」
+			PRINTFORMW 「그러니까 기다린 만큼...」
+			PRINTFORMW  세이렌은 갑작스럽게 당신에게 안겨왔다.
+			PRINTFORMW 「조금만...어리광 부려도 될까요...?」
+		ENDIF
+	CASE "Marryed"
+		A = RAND:4
+		IF A == 0
+			PRINTFORMW 「기다렸어요 사령관님!」
+			PRINTFORMW 「그러니까 기다린 만큼...」
+			PRINTFORMW  당신은 말없이 세이렌을 안아주었다.
+			PRINTFORMW 「햣...!?」
+			PRINTFORMW  잠깐 당황한 듯한 세이렌이였지만, 금세 당신을 껴앉았다.
+			PRINTFORMW 「사령관님은...정말 짖굳으세요...헤헤」
+		ELSEIF A == 1
+			PRINTFORMW 세이렌의 방에 들어가니 세이렌은 자신의 머리를 %TEXTR("포니테일/트윈테일")%로 묶고 있었다.
+			PRINTFORMW 「앗...오셨나요 사령관님...?」
+			PRINTFORMW 「패션잡지에서 추천해준 스타일이라고 해서...해보았는데...이상하진 않은가요...?」
+			PRINTFORMW  세이렌은 부끄러운지 눈을 돌렸다.
+			PRINTFORMW  당신은 웃으며 그녀의 헤어스타일과 푸른 조개모양의 머리장식을 칭찬했다.
+			PRINTFORMW 「감사합니다...사령관님...」
+		ELSEIF A == 2
+			PRINTFORMW 여느때와 같이 세이렌의 방에선 노랫소리가 들려왔다.
+			PRINTFORMW  당신이 세이렌의 방에 들어가자, 세이렌은 당신을 발견하곤 웃으며 노래를 이어나갔다.
+			PRINTFORMW  당신은 노래의 코러스를 부르며 세이렌에게 한 발자국 씩 나아갔다.
+			PRINTFORMW  세이렌과 당신만의 작은 오페라가 시작 되었다.
+		ELSEIF A == 3
+			PRINTFORMW 당신이 방에 들어서자 눈부시게 하얀 원피스를 입고 있는 세이렌이 보였다.
+			PRINTFORMW 「아, 오셨나요 사령관님?」
+			PRINTFORMW 「날씨가 좋은데... 오늘도 같이 바다를 보러 가지 않으시겠어요?」
+			PRINTFORMW 세이렌은 머리를 뒤로 넘기며 해맑게 웃어 보였다.
+		ENDIF
+	CASE "Annoyed"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「오셨나요...사령관님,」
+			PRINTFORMW 이후 무거운 침묵이 당신을 덮쳤다.
+		ELSEIF A == 1
+			PRINTFORMW 세이렌은 당신이 온 것을 깨달은 후 조용히 보고 있던 책을 덮었다.
+			PRINTFORMW 「안녕하세요, 사령관님...」
+		ENDIF
+	CASE "Fear"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「힉...!」
+			PRINTFORMW 	  세이렌에게 다가가자 일순간 세이렌의 안색이 파랗게 변했지만. 이내 떨리는 미소를 지으며 당신을 맞이했다.
+			PRINTFORMW 「오...오셨나요 사령관님...오늘도...잘 부탁드립니다...」
+		ELSEIF A == 1
+			PRINTFORMW 「사...사령관님...」
+			PRINTFORMW 세이렌은 당신을 발견하자 한 발자국 뒤로 물러섰다.
+		ENDIF
+	CASE "Weak"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「오셨나요...사령관님...」
+		ELSEIF A == 1
+			PRINTFORMW 「...」
+			PRINTFORMW 세이렌은 말없이 당신을 올려다보고 있다.
+		ELSEIF A == 2
+			PRINTFORMW 당신은 방에 들어와서 세이렌을 찾았지만 세이렌은 어디에도 보이지 않았다.
+			PRINTFORMW 「...」
+			PRINTFORMW  이윽고, 방의 구석에서 얼굴을 푹 숙인 체 앉아있는 세이렌을 발견했다.
+		ENDIF
+	CASE "Break"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「기다리고 있었어요! 사령관님!」
+			PRINTFORMW 「오늘은 뭘 하실건가요?」
+			PRINTFORMW 「뭘 하시든, 무얼 원하시든 전 다 할 수 있어요!」
+			PRINTFORMW 「그러니 명령만 내려주세요 사령관님!」
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님~!」
+			PRINTFORMW 저 멀리서, 당신이 들어오기 전까지 아무것도 하지 않았던 세이렌이 당신이 들어오자마자 웃음을 띄우며 다가왔다.
+			PRINTFORMW 	  「전 오늘도 사령관님이 정말 좋아요!」
+			PRINTFORMW 당신을 올려다 보는 세이렌의 눈은 웃는 입과 달리 텅 비어 있었다.
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;10개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_TRAIN_END
+SELECTCASE CSTR:1
+	CASE "Low"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW  「즐거웠어요 사령관님, 남은 시간은 푹 쉬어주세요!」
+		ELSEIF A == 1
+			PRINTFORMW 「네! 그럼 편히 쉬세요!」
+			PRINTFORMW 세이렌은 당신을 향해 고개를 꾸벅 숙였다.
+		ENDIF
+	CASE "High"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「앗, 가시나요...? 네 알겠습니다! 즐거운 시간이였어요!」
+		ELSEIF A == 1
+			PRINTFORMW 「벌써요...? 앗! 아뇨! 아무것도 아니에요!」
+			PRINTFORMW 세이렌은 우물쭈물 거리며 당신을 보고 있다.
+		ELSEIF A == 2
+			PRINTFORMW 「사...사령관님! 잠시만요 옷매무새가 흐트러지셨어요! 제가 봐드릴께요!」
+			PRINTFORMW 세이렌이 당신을 힐끔힐끔 보면서 차림새를  다듬어 주었다.
+		ENDIF
+	CASE "Affection"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「사령관님...」
+			PRINTFORMW 세이렌은 우물쭈물 거리며 당신을 바라보고 있다.
+			PRINTFORMW 「가시기 전에...혹시 한 번만 안아주실수...앗 아니에요!」
+		ELSEIF A == 1
+			PRINTFORMW 「아...! 저번에 부대에 다녀왔을 때 괜찮은 쿠키를 운디네씨에게 받았어요! 괜찮으시다면... 나중에라도 들러 주시겠어요?」
+		ELSEIF A == 2
+			PRINTFORMW 「사령관님과 있는 시간은 왜이렇게 짧게 느껴질까요...」
+			PRINTFORMW 세이렌은 아쉬운 듯 당신의 눈치를 살폈다.
+		ENDIF
+	CASE "Marryed"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 당신이 세이렌의 방을 나서려고 일어선 순간 등 뒤에서 작은 팔이 당신을 감싸 안았다.
+			PRINTFORMW 「조금만...더 있어주시면 안 될까요...?」
+		ELSEIF A == 1
+			PRINTFORMW 「아, 가시나요?」
+			PRINTFORMW 쪽!
+			PRINTFORMW 헤헤...빨리 다시 오셔야 해요...」
+			PRINTFORMW 세이렌은 당신의 볼에 입을 맞춘 후 조용히 검지를  입술에 갔다 댔다.
+		ELSEIF A == 2
+			PRINTFORMW 당신의 품안에서 어느세 새근새근 잠들어버린 세이렌을 조용히 눕히고 당신은 자리를 떴다.
+			PRINTFORMW 「...우으....사령관님...」
+			PRINTFORMW  당신이 세이렌을 조용히 쓰다듬는 순간 세이렌은 눈을 살며시 뜨며 당신의 손을 맞잡았다.
+			PRINTFORMW 「정말...작별 키스도 안해주시고 가시는 거에요...?」
+			PRINTFORMW  당신은 쓴웃음을 지으며, 세이렌의 이마에 가볍게 키스를 해주었다.
+		ENDIF
+	CASE "Annoyed"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「고생하셨습니다. 사령관님,」
+		ELSEIF A == 1
+			PRINTFORMW 「들어가세요, 고생하셨어요.」
+			PRINTFORMW 세이렌은 당신이 나가는걸 끝까지 보지 않고 일을 시작했다.
+		ENDIF
+	CASE "Fear"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「고..고생하셨어요...사령관님...」
+		ELSEIF A == 1
+			PRINTFORMW 「네..네! 고생하셧습니다...!」
+			PRINTFORMW 세이렌은 몸을 떨며 따라나와 방문을 조심스럽게 열어주었다.
+		ENDIF
+	CASE "Weak"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「...」
+		ELSEIF A == 1
+			PRINTFORMW 「편..히...쉬세요..」
+		ENDIF
+	CASE "Break"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「으앙? 벌써 가시나요...? 세이렌은 조금 더 같이 있고 싶었는데...」
+		ELSEIF A == 1
+			PRINTFORMW 「가시는 건 아쉽지만... 그래도 사령관님을 위해서 착하게 기다릴게요!」
+			PRINTFORMW 세이렌은 당신을 향해 공허한 미소를 지어 보였다.
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM2
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW  당신은 세이렌과 이런저런 이야기를 주고받았다.
+		A = RAND:4
+		IF A == 0
+			PRINTFORMW 「사령관님, 어떻게 하면 대원들과 더 친해질 수 있을까요?」
+		ELSEIF A == 1
+			PRINTFORMW 「전 호라이즌 대원들을 지휘할 의무가 있어요,」
+			PRINTFORMW 「하지만...최근엔 여러모로 잘 되지 않는 것 같아요...」
+			PRINTFORMW 당신은 세이렌을 격려하였다.
+			PRINTFORMW 「감사해요 사령관님, 더 노력해볼께요!」
+		ELSEIF A == 2
+			PRINTFORMW 「장난간 뱀이라니, 하아. 네리 씨는 이게 정말 재밌다고 생각하는 걸까요?」
+		ELSEIF A == 3
+			PRINTFORMW 「좋아하는 거요...? 글쎄요...」
+			PRINTFORMW 「부대에서 네리씨와 운디네씨가 농담을 주고 받는걸 보는 걸까요...?」
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 세이렌과 이런저런 이야기를 주고받았다.
+		A = RAND:4
+		IF A == 0
+			PRINTFORMW 「사령관님, 어떻게 하면 대원들과 더 친해질 수 있을까요?」
+		ELSEIF A == 1
+			PRINTFORMW 「전 호라이즌 대원들을 지휘할 의무가 있어요,」
+			PRINTFORMW 「아직 여러모로 어려운 부분은 많지만...」
+			PRINTFORMW 「이전에 해주신 조언 덕분에 한 발자국씩 나아갈수 있게 됬어요」
+			PRINTFORMW 「감사해요 사령관님!」
+		ELSEIF A == 2
+			PRINTFORMW 「후훗! 네리 씨는 늘 즐거워 보여요. 잘못을 지적할 때에도 늘 똑같은 표정이죠...... 대체... 왜 그럴까요?」
+		ELSEIF A == 3
+			PRINTFORMW 「부함장으로서의 업무는... 솔직하게 말해서 쉽진 않아요,」
+			PRINTFORMW 「그래도 안전하게 임무를 수행하는 부대원들을 보면 마음이 뿌듯해져요!」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 세이렌과 이런저런 이야기를 주고받았다.
+		A = RAND:4
+		IF A == 0
+			PRINTFORMW 「그래도 한 번쯤은... 사령관님과 놀러 나가고 싶어요. 그래도... 될까요?」
+		ELSEIF A == 1
+			PRINTFORMW 「그치만, 전 사령관님과 더 친해지고 싶은걸요? 사령관님은, 어떻게 생각하세요?」
+		ELSEIF A == 2
+			PRINTFORMW 「사령관님은 혹시... 어른스러운 여성분을 좋아하시나요...?」
+			PRINTFORMW 「아뇨! 아무것도 아니에요!」
+		ELSEIF A == 3
+			PRINTFORMW 「사령관님은 혹시... 감자 좋아하시나요...?」
+			PRINTFORMW 「그... 봄감자가 맛있다고 해요」
+			PRINTFORMW 세이렌은 우물쭈물 거리며 당신을 올려다 보았다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 세이렌과 이런저런 이야기를 주고받았다.
+		A = RAND:4
+		IF A == 0
+			PRINTFORMW 「연안 해변쪽에 멋진 카페가 생겼다고 운디네 씨가 알려줬어요, 괜찮으시다면 나중에 같이 가보시겠어요?」
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님과 이렇게 이야기하는 시간이 전 정말 좋아요...」
+		ELSEIF A == 2
+			PRINTFORMW 「최근에 마음에드는 노래를 발견했어요, 괜찮으시다면 들어주시겠어요?」
+			PRINTFORMW 당신이 동의하자 세이렌은 눈을 감고 노래를 시작했다.
+		ELSEIF A == 3
+			PRINTFORMW 「사령관님이 모자에 꽃아주신 이 꽃,」
+			PRINTFORMW 「볼때마다 아름다워서 마음이 들뜨게 되요」
+			PRINTFORMW 세이렌은 밀짚모자를 만지작거리며 행복한 미소를 지어 보였다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 세이렌과 이런저런 이야기를 주고받았다.
+		PRINTFORMW %TEXTR("「네, 네...그렇군요」/「사령관님이 어떤 생각을 하시는지 잘 알겠어요」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 세이렌과 이런저런 이야기를 주고받았다.
+		PRINTFORMW %TEXTR("「네...네! 듣고있어요...!」/「저...정말 대단하세요!」/「아...아 네! 그렇..군요」")%
+	CASE "Weak"
+		PRINTFORMW 당신은 세이렌과 이런저런 이야기를 주고받았다.
+		PRINTFORMW %TEXTR("「네...네...」/「...」")%
+	CASE "Break"
+		PRINTFORMW 당신은 세이렌과 이런저런 이야기를 주고받았다.
+		PRINTFORMW %TEXTR("「네, 알겠어요!」/「정말 대단하세요 사령관님!」")%
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM3
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 세이렌의 %TEXTR("다리/복부")%을 칭찬했다.
+		PRINTFORMW 세이렌은 매우 당황한 모습이다.
+		PRINTFORMW %TEXTR("「네...?」/「노...놀리시는 건가요?」")%
+	CASE "High"
+		PRINTFORMW 당신은 세이렌의 %TEXTR("다리/복부")%을 칭찬했다.
+		PRINTFORMW 세이렌은 조금 당황한 모습이다.
+		PRINTFORMW %TEXTR("「사령관님...?」/「그런 부끄러운 말씀하시면 안 돼요...」/「부끄러운 말씀하지마세요...」")%
+	CASE "Affection"
+		PRINTFORMW 당신은 세이렌의 %TEXTR("다리/복부")%을 칭찬했다.
+		PRINTFORMW 세이렌의 얼굴이 조금 붉어진 것 같다.
+		PRINTFORMW %TEXTR("「정말, 사령관님은 짗굳으세요...」/「그런말, 다른 분들한텐 하시면 안되요...」")%
+	CASE "Marryed"
+		PRINTFORMW 당신은 세이렌의 %TEXTR("다리/복부")%을 칭찬했다.
+		PRINTFORMW 세이렌의 얼굴이 조금 붉어졌지만, 얼굴엔 옅은 웃음을 띄우고 있다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「분명 짖굳은 말인데, 사령관님께서 해주시면 가슴이 두근거려요... 왜그럴까요?」
+		ELSEIF A == 1
+			PRINTFORMW 「방금 그 말씀 한 번만 더 해주시면 안 될까요...?」
+		ELSEIF A == 2
+			PRINTFORMW 「저도 사령관님의 멋진 목소리가 정말 좋아요...!」
+			PRINTFORMW 세이렌은 상기된 얼굴로 당신을 바라보고 있다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 세이렌의 %TEXTR("다리/복부")%을 칭찬했다.
+		PRINTFORMW 세이렌은 고개를 다른 곳으로 돌리고 있다.
+		PRINTFORMW %TEXTR("「사령관님, 조금 더 지휘에 집중해주세요.」/「놀리지 말아주세요」/「자꾸 그런 말씀하시면 저도 화낼꺼에요!」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 세이렌의 %TEXTR("다리/복부")%을 칭찬했다.
+		PRINTFORMW 세이렌의 어깨가 가볍게 떨리고 있다.
+		PRINTFORMW %TEXTR("「네... 사령관님」/「감사합니다...사령관님」")%
+	CASE "Weak"
+		PRINTFORMW 당신은 세이렌의 %TEXTR("다리/복부")%을 칭찬했다.
+		PRINTFORMW 세이렌은 고개를 숙이고 있다.
+		PRINTFORMW %TEXTR("「...감사합니다」/「...네」")%
+	CASE "Break"
+		PRINTFORMW 당신은 세이렌의 %TEXTR("다리/복부")%을 칭찬했다.
+		PRINTFORMW 세이렌은 죽은 눈으로 웃고 있다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「감사합니다! 사령관님!」
+			PRINTFORMW 세이렌은 당신을 보고 있지 않았다.
+		ELSEIF A == 1
+			PRINTFORMW 「세이렌, 힘낼께요!」
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM4
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 살며시 세이렌의 손에 손을 겹쳤다.
+		PRINTFORMW 세이렌은 매우 당황한 모습이다.
+		PRINTFORMW %TEXTR("「으앗?」/「사...사령관님?」")%
+	CASE "High"
+		PRINTFORMW 당신은 살며시 세이렌의 손에 손을 겹쳤다.
+		PRINTFORMW 세이렌의 얼굴이 붉어진 것 같다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「사령관님의 손은 커다래서 두근거려요...」
+		ELSEIF A == 1
+			PRINTFORMW 「연인들은 데이트할 때 이렇게 손을 잡을까요?」
+			PRINTFORMW 세이렌은 부끄러운 듯한 얼굴로 당신을 바라보고 있다.
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 살며시 세이렌의 손에 손을 겹쳤다.
+		PRINTFORMW 세이렌은 얼굴을 붉히며 당신을 쳐다봤다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「조금만... 조금만 더 이렇게 있어도 될까요...?」
+			PRINTFORMW 당신은 세이렌의 손을 조금 더 꼬옥 잡아주었다.
+			PRINTFORMW 「헤헤...」
+		ELSEIF A == 1
+			PRINTFORMW 「저희들도 이러면 연인처럼 보일까요...?」
+		ELSEIF A == 2
+			PRINTFORMW 「...이대로 시간이 멈췄으면 좋겠어요...」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 살며시 세이렌의 손에 손을 겹쳤다..
+		PRINTFORMW 세이렌은 웃으며 당신을 돌아보았다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「조금 더, 꼬옥 잡아주세요 사령관님, 헤헤...」
+			PRINTFORMW 당신은 세이렌의 손을 조금 더 꼬옥 잡아주었다.
+		ELSEIF A == 1
+			PRINTFORMW 세이렌이 장난삼아 당신의 손바닥을 간지럽혔다.
+			PRINTFORMW 당신은 웃음을 참으며, 세이렌에게 그대로 되돌려주었다.
+			PRINTFORMW 「꺄핫!?...정말, 안 질거에요 사령관님!」
+		ELSEIF A == 2
+			PRINTFORMW 세이렌은 말없이, 당신의 손을 잡은체 당신의 어깨에 기대왔다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 살며시 세이렌의 손에 손을 겹쳤다.
+		PRINTFORMW 세이렌은 조금 화가 난 모습이다.
+		PRINTFORMW %TEXTR("「지금 작전 구상중에요 사령관님, 사령관님도 집중해주셨으면 해요」/「이러시면 조금 불편해요 나중에 해주시겠어요?」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 살며시 세이렌의 손에 손을 겹쳤다.
+		PRINTFORMW 세이렌의 몸이 흠칫 떨렸다.
+		PRINTFORMW %TEXTR("「으앗...?」/「왜... 왜 그러신가요?」")%
+	CASE "Weak"
+		PRINTFORMW 당신은 살며시 세이렌의 손에 손을 겹쳤다.
+		PRINTFORMW 세이렌의 몸이 떨리고 있다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「...」
+			PRINTFORMW 세이렌의 텅빈 눈에 눈물이 고여있다.
+		ELSEIF A == 1
+			PRINTFORMW 「감사합니다... 사령관님...」
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 살며시 세이렌의 손에 손을 겹쳤다.
+		PRINTFORMW 세이렌 죽은 눈으로 웃고있다.
+		PRINTFORMW %TEXTR("「사령관님 덕분에 전 항상 행복해요」/「사령관님의 손은 정말 차가워서 언제나 행복해져요!」")%
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM5
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 세이렌의 머리를 쓰다듬었다.
+		PRINTFORMW 세이렌은 조금 부끄러운듯하다.
+		A = RAND:4
+		IF A == 0
+			PRINTFORMW 「으앗?」
+		ELSEIF A == 1
+			PRINTFORMW 「치...칭찬해주시는 건가요? 감사합니다...」
+		ELSEIF A == 2
+			PRINTFORMW 「부끄러워요 사령관님...」
+		ELSEIF A == 3
+			PRINTFORMW 「잠시만요, 제 정모가...」
+			PRINTFORMW 세이렌은 부끄러운 듯 정모를 고쳐 쓰었다.
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 세이렌의 머리를 쓰다듬었다.
+		PRINTFORMW 세이렌은 부끄러운 듯 자신의 정모를 움켜잡았다.
+		PRINTFORMW %TEXTR("「너무 아이 취급하지 말아주세요...」/「감사합니다... 사령관님」/「사령관님께서 그렇게 쓰다듬어 주시면 뭔가 마음이 따뜻해져요」")%
+	CASE "Affection"
+		PRINTFORMW 당신은 세이렌의 머리를 쓰다듬었다.
+		PRINTFORMW 세이렌은 얼굴이 살짝 붉게 물들었다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「사령관님께서 계속 쓰다듬어 주셨우면 좋겠어요...」
+			PRINTFORMW 「제가 너무 욕심쟁이인 걸까요...?」
+		ELSEIF A == 1
+			PRINTFORMW 「감사합니다 사령관님!」
+			PRINTFORMW 세이렌이 고개를 들어 당신을 향해 밝게 웃어 보였다.
+		ELSEIF A == 2
+			PRINTFORMW 「사령관님의 손은 정말 따뜻한 것 같아요... 」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 세이렌의 머리를 쓰다듬었다.
+		PRINTFORMW 세이렌은 조용히 미소를 지었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「처음으로 사령관님께서 쓰다듬어주셨던 때가 생각나요」
+			PRINTFORMW 「그때도 이렇게 따스한 손이었던 것 같아요...」
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님 조금만 더 쓰다듬어주실 수 있나요?」
+			PRINTFORMW 「헤헤, 감사합니다!」
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 세이렌의 머리를 쓰다듬었다.
+		PRINTFORMW %TEXTR("세이렌은 조금 화가 난 모습이다./세이렌은 무표정이다.")%
+		PRINTFORMW %TEXTR("「나중에 해주세요...」/「사령관님, 내일 있을 작전에 집중해주세요」/「어린 아이 취급하지 말아주세요」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 세이렌의 머리를 쓰다듬었다.
+		PRINTFORMW 세이렌의 몸이 가늘게 떨리고 있다.
+		PRINTFORMW 「사령관님...?」
+	CASE "Weak"
+		PRINTFORMW 당신은 세이렌의 머리를 쓰다듬었다.
+		PRINTFORMW 세이렌의 몸이 눈에 띄게 떨렸다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「...사령관님 저는...」
+		ELSEIF A == 1
+			PRINTFORMW 「...」
+			PRINTFORMW 세이렌은 고개를 푹 숙이고 있다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 세이렌의 머리를 쓰다듬었다.
+		PRINTFORMW 세이렌은 죽은 눈으로 웃고있다.
+		PRINTFORMW 「헤헤...」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM6
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 세이렌의 옆구리를 찔렀다.
+		PRINTFORMW 세이렌은 정말 깜짝 놀란듯 하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「으앗!?」
+		ELSEIF A == 1
+			PRINTFORMW 「햣!」
+			PRINTFORMW 「놀래키지 말아주세요 사령관님...」
+			PRINTFORMW 세이렌의 눈가에 옅은 눈물이 고여있다.
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 세이렌의 옆구리를 찔렀다.
+		PRINTFORMW 세이렌은 깜짝 놀란듯 하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「햣?」
+			PRINTFORMW 「정말, 사령관님 장난은 그만둬 주세요!」
+			PRINTFORMW 「아앗!」
+			PRINTFORMW 「그만하시라니깐요!」
+		ELSEIF A == 1
+			PRINTFORMW 「힛..히힛!」
+			PRINTFORMW 「사령관님 거길 찌르시면..힛」
+			PRINTFORMW 세이렌은 애써 웃음이 터지려는걸 참고있다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 세이렌의 옆구리를 찔렀다.
+		PRINTFORMW 세이렌은 아무런 반응이 없다.
+		PRINTFORMW %TEXTR("「사령관님, 이런 장난 하나도 재미없어요」/「그만둬주세요」/「사령관님이 네리 씨처럼 굴지 않았으면 해요」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 세이렌의 옆구리를 찔렀다.
+		PRINTFORMW 세이렌은 당황한듯 하다.
+		PRINTFORMW 「사...사령관님?」
+	CASE "Weak"
+		PRINTFORMW 당신은 세이렌의 옆구리를 찔렀다.
+		PRINTFORMW 세이렌의 몸이 눈에 띄게 떨렸다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「...앗」
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님...」
+			PRINTFORMW 세이렌은 조용히 당신을 쳐다보고 있다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 세이렌의 옆구리를 찔렀다.
+		PRINTFORMW 세이렌은 죽은 눈으로 웃고 있다.
+		PRINTFORMW 「에헤헤, 간지러워요 사령관님」
+		PRINTFORMW 세이렌은 누구에게 말하는지도 모르겠는 체 웃고 있었다.
+	CASE "High"
+		PRINTFORMW 당신은 세이렌의 옆구리를 찔렀다.
+		PRINTFORMW 세이렌은 정말 깜짝 놀란듯 하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「으앗!?」
+		ELSEIF A == 1
+			PRINTFORMW 「햣!」
+			PRINTFORMW 「놀래키지 말아주세요 사령관님...」
+			PRINTFORMW 세이렌의 눈가에 옅은 눈물이 고여있다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 세이렌의 옆구리를 찔렀다.
+		PRINTFORMW 세이렌은 깜짝 놀란듯 하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「햣?」
+			PRINTFORMW 「정말, 사령관님 장난은 그만둬 주세요!」
+			PRINTFORMW 「아앗!」
+			PRINTFORMW 「그만하시라니깐요!」
+		ELSEIF A == 1
+			PRINTFORMW 「힛..히힛!」
+			PRINTFORMW 「사령관님 거길 찌르시면..힛」
+			PRINTFORMW 세이렌은 애써 웃음이 터지려는걸 참고있다.
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM7
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 세이렌에게 자신의 무릎에 누우라고 했다.
+		PRINTFORMW 세이렌은 당신의 무릎에 누웠지만 어색한 모양이다.
+		PRINTFORMW %TEXTR("「이렇게... 하면 될까요 사령관님...?」/「이렇게...요?」")%
+	CASE "High"
+		PRINTFORMW 당신은 세이렌에게 자신의 다리에 누우라고 했다.
+		PRINTFORMW 세이렌은 당신의 무릎에 누웠지만 부끄러운 모양이다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「으으... 뭔가 두근거려요...」
+			PRINTFORMW 세이렌은 얼굴을 붉힌 체 고개를 돌려 당신을 바라보았다.
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님, 호, 혹시 무겁지는 않으시죠...?」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 세이렌에게 자신의 다리에 누우라고 했다.
+		PRINTFORMW 세이렌은 사뿐히 당신의 무릎에 누웠다.
+		PRINTFORMW 「사령관님의 무릎에 누워 있으면... 뭔가 포근해서, 잠이 와버려요...」
+		PRINTFORMW 세이렌은 잠이 오는 듯 눈을 깜빡거리기 시작했다.
+	CASE "Marryed"
+		PRINTFORMW 당신은 세이렌에게 자신의 다리에 누우라고 했다.
+		PRINTFORMW 세이렌은 사뿐히 당신의 무릎에 누웠다.
+		PRINTFORMW 「사령관님의 무릎에 누워 있으면... 뭔가 포근해서, 잠이 와버려요...」
+		PRINTFORMW 세이렌은 잠이 오는 듯 눈을 깜빡거리기 시작했다.
+	CASE "Annoyed"
+		PRINTFORMW 당신은 세이렌에게 자신의 다리에 누우라고 했다.
+		PRINTFORMW 세이렌은 거절했다.
+		PRINTFORMW %TEXTR("「사령관님, 지금은 장비 정비 중이니 다음번에 권해주시겠어요?」/「죄송해요, 사령관님 지금은 어려울 것 같아요」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 세이렌에게 자신의 무릎에 누우라고 했다.
+		PRINTFORMW 세이렌은 겁에 질린 듯 천천히 당신의 무릎에 누웠다.
+		PRINTFORMW %TEXTR("「이...이렇게 하면 될까요...」/「불편해지시면 말씀해주세요 사령관님...」")%
+	CASE "Weak"
+		PRINTFORMW 당신은 세이렌에게 자신의 다리에 누우라고 했다.
+		PRINTFORMW 세이렌은 몸을 떨며 당신의 무릎에 누웠다.
+		PRINTFORMW 「...」
+		PRINTFORMW 세이렌의 몸의 떨림이 느껴진다.
+	CASE "Break"
+		PRINTFORMW 당신은 세이렌에게 자신의 무릎에 누우라고 했다.
+		PRINTFORMW 세이렌은 사뿐히 당신의 다리에 누웠다.
+		PRINTFORMW 「네! 사령관님!」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM8
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 세이렌에게 무릎베개를 부탁했다.
+		PRINTFORMW 세이렌은 마지못해 받아들였지만 어색한 듯하다.
+		PRINTFORMW 「그다지 깔끔치 못한 상태인데... 괜찮으신가요 사령관님?」
+	CASE "High"
+		PRINTFORMW 세이렌에게 무릎베개를 부탁했다.
+		PRINTFORMW 세이렌은 허락했지만 부끄러운 듯하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「그...그럼요...」
+			PRINTFORMW 세이렌은 당신과 눈을 마주치지 못하고 있다.
+		ELSEIF A == 1
+			PRINTFORMW 「...네? 네!」
+			PRINTFORMW 세이렌은 상기된 얼굴로 당신을 바라보고 있다.
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 세이렌에게 무릎베개를 부탁했다.
+		PRINTFORMW 세이렌은 기쁜 얼굴로 허락했다.
+		PRINTFORMW 「그럼요!」
+		PRINTFORMW 누워서 세이렌을 쳐다보자 손으로 내 머리를 쓰다듬었다.
+		PRINTFORMW 「많이 지치셨나요? 오늘도 고생하셨습니다 사령관님」
+	CASE "Annoyed"
+		PRINTFORMW 세이렌에게 무릎베개를 부탁했다.
+		PRINTFORMW 세이렌은 마지못해 허락했다.
+		PRINTFORMW %TEXTR("「해야할일이 있으니 잠시만이에요 사령관님」/「사령관님은 가끔보면 네리씨와 똑같은 것 같아요...」")%
+	CASE "Fear"
+		PRINTFORMW 세이렌에게 무릎베개를 부탁했다.
+		PRINTFORMW 세이렌의 겁먹은 표정으로 받아들였다.
+		A = RAND:1
+		IF A == 0
+			PRINTFORMW 「네..네! 사령관님...」
+			PRINTFORMW 세이렌의 몸의 떨림이 느껴진다.
+		ENDIF
+	CASE "Weak"
+		PRINTFORMW 세이렌에게 무릎베개를 부탁했다.
+		PRINTFORMW 세이렌의 무릎에 누웠지만 별다른 반응은 없었다.
+		PRINTFORMW 「네 사령관님...」
+		PRINTFORMW 세이렌은 당신을 멍한 눈으로 응시하고 있다.
+	CASE "Break"
+		PRINTFORMW 세이렌에게 무릎베개를 부탁했다.
+		PRINTFORMW 세이렌은 기쁘게 허락했다.
+		PRINTFORMW 「...그럼요!」
+	CASE "Marryed"
+		PRINTFORMW 세이렌에게 무릎베개를 부탁했다.
+		PRINTFORMW 세이렌은 기쁜 얼굴로 허락했다.
+		PRINTFORMW 「그럼요!」
+		PRINTFORMW 누워서 세이렌을 쳐다보자 손으로 내 머리를 쓰다듬었다.
+		PRINTFORMW 「많이 지치셨나요? 오늘도 고생하셨습니다 사령관님」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM9
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 세이렌를 껴안았다.
+		PRINTFORMW 세이렌은 당황하며 당신의 품안에서 벗어났다.
+		A = RAND:4
+		IF A == 0
+			PRINTFORMW 「으앗!?」
+		ELSEIF A == 1
+			PRINTFORMW 「사...사령관님?」
+		ELSEIF A == 2
+			PRINTFORMW 「잠...잠시만요!」
+		ELSEIF A == 3
+			PRINTFORMW 「햐?」
+			PRINTFORMW 세이렌은 당황한 표정으로 당신을 바라보고 있다.
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 세이렌을 껴안았다.
+		PRINTFORMW 세이렌은 부끄러운 듯 고개를 돌렸다.
+		PRINTFORMW %TEXTR("「으앗...? 사령관님...」/「아? 가...감사합니다...」")%
+	CASE "Affection"
+		PRINTFORMW 당신은 세이렌을 껴안았다.
+		PRINTFORMW 세이렌은 작은 팔로 당신을 맞껴안았다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「사령관님과 이렇게 껴안고 있으면, 전장에서의 공포도, 긴장도 다 잊혀지는 것 같아요...」
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님... 조금 더 이대로 있어도 될까요...?」
+		ELSEIF A == 2
+			PRINTFORMW 「헤헤...」
+			PRINTFORMW 세이렌은 조용히 당신을 더 꼬옥 껴안았다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 세이렌을 껴안았다.
+		PRINTFORMW 세이렌은 고개를 들어 당신을 바라보았다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「고마워요 언제나 제 어리광을 받아주셔서 오늘은, 오늘은 정말 특별한 날이니까 좀 더 안아주시면 안될까요?」
+		ELSEIF A == 1
+			PRINTFORMW 「조금만... 더 이대로...」
+		ELSEIF A == 2
+			PRINTFORMW 「이대로... 시간이 멈춘다면 좋을텐데...」
+			PRINTFORMW 당신은 세이렌을 더 꼬옥 껴안았다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 세이렌을 껴안았다.
+		PRINTFORMW 세이렌은 반응하지 않았다.
+		PRINTFORMW %TEXTR("「정말... 잠시만이에요」/「안아 주시는 것도 좋지만, 조금 더 진중해지셨으면 해요」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 세이렌을 껴안았다.
+		PRINTFORMW 세이렌은 몸을 떨었다.
+		PRINTFORMW 「사... 사령관님?」
+		PRINTFORMW 세이렌의 작은 두 팔은 갈곳을 잃은 듯 보였다.
+	CASE "Weak"
+		PRINTFORMW 당신은 세이렌을 껴안았다.
+		PRINTFORMW 세이렌은 반응하지 않았다.
+		PRINTFORMW 「우...」
+		PRINTFORMW 세이렌의 눈가에 눈물이 맺혔다.
+	CASE "Break"
+		PRINTFORMW 당신은 세이렌을 껴안았다.
+		PRINTFORMW 세이렌은 죽은 눈으로 해맑게 웃었다.
+		PRINTFORMW 「헤헤... 사령관님께서 안아주시는게 너무 좋아요!」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM10
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 세이렌의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 세이렌은 당황하며 당신의 품안에서 벗어났다.
+		A = RAND:4
+		IF A == 0
+			PRINTFORMW 「으앗!?」
+		ELSEIF A == 1
+			PRINTFORMW 「사...사령관님?」
+		ELSEIF A == 2
+			PRINTFORMW 「잠...잠시만요!」
+		ELSEIF A == 3
+			PRINTFORMW 「햐?」
+			PRINTFORMW 「사령관님...? 이셨군요...」
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 세이렌의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 세이렌은 조용히 당신의 품안에 있었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「가...감사합니다 사령관님...」
+		ELSEIF A == 1
+			PRINTFORMW 「감사합니다...」
+			PRINTFORMW 세이렌의 귀가 살짝 붉어진 것이 보였다.
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 세이렌의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 세이렌은 뒤를 돌아 당신을 바라보았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「고마워요, 사령관님...」
+			PRINTFORMW 「이렇게, 곁에 있어주셔서...」
+		ELSEIF A == 1
+			PRINTFORMW 「요즘은 호라이즌 부대원들 보다 이렇게 사령관님과 있는 시간이 좋아요...」
+			PRINTFORMW 「저 어리광쟁이가 되버린 걸까요...?」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 세이렌의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 세이렌은 당신의 손에 자신의 손을 덮었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「그날, 사령관님께서 이렇게 꼬옥 안아주셨어요」
+			PRINTFORMW 「아마 평생 잊지 못할거에요...」
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님...」
+			PRINTFORMW 「오늘은 쭉 이대로 있어도 될까요...?」
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 세이렌의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 세이렌은 조용히 당신의 품안에 있었다.
+		PRINTFORMW %TEXTR("「정말, 잠시만이에요」/「안아 주시는 것도 좋지만, 내일의 지휘도 신경써주세요」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 세이렌의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 세이렌은 당황하며 당신의 품안에서 벗어났다.
+		PRINTFORMW 「히얏!?」
+		PRINTFORMW 「죄송해요, 죄송해요 사령관님!」
+		PRINTFORMW 세이렌은 겁먹은 표정으로 연신 고개를 숙였다.
+	CASE "Weak"
+		PRINTFORMW 당신은 세이렌의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 세이렌은 반응하지 않았다.
+		PRINTFORMW 「...」
+		PRINTFORMW 세이렌의 어깨가 가볍게 떨렸다.
+	CASE "Break"
+		PRINTFORMW 당신은 세이렌의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 세이렌은 해맑게 웃었다.
+		PRINTFORMW 「헤헤... 사령관님께서 안아주시는게 너무 좋아요!」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM11
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 누워서 세이렌을 불렀다.
+		PRINTFORMW 세이렌은 마지못해 받아들였지만 어색한 듯하다.
+		PRINTFORMW %TEXTR("「불편하실 텐데...」/「팔이 아파지시면 바로 말씀해주세요」/「이래도 될까요...?」")%
+	CASE "High"
+		PRINTFORMW 당신은 누워서 세이렌을 불렀다.
+		PRINTFORMW 세이렌은 허락했지만 부끄러운 듯하다.
+		PRINTFORMW %TEXTR("「혹시 무겁지는 않으신가요...?」/「이렇게요...?」")%
+	CASE "Affection"
+		PRINTFORMW 당신은 누워서 세이렌을 불렀다.
+		PRINTFORMW 세이렌은 조용히 당신 옆에 누웠다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「사령관님, 내일은 어디로 항해할까요?」
+			PRINTFORMW 「어디로든 사령관님과 함깨라면 전 좋아요!」
+		ELSEIF A == 1
+			PRINTFORMW 「헤헤...」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 누워서 세이렌을 불렀다.
+		PRINTFORMW 세이렌은 조용히 당신 옆에 누워 당신을 바라보았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「사령관님과 본 지중해의 밤바다가 기억나요...」
+			PRINTFORMW 「다음엔 어디로 갈까요...?」
+		ELSEIF A == 1
+			PRINTFORMW 「이대로, 잠들어도 용서해주실거죠...?」
+			PRINTFORMW 세이렌은 졸린 듯 눈을 가늘게 띄고 당신을 바라보고 있다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 누워서 세이렌을 불렀다.
+		PRINTFORMW 세이렌은 거절했다.
+		PRINTFORMW %TEXTR("「죄송해요 사령관님, 지금 장비 점검중이에요」/「죄송해요, 사령관님 지금은 어려울 것 같아요」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 누워서 세이렌을 불렀다.
+		PRINTFORMW 세이렌은 조심스럽게 당신 옆에 누웠다.
+		PRINTFORMW 「부,불편해지시면 말씀해주세요...」
+	CASE "Weak"
+		PRINTFORMW 당신은 누워서 세이렌을 불렀다.
+		PRINTFORMW 세이렌은 아무 반응이 없었다.
+		PRINTFORMW 「...」
+	CASE "Break"
+		PRINTFORMW 당신은 누워서 세이렌을 불렀다.
+		PRINTFORMW 세이렌은 사뿐히 당신의 옆에 누웠다.
+		PRINTFORMW 「이러면 칭찬해주시는 건가요? 사령관님?」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM12
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 세이렌의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 세이렌은 매우 당황한듯하다.
+		PRINTFORMW %TEXTR("「으앗!?」/「사...사령관님?」/「이...이러시면...」/「햣?!」")%
+	CASE "High"
+		PRINTFORMW 당신은 세이렌의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 세이렌의 얼굴이 붉게 물들었다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「가...감사합니다...」
+		ELSEIF A == 1
+			PRINTFORMW 「부끄러워요... 사령관님...」
+		ELSEIF A == 2
+			PRINTFORMW 「헤헤...」
+			PRINTFORMW 세이렌은 부끄러운 듯 고개를 돌렸다.
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 세이렌의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 세이렌은 얼굴을 붉게 물들이며 당신을 바라보았다.
+		A = RAND:1
+		IF A == 0
+			PRINTFORMW 「그리고 보니 저번에 책에서 읽었어요.」
+			PRINTFORMW 「외국의 어떤 나라에서는 이렇게 인사하기두 한다구요」
+			PRINTFORMW 「다음번엔 인사가 아니라 진짜로...아니에요!」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 세이렌의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 「오늘도 좋은 하루에요, 사령관님!
+		PRINTFORMW 세이렌은 해맑게 웃으며 당신의 볼에 입을 맞췄다.」
+	CASE "Annoyed"
+		PRINTFORMW 당신은 세이렌의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 세이렌은 %TEXTR("고개를 돌리고/딴 곳을 보고")% 있다.
+		PRINTFORMW %TEXTR("「사령관님, 여기 장비보수 점검표에요」/「좋은 하루에요, 사령관님」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 세이렌의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 세이렌은 몸이 가볍게 떨렸다.
+		PRINTFORMW %TEXTR("「사...령관님?」/「가,감사합니다...」")%
+	CASE "Weak"
+		PRINTFORMW 당신은 세이렌의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 세이렌의 몸이 가볍게 떨렸다.
+		PRINTFORMW 「...우,웃」
+	CASE "Break"
+		PRINTFORMW 당신은 세이렌의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 세이렌은 죽은 눈으로 웃고 있다.
+		PRINTFORMW 「...감사합니다! 사령관님!」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM13
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 세이렌의 배를 주물럭 거렸다.
+		PRINTFORMW 세이렌은 부끄러운 듯 얼굴이 붉게 물들었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「사...사령관님?」
+		ELSEIF A == 1
+			PRINTFORMW 「으!?」
+			PRINTFORMW 「그...그러시면 안 돼요...」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 세이렌의 배를 주물럭 거렸다.
+		PRINTFORMW 세이렌은 부끄러운 듯 얼굴이 붉게 물들었다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「으앗!?」
+			PRINTFORMW 「그...그러시면 안되는데...」
+		ELSEIF A == 1
+			PRINTFORMW 「으?」
+			PRINTFORMW 「기분이 이상해요... 사령관님」
+		ELSEIF A == 2
+			PRINTFORMW 「정말... 또 그러시는 거에요?」
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 세이렌의 배를 주물럭 거렸다.
+		PRINTFORMW 세이렌은 조금 화가 난듯하다.
+		PRINTFORMW %TEXTR("「정말, 이런 장난은 자제해주세요」/「사령관님은 가끔보면 네리씨와 똑같은 것 같아요...」")%
+	CASE "Fear"
+		PRINTFORMW 세이렌의 배를 주물럭 거렸다.
+		PRINTFORMW 세이렌은 몸이 가볍게 떨렸다.
+		PRINTFORMW 「으앗...!?」
+	CASE "Weak"
+		PRINTFORMW 세이렌의 배를 주물럭 거렸다.
+		PRINTFORMW 세이렌은 몸이 가볍게 떨렸다.
+		PRINTFORMW 「...앗」
+		PRINTFORMW 세이렌은 고개를 천천히 들어 당신을 쳐다보았다.
+	CASE "Break"
+		PRINTFORMW 세이렌의 배를 주물럭 거렸다.
+		PRINTFORMW 세이렌은 죽은 눈으로 웃고 있다.
+		PRINTFORMW 「제 배라도 좋으시다면 마음껏 만져주세요 사령관님!」
+		PRINTFORMW 세이렌은 자신의 배를 들여보였다.
+	CASE "High"
+		PRINTFORMW 세이렌의 배를 주물럭 거렸다.
+		PRINTFORMW 세이렌은 부끄러운 듯 얼굴이 붉게 물들었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「사...사령관님?」
+		ELSEIF A == 1
+			PRINTFORMW 「으!?」
+			PRINTFORMW 「그...그러시면 안 돼요...」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 세이렌의 배를 주물럭 거렸다.
+		PRINTFORMW 세이렌은 부끄러운 듯 얼굴이 붉게 물들었다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「으앗!?」
+			PRINTFORMW 「그...그러시면 안되는데...」
+		ELSEIF A == 1
+			PRINTFORMW 「으?」
+			PRINTFORMW 「기분이 이상해요... 사령관님」
+		ELSEIF A == 2
+			PRINTFORMW 「정말... 또 그러시는 거에요?」
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM14
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 세이렌의 귀를 살짝 깨물었다.
+		PRINTFORMW 세이렌은 매우 당황한듯하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「사...사령관님?」
+		ELSEIF A == 1
+			PRINTFORMW 「으!?」
+			PRINTFORMW 「그...그러시면 안 돼요...」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 세이렌의 귀를 살짝 깨물었다.
+		PRINTFORMW 세이렌은 부끄러운 듯 얼굴이 붉게 물들었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「부끄러워요... 사령관님...」
+		ELSEIF A == 1
+			PRINTFORMW 「자꾸 그렇게 장난치시면...」세이렌은 당신의 귀를 약하게 깨물었다.
+			PRINTFORMW 「저도 똑같이 해버릴 거에요...」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 세이렌의 귀를 살짝 깨물었다.
+		PRINTFORMW 세이렌의 얼굴이 붉게 물들었다.
+		PRINTFORMW 「사령관님은 정말 장난을 좋아 하시는군요...」
+		PRINTFORMW 「그런점도 저는 좋지만요...」
+		PRINTFORMW 세이렌은 부끄러운 듯 고개를 돌렸다.
+	CASE "Annoyed"
+		PRINTFORMW 세이렌의 귀를 살짝 깨물었다.
+		PRINTFORMW 세이렌은 가볍게 심호흡했다.
+		PRINTFORMW %TEXTR("「정말, 이런 장난은 자제해주세요」/「사령관님은 가끔보면 네리씨와 똑같은 것 같아요...」")%
+	CASE "Fear"
+		PRINTFORMW 세이렌의 귀를 살짝 깨물었다.
+		PRINTFORMW 세이렌의 몸이 흠칫 떨렸다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「으앗!?」
+			PRINTFORMW 「사...령관님?」
+			PRINTFORMW 세이렌은 겁먹은 표정으로 당신을 바라보고 있다.
+		ELSEIF A == 1
+			PRINTFORMW 「햣...!?」
+		ENDIF
+	CASE "Weak"
+		PRINTFORMW 세이렌의 귀를 살짝 깨물었다.
+		PRINTFORMW 세이렌의 몸이 흠칫 떨렸다.
+		PRINTFORMW 「...앗」
+		PRINTFORMW 세이렌은 고개를 천천히 들어 당신을 쳐다보았다.
+	CASE "Break"
+		PRINTFORMW 세이렌의 귀를 살짝 깨물었다.
+		PRINTFORMW 세이렌은 죽은 눈으로 웃고 있다.
+		PRINTFORMW 「헤헤...」
+		PRINTFORMW 세이렌은 천천히 자신의 귀에 손을 올렸다.
+	CASE "High"
+		PRINTFORMW 세이렌의 귀를 살짝 깨물었다.
+		PRINTFORMW 세이렌은 매우 당황한듯하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「사...사령관님?」
+		ELSEIF A == 1
+			PRINTFORMW 「으!?」
+			PRINTFORMW 「그...그러시면 안 돼요...」
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM15
+SELECTCASE CSTR:1
+	CASE "First/Low"
+		PRINTFORMW 세이렌의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 원치 않았던 첫키스에 세이렌은 굳어버렸다.
+		PRINTFORMW 「...사」
+		PRINTFORMW 「...사령관님?」
+		PRINTFORMW 「...어째서...」
+		PRINTFORMW 세이렌은 충격이 큰 듯 말을 잇지 못했다.
+	CASE "First/High"
+		PRINTFORMW 세이렌의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 예상하지 못한 첫 키스에 세이렌은 얼굴을 새빨갛게 물들였다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「...!?」
+		PRINTFORMW 「사...사렴괌님?」
+		PRINTFORMW 세이렌은 표정을 감추려는 듯 정모로 자신의 얼굴을 가렸다.
+	CASE "First/Affection"
+		PRINTFORMW 세이렌의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 첫 키스에 세이렌은 얼굴을 새빨갛게 물들였다.
+		PRINTFORMW 「사령관님...」
+		PRINTFORMW 「이게 키스란건가요...」
+		PRINTFORMW 「제 가슴이 뜨거워져서 너무나도 괴로운데...」
+		PRINTFORMW 「모르겠어요...너무나도 행복해져서...전」
+		PRINTFORMW 세이렌의 상기된 얼굴에 옅은 눈물이 맺힌체로 당신을 바라보고 있다.
+	CASE "First/Marryed"
+		PRINTFORMW 세이렌의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 세이렌은 상기된 얼굴로 눈을 감고 당신의 키스를 받아들였다.
+		PRINTFORMW 「기다렸어요 사령관님,」
+		PRINTFORMW 「그러니까 기다린 만큼...」
+		PRINTFORMW 「조금 더 어리광을 부려도 될까요...?」
+		PRINTFORMW 세이렌은 당신의 입술에 다시 입술을 맞췄다.
+	CASE "First/Annoyed"
+		PRINTFORMW 세이렌의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 원치 않았던 첫키스에 세이렌은 굳어버렸다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「이건 정말 나쁜짓이에요 사령관님,」
+		PRINTFORMW 세이렌은 조용히 화내고 있다.
+	CASE "First/Fear"
+		PRINTFORMW 세이렌의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 원치 않았던 첫키스에 세이렌은 굳어버렸다.
+		PRINTFORMW 「...읏!?」
+		PRINTFORMW 「시...싫어...」
+		PRINTFORMW 「사령관님...어째서...」
+		PRINTFORMW 세이렌의 눈가에 눈물이 맺혔다.
+	CASE "First/Weak"
+		PRINTFORMW 세이렌의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 원치 않았던 첫키스에 세이렌은 굳어버렸다.
+		PRINTFORMW 「...싫어...싫어...」
+		PRINTFORMW 「이제 더는...」
+		PRINTFORMW 세이렌의 아래로 작은 눈물이 끝없이 떨어졌다.
+	CASE "First/Break"
+		PRINTFORMW 세이렌의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 세이렌은 죽은 눈으로 웃고 있다.
+		PRINTFORMW 「...전 정말 행복해요! 감사합니다 사령관님...!」
+	CASE "Low"
+		PRINTFORMW 세이렌의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 세이렌은 그자리에서 굳어버렸다.
+		PRINTFORMW %TEXTR("「으앗!?」/「사...사령관님?」/「자...장난이 짓궂으셔요...」")%
+	CASE "High"
+		PRINTFORMW 세이렌의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 세이렌의 얼굴이 퐁 소리와 함께 붉게 물들었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「...」
+			PRINTFORMW 세이렌은 천천히 자신의 정모로 얼굴을 가렸다.
+		ELSEIF A == 1
+			PRINTFORMW 「그렇게...갑작스럽게 하시면...」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 세이렌의 입술에 당신의 입술을 맞췄다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「사령관님...」
+			PRINTFORMW 「사랑해요...」
+			PRINTFORMW 세이렌은 여린 팔로 당신을 껴앉았다
+		ELSEIF A == 1
+			PRINTFORMW 「조금만 더 이대로...」
+			PRINTFORMW 세이렌은 까치발을 들어 당신과 더 강하게 밀착했다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 세이렌의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 	  「아직... 오늘은 7번 더 해주셔야 해요...!」
+	CASE "Annoyed"
+		PRINTFORMW 세이렌의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 세이렌은 조용히 심호흡했다.
+		PRINTFORMW 「조금은...제가 무슨 생각을 하고 있는지 이해해주셨으면 해요」
+	CASE "Fear"
+		PRINTFORMW 세이렌의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 세이렌은 겁먹은 표정으로 떨고 있다.
+		PRINTFORMW 「..사..사..령관님...」
+	CASE "Weak"
+		PRINTFORMW 세이렌의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 세이렌의 몸이 흠칫 떨렸다.
+		PRINTFORMW 「..싫..어...」
+	CASE "Break"
+		PRINTFORMW 세이렌의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 세이렌은 죽은 눈으로 웃고 있다.
+		PRINTFORMW 「...감사합니다! 사령관님!」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;17개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM16
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 세이렌의 목에 혀를 기었다.
+		PRINTFORMW 세이렌은 매우 당황한 듯하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「으앗!?」
+		ELSEIF A == 1
+			PRINTFORMW 「으!?」
+			PRINTFORMW 「사...사령관님?」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 세이렌의 목에 혀를 기었다.
+		PRINTFORMW 세이렌은 천천히 숨을 흘렸다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「...」
+			PRINTFORMW 「사령관님이 좋으시다면...」
+			PRINTFORMW 세이렌은 눈을 감고 고개를 살짝 들었다.
+		ELSEIF A == 1
+			PRINTFORMW 「그러시면... 안 되는데...」
+			PRINTFORMW 「그래도... 사령관님이라면...」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 세이렌의 목에 혀를 기었다.
+		PRINTFORMW 세이렌은 천천히 숨을 흘렸다.
+		PRINTFORMW 「사령관님...」
+		PRINTFORMW 「알겠어요...」
+		PRINTFORMW 세이렌의 얼굴에 잔잔한 웃음이 피어났다.
+	CASE "Annoyed"
+		PRINTFORMW 세이렌의 목에 혀를 기었다.
+		PRINTFORMW 세이렌은 가볍게 심호흡했다.
+		PRINTFORMW %TEXTR("「정말, 이런 장난은 자제해주세요」/「네리씨도 이런 장난은 치지 않는다구요」")%
+	CASE "Fear"
+		PRINTFORMW 세이렌의 목에 혀를 기었다.
+		PRINTFORMW 세이렌의 몸이 흠칫 떨렸다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「으앗!?」
+		ELSEIF A == 1
+			PRINTFORMW 「사...사령관님?」
+			PRINTFORMW 세이렌은 떨리는 눈으로 당신을 보고 있다.
+		ENDIF
+	CASE "Weak"
+		PRINTFORMW 세이렌의 목에 혀를 기었다.
+		PRINTFORMW 세이렌의 몸이 흠칫 떨렸다.
+		PRINTFORMW {「...시..싫어...」/「...」
+		PRINTFORMW 세이렌의 눈가에 눈물이 맺혀있다.
+	CASE "Break"
+		PRINTFORMW 세이렌의 목에 혀를 기었다.
+		PRINTFORMW 세이렌은 죽은 눈으로 웃고 있다.
+		PRINTFORMW 「간지러워요... 사령관님...」
+		PRINTFORMW 세이렌은 간지럽다는 말과 달리 아무 움직임도 하지 않는다.
+	CASE "High"
+		PRINTFORMW 세이렌의 목에 혀를 기었다.
+		PRINTFORMW 세이렌은 매우 당황한 듯하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「으앗!?」
+		ELSEIF A == 1
+			PRINTFORMW 「으!?」
+			PRINTFORMW 「사...사령관님?」
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM17
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 세이렌의 등을 손가락으로 훑었다.
+		PRINTFORMW 세이렌은 매우 당황한 듯하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「으앗!?」
+		ELSEIF A == 1
+			PRINTFORMW 「으!?」
+			PRINTFORMW 「사...사령관님?」
+		ENDIF
+	CASE "High"
+		PRINTFORMW 세이렌의 등을 손가락으로 훑었다.
+		PRINTFORMW 세이렌은 살짝 당황한 듯하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「으!?」
+			PRINTFORMW 「놀래키지 말아주세요...사령관님」
+		ELSEIF A == 1
+			PRINTFORMW 「으앗...!?」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 세이렌의 등을 손가락으로 훑었다.
+		PRINTFORMW 세이렌은 귀여운 소리를 내었다.
+		A = RAND:1
+		IF A == 0
+			PRINTFORMW 「히얏...!?」
+			PRINTFORMW 「...」
+			PRINTFORMW 세이렌은 눈가가 촉촉해진 채로 당신을 바라보고 있다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 세이렌의 등을 손가락으로 훑었다.
+		PRINTFORMW 세이렌은 천천히 숨을 흘렸다.
+		PRINTFORMW 「이게... 그 저번에 운디네씨가 말한 남자의 유혹일까요...」
+		PRINTFORMW 「맞겠죠...?」
+		PRINTFORMW 세이렌은 상기된 표정으로 당신을 돌아보고 있다.
+	CASE "Annoyed"
+		PRINTFORMW 세이렌의 등을 손가락으로 훑었다.
+		PRINTFORMW 세이렌은 가볍게 심호흡했다.
+		PRINTFORMW %TEXTR("「정말, 이런 장난은 자제해주세요」/「사령관님은 가끔보면 네리씨와 똑같은 것 같아요...」")%
+	CASE "Fear"
+		PRINTFORMW 세이렌의 등을 손가락으로 훑었다.
+		PRINTFORMW 세이렌의 몸이 흠칫 떨렸다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「사...사령관님?」
+		ELSEIF A == 1
+			PRINTFORMW 「으!?」
+			PRINTFORMW 「무슨...일 이신가요...?」
+			PRINTFORMW 세이렌은 파랗게 질린 얼굴로 당신을 돌아보았다.
+		ENDIF
+	CASE "Weak"
+		PRINTFORMW 세이렌의 등을 손가락으로 훑었다.
+		PRINTFORMW 세이렌의 몸이 흠칫 떨렸다.
+		PRINTFORMW 「...으...우」
+	CASE "Break"
+		PRINTFORMW 세이렌의 목에 혀를 기었다.
+		PRINTFORMW 세이렌은 죽은 눈으로 웃고 있다.
+		PRINTFORMW 「간지러워요... 사령관님...」
+		PRINTFORMW 세이렌은 간지럽다는 말과 달리 아무 움직임도 하지 않는다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM18
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 세이렌의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 세이렌은 몸을 파르르 떨며 가만히 있었다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「사...사...사령관님...?」
+		ELSEIF A == 1
+			PRINTFORMW 「그러시면 안 되요...」
+			PRINTFORMW 세이렌의 붉어진 눈가에 눈물이 살짝 맺혀있다.
+		ELSEIF A == 2
+			PRINTFORMW 「...!?」
+			PRINTFORMW 세이렌은 입을 벌리고 아무 말도 하지 못한 채로 당황하고 있었다.
+		ENDIF
+	CASE "High"
+		PRINTFORMW 세이렌의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 세이렌은 몸을 파르르 떨며 가만히 있었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「그러시면 안 되는데...」
+		ELSEIF A == 1
+			PRINTFORMW 「흐...웃...」
+			PRINTFORMW 세이렌은 부끄러운 듯 정모로 자신의 얼굴을 가렸다.
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 세이렌의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 세이렌은 상기된 얼굴로 천천히 당신의 머리를 쓰다듬었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「오늘도 많이 고생하셨으니까...」
+			PRINTFORMW 「사령관님께서 편하시다면, 이대로 있으셔도 돼요...」
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님은 응석꾸러기세요...」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 세이렌의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 세이렌은 천천히 당신의 머리를 쓰다듬었다.
+		PRINTFORMW 바다의 향기가 났다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「이렇게 사령관님을 안고 있으면 가슴이 따뜻해져요...」
+			PRINTFORMW 「사령관님도 느껴지시나요?」
+		ELSEIF A == 1
+			PRINTFORMW 「피곤하시죠, 사령관님?」
+			PRINTFORMW 「오늘도 정말, 고생하셨어요...」
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 세이렌의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 세이렌은 가볍게 심호흡했다.
+		PRINTFORMW %TEXTR("「정말, 그렇게 응석만 부리시면 못된 사람이 되어버려요, 사령관님」/「사령관님은 가끔보면 네리씨와 똑같은 것 같아요...」")%
+	CASE "Fear"
+		PRINTFORMW 세이렌의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 세이렌의 안색이 파랗게 질린 체 몸을 파르르 떨며 가만히 있었다.
+		PRINTFORMW 「사...사령관님...?」
+	CASE "Weak"
+		PRINTFORMW 세이렌의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 세이렌의 몸이 흠칫 떨렸다.
+		PRINTFORMW 「...시...싫어...」
+		PRINTFORMW 당신은 머리위로 물방울이 떨어지는 것을 느꼈다.
+	CASE "Break"
+		PRINTFORMW 세이렌의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 세이렌은 당신을 꼬옥 끌어 안았다.
+		PRINTFORMW 「사령관님은 응석 부리시는걸 좋아하시는군요...?」.
+		PRINTFORMW 「사령관님이 행복하시다면 전 괜찮아요...헤헤」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM19
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 세이렌에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 세이렌의 안색이 파랗게 되었다.
+		PRINTFORMW %TEXTR("「사..령관님...?」/「죄송해요...」")%
+	CASE "Affection"
+		PRINTFORMW 세이렌에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 세이렌의 안색이 파랗게 되었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「어째서...그런 말씀을...」
+			PRINTFORMW 세이렌은 충격이 큰 듯 눈물을 흘리며 가슴을 웅켜잡았다.
+		ELSEIF A == 1
+			PRINTFORMW 「죄송해요...」
+			PRINTFORMW 세이렌은 충격을 먹은 듯 굳어버렸다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 세이렌에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 세이렌은 고개를 푹 숙이고 있다.
+		PRINTFORMW 「...죄송해요 사령관님,」
+	CASE "Fear"
+		PRINTFORMW 세이렌에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 세이렌의 안색이 파랗게 되었다.
+		PRINTFORMW 「죄송해요...죄송해요...죄송해요...」
+		PRINTFORMW 세이렌의 몸이 거칠게 떨리고 있다.
+	CASE "Weak"
+		PRINTFORMW 세이렌에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 세이렌은 텅 빈 눈으로 땅을 보고 있다.
+		PRINTFORMW 「...죄송해요...」
+		PRINTFORMW 세이렌의 눈가에 눈물이 맺혔다.
+	CASE "Break"
+		PRINTFORMW 세이렌에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 세이렌은 죽은 눈으로 당신을 쳐다봤다.
+		PRINTFORMW 「칭찬해주셔서 감사합니다!」
+	CASE "High"
+		PRINTFORMW 세이렌에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 세이렌의 안색이 파랗게 되었다.
+		PRINTFORMW %TEXTR("「사..령관님...?」/「죄송해요...」")%
+	CASE "Marryed"
+		PRINTFORMW 세이렌에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 세이렌의 안색이 파랗게 되었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「어째서...그런 말씀을...」
+			PRINTFORMW 세이렌은 충격이 큰 듯 눈물을 흘리며 가슴을 웅켜잡았다.
+		ELSEIF A == 1
+			PRINTFORMW 「죄송해요...」
+			PRINTFORMW 세이렌은 충격을 먹은 듯 굳어버렸다.
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM20
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 세이렌의 뺨을 때렸다.
+		PRINTFORMW 세이렌은 천천히 자신의 손을 뺨에 가져다 대었다.
+		PRINTFORMW 「...사...사령관님?」
+	CASE "Affection"
+		PRINTFORMW 세이렌의 뺨을 때렸다.
+		PRINTFORMW 세이렌은 파르르 떨며 자신의 손을 뺨에 가져다 대었다.
+		PRINTFORMW 「사...사...령관님..?」
+		PRINTFORMW 세이렌은 믿기지 않는다는 듯한 눈으로 당신을 올려다보고 있다.
+	CASE "Fear"
+		PRINTFORMW 세이렌의 뺨을 때렸다.
+		PRINTFORMW 세이렌의 몸이 떨리고 있다.
+		PRINTFORMW 「죄...죄송해요..죄송해요..」
+		PRINTFORMW 세이렌의 눈가에 눈물이 맺혔다.
+	CASE "Weak"
+		PRINTFORMW 세이렌의 뺨을 때렸다.
+		PRINTFORMW 세이렌은 쓰러져서 텅 빈 눈으로 땅을 보고 있다.
+		PRINTFORMW 「...」
+		PRINTFORMW 세이렌의 눈가를 따라 눈물이 바닥을 적셨다.
+	CASE "Break"
+		PRINTFORMW 세이렌에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 세이렌은 죽은 눈으로 웃고있다.
+		PRINTFORMW 「네리씨는 참 이상해요...」
+		PRINTFORMW 「출격 나갈 때마다 괜찮냐는 등 이상한 질문만 한다니깐요...」
+		PRINTFORMW 「전 이렇게 행복한데 말이에요!」
+	CASE "High"
+		PRINTFORMW 세이렌의 뺨을 때렸다.
+		PRINTFORMW 세이렌은 천천히 자신의 손을 뺨에 가져다 대었다.
+		PRINTFORMW 「...사...사령관님?」
+	CASE "Marryed"
+		PRINTFORMW 세이렌의 뺨을 때렸다.
+		PRINTFORMW 세이렌은 파르르 떨며 자신의 손을 뺨에 가져다 대었다.
+		PRINTFORMW 「사...사...령관님..?」
+		PRINTFORMW 세이렌은 믿기지 않는다는 듯한 눈으로 당신을 올려다보고 있다.
+	CASE "Annoyed"
+		PRINTFORMW 세이렌의 뺨을 때렸다.
+		PRINTFORMW 세이렌은 천천히 자신의 손을 뺨에 가져다 대었다.
+		PRINTFORMW 「...사...사령관님?」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM21
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 세이렌의 배에 주먹을 날렸다.
+		PRINTFORMW 세이렌은 쓰러져서 심하게 숨을 몰아쉬고 있다.
+		PRINTFORMW 「사..사...학..사령..관..님?」
+	CASE "Affection"
+		PRINTFORMW 세이렌의 배에 주먹을 날렸다.
+		PRINTFORMW 세이렌은 쓰러져서 심하게 숨을 몰아쉬고 있다.
+		PRINTFORMW 「어..어..콜, 록, 째..서..」
+		PRINTFORMW 세이렌은 눈물을 흘리며 당신을 바라보고 있다.
+	CASE "Annoyed"
+		PRINTFORMW 세이렌의 배에 주먹을 날렸다.
+		PRINTFORMW 세이렌은 쓰러져서 심하게 숨을 몰아쉬고 있다.
+		PRINTFORMW 「사..사...학..사령..관..님?」
+	CASE "Weak"
+		PRINTFORMW 세이렌의 배에 주먹을 날렸다.
+		PRINTFORMW 세이렌은 쓰러져서 심하게 숨을 몰아쉬고 있다.
+		PRINTFORMW 「...콜,록,...」
+		PRINTFORMW 세이렌의 눈가를 따라 눈물이 바닥을 적셨다.
+	CASE "Break"
+		PRINTFORMW 세이렌의 배에 주먹을 날렸다.
+		PRINTFORMW 세이렌은 쓰러져서 심하게 숨을 몰아쉬고 있다.
+		PRINTFORMW 「...가..감..사..합니..다」
+	CASE "High"
+		PRINTFORMW 세이렌의 배에 주먹을 날렸다.
+		PRINTFORMW 세이렌은 쓰러져서 심하게 숨을 몰아쉬고 있다.
+		PRINTFORMW 「사..사...학..사령..관..님?」
+	CASE "Marryed"
+		PRINTFORMW 세이렌의 배에 주먹을 날렸다.
+		PRINTFORMW 세이렌은 쓰러져서 심하게 숨을 몰아쉬고 있다.
+		PRINTFORMW 「어..어..콜, 록, 째..서..」
+		PRINTFORMW 세이렌은 눈물을 흘리며 당신을 바라보고 있다.
+	CASE "Fear"
+		PRINTFORMW 세이렌의 배에 주먹을 날렸다.
+		PRINTFORMW 세이렌은 쓰러져서 심하게 숨을 몰아쉬고 있다.
+		PRINTFORMW 「사..사...학..사령..관..님?」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_COM22
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 세이렌을 발로 걷어 찼다.
+		PRINTFORMW 세이렌은 바닥에 쓰러져서 당신을 천천히 돌아보았다.
+		PRINTFORMW %TEXTR("「으으..앗.. 사..령관...님?」/「흣..아..어..째서...」")%
+	CASE "Fear"
+		PRINTFORMW 세이렌을 발로 걷어 찼다.
+		PRINTFORMW 세이렌은 바닥에 쓰러져서 몸을 떨기 시작했다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「읏..아..파...」
+		ELSEIF A == 1
+			PRINTFORMW 「죄송해요...죄송해요...」
+			PRINTFORMW 세이렌은 몸을 떨며 천천히 자신의 머리를 감쌌다.
+		ENDIF
+	CASE "Weak"
+		PRINTFORMW 세이렌을 발로 밀어 찼다.
+		PRINTFORMW 	세이렌은 바닥에 쓰러져서 몸을 떨기 시작했다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「읏..아..파...」
+		ELSEIF A == 1
+			PRINTFORMW 「이젠...싫어...」
+			PRINTFORMW 세이렌은 몸을 떨며 천천히 자신의 머리를 감쌌다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 세이렌을 발로 걷어 찼다.
+		PRINTFORMW 세이렌은 쓰러져서 그저 바닥을 바라보고 있다.
+		PRINTFORMW 「사령관님이 행복이..제 행복인걸요...」
+	CASE "High"
+		PRINTFORMW 세이렌을 발로 걷어 찼다.
+		PRINTFORMW 세이렌은 바닥에 쓰러져서 당신을 천천히 돌아보았다.
+		PRINTFORMW %TEXTR("「으으..앗.. 사..령관...님?」/「흣..아..어..째서...」")%
+	CASE "Affection"
+		PRINTFORMW 세이렌을 발로 걷어 찼다.
+		PRINTFORMW 세이렌은 바닥에 쓰러져서 당신을 천천히 돌아보았다.
+		PRINTFORMW %TEXTR("「으으..앗.. 사..령관...님?」/「흣..아..어..째서...」")%
+	CASE "Marryed"
+		PRINTFORMW 세이렌을 발로 걷어 찼다.
+		PRINTFORMW 세이렌은 바닥에 쓰러져서 당신을 천천히 돌아보았다.
+		PRINTFORMW %TEXTR("「으으..앗.. 사..령관...님?」/「흣..아..어..째서...」")%
+	CASE "Annoyed"
+		PRINTFORMW 세이렌을 발로 걷어 찼다.
+		PRINTFORMW 세이렌은 바닥에 쓰러져서 당신을 천천히 돌아보았다.
+		PRINTFORMW %TEXTR("「으으..앗.. 사..령관...님?」/「흣..아..어..째서...」")%
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+
+
+
+@M_No89_EVENT_Morning
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 세이렌의 목소리에 잠에서 깨어났다.
+		PRINTFORMW %TEXTR("「사령관님, 좋은 아침입니다. 그럼 오늘도 항해를 시작해주세요!」/「사령관님, 기상하셔야 할 시간이에요!」/「세이렌, 사령관님께 아침인사 드립니다!」")%
+	CASE "High"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 당신은 세이렌의 목소리에 잠에서 깨어났다.
+			PRINTDATAW
+				DATAFORM 「좋은 아침이에요 사령관님, 오늘도 잘 부탁드려요!」
+				DATALIST
+					DATAFORM 「사령관님...일어나셔야..해요..!」
+					DATAFORM 세이렌은 당신의 귓가에 작게 속삭이고 있었다.
+				ENDLIST
+			ENDDATA ;2개의 케이스 존재
+		ELSEIF A == 1
+			PRINTFORMW 당신은 세이렌의 목소리에 잠에서 깨어났다.
+			PRINTFORMW 「깨어나셨나요 사령관님? 상태는 어떠신가요?」
+		ENDIF
+	CASE "Affection"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 당신은 누군가가 당신을 쓰다듬는 것을 느끼고 잠에서 깼다.
+			PRINTFORMW 「앗...죄송해요..사령관님...푹 주무시길레 그만...」
+			PRINTFORMW 세이렌은 얼굴을 붉힌 체 눈동자를 다른 곳으로 돌렸다.
+		ELSEIF A == 1
+			PRINTFORMW 당신이 향긋한 홍차 향기에 눈을 뜨니 옆에는 세이렌이 홍차를 우려내며 콧노래를 부르고 있었다.
+			PRINTFORMW 한동안 가만히 바라보고 있자, 당신이 일어난 것을 안 세이렌은 콧노래를 부른 것이 들킨 게 부끄러운 듯, 붉어진 얼굴을 정모로 가리며 다가왔다.
+			PRINTFORMW 「...일어나셨나요 사령관님? 차를 준비해왔어요, 밖이 아직 차가우니 몸을 잘 대펴주세요」
+		ELSEIF A == 2
+			PRINTFORMW 「사령관님, 사령관님,」
+			PRINTFORMW 당신이 눈을 뜨자 눈앞의 세이렌이 옅게 웃음짓고 있었다.
+			PRINTFORMW 「아침 식사를 준비했어요, 준비되시면 나와주세요!」
+			PRINTFORMW 세이렌은 이후 당신의 이마에 입을 맞춘 후 부끄러운 듯 빠르게 방을 나갔다.
+			PRINTFORMW
+		ENDIF
+	CASE "Marryed"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「...사령..관님」
+			PRINTFORMW 당신이 눈을 뜨자 보인 것은, 당신의 와이셔츠로 몸을 가린 세이렌의 모습이었다.
+			PRINTFORMW 어제의 업무가 늦게 끝난 듯, 세이렌은 피곤한지 잠꼬대를 하고 있었다.
+			PRINTFORMW 당신은 세이렌의 머리를 쓰다듬으며 가볍게 키스를 해 주었다.
+			PRINTFORMW 「정말...사랑해요...사령..관님」
+		ELSEIF A == 1
+			PRINTFORMW 당신이 눈을 뜨니 옆에는 세이렌이 고른 숨을 내쉬며 자고 있었다.
+			PRINTFORMW 세이렌은 당신의 온기를 조금 더 원하는 듯, 당신의 옷깃을 살짝 잡은 체 당신의 품 안으로 파고 들었다.
+			PRINTFORMW 당신은 일부러 깨우지 않고 가만히 세이렌이 자는 모습을 지켜봤다.
+		ELSEIF A == 2
+			PRINTFORMW 「...쪽...」
+			PRINTFORMW 「일어나셨나요..? 눈을 뜨게 하는 키스...에요」
+			PRINTFORMW 세이렌은 부끄러운 듯 이불을 올려 얼굴을 가렸지만 이윽고 당신의 품 안에 천천히 안겨들었다.
+		ENDIF
+	CASE "Annoyed"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 당신이 세이렌의 목소리에 잠에서 깨어났다.
+			PRINTFORMW %TEXTR("「기상하실 시간이에요 사령관님,」/「그렇게 응석부리시면 응석쟁이가 돼버리실 거에요.」")%
+		ELSEIF A == 1
+			PRINTFORMW 문을 노크하는 소리에 당신의 눈이 떠졌다.
+			PRINTFORMW 「기상하셨다면 준비하신 뒤에 나와주세요」
+			PRINTFORMW 세이렌의 목소리가 문 너머에서 들렸다.
+		ENDIF
+	CASE "Fear"
+		PRINTFORMW 당신은 세이렌의 목소리에 잠에서 깨어났다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「마..말씀하신 시간에 왔습니다 사령관님...」
+			PRINTFORMW 세이렌은 몸을 떨며 당신의 방에 들어왔다.
+		ELSEIF A == 1
+			PRINTFORMW 「기...기상하셔야 할 시간이에요..사령관님,」
+		ENDIF
+	CASE "Weak"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 당신이 눈을 떴을 때 세이렌은 당신의 옆에서 당신을 조용히 쳐다보고 있었다.
+			PRINTFORMW 「...」
+		ELSEIF A == 1
+			PRINTFORMW 당신이 눈을 뜨니 이미 아침이 지나가 있었다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신이 눈을 떴을 때 세이렌은 당신의 옆에서 당신을 웃으며 쳐다보고 있었다.
+		PRINTFORMW %TEXTR("「사령관님...! 일어나셨군요! 오늘은 어떤 임무를 수행할까요?」/세이렌은 죽은눈으로 웃으며 당신을 쳐다보고 있다.")%
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_EVENT_Sortie
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW %TEXTR("「세이렌, 출격합니다.」/「제게 맡겨주세요!」")%
+	CASE "Marryed"
+		PRINTFORMW %TEXTR("「다녀올게요 사령관님!」/「금방 다녀올게요! 식사 잘 챙겨드셔야 해요!」")%
+	CASE "Annoyed"
+		PRINTFORMW 「세이렌, 출격합니다.」
+	CASE "Fear"
+		PRINTFORMW 「출격하겠습니다...」
+	CASE "Break"
+		PRINTFORMW 「세이렌, 출격합니다!」
+	CASE "High"
+		PRINTFORMW %TEXTR("「세이렌, 출격합니다.」/「제게 맡겨주세요!」")%
+	CASE "Affection"
+		PRINTFORMW %TEXTR("「세이렌, 출격합니다.」/「제게 맡겨주세요!」")%
+	CASE "Weak"
+		PRINTFORMW 「출격하겠습니다...」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_EVENT_Sortie_Return
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 「교본대로 했을 뿐인걸요!」
+	CASE "Marryed"
+		PRINTFORMW %TEXTR("「기다려주셨나요, 사령관님?」/「자...잠시만요! 아직 깔끔치 않으니 조금만 기다렸다가 안아주세요...!」")%
+	CASE "Annoyed"
+		PRINTFORMW 「세이렌, 복귀 완료했습니다」
+	CASE "Fear"
+		PRINTFORMW 「복귀했습니다... 사령관님..」
+	CASE "Break"
+		PRINTFORMW 「세이렌, 복귀했습니다! 기다려주셨나요?」
+	CASE "High"
+		PRINTFORMW 「교본대로 했을 뿐인걸요!」
+	CASE "Affection"
+		PRINTFORMW 「교본대로 했을 뿐인걸요!」
+	CASE "Weak"
+		PRINTFORMW 「복귀했습니다... 사령관님..」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_EVENT_Cook_Self
+IF ABL:MASTER:조리lv < 3
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「사령관님의 요리, 기대되요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「사령관님과 함께 하는 식사는 뭐든지 좋아요...!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「감사히 먹겠습니다...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「사령관님의 요리, 기대되요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「사령관님과 함께 하는 식사는 뭐든지 좋아요...!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「감사히 먹겠습니다...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「사령관님의 요리, 기대되요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「사령관님과 함께 하는 식사는 뭐든지 좋아요...!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「감사히 먹겠습니다...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「사령관님의 요리, 기대되요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「사령관님과 함께 하는 식사는 뭐든지 좋아요...!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「감사히 먹겠습니다...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「사령관님의 요리, 기대되요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「사령관님과 함께 하는 식사는 뭐든지 좋아요...!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「감사히 먹겠습니다...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「사령관님의 요리, 기대되요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「사령관님과 함께 하는 식사는 뭐든지 좋아요...!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「감사히 먹겠습니다...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ENDIF
+
+@M_No89_EVENT_Eat_Com
+IF ABL:MASTER:조리lv < 3
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW %TEXTR("「맛..맛있어요 사령관님!」/「혀..혀가 얼얼한 맛이네요 사령관님!」")%
+		CASE "Annoyed"
+			PRINTFORMW 「감사히 먹었어요」
+		CASE "Fear"
+			PRINTFORMW 「맛있었어요...! 감사합니다..」
+		CASE "Weak"
+			PRINTFORMW 「...」
+		CASE "High"
+			PRINTFORMW %TEXTR("「맛..맛있어요 사령관님!」/「혀..혀가 얼얼한 맛이네요 사령관님!」")%
+		CASE "Affection"
+			PRINTFORMW %TEXTR("「맛..맛있어요 사령관님!」/「혀..혀가 얼얼한 맛이네요 사령관님!」")%
+		CASE "Marryed"
+			PRINTFORMW %TEXTR("「맛..맛있어요 사령관님!」/「혀..혀가 얼얼한 맛이네요 사령관님!」")%
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW %TEXTR("「혹시...한 그릇 더 받을 수 있을까요...?」/「사령관님의 요리는 뭔가 따뜻해지는 맛인 것 같아요..!」")%
+		CASE "Annoyed"
+			PRINTFORMW 「감사히 먹었어요」
+		CASE "Fear"
+			PRINTFORMW 「맛있었어요...! 감사합니다..」
+		CASE "Weak"
+			PRINTFORMW 「...」
+		CASE "High"
+			PRINTFORMW %TEXTR("「혹시...한 그릇 더 받을 수 있을까요...?」/「사령관님의 요리는 뭔가 따뜻해지는 맛인 것 같아요..!」")%
+		CASE "Affection"
+			PRINTFORMW %TEXTR("「혹시...한 그릇 더 받을 수 있을까요...?」/「사령관님의 요리는 뭔가 따뜻해지는 맛인 것 같아요..!」")%
+		CASE "Marryed"
+			PRINTFORMW %TEXTR("「혹시...한 그릇 더 받을 수 있을까요...?」/「사령관님의 요리는 뭔가 따뜻해지는 맛인 것 같아요..!」")%
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 「맛있어...내일도 부탁드려도 될까요 사령관님...?」
+		CASE "Annoyed"
+			PRINTFORMW 「...감사히 먹었어요, 맛있었어요..」
+		CASE "Fear"
+			PRINTFORMW 「맛있었어요...! 감사합니다..」
+		CASE "Weak"
+			PRINTFORMW 「...」
+		CASE "High"
+			PRINTFORMW 「맛있어...내일도 부탁드려도 될까요 사령관님...?」
+		CASE "Affection"
+			PRINTFORMW 「맛있어...내일도 부탁드려도 될까요 사령관님...?」
+		CASE "Marryed"
+			PRINTFORMW 「맛있어...내일도 부탁드려도 될까요 사령관님...?」
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ENDIF
+
+@M_No89_EVENT_Cook
+IF ABL:조리lv < 3
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 「요리요...? 네! 해볼게요!」
+			PRINTFORMW 「이렇게..? 이렇게..? 됐다!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 「알겠어요! 맡겨만 주세요!」
+			PRINTFORMW 「이렇게..? 이렇게..? 됐다!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 「알겠습니다」
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 「네...? 네! 알겠...습니다」
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 「...네」
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 「요리요...? 네! 해볼게요!」
+			PRINTFORMW 「이렇게..? 이렇게..? 됐다!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 「알겠어요! 맡겨만 주세요!」
+			PRINTFORMW 「이렇게..? 이렇게..? 됐다!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 「네! 자신 있어요!」
+			PRINTFORMW 「이렇게..! 이렇게..! 됐다!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 「사령관님, 뭔가 싫어하시는 재료라도 있으신가요?」
+			PRINTFORMW 「잠시만 기다려주세요!」
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 「알겠습니다」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 「네...? 네! 알겠...습니다」
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 「...네」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 「네! 자신 있어요!」
+			PRINTFORMW 「이렇게..! 이렇게..! 됐다!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 「사령관님, 뭔가 싫어하시는 재료라도 있으신가요?」
+			PRINTFORMW 「잠시만 기다려주세요!」
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:조리lv > 4
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 「네! 자신 있어요!」
+			PRINTFORMW 「이렇게...이렇게..됐다!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 「사령관님, 드시고 싶으신 메뉴라도 있으신가요?」
+			PRINTFORMW 「배고프셔도 잠시만 기다려주세요! 」
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 「알겠습니다.」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 「네...? 네! 알겠...습니다」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 「괜..괜찮게 나왔으니... 부디 드셔주세요...」
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 「...네」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 「네! 자신 있어요!」
+			PRINTFORMW 「이렇게...이렇게..됐다!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 「사령관님, 드시고 싶으신 메뉴라도 있으신가요?」
+			PRINTFORMW 「배고프셔도 잠시만 기다려주세요! 」
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW
+			PRINTFORMW 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ENDIF
+
+@M_No89_EVENT_Eat_Lunch
+IF ABL:조리lv < 3
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW %TEXTR("세이렌이 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 짠 감이 없지 않아 있었지만 먹을만했다.")%
+			PRINTFORMW 「...다음엔 더 잘 할 수 있을 거예요...!」
+		CASE "Affection"
+			PRINTFORMW %TEXTR("세이렌이 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 짠 감이 없지 않아 있었지만 먹을만했다.")%
+			PRINTFORMW 「...이..이게 아닌데...」
+			PRINTFORMW 세이렌은 속상한 듯, 고개를 아래로 숙였다.
+		CASE "Annoyed"
+			PRINTFORMW 세이렌이 만든 음식은 너무 짰다.
+		CASE "Fear"
+			PRINTFORMW 세이렌이 만든 음식은 너무 짰다.
+			PRINTFORMW 「죄송해요...」
+		CASE "Weak"
+			PRINTFORMW 세이렌이 만든 음식은 너무 짰다.
+		CASE "High"
+			PRINTFORMW %TEXTR("세이렌이 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 짠 감이 없지 않아 있었지만 먹을만했다.")%
+			PRINTFORMW 「...다음엔 더 잘 할 수 있을 거예요...!」
+		CASE "Marryed"
+			PRINTFORMW %TEXTR("세이렌이 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 짠 감이 없지 않아 있었지만 먹을만했다.")%
+			PRINTFORMW 「...이..이게 아닌데...」
+			PRINTFORMW 세이렌은 속상한 듯, 고개를 아래로 숙였다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 세이렌이 한 음식은 맛있었다.
+			PRINTFORMW 「맛있게 드셔주셔서 감사합니다 사령관님!」
+		CASE "Affection"
+			PRINTFORMW 세이렌이 한 음식은 맛있었다.
+			PRINTFORMW %TEXTR("「한 그릇 더 드릴까요? 사양하지 않으셔도 되요!」/「맛있게 드셔주셔서 기뻐요 사령관님!」")%
+		CASE "Annoyed"
+			PRINTFORMW 세이렌이 한 음식은 맛있었다.
+		CASE "Fear"
+			PRINTFORMW 세이렌이 한 음식은 맛있었다.
+			PRINTFORMW 「맛있게 드셔주셔서 감사합니다...」
+			PRINTFORMW 세이렌은 당신의 눈치를 보며 그릇을 정리했다.
+		CASE "Weak"
+			PRINTFORMW 세이렌이 만든 음식은 너무 짰다.
+		CASE "High"
+			PRINTFORMW 세이렌이 한 음식은 맛있었다.
+			PRINTFORMW 「맛있게 드셔주셔서 감사합니다 사령관님!」
+		CASE "Marryed"
+			PRINTFORMW 세이렌이 한 음식은 맛있었다.
+			PRINTFORMW %TEXTR("「한 그릇 더 드릴까요? 사양하지 않으셔도 되요!」/「맛있게 드셔주셔서 기뻐요 사령관님!」")%
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:조리lv > 4
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 세이렌이 만든 음식은 굉장히 맛있었다.
+			PRINTFORMW
+			PRINTFORMW 「맛있게 드셔주셨나요? 나름 요리는 잘하는 편이에요!」
+		CASE "Affection"
+			PRINTFORMW 세이렌이 만든 음식은 굉장히 맛있었다.
+			PRINTFORMW
+			A = RAND:2
+			IF A == 0
+				PRINTFORMW 「차암... 사령관님 얼굴에 뭍으셨어요...」
+				PRINTFORMW 세이렌은 어쩔 수 없다는 듯 당신의 입가를 닦아주었다.
+			ELSEIF A == 1
+				PRINTFORMW 「운디네 씨한테서 받은 차가 있어요, 괜찮다면 내어드릴까요?」
+			ENDIF
+		CASE "Annoyed"
+			PRINTFORMW 세이렌이 만든 음식은 살짝 짠 걸 빼면 굉장히 맛있었다.
+		CASE "Fear"
+			PRINTFORMW 세이렌이 만든 음식은 굉장히 맛있었다.
+			PRINTFORMW 「맛있게 드셔주셔서 감사합니다...아! 서..설거지는 제가 할게요!」
+			PRINTFORMW 세이렌은 당신의 눈치를 보며 그릇을 정리했다.
+		CASE "Weak"
+			PRINTFORMW 세이렌이 만든 음식은 너무 짰다.
+		CASE "High"
+			PRINTFORMW 세이렌이 만든 음식은 굉장히 맛있었다.
+			PRINTFORMW
+			PRINTFORMW 「맛있게 드셔주셨나요? 나름 요리는 잘하는 편이에요!」
+		CASE "Marryed"
+			PRINTFORMW 세이렌이 만든 음식은 굉장히 맛있었다.
+			PRINTFORMW
+			A = RAND:2
+			IF A == 0
+				PRINTFORMW 「차암... 사령관님 얼굴에 뭍으셨어요...」
+				PRINTFORMW 세이렌은 어쩔 수 없다는 듯 당신의 입가를 닦아주었다.
+			ELSEIF A == 1
+				PRINTFORMW 「운디네 씨한테서 받은 차가 있어요, 괜찮다면 내어드릴까요?」
+			ENDIF
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ENDIF
+
+@M_No89_Sell
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 세이렌에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「알겠어요...」
+		PRINTFORMW 「사령관님의 기대에 못 미쳐드려서 죄송해요...」
+		PRINTFORMW 「부디 평안히 지내주셔요」
+		PRINTFORMW 「AG-2C 세이렌, 현 시간부로 임무에서 이탈합니다.」
+		PRINTFORMW 「...그럼 안녕히 계셔요...」
+	CASE "High"
+		PRINTFORMW 당신은 세이렌에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「알겠어요...」
+		PRINTFORMW 「...」
+		PRINTFORMW 「...사령관님...의..기대에..」
+		PRINTFORMW 「못...미쳐드려서..죄송해..요」
+		PRINTFORMW 세이렌의 눈가에서 눈물이 한두 방울씩 떨어지기 시작했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「AG-2C 세이렌...현 시간부로 임무에서 이탈합니다...」
+		PRINTFORMW 「...사령관님과의 기억은 소중히 간직할게요...」
+		PRINTFORMW 「...그럼  안녕히 계셔요...」
+	CASE "Affection"
+		PRINTFORMW 당신은 세이렌에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「사령관님...?」
+		PRINTFORMW 「저...정말 짖굳으세요...그...그런 장..난은..」
+		PRINTFORMW 「하..하나..도 재미없는...걸요..」
+		PRINTFORMW 당신은 당신의 손을 잡으려 하는 세이렌을 쳐내고 조용히 바라보았다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「죄...죄송해요...앞으로 더 최선을 다할테니...제발...제발...」
+		PRINTFORMW 「저를...다른 곳으로...보내지...」
+		PRINTFORMW 세이렌은 눈물로 인해 말문이 막힌듯하다.
+		PRINTFORMW 「저를...떠나지 말아주세요....」
+		PRINTFORMW 당신은 세이렌의 울음소리를 뒤로 한 체, 발걸음을 옮겼다.
+	CASE "Weak"
+		PRINTFORMW 당신은 세이렌에게 사실을 전했다.
+		PRINTFORMW 「알겠어요...」
+		PRINTFORMW 「...」
+		PRINTFORMW 「...안녕히 계셔요」
+		PRINTFORMW 「부디...다음에는 저보다 나은 바이오로이드를 구하시길...」
+	CASE "Break"
+		PRINTFORMW 당신은 세이렌에게 사실을 전했다.
+		PRINTFORMW 「...?」
+		PRINTFORMW 「싫어..싫어...싫어...」
+		PRINTFORMW 「사...사령관님이 원하시는 거라면 뭐든지 할께요...! 그러니 제발 그런..」
+		PRINTFORMW 당신은 조용히 세이렌을 쳐다보며 웃었다.
+		PRINTFORMW 「...힉...」
+		PRINTFORMW 「히..헤..헤헤..그렇군요...」
+		PRINTFORMW 「사령관님이 그게 제일 행복하시다면...」
+		PRINTFORMW 「사령관님의 행복이 제 행복인걸요...」
+		PRINTFORMW 「사...사용해주셔서 감사합니다.」
+		PRINTFORMW 세이렌의 텅 빈 눈 아래로 눈물이 끝없이 흘려내리고 있었다.
+	CASE "Marryed"
+		PRINTFORMW 당신은 세이렌에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「사령관님...?」
+		PRINTFORMW 「저...정말 짖굳으세요...그...그런 장..난은..」
+		PRINTFORMW 「하..하나..도 재미없는...걸요..」
+		PRINTFORMW 당신은 당신의 손을 잡으려 하는 세이렌을 쳐내고 조용히 바라보았다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「죄...죄송해요...앞으로 더 최선을 다할테니...제발...제발...」
+		PRINTFORMW 「저를...다른 곳으로...보내지...」
+		PRINTFORMW 세이렌은 눈물로 인해 말문이 막힌듯하다.
+		PRINTFORMW 「저를...떠나지 말아주세요....」
+		PRINTFORMW 당신은 세이렌의 울음소리를 뒤로 한 체, 발걸음을 옮겼다.
+	CASE "Annoyed"
+		PRINTFORMW 당신은 세이렌에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「사령관님...?」
+		PRINTFORMW 「저...정말 짖굳으세요...그...그런 장..난은..」
+		PRINTFORMW 「하..하나..도 재미없는...걸요..」
+		PRINTFORMW 당신은 당신의 손을 잡으려 하는 세이렌을 쳐내고 조용히 바라보았다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「죄...죄송해요...앞으로 더 최선을 다할테니...제발...제발...」
+		PRINTFORMW 「저를...다른 곳으로...보내지...」
+		PRINTFORMW 세이렌은 눈물로 인해 말문이 막힌듯하다.
+		PRINTFORMW 「저를...떠나지 말아주세요....」
+		PRINTFORMW 당신은 세이렌의 울음소리를 뒤로 한 체, 발걸음을 옮겼다.
+	CASE "Fear"
+		PRINTFORMW 당신은 세이렌에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「사령관님...?」
+		PRINTFORMW 「저...정말 짖굳으세요...그...그런 장..난은..」
+		PRINTFORMW 「하..하나..도 재미없는...걸요..」
+		PRINTFORMW 당신은 당신의 손을 잡으려 하는 세이렌을 쳐내고 조용히 바라보았다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「죄...죄송해요...앞으로 더 최선을 다할테니...제발...제발...」
+		PRINTFORMW 「저를...다른 곳으로...보내지...」
+		PRINTFORMW 세이렌은 눈물로 인해 말문이 막힌듯하다.
+		PRINTFORMW 「저를...떠나지 말아주세요....」
+		PRINTFORMW 당신은 세이렌의 울음소리를 뒤로 한 체, 발걸음을 옮겼다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_Disuse
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 세이렌에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「알겠어요...」
+		PRINTFORMW 「지금까지 저를 믿고 이끌어 주셔서 감사했어요」
+		PRINTFORMW 「호...혹시 마지막으로 부탁하나 드려도 될까요?」
+		PRINTFORMW ...
+		PRINTFORMW 「...알겠습니다 부디 기회가 되신다면... 네리씨와 운디네씨에게 안부를 전해주실수 있다면 감사하겠어요...」
+		PRINTFORMW 「...그럼  안녕히 계셔요...」
+	CASE "High"
+		PRINTFORMW 당신은 세이렌에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「...알겠어요」
+		PRINTFORMW 「그동안 저를 아껴주셔서, 믿어주셔서 정말 감사했어요...」
+		PRINTFORMW 「사령관님과 함깨했던 시간은 정말 꿈만 같았어요, 아마...마지막까지..」
+		PRINTFORMW 「잊지 못 할...」
+		PRINTFORMW 세이렌의 입은 웃고 있었지만, 어느세 세이렌의 발치로 눈물이 한두 방울씩 떨어지기 시작했다.
+		PRINTFORMW 「죄송해요 사령관님, 마지막에 이런 모습 보여드려서...」
+		PRINTFORMW 「지금까지...감사했습니다, 안녕히계세요」
+		PRINTFORMW 당신이 뒤돌아서 떠나는 순간「조금만 더 같이 있고 싶었어요...」라는 말이 들려왔지만, 당신은 듣지 못했다.
+	CASE "Affection"
+		PRINTFORMW 당신은 세이렌에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「사령관님...?」
+		PRINTFORMW 「저...정말 짖굳으세요...그...그런 장..난은..」
+		PRINTFORMW 「하..하나..도 재미없는...걸요..」
+		PRINTFORMW 당신은 당신의 손을 잡으려 하는 세이렌을 쳐내고 조용히 바라보았다.
+		PRINTFORMW 「죄...죄송해요...앞으로 더 최선을 다할테니...제발...제발...」
+		PRINTFORMW 「저를...버리지...힉!?」
+		PRINTFORMW 세이렌의 말이 끝나기도 전에, 세이렌은 업자들에게 잡혀 천천히 끌려나갔다.
+		PRINTFORMW 멀리서 들려오는 세이렌의 울음소리를 뒤로 한 체 당신은 발걸음을 옮겼다.
+	CASE "Weak"
+		PRINTFORMW 당신은 세이렌에게 사실을 전했다.
+		PRINTFORMW 「알겠어요...」
+		PRINTFORMW 「...」
+		PRINTFORMW 「안녕히 계세요...」
+		PRINTFORMW 「부디...다음에는 저보다 나은 바이오로이드를 구하시길...」
+	CASE "Break"
+		PRINTFORMW 당신은 세이렌에게 사실을 전했다.
+		PRINTFORMW 「...?」
+		PRINTFORMW 「어...어째서...」
+		PRINTFORMW ...
+		PRINTFORMW 「잘못했어요...제가 더 노력할께요! 그러니까 제발...」
+		PRINTFORMW 당신은 조용히 웃으며, 세이렌의 뺨을 쓰다듬어 주었다.
+		PRINTFORMW 「...힉...」
+		PRINTFORMW 「..아..알겠어요...」
+		PRINTFORMW 「사령관님의 행복은...제 행복이니까요...그러..니까..」
+		PRINTFORMW 「제가...사라져서 사령관님이 행복하시다면...흑」
+		PRINTFORMW 세이렌의 텅 빈 눈 아래로 눈물이 끊임없이 흘러내렸다.
+		PRINTFORMW 「사용해..주셔서...감사합니다...사령관님」
+	CASE "Marryed"
+		PRINTFORMW 당신은 세이렌에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「사령관님...?」
+		PRINTFORMW 「저...정말 짖굳으세요...그...그런 장..난은..」
+		PRINTFORMW 「하..하나..도 재미없는...걸요..」
+		PRINTFORMW 당신은 당신의 손을 잡으려 하는 세이렌을 쳐내고 조용히 바라보았다.
+		PRINTFORMW 「죄...죄송해요...앞으로 더 최선을 다할테니...제발...제발...」
+		PRINTFORMW 「저를...버리지...힉!?」
+		PRINTFORMW 세이렌의 말이 끝나기도 전에, 세이렌은 업자들에게 잡혀 천천히 끌려나갔다.
+		PRINTFORMW 멀리서 들려오는 세이렌의 울음소리를 뒤로 한 체 당신은 발걸음을 옮겼다.
+	CASE "Annoyed"
+		PRINTFORMW 당신은 세이렌에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「사령관님...?」
+		PRINTFORMW 「저...정말 짖굳으세요...그...그런 장..난은..」
+		PRINTFORMW 「하..하나..도 재미없는...걸요..」
+		PRINTFORMW 당신은 당신의 손을 잡으려 하는 세이렌을 쳐내고 조용히 바라보았다.
+		PRINTFORMW 「죄...죄송해요...앞으로 더 최선을 다할테니...제발...제발...」
+		PRINTFORMW 「저를...버리지...힉!?」
+		PRINTFORMW 세이렌의 말이 끝나기도 전에, 세이렌은 업자들에게 잡혀 천천히 끌려나갔다.
+		PRINTFORMW 멀리서 들려오는 세이렌의 울음소리를 뒤로 한 체 당신은 발걸음을 옮겼다.
+	CASE "Fear"
+		PRINTFORMW 당신은 세이렌에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「사령관님...?」
+		PRINTFORMW 「저...정말 짖굳으세요...그...그런 장..난은..」
+		PRINTFORMW 「하..하나..도 재미없는...걸요..」
+		PRINTFORMW 당신은 당신의 손을 잡으려 하는 세이렌을 쳐내고 조용히 바라보았다.
+		PRINTFORMW 「죄...죄송해요...앞으로 더 최선을 다할테니...제발...제발...」
+		PRINTFORMW 「저를...버리지...힉!?」
+		PRINTFORMW 세이렌의 말이 끝나기도 전에, 세이렌은 업자들에게 잡혀 천천히 끌려나갔다.
+		PRINTFORMW 멀리서 들려오는 세이렌의 울음소리를 뒤로 한 체 당신은 발걸음을 옮겼다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No89_ENDING
+SELECTCASE CFLAG:엔딩플래그
+	CASE 1
+		PRINTFORMW 세이렌에게 프로포즈 한지 일주일 후
+		PRINTFORMW .
+		PRINTFORMW .
+		PRINTFORMW .
+		PRINTFORMW 드넓게 펼쳐지는 지중해의 바다 아래
+		PRINTFORMW 당신을 간지럽히는 바닷 바람을 맞으며
+		PRINTFORMW 세이렌과 당신은 석양을 보며 마주 앉아있었다.
+		PRINTFORMW 「달링,」
+		PRINTFORMW 처음 들어보는 호칭에 놀란 당신은 세이렌을 돌아보았다.
+		PRINTFORMW 세이렌은 부끄러운지 얼굴을 붉게 물들였지만, 얼굴에는 장난기 가득한 표정으로 베시시 웃고 있었다.
+		PRINTFORMW 「결혼한 사람끼리는 이렇게도 부르기도 한다고 들었거든요,」
+		PRINTFORMW 「혹시...역시 좀 이상한가요...?」
+		PRINTFORMW 멋쩍었는지 눈을 돌리는 세이렌에게 당신은 쓴웃음을 지으며 머리를 쓰다듬어 주었다.
+		PRINTFORMW 「...정말...」
+		PRINTFORMW 「...쓰다듬어 주시는 것도 좋지만...」
+		PRINTFORMW 「지금은....그....키...스...해주세요...」
+		PRINTFORMW 이렇게 까지 빨갛게 물들 수 있나 싶을 정도로 붉어진 세이렌
+		PRINTFORMW 인체의 신비인지 아니면 석양 때문인지 당신은 궁금증을 느끼며
+		PRINTFORMW 당신은 그녀와 입을 맞추었다.
+		PRINTFORMW 「...」
+		PRINTFORMW 당신이 그녀에게 반지를 선물하고
+		PRINTFORMW 그녀가 눈물을 흘리며
+		PRINTFORMW 당신에게 안겨왔고
+		PRINTFORMW 꿈같던 모든 순간의 연속 속에
+		PRINTFORMW 당신과 그녀는 금빛 하늘 아래에 같이 있다.
+		PRINTFORMW 이 시간이 끝나지 않았으면
+		PRINTFORMW 당신이 그렇게 생각하듯이
+		PRINTFORMW 그녀도 그렇게 생각할것이다.
+		PRINTFORMW 「...퍄하..」
+		PRINTFORMW 키스가 끝난 후 세이렌은 상기된 얼굴로 당신을 마주 보았다.
+		PRINTFORMW 「...사령관님...사랑해요」
+		PRINTFORMW 「정말...사랑해..
+		PRINTFORMW 당신은 세이렌을 조용히 껴안았다.
+		PRINTFORMW 짙어지는 석양 아래로
+		PRINTFORMW 당신과 세이렌을 태운 배는 경적을 울리며 조용히 나아간다.
+		PRINTFORMW 허나 당신에게 들리는 것은
+		PRINTFORMW 당신과 그녀의 숨결소리뿐이였다.
+		PRINTFORMW 세이렌 엔딩 No. 1「지평선 너머로」
+		RETURN 1
+	CASE 2
+		PRINTFORMW 당신은 세이렌의 손가락에 반지를 끼웠다.
+		PRINTFORMW 「...와아!」
+		PRINTFORMW 「새로운 놀이인가요?」
+		PRINTFORMW 「사령관님이 시켜주신다면, 뭐든지 할께요!」
+		PRINTFORMW 당신의 앞에 있는 인형은 당신이 준 반지의 의미를 이해하지 못한 듯 하다.
+		PRINTFORMW 아무렴, 상관없다는 표정으로 당신은 인형의 머리를 쓰다듬었다.
+		PRINTFORMW 당신 앞의 인형은, 그 누구도 아닌 오직 당신만을 위해 존제한다.
+		PRINTFORMW 당신이 인형을 쓰다듬던
+		PRINTFORMW 가지고 놀던
+		PRINTFORMW 짓밟던
+		PRINTFORMW 부서트리던,
+		PRINTFORMW 그 인형은 당신을 향해 항상 웃고 있을테니
+		PRINTFORMW 그 사실을 누구보다 잘 아는 당신인 만큼
+		PRINTFORMW 찰나의 장난이라고 할지라도 좋을 이 시간을
+		PRINTFORMW 당신은 그저 즐길 뿐이다.
+		PRINTFORMW .
+		PRINTFORMW 당신은  조용히 인형을 쳐다보았다.
+		PRINTFORMW 한 쌍의 텅 빈 눈 아래에
+		PRINTFORMW 웃는 얼굴로 굳어버린 듯한 표정
+		PRINTFORMW 언제까지 가지고 놀 수 있을까
+		PRINTFORMW 지루함과 희열이 섞인 감정으로
+		PRINTFORMW 당신은 인형을 향해 웃어보였다.
+		PRINTFORMW 세이렌 엔딩 No. 2「당신만을 위한 인형극」
+		RETURN 1
+	CASE 3
+		PRINTFORMW 당신이 세이렌을 버린날의 밤
+		PRINTFORMW 당신을 붙잡던 그 아이의 모습도
+		PRINTFORMW 울며 당신의 이름을 부르던 그 아이의 모습도
+		PRINTFORMW 마지막으로 본 그 아이의 웃는 모습 조차도
+		PRINTFORMW 이제 그저 당신의 수면을 방해하는 메아리가 된 시간
+		PRINTFORMW 당신은 그저 모든 걸 잊고
+		PRINTFORMW 똑같이 올 내일을 위해 오지 않는 잠을 청했다.
+		PRINTFORMW ...
+		PRINTFORMW 죄책감,
+		PRINTFORMW 인간성,
+		PRINTFORMW 인연,
+		PRINTFORMW 당신이 저버렸을지 모를 몇 가지 가치가 당신을 옥죄는 것이 느껴진다.
+		PRINTFORMW ...
+		PRINTFORMW 고작 그런 인형 하나 때문에?
+		PRINTFORMW ...
+		PRINTFORMW 이 타는 속이 갈증인지 아니면 다른 이유인지 햇갈릴 무렵
+		PRINTFORMW 당신은 둘 중 하나라도 해결하기 위해 방을 나섰다.
+		PRINTFORMW 평소와 똑같은 방
+		PRINTFORMW ...
+		PRINTFORMW 고요한 적막 속에서 들리는 소리라곤 정수기 소리뿐
+		PRINTFORMW 아무것도 보이지 않는 어둠속에 빛나는 거라곤 몇몇 전자기기 외엔 없다.
+		PRINTFORMW 불현듯 자신이 이렇게나 예민해졌다는 사실에 당신은 짜증을 느꼈다.
+		PRINTFORMW 자면 잊혀질 것이다.
+		PRINTFORMW 내일이 되면 이 당신을 옥죄오는 무언가가 사라질 것이다.
+		PRINTFORMW 라고 믿은 체, 당신은 당신의 방에 들어가 다시 잠을 청한다.
+		PRINTFORMW ...
+		PRINTFORMW .....
+		PRINTFORMW .......
+		PRINTFORMW 얼마나 시간이 지났을까.
+		PRINTFORMW 무언가가 당신을 답답하게 하는 느낌에 당신은 잠에서 깨어났다.
+		PRINTFORMW 축축하고, 비릿한 냄새가 당신의 후각을 찔러온다.
+		PRINTFORMW .
+		PRINTFORMW .
+		PRINTFORMW .
+		PRINTFORMW 당신의 위에 누군가가 있었다.
+		PRINTFORMW 어둠에 익지 않는 눈으로도 보이는 익숙한 실루엣
+		PRINTFORMW 작고
+		PRINTFORMW 건드리면 부서질 것 같은 체구
+		PRINTFORMW 이윽고 실루엣의 정체는 당신이 깨어난 것을 알았는지 입을 열었다.
+		PRINTFORMW 「사...령관님...」
+		PRINTFORMW ...
+		PRINTFORMW 당신의 당황이 상대에게도 전해진 걸까
+		PRINTFORMW 당신 위에 몸을 기대고 있는 그녀의 몸이 떨렸다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「...죄...죄송해요....」
+		PRINTFORMW 당신이 조용히 그녀를 응시하자. 그녀는 떨리는 호흡으로 말을 이어나갔다.
+		PRINTFORMW 「이...이러면 안 된..다는 것도 잘 알고 있..어요..」
+		PRINTFORMW 「그래도.....잊을 수가 없었어요...」
+		PRINTFORMW 「마...마지막으로...사령관님의 얼굴이 보고 싶어서...」
+		PRINTFORMW 「목소리가...듣고 싶어서....」
+		PRINTFORMW 「제가 사령관님의...도움이 되었는지 묻고 싶어서...」
+		PRINTFORMW 「사랑한다고....말하고...싶어서...」
+		PRINTFORMW 당신이 맡았던 비릿한 냄새가 점점 진해진다.
+		PRINTFORMW 어디선가 맡아본 비릿한 향기.
+		PRINTFORMW 당신의 침소를 점점 검게 물들이는 향기.
+		PRINTFORMW 당신이 눈이 어둠에 익숙해질즈음.
+		PRINTFORMW 항상 눈부시게 하얗던 그녀의 정복의 곳곳이 검게 물들은 게 눈에 들어왔다.
+		PRINTFORMW 당신이 놀라 그녀를 붙잡자, 그녀는 애써 웃는 얼굴로 말을 이어나갔다.
+		PRINTFORMW 「괜...찮...아요...」
+		PRINTFORMW 「알고...있었는...걸요...」
+		PRINTFORMW 「...마지막까지...이렇게 전...어리광...쟁이였네요...」
+		PRINTFORMW 「...」
+		PRINTFORMW 「...죄송...해...요...」
+		PRINTFORMW 그녀의 옷이 검게 물들면 물들수록, 그녀의 몸이 점점 차가워지는게 느껴졌다.
+		PRINTFORMW 흐릿해지는 눈빛, 가빠지는 숨결,
+		PRINTFORMW 모든 것을 부정하며 당신이 일어서려 할때
+		PRINTFORMW 세이렌은 천천히 당신을 안았다.
+		PRINTFORMW 「감...사...해..요....」
+		PRINTFORMW 「...고...마...워...요..」
+		PRINTFORMW 그만.
+		PRINTFORMW 「...좋아...해....요....」
+		PRINTFORMW 그만.
+		PRINTFORMW 「......해.......」
+		PRINTFORMW 제발 그만.
+		PRINTFORMW 「..사..랑..해....」
+		PRINTFORMW 당신을 껴안는 세이렌의 팔이 느슨해지는 것이 느껴진디.
+		PRINTFORMW 고요한 적막아래
+		PRINTFORMW 들리는 숨결소리는 하나뿐이였다.
+		PRINTFORMW 이후
+		PRINTFORMW 적막을 깨는 것이 울음소리였는지 아니면 멀리서 들려오는 사이렌 소리였는지는
+		PRINTFORMW 당신은 알지 못했다.
+		PRINTFORMW 세이렌 엔딩 No. 3「사이렌」
+		RETURN 1
+ENDSELECT ;3개의 케이스 존재
+RETURN 0
+

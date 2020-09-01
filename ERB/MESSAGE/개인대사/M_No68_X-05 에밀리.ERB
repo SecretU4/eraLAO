@@ -1,4 +1,5 @@
-﻿@IS_M_No68
+﻿;C:\Users\ASUS\Documents\GitHub\eraLAO\ERB\MESSAGE\개인대사\M_No68_X-05 에밀리.ERB에서 불러옴
+@IS_M_No68
 RETURN 1
 
 @M_No68_TRAIN_START_0
@@ -91,6 +92,10 @@ SELECTCASE CSTR:1
 		PRINTFORMW 그런 그녀의 마음에 진지하게 답해주기로 정한 당신은.
 		PRINTFORMW 이내 그녀의 마음에 대한 답을 정했다.
 		PRINTFORMW 당신은.
+		PRINTFORMW 1.에밀리의 마음을 받아들였다.
+		PRINTFORMW 2.에밀리의 마음을 거절했다.
+		PRINTFORMW 3.고작 이런 말을 하기 위해 불렀냐고 에밀리를 다그친다.
+		TFLAG:고백함 = 1
 	CASE "Yes"
 		PRINTFORMW 당신은 에밀리의 마음을 받아들였다.
 		PRINTFORMW .
@@ -115,7 +120,6 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 그런 당신을 볼을 붉힌 채 천천히 올려다 보았다.
 		PRINTFORMW 오렌지색으로 물들어가는 세상 속에서.
 		PRINTFORMW 당신은 그 날 처음으로 해맑게 웃는 그녀의 모습을 보았다.
-		TFLAG:고백함 = 1
 	CASE "No"
 		PRINTFORMW 당신은 에밀리의 마음을 거절했다.
 		PRINTFORMW .
@@ -546,6 +550,7 @@ RETURN 1
 @M_No68_COM2
 SELECTCASE CSTR:1
 	CASE "Low"
+		PRINTFORMW  당신은 에밀리와 대화라기 부르기도 애매한 무언가를 나누었다.
 		A = RAND:5
 		IF A == 0
 			PRINTFORMW 「사령관... 나 아직 모르는게 많아서 많이 배우고 싶어」
@@ -564,6 +569,7 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「그래도 계속 들을래...」
 		ENDIF
 	CASE "High"
+		PRINTFORMW 당신은 에밀리와 그나마 그럴듯한 대화를 나누었다.
 		A = RAND:5
 		IF A == 0
 			PRINTFORMW 「이 옷...? 정식 모델이 아니어서... 적당히 맞는 걸 입어...」
@@ -586,6 +592,7 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「그래도 배우는 거 재밌어...」
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 당신은 에밀리와 이런저런 이야기를 주고받았다.
 		A = RAND:5
 		IF A == 0
 			PRINTFORMW 「...사령관 침대 밑에서 책을 찾았어...」
@@ -611,6 +618,7 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「나 섹시해?」
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 당신은 에밀리와 즐겁게 이야기를 나눴다.
 		A = RAND:4
 		IF A == 0
 			PRINTFORMW 「사령관, 다음번에 제녹스 타고 놀러 가자...」
@@ -627,6 +635,7 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「나 소원 빌고 싶은데... 나중에 같이 별 보러 가자,」
 		ENDIF
 	CASE "Marryed"
+		PRINTFORMW 당신은 에밀리와  즐겁게 이야기를 나눴다.
 		A = RAND:4
 		IF A == 0
 			PRINTFORMW 「사령관, 다음번에 제녹스 타고 놀러 가자...」
@@ -652,6 +661,7 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 옅은 미소를 지으며 당신의 품속에 더 앵겨왔다.
 		ENDIF
 	CASE "Annoyed"
+		PRINTFORMW 에밀리는 당신의 이야기를 듣는 둥 마는 둥 했다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -660,6 +670,7 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...졸려」
 		ENDIF
 	CASE "Annoyed2"
+		PRINTFORMW 에밀리는 당신의 말을 듣고 있는 것 같지 않았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「사령관 자기 말만 해...」
@@ -669,6 +680,7 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 고개를 숙이고 있다.
 		ENDIF
 	CASE "Fear"
+		PRINTFORMW 에밀리는 당신의 말에 집중하려고 노력하는 것 같았다 .
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...응 알겠...어」
@@ -678,6 +690,7 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...응 아니 듣고..있어」
 		ENDIF
 	CASE "Fear2"
+		PRINTFORMW 당신은 에밀리에게 이런저런 말을 꺼냈다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...응」
@@ -687,6 +700,7 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...아니야 사령관 이야기 재미..있어」
 		ENDIF
 	CASE "Weak"
+		PRINTFORMW 당신은 에밀리에게 이런저런 말을 꺼냈다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -696,6 +710,7 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 쓰러진 체 바닥을 응시하고 있었다.
 		ENDIF
 	CASE "Weak2"
+		PRINTFORMW 당신은 에밀리에게 이런저런 말을 꺼냈다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -705,6 +720,7 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 당신에게 천천히 손을 뻗었다.
 		ENDIF
 	CASE "Break"
+		PRINTFORMW 당신은 에밀리에게 이런저런 말을 꺼냈다..
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「재미없어...」
@@ -727,6 +743,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 어리둥절해 하고 있다.
 		PRINTFORMW %TEXTR("「칭찬...인거지? 」/「...고맙습니다... 라고 하면 돼?」")%
 	CASE "High"
+		PRINTFORMW 당신은 에밀리의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
+		PRINTFORMW 에밀리의 얼굴이 살짝 붉어졌다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「잘 모르겠지만...사령관이 칭찬해주는거 좋아...」
@@ -735,6 +753,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 굉장히 위험한 짓을 하려하는 에밀리를 당신은 헐래벌떡 말렸다.
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 당신은 에밀리의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
+		PRINTFORMW 에밀리는 얼굴이 붉게 물든 체 고개를 당신을 올려다봤다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「그렇게 좋아하는데... 왜 직접 보는건 싫어해?」
@@ -746,18 +766,13 @@ SELECTCASE CSTR:1
 	CASE "Love"
 		PRINTFORMW 당신은 에밀리의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
 		PRINTFORMW 에밀리의 뺨이 붉게 물들었다.
-		PRINTDATAW
-			DATALIST
-				DATAFORM 「나도 사령관 %TEXTR("가슴/엉덩이")%가 좋아...」
-				DATAFORM 당신은 순간 에밀리의 칭찬에 말문이 막혔다.
-				DATAFORM 「어...? 이렇게 하는거 아니야?」
-			ENDLIST
-			DATALIST
-				DATAFORM 「그런 말 하면 나쁜 아이래...」
-				DATAFORM 「근데 난 사령관이 나쁜 아이여도 좋아.」
-			ENDLIST
-		ENDDATA
+		PRINTFORMW {「나도 사령관 %TEXTR("가슴/엉덩이")%가 좋아...」
+		PRINTFORMW 당신은 순간 에밀리의 칭찬에 말문이 막혔다.
+		PRINTFORMW 「어...? 이렇게 하는거 아니야?」/「그런 말 하면 나쁜 아이래...」
+		PRINTFORMW 「근데 난 사령관이 나쁜 아이여도 좋아,」}
 	CASE "Marryed"
+		PRINTFORMW 당신은 에밀리의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
+		PRINTFORMW 에밀리는 옅은 미소를 지었다.
 		A = RAND:3
 		IF A == 0
 			PRINTFORMW 「사령관 말 짓궂어...」
@@ -782,6 +797,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 당신을 조용히 쳐다보고 다시 시선을 돌렸다.
 		PRINTFORMW %TEXTR("「또, 나쁜 말 해」/「사령관은 못된 변태야...」/「그런 말 싫어...」")%
 	CASE "Fear"
+		PRINTFORMW 당신은 에밀리의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
+		PRINTFORMW 에밀리는 그저 바닥을 바라보고 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...고맙습니다 라고 하면 되는거지?」
@@ -791,6 +808,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리의 고개를 숙이고 있었다.
 		ENDIF
 	CASE "Fear2"
+		PRINTFORMW 당신은 에밀리의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
+		PRINTFORMW 에밀리는 떨리는 눈으로 당신을 바라보았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...고마워」
@@ -801,6 +820,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리의 시선은 갈 곳을 잃어 보였다.
 		ENDIF
 	CASE "Weak"
+		PRINTFORMW 당신은 에밀리의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
+		PRINTFORMW 에밀리는 가만히 당신을 응시하고 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -809,6 +830,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리의 시선이 다시 땅에 떨어졌다.
 		ENDIF
 	CASE "Weak2"
+		PRINTFORMW 당신은 에밀리의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
+		PRINTFORMW 에밀리는 조용히 당신을 바라보고 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...고..마워」
@@ -818,6 +841,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 조용히 당신에게 웃어 보였다.
 		ENDIF
 	CASE "Break"
+		PRINTFORMW 당신은 에밀리의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
+		PRINTFORMW 에밀리는 가만히 당신을 응시하고 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...? 이거 해주던 말 아닌데?」
@@ -834,12 +859,16 @@ RETURN 1
 @M_No68_COM4
 SELECTCASE CSTR:1
 	CASE "Low"
+		PRINTFORMW 당신은 살며시 에밀리의 손에 손을 겹쳤다.
+		PRINTFORMW 에밀리는 가볍게 갸웃거렸다.
 		A = RAND:1
 		IF A == 0
 			PRINTFORMW 「손, 잡으면 돼?」
 			PRINTFORMW 「내 손은 왜...?」
 		ENDIF
 	CASE "High"
+		PRINTFORMW 당신은 살며시 에밀리의 손에 손을 겹쳤다.
+		PRINTFORMW 에밀리의 얼굴이 살짝 붉어졌다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관 손 차가워서 좋아」
@@ -850,6 +879,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...앗...미안..사령관」
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 당신은 살며시 에밀리의 손에 손을 겹쳤다.
+		PRINTFORMW 에밀리는 조용히 당신의 손을 맞잡았다.
 		A = RAND:3
 		IF A == 0
 			PRINTFORMW 「...」
@@ -863,6 +894,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「이대로 좀 더 있고 싶어...」
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 당신은 살며시 에밀리의 손에 손을 겹쳤다.
+		PRINTFORMW 에밀리는 조용히 당신의 손을 맞잡았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관 손 차갑네」
@@ -874,6 +907,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 뺨을 붉게 물들이며 옅게 미소지었다.
 		ENDIF
 	CASE "Marryed"
+		PRINTFORMW 당신은 살며시 에밀리의 손에 손을 겹쳤다..
+		PRINTFORMW 에밀리는 옅게 웃으며 당신을 바라보았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 에밀리는 조용히 당신의 손에 깍지를 껴왔다.
@@ -895,6 +930,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 손을 조용히 뺐다.
 		PRINTFORMW %TEXTR("「...사령관 나빠」/「지금 사령관이랑은 손잡기 싫어,」")%
 	CASE "Fear"
+		PRINTFORMW 당신은 살며시 에밀리의 손에 손을 겹쳤다.
+		PRINTFORMW 에밀리의 몸이 살짝 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...잡으면 돼...?」
@@ -903,6 +940,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 떨리는 시선으로 당신을 응시했다.
 		ENDIF
 	CASE "Fear2"
+		PRINTFORMW 당신은 살며시 에밀리의 손에 손을 겹쳤다.
+		PRINTFORMW 에밀리의 몸이 살짝 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 에밀리는 순간적으로 당신의 손을 피했다.
@@ -920,6 +959,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 「...」
 		PRINTFORMW 에밀리는 가만히 당신의 손을 응시했다.
 	CASE "Weak2"
+		PRINTFORMW 당신은 살며시 에밀리의 손에 손을 겹쳤다.
+		PRINTFORMW 에밀리는 가만히 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -929,6 +970,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 조용히 당신에게 웃어 보였다.
 		ENDIF
 	CASE "Break"
+		PRINTFORMW 당신은 살며시 에밀리의 손에 손을 겹쳤다.
+		PRINTFORMW 에밀리는 어리둥절한 표정이다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...?」
@@ -946,6 +989,8 @@ RETURN 1
 @M_No68_COM5
 SELECTCASE CSTR:1
 	CASE "Low"
+		PRINTFORMW 당신은 에밀리의 머리를 쓰다듬었다.
+		PRINTFORMW 에밀리는 멍하니 당신을 올려다보고 있다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「뭐하는거야...? 사령관?」
@@ -954,6 +999,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 자신의 머릿결을 만지작거렸다.
 		ENDIF
 	CASE "High"
+		PRINTFORMW 당신은 에밀리의 머리를 쓰다듬었다.
+		PRINTFORMW 에밀리는 볼을 붉힌 체 멍하니 당신을 올려다보고 있다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...뭔진 모르겠지만 좋아」
@@ -962,6 +1009,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 이내 꾸벅꾸벅 졸기 시작했다.
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 당신은 에밀리의 머리를 쓰다듬었다.
+		PRINTFORMW 에밀리는 볼을 붉힌 체 멍하니 당신을 올려다보고 있다.
 		A = RAND:3
 		IF A == 0
 			PRINTFORMW 「머리 쓰다듬어 주는거 좋아...」
@@ -976,6 +1025,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리의 입가에 옅은 미소가 걸린 듯 보였다.
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 당신은 에밀리의 머리를 쓰다듬었다.
+		PRINTFORMW 에밀리는 볼을 붉힌 체 당신을 올려다보고 있다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「나 이제 아이 아닌데...」
@@ -986,6 +1037,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...사령관도 좋아?」
 		ENDIF
 	CASE "Marryed"
+		PRINTFORMW 당신은 에밀리의 머리를 쓰다듬었다.
+		PRINTFORMW 에밀리는 미소를 띤 체 눈을 지그시 감았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...♩」
@@ -997,6 +1050,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리의 볼이 옅은 벛꽃색으로 물들었다.
 		ENDIF
 	CASE "Annoyed"
+		PRINTFORMW 당신은 에밀리의 머리를 쓰다듬었다.
+		PRINTFORMW 에밀리는 당신의 손길을 피했다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...머리 만지지마」
@@ -1005,6 +1060,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 무표정으로 당신을 올려다 봤다.
 		ENDIF
 	CASE "Annoyed2"
+		PRINTFORMW 당신은 에밀리의 머리를 쓰다듬었다.
+		PRINTFORMW 에밀리는 가만히 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...이런거 해줘도...」
@@ -1020,6 +1077,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 당신에게 머리를 쓰다듬어 지던 에밀리는 고개룰 숙이고 작은 목소리로 입을 열었다.
 		PRINTFORMW 「...고맙..습니다」
 	CASE "Fear2"
+		PRINTFORMW 당신은 에밀리의 머리를 쓰다듬었다.
+		PRINTFORMW 에밀리의 몸이 파르르 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...아픈게 아니면 괜찮아....」
@@ -1034,6 +1093,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 조용히 당신을 올려다 봤다.
 		PRINTFORMW 이윽고 다시 에밀리는 시선을 내렸다.
 	CASE "Weak2"
+		PRINTFORMW 당신은 에밀리의 머리를 쓰다듬었다.
+		PRINTFORMW 에밀리는 가만히 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「..고..마..워」
@@ -1055,6 +1116,8 @@ RETURN 1
 @M_No68_COM6
 SELECTCASE CSTR:1
 	CASE "Low"
+		PRINTFORMW 당신은 에밀리의 옆구리를 찔렀다.
+		PRINTFORMW 에밀리의 몸이 흠칫 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...!」
@@ -1064,6 +1127,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...새로운 걸 배웠어」
 		ENDIF
 	CASE "High"
+		PRINTFORMW 당신은 에밀리의 옆구리를 찔렀다.
+		PRINTFORMW 에밀리의 몸이 흠칫 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...앗」
@@ -1076,6 +1141,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...내가 하면 왜 아무 느낌도 안나?」
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 당신은 에밀리의 옆구리를 찔렀다.
+		PRINTFORMW 에밀리는 볼을 살짝 붉힌 체 당신을 돌아봤다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「..간지러워 사령관」
@@ -1089,6 +1156,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 그런 당신을 보며 살짝 미소지어 보였다.
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 당신은 에밀리의 옆구리를 찔렀다.
+		PRINTFORMW 에밀리는 볼을 살짝 붉힌 체 당신을 돌아봤다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「간지러워,」
@@ -1102,6 +1171,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 당신의 약점을 정확히 찌르는 에밀리 때문에 당신은 웃음을 멈추지 못했다.
 		ENDIF
 	CASE "Marryed"
+		PRINTFORMW 당신은 에밀리의 옆구리를 찔렀다.
+		PRINTFORMW 	  에밀리는 미소를 지며 당신을 돌아봤다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「앗... 그 장난?」
@@ -1121,6 +1192,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 무표정으로 당신의 손을 잡았다.
 		PRINTFORMW %TEXTR("「...장난치기 싫어」/「귀찮은 거 하지 마」")%
 	CASE "Annoyed2"
+		PRINTFORMW 당신은 에밀리의 옆구리를 찔렀다.
+		PRINTFORMW 에밀리는 가만히 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관은 내 기분 생각 안해줘」
@@ -1129,6 +1202,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...사령관 바보」
 		ENDIF
 	CASE "Fear"
+		PRINTFORMW 당신은 에밀리의 옆구리를 찔렀다.
+		PRINTFORMW 에밀리의 몸이 흠칫 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「!?」
@@ -1138,6 +1213,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 당신을 올려다 보는 에밀리의 시선은 불안했다.
 		ENDIF
 	CASE "Fear2"
+		PRINTFORMW 당신은 에밀리의 옆구리를 찔렀다.
+		PRINTFORMW 에밀리의 몸이 파르르 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...힉?」
@@ -1155,6 +1232,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리의 시선은 당신의 손을 향했다가 당신의 눈으로 향했다.
 		PRINTFORMW 에밀리는 당신을 가만히 바라보고 있었다.
 	CASE "Weak2"
+		PRINTFORMW 당신은 에밀리의 옆구리를 찔렀다.
+		PRINTFORMW 에밀리의 몸이 살짝 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...앗」
@@ -1165,6 +1244,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 당신을 올려다보며 말없이 미소 지었다.
 		ENDIF
 	CASE "Break"
+		PRINTFORMW 당신은 에밀리의 옆구리를 찔렀다.
+		PRINTFORMW 에밀리는 당신을 모르겠다는 듯이 바라보았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...? 찌르는 거 안 해?」
@@ -1186,6 +1267,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 풀썩하고 당신의 무릎에 누웠다.
 		PRINTFORMW %TEXTR("「...이러면 돼?」/「사령관...나 잠들어도 돼?」")%
 	CASE "High"
+		PRINTFORMW 당신은 에밀리에게 자신의 다리에 누우라고 했다.
+		PRINTFORMW 에밀리는 풀썩하고 당신의 무릎에 누웠다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...누우니까 또 졸려...」
@@ -1194,6 +1277,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「사령관 무릎...단단한데 편해...」
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 당신은 에밀리에게 자신의 다리에 누우라고 했다.
+		PRINTFORMW 에밀리는 천천히 당신의 무릎에 누웠다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -1206,6 +1291,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 눈을 감고 조용히 당신의 손길을 느끼는듯했다.
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 당신은 에밀리에게 자신의 다리에 누우라고 했다.
+		PRINTFORMW 에밀리는 천천히 당신의 무릎에 누웠다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 당신은 에밀리에게 자도 된다고 권했다.
@@ -1228,6 +1315,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 차가운 표정으로 거절했다.
 		PRINTFORMW %TEXTR("「...지금은 사령관 부탁 안 들어줄 거야」/「...나쁜 사령관 말은 안 들어」")%
 	CASE "Fear"
+		PRINTFORMW 당신은 에밀리에게 자신의 무릎에 누우라고 했다.
+		PRINTFORMW 에밀리는 조심스럽게 당신의 무릎에 누웠다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...이러면 돼?」
@@ -1237,6 +1326,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 조심스럽게 당신을 올려다 보았다.
 		ENDIF
 	CASE "Fear2"
+		PRINTFORMW 당신은 에밀리에게 자신의 무릎에 누우라고 했다.
+		PRINTFORMW 에밀리는 몸을 떨며 거절했다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...미안해」
@@ -1247,6 +1338,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 당신의 표정을 확인한 에밀리는 파르르 떨었다.
 		ENDIF
 	CASE "Weak"
+		PRINTFORMW 당신은 에밀리게 자신의 다리에 누우라고 했다.
+		PRINTFORMW 에밀리는 아무것도 하지 않았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -1256,6 +1349,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 바닥에 쓰러져 있었다.
 		ENDIF
 	CASE "Weak2"
+		PRINTFORMW 당신은 에밀리게 자신의 다리에 누우라고 했다.
+		PRINTFORMW 에밀리는 삐걱거리며 일어나 당신에게 천천히 다가와 누웠다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사..령관」
@@ -1265,6 +1360,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 조용히 미소지어 보였다.
 		ENDIF
 	CASE "Break"
+		PRINTFORMW 당신은 에밀리에게 자신의 무릎에 누우라고 했다.
+		PRINTFORMW 에밀리는 당신의 무릎에 가볍게 머리를 올렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「사랑 해주는 거야?」
@@ -1288,6 +1385,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 가만히 앉아 있었다.
 		PRINTFORMW %TEXTR("「사령관도 졸려...?」/「...이렇게 하면 돼?」")%
 	CASE "High"
+		PRINTFORMW 에밀리에게 무릎베개를 부탁했다.
+		PRINTFORMW 에밀리는 가만히 앉아 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「내 무릎도 단단해?」
@@ -1298,6 +1397,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「근데...나도 갑자기 졸려...」
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 에밀리에게 무릎베개를 부탁했다.
+		PRINTFORMW 에밀리는 조용히 앉아 당신을 기다렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...응 이리로 와 사령관」
@@ -1311,6 +1412,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「사령관의 자는 모습... 보고 싶어서 기다리고 있어...」
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 에밀리에게 무릎베개를 부탁했다.
+		PRINTFORMW 에밀리는 조용히 앉아 당신을 기다렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「응, 이리로 와 사령관」
@@ -1325,6 +1428,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「그런건... 밤에 하는 거라고 배웠어...」
 		ENDIF
 	CASE "Marryed"
+		PRINTFORMW 에밀리에게 무릎베개를 부탁했다.
+		PRINTFORMW 에밀리는 조용히 앉아 당신을 기다렸다..
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「사령관도 피곤했어?」
@@ -1337,6 +1442,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 살짝 아쉬워 보이는 에밀리에게 당신은 어쩔 수 없다며 웃음을 지으며 부탁했다.
 		ENDIF
 	CASE "Annoyed"
+		PRINTFORMW 에밀리에게 무릎베개를 부탁했다.
+		PRINTFORMW 에밀리는 무표정으로 거절했다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...귀찮아」
@@ -1349,6 +1456,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 차가운 표정으로 거절했다.
 		PRINTFORMW %TEXTR("「...지금은 사령관 부탁 안 들어줄 거야」/「...나쁜 사령관 말은 안 들어」")%
 	CASE "Fear"
+		PRINTFORMW 에밀리에게 무릎베개를 부탁했다.
+		PRINTFORMW 에밀리는 가만히 앉아 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...가만히 있으면 돼?」
@@ -1358,6 +1467,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 떨리는 눈으로 당신을 보고있었다.
 		ENDIF
 	CASE "Fear2"
+		PRINTFORMW 에밀리에게 무릎베개를 부탁했다.
+		PRINTFORMW 에밀리의 몸이 눈에 띄게 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「힉...」
@@ -1396,6 +1507,8 @@ RETURN 1
 @M_No68_COM9
 SELECTCASE CSTR:1
 	CASE "Low"
+		PRINTFORMW 당신은 에밀리를 껴안았다.
+		PRINTFORMW 에밀리는 조용히 당신의 품안에 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...?」
@@ -1405,6 +1518,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 어리둥절한 표정으로 당신을 올려다보고 있다.
 		ENDIF
 	CASE "High"
+		PRINTFORMW 당신은 에밀리를 껴안았다.
+		PRINTFORMW 에밀리는 조용히 당신의 품안에 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「사령관 품 따뜻해...」
@@ -1413,6 +1528,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 진심으로 물어보는 듯한 에밀리의 표정에 당신은 순간 난처해졌다.
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 당신은 에밀리를 껴안았다.
+		PRINTFORMW 에밀리는 천천히 손을 올려 당신을 껴안았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「따뜻해...」
@@ -1423,6 +1540,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...조금 더 이러고 있을래」
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 당신은 에밀리를 껴안았다.
+		PRINTFORMW 에밀리는 천천히 손을 올려 당신을 껴안았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「이러면 안되는 데... 잠들 것 같아...」
@@ -1433,6 +1552,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...아직 떨어지면 싫어...」
 		ENDIF
 	CASE "Marryed"
+		PRINTFORMW 당신은 에밀리를 껴안았다.
+		PRINTFORMW 에밀리는 천천히 당신을 맞껴안았다.
 		A = RAND:3
 		IF A == 0
 			PRINTFORMW 「...항상 고마워 사령관」
@@ -1451,6 +1572,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 버둥버둥 거려며 빠져 나왔다.
 		PRINTFORMW %TEXTR("「...귀찮게 하지마」/「사령관 더워,」")%
 	CASE "Annoyed2"
+		PRINTFORMW 당신은 에밀리를 껴안았다.
+		PRINTFORMW 에밀리는 천천히 당신을 밀어냈다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...지금은 하기 싫어」
@@ -1459,6 +1582,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...미워」
 		ENDIF
 	CASE "Fear"
+		PRINTFORMW 당신은 에밀리를 껴안았다.
+		PRINTFORMW 에밀리는 가만히 당신의 품안에 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...가만히 있으면 돼?」
@@ -1468,6 +1593,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...미안해 사령관」
 		ENDIF
 	CASE "Fear2"
+		PRINTFORMW 당신은 에밀리를 껴안았다.
+		PRINTFORMW 에밀리의 몸이 파르르 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관이 안아주는거 분명 좋아했는데」
@@ -1501,6 +1628,8 @@ RETURN 1
 @M_No68_COM10
 SELECTCASE CSTR:1
 	CASE "Low"
+		PRINTFORMW 당신은 에밀리의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 에밀리는 조용히 당신의 품안에 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...?」
@@ -1509,6 +1638,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...사령관...나 더워」
 		ENDIF
 	CASE "High"
+		PRINTFORMW 당신은 에밀리의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 에밀리는 조용히 당신의 품안에 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관 품, 따뜻해...」
@@ -1519,6 +1650,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...왜 그런거야?」
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 당신은 에밀리의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 에밀리는 가만히 당신의 품안에 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 당신은 에밀리에게서 떨어지려 했다.
@@ -1532,6 +1665,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 돌아본 에밀리의 얼굴은 옅은 붉은색으로 물들어 있었다.
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 당신은 에밀리의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 에밀리는 당신의 팔을 끌어 당겼다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 당신은 에밀리에게서 떨어지려 했다.
@@ -1547,6 +1682,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...고마워 사령관」
 		ENDIF
 	CASE "Marryed"
+		PRINTFORMW 당신은 에밀리의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 에밀리는 가볍게 당신에게 기대왔다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...이대로 계속 있고 싶어」
@@ -1564,6 +1701,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 버둥버둥 거려며 빠져 나왔다.
 		PRINTFORMW %TEXTR("「사령관 자꾸 나 귀찮게 해...」/「안기 싫어,」")%
 	CASE "Annoyed2"
+		PRINTFORMW 당신은 에밀리의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 에밀리는 천천히 당신을 밀어냈다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관 너무해」
@@ -1572,6 +1711,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...미워」
 		ENDIF
 	CASE "Fear"
+		PRINTFORMW 당신은 에밀리의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 에밀리는 가만히 당신의 품안에 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...가만히 있으면 돼?」
@@ -1581,6 +1722,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...미안해 사령관」
 		ENDIF
 	CASE "Fear2"
+		PRINTFORMW 당신은 에밀리의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 에밀리의 몸이 파르르 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관이 안아주는거 분명 좋아했는데」
@@ -1616,6 +1759,8 @@ RETURN 1
 @M_No68_COM11
 SELECTCASE CSTR:1
 	CASE "Low"
+		PRINTFORMW 당신은 누워서 에밀리를 불렀다.
+		PRINTFORMW 에밀리는 조용히 당신의 옆에 누웠다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관 팔 딱딱해서 불편해...」
@@ -1624,6 +1769,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 졸린지 눈을 꿈뻑거렸다.
 		ENDIF
 	CASE "High"
+		PRINTFORMW 당신은 누워서 에밀리를 불렀다.
+		PRINTFORMW 에밀리는 조용히 당신의 옆에 누웠다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...오늘도 재밌는 이야기 들려주는 거야?」
@@ -1632,6 +1779,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「응... 고마워」
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 당신은 누워서 에밀리를 불렀다.
+		PRINTFORMW 에밀리는 조용히 당신의 옆에 누웠다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관」
@@ -1644,6 +1793,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 함께 느긋한 음악을 들으며 당신과 에밀리는 뒹굴거렸다.
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 당신은 누워서 에밀리를 불렀다.
+		PRINTFORMW 에밀리는 조용히 당신의 옆에 누웠다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...응 알겠어」
@@ -1656,6 +1807,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 묘하게 에밀리가 당신쪽을 쳐다보는 느낌이 든다.
 		ENDIF
 	CASE "Marryed"
+		PRINTFORMW 당신은 누워서 에밀리를 불렀다.
+		PRINTFORMW 에밀리는 사뿐히 당신 옆에 누웠다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「조금 졸려졌어...」
@@ -1666,6 +1819,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...오늘은 사령관이 노래하는거 듣고 싶어」
 		ENDIF
 	CASE "Annoyed"
+		PRINTFORMW 당신은 누워서 에밀리를 불렀다.
+		PRINTFORMW 에밀리는 무표정으로 거절했다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「귀찮아,」
@@ -1715,6 +1870,8 @@ RETURN 1
 @M_No68_COM12
 SELECTCASE CSTR:1
 	CASE "Low"
+		PRINTFORMW 당신은 에밀리의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 에밀리는 어리둥절한 표정이다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...?」
@@ -1724,6 +1881,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...이건 뭐 하는거야?」
 		ENDIF
 	CASE "High"
+		PRINTFORMW 당신은 에밀리의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 에밀리는 당신이 입을 맞춘 부위를 매만졌다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...아직 사령관이 뭐하는 건지 잘 모르겠어...」
@@ -1734,6 +1893,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 당신을 멍하니 바라보는 에밀리의 볼이 살짝 붉게 물들었다.
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 당신은 에밀리의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 에밀리는 뺨을 옅게 물들이며 당신을 올려다보고 있다.
 		A = RAND:3
 		IF A == 0
 			PRINTFORMW 「...자매들이 이거 인사로도 한다 했어」
@@ -1746,6 +1907,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 앞머리를 걷어 뽀얀 이마를 당신에게 보였다.
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 당신은 에밀리의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 에밀리는 뺨을 옅게 물들이며 당신을 올려다보고 있다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...거기 말고 다른 곳도 해주면 안 돼?」
@@ -1756,6 +1919,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「이제 다시 사령관 차례야...」
 		ENDIF
 	CASE "Marryed"
+		PRINTFORMW 당신은 에밀리의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 에밀리는 옅은 미소를 지으며 당신을 올려다보았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...거기만 해주는 거야?」
@@ -1782,6 +1947,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 「...고마워」
 		PRINTFORMW 「...아니 고맙습니다」
 	CASE "Fear2"
+		PRINTFORMW 당신은 에밀리의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 에밀리의 몸이 파르르 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...우」
@@ -1818,6 +1985,8 @@ RETURN 1
 @M_No68_COM13
 SELECTCASE CSTR:1
 	CASE "Low"
+		PRINTFORMW 에밀리의 배를 주물럭 거렸다.
+		PRINTFORMW 에밀리는 어리둥절한 표정으로 당신을 올려다 봤다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...간지러워」
@@ -1827,6 +1996,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...이거 재미없어」
 		ENDIF
 	CASE "High"
+		PRINTFORMW 에밀리의 배를 주물럭 거렸다.
+		PRINTFORMW 에밀리는 어리둥절한 표정으로 당신을 올려다 봤다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...간지러워」
@@ -1837,6 +2008,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 이내 당신과 에밀리는 서로의 배를 만지작거리는 오묘한 상황이 되었다.
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 에밀리의 배를 주물럭 거렸다.
+		PRINTFORMW 에밀리는 볼이 살짝 붉어진 체 당신의 손을 내려다 보았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관은 내 배가 좋아?」
@@ -1851,6 +2024,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 당신은 옷은 안올려도 된다고 에밀리를 말렸다.
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 에밀리의 배를 주물럭 거렸다.
+		PRINTFORMW 에밀리는 볼이 살짝 붉어진 체 당신의 손을 잡았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...자꾸 이상한거 하지마 사령관」
@@ -1875,6 +2050,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 조용히 당신의 손을 쳐냈다.
 		PRINTFORMW %TEXTR("「...이상한거 자꾸 하지마」/「...사령관 귀찮아」")%
 	CASE "Annoyed2"
+		PRINTFORMW 에밀리의 배를 주물럭 거렸다.
+		PRINTFORMW 에밀리는 조용히 당신의 손을 쳐냈다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -1889,6 +2066,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 「...이..러면 돼?」
 		PRINTFORMW 에밀리는 조심스럽게 옷을 걷어 하얀 배를 보였다.
 	CASE "Fear2"
+		PRINTFORMW 에밀리의 배를 주물럭 거렸다.
+		PRINTFORMW 에밀리의 몸이 파르르 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...우...읏」
@@ -1909,6 +2088,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 「...사령..관」
 		PRINTFORMW 에밀리의 하얀 배는 곳곳이 붉게 물들어 있었다.
 	CASE "Break"
+		PRINTFORMW 에밀리의 배를 주물럭 거렸다.
+		PRINTFORMW 에밀리는 어리둥절한 표정이다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「평소처럼 쾅 하고 안 치는 거야?」
@@ -1927,6 +2108,8 @@ RETURN 1
 @M_No68_COM14
 SELECTCASE CSTR:1
 	CASE "Low"
+		PRINTFORMW 에밀리의 귀를 살짝 깨물었다.
+		PRINTFORMW 에밀리의 몸이 살짝 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...?」
@@ -1936,6 +2119,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「아픈건, 싫어」
 		ENDIF
 	CASE "High"
+		PRINTFORMW 에밀리의 귀를 살짝 깨물었다.
+		PRINTFORMW 에밀리는 몸이 살짝 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...?」
@@ -1947,6 +2132,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...안 아픈데 몸이 화끈거려」
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 에밀리의 귀를 살짝 깨물었다.
+		PRINTFORMW 에밀리의 귀가 살짝 붉게 물들었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...이젠 안 아파」
@@ -1958,6 +2145,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 당신은 당황해서 그런건 파니한테 하면 안된다고 열심히 설명했다.
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 에밀리의 귀를 살짝 깨물었다.
+		PRINTFORMW 에밀리의 귀가 살짝 붉게 물들었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...이상해지니까 ...그런거 하면 안 돼」
@@ -1971,6 +2160,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 당신은 하나도 안 아프다고하며 쓴웃음을 지었다.
 		ENDIF
 	CASE "Marryed"
+		PRINTFORMW 에밀리의 귀를 살짝 깨물었다.
+		PRINTFORMW 에밀리는 볼을 붉힌 체 당신을 돌아보았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관은 너무 급해」
@@ -1980,6 +2171,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「이제... 비건거지?」
 		ENDIF
 	CASE "Annoyed"
+		PRINTFORMW 에밀리의 귀를 살짝 깨물었다.
+		PRINTFORMW 에밀리는 귀찮은 듯 당신을 밀었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...아파」
@@ -1989,6 +2182,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「역시 사령관이랑 안 놀래」
 		ENDIF
 	CASE "Annoyed2"
+		PRINTFORMW 에밀리의 귀를 깨물었다.
+		PRINTFORMW 에밀리는 당신을 밀어냈다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -2005,6 +2200,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 「...아픈 장난 나 힘들어...」
 		PRINTFORMW 에밀리는 조심스럽게 고개를 들어 당신을 올려다 봤다.
 	CASE "Fear2"
+		PRINTFORMW 에밀리의 귀를 깨물었다.
+		PRINTFORMW 에밀리의 몸이 파르르 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...우...읏」
@@ -2026,6 +2223,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 「...」
 		PRINTFORMW 에밀리는 천천히 당신을 돌아보며 미소지었다.
 	CASE "Break"
+		PRINTFORMW 에밀리의 귀를 살짝 깨물었다.
+		PRINTFORMW 에밀리는 뒤로 고개를 꺾었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「더 쌔게 안하는 거야?」
@@ -2149,6 +2348,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 「왜?」
 		PRINTFORMW 순간 에밀리의 주변 공기가 차가워진 듯했다.
 	CASE "Low"
+		PRINTFORMW 에밀리의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 에밀리는 가만히 있었다.
 		A = RAND:3
 		IF A == 0
 			PRINTFORMW 「...?」
@@ -2159,6 +2360,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...이거 계속 해야 돼?」
 		ENDIF
 	CASE "High"
+		PRINTFORMW 에밀리의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 에밀리는 얼굴이 살짝 붉게 물들었다..
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...몸이 이상해」
@@ -2170,6 +2373,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 당신이 입을 때자 에밀리는 살짝 아쉬워 보였다.
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 에밀리의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 에밀리는 얼굴이 붉게 물들었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...키스 좋아」
@@ -2181,6 +2386,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 난데없이 굉장한 걸 설명하려 하는 에밀리를 당신은 또다시 말려야 했다.
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 에밀리의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 에밀리의 뺨이 벚꽃색으로 물들었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관은 키스 너무 잘해」
@@ -2193,6 +2400,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...사랑해 사령관」
 		ENDIF
 	CASE "Marryed"
+		PRINTFORMW 에밀리의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 에밀리의 뺨이 벚꽃색으로 물들었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「파하...」
@@ -2204,6 +2413,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...이번엔 제대로 배워 왔는데!」
 		ENDIF
 	CASE "Annoyed"
+		PRINTFORMW 에밀리의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 에밀리는 당신의 얼굴을 밀었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...귀찮아」
@@ -2254,6 +2465,8 @@ RETURN 1
 @M_No68_COM16
 SELECTCASE CSTR:1
 	CASE "Low"
+		PRINTFORMW 에밀리의 목에 혀를 기었다.
+		PRINTFORMW 에밀리의 몸이 살짝 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...?」
@@ -2262,6 +2475,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...난 아이스크림이 아닌데?」
 		ENDIF
 	CASE "High"
+		PRINTFORMW 에밀리의 목에 혀를 기었다.
+		PRINTFORMW 에밀리는 몸이 살짝 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...간지러워」
@@ -2272,6 +2487,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...나 맛없는데 사령관은 특이해」
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 에밀리의 목에 혀를 기었다.
+		PRINTFORMW 에밀리는 붉게 물든 얼굴로 당신을 천천히 돌아봤다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -2282,6 +2499,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...? 내가 알기엔 아직 일러? 왜?」
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 에밀리의 목에 혀를 기었다.
+		PRINTFORMW 에밀리는 붉게 물든 얼굴로 당신을 천천히 돌아봤다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -2292,6 +2511,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...사령관은 변태야...」
 		ENDIF
 	CASE "Marryed"
+		PRINTFORMW 에밀리의 목에 혀를 기었다.
+		PRINTFORMW 에밀리는 붉게 물든 얼굴로 당신을 천천히 돌아봤다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「사령관 변태...」
@@ -2303,6 +2524,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「사령관 맛 이상해...!」
 		ENDIF
 	CASE "Annoyed"
+		PRINTFORMW 에밀리의 목에 혀를 기었다.
+		PRINTFORMW 에밀리는 당신을 밀어냈다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「이상한거 자꾸 하지마...」
@@ -2311,6 +2534,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「싫어하는데 자꾸 이상한 짓만 해」
 		ENDIF
 	CASE "Annoyed2"
+		PRINTFORMW 에밀리의 목에 혀를 기었다.
+		PRINTFORMW 에밀리는 당신을 피했다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관 못됐어」
@@ -2320,6 +2545,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「그런 사령관 난 싫어...」
 		ENDIF
 	CASE "Fear"
+		PRINTFORMW 에밀리의 목에 혀를 기었다.
+		PRINTFORMW 에밀리의 몸이 흠칫 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...앗」
@@ -2331,6 +2558,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「미안해... 사령관」
 		ENDIF
 	CASE "Fear2"
+		PRINTFORMW 에밀리의 목에 혀를 기었다.
+		PRINTFORMW 에밀리의 몸이 파르르 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...으우」
@@ -2342,6 +2571,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 당신을 돌아보는 에밀리의 눈은 서글퍼 보였다.
 		ENDIF
 	CASE "Weak"
+		PRINTFORMW 에밀리의 목에 혀를 기었다.
+		PRINTFORMW 에밀리는 몸을 살짝 떨었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -2352,6 +2583,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 천천히 목을 들었다.
 		ENDIF
 	CASE "Weak2"
+		PRINTFORMW 에밀리의 목에 혀를 기었다.
+		PRINTFORMW 에밀리의 몸이 살짝 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -2378,6 +2611,8 @@ RETURN 1
 @M_No68_COM17
 SELECTCASE CSTR:1
 	CASE "Low"
+		PRINTFORMW 에밀리의 등을 손가락으로 훑었다.
+		PRINTFORMW 에밀리의 몸이 살짝 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...?」
@@ -2387,6 +2622,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 느릿느릿 자신의 등을 더듬거렸다.
 		ENDIF
 	CASE "High"
+		PRINTFORMW 에밀리의 등을 손가락으로 훑었다.
+		PRINTFORMW 에밀리의 몸이 살짝 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...이 장난할 때마다 몸이 뜨거워져」
@@ -2396,6 +2633,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...사령관은 전기도 쓸 수 있어?」
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 에밀리의 등을 손가락으로 훑었다.
+		PRINTFORMW 에밀리는 붉게 물든 얼굴로 당신을 천천히 돌아봤다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...몸이 찌릿거려」
@@ -2406,6 +2645,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「이게 신호라는 거야...? 」
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 에밀리의 등을 손가락으로 훑었다.
+		PRINTFORMW 에밀리는 붉게 물든 얼굴로 당신을 천천히 돌아봤다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...찌릿한거 하지마 사령관」
@@ -2416,6 +2657,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...사령관은 변태야...」
 		ENDIF
 	CASE "Marryed"
+		PRINTFORMW 에밀리의 등을 손가락으로 훑었다.
+		PRINTFORMW 에밀리는 살짝 숨을 흘렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...응 나 이제 준비 됐어」
@@ -2430,6 +2673,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 당신을 피했다.
 		PRINTFORMW %TEXTR("「이상한거 자꾸 하지마...」/「...나 그냥 자고 싶어」")%
 	CASE "Annoyed2"
+		PRINTFORMW 에밀리의 등을 손가락으로 훑었다.
+		PRINTFORMW 에밀리는 당신을 서글픈 표정으로 돌아봤다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관 못됐어」
@@ -2438,6 +2683,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...이제 말 안할꺼야」
 		ENDIF
 	CASE "Fear"
+		PRINTFORMW 에밀리의 등을 손가락으로 훑었다.
+		PRINTFORMW 에밀리의 몸이 흠칫 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...어려워」
@@ -2450,6 +2697,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...난 아무리 생각해도 잘 모르겠어...」
 		ENDIF
 	CASE "Fear2"
+		PRINTFORMW 에밀리의 등을 손가락으로 훑었다.
+		PRINTFORMW 에밀리의 몸이 파르르 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...나쁜 장난 하면....안.....!」
@@ -2460,6 +2709,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「그럼.... 나 힘낼게...」
 		ENDIF
 	CASE "Weak"
+		PRINTFORMW 에밀리의 등을 손가락으로 훑었다.
+		PRINTFORMW 에밀리의  몸을 살짝 떨었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -2470,6 +2721,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 조용히 고개를 숙였다.
 		ENDIF
 	CASE "Weak2"
+		PRINTFORMW 에밀리의 등을 손가락으로 훑었다.
+		PRINTFORMW 에밀리의 몸이 살짝 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -2495,6 +2748,8 @@ RETURN 1
 @M_No68_COM18
 SELECTCASE CSTR:1
 	CASE "Low"
+		PRINTFORMW 에밀리의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 에밀리는 가만히 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -2505,6 +2760,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 눈을 깜빡이며 당신을 내려다 보고 있다.
 		ENDIF
 	CASE "High"
+		PRINTFORMW 에밀리의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 에밀리는 가만히 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -2516,6 +2773,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 가슴 너머로 에밀리의 심장소리가 조금 빨라진 게 들렸다.
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 에밀리의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 에밀리는 천천히 손을 올려 당신을 안아주었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「인간은 이런걸 좋아하는 구나....」
@@ -2527,6 +2786,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 당신을 조금 더 꼬옥 안았다.
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 에밀리의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 에밀리는 천천히 손을 올려 당신을 안아주었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관은 이게 그렇게 좋아?」
@@ -2539,6 +2800,9 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 살짝 걱정되는 표정으로 당신을 바라보고 있다.
 		ENDIF
 	CASE "Marryed"
+		PRINTFORMW 에밀리의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 에밀리는 당신을 조용히 품에 안았다.
+		PRINTFORMW 옅은 꽃향기가 났다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「사령관은 이거 참 좋아해...」
@@ -2550,6 +2814,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 조용히 당신을 쓰다듬었다.
 		ENDIF
 	CASE "Annoyed"
+		PRINTFORMW 에밀리에게 파후파후를 부탁했다.
+		PRINTFORMW 에밀리는 차가운 표정을 지었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -2610,6 +2876,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 어리둥절한 표정이다.
 		PRINTFORMW %TEXTR("「...그건 무슨 말이야?」/「...사령관 화난 거야?」")%
 	CASE "Affection"
+		PRINTFORMW 에밀리에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 에밀리의 눈이 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...나 잘못했어...?」
@@ -2620,6 +2888,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 어설프게 몸을 숙였다.
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 에밀리에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 에밀리의 눈이 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관? 갑자기...왜」
@@ -2634,6 +2904,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 당신의 말을 듣는 둥 마는 둥 했다.
 		PRINTFORMW %TEXTR("「...」/「...소리 지르는거 시끄러워」")%
 	CASE "Annoyed2"
+		PRINTFORMW 에밀리에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 에밀리는 충격먹은 표정이다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...나 잘못한 거 없는데」
@@ -2650,6 +2922,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 「...미안해 사령관」
 		PRINTFORMW 에밀리는 고개를 푹 숙이고 있다.
 	CASE "Fear2"
+		PRINTFORMW 에밀리에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 에밀리의 몸이 파르르 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...나 무서운 말 싫어...」
@@ -2671,6 +2945,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 「....미..안..해..」
 		PRINTFORMW 당신을 올려다보는 에밀리의 공허한 눈가에는 당신이 비춰보였다.
 	CASE "Break"
+		PRINTFORMW 에밀리에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 에밀리의 뺨이 붉게 물들었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「응...오늘도 많이 사랑해주는구나」
@@ -2684,6 +2960,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 어리둥절한 표정이다.
 		PRINTFORMW %TEXTR("「...그건 무슨 말이야?」/「...사령관 화난 거야?」")%
 	CASE "Marryed"
+		PRINTFORMW 에밀리에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 에밀리의 눈이 떨렸다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...사령관? 갑자기...왜」
@@ -2702,6 +2980,8 @@ RETURN 1
 @M_No68_COM20
 SELECTCASE CSTR:1
 	CASE "Low"
+		PRINTFORMW 에밀리의 뺨을 때렸다.
+		PRINTFORMW 에밀리는 천천히 자신의 뺨을 매만졌다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「..아파」
@@ -2712,6 +2992,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...나 뭐 잘못했어?」
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 에밀리의 뺨을 때렸다.
+		PRINTFORMW 에밀리는 천천히 자신의 뺨을 매만졌다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「아팟...」
@@ -2724,6 +3006,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 모르겠다는 듯이 당신을 올려다봤다.
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 에밀리의 뺨을 때렸다.
+		PRINTFORMW 에밀리는 천천히 자신의 뺨을 매만지며 당신을 올려다 봤다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...!?」
@@ -2740,6 +3024,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 「...사령관 싫어」
 		PRINTFORMW 「나... 잘못한 거 없는데 때려」
 	CASE "Annoyed2"
+		PRINTFORMW 에밀리의 뺨을 때렸다.
+		PRINTFORMW 에밀리는 천천히 자신의 뺨을 매만지며 당신을 올려다 봤다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「우...」
@@ -2764,6 +3050,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 아래로 내려간 에밀리의 시선 아래로.
 		PRINTFORMW 바닥은 눈물방울과 핏방울로 조금씩 젖어가고 있었다.
 	CASE "Weak"
+		PRINTFORMW 에밀리의 뺨을 때렸다.
+		PRINTFORMW 에밀리는 멍하니 바닥을 바라보고 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -2774,6 +3062,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 순간 에밀리의 손 끝에 푸른색 불이 보였다.
 		ENDIF
 	CASE "Weak2"
+		PRINTFORMW 에밀리의 뺨을 때렸다.
+		PRINTFORMW 에밀리는 몸을 파르르 떨며 당신을 올려다 보았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -2786,6 +3076,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 다시 고개를 들어 당신을 바라보았다.
 		ENDIF
 	CASE "Break"
+		PRINTFORMW 에밀리의 뺨을 때렸다.
+		PRINTFORMW 에밀리는 천천히 자신의 뺨을 매만졌다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「기뻐..기뻐...」
@@ -2797,6 +3089,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 당신에게 반대쪽 뺨을 보였다.
 		ENDIF
 	CASE "High"
+		PRINTFORMW 에밀리의 뺨을 때렸다.
+		PRINTFORMW 에밀리는 천천히 자신의 뺨을 매만졌다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「..아파」
@@ -2807,6 +3101,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...나 뭐 잘못했어?」
 		ENDIF
 	CASE "Marryed"
+		PRINTFORMW 에밀리의 뺨을 때렸다.
+		PRINTFORMW 에밀리는 천천히 자신의 뺨을 매만지며 당신을 올려다 봤다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...!?」
@@ -2905,6 +3201,8 @@ RETURN 1
 @M_No68_COM22
 SELECTCASE CSTR:1
 	CASE "Low"
+		PRINTFORMW 에밀리를 발로 걷어 찼다.
+		PRINTFORMW 에밀리는 바닥에 엎어져서 맞은 부위를 감싸 안았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...읏」
@@ -2913,6 +3211,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...아파...」
 		ENDIF
 	CASE "Affection"
+		PRINTFORMW 에밀리를 발로 걷어 찼다.
+		PRINTFORMW 에밀리는 바닥에 엎어져서 맞은 부위를 감싸 안았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...아파」
@@ -2923,6 +3223,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...난 잘 모르겠어...」
 		ENDIF
 	CASE "Love"
+		PRINTFORMW 에밀리를 발로 걷어 찼다.
+		PRINTFORMW 에밀리는 바닥에 엎어져서 맞은 부위를 감싸 안았다.
 		A = RAND:3
 		IF A == 0
 			PRINTFORMW 「...아으?」
@@ -2942,6 +3244,8 @@ SELECTCASE CSTR:1
 		PRINTFORMW 「...사령관 나 왜 때려?」
 		PRINTFORMW 「...이런 것도 놀이야?」
 	CASE "Annoyed2"
+		PRINTFORMW 에밀리를 발로 걷어 찼다.
+		PRINTFORMW 에밀리는 바닥에 엎어져서 맞은 부위를 감싸 안았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...이런 거 사령관 아니야...」
@@ -2952,6 +3256,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리의 눈가가 살짝 눈물졌다.
 		ENDIF
 	CASE "Fear"
+		PRINTFORMW 에밀리를 발로 걷어 찼다.
+		PRINTFORMW 에밀리는 바닥에 엎어져서 조용히 떨었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...미안해」
@@ -2962,6 +3268,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...아프기만 해...」
 		ENDIF
 	CASE "Fear2"
+		PRINTFORMW 에밀리를 발로 걷어 찼다.
+		PRINTFORMW 에밀리는 바닥에 엎어져서 조용히 떨었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「아파...우...으...」
@@ -2973,6 +3281,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 눈물을 흘리며 당신에게 겨우 매달려왔다.
 		ENDIF
 	CASE "Weak"
+		PRINTFORMW 에밀리를 발로 걷어 찼다.
+		PRINTFORMW 삐걱 하는 불길한 소리가 났다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...」
@@ -2983,6 +3293,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리의 눈은 옅게 빛나고 있었다.
 		ENDIF
 	CASE "Weak2"
+		PRINTFORMW 에밀리를 발로 걷어 찼다.
+		PRINTFORMW 삐걱 하는 불길한 소리가 났다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「아학...우..으」
@@ -2993,6 +3305,9 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 쓰러진 체 힘없이 몸을 떨었다.
 		ENDIF
 	CASE "Break"
+		PRINTFORMW 에밀리를 발로 걷어 찼다.
+		PRINTFORMW 삐걱 하는 불길한 소리가 났다.
+		PRINTFORMW 에밀리는 쓰러져서 몸을 파르르 떨고 있었다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「사령관이 사랑해주는거 너무 좋아...」
@@ -3003,6 +3318,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 쓰러진 체 당신을 올려다보는 에밀리의 눈은 묘한 빛을 발하고 있었다.
 		ENDIF
 	CASE "High"
+		PRINTFORMW 에밀리를 발로 걷어 찼다.
+		PRINTFORMW 에밀리는 바닥에 엎어져서 맞은 부위를 감싸 안았다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「...읏」
@@ -3011,6 +3328,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 「...아파...」
 		ENDIF
 	CASE "Marryed"
+		PRINTFORMW 에밀리를 발로 걷어 찼다.
+		PRINTFORMW 에밀리는 바닥에 엎어져서 맞은 부위를 감싸 안았다.
 		A = RAND:3
 		IF A == 0
 			PRINTFORMW 「...아으?」
@@ -3052,6 +3371,7 @@ SELECTCASE CSTR:1
 			ENDDATA ;1개의 케이스 존재
 		ENDIF
 	CASE "High"
+		PRINTFORMW 당신은 에밀리의 목소리에 잠에서 깨어났다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「아침이니까...깨우러 왔어...」
@@ -3180,6 +3500,7 @@ SELECTCASE CSTR:1
 			ENDDATA ;2개의 케이스 존재
 		ENDIF
 	CASE "Fear"
+		PRINTFORMW 당신은 에밀리의 목소리에 잠에서 깨어났다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「사령관....일어날..일어나실 시간입니다」
@@ -3221,6 +3542,8 @@ SELECTCASE CSTR:1
 			PRINTFORMW 에밀리는 간신히 입을 열며 미소를 짓고 있었다.
 		ENDIF
 	CASE "Break"
+		PRINTFORMW 당신이 일어났을 때 에밀리는 고개를 삐딱하게 꺾은 체 당신을 가만히 내려다보고 있었다.
+		PRINTFORMW 에밀리의 붉은 눈에 당신이 멍하니 비쳤다.
 		A = RAND:2
 		IF A == 0
 			PRINTFORMW 「일어났어...?」
@@ -4078,6 +4401,7 @@ ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
 			PRINTFORMW 에밀리가 한 음식은 겉모습은 기괴했지만 먹을만 했다.
 			PRINTFORMW %TEXTR("「...맛있어?」/「...요리 재밌어」")%
 		CASE "Affection"
+			PRINTFORMW 에밀리가 한 음식은 겉모습은 기괴했지만 먹을만 했다.
 			A = RAND:2
 			IF A == 0
 				PRINTFORMW 「사령관, 맛있어...?」
@@ -4130,6 +4454,7 @@ ELSEIF ABL:조리lv > 4
 			PRINTFORMW 에밀리가 만든 음식은 겉모습은 기괴했지만 맛있었다.
 			PRINTFORMW %TEXTR("「...맛있어?」/「...다음엔 다른 방식으로 해볼래」")%
 		CASE "Affection"
+			PRINTFORMW 에밀리가 만든 음식은 겉모습은 기괴했지만 맛있었다.
 			A = RAND:2
 			IF A == 0
 				PRINTFORMW 「사령관, 맛있어...?」
@@ -4140,6 +4465,7 @@ ELSEIF ABL:조리lv > 4
 				PRINTFORMW 에밀리는 기대하는 눈으로 당신을 바라보고 있다.
 			ENDIF
 		CASE "Love"
+			PRINTFORMW 에밀리가 만든 음식은 겉모습은 기괴했지만 맛있었다.
 			A = RAND:2
 			IF A == 0
 				PRINTFORMW 「맛있게 먹어주는 모습 좋아...」
@@ -4174,6 +4500,7 @@ ELSEIF ABL:조리lv > 4
 			PRINTFORMW 에밀리가 만든 음식은 겉모습은 기괴했지만 맛있었다.
 			PRINTFORMW %TEXTR("「...맛있어?」/「...다음엔 다른 방식으로 해볼래」")%
 		CASE "Marryed"
+			PRINTFORMW 에밀리가 만든 음식은 겉모습은 기괴했지만 맛있었다.
 			A = RAND:2
 			IF A == 0
 				PRINTFORMW 「맛있게 먹어주는 모습 좋아...」

@@ -1,0 +1,3366 @@
+﻿@IS_M_No7
+RETURN 1
+
+@M_No7_TRAIN_START_0
+PRINTFORMW 「후후... 반가워요, 주인님.」
+PRINTFORMW 「시저스 리제라고 해요.」
+PRINTFORMW 「편하게 '리제'라고 불러주세요.」
+PRINTFORMW 「처음 뵙겠습니다, 주인님.」
+PRINTFORMW 「'리제'라고 불러주세요. 후후후...」
+PRINTFORMW 「안녕하세요, 주인님.」
+PRINTFORMW 「엘리자베스 A형 바이오로이드, 시저스 리제라고 해요.」
+PRINTFORMW 「'리제'라고 불러주세요.」
+CFLAG:조교여부 = 1
+
+@M_No7_TRAIN_START_1
+SELECTCASE CSTR:1
+CASE "Confession"
+PRINTFORMW 당신을 바라보던 리제가, 당신을 향해 사뿐사뿐 걸어왔다.
+PRINTFORMW 곧 당신 앞에 선 리제는, 두 손을 꼼지락거리며 입을 열었다.
+PRINTFORMW 「주인님, 전 요즘... 머릿속에 주인님밖에 떠오르지 않아요.」
+PRINTFORMW 「언제나, 어디서나... 항상 주인님하고만 있고 싶어요.」
+PRINTFORMW 「맞아요. 저는 주인님께 완전히 빠져버렸어요... 제 마음을 받아주시겠어요?」
+PRINTFORMW 리제는 눈을 질끈 감고, 당신을 향해 팔을 벌렸다.
+PRINTFORMW 그런 리제를 가만히 바라보던 당신은,
+PRINTFORMW 리제를 와락 껴안았다.
+PRINTFORMW 리제는 당신의 체온을 느끼고, 기쁨에 겨운 눈물을 주륵 흘렸다.
+PRINTFORMW 리제가 황홀감에 빠진 표정으로 당신을 바라보았다.
+PRINTFORMW 「아아... 너무 행복해요... 설마, 꿈은 아니겠죠?」
+PRINTFORMW 당신이 빙긋 웃으며 리제의 머리칼과 뺨을 어루만지자, 리제는 눈을 지그시 감으며 그 손길을 느꼈다.
+PRINTFORMW 「후훗... 주인님의 손길이 확실하게 느껴지네요. 역시 꿈이 아니었어요...」
+PRINTFORMW 리제는 당신의 품에 얼굴을 파묻은 채로, 말을 이어나갔다.
+PRINTFORMW 「우리는 이제, 계속 함께하는 거예요. 낮이든, 밤이든, 어디를 가든...」
+PRINTFORMW 「절대로 헤어지는 일 없이... 영원히요.」
+PRINTFORMW 「다른 해충이 우리 사이에 끼어들 틈 따위는 주지 않을 거예요. 후후후...」
+PRINTFORMW 리제는 당신을, 힘을 주어 강하게 껴안았다.
+PRINTFORMW 「앞으로는 절대로... 주인님을 놓치지 않을 거예요.」
+PRINTFORMW 「그러니 주인님께서도... 저만 바라보셔야해요. 아셨죠?」
+PRINTFORMW 당신은 대답 대신, 리제의 이마에 입을 맞추었다.
+PRINTFORMW 당신을 옭아매는 듯한 리제의 말과 행동에서, 당신은 이유 모를 편안함을 느꼈다.
+TFLAG:고백함 = 1
+CASE "Low"
+PRINTDATAW
+DATAFORM 「후후... 이런 건 아직 익숙하지가 않네요.」
+DATALIST
+DATAFORM 당신은 리제의 손을 말없이 잡았다.
+DATAFORM 리제는 긴장한 듯 손을 조금 떨었다.
+DATAFORM 「조금... 쑥스럽네요. 후후...」
+ENDLIST
+DATAFORM 「데이트라니, 조금 긴장되네요. 후후후...」
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATAFORM 「오늘은 뭘 하는 게 좋을까요?」
+DATAFORM 「같이 정원을 거니는 건 어떨까요?」
+DATALIST
+DATAFORM 「가끔은 이렇게, 밖으로 나오는 것도 나쁘지 않네요.」
+DATAFORM 리제는 당신에게 미소를 지어보였다.
+ENDLIST
+DATALIST
+DATAFORM 「같은 바깥 공기라도, 주인님 곁에서 쐬니...」
+DATAFORM 「아, 아무것도 아니에요.」
+DATAFORM 리제가 양 볼을 살짝 붉히며 말했다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「주인님, 쭉 이 시간만을 기다리고 있었답니다.」
+DATAFORM 리제가 당신을 보며 활짝 웃었다.
+ENDLIST
+DATAFORM 「뭐 하고 놀까요? 뭐 하고 놀까요?」
+DATALIST
+DATAFORM 「후후... 실은, 제가 나름대로 계획을 짜봤어요.」
+DATAFORM 「분명 마음에 드실 거예요.」
+DATAFORM 리제는 자신의 계획을 자랑스럽게 말했다.
+ENDLIST
+DATAFORM 「오늘은 특히 더 멋져 보이세요, 주인님. 후후후...」
+DATALIST
+DATAFORM 「같은 바깥 공기라도, 주인님과 함께 쐬니 더 달콤한 것 같네요. 후후후...」
+DATAFORM 리제가 당신의 손을 잡으며 말했다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 리제가 볼을 부풀리며 당신을 바라보았다.
+DATAFORM 「오늘은 주인님의 준비가 늦어지셔서, 소중한 데이트가 늦춰졌어요.」
+DATAFORM 「그러니까 사과의 뜻으로... 저한테 키스해주세요.」
+DATAFORM 리제가 당신에게 얼굴을 들이밀었다.
+DATAFORM 당신이 리제에게 입을 맞추자, 리제는 배시시 웃었다.
+DATAFORM 「후후후... 가끔은 주인님의 준비가 늦어지길 바라야겠네요.」
+ENDLIST
+DATALIST
+DATAFORM 리제는 당신의 팔을 감싸 안았다.
+DATAFORM 「후후... 주인님과 함께라면 어디든 좋아요.」
+DATAFORM 「꼭 근사한 장소가 아니라고 해도요.」
+DATAFORM 「주인님이 계시는 곳이 저한테는 최고의 장소랍니다.」
+ENDLIST
+DATALIST
+DATAFORM 「오늘은 정원에서 산책을 할까요?」
+DATAFORM 「저는 정원에 대해서라면 모르는 게 없답니다.」
+DATAFORM 「특히... 정원에서 어디가 가장 인적이 드문지... 후훗...」
+ENDLIST
+DATALIST
+DATAFORM 「주인님과의 데이트... 후후후...」
+DATAFORM 「주인님께서 원하시는 거라면 뭐든 좋아요.」
+DATAFORM 「어떤 것이라도요.」
+ENDLIST
+DATALIST
+DATAFORM 「어제는 너무 설레서 한숨도 못 잤어요, 주인님.」
+DATAFORM 리제가 당신의 품에 안겨왔다.
+ENDLIST
+DATALIST
+DATAFORM 「역시, 저와 있을 때가 가장 좋으시죠?」
+DATAFORM 「다른 해충은 생각도 나지 않으실 거예요. 후후후...」
+DATAFORM 리제가 당신을 바라보며 말했다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「갑자기 데이트라니요...」
+DATAFORM 리제는 약간 못마땅한 표정이었다.
+ENDLIST
+DATAFORM 「...출발할까요?」
+DATAFORM 「계획은... 세워 놓으셨겠죠?」
+DATAFORM 「이런 건, 가능하면 미리 말씀해 주세요.」
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「주인님과 데이트하는 게 싫은 게 아니에요.」
+DATAFORM 「그저... 익숙하지가 않아서...」
+DATAFORM 리제는 혹여나 당신이 화를 낼까 눈치를 살폈다.
+ENDLIST
+DATALIST
+DATAFORM 「저같은 거랑 데이트를 하신다니...」
+DATAFORM 「정, 정말 감사...합니다.」
+DATAFORM 리제의 손끝이 미세하게 떨리고 있었다.
+ENDLIST
+DATALIST
+DATAFORM 「아픈 것만 아니라면...」
+DATAFORM 리제가 나지막이 말했다.
+ENDLIST
+DATALIST
+DATAFORM 「혹시... 다른 아이랑 헷갈리신 건 아니죠?」
+DATAFORM 「주, 주인님과 있는 게 싫다는 뜻은 아니에요.」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 리제는 한껏 상기된 얼굴로 말했다.
+DATAFORM 「주인님, 행동은 거칠게 하셔도...」
+DATAFORM 「역시 주인님께선 저밖에 없는 거죠?」
+DATAFORM 「그렇죠? 네? 히힛...」
+ENDLIST
+DATALIST
+DATAFORM 「히힛, 주인님과의 데이트라면 뭐든 좋아요.」
+DATAFORM 리제는 초점을 잃은 눈으로 히죽거렸다.
+ENDLIST
+DATALIST
+DATAFORM 「역시 주인님께서는 나를... 역시 주인님께서는 나를... 역시 주인님께서는 나를... 역시 주인님께서는 나를...」
+DATAFORM 리제는 당신 옆에 서서 같은 말만 되뇌고 있었다.
+ENDLIST
+DATALIST
+DATAFORM 「저와 데이트하시는 걸 보면...」
+DATAFORM 「역시, 주인님께는 다른 해충은 필요 없는 거죠? 그렇죠?」
+DATAFORM 리제는 색이 바랜 눈동자로 당신을 바라보았다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATAFORM 「데이...트...」
+DATAFORM 「히힛... 주인님과 데이트...」
+DATAFORM 「히힛... 산책인가요? 재밌을 것 같아요.」
+DATAFORM 「같이... 손 잡고 걸어요. 히힛...」
+DATALIST
+DATAFORM 당신은 리제와 데이트를 하기로 했다.
+DATAFORM 하지만 리제는 당신이 옆에 있음에도 고개를 떨군 채 당신의 사진을 쓰다듬을 뿐이었다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_TRAIN_END
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATAFORM 「오늘은 즐거웠어요, 주인님.」
+DATAFORM 「주인님께서도 즐거우셨나요?」
+DATALIST
+DATAFORM 「오늘은 너무 긴장해서... 주인님께 폐를 끼친 건 아닌가 걱정되네요.」
+DATAFORM 「아니라면, 다행이고요. 후후...」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「주인님과 함께할 수 있어서 정말 행복했어요.」
+DATAFORM 「다음에도 함께 해주실 거죠?」
+ENDLIST
+DATAFORM 「정말 즐거운 하루였어요, 주인님. 후후...」
+DATAFORM 「다음 데이트도 기대할게요, 주인님. 후후후...」
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「아아... 벌써 데이트가 끝나버렸어요...」
+DATAFORM 「너무 아쉬워요, 흑...」
+DATAFORM 리제는 별안간 눈물을 글썽였다.
+ENDLIST
+DATALIST
+DATAFORM 「후훗... 다른 아이들은 꿈도 못 꾸는...」
+DATAFORM 「주인님과의 데이트...」
+ENDLIST
+DATALIST
+DATAFORM 「조금만 더 같이 있어요... 네?」
+DATAFORM 리제는 눈물을 글썽이며 당신을 바라보았다.
+ENDLIST
+DATALIST
+DATAFORM 「이대로 조금만 더...」
+DATAFORM 리제가 당신의 팔에 안겨 당신을 바라보며 말했다.
+ENDLIST
+DATALIST
+DATAFORM 「어째서 주인님과 함께 있으면 시간이 이렇게 빨리 가는 걸까요?」
+DATAFORM 리제가 시무룩한 표정으로 말했다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「정말... 주인님과 함께 있으면」
+DATAFORM 「시간이 너무 쏜갈같이 흘러요... 흑...」
+ENDLIST
+DATALIST
+DATAFORM 「주인님과의 데이트, 끝내고 싶지 않아요...」
+DATAFORM 리제는 아쉬운 표정으로 당신을 바라보았다.
+ENDLIST
+DATALIST
+DATAFORM 「어째서 절 떠나시는 건가요? 혹시...」
+DATAFORM 「...」
+DATAFORM 「주인님께서 그럴 분이 아니시라는 것쯤은 알고 있어요.」
+DATAFORM 「다만 다른 해충들은 믿을 수가 없어요...」
+DATAFORM 당신은 불안해하는 리제를 달래주었다.
+ENDLIST
+DATALIST
+DATAFORM 「후훗... 전 아직 더 놀 수 있는데요...」
+DATAFORM 당신은 당신을 놓아주지 않으려는 리제를 달랬다.
+DATAFORM 「좋아요... 대신 오늘 부족했던 것만큼, 다음에 더 채워주셔야 해요. 약속이에요. 후후...」
+ENDLIST
+DATALIST
+DATAFORM 「혹시, 절 버리고 다른 해충을 안으시려고...」
+DATAFORM 「...」
+DATAFORM 「...후훗, 농담이에요. 주인님께는 저밖에 없다는 건 제가 잘 알아요.」
+DATAFORM 리제가 당신에게 안긴 채로 말했다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「고생 많으셨어요, 주인님.」
+DATAFORM 리제는 예의상 인사했다.
+ENDLIST
+DATALIST
+DATAFORM 「저는 이제 피곤해서, 그럼...」
+DATAFORM 리제는 당신을 돌아보지 않고 먼저 집으로 들어갔다.
+ENDLIST
+DATALIST
+DATAFORM 「...」
+DATAFORM 리제는 눈을 내리깐 채 당신과 눈을 마주치지 않으며 인사했다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 리제는 근심이 가득한 표정을 지었다.
+DATAFORM 「혹시... 데이트 중에 제가 실수한 건 없었나요?」
+ENDLIST
+DATALIST
+DATAFORM 「데이트, 괜찮으셨나요? 화나진 않으셨나요?」
+DATAFORM 리제는 덜덜 떨며 당신의 눈치를 살폈다.
+ENDLIST
+DATALIST
+DATAFORM 「호, 혹시 데이트 중에 언짢은 게 있으셨다면...」
+DATAFORM 「부디... 용서해주세요.」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「안 돼, 안 돼, 안 돼... 주인님...」
+DATAFORM 「절 버리지 마세요, 주인님... 안 돼...」
+DATAFORM 리제는 당신의 소맷자락을 붙잡고 늘어졌다.
+DATAFORM 당신은 집으로 들어가지 않으려는 리제를 억지로 집 안으로 밀어 넣었다.
+ENDLIST
+DATALIST
+DATAFORM 「주인님, 제발 조금만 더... 흑...」
+DATAFORM 「다시 혼자가 되는 건 무서워요... 절 내버려두지 마세요...」
+DATAFORM 리제는 목놓아 울기 시작했다.
+ENDLIST
+DATALIST
+DATAFORM 「아, 안 돼... 전 아직... 더 할 수 있어요!」
+DATAFORM 「조금만 더요... 딱 한 시간만 더요!」
+DATAFORM 당신은 데이트를 끝내지 않으려는 리제를 집 안으로 밀어 넣었다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 「데이트, 또 하고 싶어요...」
+DATAFORM 리제는 빛이 바랜 눈동자로 당신을 바라보았다.
+ENDLIST
+DATAFORM 「싫어요... 절 버리지 마세요...」
+DATAFORM 「또... 데리고 나가주실 거죠? 히힛...」
+DATAFORM 「내일도 또 데이트해 주세요. 히힛...」
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM2
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제와 영양가 없는 이야기를 나누었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「식물에 대한 지식은 누구에게도 뒤지지 않아요.」
+DATAFORM 「저는 정원사잖아요.」
+ENDLIST
+DATAFORM 「화분을 가꾸는 건, 정원을 가꾸는 것과는 또 다른 재미가 있어요.」
+DATAFORM 「물론 제 자매들도 있답니다. 자매들과 함께라면 멋진 정원을 가꿀 수 있죠.」
+DATAFORM 「제 특기는 가지를 다듬거나, 해충을 잡는 쪽이에요.」
+ENDDATA
+CASE "High"
+PRINTFORMW 당신은 리제에게 요즘 생활은 어떤지 물어보았다.
+PRINTDATAW
+DATAFORM 「전 만족스럽답니다. 주인님께서 저에게 잘 해주시니까요.」
+DATALIST
+DATAFORM 「가끔은 아주 거대한 정원을 가꾸는 상상을 하곤 해요.」
+DATAFORM 「물론, 지금 생활도 매우 만족스럽지만요.」
+ENDLIST
+DATALIST
+DATAFORM 「후후... '이렇게 지내도 되는 걸까' 싶을 정도로 저한테는 과분한 생활이랍니다.」
+DATAFORM 「고마워요, 주인님.」
+ENDLIST
+DATALIST
+DATAFORM 「요즘은... 조금 마음이 가는 분이 생겼어요. 후후후...」
+DATAFORM 「주인님께서도 알게 되실 거예요. 곧...」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 리제와 어떤 소문에 대한 대화를 나누었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「저에 대한 안 좋은 소문이요?」
+DATAFORM 「그런 건 나쁜 말 하기를 좋아하는 분들이 과장해서 지어내는 거랍니다.」
+ENDLIST
+DATALIST
+DATAFORM 「저희 엘리자베스 A형 바이오로이드에 대한 안 좋은 소문이 돌고 있다고요?」
+DATAFORM 「아아... 불쌍하게도, 남을 헐뜯지 않고는 아무것도 못하는 분들이군요.」
+ENDLIST
+DATALIST
+DATAFORM 「저희 엘리자베스 A형에 대한 나쁜 이야기가 돌고 있다고요?」
+DATAFORM 「후훗, 마음대로 떠들라고 하세요.」
+DATAFORM 「어차피 주인님께선 그런 소문에 휘둘리지 않으실 테니까요. 저는 그거면 충분해요.」
+ENDLIST
+DATALIST
+DATAFORM 「저희의 사랑이 너무 지나치다는 소문이요?」
+DATAFORM 「후후후... 전 오히려 저의 진심을 전하기에는 지금의 표현도 너무 부족하다고 느끼는 걸요.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 리제와 여러 가지 이야기를 나누었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「저희 시저스 리제 모델이 주인님께 과하게 집착한다는 소문을 들으셨다구요?」
+DATAFORM 「아아... 남의 험담을 해야만 만족할 줄 아는 해충들이군요.」
+DATAFORM 「그런 유언비어는 그냥 무시하세요, 주인님.」
+ENDLIST
+DATALIST
+DATAFORM 「주인님을 향한 사랑이 너무 지나치다는 소문이요?」
+DATAFORM 「후훗, 주인님을 향한 사랑에 지나친 게 어디있나요.」
+DATAFORM 「설마... 주인님께서도 그렇게 생각하시는 건 아니시죠?」
+DATAFORM 리제의 눈초리가 날카로워졌다. 당신은 리제를 안심시키느라 진땀을 뺐다.
+ENDLIST
+DATALIST
+DATAFORM 「제 자매들에 대한 이야기가 듣고 싶으시다구요?」
+DATAFORM 「후훗, 그런 이야기 들어보셔봤자 시시할 뿐이에요.」
+DATAFORM 「그리고... 저와 함께 있는 순간엔 저한테 집중해주세요, 주인님.」
+DATAFORM 리제가 당신의 볼을 어루만지며 말했다.
+ENDLIST
+DATALIST
+DATAFORM 「제 커다란 가위의 용도요?」
+DATAFORM 「전 정원사잖아요. 당연히 해충을 잡을 때 쓰죠.」
+DATAFORM 「가끔은 그 정도 크기의 가위로 잡아야 하는 해충이 있답니다.」
+DATAFORM 「정원에서나, 아니면... 후훗...」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리제와 실없는 이야기를 나누었다.
+PRINTDATAW
+DATAFORM 「정원을 가꾸는 데 열중하다보면... 스트레스가 조금은 풀려요.」
+DATALIST
+DATAFORM 「...꼭 필요한 대화인가요?」
+DATAFORM 리제의 태도는 냉랭했다.
+ENDLIST
+DATALIST
+DATAFORM 「가끔은 주인님의 마음을 알 수가...」
+DATAFORM 「...아니에요. 방금 건 못 들은 걸로 해주세요.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW 당신은 리제와 실없는 이야기를 나누었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「주인님께서, 조금만 더 다정하게 대해주셨으면 좋겠다는 생각을 하곤 해요.」
+DATAFORM 「죄, 죄송해요. 주인님을 나무라는 게 아니에요.」
+ENDLIST
+DATAFORM 「다행이에요, 오늘은 기분이 괜찮아 보이셔서...」
+DATAFORM 「가끔... 어쩌다 이렇게 되어버린 건가 하는 생각이 들기도 해요...」
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신은 리제와 실없는 이야기를 나누었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「제 가위에 묶여있는 밧줄의 용도요?」
+DATAFORM 「...히히힛...」
+DATAFORM 「비밀이에요...」
+ENDLIST
+DATALIST
+DATAFORM 「히힛, 전 항상 주인님만 생각해요.」
+DATAFORM 「잘 때도, 일어날 때도, 식사할 때도, 씻을 때도... 언제나요.」
+ENDLIST
+DATAFORM 「저에 대해 궁금한 건 없으신가요? 네? 네? 뭐든지 알려드릴 수 있어요.」
+DATAFORM 「혹시 제가 주인님께 너무 집착한다고 생각하시나요? 네? 아니시죠? 그렇죠?」
+DATALIST
+DATAFORM 「히힛, 언젠간 주인님께서도 알아주실 거예요.」
+DATAFORM 「주인님을 가장 사랑하는 이는 바로 저라는 걸요...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 리제와 이야기해보려 했다.
+PRINTFORMW %TEXTR("「...사랑해요, 주인님...」/「히힛... 히힛...」/「주인님 곁에... 해충이 꼬이지 않게...」")%
+PRINTFORMW 하지만 리제와는 정상적인 대화가 불가능했다.
+CASE "Hidden"
+PRINTDATAW
+DATALIST
+DATAFORM 리제는 묶여있는 당신에게 재잘재잘 이야기했다.
+DATAFORM 「주인님은 제 어디가 마음에 드세요?」
+ENDLIST
+DATALIST
+DATAFORM 리제는 묶여있는 당신에게 재잘재잘 이야기했다.
+DATAFORM 「주인님과 이야기하면 시간 가는 줄 모르겠어요. 후후후...」
+ENDLIST
+DATALIST
+DATAFORM 리제가 당신의 귀에 대고 속삭였다.
+DATAFORM 「주인님사랑해요주인님사랑해요주인님사랑해요주인님사랑해요주인님사랑해요주인님사랑해요정말로사랑해요주인님사랑해요주인님사랑해요주인님사랑해요너무너무사랑해요주인님사랑해요주인님사랑해요주인님사랑해요주인님사랑해요주인님사랑해요죽을만큼사랑해요주인님사랑해요주인님사랑해요주인님사랑해요주인님사랑해요주인님사랑해요」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제의 %TEXTR("몸매를/얼굴을")% 칭찬했다.
+PRINTFORMW 리제는 옅은 미소를 띠며 당신을 바라보았다.
+PRINTFORMW %TEXTR("「과찬이세요, 주인님.」/「칭찬... 인가요? 감사합니다, 주인님.」/리제는 고개를 꾸벅 숙여 인사했다.")%
+PRINTFORMW 리제는 칭찬에 단순히 반사적으로 반응한 것 같다.
+CASE "High"
+PRINTFORMW 당신은 리제의 %TEXTR("몸매를/얼굴을")% 칭찬했다.
+PRINTFORMW 리제는 수줍게 미소를 지었다.
+PRINTFORMW %TEXTR("「후훗... 저를 빤히 보고 계시던 게 그것 때문이었군요.」/「언젠간... 자세히 확인해보실 수 있을지도 몰라요. 후훗...」/「부끄러워요, 주인님... 후후...」")%
+PRINTFORMW 리제의 볼이 약간 상기되었다.
+CASE "Affection"
+PRINTFORMW 당신은 리제의 %TEXTR("몸매를/얼굴을")% 칭찬했다.
+PRINTFORMW 리제는 단박에 당신에게 다가가 당신의 팔을 감싸 안았다.
+PRINTDATAW
+DATAFORM 「또 칭찬해주실 부분은 없나요? 후후후...」
+DATAFORM 「더... 조금 더 칭찬해주세요...」
+DATAFORM 「주인님도 정말 매력적인 분이세요. 후후...」
+DATALIST
+DATAFORM 「외모 칭찬도 좋지만...」
+DATAFORM 「언젠가는 제 순수한 내면도 한번 바라봐주세요. 후훗...」
+ENDLIST
+DATAFORM 「주인님이라면 그렇게 말씀해주실 거라고 생각했어요. 후후후...」
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 리제의 %TEXTR("몸매를/얼굴을")% 칭찬했다.
+PRINTFORMW 리제는 활짝 웃었다.
+PRINTDATAW
+DATAFORM 「저는 어쩌면... 오직 주인님을 위해서 태어난 건지도 몰라요. 후후후...」
+DATAFORM 「언제 들어도 기분 좋은 말이에요, 주인님. 후훗...」
+DATALIST
+DATAFORM 「정말 기뻐요, 주인님...」
+DATAFORM 「그런데, 다른 해충들에게도 똑같은 말을...」
+DATAFORM 「...」
+DATAFORM 「하지 않으시겠죠? 전 주인님을 믿어요. 히힛...」
+DATAFORM 리제가 자줏빛 눈으로 당신을 바라보았다.
+ENDLIST
+DATAFORM 「저의 몸은 전부 주인님 거예요, 후후후...」
+DATALIST
+DATAFORM 「후훗... 칭찬만으로 끝내실 건가요?」
+DATAFORM 「말뿐이 아니라, 더 자세히 확인해보셔도 되는데...」
+DATAFORM 리제가 당신에게 바짝 다가가 앉았다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리제의 %TEXTR("몸매를/얼굴을")% 칭찬했다.
+PRINTFORMW 리제는 당신을 곁눈질로 힐끗 쳐다보았다.
+PRINTFORMW %TEXTR("「...감사합니다, 주인님.」/리제는 묵묵부답이었다./리제는 다시 당신을 바라보고 꾸벅 고개를 숙였다.")%
+CASE "Fear"
+PRINTFORMW 당신은 리제의 %TEXTR("몸매를/얼굴을")% 칭찬했다.
+PRINTFORMW 리제는 당신의 목소리를 듣더니 반사적으로 몸을 움츠렸다.
+PRINTFORMW %TEXTR("「가, 감사합니다...」/「히익! 아... 감사합니다.」/「...멍자국이 없다면... 더 예쁠 거예요...」")%
+PRINTFORMW 리제는 몸을 약간 떨면서 억지 웃음을 짓고 대답했다.
+CASE "Weak"
+PRINTFORMW 당신은 리제의 %TEXTR("몸매를/얼굴을")% 칭찬했다.
+PRINTFORMW 리제는 당신의 칭찬에 히죽거리며 웃었다.
+PRINTDATAW
+DATAFORM 「히힛... 주인님께서 날 칭찬하셨어...」
+DATAFORM 「역시... 주인님께서는 나를 사랑하셔...」
+DATAFORM 「더... 더 칭찬해주세요, 주인님... 히힛...!」
+DATALIST
+DATAFORM 「그래... 지금까지 있엇던 일은 전부 악몽이었던 거야...」
+DATAFORM 「주인님께서 나한테 그런 심한 짓을 하셨을 리 없어... 히히힛...」
+DATAFORM 리제는 혼잣말을 중얼거렸다.
+ENDLIST
+ENDDATA
+PRINTFORMW 몸을 웅크린 리제는 덜덜 떨면서 연신 킬킬거렸다.
+CASE "Break"
+PRINTFORMW 당신은 리제의 %TEXTR("몸매를/얼굴을")% 칭찬했다.
+PRINTFORMW 리제는 멍한 눈으로 당신을 바라보았다.
+PRINTDATAW
+DATALIST
+DATAFORM 「...고맙...습니다. 주인님...」
+DATAFORM 리제는 들릴 듯 말 듯 대답했다.
+ENDLIST
+DATAFORM 「...히히힛...」
+DATAFORM 「주인님께서 칭찬을... 히힛...」
+ENDDATA
+CASE "Hidden"
+PRINTFORMW 리제가 묶여있는 당신의 위로 올라타, 당신의 얼굴을 바라보았다.
+PRINTFORMW %TEXTR("「주인님의 얼굴을 보니까, 또 반해버릴 것 같아요... 후후후...」/「주인님의 몸, 구석구석... 느끼고 싶어요...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제의 손을 덥썩 움켜쥐었다.
+PRINTFORMW 리제는 당황한 기색이 역력했다.
+PRINTFORMW %TEXTR("「주인님?」/「잠깐이면...」/「조금... 갑작스럽네요...」")%
+PRINTFORMW 리제는 얼굴을 붉히며 고개를 숙였다.
+CASE "High"
+PRINTFORMW 당신은 리제의 손을 덥썩 움켜쥐었다.
+PRINTFORMW 리제는 당신의 손을 조금 세게 잡았다.
+PRINTFORMW %TEXTR("「후후... 제 손이 그렇게도 잡고 싶으셨던 건가요?」/「주인님의 손... 따뜻하네요... 후후후...」/「제 손은... 부드럽나요?」")%
+CASE "Affection"
+PRINTFORMW 당신은 리제의 손을 덥썩 움켜쥐었다.
+PRINTFORMW 리제는 당신의 손을 두 손으로 덥썩 잡았다.
+PRINTFORMW %TEXTR("「...손만 잡으실 건가요...?」/「주인님의 손, 커다래서 기분 좋을 것 같아요. 후훗...」/「이번에는 손... 다음에는... 어디인가요?」")%
+CASE "Marryed"
+PRINTFORMW 당신은 리제의 손을 덥썩 움켜쥐었다.
+PRINTFORMW 리제는 당신의 손을 자신의 얼굴로 가져다 대었다.
+PRINTDATAW
+DATAFORM 「항상 이 손으로 저를 사랑해주시는군요. 후후후...」
+DATALIST
+DATAFORM 「하아... 주인님의 냄새...」
+DATAFORM 리제는 당신의 손에 코를 박고 냄새를 맡았다.
+ENDLIST
+DATALIST
+DATAFORM 「주인님의 손... 놓지 않을 거예요.」
+DATAFORM 「영원히...」
+ENDLIST
+ENDDATA
+PRINTFORMW 리제는 한참동안 당신의 손을 잡고 놓아주지 않았다.
+CASE "Annoyed"
+PRINTFORMW 당신은 리제의 손을 덥썩 움켜쥐었다.
+PRINTFORMW 리제는 자신의 손을 잡은 당신의 손을 무표정하게 내려다보았다.
+PRINTDATAW
+DATALIST
+DATAFORM 「죄송해요, 주인님. 할 일이 있어서...」
+DATAFORM 리제는 당신의 손을 떼어놓았다.
+ENDLIST
+DATAFORM 「주인님...?」
+DATAFORM 「갑자기 이런 행동은...」
+ENDDATA
+CASE "Fear"
+PRINTFORMW 당신은 리제의 손을 덥썩 움켜쥐었다.
+PRINTFORMW 리제는 흠칫 놀라 어찌할 바를 몰라했다.
+PRINTFORMW %TEXTR("「때, 때리지... 않으시는 거죠?」/「주, 주인님... 이제 놔주세요...」/리제는 눈을 질끈 감았다.")%
+PRINTFORMW 리제의 공포로 인한 몸의 떨림이 손을 타고 당신에게 느껴졌다.
+CASE "Weak"
+PRINTFORMW 당신은 리제의 손을 덥썩 움켜쥐었다.
+PRINTFORMW 리제는 당신의 손바닥에 얼굴을 파묻고 이리저리 비벼댔다.
+PRINTFORMW %TEXTR("「히힛... 주인님의 손, 따뜻해요...」/「더 사랑해주세요, 주인님... 히힛...」/「아아... 떠나지 마세요, 주인님. 이대로 계속...!」")%
+PRINTFORMW 리제는 당신의 손에 깍지를 끼었다.
+CASE "Break"
+PRINTFORMW 당신은 리제의 손을 덥썩 움켜쥐었다.
+PRINTFORMW 리제는 당신을 빤히 바라보았다.
+PRINTFORMW %TEXTR("「주인님의... 손... 따뜻해요...」/「...」/리제가 조용히, 당신의 손등에 볼을 비볐다.")%
+CASE "Hidden"
+PRINTFORMW 리제는 당신의 두 손을 덥썩 움켜쥐었다.
+PRINTFORMW %TEXTR("「아아... 역시 주인님의 손은 따뜻해요...」/「주인님의 손은 역시 커다랗고 듬직해요. 후후...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제의 머리를 쓰다듬었다.
+PRINTFORMW 리제는 당신을 멀뚱멀뚱 쳐다보았다.
+PRINTFORMW %TEXTR("「예뻐해주시는 건가요...?」/「감사...합니다.」")%
+CASE "High"
+PRINTFORMW 당신은 리제의 머리를 쓰다듬었다.
+PRINTFORMW 리제는 얼굴에 웃음꽃이 만개했다.
+PRINTFORMW %TEXTR("「제 머리카락이 그렇게도 좋으신가요? 후후...」/「더 만지셔도 돼요, 주인님. 후훗...」/「주인님이라면... 더 만지셔도 돼요.」")%
+CASE "Affection"
+PRINTFORMW 당신은 리제의 머리를 쓰다듬었다.
+PRINTFORMW 리제는 눈을 감고 당신의 손길을 느끼고있다.
+PRINTDATAW
+DATAFORM 「하아... 주인님의 손길이 느껴져요...」
+DATALIST
+DATAFORM 「계속 쓰다듬어 주세요, 주인님...」
+DATAFORM 리제는 당신의 손을 붙잡고 놓아주지 않았다.
+ENDLIST
+DATAFORM 「조금만 더 이대로...」
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 리제의 머리를 쓰다듬었다.
+PRINTFORMW 리제는 당신의 품에 안겨 당신의 손길을 느꼈다.
+PRINTDATAW
+DATALIST
+DATAFORM 「이쪽도 쓰다듬어주세요. 후후후...」
+DATAFORM 리제가 당신의 손을 잡아 자신의 반대편 머리로 옮겼다.
+ENDLIST
+DATALIST
+DATAFORM 「멈추지 말아주세요, 주인님.」
+DATAFORM 「아아... 행복해요, 주인님...」
+ENDLIST
+DATALIST
+DATAFORM 「벌써... 끝내시려고요?」
+DATAFORM 리제가 아쉬운 듯한 눈길로 당신을 바라보았다.
+DATAFORM 당신은 어쩔 수 없이 한참동안 리제를 쓰다듬어주었다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리제의 머리를 쓰다듬었다.
+PRINTFORMW 리제는 무표정하게 당신을 바라보았다.
+PRINTDATAW
+DATAFORM 「갑자기 무슨...」
+DATALIST
+DATAFORM 「죄송해요, 주인님. 머리카 헝클어지니까...」
+DATAFORM 「쓰다듬는 건 자제해주세요.」
+ENDLIST
+DATALIST
+DATAFORM 가만히 있던 리제는 당신이 손을 치우자
+DATAFORM 말없이 머리카락을 정돈했다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW 당신은 리제의 머리를 쓰다듬었다.
+PRINTFORMW 리제는 당신이 뻗은 손에 소스라치게 놀라며 몸을 움츠렸다.
+PRINTDATAW
+DATALIST
+DATAFORM 「힉, 잘못...」
+DATAFORM 리제는 말을 잇지 못하고 눈을 질끈 감았다
+ENDLIST
+DATALIST
+DATAFORM 「가, 감사합니다. 주인님...」
+DATAFORM 리제는 몸을 부르르 떨며 감사인사를 했다.
+ENDLIST
+DATALIST
+DATAFORM 「잘못했어요, 주인님...」
+DATAFORM 「때리지만 마세요... 흑...」
+ENDLIST
+DATAFORM 「히익, 잘못... 잘못했어요, 주인님!」
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신은 리제의 머리를 쓰다듬었다.
+PRINTFORMW 리제는 기쁨에 몸을 부르르 떨었다.
+PRINTDATAW
+DATAFORM 「히힛... 제 머리카락을 원하신다면 얼마든지...」
+DATALIST
+DATAFORM 「아아... 역시 주인님은」
+DATAFORM 「저를 사랑하시는 거군요. 히힛...」
+ENDLIST
+DATAFORM 「아직 부족해요... 더 쓰다듬어 주세요, 주인님...」
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 리제의 머리를 쓰다듬었다.
+PRINTFORMW 리제는 무기력하게 당신의 손길을 받아들였다.
+PRINTFORMW %TEXTR("「계속... 쓰다듬어주세요... 히힛...」/「히힛... 주인님이... 머리를...」/「기분 좋아요...」")%
+CASE "Hidden"
+PRINTFORMW 리제가 당신의 머리를 부드럽게 쓰다듬었다.
+PRINTFORMW %TEXTR("「어쩜, 주인님은... 어디 하나 빠지는 곳이 없네요. 후후...」/「주인님께서는 발 끝부터 머리 끝까지 모두 사랑스러워요. 후후...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM6
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제를 간질였다.
+PRINTFORMW 리제는 갑작스런 간지럼에 소스라치게 놀랐다..
+PRINTDATAW
+DATAFORM 「꺅?!」
+DATAFORM 「힉, 주인님?!」
+DATALIST
+DATAFORM 「잠깐, 주인님... 아힉!」
+DATAFORM 리제가 반사적으로 당신에게서 멀어졌다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTFORMW 당신은 리제를 간질였다.
+PRINTFORMW 리제는 간지럼에 놀라 당신의 어깨를 부여잡았다.
+PRINTFORMW %TEXTR("「하읏, 너무 짓궂으세요, 주인님.」/「힉! 그만하세요, 주인님.」/「흐읏... 간지럽잖아요, 주인님.」")%
+CASE "Affection"
+PRINTFORMW 당신은 리제를 간질였다.
+PRINTFORMW 리제는 홍조를 띄우면서 웃었다.
+PRINTFORMW %TEXTR("「하읏... 아하핫, 간지러워요, 주인님.」/「주인님꼐서는 간지럼태우는 걸 좋아하시나보네요. 후훗...」/「혹시... 당하는 건 안 좋아하세요? 후후후...」")%
+CASE "Marryed"
+PRINTFORMW 당신은 리제를 간질였다.
+PRINTFORMW 리제는 홍조를 띄운 채 약간 거친 숨을 내쉬었다.
+PRINTDATAW
+DATAFORM 「후훗... 새로운 장난인가요?」
+DATALIST
+DATAFORM 「이번엔 제 차례예요, 주인님」
+DATAFORM 리제는 당신의 옆구리를 간질였다.
+ENDLIST
+DATAFORM 「하읏... 조금... 흥분되네요.」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리제를 간질였다.
+PRINTFORMW 리제는 미간을 약간 찌푸렸다.
+PRINTDATAW
+DATAFORM 「...놀랐잖아요, 주인님.」
+DATALIST
+DATAFORM 「이런 장난은 그만...」
+DATAFORM 「...아니에요, 주인님.」
+ENDLIST
+DATAFORM 리제는 조금 불쾌해 보였다.
+ENDDATA
+CASE "Fear"
+PRINTFORMW 당신은 리제를 간질였다.
+PRINTFORMW 리제는 당신의 손이 닿자 몸이 굳었다.
+PRINTDATAW
+DATAFORM 「힉... 아, 간지럼...인가요.」
+DATAFORM 「아힉... 간지러워요, 주인님.」
+DATALIST
+DATAFORM 「옆구리를 맞으면 숨 쉬기가...」
+DATAFORM 「아... 다행이에요...」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신은 리제를 간질였다.
+PRINTFORMW 리제는 과하다 싶을 정도로 크게 웃었다
+PRINTDATAW
+DATALIST
+DATAFORM 「아하핫, 하윽, 간지러워요, 주인님.」
+DATAFORM 「꺄하핫, 힉!」
+ENDLIST
+DATAFORM 「힉! 하하핫, 정말 재밌어요, 주인님.」
+DATALIST
+DATAFORM 「하읏, 오랜만에 주인님을 보면서 웃으니까」
+DATAFORM 「행복해요, 히힛...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 리제를 간질였다.
+PRINTFORMW 리제는 멍한 눈으로 입꼬리를 살짝 올렸다
+PRINTFORMW %TEXTR("「히힛...」/「하힛...」/「아하핫...」")%
+PRINTFORMW 리제는 짧은 웃음소리만 내며 우두커니 서있었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM7
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제에게 당신의 무릎에 누워보라고 했다.
+PRINTFORMW %TEXTR("리제는 조금 당황한 눈빛이었다./리제는 마지못해, 어색하게 당신의 무릎에 누웠다./리제는 쭈뼛거리며 당신의 무릎에 누웠다.")%
+PRINTFORMW 리제는 당신의 무릎에 누운 지 몇 분 되지 않아 할 일이 있다며 일어났다.
+CASE "High"
+PRINTFORMW 당신은 리제에게 당신의 무릎에 누워보라고 했다.
+PRINTFORMW 리제는 배시시 웃으며 당신의 무릎에 누웠다.
+PRINTFORMW %TEXTR("「...무겁지 않으신가요?」/「어디 불편한 데는 없으세요?」/「조금 쑥스럽네요. 후훗...」")%
+CASE "Affection"
+PRINTFORMW 당신은 리제에게 당신의 무릎에 누워보라고 했다.
+PRINTFORMW 리제는 활짝 웃으며 당신의 무릎에 누웠다.
+PRINTDATAW
+DATAFORM 「정말 꿈만 같아요, 주인님.」
+DATAFORM 「주인님의 무릎에 누우니까, 정말 기분 좋아요. 후훗...」
+DATALIST
+DATAFORM 「주인님의 무릎에서 다른 아이의 냄새가...」
+DATAFORM 「농담이에요. 후후후...」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 리제에게 당신의 무릎에 누워보라고 했다.
+PRINTFORMW 리제는 눈웃음을 지으며 당신의 무릎에 누웠다.
+PRINTDATAW
+DATALIST
+DATAFORM 「그런데...」
+DATAFORM 「다른 해충들에게도 이런 걸 해주시는 건 아니시겠죠?」
+ENDLIST
+DATALIST
+DATAFORM 「주인님의 무릎에 누울 수 있는 건...」
+DATAFORM 「오직 저 뿐이에요. 후후후...」
+ENDLIST
+DATAFORM 「가끔은... 주인님의 너무나 다정하신 성격이 걱정되기도 해요...」
+DATAFORM 「후후... 영원히 일어나고 싶지 않을 정도에요.」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리제에게 당신의 무릎에 누워보라고 했다.
+PRINTFORMW 리제는 거절했다.
+PRINTFORMW %TEXTR("「그건... 죄송해요.」/「죄송해요, 주인님. 지금은 바빠서...」/「죄송해요, 주인님.」")%
+CASE "Fear"
+PRINTFORMW 당신은 리제에게 당신의 무릎에 누워보라고 했다.
+PRINTFORMW 리제는 몸을 떨며 당신의 무릎에 누웠다.
+PRINTFORMW %TEXTR("「부, 불편하시면... 바로 말씀해주세요.」/「괜찮...으신가요?」/「정말... 누워있어도 괜찮나요?」")%
+CASE "Weak"
+PRINTFORMW 당신은 리제에게 당신의 무릎에 누워보라고 했다.
+PRINTFORMW 리제는 당신의 무릎에 달려들다시피 했다.
+PRINTDATAW
+DATAFORM 「이대로 잠들어버릴 것 같아요. 히히힛...」
+DATALIST
+DATAFORM 「하아... 주인님...」
+DATAFORM 리제는 당신의 무릎에 얼굴을 파묻었다.
+ENDLIST
+DATAFORM 「히힛... 너무 행복해요.」
+ENDDATA
+PRINTFORMW 당신이 무릎에 누워있는 리제를 일으키려 하자, 리제는 필사적으로 떼를 쓰며 당신의 무릎에 누워있었다.
+PRINTFORMW 결국 당신은 강제로 리제를 일으켰다. 리제는 눈물을 글썽였다.
+CASE "Break"
+PRINTFORMW 당신은 리제에게 당신의 무릎에 누워보라고 했다.
+PRINTFORMW 리제는 조용히 당신의 무릎에 누웠다.
+PRINTFORMW %TEXTR("「따스해요...」/「히힛...」/「행복해요...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM8
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제에게 무릎베개를 부탁했다..
+PRINTFORMW 리제는 갑작스런 요청에 당황했다.
+PRINTFORMW %TEXTR("「잠깐이라면...」/「너무 오래 하는 건 저도 부끄러워서...」")%
+PRINTFORMW 리제는 자신의 무릎을 당신에게 내주었다.
+CASE "High"
+PRINTFORMW 당신은 리제에게 무릎베개를 부탁했다.
+PRINTFORMW 리제는 눈웃음을 지으며 자신의 무릎을 두드렸다.
+PRINTFORMW %TEXTR("「어리광쟁이네요, 주인님은.」/「후후... 어서 누우세요.」/「다음에는 저한테 해주세요. 후훗...」")%
+CASE "Affection"
+PRINTFORMW 당신은 리제에게 무릎베개를 부탁했다.
+PRINTFORMW 리제는 작은 소리로 웃으며 무릎을 꿇고 앉았다.
+PRINTFORMW %TEXTR("「후훗, 여기로 누우세요, 주인님.」/「다른 아이들한테는 비밀로 하셔야 된답니다. 후후...」/「가끔은 어리광 부리는 주인님도 새롭네요. 후후...」")%
+CASE "Marryed"
+PRINTFORMW 당신은 리제에게 무릎베개를 부탁했다.
+PRINTFORMW 리제는 당신을 무릎에 누이고 당신의 머리칼을 매만졌다.
+PRINTDATAW
+DATALIST
+DATAFORM 「주인님, 숨결이 간지러워요. 후후후...」
+DATAFORM 리제는 얼굴을 붉혔다.
+ENDLIST
+DATALIST
+DATAFORM 「다른 해충들한테는...」
+DATAFORM 「이런 부탁, 안 하시는 거죠?」
+ENDLIST
+DATALIST
+DATAFORM 「혹여나 다른 해충들한테 이런 부탁 하시면...」
+DATAFORM 「...」
+DATAFORM 「후후후...」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리제에게 무릎베개를 부탁했다.
+PRINTFORMW 리제는 당신을 빤히 바라보았다.
+PRINTFORMW %TEXTR("「죄송해요, 주인님. 지금은 곤란해요.」/「지금은 바빠서...」/「다음에... 해 드릴게요.」/「...딱 5분만이에요.」")%
+CASE "Fear"
+PRINTFORMW 당신은 리제에게 무릎베개를 부탁했다.
+PRINTFORMW 리제는 당황한 눈빛으로 무릎을 꿇고 앉았다.
+PRINTDATAW
+DATAFORM 「여기... 누우세요...」
+DATALIST
+DATAFORM 「무, 무릎이요? 아... 여기로...」
+DATAFORM 리제는 경직된 채 당신을 무릎에 누였다.
+ENDLIST
+DATAFORM 「저라도 괜찮으시다면...」
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신은 리제에게 무릎베개를 부탁했다.
+PRINTFORMW 리제는 활짝 웃으며 당신을 무릎에 누였다.
+PRINTDATAW
+DATALIST
+DATAFORM 「히힛... 너무 행복해요...」
+DATAFORM 「주인님께서 제 무릎에 누워계시다니...」
+ENDLIST
+DATAFORM 「주인님은... 아무에게도 뺏기지 않을 거예요.」
+DATAFORM 「주인님은 아무에게도 못 가요... 히힛...」
+ENDDATA
+PRINTFORMW 리제는 당신의 머리를 쓰다듬었다.
+CASE "Break"
+PRINTFORMW 당신은 리제에게 무릎베개를 부탁했다.
+PRINTFORMW 리제는 히죽 웃으며 무릎을 내주었다.
+PRINTFORMW %TEXTR("「얼마든지요... 히힛...」/「히힛... 여기 누우세요...」/「히힛... 머리카락, 간지러워요...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM9
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제를 와락 껴안았다.
+PRINTFORMW 리제는 당황하며 당신의 어깨를 잡았다.
+PRINTFORMW %TEXTR("「꺅, 주인님?!」/「왜, 왜 이러세요, 주인님?!」/「꺅?! 까, 깜짝 놀랐잖아요, 주인님...」")%
+CASE "High"
+PRINTFORMW 당신은 리제를 와락 껴안았다.
+PRINTFORMW 리제는 당신의 허리춤에 조심스레 손을 올렸다.
+PRINTDATAW
+DATALIST
+DATAFORM 「후후...」
+DATAFORM 「갑자기 어린아이가 되신 것 같네요.」
+ENDLIST
+DATAFORM 「정말, 조금만 참아주시지...」
+DATAFORM 「박력있는 주인님의 모습, 조금 새롭네요...」
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 리제를 와락 껴안았다.
+PRINTFORMW 리제 역시 당신을 꼭 껴안았다.
+PRINTFORMW %TEXTR("「다른 아이들한테는 이러시면 안 돼요. 아셨죠?」/「후후... 제 품이 그리우셨나요?」/「제 품은 언제나 주인님의 것이에요.」")%
+CASE "Marryed"
+PRINTFORMW 당신은 리제를 와락 껴안았다.
+PRINTFORMW 리제는 당신의 등에 손을 올리고, 당신의 가슴에 얼굴을 파묻었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「힘든 일이 있으시다면 전부 저한테 말씀해주세요.」
+DATAFORM 「저는 언제나 주인님 편이니까요.」
+ENDLIST
+DATAFORM 「후후... 역시 제 매력에 빠지셨군요.」
+DATALIST
+DATAFORM 「주인님이 안기실 수 있는 품은...」
+DATAFORM 「오직 제 품 뿐이에요.」
+ENDLIST
+DATAFORM 「하아... 주인님의 향기...」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리제를 와락 껴안았다.
+PRINTFORMW 리제는 미간을 찌푸린 채 가만히 서있었다.
+PRINTFORMW %TEXTR("「갑자기... 뭐하시는 건가요, 주인님?」/「죄송해요. 떨어져 주세요, 주인님.」")%
+CASE "Fear"
+PRINTFORMW 당신은 리제를 와락 껴안았다.
+PRINTFORMW 리제는 몸을 부르르 떨었다.
+PRINTFORMW %TEXTR("「힉, 주, 주인님...?」/「제, 제가 또 뭔가 잘못했나요...?」/「잘못... 잘못했어요, 주인님...」")%
+CASE "Weak"
+PRINTFORMW 당신은 리제를 와락 껴안았다.
+PRINTFORMW 리제는 낄낄거리며 웃었다.
+PRINTFORMW %TEXTR("「히히힛... 주인님의 심장이 두근대는 게 느껴져요...」/「역시, 주인님은 절 버리지 않으시는 거죠? 그렇죠?」/「아, 안 돼요... 더 안아주세요...!」")%
+PRINTFORMW 리제는 당신을 붙잡고 한참 동안 놓지 않았다.
+CASE "Break"
+PRINTFORMW 당신은 리제를 와락 껴안았다.
+PRINTFORMW 리제는 멍하니 당신의 품에 안겨있었다.
+PRINTDATAW
+DATAFORM 「아아... 따뜻해요...」
+DATALIST
+DATAFORM 「주인님의 품...」
+DATAFORM 리제는 당신의 품에 얼굴을 묻었다.
+ENDLIST
+DATAFORM 「주인님의 향기가 나요...」
+ENDDATA
+CASE "Hidden"
+PRINTFORMW 리제가 당신의 품에 안겼다.
+PRINTFORMW %TEXTR("「역시 주인님의 품이 최고예요. 후후후...」/「너무 포근해서 이대로 잠들어버릴 것 같네요. 후후...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM10
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제의 뒤에서 리제의 허리춤을 감싸안았다.
+PRINTFORMW 리제는 깜짝 놀라며 당신의 손목을 잡았다.
+PRINTFORMW %TEXTR("「힛, 주인님?!」/「힉, 갑자기 뒤에서 껴안으시면...」")%
+CASE "High"
+PRINTFORMW 당신은 리제의 뒤에 서서 리제의 허리춤을 감싸안았다.
+PRINTFORMW 리제는 잠깐 놀라더니 피식 웃었다.
+PRINTFORMW %TEXTR("「부끄럽게 왜 그러세요, 주인님. 후후...」/「부끄러워요, 주인님. 후훗...」/「가끔은 이러는 것도 괜찮네요. 후후...」")%
+CASE "Affection"
+PRINTFORMW 당신은 리제의 뒤에서 리제의 허리춤을 감싸안았다.
+PRINTFORMW 리제는 당신의 손에 깍지를 끼었다.
+PRINTDATAW
+DATAFORM 「주인님의 체온이 느껴져요...」
+DATALIST
+DATAFORM 「이런 짓궂은 장난은...」
+DATAFORM 「저한테만 하셔야 해요. 후훗...」
+ENDLIST
+DATAFORM 「이 상태로는 주인님의 얼굴이 안 보이는 건, 조금 아쉽네요. 후후후...」
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 리제의 뒤에서 리제의 허리춤을 감싸안았다.
+PRINTFORMW 리제는 고개를 돌려 당신과 뺨을 맞대었다.
+PRINTDATAW
+DATAFORM 「조금 더 꼭... 안아주세요. 후후후...」
+DATALIST
+DATAFORM 「정말...」
+DATAFORM 「그렇게 제 품이 그리웠나요? 후훗...」
+ENDLIST
+DATAFORM 「다음에는 앞에서 안아주세요...」
+DATAFORM 「주인님, 숨결이 거칠어요. 후훗...」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리제의 뒤에서 리제의 허리춤을 감싸안았다.
+PRINTFORMW 리제는 당신의 팔을 약간 신경질적으로 걷어냈다.
+PRINTFORMW %TEXTR("「이런 건 자제해주세요, 주인님...」/「다음부턴 말씀을 먼저 해주세요.」")%
+CASE "Fear"
+PRINTFORMW 당신은 리제의 뒤에서 리제의 허리춤을 감싸안았다.
+PRINTFORMW 리제는 몸이 경직되었다.
+PRINTDATAW
+DATAFORM 「힉, 죄, 죄송... 아... 안아주신 건가요...」
+DATALIST
+DATAFORM 「때리지 마세요... 흑...」
+DATAFORM 리제의 몸이 떨리고 있었다.
+ENDLIST
+DATAFORM 「수, 숨 막혀요... 주인님...」
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신은 리제의 뒤에서 리제의 허리춤을 감싸안았다.
+PRINTFORMW 리제는 당신의 손목을 붉은 자국이 남을 정도로 강하게 쥐었다.
+PRINTDATAW
+DATAFORM 「히힛... 주인님의 체온이 느껴져요.」
+DATAFORM 「아아... 주인님의 품, 따뜻해요...」
+DATALIST
+DATAFORM 「평생... 이대로 있어주세요... 히힛...」
+DATAFORM 리제는 당신의 손을 놓지 않았다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 리제의 뒤에서 리제의 허리춤을 감싸안았다.
+PRINTFORMW 리제는 멍한 눈으로 당신의 손을 내려다보았다.
+PRINTFORMW %TEXTR("「히힛... 주인님의 손...」/「...포옹... 따뜻해요... 히힛...」/「조금만 더... 이렇게...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM11
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 누운 채로 옆자리를 두드리며 리제를 불렀다.
+PRINTFORMW 리제는 멋쩍게 웃으며 거절했다.
+PRINTDATAW
+DATALIST
+DATAFORM 「그건... 어려울 것 같아요.」
+DATAFORM 「죄송해요, 주인님.」
+ENDLIST
+DATALIST
+DATAFORM 「주인님... 옆에요?」
+DATAFORM 「그건 부끄러워서 좀...」
+ENDLIST
+DATAFORM 「더... 친해지고 나면...」
+ENDDATA
+CASE "High"
+PRINTFORMW 당신은 누운 채로 옆자리를 두드리며 리제를 불렀다.
+PRINTFORMW 리제는 조심스레 당신의 옆에 누웠다.
+PRINTFORMW %TEXTR("「막상 누우니까 좀 부끄럽네요. 후후...」/「주인님께서 먼저 불러주실 줄은 몰랐어요. 후훗...」/「조금... 두근거리네요. 후후후...」")%
+CASE "Affection"
+PRINTFORMW 당신은 누운 채로 옆자리를 두드리며 리제를 불렀다.
+PRINTFORMW 리제는 미소지으며 당신의 옆에 누웠다.
+PRINTDATAW
+DATAFORM 「후훗... 주인님의 옆자리는 역시...」
+DATALIST
+DATAFORM 「다른 아이들이 누웠던 기척이...」
+DATAFORM 「느껴지지는 않네요. 다행이에요, 주인님. 후훗...」
+ENDLIST
+DATALIST
+DATAFORM 「주인님을 조금 더 가까이에서 보고 싶어요...」
+DATAFORM 리제가 당신에게 바짝 다가가 누웠다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 누운 채로 옆자리를 두드리며 리제를 불렀다.
+PRINTFORMW 리제는 활짝 웃으며 당신의 옆에 누웠다.
+PRINTDATAW
+DATALIST
+DATAFORM 「역시, 주인님께서 불러주실 줄 알았어요.」
+DATAFORM 「너무 기뻐요, 후후...」
+ENDLIST
+DATAFORM 「설마... 다른 해충을 먼저 부르셨던 건 아니겠죠?」
+DATALIST
+DATAFORM 「아, 너무 행복해서 정신을 잃을 것 같아요...」
+DATAFORM 「평생 이렇게 있고 싶어요...」
+ENDLIST
+ENDDATA
+PRINTFORMW 리제는 얼굴을 당신 가까이 들이댔다.
+CASE "Annoyed"
+PRINTFORMW 당신은 누운 채로 옆자리를 두드리며 리제를 불렀다.
+PRINTFORMW 리제는 들릴 듯 말 듯한 한숨을 쉬었다.
+PRINTDATAW
+DATAFORM 「죄송해요, 주인님.」
+DATALIST
+DATAFORM 「주인님... 장난은 그만해주세요.」
+DATAFORM 리제가 당신을 나무랐다.
+ENDLIST
+DATAFORM 「또 무슨 생각이신가요?」
+ENDDATA
+CASE "Fear"
+PRINTFORMW 당신은 누운 채로 옆자리를 두드리며 리제를 불렀다.
+PRINTFORMW 리제는 몸을 덜덜 떨며 당신의 옆자리에 누웠다.
+PRINTFORMW %TEXTR("「누워있기만... 하면 되나요?」/「이렇게... 하면 되는 건가요?」/「화, 화내지 마세요, 누울게요.」")%
+PRINTFORMW 리제는 당신과 눈을 마주치지 못했다.
+CASE "Weak"
+PRINTFORMW 당신은 누운 채로 옆자리를 두드리며 리제를 불렀다.
+PRINTFORMW 리제는 당신 옆에 누워 당신의 팔을 부여잡았다.
+PRINTDATAW
+DATALIST
+DATAFORM 「드디어... 저를 아껴주시는 거죠? 그렇죠?」
+DATAFORM 「지금까지 너무 고통스러웠어요... 아팠어요... 흑...」
+ENDLIST
+DATALIST
+DATAFORM 「지금까지 절 아프게 하셨던 건 전부 용서해 드릴게요.」
+DATAFORM 「그러니 이젠 저를 사랑해주세요...」
+ENDLIST
+ENDDATA
+PRINTFORMW 당신이 리제를 떼어놓으려고 하자, 리제는 당신의 팔을 더 억세게 잡았다.
+PRINTFORMW %TEXTR("「안 돼요! 주인님의 옆자리는 저만의 거예요!」/「아, 안 돼! 다른 해충에게 주인님을 빼앗길 수 없어!」/「안 돼... 흑... 절 버리지 마세요...」")%
+CASE "Break"
+PRINTFORMW 당신은 누운 채로 옆자리를 두드리며 리제를 불렀다.
+PRINTFORMW 리제는 무덤덤하게 당신의 옆에 누웠다.
+PRINTDATAW
+DATAFORM 「히힛... 안아주세요...」
+DATAFORM 「주인님의 옆자리... 히힛...」
+DATALIST
+DATAFORM 「히힛, 저를 다시 사랑해주시는 건가요?」
+DATAFORM 「이제 때리지 않으실 거죠?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM12
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제의 %TEXTR("뺨/이마/손등")%에 입을 맞추었다.
+PRINTFORMW 리제는 온 얼굴이 빨갛게 달아올랐다.
+PRINTDATAW
+DATAFORM 「주, 주인님?! 저를 너무 놀리시면...」
+DATALIST
+DATAFORM 「주인님... 너무 짓궂으세요...」
+DATAFORM 리제가 고개를 푹 숙였다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTFORMW 당신은 리제의 %TEXTR("뺨/이마/손등")%에 입을 맞추었다.
+PRINTFORMW 리제는 달아오른 뺨을 손으로 감쌌다.
+PRINTDATAW
+DATAFORM 「각오는 하고 있었는데, 역시 부끄럽네요. 후훗...」
+DATAFORM 「주인님도 참... 대담하시네요. 후훗...」
+DATALIST
+DATAFORM 「갑자기 이런 일을 당하는 것도...」
+DATAFORM 「나쁘지는 않네요. 후후후...」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 리제의 %TEXTR("뺨/이마/손등")%에 입을 맞추었다.
+PRINTFORMW 리제는 환하게 웃었다.
+PRINTDATAW
+DATAFORM 「주인님의 애정표현은 참 사랑스러워요. 후후후...」
+DATALIST
+DATAFORM 「다른 아이들한테는 이런 일...」
+DATAFORM 「하실 리가 없죠. 저는 주인님을 믿어요.」
+ENDLIST
+DATAFORM 「주인님의 다정함은 저만 알고 싶네요. 후후후...」
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 리제의 %TEXTR("뺨/이마/손등")%에 입을 맞추었다.
+PRINTFORMW 리제는 당신에게 똑같이 되돌려주었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「주인님께서 저를 사랑하시는 만큼...」
+DATAFORM 「아니, 어쩌면 그것보다 더 많이 저도 주인님을 사랑해요.」
+ENDLIST
+DATALIST
+DATAFORM 「이건 제가 오직 주인님만을 사랑한다는 증거예요.」
+DATAFORM 「그러니... 주인님께서도 다른 해충한테 한눈 파시면 안 돼요. 후훗...」
+ENDLIST
+DATAFORM 「다른 해충이 주인님을 넘볼 수 없게, 흔적을 남겨놨어요. 후훗...」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리제의 %TEXTR("뺨/이마/손등")%에 입을 맞추었다.
+PRINTFORMW 리제는 당신을 가만히 바라보았다.
+PRINTFORMW %TEXTR("「이건... 또 무슨 장난인가요...?」/「주인님, 이런 장난은 삼가주세요...」")%
+CASE "Fear"
+PRINTFORMW 당신은 리제의 %TEXTR("뺨/이마/손등")%에 입을 맞추었다.
+PRINTFORMW 리제는 두려움에 떠는 눈빛으로 당신을 바라보았다.
+PRINTDATAW
+DATAFORM 「아... 감사합니다...」
+DATAFORM 「저, 저는 괜찮아요. 주인님께서 원하신다면...」
+DATALIST
+DATAFORM 「멍자국 대신 이런 흔적만 남는다면 좋을 텐데...」
+DATAFORM 리제는 들릴 듯 말 듯 중얼거렸다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신은 리제의 %TEXTR("뺨/이마/손등")%에 입을 맞추었다.
+PRINTFORMW 리제는 환희에 찬 표정으로 당신에게 달라붙었다.
+PRINTDATAW
+DATAFORM 「너무 기뻐요... 역시 주인님께는 저밖에 없는 거죠?」
+DATALIST
+DATAFORM 「역시, 주인님은 절 버리지 않으신 거예요!」
+DATAFORM 「너무 기뻐요... 더, 더 해주세요!」
+ENDLIST
+DATAFORM 「저는 믿고 있었어요. 주인님께선 역시 저를 사랑하신다는 걸요!」
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 리제의 %TEXTR("뺨/이마/손등")%에 입을 맞추었다.
+PRINTFORMW 리제는 피식 웃었다.
+PRINTFORMW %TEXTR("「히힛... 간지러워요, 주인님.」/「여기에도... 해주세요...」")%
+CASE "Hidden"
+PRINTFORMW 리제가 당신의 %TEXTR("뺨/이마/손등")%에 입을 맞추었다.
+PRINTFORMW %TEXTR("「후훗, 주인님께서 항상 저한테 해주시던 거예요.」/「주인님께서 항상 해주시던 애정표현... 이제는 제가 해드릴 차례네요. 후후후...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM13
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제의 옆구리를 손으로 쥐었다.
+PRINTFORMW 리제는 소스라치게 놀라며 비명을 질렀다.
+PRINTFORMW %TEXTR("「꺅!」/「히익!」/「힉!」")%
+CASE "High"
+PRINTFORMW 당신은 리제의 옆구리를 손으로 쥐었다.
+PRINTFORMW 리제는 얼굴을 붉히며 부끄러워했다.
+PRINTDATAW
+DATAFORM 「주인님도 참... 거긴 부끄러워요.」
+DATALIST
+DATAFORM 「거긴... 자신이 없는데...」
+DATAFORM 「짓궂으세요, 주인님...」
+ENDLIST
+DATAFORM 「하읏, 간지러워요, 주인님.」
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 리제의 옆구리를 손으로 쥐었다.
+PRINTFORMW 리제는 당신의 손에 자신의 손을 얹었다.
+PRINTDATAW
+DATAFORM 「부끄럽지만... 주인님께서 원하신다면 참을 수 있어요.」
+DATAFORM 「후훗... 절 보면서 이런 생각을 하고 계셨군요.」
+DATALIST
+DATAFORM 「다른 아이들에게 손을 대지 않으신다면...」
+DATAFORM 「원하시는 대로 하셔도 돼요.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 리제의 옆구리를 손으로 쥐었다.
+PRINTFORMW 리제는 홍조를 띤 채 거친 숨을 내쉬었다.
+PRINTDATAW
+DATAFORM 「이걸로 끝내시는 건... 아니시죠?」
+DATALIST
+DATAFORM 「제가 이런 기분이 들게 만든 채로...」
+DATAFORM 「놔두진 않으시겠죠? 후훗...」
+ENDLIST
+DATALIST
+DATAFORM 「주인님... 전 가끔 걱정이 돼요.」
+DATAFORM 「주인님께서 다른 해충들한테도 이렇게 하실까 봐...」
+ENDLIST
+DATALIST
+DATAFORM 「이런 건 반드시 저한테만 하셔야 해요.」
+DATAFORM 「어서요, 약속해주세요.」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리제의 옆구리를 손으로 쥐었다.
+PRINTFORMW 리제는 무표정하게 당신의 손을 치웠다.
+PRINTFORMW %TEXTR("「이런 장난은 자제해 주시라고 여러 번 말씀드렸는데...」/「죄송해요, 주인님. 일하는 데 방해가 돼서...」/「이런 장난은... 후우, 아니에요.」")%
+CASE "Fear"
+PRINTFORMW 당신은 리제의 옆구리를 손으로 쥐었다.
+PRINTFORMW 리제는 눈을 질끔 감으며 배를 감싸쥐었다.
+PRINTFORMW %TEXTR("「배는... 때리지 마세요...」/「배를 맞는 건, 너무 아파요...」/「다른 곳은 괜찮으니까, 배만은...」")%
+CASE "Weak"
+PRINTFORMW 당신은 리제의 옆구리를 손으로 쥐었다.
+PRINTFORMW 리제는 과한 반응을 보이며 웃었다.
+PRINTDATAW
+DATAFORM 「히힛, 간지러워요, 주인님! 푸흐흐...」
+DATAFORM 「아흣, 새로운 애정표현인 거죠? 그렇죠?!」
+DATALIST
+DATAFORM 「주인님의 손길이 느껴져요. 푸힛...」
+DATAFORM 「더 만져주세요. 더...!」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 리제의 옆구리를 손으로 쥐었다.
+PRINTFORMW 당신이 리제의 옆구리를 주무르자, 리제는 공허하게 웃었다.
+PRINTFORMW %TEXTR("「히힛...」/「힛... 간지러워요, 주인님...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM14
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제의 귀를 약하게 깨물었다.
+PRINTFORMW 리제는 아픈 듯 얼굴을 약간 찌푸렸다.
+PRINTFORMW %TEXTR("「꺅! 주인님? 갑자기 귀는 왜...」/「힛, 너무 짓궂으세요, 주인님...」/「힉! 아, 아파요, 주인님.」")%
+CASE "High"
+PRINTFORMW 당신은 리제의 귀를 약하게 깨물었다.
+PRINTFORMW 리제는 놀란 표정으로 당신을 쳐다보았다.
+PRINTDATAW
+DATALIST
+DATAFORM 「정말, 주인님께서는...」
+DATAFORM 「항상 새로운 방법으로 절 놀라게 하시네요. 후후...」
+ENDLIST
+DATAFORM 「이번엔 귀였나요, 후후... 다음에는 어디일지 기대할게요.」
+DATAFORM 「주인님께서는 정말 장난기가 많으시네요. 후후후...」
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 리제의 귀를 약하게 깨물었다.
+PRINTFORMW 리제는 홍조를 띄우며 당신을 바라보았다.
+PRINTFORMW %TEXTR("「아픈데... 기분이 좋아요. 히힛...」/「자꾸 이러시면... 제가 새로운 것에 눈을 뜨게 될지도 몰라요. 후후...」/「고통을 즐기는 것도 나쁘지 않을지도 모르겠네요. 후훗...」")%
+CASE "Marryed"
+PRINTFORMW 당신은 리제의 귀를 약하게 깨물었다.
+PRINTFORMW 리제는 작은 신음소리를 흘리며 당신을 바라보았다.
+PRINTDATAW
+DATAFORM 「이 느낌... 중독돼버릴지도 모르겠네요. 후훗...」
+DATALIST
+DATAFORM 「후훗, 저를 유혹하시는 건가요?」
+DATAFORM 「새로운 방법이라서 설레네요.」
+ENDLIST
+DATALIST
+DATAFORM 「정말 짓궂으시네요, 이건 복수예요.」
+DATAFORM 리제가 당신의 귀를 입술로 살짝 물었다.
+ENDLIST
+DATALIST
+DATAFORM 「후후... 이건 다른 해충들이 달라붙지 못하게 하는 표시라고 생각해주세요.」
+DATAFORM 리제는 당신의 귀를 약하게 깨물었다.
+DATAFORM 당신의 귀에 리제의 잇자국이 희미하게 새겨졌다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리제의 귀를 약하게 깨물었다.
+PRINTFORMW 리제는 불쾌한 듯 미간을 찌푸렸다.
+PRINTFORMW %TEXTR("「아픈 건 자제해주세요, 주인님.」/「이런 행동은 상처가 생길 수도 있으니까 그만둬주세요.」/「...항상 저를 놀라게 하는 방법만 생각하시나요?」")%
+CASE "Fear"
+PRINTFORMW 당신은 리제의 귀를 약하게 깨물었다.
+PRINTFORMW 리제는 공포를 느끼고 등을 빳빳하게 세웠다.
+PRINTFORMW %TEXTR("「흑... 아파요, 주인님...」/「...상처는 남지 않게 해주세요...」/「차라리... 주먹보단 나을지도 모르겠네요...」")%
+CASE "Weak"
+PRINTFORMW 당신은 리제의 귀를 약하게 깨물었다.
+PRINTFORMW 리제는 새어나오려던 비명을 억지로 참았다.
+PRINTDATAW
+DATALIST
+DATAFORM 「주인님께서 저한테 뭘 하셔도 괜찮아요.」
+DATAFORM 「그러니까, 제발... 절 버리지 마세요...」
+ENDLIST
+DATAFORM 「이, 이건 애정표현인 거죠? 맞죠?」
+DATAFORM 「전 괜찮아요! 더 세게... 그래요, 제 귀 하나쯤은 사라져도 괜찮아요!」
+DATAFORM 「히힛, 주인님을 위해서라면 귀 정도는...」
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 리제의 귀를 약하게 깨물었다.
+PRINTFORMW 리제는 반응이 없었다.
+PRINTDATAW
+DATAFORM 「깨무는 건... 아파요...」
+DATAFORM 「귀에 상처가... 히힛...」
+DATALIST
+DATAFORM 「...아파...」
+DATAFORM 리제는 당신의 잇자국이 난 자신의 귀를 매만졌다.
+ENDLIST
+ENDDATA
+CASE "Hidden"
+PRINTFORMW 리제는 당신의 귀를 깨물었다.
+PRINTFORMW 당신의 귀에는 리제의 잇자국이 선명하게 났다.
+PRINTFORMW %TEXTR("「이건... 주인님께서는 저만의 주인님이라는 표시예요.」/「아프시겠지만 이해해주세요. 주인님을 두 번 다시 빼앗기지 않기 위한 표시를 새기는 거예요.」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM15
+SELECTCASE CSTR:1
+CASE "First/Low"
+PRINTFORMW 당신은 리제에게 입을 맞췄다.
+PRINTFORMW 리제는 얼굴이 빨갛게 달아오른 채 얼어붙었다.
+PRINTFORMW 「처음이었는데... 너무해요, 주인님...」
+PRINTFORMW 리제는 말을 채 끝내지 못하고 눈물을 흘리며 어디론가 사라졌다.
+CASE "First/High"
+PRINTFORMW 당신은 리제에게 입을 맞췄다.
+PRINTFORMW 리제는 귀가 빨개진 채 미소지었다.
+PRINTFORMW 「제 예상이랑은 좀 다르지만... 주인님이니까 괜찮아요.」
+CASE "First/Affection"
+PRINTFORMW 당신은 리제에게 입을 맞췄다.
+PRINTFORMW 리제는 당신의 목덜미를 가볍게 감싸 안았다.
+PRINTFORMW 「아아, 드디어... 정말 황홀해요. 후후...」
+PRINTFORMW 리제는 홍조를 띠며 말했다.
+CASE "First/Marryed"
+PRINTFORMW 당신은 리제에게 입을 맞췄다.
+PRINTFORMW 리제는 당신을 강하게 감싸 안았다.
+PRINTFORMW 「드디어 제 입술을 가져가셨군요. 후후후...」
+PRINTFORMW 「역시 주인님 곁에는 저만 있으면 충분하답니다.」
+PRINTFORMW 「그러니, 이제 다른 해충한테 눈을 돌리시면 안 돼요. 아셨죠?」
+CASE "First/Annoyed"
+PRINTFORMW 당신은 리제에게 입을 맞췄다.
+PRINTFORMW 리제는 불쾌해 하는 표정으로 한숨을 쉬며 입술을 닦았다.
+PRINTFORMW 「...이건 너무하셨어요, 주인님.」
+CASE "First/Fear"
+PRINTFORMW 당신은 리제에게 입을 맞췄다.
+PRINTFORMW 「가, 갑자기 왜 이러시는 거예요...?」
+CASE "First/Weak"
+PRINTFORMW 당신은 리제에게 입을 맞췄다.
+PRINTFORMW 리제는 당신의 어깨를 부여잡고 애원했다.
+PRINTFORMW 「주, 주인님! 무슨 명령이든 들을 테니까, 한 번만 더...!」
+CASE "First/Break"
+PRINTFORMW 당신은 리제에게 입을 맞췄다.
+PRINTFORMW 리제는 손가락을 자신의 입술에 대었다.
+PRINTFORMW 「히힛... 따뜻해...」
+CASE "Low"
+PRINTFORMW 당신은 리제에게 입을 맞췄다.
+PRINTFORMW 리제는 얼굴이 빨개져 입을 가렸다.
+PRINTFORMW %TEXTR("「아무리 한 번 했다고 해도...」/「이런 건 좀 더... 서로를 알아간 뒤에...」/「역시 많이 부끄러워요...」")%
+CASE "High"
+PRINTFORMW 당신은 리제에게 입을 맞췄다.
+PRINTFORMW 리제는 자신의 입술을 어루만졌다.
+PRINTFORMW %TEXTR("「이런 식으로 하는 것도 나쁘진 않긴 하지만...」/「이런 건 분위기가 중요하다구요, 주인님.」/「다음에는 조금 더... 분위기있게...」")%
+CASE "Affection"
+PRINTFORMW 당신은 리제에게 입을 맞췄다.
+PRINTFORMW 리제는 당신의 입술을 어루만졌다.
+PRINTFORMW %TEXTR("「주인님께서 다른 아이들한테도 이러시면 어떡하죠, 후후...」/「다음엔 둘만의 장소에서...」/「입맞추는 건 몇 번을 해도 질리지 않네요. 후후...」")%
+CASE "Marryed"
+PRINTFORMW 당신은 리제에게 입을 맞췄다.
+PRINTFORMW 리제는 한참 동안 당신의 목덜미를 감싸 안고 있었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「주인님의 입술은 저만의 거예요...」
+DATAFORM 「다른 해충들한테는 절대 양보 못 해요.」
+ENDLIST
+DATAFORM 「그런데, 다음 단계로는... 안 가시나요?」
+DATAFORM 「하루종일이라도 할 수 있어요. 히힛...」
+DATALIST
+DATAFORM 「설마... 다른 해충한테도 이러진 않으시겠죠?」
+DATAFORM 리제가 자줏빛 눈동자로 당신을 바라보았다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리제에게 입을 맞췄다.
+PRINTFORMW 리제는 불쾌해 하는 표정이었다.
+PRINTFORMW %TEXTR("「한 번 했으니까 두 번째부터는 괜찮을 거라는 생각은 그만두세요.」/「주인님... 이건 정말 아니라고 생각해요.」/「정말... 제 입장에선 조금도 생각해보질 않으시는군요...」")%
+CASE "Fear"
+PRINTFORMW 당신은 리제에게 입을 맞췄다.
+PRINTDATAW
+DATALIST
+DATAFORM 「아, 아니에요! 전혀 불쾌하지 않았어요.」
+DATAFORM 「...정말이에요.」
+ENDLIST
+DATAFORM 「흑... 무서워요...」
+DATALIST
+DATAFORM 리제의 몸이 빳빳하게 굳었다.
+DATAFORM 리제는 눈을 질끈 감은 채, 당신의 입맞춤을 무기력하게 받아들였다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신은 리제에게 입을 맞췄다.
+PRINTFORMW 리제는 기쁨의 눈물을 흘리며 당신을 붙잡았다.
+PRINTFORMW %TEXTR("「조, 조금만 더... 주인님의 온기를 느끼고 싶어요...」/「이제 저를 사랑해주시는 거죠? 네?」/「하루종일 하셔도 괜찮으니까, 조금만 더...!」/「오랜만에 느끼는 주인님의 온기예요... 흑...」")%
+CASE "Break"
+PRINTFORMW 당신은 리제에게 입을 맞췄다.
+PRINTFORMW 리제는 미동도 없었다.
+PRINTFORMW %TEXTR("「...입술...」/「부드러워...」/「기분 좋아요, 히힛...」")%
+CASE "Hidden"
+PRINTFORMW 리제는 당신에게 격렬하게 입을 맞췄다.
+PRINTFORMW %TEXTR("「아아... 다른 해충들은 이런 기쁨을 모르겠죠?」/「...더 격렬하게... 해드릴까요?」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM16
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제의 뒷목을 혀로 훑었다.
+PRINTFORMW 리제는 놀라며 목을 꼿꼿하게 세웠다.
+PRINTFORMW %TEXTR("「힉!」/「그런 곳을 혀로 핥으시다니...」/「주, 주인님?!」")%
+CASE "High"
+PRINTFORMW 당신은 리제의 뒷목을 혀로 훑었다.
+PRINTFORMW 리제는 들릴 듯 말 듯한 신음소리를 내었다.
+PRINTFORMW %TEXTR("「하읏...」/「후후후... 이건 이것대로..」/「히힛, 간지러워요, 주인님.」")%
+CASE "Affection"
+PRINTFORMW 당신은 리제의 뒷목을 혀로 훑었다.
+PRINTFORMW 리제는 몸을 미세하게 떨었다.
+PRINTFORMW %TEXTR("「이건... 신호인가요?」/「조금... 흥분되네요. 후훗...」/「이런 기분... 중독돼버릴지도 모르겠네요. 후후후...」/「이런 곳에서 매력을 느끼셨나보군요. 후후...」")%
+CASE "Marryed"
+PRINTFORMW 당신은 리제의 뒷목을 혀로 훑었다.
+PRINTFORMW 리제는 신음소리를 토해내며 몸을 부르르 떨었다.
+PRINTDATAW
+DATAFORM 「...어떠신가요, 달콤한가요? 후훗...」
+DATALIST
+DATAFORM 「하아... 기분 좋아요, 주인님.」
+DATAFORM 「제 몸을 주인님의 흔적으로...」
+ENDLIST
+DATALIST
+DATAFORM 「저도 해충들이 주인님께 다가가지 못하도록 제 흔적을 남겨드릴게요.」
+DATAFORM 리제가 당신의 목을 혀로 훑었다.
+ENDLIST
+DATALIST
+DATAFORM 「후후... 다음은 어디인가요?」
+DATAFORM 「더 위로? 아니면...」
+DATAFORM 「훨씬... 아래로?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리제의 뒷목을 혀로 훑었다.
+PRINTFORMW 리제는 노골적인 불쾌함을 드러내며 미간을 찌푸렸다.
+PRINTFORMW %TEXTR("「...목이 더러워지잖아요, 주인님.」/「이런 건 안 하셨으면 좋겠어요.」/「어떻게 하루도 거르지 않으시고 이런 일을...」")%
+CASE "Fear"
+PRINTFORMW 당신은 리제의 뒷목을 혀로 훑었다.
+PRINTFORMW 리제는 화들짝 놀라며 피했다.
+PRINTFORMW %TEXTR("「오, 오해예요, 주인님. 절대 기분이 나쁜 게 아니에요.」/「피해서 죄송해요, 주인님... 용서해주세요...」/「피해서 죄송해요. 이런 장난이라면 참아볼게요...」")%
+CASE "Weak"
+PRINTFORMW 당신은 리제의 뒷목을 혀로 훑었다.
+PRINTFORMW 리제는 자줏빛 눈을 번뜩이며 당신을 바라보았다.
+PRINTFORMW %TEXTR("「히힛... 다른 곳도 해주세요...!」/「히힛... 제 몸 구석구석 모두 핥으셔도 돼요.」/「제 몸... 모두 맛보셔도 돼요, 주인님!」/「제 몸은 모두 주인님 거예요. 그러니까 주인님이 원하시는 대로...」")%
+CASE "Break"
+PRINTFORMW 당신은 리제의 뒷목을 혀로 훑었다.
+PRINTFORMW 리제는 움직이지 않았다.
+PRINTDATAW
+DATALIST
+DATAFORM 「주인님의... 침...」
+DATAFORM 리제가 자신의 뒷목을 쓰다듬었다.
+ENDLIST
+DATAFORM 「히힛... 간지러워요...」
+DATAFORM 「부끄러워요, 히힛...」
+ENDDATA
+CASE "Hidden"
+PRINTFORMW 리제가 당신의 목에 입을 맞추었다.
+PRINTFORMW %TEXTR("「후훗... 기분 좋으신가요?」/「하아... 못 참겠어요. 한 번 더...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM17
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 리제의 등줄기를 따라 손가락을 움직였다.
+PRINTFORMW 리제는 귀가 찢어질 듯한 비명을 내질렀다.
+PRINTFORMW %TEXTR("「꺅! 주인님?!」/「꺅?!」/「히익?! 주인님? 갑자기 왜 이러세요?」")%
+CASE "High"
+PRINTFORMW 리제의 등줄기를 따라 손가락을 움직였다.
+PRINTFORMW 리제는 얼굴을 붉히며 등을 곧게 폈다.
+PRINTFORMW %TEXTR("「히힛, 간지러워요.」/「이런 건 좀 부끄러운데...」/「히얏, 갑자기 이러시면 부끄러워요.」")%
+CASE "Affection"
+PRINTFORMW 리제의 등줄기를 따라 손가락을 움직였다.
+PRINTFORMW 리제는 두 볼에 홍조를 띠었다.
+PRINTFORMW %TEXTR("「후후... 그런 곳에도 흥미가 있으신가요?」/「후훗, 다른 아이들이 보면 질투하겠네요.」/「제 매력에 빠져들고 계시는군요. 후훗.」")%
+CASE "Marryed"
+PRINTFORMW 리제의 등줄기를 따라 손가락을 움직였다.
+PRINTFORMW 리제는 자신의 등을 당신에게 바짝 붙였다.
+PRINTDATAW
+DATAFORM 「역시... 이건, 유혹인가요?」
+DATAFORM 「더 아래로 내려가셔도 되는데... 후후후...」
+DATAFORM 「이 다음도 기대할게요. 히힛...」
+DATALIST
+DATAFORM 「다른 해충들한테도 이렇게 유혹하시는 건...」
+DATAFORM 「아니시겠죠? 전 너무 걱정돼요...」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 리제의 등줄기를 따라 손가락을 움직였다.
+PRINTFORMW 리제는 신경질적으로 당신의 손을 쳐냈다.
+PRINTFORMW %TEXTR("「이런 거... 소름돋아요, 주인님.」/「주인님도... 한결같으시네요.」")%
+CASE "Fear"
+PRINTFORMW 리제의 등줄기를 따라 손가락을 움직였다.
+PRINTFORMW 리제는 몸을 미세하게 떨었다.
+PRINTDATAW
+DATAFORM 「흐읏... 때리지 마세요...」
+DATAFORM 「허리는... 안 돼요, 제발...」
+DATALIST
+DATAFORM 「힉...」
+DATAFORM 리제는 비명을 지르려던 것을 가까스로 참았다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 리제의 등줄기를 따라 손가락을 움직였다.
+PRINTFORMW 리제는 깔깔 웃으며 당신에게 달라붙었다.
+PRINTFORMW %TEXTR("「주인님께서 원하시는 곳은 어디든 만지세요!」/「히힛, 더 해주세요, 주인님!」/「이런 건 반드시 저한테만 하셔야 해요, 꼭이요!」/「다른 해충한테 갔다오신 건 아니시죠? 그렇죠?」")%
+CASE "Break"
+PRINTFORMW 리제의 등줄기를 따라 손가락을 움직였다.
+PRINTFORMW 리제는 무표정하게 몸을 꿈틀거렸다.
+PRINTFORMW %TEXTR("「간지러워요, 히힛...」/「히힛...」/「다른 곳도... 만져주세요...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM18
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 리제의 가슴에 얼굴을 파묻었다.
+PRINTFORMW 리제는 조심스럽게 당신을 밀어냈다.
+PRINTFORMW %TEXTR("「...너무 부끄러워요, 주인님...」/「히얏?!」/「가, 갑자기 왜 이러세요?!」")%
+CASE "High"
+PRINTFORMW 리제의 가슴에 얼굴을 파묻었다.
+PRINTFORMW 리제는 조금 당황한 기색이었지만 가만히 있었다.
+PRINTFORMW %TEXTR("「이건 좀... 쑥스럽네요. 후후...」/「이런 게... 좋으신 건가요?」/「혹시 안좋은 일이라도 있으셨던 건가요?」")%
+CASE "Affection"
+PRINTFORMW 리제의 가슴에 얼굴을 파묻었다.
+PRINTFORMW 리제는 당신을 가만히 감싸 안아주었다.
+PRINTDATAW
+DATAFORM 「제 품에 안기면 진정되시는 건가요? 후후...」
+DATAFORM 「후훗, 어리광쟁이네요, 주인님은.」
+DATALIST
+DATAFORM 「다른 아이들보다 크진 않아서...」
+DATAFORM 「별로 자신은 없는데...」
+ENDLIST
+DATAFORM 「후훗, 제 품이 그리우셨죠?」
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 리제의 가슴에 얼굴을 파묻었다.
+PRINTFORMW 리제는 당신의 머리를 꼭 감싸 안았다.
+PRINTFORMW 리제의 품은 포근했다.
+PRINTDATAW
+DATAFORM 「후훗... 주인님, 꼭 아이 같아요. 사랑스러워라...」
+DATALIST
+DATAFORM 「다른 해충보다 조금 작다고 한눈 파시면 안 돼요. 아셨죠?」
+DATAFORM 리제가 당신을 더 강하게 껴안았다.
+ENDLIST
+DATAFORM 「아아... 주인님께서 제 품에... 너무 행복해요...」
+DATALIST
+DATAFORM 「여긴 별로 자신이 없는데...」
+DATAFORM 당신은 리제의 걱정을 떨쳐주려고, 숨을 깊게 들이쉬며 얼굴을 리제의 가슴에 더욱 꼭 파묻었다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리제의 가슴에 얼굴을 파묻으려고 했다.
+PRINTFORMW 리제는 당신을 거부했다.
+PRINTFORMW %TEXTR("「애처럼 굴지 마세요, 주인님.」/「이건... 아닌 것 같아요.」/「조금은 의젓하게 행동하세요.」")%
+CASE "Fear"
+PRINTFORMW 리제의 가슴에 얼굴을 파묻었다.
+PRINTFORMW 리제는 미세하게 떨며 당신을 받아들였다.
+PRINTFORMW %TEXTR("「저, 저라도 괜찮으시다면...」/「휴... 혼내지 않으시는 거죠?」/「...」/「이런 주인님의 모습, 굉장히 오랜만에 본 것 같네요...」")%
+CASE "Weak"
+PRINTFORMW 리제의 가슴에 얼굴을 파묻었다.
+PRINTFORMW 리제는 당신을 아주 강하게 껴안았다.
+PRINTFORMW %TEXTR("「절대로... 절대로절대로절대로절대로절대로... 보내드리지 않을 거예요...」/「히힛... 절대 안 놓칠 거예요... 히힛...」/「저만 바라봐주시기로 한 건가요?! 그렇죠?」/「평생 이렇게 있어주세요, 히힛...」")%
+CASE "Break"
+PRINTFORMW 리제의 가슴에 얼굴을 파묻었다.
+PRINTFORMW 리제는 미동도 없었다.
+PRINTFORMW %TEXTR("「...」/「...히힛...」/「귀여워요...」/「아기... 같아요... 히힛...」")%
+CASE "Hidden"
+PRINTFORMW 리제가 자신의 가슴에 당신의 얼굴을 파묻었다.
+PRINTFORMW 리제는 한참동안, 당신이 숨을 쉬기 힘들 정도로 당신을 강하게 껴안았다.
+PRINTFORMW %TEXTR("「후후... 항상 이런 식으로 제가 위로해드렸었죠?」/「어떠신가요, 제 품은? 역시 최고죠? 그렇죠?」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM19
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제에게 큰 소리로 욕지거리를 내뱉었다.
+PRINTFORMW 리제의 눈가에 눈물이 맺혔다.
+PRINTFORMW %TEXTR("「...너무하세요, 주인님...」/「어떻게 그렇게 심한 말씀을...」")%
+CASE "High"
+PRINTFORMW 당신은 리제에게 큰 소리로 욕지거리를 내뱉었다.
+PRINTFORMW 리제는 작은 충격을 받았다.
+PRINTDATAW
+DATAFORM 「저한테... 하신 말씀인가요...?」
+DATAFORM 「제가 뭔가... 잘못했나요?」
+DATALIST
+DATAFORM 「조금만 더 다정하게 말씀해주셨으면 좋을 텐데...」
+DATAFORM 리제의 눈에 눈물이 맺혔다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 리제에게 큰 소리로 욕지거리를 내뱉었다.
+PRINTFORMW 리제는 멍한 얼굴로 입을 벌리고 당신을 바라보았다.
+PRINTFORMW %TEXTR("「...주인님? 어째서 그런 말씀을...」/「어째서 저한테...」/「제가... 싫어지신 건가요?」/「제가 잘못 들은 거겠죠?」")%
+CASE "Marryed"
+PRINTFORMW 당신은 리제에게 큰 소리로 욕지거리를 내뱉었다.
+PRINTFORMW 리제는 눈을 크게 뜬 채 당신을 바라보았다.
+PRINTDATAW
+DATALIST
+DATAFORM 「설마... 다른 해충이 좋아지신 건가요?」
+DATAFORM 「...아니겠죠?」
+ENDLIST
+DATALIST
+DATAFORM 「이번에는 못 들은 걸로 할게요...」
+DATAFORM 「하지만, 다음에는...」
+ENDLIST
+DATAFORM 「이런 건 제 취향이 아니에요...」
+DATAFORM 「저는 주인님께... 좋은 말씀만 듣고 싶어요...」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리제에게 큰 소리로 욕지거리를 내뱉었다.
+PRINTFORMW 리제는 기가 찬다는 듯 피식 웃었다.
+PRINTFORMW %TEXTR("「이제는... 그런 상스러운 말씀까지 하시는 군요...」/「그래도 조금은 기대하고 있었는데...」/「후우... 다음엔 때리기라도 하실 건가요?」")%
+CASE "Fear"
+PRINTFORMW 당신은 리제에게 큰 소리로 욕지거리를 내뱉었다.
+PRINTFORMW 리제는 몸을 웅크리며 바들바들 떨었다.
+PRINTDATAW
+DATAFORM 「죄송해요... 죄송해요...」
+DATAFORM 「때, 때리지만 마세요...」
+DATALIST
+DATAFORM 「전부 제가 잘못했어요, 제발 용서해주세요...」
+DATAFORM 리제의 눈에서 눈물이 주륵 흘렀다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신은 리제에게 큰 소리로 욕지거리를 내뱉었다.
+PRINTFORMW 리제는 당신의 소맷자락을 붙들고 늘어졌다.
+PRINTDATAW
+DATAFORM 「분이 풀릴 때까지 화내셔도 돼요. 죄송해요, 죄송해요...」
+DATAFORM 「죄송해요, 제가 잘못했어요! 절 버리지 마세요, 제발...」
+DATALIST
+DATAFORM 「마음에 안 드시는 부분은 전부 고칠게요.」
+DATAFORM 「그러니 제발...」
+ENDLIST
+DATALIST
+DATAFORM 「죄송해요, 죄송해요, 죄송해요, 죄송해요, 죄송해요...」
+DATAFORM 리제는 같은 말만 되뇌었다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 리제에게 큰 소리로 욕지거리를 내뱉었다.
+PRINTFORMW 리제의 눈에서 눈물이 흘렀다.
+PRINTFORMW %TEXTR("「...흑...」/「너무해요...」/「...죄송해요...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM20
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제에게 손찌검을 했다.
+PRINTFORMW 리제는 빨개진 뺨을 손으로 가렸다.
+PRINTFORMW %TEXTR("「아파요... 주인님...」/「좋게 말씀으로 하셨어도 됐는데...」/「주인님, 어째서...」")%
+CASE "High"
+PRINTFORMW 당신은 리제에게 손찌검을 했다.
+PRINTFORMW 리제는 상황파악이 안 된 듯 보였다.
+PRINTFORMW %TEXTR("「이게 무슨...」/「제가 뭔가 실수했나요...?」/「주인님은... 이런 분이 아니셨잖아요?」")%
+CASE "Affection"
+PRINTFORMW 당신은 리제에게 손찌검을 했다.
+PRINTFORMW 리제의 붉어진 뺨을 타고 눈물이 흘렀다.
+PRINTFORMW %TEXTR("「아픈 건... 별로예요, 주인님...」/「아무리 주인님이라고 해도, 너무하세요...」/「저에 대한 애정이 식어버리신 건가요...?」/「주인님의 저를 향한 애정은... 이 정도밖에 안 됐나요?」")%
+CASE "Marryed"
+PRINTFORMW 당신은 리제에게 손찌검을 했다.
+PRINTFORMW 리제는 붉어진 뺨을 가리고 당신을 바라보았다.
+PRINTFORMW %TEXTR("「...폭력은 안 좋은 거예요, 주인님...」/「저는... 고통을 즐기는 쪽은 아니에요...」/「...다른 해충한테 마음을 빼앗기신 건가요?」/「이런 건 진정한 사랑이 아니에요, 주인님...」")%
+CASE "Annoyed"
+PRINTFORMW 당신은 리제에게 손찌검을 했다.
+PRINTFORMW %TEXTR("「하다하다 이제는 손까지 대시는군요...」/「조금이라도 기대했던 제가 멍청했던 걸까요...」/「...저는 주인님의 분풀이용 도구에 불과한 걸까요?」")%
+CASE "Fear"
+PRINTFORMW 당신은 리제에게 손찌검을 했다.
+PRINTFORMW 리제는 눈물을 줄줄 흘리며 당신에게 사과했다.
+PRINTFORMW %TEXTR("「죄송해요...」/「아파요... 제발 말로 해주세요...」/「용서해주세요... 흑...」")%
+CASE "Weak"
+PRINTFORMW 당신은 리제에게 손찌검을 했다.
+PRINTFORMW 리제는 빨갛게 부어오른 뺨은 아랑곳하지 않고 당신에게 매달렸다.
+PRINTFORMW %TEXTR("「괜찮아요, 주인님은 잘못한 거 없어요! 전부 제 잘못이에요!」/「아프지만, 주인님의 화가 풀린다면... 참을 수 있어요!」/「죄송해요... 잘못된 점은 전부 고칠게요...」")%
+CASE "Break"
+PRINTFORMW 당신은 리제에게 손찌검을 했다.
+PRINTFORMW 리제는 새빨개진 뺨을 조용히 손으로 가렸다.
+PRINTFORMW %TEXTR("「...아파요...」/「흑...」/「슬퍼요...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM21
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 리제의 배를 주먹으로 때렸다.
+PRINTFORMW 리제는 눈을 동그랗게 뜬 채 고통에 신음했다.
+PRINTFORMW %TEXTR("「커흑...」/「컥, 주인님, 어째서...」/「허억...」")%
+CASE "High"
+PRINTFORMW 리제의 배를 주먹으로 때렸다.
+PRINTFORMW 리제는 고통에 눈물을 흘렸다.
+PRINTDATAW
+DATAFORM 「허윽... 갑자기 왜 이러시는 거예요...」
+DATALIST
+DATAFORM 「너무하세요, 주인님...」
+DATAFORM 리제가 연신 콜록댔다.
+ENDLIST
+DATALIST
+DATAFORM 「콜록, 콜록!」
+DATAFORM 「...상냥했던 주인님은... 그냥 보여주기 위한 거였나요?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 리제의 배를 주먹으로 때렸다.
+PRINTFORMW 리제는 엎어진 채 거친 숨을 들이쉬었다.
+PRINTFORMW %TEXTR("「이건 애정이 아니에요...」/「커흑... 설마... 다른 아이한테 마음이 간 건 아니시죠?」/「주인님... 뭔가 달라지셨어요...」")%
+CASE "Marryed"
+PRINTFORMW 리제의 배를 주먹으로 때렸다.
+PRINTFORMW 리제는 충격을 받은 표정으로 숨을 헐떡였다.
+PRINTDATAW
+DATAFORM 「어째서... 그렇게나 저를 사랑하셨으면서...」
+DATALIST
+DATAFORM 「다른 해충을 바라보기로 하신 건가요...?」
+DATAFORM 「그건... 안 돼요...」
+ENDLIST
+DATAFORM 「커흑... 이번만은 용서해드릴게요...」
+DATAFORM 「커윽... 어째서... 」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 리제의 배를 주먹으로 때렸다.
+PRINTFORMW 리제는 엎어진 채 당신을 노려보았다.
+PRINTFORMW %TEXTR("「그래요... 차라리 몸이 힘든 게 나을 지도 모르겠네요.」/「콜록... 이젠 주먹까지 휘두르시는군요...」/「다른 아이들은, 주인님께서 이러시는 거 알고 있나요?」")%
+CASE "Fear"
+PRINTFORMW 리제의 배를 주먹으로 때렸다.
+PRINTFORMW 리제는 고통과 공포에 휩싸인 채 몸을 웅크렸다.
+PRINTFORMW %TEXTR("「커헉... 제가 잘못했어요, 주인님...」/「허윽... 이러면 멍이 들 텐데...」/「너무 무서워요, 주인님...」")%
+CASE "Weak"
+PRINTFORMW 리제의 배를 주먹으로 때렸다.
+PRINTFORMW 리제는 배를 움켜쥐고 쓰러진 채 한 손으로 당신을 붙잡았다.
+PRINTDATAW
+DATAFORM 「저는 그저... 다정한 주인님을 보고 싶을 뿐이에요...」
+DATAFORM 「잘못했어요, 잘못했어요, 잘못했어요, 잘못했어요...」
+DATALIST
+DATAFORM 「설마... 저한테 이런 짓을 하시는 게...」
+DATAFORM 「저를 버리고 다른 해충한테 가시려고...」
+DATAFORM 「그건... 안 돼요...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 리제의 배를 주먹으로 때렸다.
+PRINTFORMW 리제는 얼굴을 찌푸리며 쓰러졌다.
+PRINTFORMW %TEXTR("「허윽...」/「카학...!」/「너무... 아파요...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_COM22
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제를 발로 걷어찼다.
+PRINTFORMW 리제는 엎어진 채 고개를 푹 숙였다.
+PRINTFORMW %TEXTR("「허억... 왜 이러시는 거예요, 주인님...」/「커흑...! 너무 아파요, 주인님...」")%
+CASE "High"
+PRINTFORMW 당신은 리제를 발로 걷어찼다.
+PRINTFORMW 리제는 맞은 곳을 감싸쥐고 당신을 쳐다보았다.
+PRINTFORMW %TEXTR("「콜록, 콜록... 주인님, 아파요...」/「흑... 너무하세요...」/「주인님, 너무 무서워요...」")%
+CASE "Affection"
+PRINTFORMW 당신은 리제를 발로 걷어찼다.
+PRINTFORMW 리제는 혼란해하는 표정으로 배를 움켜쥐었다.
+PRINTFORMW %TEXTR("「갑자기... 왜 이러세요...」/「아... 아파요... 주인님...」/「주인님... 뭔가 이상하세요...」/「절 사랑해주시던 그 손으로... 어째서...」")%
+CASE "Marryed"
+PRINTFORMW 당신은 리제를 발로 걷어찼다.
+PRINTFORMW 리제는 쓰러진 채 눈물을 흘렸다.
+PRINTFORMW %TEXTR("「이건... 주인님이 아니야...」/「지금까지 저한테 해주셨던 말은... 다 거짓말이었나요?」/「저는 맞는 걸로 사랑을 느끼지 않아요...」/「폭력은 애정이 아니에요...」")%
+CASE "Annoyed"
+PRINTFORMW 당신은 리제를 발로 걷어찼다.
+PRINTFORMW 리제는 쓰러진 채 고개를 숙이고 콜록거렸다.
+PRINTDATAW
+DATAFORM 「대체 제가 뭘 잘못한 건가요...」
+DATAFORM 「예전에는 이런 짓까지 하지는 않으셨는데...」
+DATALIST
+DATAFORM 「...」
+DATAFORM 리제는 연신 콜록거릴 뿐, 아무런 말도 하지 않았다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW 당신은 리제를 발로 걷어찼다.
+PRINTFORMW 리제는 아픔을 참으며 당신에게 연신 사과했다.
+PRINTFORMW %TEXTR("「아픈 건 싫어요... 죄송해요, 주인님...」/「주인님 말씀 잘 들을게요. 그러니 제발...」/「제가 전부 잘못했어요... 용서해주세요...」")%
+CASE "Weak"
+PRINTFORMW 당신은 리제를 발로 걷어찼다.
+PRINTFORMW 리제는 바닥에 주저앉은 채 중얼거렸다.
+PRINTFORMW %TEXTR("「히힛... 그래, 이건... 그냥 악몽이야. 히힛...」/「...주인님께서 다른 해충의 꾀임에 넘어간 거야... 히힛...」/「조금만 참으면 주인님께서도 다시 바라봐주실 거야...」/「아파... 이건 주인님의 본심이 아닐 거야...」")%
+CASE "Break"
+PRINTFORMW 당신은 리제를 발로 걷어찼다.
+PRINTFORMW 리제는 멍한 눈으로 고꾸라졌다.
+PRINTFORMW %TEXTR("「커흑...」/「허억...」/「아파요...」/「...슬퍼요...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+
+
+
+@M_No7_EVENT_Morning
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제의 목소리를 듣고 잠에서 깼다.
+PRINTFORMW %TEXTR("「주인님, 아침이에요. 어서 일어나세요.」/「주인님? 벌써 아침이에요.」/「주인님, 일어나실 시간이에요.」")%
+PRINTFORMW 리제는 당신의 옆에 공손하게 앉아있었다.
+CASE "High"
+PRINTFORMW 당신은 리제의 목소리를 듣고 잠에서 깼다.
+PRINTDATAW
+DATAFORM 「좋은 꿈을 꾸고 계셨나요? 하지만, 이제 일어나셔야 해요. 후훗...」
+DATALIST
+DATAFORM 「후후... 주인님? 주무시는 모습도 멋지지만...」
+DATAFORM 「이제 일어나셔야 해요.」
+ENDLIST
+DATAFORM 「주인님, 주인님? 빨리 안 일어나시면... 후훗...」
+ENDDATA
+PRINTFORMW 리제는 당신의 얼굴을 내려다보며 눈웃음을 짓고 있었다.
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신을 부드럽게 어루만지는 손길이 느껴졌다.
+DATAFORM 「아, 일어나셨나요? 주인님께서 주무시는 모습이 너무 사랑스러워서... 후훗...」
+ENDLIST
+DATALIST
+DATAFORM 아침이 되어 눈을 뜨자, 당신의 옆에 리제가 누워 잠들어 있었다.
+DATAFORM 당신은 리제가 깨지 않도록 슬며시 머리를 쓰다듬었다.
+ENDLIST
+DATALIST
+DATAFORM 기척이 느껴져 눈을 뜨자, 리제가 당신의 위에 올라탄 채 내려다보고 있었다.
+DATAFORM 「아아... 너무 사랑스러워요...」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 어떤 시선이 느껴져 눈을 떴다.
+DATAFORM 「일어나셨어요, 주인님? 제 사랑이 느껴졌던 건가요? 후훗...」
+ENDLIST
+DATALIST
+DATAFORM 당신의 몸을 조여오는 느낌이 들었다.
+DATAFORM 리제가 당신을 꼭 껴안은 채 잠들어있었다.
+DATAFORM 「으음... 주인님...」
+DATAFORM 리제는 잠꼬대로 당신을 찾고 있었다.
+ENDLIST
+DATALIST
+DATAFORM 당신의 볼에 온기가 느껴졌다.
+DATAFORM 리제가 당신의 볼에 입을 맞추고 있었다.
+DATAFORM 「후훗... 일어나셨어요? 이번엔 주인님께서 저에게...」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리제의 목소리를 듣고 잠에서 깼다.
+PRINTFORMW %TEXTR("「주인님, 언제까지 주무실 건가요?」/「아침이에요, 주인님.」/「어서 일어나세요, 주인님.」")%
+PRINTFORMW 리제는 건성건성 당신을 깨우고 사라졌다.
+CASE "Fear"
+PRINTFORMW 리제가 약간 겁에 질린 목소리로 당신을 깨웠다.
+PRINTFORMW %TEXTR("「주, 주인님... 아침이에요...」/「제가... 너무 늦게 깨운 건 아니죠?」/「혹시, 제가 너무 귀찮게 깨웠나요? 죄송합니다...」")%
+CASE "Weak"
+PRINTFORMW 당신이 눈을 뜨자, 리제가 당신 위에 올라탄 채 내려다보고 있었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「히힛... 일어나셨어요?」
+DATAFORM 「아침 인사로 키스를...」
+ENDLIST
+DATALIST
+DATAFORM 「주인님? 벌써 아침이에요.」
+DATAFORM 「아니면, 저랑 같이 더 주무시고 싶으신가요? 역시 그런 것 같네요. 히힛...」
+ENDLIST
+DATALIST
+DATAFORM 「주인님, 아침이에요. 일어나기 싫으시면 차라리 저랑...」
+DATAFORM 「영영 잠들어 버릴까요?」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 누군가가 바라보는 느낌이 들어 눈을 떴다.
+PRINTFORMW %TEXTR("리제가 먼발치에 쭈그리고 앉아 당신을 바라보고 있었다./리제가 공허한 눈으로 당신을 내려다보고 있었다./리제가 당신을 약하게 흔들며 깨우고 있었다.")%
+CASE "Hidden"
+PRINTFORMW 당신은 깜빡 잠이 들었었다. 이제 아침이 된 것 같다.
+PRINTDATAW
+DATALIST
+DATAFORM 「안녕히 주무셨나요? 저는 꿈에서도 주인님을 만나고 있었답니다.」
+DATAFORM 「주인님께서도 그렇죠? 네? 네? 네?」
+ENDLIST
+DATALIST
+DATAFORM 「후후... 세상 모르고 주무시는 주인님은 정말 귀여웠어요.」
+DATAFORM 리제는 조금 떨어진 곳에 앉아 당신을 바라보고 있었다.
+ENDLIST
+DATAFORM 리제는 멀찍이 떨어진 채 당신을 바라보며 배시시 웃을 뿐이었다.
+DATALIST
+DATAFORM 「잘 주무셨나요? 일단 식사부터 하시겠어요?」
+DATAFORM 리제는 당신의 바로 옆에 앉아, 얼굴을 바짝 들이댔다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_EVENT_Sortie
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW %TEXTR("「다녀올게요, 주인님.」/「금방 다녀올게요, 주인님.」")%
+CASE "High"
+PRINTFORMW %TEXTR("「주인님께서 명령하신다면...」/「주인님과 떨어져야 한다는 건 슬프지만... 다녀올게요.」")%
+CASE "Affection"
+PRINTFORMW %TEXTR("「아아... 주인님과는 잠깐도 떨어질 수 없는데...」/「제가 없다고 다른 아이들한테 눈을 돌리시면 안 돼요. 아셨죠?」")%
+CASE "Marryed"
+PRINTFORMW %TEXTR("「안 돼... 어째서 저를 보내시려는 건가요?」/「돌아오면... 꼭 상을 주셔야 해요, 아셨죠? 네?」/「설마... 제가 없는 사이에 다른 해충을... 아니겠죠?」")%
+CASE "Annoyed"
+PRINTFORMW %TEXTR("「안 그래도 바람을 쐬고 싶었는데, 잘 됐네요.」/「...알겠습니다.」")%
+CASE "Fear"
+PRINTFORMW %TEXTR("「출격이요? 가, 갈게요! 주인님께서 시키는 일이라면...」/「절... 내쫓으시는 건 아니시죠...?」")%
+CASE "Weak"
+PRINTFORMW %TEXTR("「저, 저를 버리시려는 건 아니죠? 그렇죠?」/「주인님께 도움이 될만한 걸 찾아서... 주인님의 사랑을...」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_EVENT_Sortie_Return
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW %TEXTR("「다녀왔어요, 주인님.」/「제가 없는 동안 별일 없으셨나요?」")%
+CASE "High"
+PRINTFORMW %TEXTR("「보고싶었어요, 주인님...」/「주인님도 제가 보고 싶으셨죠? 후훗...」")%
+CASE "Affection"
+PRINTFORMW %TEXTR("「저 왔어요, 주인님! 정말 보고 싶었어요!」/「흑... 정말 보고 싶었어요. 앞으로는 저를 보내지 말아주세요...」")%
+CASE "Marryed"
+PRINTDATAW
+DATAFORM 「주인님! 보세요, 제가 뭘 가져왔는지! 분명 기뻐하실 거예요, 후훗...」
+DATALIST
+DATAFORM 「다른 해충은...」
+DATAFORM 「안 온 것 같네요. 후후... 다행이에요.」
+ENDLIST
+DATALIST
+DATAFORM 「다른 해충은...」
+DATAFORM 「없었던 것 같네요. 전 주인님을 믿고 있었어요. 후훗...」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW %TEXTR("「힘들어서 좀 쉴게요, 주인님.」/「다음번엔 출격 전에 미리 말씀해주세요.」")%
+CASE "Fear"
+PRINTFORMW %TEXTR("「다, 다녀왔어요, 주인님. 제가... 잘 하고 온 거 맞죠?」/「혹시 잘못한 게 있더라도 때리지는 마세요...」")%
+CASE "Weak"
+PRINTDATAW
+DATAFORM 「저 왔어요, 절 잊으신 건 아니시죠? 네?」
+DATALIST
+DATAFORM 「제가... 주인님께 도움이 될만한 걸 가져왔어요! 꼭 봐주세요!」
+DATAFORM 리제는 집요하게 당신에게 달라붙었다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_EVENT_Cook_Self
+IF ABL:MASTER:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「죄송해요. 기회가 된다면 다음에는 꼭 제가...」/「죄송해요. 제가 요리는 잘 못해서...」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「후훗... 기대하고 있을게요.」/「주인님의 요리, 기대되네요. 후후...」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「다치지 않게 조심하셔야 해요, 아셨죠?」/「그 요리... 당연히 저를 위한 요리겠죠?」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「주인님께서 요리하시는 모습, 너무 멋져요. 후후...」/「당연히... 오직 저만을 위한 요리겠죠? 다른 해충한테는 주지 않으실거죠? 맞죠?」/「후훗... 아무에게도 주지 말고 저랑 주인님, 둘이서만 먹어요.」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「... 주방을 어지르진 마세요. 치우는 건 저니까요.」/「갑자기 무슨 요리를...」/「그냥... 아니에요. 어차피 안 들으실 테죠.」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「요, 요리요?」/「혹시, 저한테... 주실 요리인가요?」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「히힛... 주인님께서 만든 요리라면 뭐든지 좋아요.」/「저만을 위한 요리죠? 맞죠? 네? 주인님, 대답해주세요.」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「죄송해요, 요리는 자신이 없어서...」/「주인님의 요리실력이라면, 기대해도 좋겠죠?」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「후훗, 요리에 재미를 들이셨나보네요.」/「기대되네요, 후후...」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「당연히 저만을 위한 요리겠죠? 기대할게요. 후훗...」/「주인님께서 저에게 요리해주시는 것도 새롭네요. 후훗...」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「저를 위한 요리... 후훗, 낭만적이에요, 주인님.」/「주인님께서 요리해주시는 것도 좋지만, 다음번엔 저와 함께 요리해주시겠어요? 네?」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「하아... 다치시면 일이 성가셔지는데...」/「요리는... 또 무슨 바람이 분 건가요?」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「저, 저한테 주실... 요리인가요?」/「혹시... 제가 먹어도 괜찮은... 건가요?」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「주인님의 요리, 반드시 맛있을 거예요!」/「다른 해충한테는... 절대로 주지 않을 거예요. 히힛...」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「주인님의 요리실력이라면...」/「얻어먹기만 해서 죄송해요...」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「주인님의 요리라니, 기대되네요. 후후...」/「언젠가는 제가 요리를 만들어 드릴게요. 후후...」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「역시... 저에게 요리해주시는 게 즐거우신 거군요. 후훗... 알고 있어요.」/「다른 아이들이 주인님의 솜씨를 알아버리면 안 되는데...」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTDATAW
+DATALIST
+DATAFORM 「주인님의 요리라니, 상상만 해도 먹기가 아까워요...」
+DATAFORM 「방부처리를 해서 전시를 해둘까요? 후후후...」
+ENDLIST
+DATALIST
+DATAFORM 「이런 가정적인 모습은 다른 해충한테 보여주시면 안 돼요.」
+DATAFORM 「그 해충이 주인님께 반해버리기라도 하면...」
+ENDLIST
+ENDDATA
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「그래요, 주인님의 요리... 맛있긴 하죠.」/「인정할 건 인정해야죠. 주인님의 요리, 맛있어요.」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW %TEXTR("「주인님께서 요리해주시는 건 기쁜데, 조금은... 무섭기도 해요...」/「다정한 주인님의 모습을 보면 기쁜데, 가끔 두렵... 죄송해요... 방금 한 말은 잊어주세요.」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTDATAW
+DATALIST
+DATAFORM 「저한테 주시는 요리죠? 그렇죠?」
+DATAFORM 「드디어 저를 다시 바라봐주시는 거죠?」
+ENDLIST
+DATAFORM 「제가 도와드릴 건 없나요? 부디 저도 돕게 해주세요, 제발...」
+ENDDATA
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No7_EVENT_Eat_Com
+IF ABL:MASTER:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATAFORM 리제는 난감한 표정으로 음식을 우물거렸다.
+DATALIST
+DATAFORM 「연습하면... 될 거예요.」
+DATAFORM 리제는 최대한 당신을 배려하며 말했다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTFORMW 음식을 우물거리던 리제는 무언가 골똘히 생각하는 듯 보였다.
+PRINTDATAW
+DATALIST
+DATAFORM 「맛은... 정성이 느껴지네요...」
+DATAFORM 리제는 어색하게 웃었다.
+ENDLIST
+DATALIST
+DATAFORM 「괜찮아요, 주인님. 연습하면 될 거예요.」
+DATAFORM 리제가 당신을 위로했다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 음식을 우물거리던 리제의 얼굴에, 아주 잠깐이지만 당황한 기색이 보였다.
+PRINTDATAW
+DATALIST
+DATAFORM 「맛이 중요한가요? 주인님의 정성이 느껴지는데.」
+DATAFORM 리제의 따뜻한 말은 당신의 마음을 후벼 팠다.
+ENDLIST
+DATAFORM 「주인님의 서투른 요리를 맛보는 것도 저만 할 수 있군요. 후후후...」
+DATAFORM 「주인님의 요리는 뭐든 맛있어요. 후후후...」
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 리제가 한동안 음식을 우물거리더니 입을 열었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「이번 기회에, 요리를 본격적으로 배워보시는 건 어떠세요?」
+DATAFORM 「우리 둘이서요. 후후훗...」
+ENDLIST
+DATALIST
+DATAFORM 「정말 맛있어요, 주인님. 후훗.」
+DATAFORM 리제는 당신의 만류에도 그릇을 비웠다.
+ENDLIST
+DATAFORM 「후후후... 주인님께서 저를 생각하시며 만들었다면 그걸로 된 거예요.」
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「...」
+DATAFORM 리제는 표정이 일그러진 채 말이 없었다.
+ENDLIST
+DATALIST
+DATAFORM 리제는 들릴 듯 말 듯 한숨을 쉬었다.
+DATAFORM 「앞으로는... 더 연습하시는 게 좋겠네요.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW 음식을 먹고 당황스러워했던 리제의 눈빛은, 순식간에 공포에 떠는 눈빛으로 변했다.
+PRINTDATAW
+DATAFORM 「여... 연습하면 될 거예요, 주인님.」
+DATALIST
+DATAFORM 「이정도면 나쁘지 않다고 생각해요, 정말이에요.」
+DATAFORM 리제는 억지로 요리를 먹었다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신의 음식을 본 리제의 눈빛은 마치 보물을 보는 듯했다.
+PRINTFORMW %TEXTR("「맛있어요, 맛있어요, 정말 맛있어요. 거짓말이 아니에요.」/「주인님은 요리에 소질이 있을 거예요, 정말이에요!」")%
+PRINTFORMW 리제는 요리를 끝내 모두 먹었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신이 만든 음식을 먼던 리제는 약간 놀란 눈치였다.
+PRINTFORMW %TEXTR("「음... 확실히 전보다 실력이 느셨네요.」/「이건 꽤... 맛있네요, 주인님.」")%
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「정말 맛있어요, 주인님.」
+DATAFORM 리제는 약간 놀란 표정으로 요리를 먹었다.
+ENDLIST
+DATALIST
+DATAFORM 「주인님의 요리실력도 많이 발전하셨네요, 후훗...」
+DATAFORM 리제가 작게 미소지으며 당신을 바라보았다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 리제는 콧노래를 흥얼거리며, 당신이 만든 요리를 먹었다.
+PRINTFORMW %TEXTR("「정말 맛있어요. 다음에도 저를 위해 요리해주시겠어요?」/「저를 향한 애정이 느껴지는 맛이에요. 저를 생각하시며 만드신 거 맞죠? 네?」/「다른 아이들이 이 요리를 먹을 생각을 하면, 질투가 나네요...」")%
+CASE "Marryed"
+PRINTFORMW 리제는 당신의 요리를 앞에 두고, 황홀한 표정을 짓고 있었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「저만을 위한 요리죠? 다른 해충한테는 주지 않으실 거죠?」
+DATAFORM 리제는 웃으며, 요리가 든 그릇을 강하게 쥐었다.
+ENDLIST
+DATALIST
+DATAFORM 「먹기 너무 아까워요... 역시 방부처리를 해서...」
+DATAFORM 리제는 당신의 설득에 겨우 요리를 입에 넣었다.
+ENDLIST
+DATAFORM 「전 정말 축복받았다고 생각해요. 주인님께서 만든 요리를 먹을 수 있다니...」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신이 만든 요리를 본 리제의 얼굴에 놀라움이 묻어났다.
+PRINTDATAW
+DATALIST
+DATAFORM 리제는 한참동안 요리를 우물거렸다.
+DATAFORM 「실력이... 많이 느셨네요.」
+ENDLIST
+DATALIST
+DATAFORM 「...맛은 있네요.」
+DATAFORM 리제는 어딘가 분한 표정이었다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW 리제가 조용히, 당신이 만든 요리를 우물거렸다.
+PRINTDATAW
+DATALIST
+DATAFORM 「정말 맛있어요, 주인님.」
+DATAFORM 「앞으로도 이렇게 다정하게 요리해주시면 좋을 텐데...」
+ENDLIST
+DATAFORM 「정말... 저를 위해 요리해주신 거죠...?」
+ENDDATA
+CASE "Weak"
+PRINTFORMW 리제가 미소를 띠며 요리를 먹었다.
+PRINTFORMW %TEXTR("「역시 주인님의 요리가 최고예요. 또 요리해주실 거죠? 그렇죠?」/「다른 해충한테는 남은 음식도 주기 아까워요. 제가 다 먹어버릴게요.」/「앞으로도... 저만을 위해 요리해주세요. 네?」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 요리를 입에 넣은 리제의 눈이 휘둥그레졌다.
+DATAFORM 「아주 맛있어요, 주인님.」
+ENDLIST
+DATALIST
+DATAFORM 요리를 먹은 리제의 눈이 번쩍 뜨였다.
+DATAFORM 「주인님, 어느새 요리실력이 이 정도까지 되셨군요?」
+DATAFORM 리제의 입꼬리가 미세하게 올라갔다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTFORMW 리제는 미소를 띠며 요리를 먹었다.
+PRINTFORMW %TEXTR("「앞으로도 계속 주인님께서 요리해주셨으면 좋겠다는 생각이 들 정도예요. 후후...」/「저보다 요리를 더 잘하시는 것 같네요. 후훗...」/「다음엔, 저한테도 요리를 가르쳐 주실래요?」")%
+CASE "Affection"
+PRINTFORMW 요리를 맛본 리제가 감탄했다.
+PRINTFORMW %TEXTR("「정말... 작품 수준이에요, 주인님.」/「다른 아이들한테는 요리실력을 숨기셔야 해요. 아셨죠?」/「이러다 다른 아이들이 주인님의 진정한 매력을 알아버릴까 걱정이 되네요. 후훗...」")%
+CASE "Marryed"
+PRINTFORMW 리제가 당신의 요리를 먹더니, 감탄하며 입을 가렸다.
+PRINTDATAW
+DATALIST
+DATAFORM 「너무 맛있어서 눈물이 날 것 같아요...」
+DATAFORM 리제가 감동의 눈물을 흘렸다.
+ENDLIST
+DATALIST
+DATAFORM 「주인님의 이런 모습은... 저만 알아야 해요.」
+DATAFORM 「그러니 다른 해충들한테는 절대 요리해주시면 안 돼요. 아셨죠? 약속해주세요.」
+ENDLIST
+DATALIST
+DATAFORM 「이젠 제가 주인님께 요리를 배워야 할 정도네요.」
+DATAFORM 「저한테 요리를 가르쳐 주실래요? 단둘이 오붓하게...」
+DATAFORM 리제가 당신의 손에 깍지를 끼었다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 리제는 당신의 요리를 먹어보고, 한참동안 말을 잇지 못했다.
+PRINTFORMW %TEXTR("「요리는 또 언제 이렇게 배우신... 아무것도 아니에요.」/「혹시, 제 반응을 보고 놀리시려고...」")%
+CASE "Fear"
+PRINTFORMW 리제는 당신의 눈치를 살피며 요리를 입에 넣었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「저, 정말... 저를 위해 만들어주신 건가요?」
+DATAFORM 「의심하려는 게 아니에요...」
+ENDLIST
+DATAFORM 「앞으로도 이런 다정한 모습만... 힉, 아무것도 아니에요...」
+DATALIST
+DATAFORM 「주인님께서 이렇게 정성스럽게 요리를 해주신 게 얼마만인지...」
+DATAFORM 리제는 말끝을 흐렸다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「정말 맛있어요, 주인님!」
+DATAFORM 「하루종일이라도 먹을 수 있어요.」
+ENDLIST
+DATALIST
+DATAFORM 「이 요리, 저를 향한 애정을 담아 만드신 거죠?」
+DATAFORM 「네? 네? 네? 네? 네? 네?」
+ENDLIST
+ENDDATA
+PRINTFORMW 리제가 당신의 손을 붙잡고 말했다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No7_EVENT_Cook
+IF ABL:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW %TEXTR("「제가... 요리를요?」/「요리요...?」")%
+PRINTFORMW %TEXTR("「별로 자신은 없지만... 해볼게요.」/「요리는 특기가 아니라서... 잘 될지...」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW %TEXTR("「요리는 자신이 없는데...」/「정원 관리라면 자신 있는데...」")%
+PRINTFORMW %TEXTR("「그래도 주인님께서 원하신다면 노력할게요.」/「주인님의 명령이라면 따라야죠. 후후...」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW %TEXTR("「요리는 딱히 제 분야가 아닌데요...」/「요리는 별로 해본 적이 없는데...」")%
+PRINTDATAW
+DATAFORM 「실망하시면... 안 돼요, 아셨죠?」
+DATALIST
+DATAFORM 「주인님께서 실망하시면 안 되는데...」
+DATAFORM 리제가 혼잣말을 중얼거렸다.
+ENDLIST
+ENDDATA
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW %TEXTR("「요리는 자신이 없지만... 해볼게요.」/「후훗, 주인님께서 원하신다면 당연히 해야죠.」")%
+PRINTDATAW
+DATAFORM 「하지만, 너무 실망하시면 안 돼요, 아셨죠?」
+DATALIST
+DATAFORM 「주인님께는 완벽한 모습만 보여드려야 하는데...」
+DATAFORM 리제가 작은 목소리로 들릴 듯 말 듯 말했다.
+ENDLIST
+ENDDATA
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW %TEXTR("「저보고 요리를 하라고요?」/「...주인님, 제가 정원 관리용 바이오로이드인 건 알고 계시죠?」")%
+PRINTFORMW %TEXTR("「...아니에요. 제 말은 듣지 않으실 테죠.」/「...알겠어요. 할게요.」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW %TEXTR("「제가, 요리를요? 혹시... 다른 아이들이랑 헷갈리신 건...」/「저는... 요리가 특기가 아닌데...」")%
+PRINTFORMW %TEXTR("「힉, 말대꾸해서 죄송해요. 바로 시작할게요.」/「마, 말대답해서 죄송해요. 요리할게요.」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW %TEXTR("「제가, 요리를요?」/「요리... 음...」")%
+PRINTDATAW
+DATAFORM 「아, 아니에요. 최선을 다해볼게요. 기대해주세요.」
+DATALIST
+DATAFORM 「저, 절대 실망하시면 안 돼요. 아셨죠? 약속해주세요.」
+DATAFORM 리제는 당신에게 신신당부했다.
+ENDLIST
+ENDDATA
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Hidden"
+PRINTDATAW
+DATALIST
+DATAFORM 「조금만 기다려주세요, 주인님.」
+DATAFORM 「금방 요리를 만들어 올게요.」
+ENDLIST
+DATALIST
+DATAFORM 「조금 자신은 없지만...」
+DATAFORM 「열심히 해볼게요.」
+ENDLIST
+ENDDATA
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW %TEXTR("「요리요? 알겠습니다, 주인님.」/「네, 주인님. 조금만 기다려주세요.」")%
+PRINTFORMW 리제는 부엌으로 가 요리를 시작했다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW %TEXTR("「완성됐어요, 주인님.」/「오래 기다리셨죠? 완성됐어요.」")%
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW %TEXTR("「후훗... 제 요리가 그렇게 맛있으셨나요?」/「제 요리가 맘에 드셨나 보네요, 후후...」")%
+PRINTFORMW %TEXTR("「금방 만들어 올게요.」/「기대하셔도 돼요, 주인님.」")%
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW %TEXTR("「제 요리가 드시고 싶으시다고요? 후훗, 당연히 만들어 드려야죠.」/「후훗... 제 요리에 빠져드셨군요.」")%
+PRINTFORMW 리제는 콧노래를 흥얼거리며 요리를 시작했다.
+PRINTFORMW 「♪~」
+PRINTFORMW 「♪♪~」
+PRINTFORMW 「♪~♪~」
+PRINTFORMW 
+PRINTFORMW %TEXTR("「어서 드셔보세요, 주인님.」/「주인님을 향한 제 마음이에요, 후후후...」")%
+CASE "Marryed"
+PRINTFORMW %TEXTR("「후후후... 이제 주인님께선 제 요리가 없으면 안 되는 몸이 되셨군요. 그런 거죠?」/「후훗, 가끔은 주인님과 둘이서 요리해보고 싶네요.」")%
+PRINTFORMW 리제는 노래를 흥얼거리며 요리를 시작했다.
+PRINTFORMW 「♪~」
+PRINTFORMW 「♪♪~」
+PRINTFORMW 「♪~♪~」
+PRINTFORMW %TEXTR("「보기만 해도 제 사랑이 느껴지시죠? 후훗...」/「주인님을 생각하며, 최선을 다해서 만들었어요.」")%
+CASE "Annoyed"
+PRINTFORMW %TEXTR("「가사용 바이오로이드도 있는데 왜 저한테...」/「하아... 알겠어요.」")%
+PRINTFORMW 리제는 조금 투덜거리며 요리를 시작했다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW %TEXTR("「제 요리... 혹시, 맘에 드신 건가요...?」/「혹시 요리가 괜찮으시다면, 앞으로 조금만 더 친절하게...」")%
+PRINTFORMW 리제는 당신의 마음이 누그러질까 기대하며 요리를 시작했다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW %TEXTR("「이, 이렇게 하면 될까요...?」/「혹시 맘에 안 드시더라도, 부디 화내지는 마세요...」")%
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW %TEXTR("「조, 좋아요! 저, 다른 건 몰라도 요리는 자신있어요!」/「주인님께서 절 다시보게 해드릴게요!」")%
+PRINTFORMW 리제는 재빠르게 주방으로 가 요리를 시작했다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Hidden"
+PRINTDATAW
+DATALIST
+DATAFORM 「제가 만든 음식이 드시고 싶으시죠? 네? 네?」
+DATAFORM 「후후... 조금만 기다려주세요.」
+ENDLIST
+DATALIST
+DATAFORM 「정성을 담아서 만들어 드릴게요.」
+DATAFORM 「분명 만족스러우실 거예요. 후후후...」
+ENDLIST
+ENDDATA
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW %TEXTR("「요리... 특기는 아니지만, 그래도 자신은 있어요.」/「맡겨만 주세요, 주인님.」")%
+PRINTFORMW 리제는 %TEXTR("숙달된/능숙한")% 솜씨로 요리를 시작했다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 정갈해보이는 요리가 완성됐다.
+CASE "High"
+PRINTFORMW %TEXTR("「주인님, 아마 제 요리실력에 깜짝 놀라실 거예요.」/「원래 요리용 바이오로이드는 아니지만... 그래도 요리엔 자신있어요.」")%
+PRINTFORMW 리제는 기다렸다는 듯 요리를 시작했다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 먹음직해보이는 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW %TEXTR("「후훗, 드시고 싶으신 거 모두 말씀만 하세요.」/「역시 주인님께는 저밖에 없어요. 맞죠?」/「다른 아이들의 음식은 입에도 못 대게 되실 거예요. 후후후...」")%
+PRINTFORMW 리제는 웃음이 만개한 얼굴로 노래를 부르며 요리를 시작했다.
+PRINTFORMW 「♪~」
+PRINTFORMW 「♪♪~」
+PRINTFORMW 「♪~♪~」
+PRINTFORMW 잔뜩 멋을 낸 요리가 완성됐다.
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「혹시 다른 해충이 만든 음식을 드셨어도 걱정하실 거 없어요.」
+DATAFORM 「제 음식으로 주인님의 몸을 깨끗하게 만들어 드릴게요. 후후훗...」
+ENDLIST
+DATALIST
+DATAFORM 「후훗... 주인님? 앞으로는 제가 만든 음식만...」
+DATAFORM 「...」
+DATAFORM 「...아셨죠?」
+ENDLIST
+ENDDATA
+PRINTFORMW 리제는 진지한 얼굴로 요리에 몰두하고 있다.
+PRINTFORMW 「♪~」
+PRINTFORMW 「♪♪~」
+PRINTFORMW 「♪~♪~」
+PRINTFORMW %TEXTR("「자, 어서요. 이 음식으로 주인님의 몸속을 깨끗하게... 후후훗...」/「아마, 드시고 나면 저만 바라보실 수밖에 없을 거예요. 후후...」")%
+PRINTFORMW 리제는 자신이 만든 요리를 당신에게 들이댔다.
+CASE "Annoyed"
+PRINTFORMW %TEXTR("「또 요리를 해달라고요?」/「하아... 좋아요. 별로 어려운 일도 아니니까요.」")%
+PRINTFORMW 리제는 혀를 차며 익숙한 듯 빠르게 요리를 만들었다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다. 요리는 먹음직스러워 보이지만, 정성을 들인 티는 나지 않는다.
+CASE "Fear"
+PRINTFORMW %TEXTR("「주인님께서 저를 필요로 하신다니, 다행이에요...」/「마, 맡겨만 주세요! 저, 그래도 요리는 나름대로 할 줄 아니까요...」")%
+PRINTFORMW 리제는 당신에게 사랑받기 위해 필사적으로 요리했다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW %TEXTR("「이거라면... 저도 다시 주인님께 사랑받을 수 있을까요?」/「주, 주인님 입맛에 맞았으면 좋겠어요...」")%
+PRINTFORMW 요리를 완성한 리제는 약간 떨고 있었다.
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「드디어 주인님께서 제게...」
+DATAFORM 「금방 만들어 올게요, 기다려주세요 주인님!」
+ENDLIST
+DATAFORM 「드디어... 주인님께 쓸모가 있어졌어...」
+ENDDATA
+PRINTFORMW 리제는 기쁨에 겨운 눈물을 글썽이며 요리를 시작했다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Hidden"
+PRINTDATAW
+DATALIST
+DATAFORM 「아마 제 요리를 드시고 나면...」
+DATAFORM 「다시는 돌아가고 싶다는 말씀은 못 하시게 될 거예요. 후후후...」
+ENDLIST
+DATAFORM 「기대해주세요. 최고의 요리를 만들어 올게요. 후훗...」
+ENDDATA
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No7_EVENT_Eat_Lunch
+IF ABL:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW %TEXTR("리제가 만든 요리는 간신히 꼴만 갖추고 있었다./리제의 요리는 겉으로 보기엔 그럴싸해보였다.")%
+PRINTFORMW %TEXTR("「...입맛에 맞으실지 모르겠네요...」/「맛은... 괜찮으신가요?」")%
+CASE "High"
+PRINTFORMW %TEXTR("리제가 만든 요리는 노력의 흔적은 느껴졌지만, 맛은 그저 그랬다./리제의 요리는 평범함 그 자체였다.")%
+PRINTDATAW
+DATALIST
+DATAFORM 「...별론가요? 흑...」
+DATAFORM 당신은 리제의 눈물을 보고 요리를 전부 먹었다.
+ENDLIST
+DATALIST
+DATAFORM 「...다음엔 더 잘 할 수 있을 거예요.」
+DATAFORM 리제는 조금 분한 것 같은 표정이었다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW %TEXTR("당신은 리제의 요리에서 리제의 마음을 느낄 수 있었다./리제의 정성이 느껴지는 요리였지만, 맛은 느껴지지 않았다.")%
+PRINTDATAW
+DATALIST
+DATAFORM 「연습할 거예요. 반드시 주인님을 제 요리로...」
+DATAFORM 리제는 각오를 다졌다.
+ENDLIST
+DATAFORM 「주인님... 왜 말씀이 없으세요? 어서 어떤지 말씀해주세요.」
+ENDDATA
+CASE "Marryed"
+PRINTFORMW %TEXTR("리제의 요리는 더 많은 연습이 필요할 것 같았다./리제는 안절부절 못하며 당신이 요리를 먹는 모습을 바라보았다.")%
+PRINTFORMW %TEXTR("「혹시... 제 요리 실력에 실망하신 건 아니시죠? 네?」/「혹시, 다른 해충의 음식에 이미 길들어버리신 건... 그런 일은 없겠죠?」")%
+CASE "Annoyed"
+PRINTFORMW %TEXTR("리제의 요리는 일말의 노력도 기울인 것 같지가 않았다./리제의 요리는 심각했다.")%
+PRINTDATAW
+DATAFORM 「말씀 드렸잖아요. 저는 요리용 바이오로이드가 아니라고.」
+DATALIST
+DATAFORM 「맛 없으면 그냥 버리세요. 전 괜찮으니까.」
+DATAFORM 리제는 무뚝뚝하게 말했다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW %TEXTR("리제는 불안한 눈동자로 내가 요리를 먹는 모습을 지켜봤다./리제는 몸을 떨며 고개를 숙이고 있었다.")%
+PRINTFORMW %TEXTR("리제의 요리는 도저히 삼키기 어려웠다. 당신은 손에 쥔 식기를 소리나게 식탁에 내려놓았다./당신이 인상을 찌푸리며 식기를 내려놓자, 리제가 공포에 떨었다.")%
+PRINTFORMW %TEXTR("「죄, 죄송해요... 다음엔 더 잘할게요. 그러니 제발 용서해주세요...」/「고칠 점이 있다면 말씀해주세요, 반드시 고칠게요. 떄리지는 마세요, 제발...」")%
+CASE "Weak"
+PRINTFORMW %TEXTR("리제가 만든 것은 요리라기보다, 재료를 한데 섞어놓은 형태에 불과했다./리제는 요리를 건네주고 불안한 눈빛으로 당신을 바라보았다.")%
+PRINTFORMW %TEXTR("리제의 요리는, 아무 맛도 나지 않았다./요리는 제대로 익지도 않았다.")%
+PRINTDATAW
+DATALIST
+DATAFORM 「제 요리... 별론가요?」
+DATAFORM 「정말 죄송해요, 죄송해요, 죄송해요...」
+ENDLIST
+DATALIST
+DATAFORM 「제가... 괜한 짓을 한 건가요?」
+DATAFORM 「제발 용서해주세요, 흑...」
+ENDLIST
+ENDDATA
+CASE "Hidden"
+PRINTFORMW 리제는 당신의 옆에 앉아, 자신이 만든 요리를 정성껏 떠먹여주었다.
+PRINTFORMW 리제의 요리는 그저 그랬다.
+PRINTDATAW
+DATAFORM 「더 열심히 연습해서, 언젠간 꼭 주인님께서 만족하실 요리를 만들어 드릴게요.」
+DATALIST
+DATAFORM 「식사를 거르시는 건 안 돼요, 전부 드셔야 해요.」
+DATAFORM 리제는 더 이상 먹기를 거부하는 당신에게 억지로 요리를 먹였다.
+ENDLIST
+DATALIST
+DATAFORM 「전부 드셨네요. 기뻐요. 후후후...」
+DATAFORM 요리를 모두 먹은 당신을 본 리제가, 만족한 듯 활짝 웃었다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW %TEXTR("리제의 요리는 무난하게 맛있었다./리제의 요리는 딱히 흠잡을 곳이 없었다.")%
+PRINTFORMW %TEXTR("「맘에 드신다니 다행이네요.」/「맛있게 드셔주셔서 고마워요, 주인님.」")%
+PRINTFORMW 당신은 그릇을 깨끗하게 비웠다.
+CASE "High"
+PRINTFORMW %TEXTR("리제의 요리는 꽤나 정성이 들어간 맛이었다./리제의 요리에서 정성이 느껴졌다.")%
+PRINTFORMW %TEXTR("「나름대로 최선을 다해봤어요, 후후후...」「주인님의 표정을 보아하니 성공한 것 같네요.」")%
+PRINTFORMW %TEXTR("리제가 당신을 보며 활짝 웃었다./리제가 요리를 먹는 당신의 모습을 기쁜 모습으로 바라보았다.")%
+CASE "Affection"
+PRINTFORMW %TEXTR("리제의 요리는 매우 맛있었다./리제는 요리에 당신을 향한 마음을 장식으로 표시해놓았다.")%
+PRINTFORMW %TEXTR("「어떠세요? 제 마음이 느껴지시나요? 네? 네? 네?」/「후훗, 역시 제 요리가 최고죠? 그렇죠?」")%
+PRINTFORMW %TEXTR("리제는 당신의 옆에 앉아 당신을 사랑스러운 눈길로 바라보았다./리제는 당신이 요리를 먹는 모습을 뚫어져라 쳐다보았다.")%
+CASE "Marryed"
+PRINTFORMW %TEXTR("리제의 당신을 향한 사랑이 요리를 통해 느껴졌다./당신은 리제를 연신 칭찬하며 요리를 먹었다.")%
+PRINTDATAW
+DATALIST
+DATAFORM 「후훗... 사실 요리에 특별한 약을...」
+DATAFORM 「타진 않았어요. 저는 약 따위로 주인님의 마음을 조종하지 않아요.」
+ENDLIST
+DATALIST
+DATAFORM 「요리가 마음에 드셨다면, 이제 저를 칭찬해주세요.」
+DATAFORM 리제가 당신의 품을 비집고 들어왔다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW %TEXTR("리제의 요리에 정성은 느껴지지 않았지만, 맛은 있었다./리제의 요리는 무난하게 맛있었다.")%
+PRINTFORMW %TEXTR("「네, 괜찮으셨다면 다행이네요.」/「흘리면서 드시지 마세요.」")%
+PRINTFORMW 리제는 당신의 칭찬을 퉁명스럽게 대꾸했다.
+CASE "Fear"
+PRINTFORMW %TEXTR("당신이 맛있게 먹는 모습을 보자, 눈치를 살피던 리제가 안도했다./당신이 요리를 맛있게 먹자, 리제는 다리가 풀려 주저앉았다.")%
+PRINTFORMW %TEXTR("「휴... 다행이에요. 혼나지 않아도 돼서...」/「저... 그럼 혼나지 않아도 되는 거죠?」")%
+PRINTFORMW 리제는 긴장이 풀렸는지 한참을 주저앉은 상태로 있었다.
+CASE "Weak"
+PRINTFORMW %TEXTR("리제의 요리는 생김새와 다르게 맛있었다./리제의 요리는 생각 외로 맛있었다.")%
+PRINTDATAW
+DATALIST
+DATAFORM 「계속 걱정됐어요. 주인님께서 실망하시면 어쩌지 하고...」
+DATAFORM 리제는 눈물을 글썽였다.
+ENDLIST
+DATALIST
+DATAFORM 「주, 주인님을 향한 사랑을 담아 만들었어요.」
+DATAFORM 「이제 저를 다시 사랑해주실 거죠?」
+ENDLIST
+ENDDATA
+PRINTFORMW 리제는 요리를 먹는 당신을 보고 입꼬리가 올라갔다.
+CASE "Hidden"
+PRINTFORMW 리제의 요리는 평범하게 맛있었다.
+PRINTDATAW
+DATALIST
+DATAFORM 얌전히 요리를 받아먹는 당신을 본 리제가 활짝 웃었다.
+DATAFORM 「맛있게 드시는 모습을 보니 기뻐요. 후후...」
+ENDLIST
+DATALIST
+DATAFORM 리제는 요리를 받아먹는 당신을 보더니 배시시 웃었다.
+DATAFORM 「후훗, 꼭 아기 같으세요.」
+ENDLIST
+DATALIST
+DATAFORM 「다음에 드시고 싶은 음식이 있으면 말씀해주세요.」
+DATAFORM 「뭐든지 만들어 드릴게요. 후후...」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 리제의 요리는 흠잡을 데 없이 훌륭했다.
+PRINTFORMW 당신은 리제의 요리를 먹으며 감탄사를 연발했다.
+PRINTFORMW %TEXTR("「칭찬해주셔서 고맙습니다, 주인님.」/「주인님께서 좋아하셔서 다행이네요.」")%
+PRINTFORMW 리제는 옅은 미소를 지었다.
+CASE "High"
+PRINTFORMW 당신은 리제의 요리를 입에 넣자 눈이 휘둥그레졌다.
+PRINTFORMW 당신은 리제의 요리에 칭찬을 아끼지 않았다.
+PRINTFORMW %TEXTR("「주인님께서 맛있어하시는 모습을 보니 기쁘네요. 후후후...」/「후훗, 칭찬을 들으니 기분이 좋네요. 더 칭찬해주세요.」")%
+PRINTFORMW 리제가 당신의 맞은편에 앉아 당신이 요리를 먹는 모습을 지켜보았다.
+CASE "Affection"
+PRINTFORMW 리제가 만든 요리는 굉장했다.
+PRINTFORMW 리제는 당신이 요리를 먹는 모습을 뚫어져라 쳐다보았다.
+PRINTFORMW %TEXTR("「후훗... 어떠세요, 제 요리? 더 솔직하게 말씀하셔도 돼요. 후훗...」/「주인님께서 원하신다면, 매일 제가 요리를 해드릴 수도 있어요. 후후후...」")%
+CASE "Marryed"
+PRINTFORMW 리제는 당신이 좋아하는 요리로 한 상을 가득 채웠다.
+PRINTFORMW 리제는 당신의 바로 옆에 바짝 붙어 앉아, 요리를 먹는 당신에게 얼굴을 들이댔다.
+PRINTFORMW %TEXTR("「어때요, 주인님? 이 정도면 주인님의 반려자가 될 자격이 충분하죠? 그렇죠?」/「후훗, 이제 다른 해충의 요리는 입에도 못 대시겠죠? 저도 알아요.」/「주인님께서 좋아하시는 요리 정도는 모두 꿰고 있어요. 후후후...」")%
+CASE "Annoyed"
+PRINTFORMW 리제는 아무렇게나 요리를 만들었지만, 맛은 훌륭했다.
+PRINTFORMW %TEXTR("「제가 요리가 특기이긴 하지만, 어디까지나 정원 관리가 주 용도라는 걸 잊지 마세요.」/「그래도 맛있다고 해주시는 게 차라리 낫네요.」")%
+PRINTFORMW 리제는 퉁명스럽게 말하고 제 할 일을 하러 갔다.
+CASE "Fear"
+PRINTFORMW 리제의 요리는 훌륭했다.
+PRINTFORMW 리제는 당신의 맞은편에 앉아 당신의 눈치를 살피고 있었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「맛은... 어떠세요? 마음에 드시나요?」
+DATAFORM 「그럼 앞으로는... 주인님께서 조금 다정해지실 거라고... 기대해봐도 될까요?」
+ENDLIST
+DATAFORM 「다행이에요, 주인님께서 좋아해주셔서... 혼나지 않아도 되겠네요...」
+ENDDATA
+CASE "Weak"
+PRINTFORMW 리제의 요리는 맛있었지만, 어딘가 서툴렀다.
+PRINTFORMW %TEXTR("「마, 맛있으신가요, 주인님? 주인님을 위해서 노력했어요.」/「이정도면... 주인님의 사랑을 얻을 자격이 있을까요? 후훗...」")%
+PRINTFORMW 리제는 당신의 눈치를 살피며 미소를 지었다.
+CASE "Hidden"
+PRINTFORMW 리제는 당신이 좋아하는 요리를 가득 만들어왔다.
+PRINTDATAW
+DATALIST
+DATAFORM 「후후... 전부 주인님의 취향인 요리들이죠?」
+DATAFORM 「주인님의 입맛에 딱 맞을 거예요.」
+ENDLIST
+DATAFORM 「후훗, 이걸 드시고 나면 여길 나가고 싶다는 생각이 싹 사라지실 거예요.」
+DATALIST
+DATAFORM 「후후... 나가고 싶다고 말씀은 하시지만 진심은 그게 아니신 것 같네요.」
+DATAFORM 리제는 자신의 요리를 맛있게 먹는 당신을 보며 배시시 웃었다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No7_Sell
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제에게, 리제를 판매하기로 했다는 사실을 전했다.
+PRINTFORMW 리제는 별다른 반응 없이, 다소곳이 앉아있었다.
+PRINTFORMW 「...」
+PRINTFORMW 「그렇...군요...」
+PRINTFORMW 「막상 이렇게 되니까, 조금은 아쉽네요.」
+PRINTFORMW 「이제 겨우 친해질 수 있을 거라고... 생각했는...」
+PRINTFORMW 리제가 조금 울먹이며 말끝을 흐렸다.
+PRINTFORMW 「...다른 바이오로이드가 생기신다면, 그 아이랑은 꼭 친해지시길 바랄게요, 주인님.」
+PRINTFORMW 리제는 당신을 바라보며, 애써 밝게 웃었다.
+CASE "High"
+PRINTFORMW 당신은 리제에게, 리제를 판매하기로 했다는 사실을 전했다.
+PRINTFORMW 리제는 충격을 받은 얼굴이었다.
+PRINTFORMW 「...그런...가요...」
+PRINTFORMW 「혹시, 제가 잘못했던 게 있었던 건가요?」
+PRINTFORMW 당신은 리제의 질문을 부정했다. 리제는 안도의 한숨을 쉬었다.
+PRINTFORMW 「다행이네요... 그래도 주인님께 좋은 모습으로 남을 수 있어서요.」
+PRINTFORMW 「다른 아이와는, 잘 지내셨으면...」
+PRINTFORMW 리제는 말끝을 흐리며 눈물을 흘렸다.
+PRINTFORMW 「안녕히 계세요, 주인님.」
+PRINTFORMW 리제가 소맷자락으로 눈물을 훔치며 말했다.
+CASE "Affection"
+PRINTFORMW 당신은 리제에게, 리제를 판매하기로 했다는 사실을 전했다.
+PRINTFORMW 리제는 큰 충격을 받은 채 우두커니 서있었다.
+PRINTFORMW 「...주인님? 그런 농담은 재미없어요.」
+PRINTFORMW 「빨리... 농담이라고 해주세요. 어서요.」
+PRINTFORMW 「어서요, 제발... 빨리요...!」
+PRINTFORMW 리제가 당신의 소맷자락을 붙잡았다.
+PRINTFORMW 「제가 혹시 잘못한 게 있나요? 말씀하시면 전부... 전부 고칠게요, 주인님!」
+PRINTFORMW 「제발 절 버리지 마세요, 앞으로 제가 잘 할게요...」
+PRINTFORMW 「주인님, 주인님! 안 돼요! 절 두고 가지 마세요! 주인님!」
+PRINTFORMW 「안 돼!! 주인님, 제발 다시 돌아오세요!! 안 돼... 부탁이에요!」
+PRINTFORMW 당신은 리제의 애처로운 목소리를 뒤로했다.
+CASE "Marryed"
+PRINTFORMW 당신은 리제에게, 리제를 판매하기로 했다는 사실을 전했다.
+PRINTFORMW 「후훗... 주인님께서 절 버리신다니, 짓궂은 농담이네요.」
+PRINTFORMW 반응이 없는 당신을 본 리제는 돌연 눈을 희번뜩였다.
+PRINTFORMW 「...어떤 해충인가요? 주인님을 유혹한 게.」
+PRINTFORMW 「거짓말이죠? 어서 거짓말이라고 하세요. 주인님께서 절 버리실 리가 없잖아요?」
+PRINTFORMW 「주인님! 이런 농담은 재미없어요! ...주인님?」
+PRINTFORMW 리제는 당신의 어깨를 부여잡고 애원하기 시작했다.
+PRINTFORMW 「다른 해충의 유혹에 넘어가셨었어도 괜찮아요. 지금이라도 늦지 않았어요, 주인님.」
+PRINTFORMW 「지금까지 저를 사랑해주셨잖아요?! 갑자기 이러시는 이유가 뭐예요, 주인님?! 제가 잘못한 게 있었나요?」
+PRINTFORMW 「제발, 주인님! 절 버리지 마세요, 주인님! 주인님!! 아아... 안 돼!! 어서 돌아와 주세요, 주인님!」
+PRINTFORMW 리제의 처절한 외침을 무시하고, 당신은 등을 돌렸다.
+CASE "Annoyed"
+PRINTFORMW 당신은 리제에게, 리제를 판매하기로 했다는 사실을 전했다.
+PRINTFORMW 리제는 가만히 앉아, 덤덤하게 듣고 있었다.
+PRINTFORMW 「...결국 이렇게 될 거라고 생각했어요.」
+PRINTFORMW 「계속 지금처럼 사는 것보단... 차라리 이게 더 나을지도 모르겠네요.」
+PRINTFORMW 「그동안 고생 많으셨어요.」
+PRINTFORMW 리제가 한숨을 쉬고, 다시 입을 열었다.
+PRINTFORMW 「다음에 들이실 바이오로이드는 누가 될지는 모르겠지만, 그 아이에게는 잘해주세요.」
+PRINTFORMW 「저희도, 인간은 아니지만 생각도 하고 감정도 있으니까요.」
+PRINTFORMW 「주인님께서 같은 실수를 반복하지 않으시길 바라요.」
+PRINTFORMW 리제는 담담하게 당신을 떠나갔다.
+CASE "Fear"
+PRINTFORMW 당신은 리제에게, 리제를 판매하기로 했다는 사실을 전했다.
+PRINTFORMW 리제는, 체념한 듯 얌전하게 앉아있었다.
+PRINTFORMW 「저는, 다른 곳으로 가게 되는군요... 지금 제 상태로는 데려가려고 할 곳이 있을지 모르겠지만요.」
+PRINTFORMW 「주인님, 이제 마지막이니까... 한 말씀만 드려도 될까요?」
+PRINTFORMW 조심스러운 리제의 마지막 부탁에, 당신은 고개를 끄덕였다.
+PRINTFORMW 「새로 들일 아이는... 잘못한 게 있더라도 때리지 마세요.」
+PRINTFORMW 「저희는, 장난감이 아니니까요.」
+PRINTFORMW 리제는 말을 하면서 몸을 파르르 떨고있었다.
+PRINTFORMW 「후훗... 저와 주인님은 어쩌다 이렇게 돼버린 걸까요. 그럼 행복하세요, 주인님.」
+PRINTFORMW 당신은, 터덜터덜 걸어가며 멀어지는 리제의 등을 가만히 바라보았다.
+CASE "Weak"
+PRINTFORMW 당신은 리제에게, 리제를 판매하기로 했다는 사실을 전했다.
+PRINTFORMW 「제가... 주인님과 떨어져야 한다고요? 어째서죠?!」
+PRINTFORMW 「잘못했어요, 잘못했어요, 잘못했어요, 잘못했어요, 잘못했어요...」
+PRINTFORMW 「저한테 마음에 들지 않았던 점이 있다면 말씀해주세요. 전부 고칠게요, 제발 절 버리지 마세요!」
+PRINTFORMW 「죄송해요, 제발 용서해주세요. 주인님, 주인님?! 주인님! 가지 마세요! 저도 데려가세요!」
+PRINTFORMW 리제가 달려나와 당신의 팔을 붙들었다.
+PRINTFORMW 「주, 주, 주, 주인님, 저한텐 주인님밖에 없어요, 제발 절 두고 가지 마세요. 주인님!!」
+PRINTFORMW 「안 돼! 주인님! 주인님!! 아아, 안 돼!! 안 돼!!!」
+PRINTFORMW 리제가 목이 쉬어라 외치는 소리를 무시하고, 당신은 등을 돌렸다.
+CASE "Break"
+PRINTFORMW 당신은 리제에게, 리제를 판매하기로 했다는 사실을 전했다.
+PRINTFORMW 「판매됐다는 게... 무슨 뜻인가요?」
+PRINTFORMW 당신의 설명에 리제는 고개를 갸웃거렸다.
+PRINTFORMW 「그럼, 이제 주인님이랑... 못 보는 거예요? 그건... 슬픈데...」
+PRINTFORMW 당신은 눈물을 글썽이는 리제를 달래주었다.
+PRINTFORMW 「새로운 주인님과... 새롭게 시작하면 된다고요?」
+PRINTFORMW 「...잘 모르겠지만... 주인님의 명령이니까, 그렇게 할게요. 히힛...」
+PRINTFORMW 당신은 멀어져가는 리제의 뒷모습을 말 없이 바라보았다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_Disuse
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 리제에게, 리제를 폐기하기로 했다는 사실을 전했다.
+PRINTFORMW 「아... 네...」
+PRINTFORMW 「이런 건... 생각해본 적이 없어서, 좀 당황스럽네요...」
+PRINTFORMW 「주인님께서도 많이 고민해보시고 내리신 결정이시죠?」
+PRINTFORMW 말없이 고개를 끄덕이는 당신을 본 리제는, 손을 꼼지락거리며 고개를 숙였다.
+PRINTFORMW 「...어쩔 수 없죠. 제가 주인님을 거스를 수도 없으니까요.」
+PRINTFORMW 「그래도, 이렇게 될 줄 알았으면 주인님과 더 가깝게 지낼 걸 그랬나봐요.」
+PRINTFORMW 「그럼, 안녕히... 행복하세요, 주인님.」
+PRINTFORMW 리제는 당신에게 빙그레 웃어보였다.
+CASE "High"
+PRINTFORMW 당신은 리제에게, 리제를 폐기하기로 했다는 사실을 전했다.
+PRINTFORMW 「이렇게... 갑자기요?」
+PRINTFORMW 「이제야 겨우 주인님과 더 가까워졌다고 생각하고 있었는데...」
+PRINTFORMW 「다시 한 번 생각해주세요. 정말인가요...?」
+PRINTFORMW 당신이 조용히 고개를 끄덕이자, 리제는 고개를 숙였다.
+PRINTFORMW 「주인님께서 그러시다면... 어쩔 수 없죠.」
+PRINTFORMW 「그래도, 조금은 아쉽네요. 후후... ...흑...」
+PRINTFORMW 리제가 어깨를 들썩이며 흐느끼기 시작했다.
+PRINTFORMW 「...주인님과 만나서, 행복했어요.」
+PRINTFORMW 「그동안 저를... 많이 사랑해주셨다는 걸 느낄 수 있었어요.」
+PRINTFORMW 「앞으로도 행복하시길 바랄게요, 주인님.」
+PRINTFORMW 리제는 흐르는 눈물을 소맷자락으로 훔쳤다.
+CASE "Affection"
+PRINTFORMW 당신은 리제에게, 리제를 폐기하기로 했다는 사실을 전했다.
+PRINTFORMW 「...제가 잘못 들은 걸까요, 주인님?」
+PRINTFORMW 「후훗... 주인님께서 절 버릴 리가 없잖아요.」
+PRINTFORMW 가만히 있는 당신의 모습을 보자 리제의 낯빛이 어두워졌다.
+PRINTFORMW 「어... 어째서죠, 주인님? 어째서 절 버리시는 건가요? 네?」
+PRINTFORMW 「어서 거짓말이라고 해주세요, 어서요... 주인님?」
+PRINTFORMW 「제가 질려버리신 건가요? 그런 게 아니라면... 대체 왜죠?」
+PRINTFORMW 「절 버리지 마세요, 주인님... 앞으로 주인님 말씀을 더 잘 들을 테니까, 부탁이에요...」
+PRINTFORMW 「안 돼요, 주인님! 절 버리지 마세요! 제발요! 부탁이에요! 그곳으로 가고 싶지 않아요! 주인님!!」
+PRINTFORMW 당신은 당신의 팔을 붙든 리제를 억지로 떼어놓고, 리제의 처절한 목소리를 뒤로했다.
+CASE "Marryed"
+PRINTFORMW 당신은 리제에게, 리제를 폐기하기로 했다는 사실을 전했다.
+PRINTFORMW 「거짓말... 거짓말이에요, 주인님.」
+PRINTFORMW 「주인님이 저를 버리신다니요. 말도 안 되죠, 후훗...」
+PRINTFORMW 「...주인님?」
+PRINTFORMW 리제는 아무 말도 없이 가만히 있는 당신의 어깨를 부여잡았다.
+PRINTFORMW 「어떤 해충인가요?! 그렇게 친절하시던 주인님을 이렇게 만든 게?!」
+PRINTFORMW 「당신들은 뭐야? 왜 내 팔을 붙잡는거지? 당장 놔!」
+PRINTFORMW 리제는 자신의 팔을 붙잡는 바이오로이드들을 뿌리치고 당신에게 매달렸다.
+PRINTFORMW 「저, 저한테 계속 사랑을 속삭이셨잖아요?! 갑자기 왜 이러시는 거예요?」
+PRINTFORMW 「당신들은 대체 뭐야?! 나와 주인님 사이를 방해하지 마, 당신들도 전부 해충이야!!」
+PRINTFORMW 「안 돼! 주인님, 주인님께는 제가 필요해요!! 빨리 이 해충들 좀 쫓아내주세요, 주인님!」
+PRINTFORMW 「주인님!! 안 돼, 주인님! 주인님!!」
+PRINTFORMW 당신은 우두커니 서서, 리제가 끌려가는 모습을 바라보기만 했다.
+CASE "Annoyed"
+PRINTFORMW 당신은 리제에게, 리제를 폐기하기로 했다는 사실을 전했다..
+PRINTFORMW 「...그렇군요.」
+PRINTFORMW 리제는 담담하게 사실을 받아들였다.
+PRINTFORMW 「뭐... 주인님께서 저를 대하는 태도만 봐도, 예상할 수 있었던 결말이죠.」
+PRINTFORMW 「그래도 삶의 마지막인데, 한 마디 정돈 해도 괜찮겠죠.」
+PRINTFORMW 「...」
+PRINTFORMW 「다른 아이를 들이실 거라면, 그 아이한테는 잘해주세요.」
+PRINTFORMW 「저희가 비록 인간은 아니지만, 생각도 하고 감정도 있으니까요.」
+PRINTFORMW 「그럼 이만...」
+PRINTFORMW 당신에게서 등을 돌린 리제는, 흐르는 눈물을 소맷자락으로 훔쳤다.
+CASE "Fear"
+PRINTFORMW 당신은 리제에게, 리제를 폐기하기로 했다는 사실을 전했다.
+PRINTFORMW 「저를...」
+PRINTFORMW 리제는 말을 잇지 못하고, 크게 한숨을 쉬었다.
+PRINTFORMW 「후후... 갑자기, 제 삶이 너무 비참한 것 같다는 생각이 들어요.」
+PRINTFORMW 그동안 공포에 떨며 아무 말도 못하던 리제가, 자신의 속마음을 털어놓기 시작했다.
+PRINTFORMW 「주인님께 혼나고, 맞기만 하다가... 이제는...」
+PRINTFORMW 「...이렇게 될 줄 알았으면, 한 번쯤은 반항이라도 해볼 걸 그랬네요. 후훗...」
+PRINTFORMW 「바이오로이드에게도 다음 생이라는 게 있을지는 모르겠지만, 있다면...」
+PRINTFORMW 「...」
+PRINTFORMW 「다음 생에는 더 좋은 주인님을 만날 수 있으면 좋겠네요.」
+PRINTFORMW 리제는 마음이 조금 후련해진 듯, 옅은 미소를 지어보였다.
+CASE "Weak"
+PRINTFORMW 당신은 리제에게, 리제를 폐기하기로 했다는 사실을 전했다.
+PRINTFORMW 리제는 당신의 소맷자락을 붙잡으며 애원하기 시작했다.
+PRINTFORMW 「죄송해요, 죄송해요, 죄송해요, 주인님... 제가 더 잘 할게요, 저를 용서해주세요!!」
+PRINTFORMW 「히힛, 히힛... 맞아요, 주인님께서 해충에게 홀린 거예요, 맞죠? 맞죠?!」
+PRINTFORMW 「그렇지 않고서는 주인님께서 저를 버릴 리가 없잖아요?!」
+PRINTFORMW 「이제야, 이제야... 주인님께 다시 사랑받을 수 있게 됐는데, 안 돼!!」
+PRINTFORMW 「이거 놔! 나를 어디로 데려가려는 거야, 이 해충들!! 전부 비켜!!」
+PRINTFORMW 「주인님?! 이 해충들, 전부 내보내주세요, 그곳으로 가고 싶지 않아요, 어서요!」
+PRINTFORMW 「아악!! 안 돼!! 살려주세요, 주인님! 앞으로 주인님을 성가시게 하지 않을게요, 제발요, 주인님!!」
+PRINTFORMW 「주인님! 주인님!! 안 돼!! 주인님!!!」
+PRINTFORMW 리제가 목이 찢어져라 외치는 비명을 무시하고, 당신은 등을 돌렸다.
+CASE "Break"
+PRINTFORMW 당신은 리제에게, 리제를 폐기하기로 했다는 사실을 전했다.
+PRINTFORMW 「폐기...요? 페기가 뭔가요?」
+PRINTFORMW 리제는 당신의 설명을 들고도 고개를 갸우뚱했다.
+PRINTFORMW 「그러면... 주인님을 못 만나는 건가요? 그건, 슬픈데...」
+PRINTFORMW 당신은 눈물을 글썽이는 리제를 달래주었다.
+PRINTFORMW 「잠깐 자고 일어나면... 다시 만날 수 있을 거라고요?」
+PRINTFORMW 「히힛, 주인님 말씀이라면 다 옳으니까 믿을게요. 히힛...」
+PRINTFORMW 리제는 자신이 어디로 가는지도 모르는 채, 당신을 떠났다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No7_ENDING
+SELECTCASE CFLAG:엔딩플래그
+CASE 1
+PRINTFORMW 당신은 품에 안겨있는 리제의 머리칼을 보드랍게 매만졌다.
+PRINTFORMW 리제는 지그시 눈을 감은 채, 당신의 따뜻한 체온과 손길을 느끼고 있었다.
+PRINTFORMW 「후후... 더 바랄 게 없을 정도로 행복한 순간이에요, 주인님.」
+PRINTFORMW 당신은 리제의 말에 소리 없이 웃을 뿐이었다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 며칠이 지나고, 당신은 불쑥 리제를 불렀다.
+PRINTFORMW 약간 어리둥절한 표정으로 당신 앞에 서있는 리제에게,
+PRINTFORMW 당신은 손에 쥐고 있던 네모난 상자를 열어보였다.
+PRINTFORMW 상자 안에 있던 것은 반지 하나.
+PRINTFORMW 「주인님, 그건...」
+PRINTFORMW 눈이 휘둥그레진 채 아무것도 못하고 있는 리제에게 다가간 당신은
+PRINTFORMW 리제의 손을 잡고, 넷째 손가락에 반지를 끼워주었다.
+PRINTFORMW 그제야 리제는 눈웃음을 짓고는, 어깨를 들썩이며 흐느끼기 시작했다.
+PRINTFORMW 「흐윽, 흑... 사실은 저, 주인님께서 제 마음을 받아주신 이후에도,」
+PRINTFORMW 「다른 해충이 주인님을 빼앗아갈 것 같아서...」
+PRINTFORMW 「주인님께서 다른 해충한테 홀려버리시는 게 아닌가 걱정돼서...」
+PRINTFORMW 「계속, 계속, 계속, 계속... 마음 졸이고 있었어요.」
+PRINTFORMW 당신의 가슴팍에 얼굴을 파묻고 이야기하던 리제는, 고개를 들어 당신을 보며 활짝 웃어보였다.
+PRINTFORMW 「하지만 역시... 주인님께선 변함없이 저만 바라보고 계셨군요... 그렇죠?」
+PRINTFORMW 「이럴 때가 아니에요. 저도 주인님을 위해 준비해둔 게 있어요.」
+PRINTFORMW 리제는 당신의 대답을 듣기도 전에, 소맷자락으로 눈물을 훔치고 어디론가 달려갔다.
+PRINTFORMW 곧 되돌아온 리제는, 반지 하나를 소중하게 감싸 쥐고 있었다.
+PRINTFORMW 「이 순간이 오기만을 기다리면서... 정성껏 만든, 주인님만을 위한 선물이에요.」
+PRINTFORMW 자신의 손에 소중히 감싸고 있던 반지를, 리제는 당신의 손가락에 끼웠다.
+PRINTFORMW 「주인님을 향한 제 마음... 다시 한 번 받아주세요.」
+PRINTFORMW 당신이 흐뭇한 표정으로 리제가 준 반지를 쓰다듬는 모습을, 리제는 빙긋 웃으며 말없이 바라보았다.
+PRINTFORMW 「아아... 너무 행복해서 이대로 시간이 멈춰버렸으면 좋을 정도예요.」
+PRINTFORMW 「저와 주인님은... 서로의 영원한 짝이 된 거예요. 오직 둘이서만요.」
+PRINTFORMW 당신은 미소지으며, 리제를 당신의 품으로 와락 끌어안으며 입을 맞추었다.
+PRINTFORMW 당신과 리제의 손가락에 낀 반지는, 서로 모양은 다르지만,
+PRINTFORMW 서로를 향한 애정만은 다르지 않음을 또렷하게 보이고 있다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 엘리자베스 A형 바이오로이드, 시저스 리제는 주인을 향한 사랑이 남달랐다.
+PRINTFORMW 이에 누군가는 병든 사랑이라고,
+PRINTFORMW 누군가는 뒤틀린 사랑이라고,
+PRINTFORMW 누군가는 성숙하지 못한 사랑이라고 말했다.
+PRINTFORMW 그리고 그들은 그녀를 가까이 두기를 꺼려했다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 그러나 당신은, 리제의 모든 것을 받아들였다.
+PRINTFORMW 리제의 어떤 모습이라도 사랑하기로 했다.
+PRINTFORMW 그리고 생각했다.
+PRINTFORMW 리제는 사랑하는 방법이 조금 다를 뿐이라고.
+PRINTFORMW 그저 리제도 남들과 똑같이, 사랑하는 이에게 사랑받고 싶어할 뿐이라고.
+PRINTFORMW 리제 엔딩 No.1, 「리제는 사랑받고 싶다」
+RETURN 1
+CASE 2
+PRINTFORMW 리제는 어느 순간부터 말수가 부쩍 줄었다.
+PRINTFORMW 멍한 얼굴로 하루종일 앉아있는 일이 잦았다.
+PRINTFORMW 이따금씩, 혼자서 키득키득 웃기도 했다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 이날도 리제는 방 한쪽에 멍하니 앉아, 허공만 쳐다보고 있었다.
+PRINTFORMW 당신은 그런 리제에게 다가가, 리제의 손을 잡고, 말없이 넷째 손가락에 반지를 끼워주었다.
+PRINTFORMW 리제는, 당신이 끼워준 반지를 보고, 옅은 미소를 지었다.
+PRINTFORMW 「예쁜... 반지... 히힛...」
+PRINTFORMW 리제는 반지를 쓰다듬어보더니, 다시 공허한 표정으로 허공을 쳐다보았다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 언제부터 리제가 이렇게 되었는지는 당신도 알 수 없다.
+PRINTFORMW 앞으로 나아질 수 있는지도 알 수 없다.
+PRINTFORMW 한 가지 확실한 건, 리제가 이렇게 되어버린 원인 뿐.
+PRINTFORMW 그것은, 당신 나름대로의 애정표현이었는지도 모르지만,
+PRINTFORMW 불행히도 리제는 망가져버리고 말았다.
+PRINTFORMW 그러나 당신은 리제의 망가져버린 모습도 사랑스럽다.
+PRINTFORMW 아니, 당신은 리제가 망가져버렸기에 더 사랑스럽다.
+PRINTFORMW 언제까지나 당신 옆에 있어주는
+PRINTFORMW 언제까지나 당신 옆에서 사라지지 않는
+PRINTFORMW 절대로 당신 옆을 떠날 수 없는
+PRINTFORMW 당신만을 위한 바이오로이드.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 리제 엔딩 No.2, 「당신만의 바이오로이드」
+RETURN 1
+CASE 3
+PRINTFORMW 당신은 리제를 학대했다.
+PRINTFORMW 정신적 폭력, 물리적 폭력.
+PRINTFORMW 어떤 수단도 가리지 않았다.
+PRINTFORMW 그렇지만 리제는, 언젠가는 그녀의 주인이 뉘우칠 것이라고,
+PRINTFORMW 그리고, 다시 자신을 사랑해줄 것이라고 굳게 믿었다.
+PRINTFORMW 그렇게 믿으면서, 당신의 학대를 버티고, 버티고, 또 버텼다.
+PRINTFORMW 하지만 당신의 학대는 끝나지 않았다.
+PRINTFORMW 당신의 학대가 계속될수록, 리제의 희망도 꺾여갔다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 학대를 버티지 못한 리제는, 홀연히 집을 나갔다.
+PRINTFORMW 그러나 당신은, 리제를 찾지 않았다.
+PRINTFORMW 바이오로이드는 다시 사면 되니까.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 며칠이 지나고, 현관에서 초인종을 누르는 소리가 들렸다.
+PRINTFORMW 새로 주문한 바이오로이드가 왔구나. 라는 생각으로 당신은 문으로 다가갔다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 문이 열리자마자, 당신의 가슴을 파고드는, 예리한 가윗날의 감촉이 느껴졌다.
+PRINTFORMW 당신은 고개를 들 힘도 없이, 현관에 그대로 엎어져 어떤 목소리를 들었다.
+PRINTFORMW 「히힛... 이 해충은... 내 주인님이 아니야...」
+PRINTFORMW 「주인님께서 나를 그렇게 괴롭히실 리가 없잖아?」
+PRINTFORMW 「이 해충... 나를 주인님한테서 떨어뜨려 놓으려고...」
+PRINTFORMW 예리한 가윗날이, 이번엔 당신의 등을 파고들었다.
+PRINTFORMW 「해충, 주인님의 뇌파를 흉내내면 내가 모를 줄 알았어?」
+PRINTFORMW 「주인님을 어디다 가둬놨지? 어서 말해.」
+PRINTFORMW 「...말하지 않을 셈인가 보네. 아무래도 상관 없어.」
+PRINTFORMW 「주인님은 내가 구해드리면 되니까.」
+PRINTFORMW 「그러면, 주인님께서 나를 잔뜩 사랑해 주시겠지? 히힛...」
+PRINTFORMW 당신을 지나쳐, 집안으로 들어가는 발소리가 들렸다.
+PRINTFORMW 「주인님, 주인님? 어디 계세요?」
+PRINTFORMW 「저예요, 리제예요. 제가 다시 돌아왔어요.」
+PRINTFORMW 「제가 해충도 없애뒀어요. 이제 주인님은 안전해요.」
+PRINTFORMW 「...주인님?」
+PRINTFORMW 「후훗... 숨바꼭질인가요? 좋아요. 바로 찾아드릴게요.」
+PRINTFORMW 「그러고 나면, 저를 잔뜩 사랑해주셔야 해요. 아셨죠? 히힛...」
+PRINTFORMW 목소리는, 현관에 엎어진 당신을 버려둔 채, 애타게 주인을 찾고 있었다.
+PRINTFORMW 당신은 몸에서 점점 힘이 빠졌다.
+PRINTFORMW 그리고, 의식이 점점 멀어지며 눈이 감겼다.
+PRINTFORMW 주인을 애타게 찾는 목소리도 점점 멀어져갔다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 리제 엔딩 No.3, 「■■■■■」
+RETURN 1
+CASE 4
+PRINTFORMW 당신은 리제를 사랑스러운 눈으로 바라보며, 꼭 껴안았다.
+PRINTFORMW 리제는, 당신의 품에 안겨, 눈을 지그시 감고 당신의 체온을 느꼈다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 당신은 리제를 마주보며, 리제에게 반지를 보였다.
+PRINTFORMW 그리고, 어리둥절해하는 리제의 손가락에 반지를 끼워주었다.
+PRINTFORMW 「주인님... 이걸...」
+PRINTFORMW 「정말로, 저에게 주시는... 건가요?」
+PRINTFORMW 「흑... 드디어... 주인님께서...」
+PRINTFORMW 「쭉, 이 날만을 기다리고 있었어요...」
+PRINTFORMW 「그리고, 저도... 이때를 위해 준비해둔 게 있어요.」
+PRINTFORMW 리제는 자신이 가지고 있던 반지를 당신에게 건넸다.
+PRINTFORMW 「어서요, 주인님도 이 반지를 받아주세요.」
+PRINTFORMW 리제는 당신에게 받은 반지를 낀 자신의 손과,
+PRINTFORMW 리제가 준 반지를 낀 당신의 손을 맞대었다.
+PRINTFORMW 「후후... 우리 둘, 정말 잘 어울리네요.」
+PRINTFORMW 리제는 그 어느 때보다 환하게 웃고 있었다.
+PRINTFORMW 리제가 미소 짓는 모습은, 어떤 것보다도 밝게 빛이 났다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 평소와 다를 것 없는 밤이었다.
+PRINTFORMW 당신과 리제는 침대에 누워 서로를 껴안은 채로, 체온을 나누었다.
+PRINTFORMW 당신은 온몸으로 전해져오는 따스함을 느끼며, 깊고 편안한 잠을 잤다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 눈을 떴을 때, 당신은 낯선 장소에 있었다.
+PRINTFORMW 그리고 당신의 몸은, 옴짝달싹 못하게 꽁꽁 묶여있었다.
+PRINTFORMW 잠시 후, 리제가 방으로 들어왔다.
+PRINTFORMW 「후후... 주인님, 벌써 일어나셨어요?」
+PRINTFORMW 「주인님께서 저를 선택해주신 건 정말로 기뻤어요.」
+PRINTFORMW 「하지만... 주인님의 주변에 해충들이 몰려들 것 같아서 너무...」
+PRINTFORMW 「너무너무너무너무너무너무너무너무너무너무너무너무너무너무너무너무너무너무너무너무너무너무너무너무너무너무너무너무너무너무」
+PRINTFORMW 「신경 쓰였어요.」
+PRINTFORMW 「그래서... 주인님을... 다른 해충들이 올 수 없는, 안전한 장소로 옮겨드리기로 했어요.」
+PRINTFORMW 리제가 당신의 뺨을 보드랍게 어루만졌다.
+PRINTFORMW 「후훗... 이제 안심하세요. 여긴 그 어떤 해충도 없어요.」
+PRINTFORMW 「그러니, 주인님께서 다른 해충의 유혹을 받을 걱정도 없어요.」
+PRINTFORMW 「주인님께서는 이제... 저만 잔뜩 사랑해주시면 돼요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 「영원히요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 어떤 엘리자베스 A형 바이오로이드, 시저스 리제가 있었다.
+PRINTFORMW 그리고, 그녀에게 사랑을 고백한 한 남자가 있었다.
+PRINTFORMW 하지만 어느날, 둘은 홀연히 자취를 감추었고
+PRINTFORMW 누구도 그들을 다시 볼 수 없었다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 리제 히든엔딩, 「영원히 함께」
+RETURN 1
+CASE 5
+PRINTFORMW 당신과 리제 사이에는, 어느샌가 깊은 감정의 골이 생겼다.
+PRINTFORMW 당신을 보고 공포에 질려 안절부절못하는 리제,
+PRINTFORMW 어떻게든 당신의 마음을 돌려보려고 노력하는 리제,
+PRINTFORMW 당신과의 관계를 지속할 수 없음을 깨닫고 마음을 닫아버린 리제.
+PRINTFORMW 당신은 리제의 어떤 모습을 보더라도 부아가 치밀어 오를 뿐이었다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 그날도, 당신은 당신에게 눈을 흘기는 리제를 보고 불같이 화를 내며 윽박을 질러댔다.
+PRINTFORMW 바이오로이드 따위가 감히 주인을 거스르려고 하느냐며 역정을 내는 당신에게,
+PRINTFORMW 리제는 그저 고개를 숙인 채, 「죄송합니다」라는 말만 되풀이했다.
+PRINTFORMW 제 분을 이기지 못한 당신은 씩씩대며 집 밖으로 나가 몇 시간을 배회했다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 그날 밤, 당신은 리제의 방 안에서 새어나오는 희미한 울음소리를 들었다.
+PRINTFORMW 리제의 울음소리가 머릿속을 맴돌아, 당신은 늦게까지 잠을 이루지 못했다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 리제가 사라졌다.
+PRINTFORMW 짧은 편지 한 장 남기지 않고, 홀연히 집을 나갔다.
+PRINTFORMW 당신은 적막한 집 한가운데 우두커니 서있었다.
+PRINTFORMW 슬픔, 분노, 증오, 후련함, 후회. 당신 스스로가 생각하기에도 이상하다 싶을 정도로,
+PRINTFORMW 그 어떤 감정도 느껴지지 않았다.
+PRINTFORMW 당신은 덤덤하게 리제가 사라진 아침을 맞았다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 어느 날 당신은 아무 생각 없이 텔레비전을 쳐다보다가, 새로운 바이오로이드를 들이기로 했다.
+PRINTFORMW 바이오로이드 목록을 살펴보며 당신은 생각했다.
+PRINTFORMW 당신의 말을 잘 듣는 바이오로이드.
+PRINTFORMW 주인에게 복종하는 바이오로이드.
+PRINTFORMW 정신이 쉬이 꺾이지 않는 바이오로이드.
+PRINTFORMW 당신의 어떤 행동이라도 받아들이는 바이오로이드.
+PRINTFORMW 이번에는 그런 바이오로이드를 들여야겠다고.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 텔레비전 방송에 출연한 한 논객은, 주인의 학대를 못 이겨 도망하는 바이오로이드가 늘고 있으며,
+PRINTFORMW 이들 때문에 새로운 사회문제가 생기고 있다고 공허하게 떠들어대고 있었다.
+PRINTFORMW 리제 엔딩 No.4, 「소모품」
+RETURN 1
+ENDSELECT
+RETURN 0
+

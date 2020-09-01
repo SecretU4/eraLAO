@@ -1,0 +1,2753 @@
+﻿@IS_M_No113
+RETURN 1
+
+@M_No113_TRAIN_START_0
+PRINTFORMW 「...왕!」
+PRINTFORMW 저 멀리서 당신을 발견한 켈베로스가 당신에게 웃으며 뛰어왔다.
+PRINTFORMW .「안녕하세요 사령관님! 시민 여러분들의 친구! 켈베로스에요! 반가워 하라구요!」
+PRINTFORMW 켈베로스는 당신을 향해 밝게 경례를 해보였다.
+CFLAG:조교여부 = 1
+
+@M_No113_TRAIN_START_1
+SELECTCASE CSTR:1
+	CASE "Confession"
+		PRINTFORMW 평소와 같이 당신은 켈베로스와 같이 산책을 나섰다.
+		PRINTFORMW 따스하게 기분 좋은 햇살이 당신과 켈베로스를 비추었다.
+		PRINTFORMW 해맑게 웃으며 종종 뛰어가는 켈베로스를 당신은 쓴웃음을 지으며 바삐 쫓아가는 언제나와 같은 하루.
+		PRINTFORMW 당신은 조금 숨이 차 켈베로스에게 잠시 쉰다고 하며 풀 밭에 앉았다.
+		PRINTFORMW 평소대로 였다면, 알았다고 하며 헤실헤실 웃으며 바쁘게 근처를 뛰어다니던 켈베로스 였지만 오늘은 무슨 일인지 당신의 무릎에 머리를 기대왔다.
+		PRINTFORMW 「웃샤-! 헤헤...」
+		PRINTFORMW 당신의 무릎에 누운 체 해맑은 미소를 지어 보이는 켈베로스,
+		PRINTFORMW 당신은 어쩐 일로  헤실헤실 웃으면서 안 뛰어다니냐고 켈베로스에게 걱정 어린 질문을 했다.
+		PRINTFORMW 「엑? 저 뛰어다니면서 헤실헤실 웃나요!? 아닌데!?」
+		PRINTFORMW 당신은 켈베로스에게 세상만사 근심 없는 얼굴로 뛰어다닌다고 말해주었다.
+		PRINTFORMW 「아니에요! 안 그런다구요! 앗..아니지...여튼」
+		PRINTFORMW 당신에게 강하게 부정하듯 팔을 휘적거리던 켈베로스의 눈빛이 살짝은 진지하게 바뀌었다.
+		PRINTFORMW 「오늘은...말하기로 했거든요...」
+		PRINTFORMW 「...」
+		PRINTFORMW 「정말 좋아해요...사령관님」
+		PRINTFORMW 그것도 평상시에 하던 말 아니냐며 당신은 켈베로스의 머리를 쓰다듬었다.
+		PRINTFORMW 「에헤헤..앗 아니! 그런 뜻이 아니라...」
+		PRINTFORMW 「...」
+		PRINTFORMW 「진심으로...사령관님을 사랑해요...」
+		PRINTFORMW 당신이 살짝 놀라 쓰다듬던 손을 멈추자, 손 아래로 붉어진 켈베로스의 얼굴이 보였다.
+		PRINTFORMW 「처음에도 사령관님은 좋았지만...」
+		PRINTFORMW 「저랑 산책해주시는 것 외에도... 항상 저에게 상냥하게 해주셨고...」
+		PRINTFORMW 「뭔가 사령관님이 곁에 있기만 해도 가슴이 두근거리고, 행복해져요...」
+		PRINTFORMW 「이젠 곁에 없으면 쓸쓸해져서...싫은걸요...그러니까....그러니까 말하고 싶었어요...」
+		PRINTFORMW 켈베로스가 갑자기 자세를 바꾸어 당신은 풀밭에 눕게 되었다.
+		PRINTFORMW 그런 당신 위에 켈베로스가 올라탔다.
+		PRINTFORMW 기분좋은 상냥한 바람이 당신과 켈베로스를 적셨다.
+		PRINTFORMW 지나간 바람 뒤에는 옅게 웃고 있는 켈베로스가 있었다.
+		PRINTFORMW 「고마워요...저와 만나주셔서...」
+		PRINTFORMW 「정말...」
+		PRINTFORMW 「정말로 사랑해요...」
+		PRINTFORMW 「그러니까...받아주세요?」
+		PRINTFORMW 당신에게 천천히 안겨오는 켈베로스.
+		PRINTFORMW 이 따뜻함이 당신을 비추는 햇빛인지 그녀인지 상관할 필요 없이.
+		PRINTFORMW 당신은 조용히 그녀를 안아주었다.
+		TFLAG:고백함 = 1
+	CASE "Low"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「사령관님! 오셨어요? 」
+			PRINTFORMW 「이제 뭐할까요?」
+		ELSEIF A == 1
+			PRINTFORMW 「아앗, 심심해 죽는 줄 알았다구요!」
+			PRINTFORMW 「그런 의미에서 산책 나갈까요?」
+		ELSEIF A == 2
+			PRINTFORMW  당신이 방에 들어오자 스트레칭을 하고 있는 켈베로스가 보였다.
+			PRINTFORMW 「앗? 오셨나요? 헤헤..조금 몸이 근질근질해서 풀어주고 있었어요!」
+		ENDIF
+	CASE "High"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「에헤헷, 사령관님~ 오늘은 뭐하고 놀까요?」
+			PRINTFORMW 「뭐든지 전 다 좋아요!」
+		ELSEIF A == 1
+			PRINTFORMW 「기다렸어요 사령관님!」
+			PRINTFORMW 켈베로스는 방에 당신이 들어오자 냅다 달려들었다.
+		ELSEIF A == 2
+			PRINTFORMW  「지각이에요! 지각! 늦으셨다구요!」
+			PRINTFORMW 「그러니까 벌칙으로 간지럽힐 거예요!」
+		ENDIF
+	CASE "Affection"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 당신이 방문을 열자마자 갑작스러운 중량의 파도가 당신을 덥쳤다.
+			PRINTFORMW 당신을 덥친 것이 무엇인가 인지를 확인하기도 전에 익숙한 목소리가 들려온다.
+			PRINTFORMW 「정말...엄청엄청 기다렸다구요?」.
+			PRINTFORMW 당신이 고개를 들자 뾰루퉁한 표정을 지은 켈베로스가 보였다.
+			PRINTFORMW 당신은 켈베로스에게 산책을 권유하며 달래었다.
+			PRINTFORMW 「산책...헤헤..앗 아니! 산책으로는 안돼요!」
+			PRINTFORMW 당신이 곤란하다는 듯 쓴웃음을 짓자 켈베로스가 옅은 웃음을 띄웠다.
+			PRINTFORMW 「키스정돈..해주셔야 한다구요...?」
+			PRINTFORMW 슬슬 당신 위에 올라탄 켈베로스가 여러모로 부담됬기에, 당신은 켈베로스의 이마에 입을 맞춰 주었다.
+		ELSEIF A == 1
+			PRINTFORMW 당신이 방에 들어오자 머리를 풀고 있는 켈베로스가 보였다.
+			PRINTFORMW 「앗, 사령관님 오셨어요? 헤헤...죄송해요...아직 준비가 안됬어요...」
+			PRINTFORMW 머리를 묶고 있는 켈베로스를 보며 당신은 푼 것도 귀엽다고 그녀를 칭찬하였다.
+			PRINTFORMW 「저..정말요..? 그러면 다음번엔 풀고 데이트 나갈까요? 헤헤...」
+		ELSEIF A == 2
+			PRINTFORMW 「앗! 지금 들어오시면 안 돼요!」
+			PRINTFORMW 당신이 방에 들어오자 대뜸 단추가 날라와 따콩하고 당신의 이마를 강타했다.
+			PRINTFORMW  쓰린 이마를 어루만지고 있자니 멀리서 흘러내리는 속옷을 부여잡은 켈베로스가 보였다.
+			PRINTFORMW 「아..앗! 사령관님 변태!변태!」
+			PRINTFORMW 당신은 불합리함에 항의하기도 전에 잠시 방밖으로 퇴출 되었다.
+		ENDIF
+	CASE "Marryed"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「앗 사령관님이다!」
+			PRINTFORMW 「보세요! 전에 귀엽다고 하신 머리 해봤다구요!」
+			PRINTFORMW 찰랑거리는 주황색 단발을 자랑하며 우쭐거리는 켈베로스.
+			PRINTFORMW 당신은 말없이 켈베로스의 손을 잡고 나가자고 제의했다.
+			PRINTFORMW  「엑? 그렇게나 빨리요? 자..잠깐만요...!」
+			PRINTFORMW 당신의 제안을 전혀 예상하지 못했다는 듯 켈베로스가 허둥대기 시작했다.
+			PRINTFORMW 「정말...여자아이는 이것저것 준비가 필요하다구요? 그러니까..다음번에 기대해주세요...?」
+		ELSEIF A == 1
+			PRINTFORMW 당신이 방에 들어오자 당신의 사진을 보면서 뒹굴거리고 있는 켈베로스가 보였다.
+			PRINTFORMW 당신은 조용히 다가가 켈베로스를 놀래켜 주기로 했다.
+			PRINTFORMW 「...」
+			PRINTFORMW 「히얏!?!」
+			PRINTFORMW 「깜짝이야! 언제오신거에요...? 핫?」
+			PRINTFORMW 「사령관님 사진을 보고 있으니 사령관님이 나타난걸 보면..혹시 마법!?」
+			PRINTFORMW 엉뚱한 소리를 하는 켈베로스의 머리를 짖굳게 쓰다듬어 주자, 켈베로스는 마냥 헤실헤실 웃었다.
+		ELSEIF A == 2
+			PRINTFORMW 당신이 켈베로스의 방에 들어가자 이불로 몸을 꽁꽁 싸맨 켈베로스가 보였다.
+			PRINTFORMW 「후후...오셨군요 사령관님...」
+			PRINTFORMW  당신은 켈베로스에게 뭐하고 있냐고 물어보았다.
+			PRINTFORMW 「헤헤...짠!」
+			PRINTFORMW 켈베로스가 싸매고 있던 이불을 벗어 던지자, 전용 의장복을 입은 켈베로스의 모습이 보였다.
+			PRINTFORMW 「기대하셨나요? 땡! 애석하게도 의장복입니다!」
+			PRINTFORMW 당신은 눈을 애매하게 가리며 속옷이 보인다고 지적했다.
+			PRINTFORMW 「헤헤...사령관님이라면....」
+			PRINTFORMW 「살짝 보여도..괜찮은 걸요...?」
+			PRINTFORMW 어느센가 켈베로스가 당신의 가슴팍에 붙어 손가락으로 당신의 가슴에 둥글게 원을 그리고 있었다.
+		ENDIF
+	CASE "Annoyed"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「흥!」
+			PRINTFORMW 켈베로스는 뾰루퉁한 얼굴로 고개를 돌렸다.
+		ELSEIF A == 1
+			PRINTFORMW 켈베로스는 당신이 방에 들어오자 웃음을 멈추고 정색하였다.
+			PRINTFORMW 「...오셨어요?」
+		ENDIF
+	CASE "Fear"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「읏...」
+			PRINTFORMW 당신이 켈베로스에게 접근하자 켈베로스의 표정이 살짝 굳었다.
+			PRINTFORMW 「오...오늘은....아픈거....안해주시면...안될까요...?」
+		ELSEIF A == 1
+			PRINTFORMW 당신이 조용히 방문을 열고 들어가자 상처입은 몸에 밴드를 붙이고 있는 켈베로스가 보였다.
+			PRINTFORMW 「아...아파앗....」
+			PRINTFORMW 켈베로스는 이내 당신이 방에 들어온걸 확인하고는 밴드를 등 뒤로 감췄다.
+			PRINTFORMW 「앗...오..오셨나요...아뇨! 이건..아무것도 아니에요..!」
+		ENDIF
+	CASE "Weak"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「히익...! 앗..아흑...」
+			PRINTFORMW 당신이 방에 들어오자 켈베로스는 뒷걸음치다가 넘어졌다.
+		ELSEIF A == 1
+			PRINTFORMW 「오..오지마세요....」
+			PRINTFORMW 켈베로스의 눈가에 눈물이 맺혔다.
+		ELSEIF A == 2
+			PRINTFORMW 당신은 방에 들어와서 켈베로스 찾았지만 켈베로스는 어디에도 보이지 않았다.
+			PRINTFORMW 「싫어...흑」
+			PRINTFORMW  이윽고, 방의 구석에서 벌벌 떨고 있는 켈베로스를 발견했다.
+		ENDIF
+	CASE "Break"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「왕!」
+			PRINTFORMW 당신이 방에 들어오자 켈베로스가 당신에게 다가와 근처를 맴돈다.
+			PRINTFORMW 당신은 그런 켈베로스를 보며 조용히 웃음지어 보였다.
+			PRINTFORMW 「왕!」
+		ELSEIF A == 1
+			PRINTFORMW 「...」
+			PRINTFORMW 당신이 방에 들어왔을때, 켈베로스는 구석에서 잠들어 있었다.
+			PRINTFORMW 조용히 켈베로스를 쓰다듬자 그녀의 눈가 아래로 눈물이 흘렀다.
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;10개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_TRAIN_END
+SELECTCASE CSTR:1
+	CASE "Low"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW  「아앗? 벌써 가시나요...? 조금 더 놀고 싶었는데...」
+		ELSEIF A == 1
+			PRINTFORMW 「내일은 더 많이 놀아주세요! 헤헤..」
+			PRINTFORMW 켈베로스는 당신을 올려다 보며 헤실헤실 웃어보였다.
+		ENDIF
+	CASE "High"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「네에...? 한참 재밌었는데....조금만 더 같이 있으면 안 될까요?」
+		ELSEIF A == 1
+			PRINTFORMW 「아직아직! 10분만 더 놀아요? 네?」
+			PRINTFORMW 켈베로스가 당신의 가슴팍에 매달렸다.
+		ELSEIF A == 2
+			PRINTFORMW 「엣헴! 어쩔 수 없죠! 기다릴테니까 빨리 다시 와주셔야 해요!」
+			PRINTFORMW 우쭐거리는 켈베로스였지만 못내 아쉬운지 실눈을 뜨고 당신의 눈치를 살폈다.
+		ENDIF
+	CASE "Affection"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「...! 벌써 가시는 거에요?」
+			PRINTFORMW 당신이 자리를 뜨려하자 켈베로스가 냅다 당신을 안아버렸다.
+			PRINTFORMW 「가시기 전에... 사령관님 게이지 충전이에요! 헤헤」
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님이 없는 시간이 제일 지루한데....」
+		ELSEIF A == 2
+			PRINTFORMW 「...」
+			PRINTFORMW 조용히 당신을 꼭 껴안고 있는 켈베로스에게 이따가 산책시켜줄테니 참아달라고 당신은 달랬다.
+			PRINTFORMW 「앗! 진짜요? 알겠어요! 에헤헤...」
+		ENDIF
+	CASE "Marryed"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 켈베로스와 침대에서 뒹굴거리며 시간을 보내던 당신.
+			PRINTFORMW 이내 해야 할 일을 떠올린 당신은 이제 가야한다고 켈베로스에게 말했다.
+			PRINTFORMW 「웅...벌써요...?」
+			PRINTFORMW 아쉬워 하는 켈베로스를 달래기 위해 당신은 천천히 켈베로스를 쓰다듬었다.
+			PRINTFORMW 「헤헤...알겠어요...일찍 오셔야 해요...?」
+			PRINTFORMW 켈베로스는 볼을 살짝 붉게 물들이며 베게에 얼굴을 묻었다
+		ELSEIF A == 1
+			PRINTFORMW 「아앗! 가시기 전에 잠깐,잠깐만요!」
+			PRINTFORMW 「얼굴에 뭐 묻으셨어요 조금만 가까이...」
+			PRINTFORMW 쪽!
+			PRINTFORMW 「...에헤헤...이제 제 차례네요?」
+			PRINTFORMW 볼에 키스를 받은 당신은 순간 얼떨떨 했지만, 이내 쓴웃음을 지으며 켈베로스의 볼에 다시 키스를 해주었다.
+			PRINTFORMW 조용히 얼굴을 붉히고 있는 켈베로스의 모습이 보였다.
+		ELSEIF A == 2
+			PRINTFORMW 「있잖아요! 사령관님 이따가 시간 되세요?」
+			PRINTFORMW 「아뇨! 산책이 아니라구요...!」
+			PRINTFORMW  켈베로스가 산책이 아니라면 도대체 뭘까 라고 당신이 궁금증 가득한 얼굴을 하자 켈베로스는 살짝 볼을 붉혔다.
+			PRINTFORMW 「전에 말씀하신 옷....왔다구요....?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW  아무래도 오늘은 자기 힘들 것 같다고 생각하는 당신이였다.
+		ENDIF
+	CASE "Annoyed"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「흥! 전 몰라요!」
+		ELSEIF A == 1
+			PRINTFORMW 「...」
+			PRINTFORMW 볼을 빵빵하게 부풀린 체 당신을 바라보는 켈베로스를 뒤로 한 체 당신을 자리를 떴다.
+		ENDIF
+	CASE "Fear"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「아...안녕히 가세요...사령관님...!」
+		ELSEIF A == 1
+			PRINTFORMW 「왕!? 앗...네...재..재밌었어요..!」
+			PRINTFORMW 당신이 켈베로스와 헤어지기 전에 그녀를 쓰다듬자 켈베로스의 몸이 흠칫 떨렸다.
+		ENDIF
+	CASE "Weak"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「...」
+		ELSEIF A == 1
+			PRINTFORMW 「이젠..괜찮아...괜찮을거야..」
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 「...왕!」
+		PRINTFORMW 당신이 방을 떠나려 하자 켈베로스가 마중을 나섰다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM2
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW  당신은 켈베로스와 이런저런 이야기를 주고받았다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「가만히 있으려니 좀 심심한데… 산책이라도 할까요?」
+		ELSEIF A == 1
+			PRINTFORMW 「심심해요. 심심해! 사령관님, 우리 재미있는 거 좀 없을까요?」
+			PRINTFORMW 켈베로스는 눈을 반짝이며 당신에게 달라 붙었다.
+		ELSEIF A == 2
+			PRINTFORMW 「뭔가 재미있는 건 없을까요? 이럴 때 긴급 사건이라도 나타나 주면 좋을 텐데요…」
+			PRINTFORMW 켈베로스는 고개를 좌우로 까닥거리며 지루해 했다.
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 켈베로스와 이런저런 이야기를 주고받았다.
+		A = RAND:4
+		IF A == 0
+			PRINTFORMW 「가만히 있으려니 좀 심심한데… 산책이라도 할까요?」
+			PRINTFORMW 켈베로스는 당신의 옷깃을 당기며 졸라왔다.
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님, 사령관님, 우리 공원이라도 같이 다녀요. 네? 그럼 안 돼요?」
+			PRINTFORMW 켈베로스는 눈을 반짝이며 당신에게 달라 붙었다.
+		ELSEIF A == 2
+			PRINTFORMW 「오늘은 코스를 바꿔볼까요? 더 멀리멀리 가는거에요. 준비되셨죠?」
+		ELSEIF A == 3
+			PRINTFORMW 「얼른 얼른~. 사령관님 산책나갈 준비해 주세요. 빨리요~」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 켈베로스와 이런저런 이야기를 주고받았다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「우리끼리 할 수 있는 게 얼마나 많은데요. 그러니까.. 음.. 제가 경찰할게요. 히힛~.」
+			PRINTFORMW 켈베로스는 당신을 향해 밝게 웃어 보였다.
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님이랑 있으면 심심하긴 해도 행복해져요. 음… 헷, 말로는 못하겠어요.」
+		ELSEIF A == 2
+			PRINTFORMW 「사령관님이랑 있으면 너무 좋아요. 꼭 산책하지 않아도...」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 켈베로스와 이런저런 이야기를 주고받았다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「난 사령관님이 있는 곳이면 어디든 좋아요. 사령관님이 있으니까요.」
+			PRINTFORMW 켈베로스는 웃으며 당신에게 기대왔다.
+		ELSEIF A == 1
+			PRINTFORMW 「히히, 오늘도, 내일도, 사령관님이랑 잔뜩 데이트할 거에요.」
+		ELSEIF A == 2
+			PRINTFORMW 「그래서요! 그래서요! 거기서 제가...정말, 대화중에 어디를 보시는 거예요...사령관님...」
+			PRINTFORMW 켈베로스는 짓궂은 웃음을 지었다.
+			PRINTFORMW 「벌로 나중에 저와 산책 100바퀴 돌아주세요!」
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 켈베로스와 이런저런 이야기를 주고받았다.
+		PRINTFORMW %TEXTR("「사령관님, 그런 이야기보다 밖에 나가서 공기 좀 쐬고 오면 안 될까요?」/「흐응...그렇군요...」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 켈베로스와 이런저런 이야기를 주고받았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「네에...네! 사령관님, 듣고 있는걸요...!」
+			PRINTFORMW 당신이 헛기침을 하자 켈베로스는 흠칫 떨면서 당신의 눈치를 살폈다.
+		ELSEIF A == 1
+			PRINTFORMW 「으...응....」
+			PRINTFORMW 켈베로스는 자리가 불편한 듯, 몸을 꼼지락거렸다.
+		ENDIF
+	CASE "Weak"
+		PRINTFORMW 당신은 켈베로스와 이런저런 이야기를 주고받았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「...히익!」
+			PRINTFORMW 대화 중에 당신이 손을 잠깐 들자 켈베로스는 새파랗게 질려 구석으로 도망쳤다.
+		ELSEIF A == 1
+			PRINTFORMW 「...」
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 켈베로스와 이런저런 이야기를 주고받았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「왕!」
+		ELSEIF A == 1
+			PRINTFORMW 「...?」
+			PRINTFORMW 켈베로스는 영문을 모르겠다는 표정으로 당신을 바라보기만 했다.
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM3
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 켈베로스의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
+		PRINTFORMW 켈베로스는 얼굴이 붉어지며 방방 뛰었다.
+		PRINTFORMW %TEXTR("「사령관님 변태!」/「으! 성희롱은 싫어요!」")%
+	CASE "High"
+		PRINTFORMW 당신은 켈베로스의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
+		PRINTFORMW 켈베로스는 얼굴이 붉어지며 방방 뛰었다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「못된 농담은 금지! 금지에요!」
+		ELSEIF A == 1
+			PRINTFORMW 「정말 짓궂으세요 사령관님!」
+		ELSEIF A == 2
+			PRINTFORMW 「나쁜 말 하는 사람은 이렇게, 이렇게 혼내줄꺼에요!」
+			PRINTFORMW 켈베로스가 당신의 가슴팍을 토닥토닥 치기 시작했지만, 그다지 아프진 않았다.
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 켈베로스의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
+		PRINTFORMW 켈베로스는 부끄러운 듯 몸을 배배 꼬았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「그런 말씀...하시면...아니! 안 돼요!」
+		ELSEIF A == 1
+			PRINTFORMW 「역시 그렇죠? 조금 더 칭찬해주세요!」
+			PRINTFORMW 켈베로스는 당당하게 가슴을 폈지만 부끄러웠는지 눈은 돌리고 있었다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 켈베로스의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
+		PRINTFORMW 켈베로스가 실실 웃으며 당신을 올려다 보았다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「삐뽀삐뽀! 못된 말 하시는 변태 사령관님은 제가 이렇게!」
+			PRINTFORMW 켈베로스가 대뜸 당신에게 달려들어 당신을 품에 껴안았다.
+			PRINTFORMW 「꼭 껴안아 버리는 벌을 줄 거에요!」
+		ELSEIF A == 1
+			PRINTFORMW 「또!또!또! 정말... 저 아니었으면 이미 잡혀가셧다구요?」
+		ELSEIF A == 2
+			PRINTFORMW 「후후...사령관님이 먼저 시작하신 거에요?」
+			PRINTFORMW 켈베로스는 당신에게 덮쳐들 듯이 올라탔다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 켈베로스의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
+		PRINTFORMW 켈베로스는 얼굴이 붉어지며 방방 뛰었다.
+		PRINTFORMW %TEXTR("「사령관님 변태!」/「정말! 맨날 못된 말만 하시구!」/「그러다가 잡혀가신다구요!」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 켈베로스의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
+		PRINTFORMW 켈베로스는 당황하며 자신의 몸을 가렸다.
+		PRINTFORMW %TEXTR("「으으...」/「그런 말...하시면 안 돼요!」")%
+	CASE "Weak"
+		PRINTFORMW 당신은 켈베로스의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
+		PRINTFORMW 켈베로스는 소름이 끼치는 듯 몸을 떨고 있다.
+		PRINTFORMW %TEXTR("「...으으 」/「...흑..흐윽」")%
+	CASE "Break"
+		PRINTFORMW 당신은 켈베로스의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
+		PRINTFORMW 켈베로스는 당신의 말을 듣는 둥 마는 둥 했다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「왕!」
+		ELSEIF A == 1
+			PRINTFORMW 「...」
+			PRINTFORMW 당신의 말이 안들리는 듯 켈베로스는 뒹굴거릴 뿐이였다.
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM4
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 살며시 켈베로스의 손에 손을 겹쳤다.
+		PRINTFORMW 켈베로스는 살짝 놀란 듯하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「앗..?」
+			PRINTFORMW 「사령관님..은근히 음흉하시네요...」
+		ELSEIF A == 1
+			PRINTFORMW 「간지러워요! 사령관님!」
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 살며시 켈베로스의 손에 손을 겹쳤다.
+		PRINTFORMW 켈베로스의 얼굴이 붉어진 것 같다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「사령관님이 좋으시다면 뭐...」
+			PRINTFORMW 「저도 좋지만요... 」
+		ELSEIF A == 1
+			PRINTFORMW 「엥...벌써 놓으시게요?」
+			PRINTFORMW 켈베로스는 살짝 아쉬운 듯하다.
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 살며시 켈베로스의 손에 손을 겹쳤다.
+		PRINTFORMW 켈베로스는 얼굴을 붉히며 웃어보였다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「헤헤...이대로 산책 나갈까요?」
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님이랑 손잡는거 전 너무 좋아요!」
+			PRINTFORMW 켈베로스는 당신의 손에 볼을 비볐다.
+		ELSEIF A == 2
+			PRINTFORMW 「저는 있죠...사령관님과 이렇게 손잡고 있는 시간이 정말 좋아요」
+			PRINTFORMW 「사...사령관님도 그러신가요?」
+			PRINTFORMW 켈베로스는 상기된 얼굴로 당신을 바라보았다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 살며시 켈베로스의 손에 손을 겹쳤다..
+		PRINTFORMW 켈베로스는 해실해실 웃으며 당신을 바라보았다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「따뜻해... 앗! 손 놓으시면 안 돼요! 아직 부족해요!」
+		ELSEIF A == 1
+			PRINTFORMW 「이대로 산책 나갈까요? 전 준비됐는데!」
+			PRINTFORMW 당신은 고개를 저었지만 켈베로스는 스위치가 들어가 버린 것 같다.
+		ELSEIF A == 2
+			PRINTFORMW 「...헤헤」
+			PRINTFORMW 당신은 켈베로스에게 뭐가 그렇게 좋냐고 물어보았다.
+			PRINTFORMW 「뭐긴요! 사령관님과 이렇게 손잡으면 너무 행복한걸요! 설마...사령관님은 아니신 거 아니죠!?」
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 살며시 켈베로스의 손에 손을 겹쳤다.
+		PRINTFORMW 켈베로스는 뾰루퉁한 표정으로 당신을 바라보았다.
+		PRINTFORMW %TEXTR("「정말...사령관님은 매번 이러신다니까요...」/「저 아직 화났어요! 그러니까...잠깐만이에요...」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 살며시 켈베로스의 손에 손을 겹쳤다.
+		PRINTFORMW 켈베로스는 당황한 듯 당신의 손을 뿌리쳤다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「후앗!? 」
+			PRINTFORMW 당신의 손을 떨친 켈베로스는 이내 당신의 눈치를 살피며 천천히 손을 겹쳤다.「이..이러면 되죠? 」
+		ELSEIF A == 1
+			PRINTFORMW 「앗! 아뇨! 자..잠시 놀라서...헤헤..」
+		ENDIF
+	CASE "Weak"
+		PRINTFORMW 당신은 살며시 켈베로스의 손에 손을 겹쳤다.
+		PRINTFORMW 켈베로스는 흠칫 떨며 손을 떨쳐냈다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「싫어요! 싫어요!」
+		ELSEIF A == 1
+			PRINTFORMW 「으읏...!」
+			PRINTFORMW 켈베로스는 떨리는 눈동자로 당신을 바라보고있다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 살며시 켈베로스의 손에 손을 겹쳤다.
+		PRINTFORMW 켈베로스는 즐거운지 당신의 손을 핥았다.
+		PRINTFORMW %TEXTR("「왕왕!」/당신이 켈베로스로부터 손을 치우자 켈베로스는 아쉬운 듯 당신을 쳐다보았다.")%
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM5
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 켈베로스의 머리를 쓰다듬었다.
+		PRINTFORMW 켈베로스는 조금 부끄러운 듯하다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「정말...강아지가 아니라구요...?」
+		ELSEIF A == 1
+			PRINTFORMW 「흐응...」
+			PRINTFORMW 켈베로스는 싫지는 않은 듯하다.
+		ELSEIF A == 2
+			PRINTFORMW 「헤헤...뭔진 모르겟지만 좋아요!」.
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 켈베로스의 머리를 쓰다듬었다.
+		PRINTFORMW 켈베로스는 헤실헤실 웃기 시작했다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「앗, 쓰다듬어 주시는 거에요? 너무 좋아요!」
+		ELSEIF A == 1
+			PRINTFORMW 「더 해주세요! 아직! 아직!」
+			PRINTFORMW 켈베로스가 눈을 반짝였다.
+		ELSEIF A == 2
+			PRINTFORMW 「다음엔 뭐해주실 거에요?」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 켈베로스의 머리를 쓰다듬었다.
+		PRINTFORMW 켈베로스는 얼굴을 붉게 물들이며 웃어보였다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「절 길들이시려구요?」
+			PRINTFORMW 「으음...」
+			PRINTFORMW 「사령관님이라면 길들여져도 좋을지도...헤헤」
+		ELSEIF A == 1
+			PRINTFORMW 「이대로 잠들어버려도...될까..요..」
+			PRINTFORMW 켈베로스는 꾸벅꾸벅 졸기 시작했다.
+		ELSEIF A == 2
+			PRINTFORMW 「헤헤...」
+			PRINTFORMW 켈베로스는 만족한듯 눈을 감고 당신의 온기를 느꼈다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 켈베로스의 머리를 쓰다듬었다.
+		PRINTFORMW 켈베로스는 헤실헤실 웃기 시작했다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「앗! 쓰다듬어 주시는 시간?」
+			PRINTFORMW 「산책도 좋지만...사령관님이 쓰다듬어 주시는 건 더 좋아요...」
+		ELSEIF A == 1
+			PRINTFORMW 「흠...흠냐...」
+			PRINTFORMW 켈베로스는 꾸벅꾸벅 졸기 시작했다.
+		ELSEIF A == 2
+			PRINTFORMW 「히히...사령관님을 만나서 정말 다행이에요...」
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 켈베로스의 머리를 쓰다듬었다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 켈베로스는 뾰루퉁한 모습이다.
+			PRINTFORMW {「쓰다듬어 주시면..헤헤..아,아니! 저 아직 화났어요!」
+		ELSEIF A == 1
+			PRINTFORMW 「흥...」
+			PRINTFORMW 켈베로스는 툴툴거리며 눈을 다른 곳으로 돌렸다.
+		ELSEIF A == 2
+			PRINTFORMW 「강아지가 아니라구요!」
+		ENDIF
+	CASE "Fear"
+		PRINTFORMW 당신은 켈베로스의 머리를 쓰다듬었다.
+		PRINTFORMW 켈베로스의 몸이 가늘게 떨리고 있다.
+		PRINTFORMW 「힉...! 아..쓰..쓰다듬어 주시는 거군요..」
+	CASE "Weak"
+		PRINTFORMW 당신은 켈베로스의 머리를 쓰다듬었다.
+		PRINTFORMW 켈베로스는 흠칫 떨며 손을 떨쳐냈다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「싫어요! 때리지 마세요!」
+		ELSEIF A == 1
+			PRINTFORMW 「아픈건 싫어...아픈건 싫어...」
+			PRINTFORMW 켈베로스의 몸이 떨리고 있다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 켈베로스의 머리를 쓰다듬었다.
+		PRINTFORMW 켈베로스는 풀린 눈으로 헤실헤실 웃기 시작했다.
+		PRINTFORMW 「왕...!」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM6
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 켈베로스의 옆구리를 찔렀다.
+		PRINTFORMW 켈베로스는 정말 깜짝 놀란듯 하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「읏!?」
+		ELSEIF A == 1
+			PRINTFORMW 「정말...」
+			PRINTFORMW 「어딜 찌르시는 거에요!」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 켈베로스의 옆구리를 찔렀다.
+		PRINTFORMW 켈베로스는 깔깔 웃기 시작했다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「거기! 거기! 약하니까 푸흡..」
+			PRINTFORMW 「그만...!」
+			PRINTFORMW 「항복!항복할테니...! 풉!」
+			PRINTFORMW 「꺄하하핫!」
+		ELSEIF A == 1
+			PRINTFORMW 「꺄하핫!」
+			PRINTFORMW 「얍! 복수에요!」
+			PRINTFORMW 켈베로스와 당신은 서로를 간지럽히며 깔깔거렸다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 켈베로스의 옆구리를 찔렀다.
+		PRINTFORMW 켈베로스는 웃음을 참으며 당신에게 화냈다.
+		PRINTFORMW %TEXTR("「푸..아니! 지금 그러셔도 안 받아드릴거에요!」/「이익! 괴롭히지 마세요!」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 켈베로스의 옆구리를 찔렀다.
+		PRINTFORMW 켈베로스는 몸을 흠칫 떨었다.
+		PRINTFORMW 「히얏...!?」
+	CASE "Weak"
+		PRINTFORMW 당신은 켈베로스의 옆구리를 찔렀다.
+		PRINTFORMW 켈베로스는 몸을 떨며 당신에게서 멀어졌다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「..으..흑..흑」
+		ELSEIF A == 1
+			PRINTFORMW 「이젠 싫어...」
+			PRINTFORMW 켈베로스의 눈에 눈물이 맺혔다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 켈베로스의 옆구리를 찔렀다.
+		PRINTFORMW 켈베로스는 재밌다는 듯이 당신에게 달라붙었다.
+		PRINTFORMW 「왕왕!」
+		PRINTFORMW 켈베로스는 몸을 배배 꼬고있다.
+	CASE "High"
+		PRINTFORMW 당신은 켈베로스의 옆구리를 찔렀다.
+		PRINTFORMW 켈베로스는 정말 깜짝 놀란듯 하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「읏!?」
+		ELSEIF A == 1
+			PRINTFORMW 「정말...」
+			PRINTFORMW 「어딜 찌르시는 거에요!」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 켈베로스의 옆구리를 찔렀다.
+		PRINTFORMW 켈베로스는 깔깔 웃기 시작했다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「거기! 거기! 약하니까 푸흡..」
+			PRINTFORMW 「그만...!」
+			PRINTFORMW 「항복!항복할테니...! 풉!」
+			PRINTFORMW 「꺄하하핫!」
+		ELSEIF A == 1
+			PRINTFORMW 「꺄하핫!」
+			PRINTFORMW 「얍! 복수에요!」
+			PRINTFORMW 켈베로스와 당신은 서로를 간지럽히며 깔깔거렸다.
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM7
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 켈베로스에게 자신의 무릎에 누우라고 했다.
+		PRINTFORMW 켈베로스는 거절했다.
+		PRINTFORMW %TEXTR("「응큼한 짓 하려고 하시는 거죠?」/「그런 것 보다 산책나가요! 산책!」")%
+	CASE "High"
+		PRINTFORMW 당신은 켈베로스에게 자신의 다리에 누우라고 했다.
+		PRINTFORMW 켈베로스는 당신의 무릎에 쭈뼛쭈뼛 누웠다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「으..응큼한 짓 하시면 안되요!」
+			PRINTFORMW 켈베로스는 안절부절하고 있다.
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님은 가끔 보면 무슨 생각하시는지 잘 모르겠어요..」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 켈베로스에게 자신의 다리에 누우라고 했다.
+		PRINTFORMW 켈베로스는 달려들듯이 당신의 무릎에 누웠다.
+		PRINTFORMW 「헤헷! 사령관님이 말씀하셨으니 힘드셔도 무르기 없기에요!」
+		PRINTFORMW 켈베로스는 당신의 무릎에 얼굴을 비비기 시작했다.
+	CASE "Marryed"
+		PRINTFORMW 당신은 켈베로스에게 자신의 다리에 누우라고 했다.
+		PRINTFORMW 켈베로스는 달려들듯이 당신의 무릎에 누웠다.
+		PRINTFORMW 「헤헤...마침 피곤했는데...」
+		PRINTFORMW 「졸린데...사령관님 얼굴은 계속 보고 싶고...우..어쩌죠..?」
+		PRINTFORMW 켈베로스는 눈을 꿈뻑이며 당신을 바라보았다.
+	CASE "Annoyed"
+		PRINTFORMW 당신은 켈베로스에게 자신의 다리에 누우라고 했다.
+		PRINTFORMW 켈베로스는 거절했다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「지금은 싫어요!」
+		ELSEIF A == 1
+			PRINTFORMW 「흥!」
+			PRINTFORMW 켈베로스는 고개를 돌려 다른 곳을 보았다.
+		ENDIF
+	CASE "Fear"
+		PRINTFORMW 당신은 켈베로스에게 자신의 무릎에 누우라고 했다.
+		PRINTFORMW 켈베로스는 겁에 질린 듯 천천히 당신의 무릎에 누웠다.
+		PRINTFORMW %TEXTR("「아..알겠어요...!」/「아..안 때리시는 거죠...?」")%
+	CASE "Weak"
+		PRINTFORMW 당신은 켈베로스에게 자신의 다리에 누우라고 했다.
+		PRINTFORMW 켈베로스는 당신에게서 멀찍이 떨어졌다.
+		PRINTFORMW 「...싫어...맞을거야...싫어..싫어..」
+		PRINTFORMW 켈베로스의 눈에 눈물이 고여있다.
+	CASE "Break"
+		PRINTFORMW 당신은 켈베로스에게 자신의 무릎에 누우라고 했다.
+		PRINTFORMW 켈베로스는 덥치듯이 당신의 다리에 누웠다.
+		PRINTFORMW 「왕!」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM8
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 켈베로스에게 무릎베개를 부탁했다.
+		PRINTFORMW 켈베로스는 거절했다.
+		PRINTFORMW %TEXTR("「응큼한 짓 하려고 하시는 거죠!」/「눈빛이 수상해요...! 사령관님!」")%
+	CASE "High"
+		PRINTFORMW 켈베로스에게 무릎베개를 부탁했다.
+		PRINTFORMW 켈베로스는 쭈뼛거리며 허락했다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「으응...이상한 짓 하시면 안되요...?」
+			PRINTFORMW 켈베로스의 얼굴이 붉게 물들었다.
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님이니까...특별히에요!」
+			PRINTFORMW 켈베로스는 허둥지둥거리고 있다.
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 켈베로스에게 무릎베개를 부탁했다.
+		PRINTFORMW 켈베로스는 웃으면서 허벅지를 탁탁쳤다.
+		PRINTFORMW 「이리오세요! 옳지옳지! 아! 어딜 보시는거에요!」
+		PRINTFORMW 켈베로스의 압도적인 무언가가 당신의 시야를 가렸다.
+		PRINTFORMW 「이거 해드리면, 나중에 상으로 산책 700바퀴 가는 거예요!」
+	CASE "Annoyed"
+		PRINTFORMW 켈베로스에게 무릎베개를 부탁했다.
+		PRINTFORMW 켈베로스는 거절했다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「피..사령관님은 바보...」
+		ELSEIF A == 1
+			PRINTFORMW 「흥!」
+			PRINTFORMW 켈베로스는 고개를 돌려 다른 곳을 보았다.
+		ENDIF
+	CASE "Fear"
+		PRINTFORMW 켈베로스에게 무릎베개를 부탁했다.
+		PRINTFORMW 켈베로스는 겁먹은 표정으로 받아들였다.
+		A = RAND:1
+		IF A == 0
+			PRINTFORMW 「으응....아프..아픈짓만 아니라면..」
+			PRINTFORMW 켈베로스는 겁먹은 듯 파르르 떨고있다.
+		ENDIF
+	CASE "Weak"
+		PRINTFORMW 켈베로스에게 무릎베개를 부탁했다.
+		PRINTFORMW 켈베로스는 당신에게서 멀찍이 떨어졌다.
+		PRINTFORMW 「싫어요! 다가오지 말아주세요!!!」
+		PRINTFORMW 켈베로스의 눈에 눈물이 고여있다.
+	CASE "Break"
+		PRINTFORMW 켈베로스에게 무릎베개를 부탁했다.
+		PRINTFORMW 켈베로스는 가만히 앉아있었다.
+		PRINTFORMW 「...?」
+		PRINTFORMW 켈베로스는 영문을 모르겠다는 듯 당신을 향해 고개를 갸웃거렸다.
+	CASE "Marryed"
+		PRINTFORMW 켈베로스에게 무릎베개를 부탁했다.
+		PRINTFORMW 켈베로스는 웃으면서 허벅지를 탁탁쳤다.
+		PRINTFORMW 「이리오세요! 옳지옳지! 아! 어딜 보시는거에요!」
+		PRINTFORMW 켈베로스의 압도적인 무언가가 당신의 시야를 가렸다.
+		PRINTFORMW 「이거 해드리면, 나중에 상으로 산책 700바퀴 가는 거예요!」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM9
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 켈베로스를 껴안았다.
+		PRINTFORMW 켈베로스는 당황하며 당신의 품안에서 벗어났다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「왕!? 뭐하는 짓이에요!」
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님 변태!」
+		ELSEIF A == 2
+			PRINTFORMW 「우햣? 무슨 생각하시는 거예요!」
+			PRINTFORMW 켈베로스는 화가 난듯 방방뛰고 있다.
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 켈베로스를 껴안았다.
+		PRINTFORMW 켈베로스는 얼굴을 붉힌 체로 당신 품안에 있었다.
+		PRINTFORMW %TEXTR("「으응...잠깐만 이라구요?」/「사령관님이 무슨 생각하시는지 가끔씩은 잘 모르겠어요...」")%
+	CASE "Affection"
+		PRINTFORMW 당신은 켈베로스를 껴안았다.
+		PRINTFORMW 켈베로스는 당신의 품안에 파고 들었다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「따뜻해...오늘은 그냥 이대로 있을까요? 사령관님?」
+		ELSEIF A == 1
+			PRINTFORMW 「아무것도 안해도, 이렇게만 있어도 너무 좋은거 있죠...?」
+		ELSEIF A == 2
+			PRINTFORMW 「히히...사령관님 냄새..」
+			PRINTFORMW 켈베로스는 조용히 당신을 더 꼬옥 껴안았다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 켈베로스를 껴안았다.
+		PRINTFORMW 켈베로스는 볼을 당신의 품에 비볐다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「으응...아 잠깐만요! 아직 한참 부족해요!」
+		ELSEIF A == 1
+			PRINTFORMW 「흐응...」
+			PRINTFORMW 당신과 켈베로스 사이에 있는 압도적인 무언가로 인해 당신은 숨이 가빠졌다.
+			PRINTFORMW 「피...무슨 생각하시는지 다 보이거든요...」
+			PRINTFORMW 「...사령관님..변.태.」
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 켈베로스를 껴안았다.
+		PRINTFORMW 켈베로스는 화가 난 듯 방방뛰며 당신의 품안에서 벗어났다.
+		PRINTFORMW %TEXTR("「지금은 그럴 기분 아니에요!」/「사령관님 변태!」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 켈베로스를 껴안았다.
+		PRINTFORMW 켈베로스는 몸을 떨었다.
+		PRINTFORMW 「힉...사..사령관님?」
+		PRINTFORMW 켈베로스의 손이 파르르 떨리고 있다.
+	CASE "Weak"
+		PRINTFORMW 당신은 켈베로스를 껴안았다.
+		PRINTFORMW 켈베로스는 당신에게서 도망치 듯 벗어났다.
+		PRINTFORMW 「흑..흐읏...싫어..다가오지마...」
+		PRINTFORMW 켈베로스의 눈가를 따라 눈물이 떨어지기 시작했다.
+	CASE "Break"
+		PRINTFORMW 당신은 켈베로스를 껴안았다.
+		PRINTFORMW 켈베로스는 즐거운 듯 당신의 품안에 얼굴을 묻었다.
+		PRINTFORMW 「...왕!」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM10
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 켈베로스의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 켈베로스는 당황하며 당신의 품안에서 벗어났다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「왕!? 뭐하는 짓이에요!」
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님 변태!」
+		ELSEIF A == 2
+			PRINTFORMW 「으앗 깜짝이야!」
+			PRINTFORMW 「정말, 그런 장난 치시면 안되요!」
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 켈베로스의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 켈베로스는 조용히 당신의 품안에 있었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「으응...잠깐만 이라구요?」
+		ELSEIF A == 1
+			PRINTFORMW 「저...저도 싫지는 않지만...」
+			PRINTFORMW 「앗! 노..놓지마세요!」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 켈베로스의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 켈베로스는 당신의 팔에 얼굴을 묻었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「에헤헤...저는 사령관님이 좋은데...」
+			PRINTFORMW 「사령관님도...절 좋아하시는 거죠..? 그렇죠?」
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님 게이지 충전 20프로!」
+			PRINTFORMW 「헤헤...아직 부족하니 더 꼬옥 안아주세요!」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 켈베로스의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 켈베로스는 당신에게 기대왔다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「이렇게 있다보면 말이죠...」
+			PRINTFORMW 「사령관님이 제 주인님이라 정말 다행이라고 느껴져요...」
+			PRINTFORMW 「너무 낯간지러웟나요? 헤헤...」
+		ELSEIF A == 1
+			PRINTFORMW 「...」
+			PRINTFORMW 켈베로스는 조용히 눈을 감고 당신에게 자신을 맡겼다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 켈베로스의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 켈베로스는 화가 난 듯 방방뛰며 당신의 품안에서 벗어났다.
+		PRINTFORMW %TEXTR("「지금은 그럴 기분 아니에요!」/「사령관님 변태!」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 켈베로스의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 켈베로스는 몸을 떨었다.
+		PRINTFORMW 「히익!?」
+		PRINTFORMW 「아...아픈것만 안하시다면...」
+		PRINTFORMW 켈베로스의 몸이 점점 차가워 지는게 느껴진다.
+	CASE "Weak"
+		PRINTFORMW 당신은 켈베로스의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 켈베로스는 울며 당신에게서 벗어났다.
+		PRINTFORMW 「이 이상은 싫어어어.....흑」
+		PRINTFORMW 켈베로스의 눈가를 따라 눈물이 떨어지기 시작했다.
+	CASE "Break"
+		PRINTFORMW 당신은 켈베로스의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 켈베로스는 해맑게 웃었다.
+		PRINTFORMW 「멍!」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM11
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 누워서 켈베로스를 불렀다.
+		PRINTFORMW 켈베로스는 못 믿겠다는 표정으로 거절했다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「정말...팔배개만 해주시는 거예요?」
+		ELSEIF A == 1
+			PRINTFORMW 「그치만 피곤하진 않은걸요? 그냥 산책 나가면 안 될까요?」
+		ELSEIF A == 2
+			PRINTFORMW 「으우...」
+			PRINTFORMW 켈베로스는 고민되는 듯 당신을 응시하고 있다.
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 누워서 켈베로스를 불렀다.
+		PRINTFORMW 켈베로스는 사뿐히 당신 옆에 누웠다.
+		PRINTFORMW %TEXTR("「에헤헤...무겁다고 하기 없기에요!」/「우앗? 사령관님 팔, 생각보다 단단하시네요?」")%
+	CASE "Affection"
+		PRINTFORMW 당신은 누워서 켈베로스를 불렀다.
+		PRINTFORMW 켈베로스는 달려들듯이 당신 옆에 누웠다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「사령관님과 이렇게 있으면, 너무 좋아요! 이유는 음...」
+			PRINTFORMW 「말 못하겠어요 헤헤...」
+		ELSEIF A == 1
+			PRINTFORMW 「앗, 사령관님 머리에 먼지 발견!」
+			PRINTFORMW 켈베로스는 당신에게 가까이 다가와 머리를 손봐주었다.
+			PRINTFORMW 「정말, 저만 챙겨주시지 마시구 사령관님도 챙겨주세요...」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 누워서 켈베로스를 불렀다.
+		PRINTFORMW 켈베로스는 달려들듯이 당신 옆에 누웠다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「있죠있죠 사령관님!」
+			PRINTFORMW 「근처에 새로운 공원이 생겼대요!」
+			PRINTFORMW 「그래서...이히히 사령관님이랑 가고 싶은데...언제가 편하세요?」
+		ELSEIF A == 1
+			PRINTFORMW 「특등석이네요! 에헤헤...」
+			PRINTFORMW 켈베로스는 웃음을 지으며 얼굴을 붉게 물들였다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 누워서 켈베로스를 불렀다.
+		PRINTFORMW 켈베로스는 거절했다.
+		PRINTFORMW %TEXTR("「피...사령관님은 너무해...」/「아무리 저라도 항상 OK는 아니에요!」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 누워서 켈베로스를 불렀다.
+		PRINTFORMW 켈베로스는 파르르 떨면서 당신의 옆에 누웠다.
+		PRINTFORMW 「아..알겠으니...화내시면..안돼..요?」
+	CASE "Weak"
+		PRINTFORMW 당신은 누워서 켈베로스를 불렀다.
+		PRINTFORMW 켈베로스는 자신의 몸을 감쌌다.
+		PRINTFORMW 「싫어...분명 때릴꺼야.....」
+	CASE "Break"
+		PRINTFORMW 당신은 누워서 켈베로스를 불렀다.
+		PRINTFORMW 켈베로스는 사뿐히 당신의 옆에 누웠다.
+		PRINTFORMW 「왕!」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM12
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 켈베로스의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 켈베로스는 당황한 듯 방방 뛰었다.
+		PRINTFORMW %TEXTR("「사령관님 변태!」/「흐앗!? 무슨 짓이에요!」/「이...이것도 성희롱이라구요!」/「변태는 싫어요!」")%
+	CASE "High"
+		PRINTFORMW 당신은 켈베로스의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 켈베로스의 얼굴이 붉게 물들은체 쭈뻣거렷다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「사령관님...엄청 대담하시네요...」
+			PRINTFORMW 「아..아뇨 싫지는 않지만...」
+		ELSEIF A == 1
+			PRINTFORMW 「거..거기만 해주시는 거에요?」
+			PRINTFORMW 켈베로스는 우물쭈물 거리고 있다.
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 켈베로스의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 켈베로스는 상기된 얼굴롤 헤실헤실 웃고 있다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「에헤헤...」
+			PRINTFORMW 「웃음이 안 풀리잖아요...그러니까 더 해주세요!」
+		ELSEIF A == 1
+			PRINTFORMW 「아앗 사령관님 치사해! 그럼 나도!」
+			PRINTFORMW 켈베로스는 당신의 볼에 입을 맞추었다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 켈베로스의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 켈베로스는 입술에 손을 얹고 당신을 바라보았다.
+		PRINTFORMW 「거기도 좋지만...에헤헤...」
+		PRINTFORMW 켈베로스는 눈을 가늘게 뜨고 당신을 바라보고 있다.
+	CASE "Annoyed"
+		PRINTFORMW 당신은 켈베로스의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 켈베로스는 화가 난듯 파닥파닥 거렸다.
+		PRINTFORMW %TEXTR("「으읏! 사령관님 너무 눈치가 없다구요!」/「지금 해주셔도 하나도 기분 안 좋거든요!」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 켈베로스의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 켈베로스의 몸이 파르르 떨렸다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「흐앗!?...시..싫어..」
+			PRINTFORMW 켈베로스는 마지막에 작게 뭐라고 중얼거렸지만, 당신에겐 들리지 않았다.
+		ELSEIF A == 1
+			PRINTFORMW 「아..네! 가..감사합니다」
+		ENDIF
+	CASE "Weak"
+		PRINTFORMW 당신은 켈베로스의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 켈베로스는 비명을 지르며 당신을 밀어냈다.
+		PRINTFORMW 「다가오지 말아요! 도대체...내가...나는...흑」
+	CASE "Break"
+		PRINTFORMW 당신은 켈베로스의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 켈베로스는 당신을 바라보며 헤실헤실 웃었다.
+		PRINTFORMW 「왕왕!」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM13
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 켈베로스의 배를 주물럭 거렸다.
+		PRINTFORMW 켈베로스는 얼굴을 붉히며 방방 뛰었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「어...어딜 만지시는 거에요!」
+			PRINTFORMW 켈베로스는 화가 난 듯 당신의 팔을 토닥토닥 때렸다.
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님 변태! 변태!」
+			PRINTFORMW 켈베로스는 볼을 부풀렸다.
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 켈베로스의 배를 주물럭 거렸다.
+		PRINTFORMW 켈베로스는 얼굴을 붉히며 당신을 바라 보았다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「정말, 못말려...」
+			PRINTFORMW 「만져도 아무것도 안나온다구요...?」
+		ELSEIF A == 1
+			PRINTFORMW 당신은 켈베로스의 배를 쪼물딱 거리며 웃었다.
+			PRINTFORMW 「아!? 지금 웃었죠! 너무해! 너무해!」
+		ELSEIF A == 2
+			PRINTFORMW 「으으...기분이 이상해지는 것 같아요...」
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 켈베로스의 배를 주물럭 거렸다.
+		PRINTFORMW 켈베로스는 얼굴을 붉히며 방방 뛰었다.
+		PRINTFORMW %TEXTR("「이...이거 성추행 이라구요!」/「맨날 못된 장난만 치시구...저 진짜 화났어요!」")%
+	CASE "Fear"
+		PRINTFORMW 켈베로스의 배를 주물럭 거렸다.
+		PRINTFORMW 켈베로스의 몸이 파르르 떨렸다.
+		PRINTFORMW 「히얏!? 사..사령관님?」
+		PRINTFORMW 켈베로스는 부들부들 떨면서 당신을 돌아보았다.
+	CASE "Weak"
+		PRINTFORMW 켈베로스의 배를 주물럭 거렸다.
+		PRINTFORMW 켈베로스는 비명을 지르며 당신을 밀어냈다.
+		PRINTFORMW 「...괴롭히지 마세요!...힉!?」
+		PRINTFORMW 당신이 그런 켈베로스를 향해 웃어보이자, 켈베로스가 자신의 몸을 감쌌다.
+	CASE "Break"
+		PRINTFORMW 켈베로스의 배를 주물럭 거렸다.
+		PRINTFORMW 켈베로스는 영문을 모르겠다는 표정으로 당신을 바라보고 있다..
+		PRINTFORMW 「으...왕?」
+		PRINTFORMW 켈베로스는 그대로 엎어져 자신의 배를 보였다.
+	CASE "High"
+		PRINTFORMW 켈베로스의 배를 주물럭 거렸다.
+		PRINTFORMW 켈베로스는 얼굴을 붉히며 방방 뛰었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「어...어딜 만지시는 거에요!」
+			PRINTFORMW 켈베로스는 화가 난 듯 당신의 팔을 토닥토닥 때렸다.
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님 변태! 변태!」
+			PRINTFORMW 켈베로스는 볼을 부풀렸다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 켈베로스의 배를 주물럭 거렸다.
+		PRINTFORMW 켈베로스는 얼굴을 붉히며 당신을 바라 보았다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「정말, 못말려...」
+			PRINTFORMW 「만져도 아무것도 안나온다구요...?」
+		ELSEIF A == 1
+			PRINTFORMW 당신은 켈베로스의 배를 쪼물딱 거리며 웃었다.
+			PRINTFORMW 「아!? 지금 웃었죠! 너무해! 너무해!」
+		ELSEIF A == 2
+			PRINTFORMW 「으으...기분이 이상해지는 것 같아요...」
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM14
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 켈베로스의 귀를 살짝 깨물었다.
+		PRINTFORMW 켈베로스는 폭발하듯 당신에게서 멀어졌다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「흐앗! 깜짝이야!」
+		ELSEIF A == 1
+			PRINTFORMW 「아팟?」
+			PRINTFORMW 「사령관님...진짜 변태!」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 켈베로스의 귀를 살짝 깨물었다.
+		PRINTFORMW 켈베로스는 볼을 붉힌 채로 당신을 돌아보았다 .
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「정말, 재미 없다구요...?」
+		ELSEIF A == 1
+			PRINTFORMW 「그렇게 깨무시면...뭔가 몸이 달아오...」
+			PRINTFORMW 「핫!? 지금 한 말을 잊어주세요! 아아아! 안 들려요!」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 켈베로스의 귀를 살짝 깨물었다.
+		PRINTFORMW 켈베로스는 상기된 얼굴로 당신을 바라보고 있다.
+		PRINTFORMW 「으흐흐...자꾸 그런 장난 치시면...」
+		PRINTFORMW 「이렇게...해버릴꺼에요...!」
+		PRINTFORMW 켈베로스는 당신의 귓가에 숨결을 흘리며 당신의 귓볼을 살짝 깨물었다.
+	CASE "Annoyed"
+		PRINTFORMW 켈베로스의 귀를 살짝 깨물었다.
+		PRINTFORMW 켈베로스는 귀찮다는 표정으로 당신을 돌아보았다.
+		PRINTFORMW %TEXTR("「매번 하셔서 이제 사령관님인거 다 안다구요...?」/「푸...꼬맹이 하나 돌보고 있는 것 같아요...」")%
+	CASE "Fear"
+		PRINTFORMW 켈베로스의 귀를 살짝 깨물었다.
+		PRINTFORMW 켈베로스의 몸이 흠칫 떨렸다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「히익!?」
+			PRINTFORMW 「왜...왜그러세요?」
+			PRINTFORMW 켈베로스는 겁먹은 표정으로 당신을 바라보고 있다.
+		ELSEIF A == 1
+			PRINTFORMW 「흐앗!?」
+			PRINTFORMW 돌아본 켈베로스의 눈가에는 눈물이 살짝 맺혀 있었다.
+		ENDIF
+	CASE "Weak"
+		PRINTFORMW 켈베로스의 귀를 살짝 깨물었다.
+		PRINTFORMW 켈베로스는 귓가를 부여잡으며 당신에게서 도망치듯 멀어졌다.
+		PRINTFORMW 「..괴롭히지..마!」
+		PRINTFORMW 켈베로스는 눈가에 눈물이 맺힌 채로 당신을 노려보고 있다..
+	CASE "Break"
+		PRINTFORMW 켈베로스의 귀를 살짝 깨물었다.
+		PRINTFORMW 켈베로스는 깜짝 놀란 듯하다..
+		PRINTFORMW 「왕!」
+		PRINTFORMW 켈베로스는 당신 근처를 뱅글뱅글 돌았다.
+	CASE "High"
+		PRINTFORMW 켈베로스의 귀를 살짝 깨물었다.
+		PRINTFORMW 켈베로스는 폭발하듯 당신에게서 멀어졌다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「흐앗! 깜짝이야!」
+		ELSEIF A == 1
+			PRINTFORMW 「아팟?」
+			PRINTFORMW 「사령관님...진짜 변태!」
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM15
+SELECTCASE CSTR:1
+	CASE "First/Low"
+		PRINTFORMW 켈베로스의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 원치 않았던 첫 키스에 켈베로스는 정말로 화가 난듯하다.
+		PRINTFORMW 「!?」
+		PRINTFORMW 「뭐하시는 거에요!」
+		PRINTFORMW 켈베로스는 당신을 밀쳐내며 거리를 두었다.
+		PRINTFORMW 「너무해...너무해...처음이였는데에...」
+		PRINTFORMW 켈베로스의 눈가에 눈물이 맺혔다.
+	CASE "First/High"
+		PRINTFORMW 켈베로스의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 예상하지 못한 첫 키스에 켈베로스는 얼굴을 사과처럼 붉게 물들였다.
+		PRINTFORMW 「히얏..!?」
+		PRINTFORMW 「지...지금...키..키스..하...」
+		PRINTFORMW 「에엑!?」
+		PRINTFORMW 켈베로스는 자신의 입술을 만지다가 이내 무언가를 깨달은 듯 당신을 올려다보았다.
+	CASE "First/Affection"
+		PRINTFORMW 켈베로스의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 첫 키스에 켈베로스는 얼굴을 사과처럼 붉게 물들였다.
+		PRINTFORMW 「으웅...」
+		PRINTFORMW 「퍄하...!」
+		PRINTFORMW 당신과 켈베로스는 아슬아슬하게 짧은 간격 사이에서 그동안 못내한 숨을 토했다.
+		PRINTFORMW 「이제와서야 해주셨으니까...」
+		PRINTFORMW 「늦은 만큼...더 해주셔야 해요...?」
+		PRINTFORMW 켈베로스는 옅게 웃음지어보였다.
+	CASE "First/Marryed"
+		PRINTFORMW 켈베로스의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 켈베로스는 상기된 얼굴로 당신에게 달라붙어  키스를 받아들였다.
+		PRINTFORMW 「늦어요! 늦었다구요!」
+		PRINTFORMW 「매일매일, 사령관님의 입술을 바라보면서 얼마나 기다렸는지 모르실거에요...」
+		PRINTFORMW 「그러니까...그에 대한 보상...」
+		PRINTFORMW 「이자까지 해서 확실히 받아 가 버릴 꺼에요!」
+		PRINTFORMW 켈베로스는 당신의 입술에 다시 입술을 맞췄다.
+	CASE "First/Annoyed"
+		PRINTFORMW 켈베로스의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 원치 않았던 첫 키스에 켈베로스는 정말로 화가 난듯하다.
+		PRINTFORMW 「용서...못해!」
+		PRINTFORMW 「안 할 거야! 절대 용서 안 할 거라구요!」
+		PRINTFORMW 켈베로스는 방방뛰고 있다.
+	CASE "First/Fear"
+		PRINTFORMW 켈베로스의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 원치 않았던 첫 키스에 켈베로스는 굳어버렸다.
+		PRINTFORMW 「히얏...!?」
+		PRINTFORMW 「...」
+		PRINTFORMW 「너무해...너무해....흑」
+		PRINTFORMW 켈베로스의 눈가에 눈물이 맺혔다.
+	CASE "First/Weak"
+		PRINTFORMW 켈베로스의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 원치 않았던 첫 키스에 켈베로스의 얼굴은 새파랗게 질렸다.
+		PRINTFORMW 「지금...무슨....」
+		PRINTFORMW 「...흑..흐윽..흐으으아앙..」
+		PRINTFORMW 켈베로스는 고개를 아래로 떨구고 서럽게 울었다.
+	CASE "First/Break"
+		PRINTFORMW 켈베로스의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 켈베로스는 영문을 모르겠다는 표정이다.
+		PRINTFORMW 「왕!왕!」
+	CASE "Low"
+		PRINTFORMW 켈베로스의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 켈베로스는 당신을 밀어냈다.
+		PRINTFORMW %TEXTR("「아! 정말 또 뭐하시는 거에요!」/「성..성추행 금지!」/「사령관님 변태!」")%
+	CASE "High"
+		PRINTFORMW 켈베로스의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 켈베로스는 상기된 얼굴로 당신을 올려다 보았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「더...더 해주셨으면 하는데...」
+			PRINTFORMW 켈베로스는 우물쭈물 거리고 있다.
+		ELSEIF A == 1
+			PRINTFORMW 「사령관님....변태....」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 켈베로스의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 켈베로스는 짖굳게 웃으며 당신을 올려다 보았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「히히...」
+			PRINTFORMW 「키스해주셨으니까...이건 답례에요!」
+			PRINTFORMW 켈베로스는 당신을 품안에 안았다.
+		ELSEIF A == 1
+			PRINTFORMW 「멋대로 끝내기....없기!」
+			PRINTFORMW 당신이 입술을 때자, 이번엔 켈베로스가 입술을 맞췄다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 켈베로스의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 켈베로스는 짖굳게 웃으며 당신을 올려다 보았다.
+		PRINTFORMW 	  「아직...부족하시죠?」
+		PRINTFORMW 「사령관님 마음은 다 안다구요...?」
+		PRINTFORMW 「왜냐면...」
+		PRINTFORMW 「전 아직 부족하거든요!」
+		PRINTFORMW 켈베로스가 당신을 꽉껴안으며 입술을 맞춰왔다.
+	CASE "Annoyed"
+		PRINTFORMW 켈베로스의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 켈베로스는 당신을 밀어냈다.
+		PRINTFORMW 「매번...정말 너무하신거 아세요...?」
+		PRINTFORMW 켈베로스는 지친듯한 얼굴로 다른 곳을 보고 있다.
+	CASE "Fear"
+		PRINTFORMW 켈베로스의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 켈베로스는 겁먹은 표정으로 떨고 있다.
+		PRINTFORMW 「..으...웅...」
+	CASE "Weak"
+		PRINTFORMW 켈베로스의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 켈베로스는 비명에 가까운 소리를 내며 당신에게서 멀어졌다.
+		PRINTFORMW 「왜...왜 저한테 이러는 거에요....」
+	CASE "Break"
+		PRINTFORMW 켈베로스의 입술에 당신의 입술을 맞췄다.
+		PRINTFORMW 켈베로스는 영문을 모르겠다는 표정이다.
+		PRINTFORMW 「...?」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;17개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM16
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 켈베로스의 목에 혀를 기었다.
+		PRINTFORMW 켈베로스는 매우 당황한 듯하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「히얏!? 뭐..뭐에요!」
+		ELSEIF A == 1
+			PRINTFORMW 「흐앗!?」
+			PRINTFORMW 「사령관님 변태! 변태!」
+		ENDIF
+	CASE "High"
+		PRINTFORMW 켈베로스는 매우 당황한 듯하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「못된 장난 금지!」
+		ELSEIF A == 1
+			PRINTFORMW 「흐앗!?」
+			PRINTFORMW 「사령관님 변태! 변태!」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 켈베로스의 목에 혀를 기었다.
+		PRINTFORMW 켈베로스는 천천히 숨을 흘렸다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「흐앗!?」
+			PRINTFORMW 「미..미리 말씀이라도 해주시면...더 좋을 것 같은데..」
+			PRINTFORMW 켈베로스는 상기된 얼굴로 돌아 보았다.
+		ELSEIF A == 1
+			PRINTFORMW 「히힛...이건 무슨 뜻인가요?」
+			PRINTFORMW 「알 것 같지만요...」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 켈베로스의 목에 혀를 기었다.
+		PRINTFORMW 켈베로스는 천천히 숨을 흘렸다.
+		PRINTFORMW 「정말 사령관님은 못 말리세요...」
+		PRINTFORMW 「...싫다는건 아니지만요!」
+		PRINTFORMW 켈베로스는 옅게 웃으며 당신을 돌아보았다.
+	CASE "Annoyed"
+		PRINTFORMW 켈베로스의 목에 혀를 기었다.
+		PRINTFORMW 켈베로스는 매우 당황한 듯 방방 뛰었다.
+		PRINTFORMW %TEXTR("「사령관님 변태! 최악!」/「성추행 금지!」")%
+	CASE "Fear"
+		PRINTFORMW 켈베로스의 목에 혀를 기었다.
+		PRINTFORMW 켈베로스의 몸이 파르르 떨렸다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「히얏!?」
+		ELSEIF A == 1
+			PRINTFORMW 「왜...왜 그러세요...」
+			PRINTFORMW 켈베로스는 불안한 눈빛으로 당신을 바라보고 있다.
+		ENDIF
+	CASE "Weak"
+		PRINTFORMW 켈베로스의 목에 혀를 기었다.
+		PRINTFORMW 켈베로스는 목을 부여잡고 떨고 있다.
+		PRINTFORMW {「...흑...흐윽...」/「제발....절 내버려둬요....」
+		PRINTFORMW 켈베로스의 눈가 아래로 눈물방울이 하나 둘 떨어지기 시작했다.
+	CASE "Break"
+		PRINTFORMW 켈베로스의 목에 혀를 기었다.
+		PRINTFORMW 켈베로스는 간지럽다는 듯 몸을 배배 꼬았다.
+		PRINTFORMW 「왕!」
+		PRINTFORMW 켈베로스의 눈가에는 눈물이 맺혀있다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM17
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 켈베로스의 등을 손가락으로 훑었다.
+		PRINTFORMW 켈베로스는 매우 당황한 듯하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「히얏!? 뭐...뭐에요!」
+		ELSEIF A == 1
+			PRINTFORMW 「엉큼한 장난은 싫어요!」
+			PRINTFORMW 켈베로스는 단단히 화난 듯 당신을 노려보았다.
+		ENDIF
+	CASE "High"
+		PRINTFORMW 켈베로스의 등을 손가락으로 훑었다.
+		PRINTFORMW 켈베로스는 깜짝 놀란 듯하다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「사령관님 변태! 변태!」
+		ELSEIF A == 1
+			PRINTFORMW 「하나도 재미없다구요!」
+			PRINTFORMW 켈베로스는 볼을 부풀리며 방방 뛰었다.
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 켈베로스의 등을 손가락으로 훑었다.
+		PRINTFORMW 켈베로스는 몸을 옅게 떨었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「깜짝야!」
+			PRINTFORMW 「이, 사령관님이였네요...헤헤」
+		ELSEIF A == 1
+			PRINTFORMW 「으응...기분이 묘해지네요...」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 켈베로스의 등을 손가락으로 훑었다.
+		PRINTFORMW 켈베로스는 숨이 가빠졌다.
+		PRINTFORMW 「정말...」
+		PRINTFORMW 「이런 기분으로 만드신 거...책임져주세요...」
+		PRINTFORMW 켈베로스는 상기된 얼굴로 당신을 올려다 보았다.
+	CASE "Annoyed"
+		PRINTFORMW 켈베로스의 등을 손가락으로 훑었다.
+		PRINTFORMW 켈베로스는 매우 당황한 듯 방방 뛰었다.
+		PRINTFORMW %TEXTR("「사령관님 변태! 최악!」/「무슨 짓을 하시는 거에요!」")%
+	CASE "Fear"
+		PRINTFORMW 켈베로스의 등을 손가락으로 훑었다.
+		PRINTFORMW 켈베로스는 몸을 파르르 떨었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「히얏!?」
+		ELSEIF A == 1
+			PRINTFORMW 「흐엑!?」
+			PRINTFORMW 「차암...그런 장난은..헤헤...」
+			PRINTFORMW 켈베로스의 눈은 갈곳을 잃은 듯 보였다.
+		ENDIF
+	CASE "Weak"
+		PRINTFORMW 켈베로스의 등을 손가락으로 훑었다.
+		PRINTFORMW 켈베로스는 비명을 지르며 당신에게서 멀어졌다.
+		PRINTFORMW 「부...부탁이에요...」
+		PRINTFORMW 「제발...그만..그만해..흑..주세요...」
+	CASE "Break"
+		PRINTFORMW 켈베로스의 등을 손가락으로 훑었다.
+		PRINTFORMW 켈베로스는 간지럽다는 듯 몸을 배배 꼬았다.
+		PRINTFORMW 「왕...」
+		PRINTFORMW 켈베로스는 이내 웃는 표정을 멈추고 무표정으로 돌아갔다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM18
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 켈베로스의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 켈베로스는 얼굴을 붉히며 당신을 밀어냈다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「변태...사령관님은...왕 변태에요!」
+		ELSEIF A == 1
+			PRINTFORMW 「무슨 짓을 하시는 거에요!」
+			PRINTFORMW 켈베로스는 자신의 가슴을 감쌌다.
+		ELSEIF A == 2
+			PRINTFORMW 「최악이에요...너무해...」
+			PRINTFORMW 켈베로스는 당신을 노려 보고있다.
+		ENDIF
+	CASE "High"
+		PRINTFORMW 켈베로스의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 켈베로스는 고개를 이리저리 돌리며 당황하고 있다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「읏? 엣!? 그...그러시면...」
+		ELSEIF A == 1
+			PRINTFORMW 「진짜....못말려....」
+			PRINTFORMW 「이...이번만 이에요...」
+			PRINTFORMW 켈베로스는 얼굴을 붉히며 눈을 감았다.
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 켈베로스의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 켈베로스는 장난기 가득한 표정을 지었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「으...또 못된 장난만 치시구....」
+			PRINTFORMW 「자꾸 그러시면....에잇!」
+			PRINTFORMW 거대한 무언가가 당신의 숨을 막았다.
+			PRINTFORMW 「이렇게..! 해버릴 꺼라구요!」
+		ELSEIF A == 1
+			PRINTFORMW 「아...또 그 놀이인 거네요...? 히히...」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 켈베로스의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 켈베로스는 당신을 품안에 꼬옥 안았다.
+		PRINTFORMW 포근한 향기가 났다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「가끔씩은 말이죠....」
+			PRINTFORMW 「제 가..가슴이 너무 커서 사령관을 더 꼬옥 못 안는게 싫어요...」
+			PRINTFORMW 「사령관님은 좋아하시는 것 같으니 다행이지만요...」
+		ELSEIF A == 1
+			PRINTFORMW 「좋아요 좋아! 더 꼬옥 안기라구요!」
+			PRINTFORMW 「사랑해요...사령관님...히힛」
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 켈베로스의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 켈베로스는 얼굴을 붉히며 당신을 밀어냈다.
+		PRINTFORMW %TEXTR("「사령관님 변태! 최악! 잡아가 버릴꺼에요!」/「저 지금 그럴 기분 아니거든요!」")%
+	CASE "Fear"
+		PRINTFORMW 켈베로스의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 켈베로스는 당신을 밀어내며 멀어졌다.
+		PRINTFORMW 「까앗!」
+		PRINTFORMW 「...」
+		PRINTFORMW 켈베로스는 불안한 눈빛으로 당신을 바라보고 있다.
+	CASE "Weak"
+		PRINTFORMW 켈베로스의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 켈베로스가 비명을 지르며 벗어날려 했지만 당신에게서 벗어나지 못했다.
+		PRINTFORMW 「싫어....싫어!!! 놓아 주세요!!! 아아아아아!!!」
+		PRINTFORMW 당신은 머리위로 물방울이 떨어지는 것을 느꼈다.
+	CASE "Break"
+		PRINTFORMW 켈베로스의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 켈베로스는 마냥 웃고 잇었다.
+		PRINTFORMW 「왕!」.
+		PRINTFORMW 켈베로스의 눈가 아래로 눈물이 한 두방울씩 떨어지기 시작했다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM19
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 켈베로스에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 켈베로스는 몸을 바들바들 떨었다.
+		PRINTFORMW %TEXTR("「너...너무해...」/「저...아무것도 안했다구요...?」")%
+	CASE "Affection"
+		PRINTFORMW 켈베로스에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 켈베로스는 안색이 파랗게 되었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「왜...그러세요...흑」
+			PRINTFORMW 켈베로스의 눈가에 작은 눈물방울이 맺혔다.
+		ELSEIF A == 1
+			PRINTFORMW 「자...잘못했으면 고칠 테니까....그런 말씀하시면 마음이 아파요..흑」
+			PRINTFORMW 켈베로스는 당신에게 매달렸다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 켈베로스에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 켈베로스는 고개를 다른 곳으로 돌렸다.
+		PRINTFORMW 「...정말 못됐어...」
+	CASE "Fear"
+		PRINTFORMW 켈베로스에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 켈베로스는 몸을 바들바들 떨었다.
+		PRINTFORMW 「죄송해요! 죄송해요!」
+		PRINTFORMW 켈베로스는 몸을 웅크린체 빌고 있었다.
+	CASE "Weak"
+		PRINTFORMW 켈베로스에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 켈베로스는 눈물을 흘리며 당신을 바라보고 있다.
+		PRINTFORMW 「전...아무것도 안했단 말이에요....왜...제가..뭘...흑..흐앙..」
+		PRINTFORMW 켈베로스의 눈가에는 눈물이 맺혔다.
+	CASE "Break"
+		PRINTFORMW 켈베로스에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 켈베로스는 겁을 먹었는지 몸을 거칠게 떨고 있었다.
+		PRINTFORMW 「...」
+	CASE "High"
+		PRINTFORMW 켈베로스에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 켈베로스는 몸을 바들바들 떨었다.
+		PRINTFORMW %TEXTR("「너...너무해...」/「저...아무것도 안했다구요...?」")%
+	CASE "Marryed"
+		PRINTFORMW 켈베로스에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 켈베로스는 안색이 파랗게 되었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「왜...그러세요...흑」
+			PRINTFORMW 켈베로스의 눈가에 작은 눈물방울이 맺혔다.
+		ELSEIF A == 1
+			PRINTFORMW 「자...잘못했으면 고칠 테니까....그런 말씀하시면 마음이 아파요..흑」
+			PRINTFORMW 켈베로스는 당신에게 매달렸다.
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM20
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 켈베로스의 뺨을 때렸다.
+		PRINTFORMW 켈베로스는 당황한 듯 천천히 당신을 올려다 보았다.
+		PRINTFORMW 「히얏!?...왜...왜 그러시는...」
+	CASE "Fear"
+		PRINTFORMW 켈베로스의 뺨을 때렸다.
+		PRINTFORMW 켈베로스의 몸이 나지막히 떨리고 있다.
+		PRINTFORMW 「아...아파....힉! 자..잘못했어요!」
+		PRINTFORMW 켈베로스는 당신에게 매달렸다.
+	CASE "Weak"
+		PRINTFORMW 켈베로스의 뺨을 때렸다.
+		PRINTFORMW 켈베로스는 뼘을 부여잡고 조용히 울고 있었다.
+		PRINTFORMW 「역시..그렇잖아....흑...아무리 열심히 해도...노력해도...알아주지 않는 걸..」
+		PRINTFORMW 켈베로스의 눈물이 턱선을 따라 끝없이 떨어졌다.
+	CASE "Break"
+		PRINTFORMW 켈베로스의 뺨을 때렸다.
+		PRINTFORMW 켈베로스는 당신에게 겁을 먹고 몸을 웅크렸다.
+		PRINTFORMW 「...」
+		PRINTFORMW 켈베로스는 떨리는 눈으로 당신의 행동을 주시하고 있다.
+	CASE "High"
+		PRINTFORMW 켈베로스의 뺨을 때렸다.
+		PRINTFORMW 켈베로스는 당황한 듯 천천히 당신을 올려다 보았다.
+		PRINTFORMW 「히얏!?...왜...왜 그러시는...」
+	CASE "Affection"
+		PRINTFORMW 켈베로스의 뺨을 때렸다.
+		PRINTFORMW 켈베로스는 당황한 듯 천천히 당신을 올려다 보았다.
+		PRINTFORMW 「히얏!?...왜...왜 그러시는...」
+	CASE "Marryed"
+		PRINTFORMW 켈베로스의 뺨을 때렸다.
+		PRINTFORMW 켈베로스는 당황한 듯 천천히 당신을 올려다 보았다.
+		PRINTFORMW 「히얏!?...왜...왜 그러시는...」
+	CASE "Annoyed"
+		PRINTFORMW 켈베로스의 뺨을 때렸다.
+		PRINTFORMW 켈베로스는 당황한 듯 천천히 당신을 올려다 보았다.
+		PRINTFORMW 「히얏!?...왜...왜 그러시는...」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM21
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 켈베로스의 배에 주먹을 날렸다.
+		PRINTFORMW 켈베로스는 바닥에 엎어져 숨을 간신히 고르고 있다.
+		PRINTFORMW 「카흑!? 하아..사려..하아..관..님..?」
+	CASE "Affection"
+		PRINTFORMW 켈베로스의 배에 주먹을 날렸다.
+		PRINTFORMW 켈베로스는 바닥에 엎어져 숨을 간신히 고르고 있다.
+		PRINTFORMW 「카흑!? 왜....하아...이런...짓...을..」
+		PRINTFORMW 켈베로스는 떨리는 눈으로 당신을 올려다보고 있다.
+	CASE "Annoyed"
+		PRINTFORMW 켈베로스의 배에 주먹을 날렸다.
+		PRINTFORMW 켈베로스는 바닥에 엎어져 숨을 간신히 고르고 있다.
+		PRINTFORMW 「카흑!? 으..으읏...」
+	CASE "Weak"
+		PRINTFORMW 켈베로스의 배에 주먹을 날렸다.
+		PRINTFORMW 켈베로스는 바닥에 엎어져 숨을 간신히 고르고 있다.
+		PRINTFORMW 「흑...아파...아프단 말이야...제발...」
+		PRINTFORMW 켈베로스의 눈가를 따라 눈물이 바닥을 적셨다.
+	CASE "Break"
+		PRINTFORMW 켈베로스의 배에 주먹을 날렸다.
+		PRINTFORMW 켈베로스는 바닥에 엎어져 숨을 간신히 고르고 있다.
+		PRINTFORMW 「...」
+		PRINTFORMW 켈베로스의 과호흡이 점점 심해진다.
+	CASE "High"
+		PRINTFORMW 켈베로스의 배에 주먹을 날렸다.
+		PRINTFORMW 켈베로스는 바닥에 엎어져 숨을 간신히 고르고 있다.
+		PRINTFORMW 「카흑!? 하아..사려..하아..관..님..?」
+	CASE "Marryed"
+		PRINTFORMW 켈베로스의 배에 주먹을 날렸다.
+		PRINTFORMW 켈베로스는 바닥에 엎어져 숨을 간신히 고르고 있다.
+		PRINTFORMW 「카흑!? 왜....하아...이런...짓...을..」
+		PRINTFORMW 켈베로스는 떨리는 눈으로 당신을 올려다보고 있다.
+	CASE "Fear"
+		PRINTFORMW 켈베로스의 배에 주먹을 날렸다.
+		PRINTFORMW 켈베로스는 바닥에 엎어져 숨을 간신히 고르고 있다.
+		PRINTFORMW 「카흑!? 으..으읏...」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_COM22
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 켈베로스를 발로 걷어 찼다.
+		PRINTFORMW 켈베로스는 바닥에 엎어져서 당신을 천천히 돌아보았다.
+		PRINTFORMW %TEXTR("「아팟!?...」/「사령관님...? 흑..흐윽..」")%
+	CASE "Fear"
+		PRINTFORMW 켈베로스를 발로 걷어 찼다.
+		PRINTFORMW 켈베로스는 바닥에 엎어져서 자신의 머리를 감싸쥐었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「잘못했어요! 잘못했어요!」
+		ELSEIF A == 1
+			PRINTFORMW 「아픈건..싫어..!」
+			PRINTFORMW 켈베로스는 벌벌 떨기 시작했다.
+		ENDIF
+	CASE "Weak"
+		PRINTFORMW 켈베로스를 발로 걷어 찼다.
+		PRINTFORMW 	켈베로스는 바닥에 엎어져서 자신의 머리를 감싸쥐었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「흑..흐윽...흐아아앙...」
+		ELSEIF A == 1
+			PRINTFORMW 「카흑...흐읏..」
+			PRINTFORMW 켈베로스의 비명소리만이 조용히 울려퍼지고 있었다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 켈베로스를 발로 걷어 찼다.
+		PRINTFORMW 켈베로스는 바닥에 엎어져서 몸을 웅크렸다.
+		PRINTFORMW 「...」
+		PRINTFORMW 켈베로스의 과호흡이 점점 심해진다.
+	CASE "High"
+		PRINTFORMW 켈베로스를 발로 걷어 찼다.
+		PRINTFORMW 켈베로스는 바닥에 엎어져서 당신을 천천히 돌아보았다.
+		PRINTFORMW %TEXTR("「아팟!?...」/「사령관님...? 흑..흐윽..」")%
+	CASE "Affection"
+		PRINTFORMW 켈베로스를 발로 걷어 찼다.
+		PRINTFORMW 켈베로스는 바닥에 엎어져서 당신을 천천히 돌아보았다.
+		PRINTFORMW %TEXTR("「아팟!?...」/「사령관님...? 흑..흐윽..」")%
+	CASE "Marryed"
+		PRINTFORMW 켈베로스를 발로 걷어 찼다.
+		PRINTFORMW 켈베로스는 바닥에 엎어져서 당신을 천천히 돌아보았다.
+		PRINTFORMW %TEXTR("「아팟!?...」/「사령관님...? 흑..흐윽..」")%
+	CASE "Annoyed"
+		PRINTFORMW 켈베로스를 발로 걷어 찼다.
+		PRINTFORMW 켈베로스는 바닥에 엎어져서 당신을 천천히 돌아보았다.
+		PRINTFORMW %TEXTR("「아팟!?...」/「사령관님...? 흑..흐윽..」")%
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+
+
+
+@M_No113_EVENT_Morning
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 켈베로스의 목소리에 잠에서 깨어났다.
+		PRINTFORMW %TEXTR("「사령관님! 아침이에요 아침! 일어나시라구요!」/「정말, 언제까지 주무실 거에요!」/「좋은 아침이에요! 사령관님!」")%
+	CASE "High"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 당신은 켈베로스의 목소리에 잠에서 깨어났다.
+			PRINTDATAW
+				DATAFORM 「기상!기상! 해 떳다구요! 모닝 산책 나가요!」
+				DATALIST
+					DATAFORM 「굿모닝! 헤헤, 일어나셨나요?」
+					DATAFORM 켈베로스는 헤실헤실 웃으며 방으로 들어왔다.
+				ENDLIST
+			ENDDATA ;2개의 케이스 존재
+		ELSEIF A == 1
+			PRINTFORMW 당신은 켈베로스의 목소리에 잠에서 깨어났다.
+			PRINTFORMW 「사령관님...! 산책...! 나갈 시간이에요...!」
+			PRINTFORMW 켈베로스의 속삭임에 당신은 당황하며 일어났다.
+		ENDIF
+	CASE "Affection"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 당신은 갑작스러운 무게감에 부스스 눈을 뜨며 일어났다.
+			PRINTFORMW 「웃샤! 헤헤...일어나셨나요?」
+			PRINTFORMW 켈베로스는 당신 위에 올라타서 헤실헤실 웃고 있었다.
+		ELSEIF A == 1
+			PRINTFORMW 당신이 눈을 뜨자 옆에선 켈베로스가 방긋 웃으며 당신을 쳐다보고 있었다.
+			PRINTFORMW 「앗, 일어나셨나요...? 헤헤...깨우..려던건 아닌데...」.
+			PRINTFORMW 「아직 졸리시면...저랑 같이...조금만 더 주무실레요...?」
+		ELSEIF A == 2
+			PRINTFORMW 「일.어.나.실.시.간.이.에.요!」
+			PRINTFORMW 당신이 눈을 뜨자 당신 옆에서 켈베로스가 뒹굴거리고 있었다.
+			PRINTFORMW 「앗! 일어나셨다! 얼마나 기다렸다구요! 자자 얼른 준비해서 산책나가요! 산책!」
+			PRINTFORMW 당신은 켈베로스의 억지에 쓴웃음을 지으며 어울려 주었다.
+			PRINTFORMW
+		ENDIF
+	CASE "Marryed"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「앗...일어나셨어요...?」
+			PRINTFORMW 당신이 눈을 뜨자 보인 것은, 아슬아슬한 푸른 수영복으로 몸을 가린 켈베로스의 모습이었다.
+			PRINTFORMW 금방이라도 터질 것 같은 그 아슬아슬함이 당신의 잠을 깨웠다.
+			PRINTFORMW 「헤헤...전에 보고 싶다고 하셨으니까...」.
+			PRINTFORMW 당신이 멍하니 그런 켈베로스를 바라보고 있자 켈베로스는 부끄러운 듯 몸을 배배 꼬았다.
+			PRINTFORMW 「으으...아무 말씀도 안하시면...아무리 저라도 조금 부끄럽다구요...」
+		ELSEIF A == 1
+			PRINTFORMW 당신이 눈을 뜨니 옆에는 켈베로스가 당신의 품으로 파고 들고 있었다.
+			PRINTFORMW 「으응...사령관님...어딧써요....」
+			PRINTFORMW 당신이 장난삼아 몸을 빼자 당신이 옆에 없어서 불안해 졌는지 켈베로스가 잠꼬대를 하기 시작했다.
+			PRINTFORMW 당신은 너무했나란 생각이 들어 다시 켈베로스를 품에 안아주었다.
+			PRINTFORMW 「헤..헤...사령..관..님...냄새...」
+			PRINTFORMW 당신과 켈베로스는 그렇게 어쩔 수 없는 늦잠을 잤다.
+		ELSEIF A == 2
+			PRINTFORMW 「...아」
+			PRINTFORMW 당신이 눈을 뜨자 켈베로스의 얼굴이 가까워져 있었다.
+			PRINTFORMW 「정말....모닝 키스로 깨워드릴려 했는데...이렇게 일어나시면 어떻해요...」
+			PRINTFORMW 「이렇게 된거, 에잇! 이렇게 해버릴꺼에요!」
+			PRINTFORMW 켈베로스는 당신을 꼬옥 껴안으며 당신의 입술에 입술을 맞췄다.
+			PRINTFORMW 「헤헤...이번엔 사령관님 차례에요!」
+		ENDIF
+	CASE "Annoyed"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 당신이 켈베로스의 목소리에 잠에서 깨어났다.
+			PRINTFORMW %TEXTR("「언제까지 주무실거에요! 이 늦잠꾸러기!」/「하아...일어나실 시간이라구요?」")%
+		ELSEIF A == 1
+			PRINTFORMW 누군가가 당신의 뺨을 톡톡치는 느낌에 당신은 당황하며 일어났다.
+			PRINTFORMW 「기상하실 시간이에요! 기상!」
+			PRINTFORMW 「일어나셨죠..? 전 그럼 산책 다녀 올께요」
+			PRINTFORMW 켈베로스는 당신을 깨운 후 문 밖으로 빠르게 나갔다.
+		ENDIF
+	CASE "Fear"
+		PRINTFORMW 당신은 켈베로스의 목소리에 잠에서 깨어났다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「사..사령관님...일어나셔야..할...시간인데요...」
+			PRINTFORMW 켈베로스는 파르르 떨며 작은 목소리로 당신을 깨웠다.
+		ELSEIF A == 1
+			PRINTFORMW 「네...네! 물이요! 아...알겠습니다!」
+			PRINTFORMW 당신이 켈베로스에게 심부름을 시키자. 켈베로스는 다급하게 방문을 나섰다.
+		ENDIF
+	CASE "Weak"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 당신이 눈을 떴을 때 이미 아침은 한참 지나가 있었다.
+			PRINTFORMW 아무래도 켈베로스는 당신을 깨우러 오지 않은 듯하다.
+		ELSEIF A == 1
+			PRINTFORMW 당신이 눈을 뜨니 이미 아침이 지나가 있었다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신이 눈을 떴을 때 켈베로스는 해실해실 웃으며 당신을 바라보고 있었다.
+		PRINTFORMW %TEXTR("「...왕!」/켈베로스의 멍한 눈동자에 당신이 비쳐보였다.")%
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_EVENT_Sortie
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW %TEXTR("「앞으로 출발! 시작하나요?」/「실망시키지 않을게요!」")%
+	CASE "Marryed"
+		PRINTFORMW %TEXTR("「갔다 올게요! 갔다 오면 그동안 못한 만큼 산책시켜주세요!」/「왕! 금방 다녀올게요!」")%
+	CASE "Annoyed"
+		PRINTFORMW 「흥! 나갔다 올거에요!」
+	CASE "Fear"
+		PRINTFORMW 「시...실망시키지 않을게요....」
+	CASE "Break"
+		PRINTFORMW 「왕!」
+	CASE "High"
+		PRINTFORMW %TEXTR("「앞으로 출발! 시작하나요?」/「실망시키지 않을게요!」")%
+	CASE "Affection"
+		PRINTFORMW %TEXTR("「앞으로 출발! 시작하나요?」/「실망시키지 않을게요!」")%
+	CASE "Weak"
+		PRINTFORMW 「시...실망시키지 않을게요....」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_EVENT_Sortie_Return
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 「교본대로 했을 뿐인걸요!」
+	CASE "Marryed"
+		PRINTFORMW %TEXTR("「기다려주셨나요, 사령관님?」/「자...잠시만요! 아직 깔끔치 않으니 조금만 기다렸다가 안아주세요...!」")%
+	CASE "Annoyed"
+		PRINTFORMW 「세이렌, 복귀 완료했습니다」
+	CASE "Fear"
+		PRINTFORMW 「복귀했습니다... 사령관님..」
+	CASE "Break"
+		PRINTFORMW 「세이렌, 복귀했습니다! 기다려주셨나요?」
+	CASE "High"
+		PRINTFORMW 「교본대로 했을 뿐인걸요!」
+	CASE "Affection"
+		PRINTFORMW 「교본대로 했을 뿐인걸요!」
+	CASE "Weak"
+		PRINTFORMW 「복귀했습니다... 사령관님..」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_EVENT_Cook_Self
+IF ABL:MASTER:조리lv < 3
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「앗! 설마 밥해주시는 거에요?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「히히...맛있게 해주세요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「밥이요...? 으..응..아 알겠어요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「앗! 설마 밥해주시는 거에요?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「히히...맛있게 해주세요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「밥이요...? 으..응..아 알겠어요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「앗! 설마 밥해주시는 거에요?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「히히...맛있게 해주세요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「밥이요...? 으..응..아 알겠어요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「앗! 설마 밥해주시는 거에요?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「히히...맛있게 해주세요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「밥이요...? 으..응..아 알겠어요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「앗! 설마 밥해주시는 거에요?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「히히...맛있게 해주세요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「밥이요...? 으..응..아 알겠어요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「앗! 설마 밥해주시는 거에요?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「히히...맛있게 해주세요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「밥이요...? 으..응..아 알겠어요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ENDIF
+
+@M_No113_EVENT_Eat_Com
+IF ABL:MASTER:조리lv < 3
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW %TEXTR("「읏...? 이거 맛이 이상해요!」/「뭔가 맛있는 건지 없는 건지 잘 모르겠네요...」")%
+		CASE "Annoyed"
+			PRINTFORMW 「으...그래도 기대했는데...」
+		CASE "Fear"
+			PRINTFORMW 「네? 아..마..맛있어요! 네...!」
+		CASE "Weak"
+			PRINTFORMW 「...」
+		CASE "High"
+			PRINTFORMW %TEXTR("「읏...? 이거 맛이 이상해요!」/「뭔가 맛있는 건지 없는 건지 잘 모르겠네요...」")%
+		CASE "Affection"
+			PRINTFORMW %TEXTR("「읏...? 이거 맛이 이상해요!」/「뭔가 맛있는 건지 없는 건지 잘 모르겠네요...」")%
+		CASE "Marryed"
+			PRINTFORMW %TEXTR("「읏...? 이거 맛이 이상해요!」/「뭔가 맛있는 건지 없는 건지 잘 모르겠네요...」")%
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW %TEXTR("「왕! 맛있어요 사령관님!」/「헤헤...한 그릇 더 주세요!」")%
+		CASE "Annoyed"
+			PRINTFORMW 「맛있어...읏...아뇨 암말도 안했다구요!」
+		CASE "Fear"
+			PRINTFORMW 「네? 아..마..맛있어요! 네...!」
+		CASE "Weak"
+			PRINTFORMW 「...」
+		CASE "High"
+			PRINTFORMW %TEXTR("「왕! 맛있어요 사령관님!」/「헤헤...한 그릇 더 주세요!」")%
+		CASE "Affection"
+			PRINTFORMW %TEXTR("「왕! 맛있어요 사령관님!」/「헤헤...한 그릇 더 주세요!」")%
+		CASE "Marryed"
+			PRINTFORMW %TEXTR("「왕! 맛있어요 사령관님!」/「헤헤...한 그릇 더 주세요!」")%
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 「와앙! 너무 맛있어요! 이렇다가 저 토실토실해져 버린다구요?」
+		CASE "Annoyed"
+			PRINTFORMW 「왕! 맛있..! 아..아니에요! 흥!」
+		CASE "Fear"
+			PRINTFORMW 「네? 아..맛..맛있어요!...정말..이에요..」
+		CASE "Weak"
+			PRINTFORMW 「...」
+		CASE "High"
+			PRINTFORMW 「와앙! 너무 맛있어요! 이렇다가 저 토실토실해져 버린다구요?」
+		CASE "Affection"
+			PRINTFORMW 「와앙! 너무 맛있어요! 이렇다가 저 토실토실해져 버린다구요?」
+		CASE "Marryed"
+			PRINTFORMW 「와앙! 너무 맛있어요! 이렇다가 저 토실토실해져 버린다구요?」
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ENDIF
+
+@M_No113_EVENT_Cook
+IF ABL:조리lv < 3
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 「제가요? 좋아요! 해볼깨요!」
+			PRINTFORMW 「자 이걸 이렇게...앗 아닌가?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 「좋아요! 맡겨만 주세요!」
+			PRINTFORMW 「자 이걸 이렇게...앗 아닌가?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 「그냥 산책나가고 싶은데...」
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 「핫...? 아,알겠어요!」
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 「...」
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 「제가요? 좋아요! 해볼깨요!」
+			PRINTFORMW 「자 이걸 이렇게...앗 아닌가?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 「좋아요! 맡겨만 주세요!」
+			PRINTFORMW 「자 이걸 이렇게...앗 아닌가?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 「흐흥! 요리는 자신 있다구요!」
+			PRINTFORMW 「이걸 이렇게...반짝반짝!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 「금방 해드릴 테니 편식하시면 안 돼요!」
+			PRINTFORMW 「헤헤..맛있게 드셔주셨으면 좋겠당..」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 「그냥 산책나가고 싶은데...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 「핫...? 아,알겠어요!」
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 「흐흥! 요리는 자신 있다구요!」
+			PRINTFORMW 「이걸 이렇게...반짝반짝!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 「금방 해드릴 테니 편식하시면 안 돼요!」
+			PRINTFORMW 「헤헤..맛있게 드셔주셨으면 좋겠당..」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:조리lv > 4
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 「흐흥! 요리는 자신 있다구요!」
+			PRINTFORMW 「헤헤...이 정도 요리면 답례로 산책 50바퀴는 해주시겠지...?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 「왕! 조금만 기다려주세요!」
+			PRINTFORMW 「그리고 보니 저번에 이거 좋아하셨죠? 넣을게요!」
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 「그냥 산책나가고 싶은데...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 「핫...? 아,알겠어요!」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 「돼..됐어요..맛있을 거에요...」
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 「흐흥! 요리는 자신 있다구요!」
+			PRINTFORMW 「헤헤...이 정도 요리면 답례로 산책 50바퀴는 해주시겠지...?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 「왕! 조금만 기다려주세요!」
+			PRINTFORMW 「그리고 보니 저번에 이거 좋아하셨죠? 넣을게요!」
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW
+			PRINTFORMW 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ENDIF
+
+@M_No113_EVENT_Eat_Lunch
+IF ABL:조리lv < 3
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW %TEXTR("켈베로스가 만든 음식은 딱히 맛있지도, 없지도 않았다./켈베로스는 음식을 많이 태워 먹었다.")%
+			PRINTFORMW 「헤헤....죄..죄송해요...」
+			PRINTFORMW 켈베로스는 멋쩍은지 모자를 고쳐썼다.
+		CASE "Affection"
+			PRINTFORMW %TEXTR("켈베로스가 만든 음식은 딱히 맛있지도, 없지도 않았다./켈베로스는 음식을 많이 태워 먹었다.")%
+			PRINTFORMW 「으...이렇 생각은 아니였는데...」
+			PRINTFORMW 켈베로스는 속상한 듯 시무룩해졌다.
+		CASE "Annoyed"
+			PRINTFORMW 켈베로스가 만든 음식은 숯검댕이었다.
+		CASE "Fear"
+			PRINTFORMW %TEXTR("켈베로스가 만든 음식은 딱히 맛있지도, 없지도 않았다./켈베로스는 음식을 많이 태워 먹었다.")%.
+			PRINTFORMW 「죄...죄송해요...」
+		CASE "Weak"
+			PRINTFORMW 켈베로스가 만든 음식은 숯검댕이었다.
+		CASE "High"
+			PRINTFORMW %TEXTR("켈베로스가 만든 음식은 딱히 맛있지도, 없지도 않았다./켈베로스는 음식을 많이 태워 먹었다.")%
+			PRINTFORMW 「헤헤....죄..죄송해요...」
+			PRINTFORMW 켈베로스는 멋쩍은지 모자를 고쳐썼다.
+		CASE "Marryed"
+			PRINTFORMW %TEXTR("켈베로스가 만든 음식은 딱히 맛있지도, 없지도 않았다./켈베로스는 음식을 많이 태워 먹었다.")%
+			PRINTFORMW 「으...이렇 생각은 아니였는데...」
+			PRINTFORMW 켈베로스는 속상한 듯 시무룩해졌다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 켈베로스가 한 음식은 맛있었다.
+			PRINTFORMW 「헤헤 다 드셨나요? 답례로 산책?」
+		CASE "Affection"
+			PRINTFORMW 켈베로스가 한 음식은 맛있었다.
+			PRINTFORMW %TEXTR("「맛있게 드셔주시는 얼굴만 봐도 행복한거 있죠?」/「아, 편식하면 안된다구 했는데...피 어쩔 수 없네요...헤헤」")%
+		CASE "Annoyed"
+			PRINTFORMW 켈베로스가 한 음식은 맛있었다.
+		CASE "Fear"
+			PRINTFORMW 켈베로스가 한 음식은 맛있었다.
+			PRINTFORMW 「저...저기...괜찮게 드셨으면..혹시...저 나갔다 와도 될까요...?」
+			PRINTFORMW 켈베로스는 당신의 눈치를 살피고 있다.
+		CASE "Weak"
+			PRINTFORMW 켈베로스가 만든 음식은 숯검댕이었다.
+		CASE "High"
+			PRINTFORMW 켈베로스가 한 음식은 맛있었다.
+			PRINTFORMW 「헤헤 다 드셨나요? 답례로 산책?」
+		CASE "Marryed"
+			PRINTFORMW 켈베로스가 한 음식은 맛있었다.
+			PRINTFORMW %TEXTR("「맛있게 드셔주시는 얼굴만 봐도 행복한거 있죠?」/「아, 편식하면 안된다구 했는데...피 어쩔 수 없네요...헤헤」")%
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:조리lv > 4
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 켈베로스가 만든 음식은 굉장히 맛있었다.
+			PRINTFORMW
+			PRINTFORMW 「흐흥! 맛있죠? 그러니까 소화시킬겸 산책나갈까요?」
+		CASE "Affection"
+			PRINTFORMW 켈베로스가 만든 음식은 굉장히 맛있었다.
+			PRINTFORMW
+			A = RAND:2
+			IF A == 0
+				PRINTFORMW 「그렇게 급하게 드시면 채한다구요...?」
+				PRINTFORMW 「맛있게 드셔주시는건 좋지만..히힛..」
+			ELSEIF A == 1
+				PRINTFORMW 「다 드셨으면 공원에서 바람이나 쐬러 나갈까요?」
+				PRINTFORMW 「늦게 나오는 사람이 설거지 하기에요! 히히!」
+				PRINTFORMW 당신이 무어라 말을 꺼내기도 전에 켈베로스는 부랴부랴 움직이기 시작했다.
+			ENDIF
+		CASE "Annoyed"
+			PRINTFORMW 켈베로스가 만든 음식은  굉장히 맛있었다.
+		CASE "Fear"
+			PRINTFORMW 켈베로스가 만든 음식은 굉장히 맛있었다.
+			PRINTFORMW 「저...저기...괜찮게 드셨으면..혹시...저 나갔다 와도 될까요...?」
+			PRINTFORMW 켈베로스는 당신의 눈치를 살피고 있다.
+		CASE "Weak"
+			PRINTFORMW 켈베로스가 만든 음식은 숯검댕이었다.
+		CASE "High"
+			PRINTFORMW 켈베로스가 만든 음식은 굉장히 맛있었다.
+			PRINTFORMW
+			PRINTFORMW 「흐흥! 맛있죠? 그러니까 소화시킬겸 산책나갈까요?」
+		CASE "Marryed"
+			PRINTFORMW 켈베로스가 만든 음식은 굉장히 맛있었다.
+			PRINTFORMW
+			A = RAND:2
+			IF A == 0
+				PRINTFORMW 「그렇게 급하게 드시면 채한다구요...?」
+				PRINTFORMW 「맛있게 드셔주시는건 좋지만..히힛..」
+			ELSEIF A == 1
+				PRINTFORMW 「다 드셨으면 공원에서 바람이나 쐬러 나갈까요?」
+				PRINTFORMW 「늦게 나오는 사람이 설거지 하기에요! 히히!」
+				PRINTFORMW 당신이 무어라 말을 꺼내기도 전에 켈베로스는 부랴부랴 움직이기 시작했다.
+			ENDIF
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ENDIF
+
+@M_No113_Sell
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 켈베로스에게 사실을 전했다.
+		PRINTFORMW 「네...?」
+		PRINTFORMW 「싫어요...아직 사령관님과 만난지 얼마 안됬는데...」
+		PRINTFORMW 「저, 믿어만 주시면 더 잘 할 수 있다구요...?」
+		PRINTFORMW 「그러니까 한번만...더 생각해주시면 안되요...?」
+		PRINTFORMW 당신이 고개를 가로젓자 켈베로스의 눈가에 살짝 눈물이 맺혔다.
+		PRINTFORMW 「으우...이런 갑작스러운 이별은 싫은데...」
+		PRINTFORMW 이내 켈베로스는 채념한 듯 당신을 향해 고개를 숙였다.
+		PRINTFORMW 「이제까지 돌봐주셔서 감사해요...」
+	CASE "High"
+		PRINTFORMW 당신은 켈베로스에게 사실을 전했다.
+		PRINTFORMW 「거짓말....」
+		PRINTFORMW 「싫어요! 싫어요!」
+		PRINTFORMW 「전 사령관님이 제일 좋단 말이에요!」
+		PRINTFORMW 「다른 주인분은 만나고 싶지 않아요!」
+		PRINTFORMW 「그...그러니까...」
+		PRINTFORMW 켈베로스가 당신의 팔을 붙잡아 온다.
+		PRINTFORMW 「제발...한번만 더 생각해주시면 안되요...?」
+		PRINTFORMW 「더 잘할게요! 사...산책도 안 나가도 되니까...!」
+		PRINTFORMW 당신이 고개를 가로젓자 켈베로스가 그대로...풀썩 주저앉았다.
+		PRINTFORMW 「제발....절 떠나지 마세요....」
+	CASE "Affection"
+		PRINTFORMW 당신은 켈베로스에게 사실을 전했다.
+		PRINTFORMW 「사령관님...?」
+		PRINTFORMW 「그...그런 말씀하시면 정말 마음 아프다구요....?」
+		PRINTFORMW 「...」
+		PRINTFORMW 「시...싫어요...싫어...」
+		PRINTFORMW 「정말로..좋은 사람, 내가 사랑하는 사람을 만났는데...」
+		PRINTFORMW 「이...이렇..게」
+		PRINTFORMW 멍한 눈으로 고개를 가로젓던 켈베로스가 이내 정신을 차린 듯 당신에게 달라붙어 왔다.
+		PRINTFORMW 「잘못 했어요! 잘못 했어요! 앞으로 더 잘할께요! 그러니까..」
+		PRINTFORMW 당신은 당신에게 달라붙는 켈베로스를 쳐냈다.
+		PRINTFORMW 「꺅!?」
+		PRINTFORMW 켈베로스는 불안한 시선으로 눈물을 흘리며 당신을 올려다 보고있다.
+		PRINTFORMW 「가지...마세요...흐우...」
+		PRINTFORMW 당신을 향해 손을 뻗던 켈베로스를 뒤로하고 당신은 길을 떠났다.
+	CASE "Weak"
+		PRINTFORMW 당신은 켈베로스에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「...아..아...읏...우..」
+		PRINTFORMW 켈베로스는 당신을 바라보지 않은체 조용히 울기 시작했다.
+		PRINTFORMW 마지막으로 그런 켈베로스를 당신은 한번 쓰다듬은 후 자리를 떴다.
+	CASE "Break"
+		PRINTFORMW 당신은 켈베로스와 산책을 나섰다.
+		PRINTFORMW 「왕!」
+		PRINTFORMW 오랜만의 산책이 즐거운 듯 켈베로스는 들떠있었다.
+		PRINTFORMW 마지막 산책도 머지않아 끝나고.
+		PRINTFORMW 이내 당신과 켈베로스는 약속한 장소에 도착했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 익숙하지 않은 장소에 겁먹은듯 켈베로스의 몸이 떨리는게 보였다.
+		PRINTFORMW 「...아?」
+		PRINTFORMW 당신과 켈베로스에게 다가오는 누군가.
+		PRINTFORMW 당신은 켈베로스의 목줄을 그 자에게 넘겼다.
+		PRINTFORMW 「...흐..? 아?..사...사..」
+		PRINTFORMW 켈베로스는 불안해졌는지 무어라 말을 하며 발버둥 치기 시작했다.
+		PRINTFORMW 「..사..사..령..!」
+		PRINTFORMW 갈길을 서두르는 당신의 뒤로, 누군가가 당신을 부르는 소리가 들려왔다.
+	CASE "Marryed"
+		PRINTFORMW 당신은 켈베로스에게 사실을 전했다.
+		PRINTFORMW 「사령관님...?」
+		PRINTFORMW 「그...그런 말씀하시면 정말 마음 아프다구요....?」
+		PRINTFORMW 「...」
+		PRINTFORMW 「시...싫어요...싫어...」
+		PRINTFORMW 「정말로..좋은 사람, 내가 사랑하는 사람을 만났는데...」
+		PRINTFORMW 「이...이렇..게」
+		PRINTFORMW 멍한 눈으로 고개를 가로젓던 켈베로스가 이내 정신을 차린 듯 당신에게 달라붙어 왔다.
+		PRINTFORMW 「잘못 했어요! 잘못 했어요! 앞으로 더 잘할께요! 그러니까..」
+		PRINTFORMW 당신은 당신에게 달라붙는 켈베로스를 쳐냈다.
+		PRINTFORMW 「꺅!?」
+		PRINTFORMW 켈베로스는 불안한 시선으로 눈물을 흘리며 당신을 올려다 보고있다.
+		PRINTFORMW 「가지...마세요...흐우...」
+		PRINTFORMW 당신을 향해 손을 뻗던 켈베로스를 뒤로하고 당신은 길을 떠났다.
+	CASE "Annoyed"
+		PRINTFORMW 당신은 켈베로스에게 사실을 전했다.
+		PRINTFORMW 「사령관님...?」
+		PRINTFORMW 「그...그런 말씀하시면 정말 마음 아프다구요....?」
+		PRINTFORMW 「...」
+		PRINTFORMW 「시...싫어요...싫어...」
+		PRINTFORMW 「정말로..좋은 사람, 내가 사랑하는 사람을 만났는데...」
+		PRINTFORMW 「이...이렇..게」
+		PRINTFORMW 멍한 눈으로 고개를 가로젓던 켈베로스가 이내 정신을 차린 듯 당신에게 달라붙어 왔다.
+		PRINTFORMW 「잘못 했어요! 잘못 했어요! 앞으로 더 잘할께요! 그러니까..」
+		PRINTFORMW 당신은 당신에게 달라붙는 켈베로스를 쳐냈다.
+		PRINTFORMW 「꺅!?」
+		PRINTFORMW 켈베로스는 불안한 시선으로 눈물을 흘리며 당신을 올려다 보고있다.
+		PRINTFORMW 「가지...마세요...흐우...」
+		PRINTFORMW 당신을 향해 손을 뻗던 켈베로스를 뒤로하고 당신은 길을 떠났다.
+	CASE "Fear"
+		PRINTFORMW 당신은 켈베로스에게 사실을 전했다.
+		PRINTFORMW 「사령관님...?」
+		PRINTFORMW 「그...그런 말씀하시면 정말 마음 아프다구요....?」
+		PRINTFORMW 「...」
+		PRINTFORMW 「시...싫어요...싫어...」
+		PRINTFORMW 「정말로..좋은 사람, 내가 사랑하는 사람을 만났는데...」
+		PRINTFORMW 「이...이렇..게」
+		PRINTFORMW 멍한 눈으로 고개를 가로젓던 켈베로스가 이내 정신을 차린 듯 당신에게 달라붙어 왔다.
+		PRINTFORMW 「잘못 했어요! 잘못 했어요! 앞으로 더 잘할께요! 그러니까..」
+		PRINTFORMW 당신은 당신에게 달라붙는 켈베로스를 쳐냈다.
+		PRINTFORMW 「꺅!?」
+		PRINTFORMW 켈베로스는 불안한 시선으로 눈물을 흘리며 당신을 올려다 보고있다.
+		PRINTFORMW 「가지...마세요...흐우...」
+		PRINTFORMW 당신을 향해 손을 뻗던 켈베로스를 뒤로하고 당신은 길을 떠났다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_Disuse
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 켈베로스에게 사실을 전했다.
+		PRINTFORMW 「네...?」
+		PRINTFORMW 「저...뭔가 잘못했나요...?」
+		PRINTFORMW 「저, 믿어만 주시면 더 잘 할 수 있다구요...?」
+		PRINTFORMW 「그러니까 한번만...더 생각해주시면 안 돼요...?」
+		PRINTFORMW 당신이 고개를 가로젓자 켈베로스의 눈동자가 떨리기 시작한다.
+		PRINTFORMW 「그..그럼요...사령관님...」
+		PRINTFORMW 「정말 마..마지막이니까...밖을 자유롭게 뛰고 와도 될까요...?」.
+		PRINTFORMW 「아...안될까요..?흑....」
+		PRINTFORMW 당신이 켈베로스의 간절한 부탁을 거절하자. 켈베로스는 주저앉아 조용히 울기 시작했다.
+		PRINTFORMW 그것이 당신이 기억하는 그녀의 마지막 모습이였다.
+	CASE "High"
+		PRINTFORMW 당신은 켈베로스에게 사실을 전했다.
+		PRINTFORMW 「싫어...」
+		PRINTFORMW 「싫어요! 싫어요!」
+		PRINTFORMW 「아직 못 가본곳이 많다구요...! 사령관님과 하고 싶었던 것도...많..흑..았는데...」
+		PRINTFORMW 「왜...절...흐읏...버리시는..거..에요....」
+		PRINTFORMW 힘겹게 한마디씩 꺼내는 켈베로스의 얼굴 아래로 눈물방울이 하나씩 떨어지기 시작했다.
+		PRINTFORMW 천천히 떨리는 팔로 켈베로스는 당신을 붙잡으려 팔을 뻗었다.
+		PRINTFORMW 「제발...이러지..마세요....읏」
+		PRINTFORMW 당신은 그런 켈베로스의 팔을 붙잡아 조용히 내렸다.
+		PRINTFORMW 눈물로 더 이상 말을 이어가지 못하는 켈베로스를 뒤로 하고 당신은 자리를 떴다.
+	CASE "Affection"
+		PRINTFORMW 당신은 켈베로스에게 사실을 전했다.
+		PRINTFORMW 「사령관님....?」
+		PRINTFORMW 「그...그런 말씀하시면 정말 마음 아프다구요....?」
+		PRINTFORMW 「자...장난이시면 그만 해주세요...! 에헤헤...」
+		PRINTFORMW 「...」
+		PRINTFORMW 당신을 바라보는 켈베로스의 눈빛이 점점 더 불안하게 떨려 간다.
+		PRINTFORMW 「사...사령관님....? 시...싫어요..꺅!?」
+		PRINTFORMW 「놓아...사령관님!!!!」
+		PRINTFORMW 목에 줄이 채워지는 것을 비명을 지르며 거부하는 켈베로스.
+		PRINTFORMW 비명이 울음소리로 바뀌는데에는 오래 걸리지 않았다.
+	CASE "Weak"
+		PRINTFORMW 당신은 켈베로스에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「...아..아...읏...우..」
+		PRINTFORMW 켈베로스는 당신을 바라보지 않은체 조용히 울기 시작했다.
+		PRINTFORMW 마지막으로 그런 켈베로스를 당신은 한번 쓰다듬은 후 자리를 떴다.
+	CASE "Break"
+		PRINTFORMW 당신은 켈베로스에게 사실을 전했다.
+		PRINTFORMW 「왕!」
+		PRINTFORMW 오랜만의 산책이 즐거운 듯 켈베로스는 들떠있었다.
+		PRINTFORMW 마지막 산책도 머지않아 끝나고.
+		PRINTFORMW 이내 당신과 켈베로스는 약속한 장소에 도착했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 익숙하지 않은 장소에 겁먹은듯 켈베로스의 몸이 떨리는게 보였다.
+		PRINTFORMW 「...아?」
+		PRINTFORMW 당신과 켈베로스에게 다가오는 누군가.
+		PRINTFORMW 모르는 이들이 켈베로스의 몸을 옭아매기 시작하자 켈베로스는 거칠게 저항했다.
+		PRINTFORMW 「...!?....!...아!...」
+		PRINTFORMW 켈베로스는 무어라 당신에게 말하고 싶은 듯 하다.
+		PRINTFORMW 마지막으로 당신은 웃으며 그런 켈베로스의 머리를 나지막히 쓰다듬어 주었다.
+		PRINTFORMW 생기없는 켈베로스의 눈에 눈물이 한 줄기 흘렀다.
+	CASE "Marryed"
+		PRINTFORMW 당신은 켈베로스에게 사실을 전했다.
+		PRINTFORMW 「사령관님....?」
+		PRINTFORMW 「그...그런 말씀하시면 정말 마음 아프다구요....?」
+		PRINTFORMW 「자...장난이시면 그만 해주세요...! 에헤헤...」
+		PRINTFORMW 「...」
+		PRINTFORMW 당신을 바라보는 켈베로스의 눈빛이 점점 더 불안하게 떨려 간다.
+		PRINTFORMW 「사...사령관님....? 시...싫어요..꺅!?」
+		PRINTFORMW 「놓아...사령관님!!!!」
+		PRINTFORMW 목에 줄이 채워지는 것을 비명을 지르며 거부하는 켈베로스.
+		PRINTFORMW 비명이 울음소리로 바뀌는데에는 오래 걸리지 않았다.
+	CASE "Annoyed"
+		PRINTFORMW 당신은 켈베로스에게 사실을 전했다.
+		PRINTFORMW 「사령관님....?」
+		PRINTFORMW 「그...그런 말씀하시면 정말 마음 아프다구요....?」
+		PRINTFORMW 「자...장난이시면 그만 해주세요...! 에헤헤...」
+		PRINTFORMW 「...」
+		PRINTFORMW 당신을 바라보는 켈베로스의 눈빛이 점점 더 불안하게 떨려 간다.
+		PRINTFORMW 「사...사령관님....? 시...싫어요..꺅!?」
+		PRINTFORMW 「놓아...사령관님!!!!」
+		PRINTFORMW 목에 줄이 채워지는 것을 비명을 지르며 거부하는 켈베로스.
+		PRINTFORMW 비명이 울음소리로 바뀌는데에는 오래 걸리지 않았다.
+	CASE "Fear"
+		PRINTFORMW 당신은 켈베로스에게 사실을 전했다.
+		PRINTFORMW 「사령관님....?」
+		PRINTFORMW 「그...그런 말씀하시면 정말 마음 아프다구요....?」
+		PRINTFORMW 「자...장난이시면 그만 해주세요...! 에헤헤...」
+		PRINTFORMW 「...」
+		PRINTFORMW 당신을 바라보는 켈베로스의 눈빛이 점점 더 불안하게 떨려 간다.
+		PRINTFORMW 「사...사령관님....? 시...싫어요..꺅!?」
+		PRINTFORMW 「놓아...사령관님!!!!」
+		PRINTFORMW 목에 줄이 채워지는 것을 비명을 지르며 거부하는 켈베로스.
+		PRINTFORMW 비명이 울음소리로 바뀌는데에는 오래 걸리지 않았다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No113_ENDING
+SELECTCASE CFLAG:엔딩플래그
+	CASE 1
+		PRINTFORMW 켈베로스가 당신에게 고백했던 공원
+		PRINTFORMW 계절은 덧없이 지나 땅은 낙엽에서 눈으로 그리고 꽃으로 덮여갔다.
+		PRINTFORMW 사근사근 낙엽을 밟아가며 뛰어가던 그녀
+		PRINTFORMW 추운게 싫었던건지 겨울내내 당신에게 꼬옥 달라붙어 있던 그녀
+		PRINTFORMW 지금 저 멀리서
+		PRINTFORMW 그녀를 닮은 개나리를 들고 당신에게 해맑게 웃어보이는 그녀가 있었다.
+		PRINTFORMW 「사령관님 이것 보세요! 벌써 개나리가 피었어요!」
+		PRINTFORMW 「앗! 잠시만요...」
+		PRINTFORMW 「짠!」
+		PRINTFORMW 켈베로스가 어느세 당신의 손가락에 개나리로 꽃반지를 만들어 주었다.
+		PRINTFORMW 「에헤헤... 사령관님 귀여워요!」
+		PRINTFORMW 「자! 저도 끼워주세요!」
+		PRINTFORMW 당신에게 꽃을 건내며 웃는 켈베로스에게.
+		PRINTFORMW 당신은 조용히 품에서 반지를 꺼내 그녀의 약지에 끼웠다.
+		PRINTFORMW 「에헤헤...엣?」
+		PRINTFORMW 「사...사령관님?」
+		PRINTFORMW 그녀의 약지가 조용히 떨려온다.
+		PRINTFORMW 멈춰있던 시선은 손가락에서 당신으로
+		PRINTFORMW 굳어버린 얼굴은 어느세 피어나는 미소로.
+		PRINTFORMW 「...」
+		PRINTFORMW 「치사해요...」
+		PRINTFORMW 「이렇게 큰 걸 주시면...전 평생 갚을 수 밖에 없잖아요...」
+		PRINTFORMW 「...」
+		PRINTFORMW 「있죠...」
+		PRINTFORMW 「이제 전....사령관님으로부터 꼼짝도 못하니까...」
+		PRINTFORMW 「사령관님도 어디로 가시면 안 돼요...?」
+		PRINTFORMW 그녀와 당신을 감싸 듯
+		PRINTFORMW 따스한 바람이 불어온다.
+		PRINTFORMW 바람에 타 흩날리는 꽃잎들 아래로
+		PRINTFORMW 꽃보다 붉게 물든 얼굴을 한 그녀
+		PRINTFORMW 당신은 조용히 켈베로스를 안아주었다.
+		PRINTFORMW 「...헤헷...」
+		PRINTFORMW 「행복해요 사령관님....」
+		PRINTFORMW 「사랑해요...!」
+		PRINTFORMW 귓가를 간지럽히는 그녀의 사랑에.
+		PRINTFORMW 당신은 살며시 입을 맞춰주었다.
+		PRINTFORMW 피어나는 계절 속에서
+		PRINTFORMW 당신은 가장 행복하게 피어난 꽃을 품에 안았다.
+		PRINTFORMW 켈베로스 엔딩 엔딩 No. 1「그 꽃의 이름은」
+		RETURN 1
+	CASE 2
+		PRINTFORMW 짐승과 사람의 차이는 뭘까.
+		PRINTFORMW 가장 간단한 답으로는 짐승은 말이 안 통하고
+		PRINTFORMW 사람은 말이 통한다는 것이 있겠다.
+		PRINTFORMW 그렇게 결론 지으면 내 앞에 있는 이 암컷은
+		PRINTFORMW 사람보다는 짐승에 가깝다고 보는게 맞으리라.
+		PRINTFORMW 「...?」
+		PRINTFORMW 당신이 말을 걸어도, 손에 이 반지를 끼워도.
+		PRINTFORMW 그저 아무것도 모르겠다는 표정으로 바라볼 뿐인 짐승
+		PRINTFORMW 짐승은 사람을 위해 존재한다.
+		PRINTFORMW 그런 의미에서 당신이 원하던 것은 이루어졌음을 알 수 있으리라
+		PRINTFORMW 「...왕!」
+		PRINTFORMW 이유는 모르겠지만, 이 암컷은 종종 이유 없이 눈물을 흘린다.
+		PRINTFORMW 뭘 보고 있는 건지도 모를 텅 빈 눈에 눈물이 맺히는 꼴을 보고 있자니
+		PRINTFORMW 당신은 역거움을 느꼈다.
+		PRINTFORMW 당신이 웃으면 짐승도 그저 따라 웃으면 된다.
+		PRINTFORMW 당신이 슬프면 짐승은 그저 옆에서 꼬리를 흔들면 된다.
+		PRINTFORMW 암컷과 눈을 맞춘채 조용히 손을 들어보이는 당신
+		PRINTFORMW 「...!」
+		PRINTFORMW 얼굴이 파랗게 질리며 바로 몸을 웅크리는 짐승을 보며
+		PRINTFORMW 그제서야 당신은 만족한다.
+		PRINTFORMW 짐승은 말하지 않는다.
+		PRINTFORMW 짐승은 오직 사람의 행복을 위해 존재한다.
+		PRINTFORMW 켈베로스 엔딩 엔딩 No. 2「반려견」
+		RETURN 1
+	CASE 3
+		PRINTFORMW 기분 나쁘게 따스한 햇살
+		PRINTFORMW 매일 같이 자극적인 거짓말을 치기에 바쁜 매스컴도
+		PRINTFORMW 상투적인 문구를 구구절절 반복할 뿐인 이 책도
+		PRINTFORMW 당신을 지루함으로 죽이기에는 충분했기에
+		PRINTFORMW 당신은 기분 전환이라도 할 겸 산책을 나섰다.
+		PRINTFORMW 여전히 기분 나쁜 날씨라고 생각하며
+		PRINTFORMW 아무도 없는 길을 걸어간다.
+		PRINTFORMW .
+		PRINTFORMW .
+		PRINTFORMW .
+		PRINTFORMW 어느센가 익숙한 공원에 도착한 당신
+		PRINTFORMW 숨도 돌릴겸 근처에 벤치에 늘어져 주변을 바라본다.
+		PRINTFORMW ...
+		PRINTFORMW 공원에서 뛰어 노는 아이들
+		PRINTFORMW 데이트 하는 연인들
+		PRINTFORMW 주인과 함깨 시간을 보내는 바이오로이드들
+		PRINTFORMW ...?
+		PRINTFORMW 문득 당신의 눈에 익은 얼굴이 보인다.
+		PRINTFORMW 주황색의 찰랑거리는 트윈테일
+		PRINTFORMW 붉은 눈과 눈물점
+		PRINTFORMW 동형기라기엔 너무나도 익숙한 느낌.
+		PRINTFORMW 불안한듯 끝없이 주변을 살피며 새 주인의 손을 붙잡은 체.
+		PRINTFORMW 한 걸음, 한 걸음씩 힘들게 앞으로 나아간다.
+		PRINTFORMW 설마...라는 생각을 하며 말라오는 입안을 축이기 위해.
+		PRINTFORMW 당신은 음료라도 뽑기 위해 판매기로 발을 옮겼다.
+		PRINTFORMW .
+		PRINTFORMW ..텅
+		PRINTFORMW .
+		PRINTFORMW 분명 엄청 달았던 주스였던 걸로 기억하는 음료를 뽑았지만.
+		PRINTFORMW 단 맛이 전혀 느껴지지 않는다.
+		PRINTFORMW 빌어먹을 이라고 당신은 생각하며.
+		PRINTFORMW 갈증만이라도 채울 겸 남은 액체를 빠르게 털어 넣는다.
+		PRINTFORMW 망가진 건 분명 그 년 이였을텐데
+		PRINTFORMW 왜 자신까지 이렇게 되어버렸는지 알 수 없었다.
+		PRINTFORMW 지워지지 않는 기분 나쁜 감정을 뒤로 한체.
+		PRINTFORMW 터덜터덜 발걸음을 옮겨 쓰레기통으로 향한다.
+		PRINTFORMW 땅을 보며 걸어갔을 당신에겐 보이지 않을 누군가가 근처에 있는지도 모른체
+		PRINTFORMW 고개를 들었을 땐 원치 않았던 눈 마주침만이 있었을 뿐이다.
+		PRINTFORMW 「.....」
+		PRINTFORMW 「....힉!?」
+		PRINTFORMW 이내 당신이 누군지 깨달은 켈베로스의 몸이 천천히 떨려오기 시작한다.
+		PRINTFORMW 「..하...아...하....아..」
+		PRINTFORMW 자신의 몸을 붙잡고 웅크린체.
+		PRINTFORMW 「하아..흐끅!...하아...」
+		PRINTFORMW 켈베로스는 눈물을 떨구며 과호흡을 하기 시작했다.
+		PRINTFORMW 빌어먹을 빌어먹을.
+		PRINTFORMW 당황인지 분노인지 동정인지 모를 격한 감정이 당신을 좀 먹는다.
+		PRINTFORMW 어느세 당신이 켈베로스를 향해 천천히 손을 뻗었다는 사실을 깨달았다.
+		PRINTFORMW 「...히약!?...하아악!...아아악!!!」
+		PRINTFORMW 당신이 손이 가까워질수록
+		PRINTFORMW 필사적으로 몸을 바둥거려 뒷걸음치는 켈베로스
+		PRINTFORMW 주변의 갑작스러운 시선이 당신과 켈베로스를 덮쳤다.
+		PRINTFORMW 소란을 인지 한듯.
+		PRINTFORMW 멀리서 당신이 아닌 켈베로스를 부르는 다른 이의 목소리가 들려온다.
+		PRINTFORMW 이 이상 있다간 더 재수없는 날이 될 것이란 걸 안 당신은.
+		PRINTFORMW 타오르는 속을 부여잡고 급히 자리를 떴다.
+		PRINTFORMW .
+		PRINTFORMW .
+		PRINTFORMW .
+		PRINTFORMW 얼마나 달렸을까.
+		PRINTFORMW 숨이 가슴 끝까지 막혀온다.
+		PRINTFORMW 격하게 내뱉는 숨 속에서도
+		PRINTFORMW 당신을 좀먹는 감정만은 빠져나가질 않았다.
+		PRINTFORMW 오히려 더더욱 속을 태울 뿐이였다.
+		PRINTFORMW ...
+		PRINTFORMW 기분 나쁘게 따스한 햇살이 내려쬐는 풀밭에
+		PRINTFORMW 당신은 털썩하고 주저 앉았다.
+		PRINTFORMW 그 얼굴, 그 표정, 그 목소리가 머릿속에서 떠나가질 않는다.
+		PRINTFORMW ...
+		PRINTFORMW 오늘은 정말로 쓰래기 같은 날이라고
+		PRINTFORMW 당신을 어루만지는 따스한 바람을 맞으며
+		PRINTFORMW 당신은 생각했다.
+		PRINTFORMW 켈베로스 엔딩 No. 3「운수 좋은 날」
+		RETURN 1
+ENDSELECT ;3개의 케이스 존재
+RETURN 0
+
