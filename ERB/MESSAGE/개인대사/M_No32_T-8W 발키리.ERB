@@ -2419,7 +2419,7 @@ ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
 	SELECTCASE CSTR:1
 		CASE "Low"
 			PRINTFORMW %TEXTR("발키리가 한 음식은 의외로 형태도 갖추어지고 맛있었다./발키리가 한 음식은 전체적으로 평균을 이루고 있어 맛있었다.")%
-			PRINTFORMW {「...그게 사실입니까?」/「정말로 맛이 괜찮으십니까..?」
+			PRINTFORMW %TEXTR("「...그게 사실입니까?」/「정말로 맛이 괜찮으십니까..?」")
 			PRINTFORMW 발키리는 믿기지 않는 모양이다.
 		CASE "Affection"
 			PRINTFORMW %TEXTR("발키리가 한 음식은 의외로 형태도 갖추어지고 맛있었다./발키리가 한 음식은 전체적으로 평균을 이루고 있어 맛있었다.")%
@@ -2444,7 +2444,7 @@ ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
 			PRINTFORMW 발키리는 믿기지 않는지 연신 사과만 하고있다.
 		CASE "High"
 			PRINTFORMW %TEXTR("발키리가 한 음식은 의외로 형태도 갖추어지고 맛있었다./발키리가 한 음식은 전체적으로 평균을 이루고 있어 맛있었다.")%
-			PRINTFORMW {「...그게 사실입니까?」/「정말로 맛이 괜찮으십니까..?」
+			PRINTFORMW %TEXTR("「...그게 사실입니까?」/「정말로 맛이 괜찮으십니까..?」")
 			PRINTFORMW 발키리는 믿기지 않는 모양이다.
 		CASEELSE
 			RETURN 0

@@ -853,9 +853,16 @@ PRINTFORMW %TEXTR("「기습을 받으면 꼼짝도 못하고 당할테니 거�
 CASE "Fear"
 PRINTFORMW %TEXTR("「따,  딱딱할 거에요.」/팬텀은 아무 말 없이 다리를 내밀었다.")%
 CASE "Weak"
-PRINTFORMW {「설마 때리지는 않겠지...」
-PRINTFORMW 팬텀은 당신의 머리를 뉘였다./「다리도 자유롭지 못해...」
-PRINTFORMW 팬텀은 망토를 세게 부여잡았다.
+    PRINTDATAW
+        DATALIST
+            DATA「설마 때리지는 않겠지...」
+            DATA 팬텀은 당신의 머리를 뉘였다.
+        ENDLIST
+        DATALIST
+            DATA 「다리도 자유롭지 못해...」
+            DATA 팬텀은 망토를 세게 부여잡았다.
+        ENDLIST
+    ENDDATA
 CASE "Break"
 PRINTDATAW
 DATAFORM 「다 할테니 버리지 말아주세요.」
@@ -1386,7 +1393,7 @@ DATAFORM 「제가 뭘 잘못했나요...?」
 ENDLIST
 DATAFORM  「아파요...」
 ENDDATA
-PRINTFORMW 팬텀의 표정이 순간 공포로 물들었다.}
+PRINTFORMW 팬텀의 표정이 순간 공포로 물들었다.
 CASE "Weak"
 PRINTDATAW
 DATALIST
@@ -1613,12 +1620,21 @@ DATAFORM  당신은 움직이지 않는 팬텀을 보며 비릿한 웃음을 지
 DATAFORM 당신은 팬텀의 목덜미를 깨물었다.
 ENDLIST
 ENDDATA
-CASE "Break"
-PRINTFORMW {「저는 이제 잡아먹히는 역할인가요?」
-PRINTFORMW 팬텀은 머리를 풀어 옆으로 쓸었다. 
-PRINTFORMW 당신은 팬텀의 목덜미를 깨물었다.
-PRINTFORMW 팬텀은 짧은 신음소리를 내었다./「이게 뱀을 바라보는 먹이의 기분...하아.」
-PRINTFORMW 팬텀은 희열에 찬 목소리를 내었다.
+CASE "Break" ;TODO 대사 블럭 임의설정
+    PRINTDATAW
+        DATALIST
+            DATA 「저는 이제 잡아먹히는 역할인가요?」
+            DATA 팬텀은 머리를 풀어 옆으로 쓸었다. 
+        ENDLIST
+        DATALIST
+            DATA 당신은 팬텀의 목덜미를 깨물었다.
+            DATA 팬텀은 짧은 신음소리를 내었다.
+        ENDLIST
+        DATALIST
+            DATA 「이게 뱀을 바라보는 먹이의 기분...하아.」
+            DATA 팬텀은 희열에 찬 목소리를 내었다.
+        ENDLIST
+    ENDDATA
 CASEELSE
 RETURN 0
 ENDSELECT
@@ -1802,7 +1818,7 @@ DATAFORM 팬텀은 중얼거리만 할 뿐 어떤 반응도 보이지 않았다.
 ENDLIST
 DATALIST
 DATAFORM 당신이 이빨을 내밀자 팬텀은 공포에 질린 표정으로 주저앉았다. 
-DATAFORM 「아, 안돼...! 여기만은...!」}
+DATAFORM 「아, 안돼...! 여기만은...!」
 ENDLIST
 ENDDATA
 CASE "Break"

@@ -1254,8 +1254,13 @@ SELECTCASE CSTR:1
 	CASE "Weak"
 		PRINTFORMW 세이렌의 목에 혀를 기었다.
 		PRINTFORMW 세이렌의 몸이 흠칫 떨렸다.
-		PRINTFORMW {「...시..싫어...」/「...」
-		PRINTFORMW 세이렌의 눈가에 눈물이 맺혀있다.
+		PRINTDATAW ;TODO 대사 블럭 임의설정
+			DATA 「...시..싫어...」
+			DATALIST
+				DATA 「...」
+				DATA 세이렌의 눈가에 눈물이 맺혀있다.
+			ENDLIST
+		ENDDATA
 	CASE "Break"
 		PRINTFORMW 세이렌의 목에 혀를 기었다.
 		PRINTFORMW 세이렌은 죽은 눈으로 웃고 있다.

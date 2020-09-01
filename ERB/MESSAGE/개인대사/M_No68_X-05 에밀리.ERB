@@ -1,5 +1,4 @@
-﻿;C:\Users\ASUS\Documents\GitHub\eraLAO\ERB\MESSAGE\개인대사\M_No68_X-05 에밀리.ERB에서 불러옴
-@IS_M_No68
+﻿@IS_M_No68
 RETURN 1
 
 @M_No68_TRAIN_START_0
@@ -92,10 +91,6 @@ SELECTCASE CSTR:1
 		PRINTFORMW 그런 그녀의 마음에 진지하게 답해주기로 정한 당신은.
 		PRINTFORMW 이내 그녀의 마음에 대한 답을 정했다.
 		PRINTFORMW 당신은.
-		PRINTFORMW 1.에밀리의 마음을 받아들였다.
-		PRINTFORMW 2.에밀리의 마음을 거절했다.
-		PRINTFORMW 3.고작 이런 말을 하기 위해 불렀냐고 에밀리를 다그친다.
-		TFLAG:고백함 = 1
 	CASE "Yes"
 		PRINTFORMW 당신은 에밀리의 마음을 받아들였다.
 		PRINTFORMW .
@@ -120,6 +115,7 @@ SELECTCASE CSTR:1
 		PRINTFORMW 에밀리는 그런 당신을 볼을 붉힌 채 천천히 올려다 보았다.
 		PRINTFORMW 오렌지색으로 물들어가는 세상 속에서.
 		PRINTFORMW 당신은 그 날 처음으로 해맑게 웃는 그녀의 모습을 보았다.
+		TFLAG:고백함 = 1
 	CASE "No"
 		PRINTFORMW 당신은 에밀리의 마음을 거절했다.
 		PRINTFORMW .
@@ -766,10 +762,17 @@ SELECTCASE CSTR:1
 	CASE "Love"
 		PRINTFORMW 당신은 에밀리의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
 		PRINTFORMW 에밀리의 뺨이 붉게 물들었다.
-		PRINTFORMW {「나도 사령관 %TEXTR("가슴/엉덩이")%가 좋아...」
-		PRINTFORMW 당신은 순간 에밀리의 칭찬에 말문이 막혔다.
-		PRINTFORMW 「어...? 이렇게 하는거 아니야?」/「그런 말 하면 나쁜 아이래...」
-		PRINTFORMW 「근데 난 사령관이 나쁜 아이여도 좋아,」}
+		PRINTDATAW
+			DATALIST
+				DATAFORM 「나도 사령관 %TEXTR("가슴/엉덩이")%가 좋아...」
+				DATA 당신은 순간 에밀리의 칭찬에 말문이 막혔다.
+				DATA 「어...? 이렇게 하는거 아니야?」
+			ENDDATA
+			DATALIST
+				DATA 「그런 말 하면 나쁜 아이래...」
+				DATA 「근데 난 사령관이 나쁜 아이여도 좋아.」
+			ENDLIST
+		ENDDATA
 	CASE "Marryed"
 		PRINTFORMW 당신은 에밀리의 %TEXTR("가슴/엉덩이")%을 칭찬했다.
 		PRINTFORMW 에밀리는 옅은 미소를 지었다.

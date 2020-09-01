@@ -567,14 +567,13 @@ SELECTCASE CSTR:1
 		ELSEIF A == 2
 			PRINTFORMW 「히히...사령관님을 만나서 정말 다행이에요...」
 		ENDIF
-	CASE "Annoyed"
+	CASE "Annoyed" ;TODO 대사 블럭 임의설정
 		PRINTFORMW 당신은 켈베로스의 머리를 쓰다듬었다.
 		A = RAND:3
 		IF A == 0
 			PRINTFORMW 켈베로스는 뾰루퉁한 모습이다.
-			PRINTFORMW {「쓰다듬어 주시면..헤헤..아,아니! 저 아직 화났어요!」
+			PRINTFORMW %TEXTR("「쓰다듬어 주시면..헤헤..아,아니! 저 아직 화났어요!」/「흥...」")%
 		ELSEIF A == 1
-			PRINTFORMW 「흥...」
 			PRINTFORMW 켈베로스는 툴툴거리며 눈을 다른 곳으로 돌렸다.
 		ELSEIF A == 2
 			PRINTFORMW 「강아지가 아니라구요!」
@@ -1379,7 +1378,7 @@ SELECTCASE CSTR:1
 	CASE "Weak"
 		PRINTFORMW 켈베로스의 목에 혀를 기었다.
 		PRINTFORMW 켈베로스는 목을 부여잡고 떨고 있다.
-		PRINTFORMW {「...흑...흐윽...」/「제발....절 내버려둬요....」
+		PRINTFORMW %TEXTR("「...흑...흐윽...」/「제발....절 내버려둬요....」")%
 		PRINTFORMW 켈베로스의 눈가 아래로 눈물방울이 하나 둘 떨어지기 시작했다.
 	CASE "Break"
 		PRINTFORMW 켈베로스의 목에 혀를 기었다.

@@ -542,10 +542,17 @@ ENDLIST
 DATAFORM 네오딤은 철구 속으로 모습을 감춰버렸다.
 ENDDATA
 CASE "Fear"
-PRINTFORMW 네오딤은 조심스러운 표정으로 당신을 보았다.
-PRINTFORMW {「이 손... 놓아줘.」
-PRINTFORMW 이내 네오딤은 시선을 아래로 내렸다./「...잘못한 거 없어.」
-PRINTFORMW 네오딤은 살짝 몸을 떨었다.
+    PRINTFORMW 네오딤은 조심스러운 표정으로 당신을 보았다.
+    PRINTDATAW
+        DATALIST
+            DATA 「이 손... 놓아줘.」
+            DATA 이내 네오딤은 시선을 아래로 내렸다./
+        ENDLIST
+        DATALIST
+            DATA 「...잘못한 거 없어.」
+            DATA 네오딤은 살짝 몸을 떨었다.
+        ENDLIST
+    ENDDATA
 CASE "Weak"
 PRINTFORMW 네오딤은 몸을 떨었다.
 PRINTDATAW
@@ -1415,12 +1422,18 @@ DATAFORM 「정말로... 싫어...」
 DATAFORM 네오딤의 얼굴은 점점 푸른빛을 띄었다.
 ENDLIST
 ENDDATA
-CASE "Break"
-PRINTFORMW {「...또 나를 마음대로 가두려고.」
-PRINTFORMW 「...절대 그렇게 되지 않을 거야.」
-PRINTFORMW 그렇게 말하며 네오딤은 당신의 목을 핥았다.
-PRINTFORMW 네오딤의 눈에는 자신의 다리에 걸린 족쇄가 아른거렸다.
-PRINTFORMW 그렇게 생각했다.
+CASE "Break" ;TODO 대사 블럭 임의설정
+    PRINTDATAW
+        DATALIST
+            DATA 「...또 나를 마음대로 가두려고.」
+            DATA 「...절대 그렇게 되지 않을 거야.」
+            DATA 그렇게 말하며 네오딤은 당신의 목을 핥았다.
+        ENDLIST
+        DATALIST
+            DATA 네오딤의 눈에는 자신의 다리에 걸린 족쇄가 아른거렸다.
+            DATA 그렇게 생각했다.
+        ENDLIST
+    ENDDATA
 CASEELSE
 RETURN 0
 ENDSELECT
@@ -2991,10 +3004,17 @@ DATAFORM 묘하게 네오딤의 볼은 빵빵했다.
 ENDLIST
 ENDDATA
 CASE "Marryed"
-PRINTFORMW {「오늘도 맛있었어...」
-PRINTFORMW 「여기, 묻었네.」
-PRINTFORMW 네오딤은 당신의 뺨에 묻은 소소를 손가락으로 가져가 핥았다./「...다음에는 같이 할 거야.」
-PRINTFORMW 네오딤은 묘하게 질투심을 느끼는 듯했다.
+    PRINTDATA
+        DATALIST
+            DATA 「오늘도 맛있었어...」
+            DATA 「여기, 묻었네.」
+            DATA 네오딤은 당신의 뺨에 묻은 소소를 손가락으로 가져가 핥았다.
+        ENDLIST
+        DATALIST
+            DATA 「...다음에는 같이 할 거야.」
+            DATA 네오딤은 묘하게 질투심을 느끼는 듯했다.
+        ENDLIST
+    ENDDATA
 CASE "Annoyed"
 PRINTDATAW
 DATALIST

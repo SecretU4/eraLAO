@@ -1971,13 +1971,14 @@ CASE "Fear"
 PRINTFORMW 당신은 베로니카를 껴안았다.
 PRINTFORMW 베로니카는 당황해하며 당신을 밀어냈다.
 PRINTFORMW 「...」
-CASE "Weak"
+CASE "Weak" ;TODO 대사 블럭 임의설정
 PRINTFORMW 당신은 베로니카를 껴안았다.
-PRINTFORMW 베로니카는 당황해하며 당신을 밀어냈다./「...」
+PRINTFORMW 베로니카는 당황해하며 당신을 밀어냈다.
+PRINTW 「...」
 CASE "Break"
 PRINTFORMW 당신은 베로니카를 껴안았다.
 PRINTFORMW 「...」
-PRINTFORMW 그녀는 아무 반응이 없다.}
+PRINTFORMW 그녀는 아무 반응이 없다.
 CASE "regress"
 PRINTDATAW
 DATALIST
@@ -2327,14 +2328,14 @@ RETURN 1
 
 @M_No138_COM12
 SELECTCASE CSTR:1
-CASE "Low"
+CASE "Low" ;TODO 대사 블럭 임의설정
 PRINTDATAW
-DATALIST
-DATAFORM 당신은 베로니카의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
-DATAFORM 베로니카는 당황해하며 당신에게서 떨어졌다.
-DATAFORM {「무..무슨!?」
-DATAFORM 베로니카는 진저리치듯 떨어졌다.
-ENDLIST
+    DATALIST
+        DATAFORM 당신은 베로니카의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+        DATAFORM 베로니카는 당황해하며 당신에게서 떨어졌다.
+        DATAFORM 「무..무슨!?」
+        DATAFORM 베로니카는 진저리치듯 떨어졌다.
+    ENDLIST
 DATALIST
 DATAFORM 당신은 베로니카의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
 DATAFORM 베로니카는 당황해하며 당신에게서 떨어졌다.
@@ -2415,14 +2416,14 @@ DATAFORM 베로니카는 그에 답해 당신에게 똑같이 여러번 돌려�
 DATAFORM 「후후후.」
 ENDLIST
 ENDDATA
-CASE "Annoyed"
+CASE "Annoyed" ;TODO 대사 블럭 임의설정
 PRINTDATAW
-DATALIST
-DATAFORM 당신은 베로니카의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
-DATAFORM 베로니카는 당황해하며 당신에게서 떨어졌다.
-DATAFORM {「무..무슨!?」
-DATAFORM 베로니카는 진저리치듯 떨어졌다.
-ENDLIST
+    DATALIST
+        DATAFORM 당신은 베로니카의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+        DATAFORM 베로니카는 당황해하며 당신에게서 떨어졌다.
+        DATAFORM 「무..무슨!?」
+        DATAFORM 베로니카는 진저리치듯 떨어졌다.
+    ENDLIST
 DATALIST
 DATAFORM 당신은 베로니카의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
 DATAFORM 베로니카는 당황해하며 당신에게서 떨어졌다.
