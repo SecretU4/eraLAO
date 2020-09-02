@@ -160,6 +160,8 @@ SIF GROUPMATCH(ARG, 0,-1)
 	THROW 제외 불가한 {ARG}
 
 ITEM:(ITEM_BIO(NO:ARG)) = -1
+;호감도, 공포, 스트레스값 초기화
+VARSET CFLAG:ARG 0, 1, 4
 FLAG:현캐릭터수 --
 SETBIT CFLAG:이별대상:이별사유, ARG:1
 RETURN 1
