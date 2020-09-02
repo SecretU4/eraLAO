@@ -6009,6 +6009,8 @@ PRINTFORMW 「여행을 떠납시다.」
 PRINTFORMW ....
 PRINTFORMW ..
 PRINTFORMW .
+SIF CFLAG:TARGET:개별그림유무
+    CALL ILLUST(TARGET, 16, "ENDING")
 PRINTFORMW 베로니카 엔딩 No. 3 여행
 PRINTFORMW .
 PRINTFORMW 「성도님!!! 일어나십시오!」
@@ -6116,6 +6118,8 @@ PRINTFORMW 죽었습니다.
 PRINTFORMW ....
 PRINTFORMW ..
 PRINTFORMW .
+SIF CFLAG:TARGET:개별그림유무
+    CALL ILLUST(TARGET, 17, "ENDING")
 PRINTFORMW 베로니카 엔딩 No. 3 달콤한 꿈
 PRINTFORMW ...
 PRINTFORMW 목이 따끔해지는 감각과 함께 순간적으로 정신을 잃을뻔했다. 무슨 일이 있었던 거지?

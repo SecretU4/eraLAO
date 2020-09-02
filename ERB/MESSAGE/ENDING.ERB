@@ -428,7 +428,7 @@ ENDIF
 ;============================================================================================
 @Ending_Result
 #DIM 그림번호
-
+VARSET LOCAL
 ;LOCAL = exc, LOCAL:1 = 1일때 원판에서 추가처리
 SELECTCASE NO:TARGET
     CASE 7 ;리제
@@ -439,15 +439,15 @@ SELECTCASE NO:TARGET
         ELSEIF CFLAG:엔딩플래그 == 3
             그림번호 = 6 ;TODO 아마도 그림 2개인듯
             LOCAL = 1 ;exc = 1
-        ELSEIF CFLAG:캐릭터히든 ;리제 히든
+        ELSEIF CFLAG:엔딩플래그 == 4 ;리제 히든 엔딩
             그림번호 = 11
             FLAG:히든메시지 = TARGET ;exc = 2
-        ELSEIF CFLAG:엔딩플래그 == 4
+        ELSEIF CFLAG:엔딩플래그 == 5 ;리제 엔딩 No. 4
             그림번호 = 12
             LOCAL = 3 ;exc = 3
         ENDIF
     CASE 12 ;소완
-        SIF CFLAG:엔딩플래그 == -1 ;소완 배드
+        SIF CFLAG:엔딩플래그 == 3 ;소완 배드 엔딩
             LOCAL = 1 ;exc = 1
         SIF CFLAG:엔딩플래그 == 1
             그림번호 = 13
@@ -498,13 +498,13 @@ SELECTCASE NO:TARGET
     CASE 123 ;모모
         IF CFLAG:엔딩플래그 == 1
             그림번호 = 7
-        ; ELSEIF 모모는 이제 당신의 속박에서 벗어났다
-        ;     그림번호 = 8
-        ;     LOCAL = 3 ;exc = 3
+        ELSEIF CFLAG:엔딩플래그 == 2
+            그림번호 = 8
+            LOCAL = 3 ;exc = 3
         ENDIF
     CASE 126 ;아자젤
-        ; SIF 중요한 무언가가
-        ;     LOCAL = 3 ;exc = 3
+        SIF CFLAG:엔딩플래그 == 2
+            LOCAL = 3 ;exc = 3
     CASE 132 ;유미
         SIF GROUPMATCH(CFLAG:엔딩플래그, 3,4)
             TALENT:의존증 = 1 ;exc = 6
@@ -514,17 +514,16 @@ SELECTCASE NO:TARGET
         ELSEIF CFLAG:엔딩플래그 == 2
             그림번호 = 15
             LOCAL:1 = 1
+            CFLAG:etc2 = 1 ;etc2 = 베로니카 실종 일수
+            TALENT:실종 = 1 ;exc = 8
         ELSEIF CFLAG:엔딩플래그 == 3
-            ;왜 3번 엔딩이 2개야...
+            ;순차 처리이기에 개인 메시지에서 따로 처리함
             ;여행
                 ; 그림번호 = 16
                 ; LOCAL:1 = 1
             ; 달콤한꿈
                 ; 그림번호 = 17
                 ; LOCAL:1 = 1
-        ; ELSEIF 아침마다 베로니카 수색 이벤트가 진행됩니다
-        ;     CFLAG:etc2 = 1 ;etc2 = 베로니카 실종 일수
-        ;     TALENT:실종 = 1 ;exc = 8
         ENDIF 
 ENDSELECT
 
