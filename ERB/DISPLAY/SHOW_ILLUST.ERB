@@ -4,6 +4,7 @@
 #DIM CSV_ID
 CSV_ID = NO:ARG
 
+VARSET LOCALS
 SIF ARG == -1
     RETURN 0
 
@@ -115,9 +116,61 @@ ELSEIF ARGS == "DATECOM"
             DEBUGPRINTFORML %ARGS% 조건에 맞지 않는 {ARG:1}
             RETURN 0
     ENDSELECT
+
+ELSEIF ARGS == "ENDING"
+    SELECTCASE ARG:1
+        CASE 1 ;메이 1번 엔딩플래그
+            LOCALS = 메이_엔딩
+        CASE 2 ;메이 2번 엔딩플래그
+            LOCALS = 메이_엔딩2
+        CASE 3 ;리제 1번 엔딩플래그
+            LOCALS = 엔딩1
+        CASE 4 ;세이렌 1번 엔딩플래그
+            LOCALS = 엔딩1
+        CASE 5 ;세이렌 2번 엔딩플래그
+            LOCALS = 엔딩2
+        CASE 6 ;리제 3번 엔딩플래그
+            LOCALS = 엔딩2_1
+            LOCALS:1 = 엔딩2_2
+        CASE 7 ;모모 1번 엔딩플래그
+            LOCALS = 엔딩1
+        CASE 8 ;모모 2번 엔딩플래그
+            LOCALS = 엔딩2
+        CASE 9 ;메이 4번 엔딩플래그
+            LOCALS = 엔딩4
+        CASE 10 ;리제 2번 엔딩플래그
+            LOCALS = 엔딩2
+        CASE 11 ;리제 히든 엔딩(4번 엔딩플래그)
+            LOCALS = 히든엔딩
+        CASE 12 ;리제 5번 엔딩플래그(4번 엔딩)
+            LOCALS = 엔딩4
+        CASE 13 ;소완 1번 엔딩플래그
+            LOCALS = 엔딩1
+        CASE 14 ;베로니카 1번 엔딩플래그
+            LOCALS '= "베로니카_엔딩10,25x"
+        CASE 15 ;베로니카 2번 엔딩플래그
+            LOCALS '= "베로니카_엔딩_20,25x"
+        CASE 16 ;베로니카 3번 엔딩플래그 1번째
+            LOCALS '= "베로니카_엔딩3-1"
+        CASE 17 ;베로니카 3번 엔딩플래그 2번째
+            LOCALS '= "베로니카_엔딩3-2"
+    ENDSELECT
+
 ENDIF
 
 CALL PRINT_ILLUST(LOCALS)
+
+;출력해야 하는 이미지가 2개일 때
+IF LOCALS:1 != ""
+    IF ARGS == "ENDING"
+        SELECTCASE ARG:1
+            CASE 6 ;리제 3번 엔딩플래그 
+                PRINTBUTTON @"[계속]", ""
+                INPUTS
+        ENDSELECT
+    ENDIF
+    CALL PRINT_ILLUST(LOCALS:1)
+ENDIF
 RETURN 1
 
 ;ARGS = 출력 대상 파일 문자열
