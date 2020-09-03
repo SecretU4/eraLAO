@@ -198,6 +198,8 @@ TRYCALLFORM M_No{NO:TARGET}_TRAIN_START_{CFLAG:조교여부}
 ;----------------------------------------------
 @BIO_COM_MSG
 #DIMS 꼬릿말
+#DIM 그림번호
+그림번호 = -1
 꼬릿말 = 
 
 CSTR:1 = 
@@ -222,7 +224,7 @@ IF SELECTCOM == 2
     SIF CFLAG:호감도 < 400 && LOCALS == "High"
         LOCALS = Low
 ENDIF
-DEBUGPRINTFORML LOCAL = %LOCALS%, CSTR = %CSTR:1%
+DEBUGPRINTFORML LOCALS = %LOCALS%, CSTR = %CSTR:1%
 
 SIF GROUPMATCH(CSTR:1, "High","Low")
     CSTR:1 = %LOCALS%
@@ -300,20 +302,26 @@ ENDIF
 SIF CSTR:1 == ""
     CSTR:1 = %LOCALS%
 
-IF CFLAG:개별그림유무
-    SELECTCASE NO:TARGET
-
-    ENDSELECT
-    ;미실장이기에 디버그용으로만 열어둠
-    [IF_DEBUG]
-    CALL ILLUST(TARGET, LOCAL, "DATECOM")
-    [ENDIF]
-ENDIF
+;그림 표시 처리
+SELECTCASE NO:TARGET
+    CASE 51 ;메이
+        SIF SELECTCOM == 18 && !TALENT:짜증 && !TALENT:정신쇠약 && TALENT:사랑 ;메이 파후파후, 원본은 연모만.
+            그림번호 = 1
+    CASE 132 ;유미
+        SIF SELECTCOM == 13 && (CSTR:1 == "High" || CSTR:1 == "Affection") ;유미 술배
+            그림번호 = 3
+    ;베로니카 연애커맨드 그림은 해당 캐릭터 메시지 코드 안에서 처리
+    ;그림번호 10: 배설기관, 11: 뚝배기
+ENDSELECT
 
 DEBUGPRINTFORML %CSTR:1%
 
 TRYCALLFORM M_No{NO:TARGET}_COM{SELECTCOM}
 PRINTL
+
+SIF CFLAG:개별그림유무 && 그림번호 != -1
+    CALL ILLUST(TARGET, 그림번호, "DATECOM")
+
 SIF 꼬릿말 != ""
     CALL SPLIT_MSG(꼬릿말, 1)
 
