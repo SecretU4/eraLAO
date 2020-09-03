@@ -117,7 +117,7 @@ SELECTCASE NO:TARGET
         ENDIF
     CASE 91
         SIF !CFLAG:조교여부 ;슬레이프니르 첫 연애
-            CFLAG:개별선택지유무 = 1
+            SETBIT CFLAG:개별선택지, 0
     CASE 108
         IF TALENT:혼인 == 2
             CSTR:1 = Marryed
@@ -132,7 +132,7 @@ IF TALENT:사랑 && CFLAG:고백함 == 0
     IF NO:TARGET == 68 ;에밀리는 정신쇠약 있어도 사랑이면 가능
         SIF TALENT:사랑 == 2
             LOCALS = Confession
-            CFLAG:개별선택지유무 = 1
+            SETBIT CFLAG:개별선택지, 0
     ELSEIF !TALENT:정신쇠약
         LOCALS = Confession
         SELECTCASE NO:TARGET
@@ -155,7 +155,7 @@ ENDIF
 SIF FLAG:히든메시지
     RETURN 0
 
-SIF CFLAG:개별선택지유무 > 0
+SIF GETBIT(CFLAG:개별선택지, 0)
     CALL Personal_MSG_Select(TARGET)
 
 ;그림 표시 설정
@@ -327,6 +327,8 @@ SIF 꼬릿말 != ""
 
 ;----------------------------------------------
 ;question 대용 클래스
+;CFLAG:ARG:개별선택지 bit 0 값이 1일때 진입
+;개별선택지 bit 0 이외 값으로 결과값 저장
 ;ARG = 인게임 캐릭터 ID
 ;----------------------------------------------
 @Personal_MSG_Select(ARG)
@@ -335,23 +337,23 @@ SIF 꼬릿말 != ""
 SELECTCASE NO:대상
     CASE 68 ;에밀리
         ;연애 시작시 고백
-        IF CFLAG:대상:개별선택지유무 == 1
+        IF GETBIT(CFLAG:대상:개별선택지, 0)
             ;일단 초기화
-            CFLAG:대상:개별선택지유무 = -1
+            CLEARBIT CFLAG:대상:개별선택지, 0
 
             SIF CSTR:1 != "Confession"
                 RETURN 0
             CALLFORM M_No{NO:TARGET}_TRAIN_START_1
 
             CALL ASK_M("에밀리의 마음을 받아들였다.", 1, "에밀리의 마음을 거절했다.", 1, "고작 이런 말을 하기 위해 불렀냐고 에밀리를 다그친다.", 1)
-            ;CFLAG:선택지확인 = 에밀리 etc1 고백 가부 판별
+            ;CFLAG:개별선택지 bit 1값 = 에밀리 etc1 고백 가부 판별
             IF RESULT == 0
                 CSTR:대상:1 = Yes
-                SETBIT CFLAG:대상:선택지확인, 0
+                SETBIT CFLAG:대상:개별선택지, 1
                 RETURN 1
             ELSEIF RESULT == 1
                 CSTR:대상:1 = No
-                CFLAG:대상:선택지확인 = CFLAG:대상:선택지확인 ^ 1
+                CLEARBIT CFLAG:대상:개별선택지, 1
                 RETURN 1
             ELSEIF RESULT == 2
                 SETBIT CFLAG:MASTER:엔딩플래그, 22
@@ -360,17 +362,17 @@ SELECTCASE NO:대상
         ENDIF
     CASE 91 ;땡컨
         ;연애 첫시작시 타입 선택
-        IF CFLAG:대상:개별선택지유무 == 1
+        IF GETBIT(CFLAG:대상:개별선택지, 0)
             ;일단 초기화
-            CFLAG:대상:개별선택지유무 = -1
+            CLEARBIT CFLAG:대상:개별선택지, 0
 
             CALLFORM M_No{NO:TARGET}_TRAIN_START_{CFLAG:조교여부}
             PRINTL [1] 슈퍼 스타지!
             PRINTL [2] 블랙리버의 실험기야!
-            WHILE 1 ;CFLAG:선택지확인 = 땡컨 etc4 슈퍼스타 출력 유무
+            WHILE 1 ;CFLAG:개별선택지 bit 1값 = 땡컨 etc4 슈퍼스타 출력 유무
                 INPUT
                 IF RESULT == 1
-                    SETBIT CFLAG:대상:선택지확인, 0
+                    SETBIT CFLAG:대상:개별선택지, 1
                     TALENT:대상:군인 = 0
                     TALENT:대상:슈퍼스타 = 1
                     ABL:대상:전투lv = 0
@@ -378,7 +380,7 @@ SELECTCASE NO:대상
                     CSTR:대상:1 = Star
                     RETURN 1
                 ELSEIF RESULT == 2
-                    CFLAG:대상:선택지확인 = CFLAG:대상:선택지확인 ^ 1
+                    CLEARBIT CFLAG:대상:개별선택지, 1
                     CSTR:대상:1 = BR
                     RETURN 1
                 ENDIF
