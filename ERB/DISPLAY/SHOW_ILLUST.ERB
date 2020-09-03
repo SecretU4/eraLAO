@@ -106,11 +106,11 @@ ELSEIF ARGS == "DATECOM"
             ELSE
                 RETURN 0
             ENDIF
-        ;순차대사 이식시 추가바람
-        ;배설기관
-        ;LOCALS = X문은_배설기관_1
-        ;불경한
-        ;LOCALS = 뚝배기
+        ;베로니카 연애커맨드 일부 경우, 임의 번호 산정
+        CASE 10 ;배설기관
+            LOCALS = X문은_배설기관_1
+        CASE 11 ;불경한
+            LOCALS = 뚝배기
         CASEELSE
             DEBUGPRINTFORML %ARGS% 조건에 맞지 않는 {ARG:1}
             RETURN 0

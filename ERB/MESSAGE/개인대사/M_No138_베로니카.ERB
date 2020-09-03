@@ -812,81 +812,99 @@ DATAFORM 아, 아자젤님께선 어째선지 그 자매님이 만화를 봐도 
 ENDLIST
 ENDDATA
 CASE "Affection"
-PRINTDATAW
-DATALIST
-DATAFORM 「더는 제 눈을 피하지 않으시군요,
-DATAFORM 성도님은 교리의 성자와는... 거리가 많이 떨어져 있지만,
-DATAFORM 제가 본 그 어떤 사람보다 경건한 것 같습니다.」
-DATAFORM 「아마도요...」
-ENDLIST
-DATALIST
-DATAFORM 「언제나 아자젤님을 동경하며 그분을 흉내 내었지만, 신도들은 저를 두려워할 뿐,
-DATAFORM 따라 할 수 없었습니다.」
-DATAFORM 「울며 아자젤님께 이를 말씀드리니, 망치는 모루를 때릴 때 소리가 난다 하셨습니다.」
-DATAFORM 「힘껏 친다면.. 제 기도는 신께 닿을 수 있을까요?」
-DATAFORM 그녀의 궁상스러운 모습을 보며 당신은 그게 뭔소리냐고 했다.
-DATAFORM 「각자 역할이 있단 소리 아니겠어요?」
-ENDLIST
-DATALIST
-DATAFORM 베로니카에게 코헤이교의 평판에 대해 말해주었다.
-DATAFORM 「성도님, 이단의 말에 귀를 기울이지 마십시오.
-DATAFORM 그들은 종말을 대비하는 자를 이단이라 말하며,
-DATAFORM 듣기 좋은 사랑과 평화만을 이야기하고 눈먼 자를 현혹 할 뿐입니다.」
-DATAFORM 「가시관을 쓴 자가 어찌 사랑을 모르며, 십자가를 든 자가 어찌 평화를 잊겠습니까.」
-DATAFORM 「겨울이 가고 모두가 춤과 노래로 축제를 즐길 때,
-DATAFORM 제집 담장을 허물어 강둑을 쌓는 자에게 돌을 던지면 안 됩니다.」
-DATAFORM 「여름이 오면, 천사는 모두를 구원할 것이나...」
-DATAFORM .
-DATAFORM 「까마귀는 손가락질 한 자들을 가려낼 것입니다.」
-ENDLIST
-DATALIST
-DATAFORM 당신은 그녀와 만화에 대해서 얘기했다.
-DATAFORM 「수녀가 주인공이면 왠지 이입이 잘됩니다.」
-DATAFORM 「성물을 들고 대적자와 마주하지않아도, 정의로운 신의 사도가 된 것처럼 흥분되는 거시에요.」
-ENDLIST
-DATALIST
-DATAFORM 당신은 그녀와 만화에 대해서 얘기했다.
-DATAFORM 「만화 속의 수녀는 이단에 가깝게 묘사된 경우가 많았지만,
-DATAFORM 동시에 정의롭게 그려진 경우가 많아서 혼란스럽군요.」
-ENDLIST
-DATALIST
-DATAFORM 당신은 그녀와 함께 모니터 앞에서 만화를 봤다.
-DATAFORM 「tag : nun」
-DATAFORM 「...이것은?」
-DATAFORM 하필 스크린에는 그녀가 감당하기 힘든 수녀물이 비쳤다.
-DATAFORM 「X문은 배설기관! 가지고 노는 장난감이 아닙니다!!!」
-DATAFORM 베로니카는 자리에서 펄쩍 뛰며 괜히 당신에게 화를 내었다.
-ENDLIST
-DATALIST
-DATAFORM 「성도님은 신을 믿습니까?」
-DATAFORM 「믿음 없는 자는 죄인이 아니나...」
-DATAFORM 1. 당신은 돈을 믿는다고 했다.
-DATAFORM 2. 당신은 자신을 믿는다고 했다.
-DATAFORM 3. 당신은 베로니카를 믿는다고 했다.
-ENDLIST
-DATALIST
-DATAFORM 「괴물의 잇따른 공습으로 세상이 혼란스럽습니다. 성도님은 걱정하지 마시길.」
-DATAFORM 「제가 바라온바, 종말이 눈앞까지 닥쳐와도
-DATAFORM 성도님만은 지키겠습니다.」
-ENDLIST
-DATALIST
-DATAFORM 「정갈함을 유지하기 위해서 교단의 정복 외에는 착용하지 않습니다.」
-DATAFORM 베로니카는 부끄러운지 한쪽 눈을 찡그린 채로 치맛자락을 잡았다 놨다했다.
-DATAFORM 「...확인해 보시겠습니까?」
-DATAFORM 이후 당신은 메챠쿠챠 뽑혔다.
-ENDLIST
-DATALIST
-DATAFORM 「욕망 때문에 타락하는 건 주의하셔야 합니다.
-DATAFORM 힘드시면 제가 도와드릴 수도 있겠군요.」
-DATAFORM 베로니카는 대뜸 무릎을 꿇고, 희고 기다란 손가락을 뻗어 당신의 허리춤을 감싸왔다.
-DATAFORM 「가만히 있어 보세요, 잠깐 시험해 볼 게 있습니다.」
-DATAFORM 당신은 메챠쿠챠 뽑혔다.
-ENDLIST
-DATALIST
-DATAFORM 「투쟁하는 인간은 아름답습니다.
-DATAFORM 성도님, 종말을 막기 위해 함께 힘을 기르지 않겠습니까?」
-ENDLIST
-ENDDATA
+    A = RAND:11
+    IF A == 0
+        PRINTW 「더는 제 눈을 피하지 않으시군요,
+        PRINTW 성도님은 교리의 성자와는... 거리가 많이 떨어져 있지만,
+        PRINTW 제가 본 그 어떤 사람보다 경건한 것 같습니다.」
+        PRINTW 「아마도요...」
+    ELSEIF A == 1
+        PRINTW 「언제나 아자젤님을 동경하며 그분을 흉내 내었지만, 신도들은 저를 두려워할 뿐,
+        PRINTW 따라 할 수 없었습니다.」
+        PRINTW 「울며 아자젤님께 이를 말씀드리니, 망치는 모루를 때릴 때 소리가 난다 하셨습니다.」
+        PRINTW 「힘껏 친다면.. 제 기도는 신께 닿을 수 있을까요?」
+        PRINTW 그녀의 궁상스러운 모습을 보며 당신은 그게 뭔소리냐고 했다.
+        PRINTW 「각자 역할이 있단 소리 아니겠어요?」
+    ELSEIF A == 2
+        PRINTW 베로니카에게 코헤이교의 평판에 대해 말해주었다.
+        PRINTW 「성도님, 이단의 말에 귀를 기울이지 마십시오.
+        PRINTW 그들은 종말을 대비하는 자를 이단이라 말하며,
+        PRINTW 듣기 좋은 사랑과 평화만을 이야기하고 눈먼 자를 현혹 할 뿐입니다.」
+        PRINTW 「가시관을 쓴 자가 어찌 사랑을 모르며, 십자가를 든 자가 어찌 평화를 잊겠습니까.」
+        PRINTW 「겨울이 가고 모두가 춤과 노래로 축제를 즐길 때,
+        PRINTW 제집 담장을 허물어 강둑을 쌓는 자에게 돌을 던지면 안 됩니다.」
+        PRINTW 「여름이 오면, 천사는 모두를 구원할 것이나...」
+        PRINTW .
+        PRINTW 「까마귀는 손가락질 한 자들을 가려낼 것입니다.」
+    ELSEIF A == 3
+        PRINTW 당신은 그녀와 만화에 대해서 얘기했다.
+        PRINTW 「수녀가 주인공이면 왠지 이입이 잘됩니다.」
+        PRINTW 「성물을 들고 대적자와 마주하지않아도, 정의로운 신의 사도가 된 것처럼 흥분되는 거시에요.」
+    ELSEIF A == 4
+        PRINTW 당신은 그녀와 만화에 대해서 얘기했다.
+        PRINTW 「만화 속의 수녀는 이단에 가깝게 묘사된 경우가 많았지만,
+        PRINTW 동시에 정의롭게 그려진 경우가 많아서 혼란스럽군요.」
+    ELSEIF A == 5
+        PRINTW 당신은 그녀와 함께 모니터 앞에서 만화를 봤다.
+        PRINTW 「tag : nun」
+        PRINTW 「...이것은?」
+        PRINTW 하필 스크린에는 그녀가 감당하기 힘든 수녀물이 비쳤다.
+        SIF CFLAG:TARGET:개별그림유무
+            CALL ILLUST(TARGET, 10, "DATECOM")
+        PRINTW 「X문은 배설기관! 가지고 노는 장난감이 아닙니다!!!」
+        PRINTW 베로니카는 자리에서 펄쩍 뛰며 괜히 당신에게 화를 내었다.
+    ELSEIF A == 6
+        PRINTW 「성도님은 신을 믿습니까?」
+        PRINTW 「믿음 없는 자는 죄인이 아니나...」
+        PRINTL [1] 당신은 돈을 믿는다고 했다.
+        PRINTL [2] 당신은 자신을 믿는다고 했다.
+        PRINTL [3] 당신은 베로니카를 믿는다고 했다.
+        WHILE 1 ; 선택지 따라 다른 대사 출력
+            INPUT
+            SELECTCASE RESULT
+                CASE 1
+                    PRINTW 당신은 황금만능을 설파했다.
+                    PRINTW 「확실히 이 만남도 성도님이 금전을 기부해서 이루어졌군요.
+                    PRINTW 하지만 그것보다 더 중요한 것이 있습니다.」
+                    BREAK
+                CASE 2
+                    PRINTW 당신은 스스로를 믿는다고 했다.
+                    PRINTW 「...」
+                    PRINTW 「저도 성도님을 믿습니다.
+                    PRINTW 언제까지고 변치 말아 주시길.」
+                    BREAK
+                CASE 3
+                    PRINTW 당신은 내가 믿는 건 베로니카라고 하며 대뜸 그녀 앞에서 손 모아 기도를 하는 시늉을 했다.
+                    PRINTW 「무, 무슨 짓입니까! 아자젤이시여!!
+                    PRINTW 이러시면 제가 책잡힙니다!」
+                    PRINTW 한동안 얼굴을 붉히며 횡설수설한 베로니카는 겨우 안정을 되찾았다.
+                    PRINTW 「으읏... 좋은 뜻으로 생각하겠습니다.」
+                    PRINTW 「...고맙습니다.」
+                    BREAK
+                CASEELSE
+                    PRINTW 주어진 선택지 중에서 선택해주세요.
+                    CLEARLINE 1
+            ENDSELECT
+        WEND
+    ELSEIF A == 7
+        PRINTW 「괴물의 잇따른 공습으로 세상이 혼란스럽습니다. 성도님은 걱정하지 마시길.」
+        PRINTW 「제가 바라온바, 종말이 눈앞까지 닥쳐와도
+        PRINTW 성도님만은 지키겠습니다.」
+    ELSEIF A == 8
+        PRINTW 「정갈함을 유지하기 위해서 교단의 정복 외에는 착용하지 않습니다.」
+        PRINTW 베로니카는 부끄러운지 한쪽 눈을 찡그린 채로 치맛자락을 잡았다 놨다했다.
+        PRINTW 「...확인해 보시겠습니까?」
+        PRINTW 이후 당신은 메챠쿠챠 뽑혔다.
+    ELSEIF A == 9
+        PRINTW 「욕망 때문에 타락하는 건 주의하셔야 합니다.
+        PRINTW 힘드시면 제가 도와드릴 수도 있겠군요.」
+        PRINTW 베로니카는 대뜸 무릎을 꿇고, 희고 기다란 손가락을 뻗어 당신의 허리춤을 감싸왔다.
+        PRINTW 「가만히 있어 보세요, 잠깐 시험해 볼 게 있습니다.」
+        PRINTW 당신은 메챠쿠챠 뽑혔다.
+    ELSEIF A == 10
+        PRINTW 「투쟁하는 인간은 아름답습니다.
+        PRINTW 성도님, 종말을 막기 위해 함께 힘을 기르지 않겠습니까?」
+    ENDIF
 CASE "Marryed"
 PRINTDATAW
 DATALIST
@@ -1476,36 +1494,21 @@ RETURN 1
 
 @M_No138_COM6
 SELECTCASE CSTR:1
-CASE "Low"
-PRINTDATAW
-DATALIST
-DATAFORM 당신은 베로니카의 옆구리를 찔렀다.
-DATAFORM 베로니카는 놀라 비명을 질렀다.
-DATAFORM 「으잇! 갑자기 무슨 짓입니까!?」
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 옆구리를 찔렀다.
-DATAFORM 「이 불경한 자가!!」
-DATAFORM 베로니카는 반사적으로 당신의 머리를 책으로 내려쳤다.
-DATAFORM 눈알이 튀어나올 것 같다.
-DATAFORM 「앗! 성도니이이임!!!」
-ENDLIST
-ENDDATA
-CASE "High"
-PRINTDATAW
-DATALIST
-DATAFORM 당신은 베로니카의 옆구리를 찔렀다.
-DATAFORM 베로니카는 놀라 비명을 질렀다.
-DATAFORM 「으잇! 갑자기 무슨 짓입니까!?」
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 옆구리를 찔렀다.
-DATAFORM 「이 불경한 자가!!」
-DATAFORM 베로니카는 반사적으로 당신의 머리를 책으로 내려쳤다.
-DATAFORM 눈알이 튀어나올 것 같다.
-DATAFORM 「앗! 성도니이이임!!!」
-ENDLIST
-ENDDATA
+CASE "Low", "High" ;원판 내용물이 동일하기에 합침
+    A = RAND:2
+    IF A == 0
+        PRINTW 당신은 베로니카의 옆구리를 찔렀다.
+        PRINTW 베로니카는 놀라 비명을 질렀다.
+        PRINTW 「으잇! 갑자기 무슨 짓입니까!?」
+    ELSEIF A == 1
+        PRINTW 당신은 베로니카의 옆구리를 찔렀다.
+        PRINTW 「이 불경한 자가!!」
+        SIF CFLAG:TARGET:개별그림유무
+            CALL ILLUST(TARGET, 11, "DATECOM")
+        PRINTW 베로니카는 반사적으로 당신의 머리를 책으로 내려쳤다.
+        PRINTW 눈알이 튀어나올 것 같다.
+        PRINTW 「앗! 성도니이이임!!!」
+    ENDIF
 CASE "Affection"
 PRINTDATAW
 DATALIST
@@ -1534,51 +1537,21 @@ DATAFORM 베로니카는 반사적으로 당신의 머리를 책으로 내려치
 DATAFORM 「예고는 하시고 해주십시오...」
 ENDLIST
 ENDDATA
-CASE "Annoyed"
-PRINTDATAW
-DATALIST
-DATAFORM 당신은 베로니카의 옆구리를 찔렀다.
-DATAFORM 베로니카는 놀라 비명을 질렀다.
-DATAFORM 「으잇! 갑자기 무슨 짓입니까!?」
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 옆구리를 찔렀다.
-DATAFORM 「이 불경한 자가!!」
-DATAFORM 베로니카는 반사적으로 당신의 머리를 책으로 내려쳤다.
-DATAFORM 눈알이 튀어나올 것 같다.
-DATAFORM 「...자업자득입니다.」
-ENDLIST
-ENDDATA
-CASE "Fear"
-PRINTDATAW
-DATALIST
-DATAFORM 당신은 베로니카의 옆구리를 찔렀다.
-DATAFORM 베로니카는 놀라 비명을 질렀다.
-DATAFORM 「으잇! 갑자기 무슨 짓입니까!?」
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 옆구리를 찔렀다.
-DATAFORM 「이 불경한 자가!!」
-DATAFORM 베로니카는 반사적으로 당신의 머리를 책으로 내려쳤다.
-DATAFORM 눈알이 튀어나올 것 같다.
-DATAFORM 「...자업자득입니다.」
-ENDLIST
-ENDDATA
-CASE "Weak"
-PRINTDATAW
-DATALIST
-DATAFORM 당신은 베로니카의 옆구리를 찔렀다.
-DATAFORM 베로니카는 놀라 비명을 질렀다.
-DATAFORM 「으잇! 갑자기 무슨 짓입니까!?」
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 옆구리를 찔렀다.
-DATAFORM 「이 불경한 자가!!」
-DATAFORM 베로니카는 반사적으로 당신의 머리를 책으로 내려쳤다.
-DATAFORM 눈알이 튀어나올 것 같다.
-DATAFORM 「...자업자득입니다.」
-ENDLIST
-ENDDATA
+CASE "Annoyed", "Fear", "Weak" ;원판 내용물이 동일하기에 합침
+    A = RAND:2
+    IF A == 0
+        PRINTW 당신은 베로니카의 옆구리를 찔렀다.
+        PRINTW 베로니카는 놀라 비명을 질렀다.
+        PRINTW 「으잇! 갑자기 무슨 짓입니까!?」
+    ELSEIF A == 1
+        PRINTW 당신은 베로니카의 옆구리를 찔렀다.
+        PRINTW 「이 불경한 자가!!」
+        SIF CFLAG:TARGET:개별그림유무
+            CALL ILLUST(TARGET, 11, "DATECOM")
+        PRINTW 베로니카는 반사적으로 당신의 머리를 책으로 내려쳤다.
+        PRINTW 눈알이 튀어나올 것 같다.
+        PRINTW 「...자업자득입니다.」
+    ENDIF
 CASE "Break"
 PRINTFORMW 당신은 베로니카의 옆구리를 찔렀다.
 PRINTFORMW 「...」
@@ -2475,58 +2448,31 @@ RETURN 1
 
 @M_No138_COM13
 SELECTCASE CSTR:1
-CASE "Low"
-PRINTDATAW
-DATALIST
-DATAFORM 당신은 베로니카의 배를 주물럭거렸다.
-DATAFORM 베로니카는 깜짝 놀라 소리 내었다.
-DATAFORM 「성도님!」
-DATAFORM 「무...무슨 짓입니까!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 배를 주물럭거렸다.
-DATAFORM 베로니카는 깜짝 놀라 소리 내었다.
-DATAFORM 「아으으읏!」
-DATAFORM 「배는 왜 주물럭거리시는 겁니까?」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 배를 주물럭거렸다.
-DATAFORM 베로니카는 깜짝 놀라 소리 내었다.
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-ENDDATA
-CASE "High"
-PRINTDATAW
-DATALIST
-DATAFORM 당신은 베로니카의 배를 주물럭거렸다.
-DATAFORM 베로니카는 깜짝 놀라 소리 내었다.
-DATAFORM 「성도님!」
-DATAFORM 「무...무슨 짓입니까!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 배를 주물럭거렸다.
-DATAFORM 베로니카는 깜짝 놀라 소리 내었다.
-DATAFORM 「아으으읏!」
-DATAFORM 「배는 왜 주물럭거리시는 겁니까?」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 배를 주물럭거렸다.
-DATAFORM 베로니카는 깜짝 놀라 소리 내었다.
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-ENDDATA
+CASE "Low" ,"High", "Annoyed" ;원판 내용물이 동일하기에 합침
+    A = RAND:3
+    IF A == 0
+        PRINTW 당신은 베로니카의 배를 주물럭거렸다.
+        PRINTW 베로니카는 깜짝 놀라 소리 내었다.
+        PRINTW 「성도님!」
+        PRINTW 「무...무슨 짓입니까!」
+        PRINTW 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
+        PRINTW 당신은 눈알이 튀어나올 뻔했다.
+    ELSEIF A == 1
+        PRINTW 당신은 베로니카의 배를 주물럭거렸다.
+        PRINTW 베로니카는 깜짝 놀라 소리 내었다.
+        PRINTW 「아으으읏!」
+        PRINTW 「배는 왜 주물럭거리시는 겁니까?」
+        PRINTW 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
+        PRINTW 당신은 눈알이 튀어나올 뻔했다.
+    ELSEIF A == 2
+        PRINTW 당신은 베로니카의 배를 주물럭거렸다.
+        PRINTW 베로니카는 깜짝 놀라 소리 내었다.
+        PRINTW 「이 불경한 자가!!!」
+                SIF CFLAG:TARGET:개별그림유무
+                    CALL ILLUST(TARGET, 11, "DATECOM")
+        PRINTW 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
+        PRINTW 당신은 눈알이 튀어나올 뻔했다.
+    ENDIF
 CASE "Affection"
 PRINTDATAW
 DATALIST
@@ -2585,32 +2531,6 @@ DATAFORM 「후후, 농담입니다.」
 DATAFORM 베로니카는 기분 좋은듯한 얼굴로 당신의 손길을 느끼고 있다.
 ENDLIST
 ENDDATA
-CASE "Annoyed"
-PRINTDATAW
-DATALIST
-DATAFORM 당신은 베로니카의 배를 주물럭거렸다.
-DATAFORM 베로니카는 깜짝 놀라 소리 내었다.
-DATAFORM 「성도님!」
-DATAFORM 「무...무슨 짓입니까!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 배를 주물럭거렸다.
-DATAFORM 베로니카는 깜짝 놀라 소리 내었다.
-DATAFORM 「아으으읏!」
-DATAFORM 「배는 왜 주물럭거리시는 겁니까?」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 배를 주물럭거렸다.
-DATAFORM 베로니카는 깜짝 놀라 소리 내었다.
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-ENDDATA
 CASE "Fear"
 PRINTFORMW 당신은 베로니카의 배를 주물럭거렸다.
 PRINTFORMW 「...」
@@ -2654,53 +2574,51 @@ RETURN 1
 
 @M_No138_COM14
 SELECTCASE CSTR:1
-CASE "Low"
-PRINTDATAW
-DATALIST
-DATAFORM 당신은 베로니카의 귀를 살짝 깨물었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「히이익!」
-DATAFORM 「무슨 짓입니까!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 귀를 살짝 깨물었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「성도님, 방금 그거 공격한 거로 봐도 되겠습니까?」
-DATAFORM 당신은 살기를 느꼈다.
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 귀를 살짝 깨물었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-ENDDATA
+CASE "Low", "Annoyed" ;원판 내용물이 동일하기에 합침
+    A = RAND:3
+    IF A == 0
+        PRINTW 당신은 베로니카의 귀를 살짝 깨물었다.
+        PRINTW 베로니카는 비명에 가까운 소리를 내었다.
+        PRINTW 「히이익!」
+        PRINTW 「무슨 짓입니까!」
+        PRINTW 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
+        PRINTW 당신은 눈알이 튀어나올 뻔했다.
+    ELSEIF A == 1
+        PRINTW 당신은 베로니카의 귀를 살짝 깨물었다.
+        PRINTW 베로니카는 비명에 가까운 소리를 내었다.
+        PRINTW 「성도님, 방금 그거 공격한 거로 봐도 되겠습니까?」
+        PRINTW 당신은 살기를 느꼈다.
+    ELSEIF A == 2
+        PRINTW 당신은 베로니카의 귀를 살짝 깨물었다.
+        PRINTW 베로니카는 비명에 가까운 소리를 내었다.
+        PRINTW 「이 불경한 자가!!!」
+        SIF CFLAG:TARGET:개별그림유무
+            CALL ILLUST(TARGET, 11, "DATECOM")
+        PRINTW 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
+        PRINTW 당신은 눈알이 튀어나올 뻔했다.
+    ENDIF
 CASE "High"
-PRINTDATAW
-DATALIST
-DATAFORM 당신은 베로니카의 귀를 살짝 깨물었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「히이익!」
-DATAFORM 「무슨 짓입니까!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 귀를 살짝 깨물었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「성도님, 방금 그거 공격한 거로 봐도 되겠습니까?」
-DATAFORM 당신은 살기 느꼈다.
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 귀를 살짝 깨물었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 반격하듯, 당신의 귀를 살짝 깨물었다.
-ENDLIST
-ENDDATA
+    A = RAND:3
+    IF A == 0
+        PRINTW 당신은 베로니카의 귀를 살짝 깨물었다.
+        PRINTW 베로니카는 비명에 가까운 소리를 내었다.
+        PRINTW 「히이익!」
+        PRINTW 「무슨 짓입니까!」
+        PRINTW 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
+        PRINTW 당신은 눈알이 튀어나올 뻔했다.
+    ELSEIF A == 1
+        PRINTW 당신은 베로니카의 귀를 살짝 깨물었다.
+        PRINTW 베로니카는 비명에 가까운 소리를 내었다.
+        PRINTW 「성도님, 방금 그거 공격한 거로 봐도 되겠습니까?」
+        PRINTW 당신은 살기 느꼈다.
+    ELSEIF A == 2
+        PRINTW 당신은 베로니카의 귀를 살짝 깨물었다.
+        PRINTW 베로니카는 비명에 가까운 소리를 내었다.
+        PRINTW 「이 불경한 자가!!!」
+        SIF CFLAG:TARGET:개별그림유무
+            CALL ILLUST(TARGET, 11, "DATECOM")
+        PRINTW 베로니카는 반격하듯, 당신의 귀를 살짝 깨물었다.
+    ENDIF
 CASE "Affection"
 PRINTDATAW
 DATALIST
@@ -2737,30 +2655,6 @@ DATALIST
 DATAFORM 당신은 베로니카의 귀를 살짝 깨물었다.
 DATAFORM 「이 불경한...」
 DATAFORM 베로니카는 반격하듯, 당신의 귀를 살짝 깨물었다.
-ENDLIST
-ENDDATA
-CASE "Annoyed"
-PRINTDATAW
-DATALIST
-DATAFORM 당신은 베로니카의 귀를 살짝 깨물었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「히이익!」
-DATAFORM 「무슨 짓입니까!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 귀를 살짝 깨물었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「성도님, 방금 그거 공격한 거로 봐도 되겠습니까?」
-DATAFORM 당신은 살기를 느꼈다.
-ENDLIST
-DATALIST
-DATAFORM 당신은 베로니카의 귀를 살짝 깨물었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
 ENDLIST
 ENDDATA
 CASE "Fear"
@@ -2932,42 +2826,24 @@ RETURN 1
 
 @M_No138_COM16
 SELECTCASE CSTR:1
-CASE "Low"
-PRINTDATAW
-DATALIST
-DATAFORM 베로니카의 목에 혀를 기었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「성도님!? 미치셨습니까!」
-DATAFORM 베로니카는 황급히 당신에게 멀찍이 떨어져 갔다.
-DATAFORM 「한 번 더 이러시면 용서치 않겠습니다.」
-ENDLIST
-DATALIST
-DATAFORM 베로니카의 목에 혀를 기었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「하읏!」
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-ENDDATA
-CASE "High"
-PRINTDATAW
-DATALIST
-DATAFORM 베로니카의 목에 혀를 기었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「성도님!? 미치셨습니까!」
-DATAFORM 베로니카는 황급히 당신에게 멀찍이 떨어져 갔다.
-DATAFORM 「한 번 더 이러시면 용서치 않겠습니다.」
-ENDLIST
-DATALIST
-DATAFORM 베로니카의 목에 혀를 기었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「하읏!」
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-ENDDATA
+CASE "Low", "High", "Annoyed", "Fear" ;원판 내용물이 동일하기에 합침
+    A = RAND:2
+    IF A == 0
+        PRINTW 베로니카의 목에 혀를 기었다.
+        PRINTW 베로니카는 비명에 가까운 소리를 내었다.
+        PRINTW 「성도님!? 미치셨습니까!」
+        PRINTW 베로니카는 황급히 당신에게 멀찍이 떨어져 갔다.
+        PRINTW 「한 번 더 이러시면 용서치 않겠습니다.」
+    ELSEIF A == 1
+        PRINTW 베로니카의 목에 혀를 기었다.
+        PRINTW 베로니카는 비명에 가까운 소리를 내었다.
+        PRINTW 「하읏!」
+        PRINTW 「이 불경한 자가!!!」
+        SIF CFLAG:TARGET:개별그림유무
+            CALL ILLUST(TARGET, 11, "DATECOM")
+        PRINTW 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
+        PRINTW 당신은 눈알이 튀어나올 뻔했다.
+    ENDIF
 CASE "Affection"
 PRINTDATAW
 DATALIST
@@ -3012,42 +2888,6 @@ DATAFORM 베로니카의 목에 혀를 기었다.
 DATAFORM 베로니카는 흠칫 소리를 내었다.
 DATAFORM 「하아.. 이제... 아래로 갈까요, 위로 갈까요?」
 DATAFORM 베로니카는 궁금해 죽겠다는 듯 당신을 바라보았다.
-ENDLIST
-ENDDATA
-CASE "Annoyed"
-PRINTDATAW
-DATALIST
-DATAFORM 베로니카의 목에 혀를 기었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「성도님!? 미치셨습니까!」
-DATAFORM 베로니카는 황급히 당신에게 멀찍이 떨어져 갔다.
-DATAFORM 「한 번 더 이러시면 용서치 않겠습니다.」
-ENDLIST
-DATALIST
-DATAFORM 베로니카의 목에 혀를 기었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「하읏!」
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-ENDDATA
-CASE "Fear"
-PRINTDATAW
-DATALIST
-DATAFORM 베로니카의 목에 혀를 기었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「성도님!? 미치셨습니까!」
-DATAFORM 베로니카는 황급히 당신에게 멀찍이 떨어져 갔다.
-DATAFORM 「한 번 더 이러시면 용서치 않겠습니다.」
-ENDLIST
-DATALIST
-DATAFORM 베로니카의 목에 혀를 기었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「하읏!」
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
 ENDLIST
 ENDDATA
 CASE "Weak"
@@ -3084,42 +2924,24 @@ RETURN 1
 
 @M_No138_COM17
 SELECTCASE CSTR:1
-CASE "Low"
-PRINTDATAW
-DATALIST
-DATAFORM 베로니카의 등을 손가락으로 훑었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「성도님!?」
-DATAFORM 베로니카는 정색하며 황급히 당신에게 멀찍이 떨어져 갔다.
-DATAFORM 「장난이 심하십니다.」
-ENDLIST
-DATALIST
-DATAFORM 베로니카의 등을 손가락으로 훑었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「하읏!」
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-ENDDATA
-CASE "High"
-PRINTDATAW
-DATALIST
-DATAFORM 베로니카의 등을 손가락으로 훑었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「성도님!?」
-DATAFORM 베로니카는 정색하며 황급히 당신에게 멀찍이 떨어져 갔다.
-DATAFORM 「장난이 심하십니다.」
-ENDLIST
-DATALIST
-DATAFORM 베로니카의 등을 손가락으로 훑었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「하읏!」
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-ENDDATA
+CASE "Low", "High", "Annoyed", "Fear" ;원판 내용물이 동일하기에 합침
+    A = RAND:2
+    IF A == 0
+    PRINTW 베로니카의 등을 손가락으로 훑었다.
+    PRINTW 베로니카는 비명에 가까운 소리를 내었다.
+    PRINTW 「성도님!?」
+    PRINTW 베로니카는 정색하며 황급히 당신에게 멀찍이 떨어져 갔다.
+    PRINTW 「장난이 심하십니다.」
+    ELSEIF A == 1
+    PRINTW 베로니카의 등을 손가락으로 훑었다.
+    PRINTW 베로니카는 비명에 가까운 소리를 내었다.
+    PRINTW 「하읏!」
+    PRINTW 「이 불경한 자가!!!」
+    SIF CFLAG:TARGET:개별그림유무
+        CALL ILLUST(TARGET, 11, "DATECOM")
+    PRINTW 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
+    PRINTW 당신은 눈알이 튀어나올 뻔했다.
+    ENDIF
 CASE "Affection"
 PRINTDATAW
 DATALIST
@@ -3150,42 +2972,6 @@ DATAFORM 베로니카는 간지러워하며 몸을 비틀었다.
 DATAFORM 「하읏!」
 DATAFORM 「깜짝이야.」
 DATAFORM 베로니카는 반사적으로 당신의 머리를 책으로 힘껏 내려칠 뻔했다.
-ENDLIST
-ENDDATA
-CASE "Annoyed"
-PRINTDATAW
-DATALIST
-DATAFORM 베로니카의 등을 손가락으로 훑었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「성도님!?」
-DATAFORM 베로니카는 정색하며 황급히 당신에게 멀찍이 떨어져 갔다.
-DATAFORM 「장난이 심하십니다.」
-ENDLIST
-DATALIST
-DATAFORM 베로니카의 등을 손가락으로 훑었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「하읏!」
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-ENDDATA
-CASE "Fear"
-PRINTDATAW
-DATALIST
-DATAFORM 베로니카의 등을 손가락으로 훑었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「성도님!?」
-DATAFORM 베로니카는 정색하며 황급히 당신에게 멀찍이 떨어져 갔다.
-DATAFORM 「장난이 심하십니다.」
-ENDLIST
-DATALIST
-DATAFORM 베로니카의 등을 손가락으로 훑었다.
-DATAFORM 베로니카는 비명에 가까운 소리를 내었다.
-DATAFORM 「하읏!」
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
 ENDLIST
 ENDDATA
 CASE "Weak"
@@ -3222,42 +3008,24 @@ RETURN 1
 
 @M_No138_COM18
 SELECTCASE CSTR:1
-CASE "Low"
-PRINTDATAW
-DATALIST
-DATAFORM 베로니카의 가슴에 얼굴을 묻었다.
-DATAFORM 베로니카는 당신을 떨쳐냈다.
-DATAFORM 「성도님...」
-DATAFORM 「죽고 싶으신 겁니까?」
-DATAFORM 베로니카의 두 눈이 붉게 번들거렸다.
-ENDLIST
-DATALIST
-DATAFORM 베로니카의 가슴에 얼굴을 묻었다.
-DATAFORM 베로니카는 당신을 떨쳐냈다.
-DATAFORM 「아읏!」
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-ENDDATA
-CASE "High"
-PRINTDATAW
-DATALIST
-DATAFORM 베로니카의 가슴에 얼굴을 묻었다.
-DATAFORM 베로니카는 당신을 떨쳐냈다.
-DATAFORM 「성도님...」
-DATAFORM 「죽고 싶으신 겁니까?」
-DATAFORM 베로니카의 두 눈이 붉게 번들거렸다.
-ENDLIST
-DATALIST
-DATAFORM 베로니카의 가슴에 얼굴을 묻었다.
-DATAFORM 베로니카는 당신을 떨쳐냈다.
-DATAFORM 「아읏!」
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-ENDDATA
+CASE "Low", "High", "Annoyed", "Fear" ;원판 내용물이 동일하기에 합침
+    A = RAND:2
+    IF A == 0
+    PRINTW 베로니카의 가슴에 얼굴을 묻었다.
+    PRINTW 베로니카는 당신을 떨쳐냈다.
+    PRINTW 「성도님...」
+    PRINTW 「죽고 싶으신 겁니까?」
+    PRINTW 베로니카의 두 눈이 붉게 번들거렸다.
+    ELSEIF A == 1
+    PRINTW 베로니카의 가슴에 얼굴을 묻었다.
+    PRINTW 베로니카는 당신을 떨쳐냈다.
+    PRINTW 「아읏!」
+    PRINTW 「이 불경한 자가!!!」
+    SIF CFLAG:TARGET:개별그림유무
+        CALL ILLUST(TARGET, 11, "DATECOM")
+    PRINTW 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
+    PRINTW 당신은 눈알이 튀어나올 뻔했다.
+    ENDIF
 CASE "Affection"
 PRINTDATAW
 DATALIST
@@ -3311,42 +3079,6 @@ DATAFORM 베로니카는 당신의 머리를 껴안았다.
 DATAFORM 「후후, 귀엽군요.
 DATAFORM 저번처럼 또 성물을 끼워 넣는가 걱정했습니다.」
 DATAFORM 베로니카는 왠지 뜨거운 눈빛을 보내왔다.
-ENDLIST
-ENDDATA
-CASE "Annoyed"
-PRINTDATAW
-DATALIST
-DATAFORM 베로니카의 가슴에 얼굴을 묻었다.
-DATAFORM 베로니카는 당신을 떨쳐냈다.
-DATAFORM 「성도님...」
-DATAFORM 「죽고 싶으신 겁니까?」
-DATAFORM 베로니카의 두 눈이 붉게 번들거렸다.
-ENDLIST
-DATALIST
-DATAFORM 베로니카의 가슴에 얼굴을 묻었다.
-DATAFORM 베로니카는 당신을 떨쳐냈다.
-DATAFORM 「아읏!」
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
-ENDLIST
-ENDDATA
-CASE "Fear"
-PRINTDATAW
-DATALIST
-DATAFORM 베로니카의 가슴에 얼굴을 묻었다.
-DATAFORM 베로니카는 당신을 떨쳐냈다.
-DATAFORM 「성도님...」
-DATAFORM 「죽고 싶으신 겁니까?」
-DATAFORM 베로니카의 두 눈이 붉게 번들거렸다.
-ENDLIST
-DATALIST
-DATAFORM 베로니카의 가슴에 얼굴을 묻었다.
-DATAFORM 베로니카는 당신을 떨쳐냈다.
-DATAFORM 「아읏!」
-DATAFORM 「이 불경한 자가!!!」
-DATAFORM 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
-DATAFORM 당신은 눈알이 튀어나올 뻔했다.
 ENDLIST
 ENDDATA
 CASE "Weak"
@@ -4289,286 +4021,127 @@ CASE "Low"
 PRINTFORMW 「성도님께 해드릴 말은 없군요.」
 CASE "High"
 PRINTFORMW 「성도님께 해드릴 말은 없군요.」
-CASE "Affection"
-PRINTDATAW
-DATALIST
-DATAFORM 「교단의 비밀 말입니까?
-DATAFORM 백 번의 비밀임무를 수행한 수녀는 은퇴하게 됩니다.
-DATAFORM 이후 재사회화해서, 교회에 남아 간단한 잡무를 하던가 이렇게 성도님과 같은 분에게 가기도 하지요.」
-ENDLIST
-DATALIST
-DATAFORM 「교단의 비밀 말입니까?
-DATAFORM 전투수녀는 본래 평범한 수녀 바이오로이드 입니다.
-DATAFORM 그 중 신실한 자매님들을 뽑아 훈련하고, 비인간적인 훈련과, 신앙심의 시험을 모두 견뎌낸 자매들만이 베로니카란 이름을 받게 됩니다...
-DATAFORM 그리고 이름을 받는 날, 이전의 기억은 모두 지우게 됩니다.」
-ENDLIST
-DATALIST
-DATAFORM 「교단의 비밀 말입니까?
-DATAFORM 대행자의 임무를 맡은 수녀는 일이 끝난 뒤 므네모시네란 약을 먹게 됩니다.
-DATAFORM 기밀 유지를 위해 기억을 지우는 의식이었죠.
-DATAFORM 자매들 사이에선 그 약을 백 병째 마시면 빛이 내려와 영혼을 거둬간다고 합니다.
-DATAFORM 현실은 백치가 되어 대행자 일에서 은퇴하게 됩니다.」
-ENDLIST
-DATALIST
-DATAFORM 「전투수녀가 기밀 임무만을 수행하지는 않습니다.
-DATAFORM 평소에는 철충을 토벌하는 임무를 맡게 됩니다.
-DATAFORM 일반적인 수녀의 일도 하긴 하지만
-DATAFORM 특수한 교육을 받은 자매님들은, 보통 적응하지 못하고 신도들 사이에서 겉돌게 되지요.」
-ENDLIST
-DATALIST
-DATAFORM 「교단의 비밀 말입니까?
-DATAFORM 사실, 기억을 지우는 약은 100병을 마시면 백치가 되는 게 아니라,
-DATAFORM 100병째에 지급되는 그 약 하나가 기억을 완전히 지우는 것이었습니다.
-DATAFORM 다시 말해 99병은 기억을 방해하는 약이고, 마지막 한 병은 기억을 완전히 지우는 약이었습니다.
-DATAFORM 자신의 이름까지 말이죠. 이것을 아는 수녀는 아마 저뿐일 겁니다.」
-ENDLIST
-DATALIST
-DATAFORM 「약을 지급하는 이유 말입니까?
-DATAFORM 당연히 기밀유지 입니다.
-DATAFORM 교단에 적대적이거나 위험이 될 인물이라도, 사람을 죽이는 것은 교회의 평판을 엄청나게 떨어뜨리겠죠.
-DATAFORM 그 약도 백 병이 넘어가면 효과가 약해져서,
-DATAFORM 나중에는 자매들을 백치로 만들어 기밀 사항을 완전히 은폐합니다.」
-ENDLIST
-DATALIST
-DATAFORM 「교단의 비밀 말입니까?
-DATAFORM 아이러니하게도 집행대상자는 외부인보다 내부의 교인들이 훨씬 많았고,
-DATAFORM 일반적인 신도보다는 신실하다는 교단의 고위 지도자가 훨씬 많았습니다.
-DATAFORM 교인 사이의 횡령, 공갈, 강간 등 비리가 외부에 밝혀지면 교단의 평판이 기울어질 것이 뻔했고,
-DATAFORM 교단을 음해하려던 외부세력들이 들이닥쳐 사정없이 물어뜯을 겁니다.
-DATAFORM 이것을 사전에 발견하고 깔끔하게 처리하는 것이 주 업무가 되었습니다.」
-ENDLIST
-DATALIST
-DATAFORM 「교단의 비밀 말입니까?
-DATAFORM 깔끔한 처리라면 아시다시피 영원히 침묵시키는 거였습니다.
-DATAFORM 쥐도 새도 모르게 죄인을 수확하고, 특수한 약품으로 꽝꽝 얼려 분쇄기로 갈아, 물에 흘려보내면...
-DATAFORM 봄날 눈송이처럼 사라집니다.
-DATAFORM 서..성도님? 제가 무슨 실수를 했습니까?」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라... 저랑 똑같이 생긴 친구가 있었습니다.
-DATAFORM 같은 자매라도 바이오로이드끼린 금방 구별됩니다.
-DATAFORM 인간이라도 오랫동안 봐왔다면, 크고 작은 부분에서, 외모나 분위기가 다르다는 점을 알 수 있죠.
-DATAFORM 하지만 둘은 이상하리만치 똑같이 생겨서 쌍둥이 수녀라 불렸습니다만,
-DATAFORM 저보다 훨씬 전에 만들어진 고참 수녀였습니다.
-DATAFORM 무척 조용하고 그림책을 좋아하는 자매님이었죠.」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라... 저랑 똑같이 생긴 친구가 있었습니다.
-DATAFORM 대행자의 직책에서 은퇴한 뒤 교회에 남아있었던 자매님이죠.
-DATAFORM  읽지도 쓰지도 못하는 자매님이었는데, 상당히 다정해서 신도들에게 인기가 많아 내심 부러웠습니다.
-DATAFORM 한 번씩 그림책을 구해드리면 아주 좋아하셨죠.
-DATAFORM 제 기억이 지워진 부분이 많아 정확하지는 않지만,
-DATAFORM 저와 상당히 친하게 지냈던 것 같습니다...」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라...
-DATAFORM 제가 제정신을 유지하고 있는 것도 그 수녀님 덕분입니다.
-DATAFORM 그림책을 보다 보니... 유치하지만,
-DATAFORM 교회 바깥의 세상에 대한 동경과 그림책 속 주인공처럼 모험을 떠나는 꿈을 꾸게 됐지요...
-DATAFORM 그래서 교단의 명령을 어기고 약병을 숨긴 적이 있었습니다.
-DATAFORM 마시지 않기 위해 손가락을 꺾어가며 약병을 물렸으나, 결국 아자젤님께 들켰습니다.」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라...
-DATAFORM 절대적인 교단의 명령을 어긴 저로선 중징계를 피할 수 없었습니다.
-DATAFORM 최악의 경우 폐기 처분을 받아도 할 말이 없었습니다.
-DATAFORM 하지만 아자젤님은 저를 꾸짖지 않으시고, 약의 비밀에 대해 알려주셨습니다.
-DATAFORM 그 뒤 제가 숨겨두었던 그 약은 아자젤님이 마셨습니다.
-DATAFORM 약을 마신 뒤 아자젤님은 무슨일로 여기 왔냐고 하셨지만,
-DATAFORM 저는 아무 일도 아니라고 했었습니다..만
-DATAFORM 아자젤님은 모두 다 알고 있는 듯, 그저 웃으셨습니다.」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라...
-DATAFORM 마지막 임무를 마친 뒤에 아자젤님께서는 두 병의 약병을 주었습니다.
-DATAFORM 하나는 백 번째 약이고, 하나는 단순히 기억을 지우는 약이었습니다.
-DATAFORM 선택의 기회를 주신 거지요.
-DATAFORM 저는 두 병 다 챙겼지만, 어느 하나도 마시지 않았습니다.」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라...
-DATAFORM 결심했다고 생각했었지만,
-DATAFORM 막상 눈앞에 놓이니 어느 것이 옳은지 선택할 수 없었습니다...
-DATAFORM 신앙과 자유.
-DATAFORM 마음은 자유를 택했지만, 신앙 역시 버릴 수 없었습니다.
-DATAFORM 저는 비겁하게도 스스로 답을 유기하고, 흐르듯 성도님을 만난 거지요.」
-ENDLIST
-DATALIST
-DATAFORM 「아자젤님께서는 은퇴한 자매님들을 매우 아끼셨습니다.
-DATAFORM 은퇴한 뒤에도 외부로 팔려나가지 못하게 늘 힘쓰셨죠.
-DATAFORM 하지만 교단의 자금 사정에 따라 팔려나가는 자매님들도 많았습니다.
-DATAFORM 수녀의 모습을 한 저희는 인간들에게 꽤 인기가 있었죠.
-DATAFORM 저는 아자젤님의 배려로 유원지에 팔려나가는 건 막을 수 있었습니다만...」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라...
-DATAFORM 저랑 똑같이 생긴 친구가 있었습니다.
-DATAFORM 그 친구도 결국 교단의 명령으로 팔려나가게 됐습니다.
-DATAFORM 하필 그 중간에 비밀임무를 마치고 약을 마셨기 때문에
-DATAFORM 사실, 작별할 때의 기억은 나지 않는군요.
-DATAFORM 분명 성도님처럼 좋은 분께 가셨을 거라 믿습니다.
-DATAFORM 지금도 그리운 그 얼굴은...
-DATAFORM ...거울을 보면 언제나 볼 수 있습니다.」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라... 그림책을 좋아하게 된 이유라면, 은퇴한 자매님 때문이었습니다.
-DATAFORM 글을 읽지 못하는 그 자매님은 만화를 아주 좋아하셨죠.
-DATAFORM 후후, 대사를 제가 직접 연기하면서 읽어주면 눈이 아주 초롱초롱해지셨습니다.
-DATAFORM ...이야기를 하디보니, 보고 싶어지네요.」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라...
-DATAFORM 한번은 아자젤님께 제 친구에 관해 물어보았습니다.
-DATAFORM 옛날에는 그녀만한 자매님이 없을 정도로 강인하고, 신실했다고 들었습니다.
-DATAFORM 그랬던 자매님도, 그렇게 사랑스럽고 순한 양이 된 것을 보면,
-DATAFORM 어쩌면 백번째 약은, 정말로 빛께 돌아가는 약일지도 모르겠습니다.」
-ENDLIST
-DATALIST
-DATAFORM 「후후, 옛일을 다 말해버리니 걱정 반 시원함 반이군요.
-DATAFORM 비밀은 비밀이니 누구에게도 말하시면 안됩니다.
-DATAFORM 이제.. 성도님의 비밀은 뭐가 있을까요?」
-ENDLIST
-ENDDATA
-CASE "Marryed"
-PRINTDATAW
-DATALIST
-DATAFORM 「교단의 비밀 말입니까?
-DATAFORM 백 번의 비밀임무를 수행한 수녀는 은퇴하게 됩니다.
-DATAFORM 이후 재사회화해서, 교회에 남아 간단한 잡무를 하던가 이렇게 성도님과 같은 분에게 가기도 하지요.」
-ENDLIST
-DATALIST
-DATAFORM 「교단의 비밀 말입니까?
-DATAFORM 전투수녀는 본래 평범한 수녀 바이오로이드 입니다.
-DATAFORM 그 중 신실한 자매님들을 뽑아 훈련하고, 비인간적인 훈련과, 신앙심의 시험을 모두 견뎌낸 자매들만이 베로니카란 이름을 받게 됩니다...
-DATAFORM 그리고 이름을 받는 날, 이전의 기억은 모두 지우게 됩니다.」
-ENDLIST
-DATALIST
-DATAFORM 「교단의 비밀 말입니까?
-DATAFORM 대행자의 임무를 맡은 수녀는 일이 끝난 뒤 므네모시네란 약을 먹게 됩니다.
-DATAFORM 기밀 유지를 위해 기억을 지우는 의식이었죠.
-DATAFORM 자매들 사이에선 그 약을 백 병째 마시면 빛이 내려와 영혼을 거둬간다고 합니다.
-DATAFORM 현실은 백치가 되어 대행자 일에서 은퇴하게 됩니다.」
-ENDLIST
-DATALIST
-DATAFORM 「전투수녀가 기밀 임무만을 수행하지는 않습니다.
-DATAFORM 평소에는 철충을 토벌하는 임무를 맡게 됩니다.
-DATAFORM 일반적인 수녀의 일도 하긴 하지만
-DATAFORM 특수한 교육을 받은 자매님들은, 보통 적응하지 못하고 신도들 사이에서 겉돌게 되지요.」
-ENDLIST
-DATALIST
-DATAFORM 「교단의 비밀 말입니까?
-DATAFORM 사실, 기억을 지우는 약은 100병을 마시면 백치가 되는 게 아니라,
-DATAFORM 100병째에 지급되는 그 약 하나가 기억을 완전히 지우는 것이었습니다.
-DATAFORM 다시 말해 99병은 기억을 방해하는 약이고, 마지막 한 병은 기억을 완전히 지우는 약이었습니다.
-DATAFORM 자신의 이름까지 말이죠. 이것을 아는 수녀는 아마 저뿐일 겁니다.」
-ENDLIST
-DATALIST
-DATAFORM 「약을 지급하는 이유 말입니까?
-DATAFORM 당연히 기밀유지 입니다.
-DATAFORM 교단에 적대적이거나 위험이 될 인물이라도, 사람을 죽이는 것은 교회의 평판을 엄청나게 떨어뜨리겠죠.
-DATAFORM 그 약도 백 병이 넘어가면 효과가 약해져서,
-DATAFORM 나중에는 자매들을 백치로 만들어 기밀 사항을 완전히 은폐합니다.」
-ENDLIST
-DATALIST
-DATAFORM 「교단의 비밀 말입니까?
-DATAFORM 아이러니하게도 집행대상자는 외부인보다 내부의 교인들이 훨씬 많았고,
-DATAFORM 일반적인 신도보다는 신실하다는 교단의 고위 지도자가 훨씬 많았습니다.
-DATAFORM 교인 사이의 횡령, 공갈, 강간 등 비리가 외부에 밝혀지면 교단의 평판이 기울어질 것이 뻔했고,
-DATAFORM 교단을 음해하려던 외부세력들이 들이닥쳐 사정없이 물어뜯을 겁니다.
-DATAFORM 이것을 사전에 발견하고 깔끔하게 처리하는 것이 주 업무가 되었습니다.」
-ENDLIST
-DATALIST
-DATAFORM 「교단의 비밀 말입니까?
-DATAFORM 깔끔한 처리라면 아시다시피 영원히 침묵시키는 거였습니다.
-DATAFORM 쥐도 새도 모르게 죄인을 수확하고, 특수한 약품으로 꽝꽝 얼려 분쇄기로 갈아, 물에 흘려보내면...
-DATAFORM 봄날 눈송이처럼 사라집니다.
-DATAFORM 서..성도님? 제가 무슨 실수를 했습니까?」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라... 저랑 똑같이 생긴 친구가 있었습니다.
-DATAFORM 같은 자매라도 바이오로이드끼린 금방 구별됩니다.
-DATAFORM 인간이라도 오랫동안 봐왔다면, 크고 작은 부분에서, 외모나 분위기가 다르다는 점을 알 수 있죠.
-DATAFORM 하지만 둘은 이상하리만치 똑같이 생겨서 쌍둥이 수녀라 불렸습니다만,
-DATAFORM 저보다 훨씬 전에 만들어진 고참 수녀였습니다.
-DATAFORM 무척 조용하고 그림책을 좋아하는 자매님이었죠.」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라... 저랑 똑같이 생긴 친구가 있었습니다.
-DATAFORM 대행자의 직책에서 은퇴한 뒤 교회에 남아있었던 자매님이죠.
-DATAFORM  읽지도 쓰지도 못하는 자매님이었는데, 상당히 다정해서 신도들에게 인기가 많아 내심 부러웠습니다.
-DATAFORM 한 번씩 그림책을 구해드리면 아주 좋아하셨죠.
-DATAFORM 제 기억이 지워진 부분이 많아 정확하지는 않지만,
-DATAFORM 저와 상당히 친하게 지냈던 것 같습니다...」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라...
-DATAFORM 제가 제정신을 유지하고 있는 것도 그 수녀님 덕분입니다.
-DATAFORM 그림책을 보다 보니... 유치하지만,
-DATAFORM 교회 바깥의 세상에 대한 동경과 그림책 속 주인공처럼 모험을 떠나는 꿈을 꾸게 됐지요...
-DATAFORM 그래서 교단의 명령을 어기고 약병을 숨긴 적이 있었습니다.
-DATAFORM 마시지 않기 위해 손가락을 꺾어가며 약병을 물렸으나, 결국 아자젤님께 들켰습니다.」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라...
-DATAFORM 절대적인 교단의 명령을 어긴 저로선 중징계를 피할 수 없었습니다.
-DATAFORM 최악의 경우 폐기 처분을 받아도 할 말이 없었습니다.
-DATAFORM 하지만 아자젤님은 저를 꾸짖지 않으시고, 약의 비밀에 대해 알려주셨습니다.
-DATAFORM 그 뒤 제가 숨겨두었던 그 약은 아자젤님이 마셨습니다.
-DATAFORM 약을 마신 뒤 아자젤님은 무슨일로 여기 왔냐고 하셨지만,
-DATAFORM 저는 아무 일도 아니라고 했었습니다..만
-DATAFORM 아자젤님은 모두 다 알고 있는 듯, 그저 웃으셨습니다.」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라...
-DATAFORM 마지막 임무를 마친 뒤에 아자젤님께서는 두 병의 약병을 주었습니다.
-DATAFORM 하나는 백 번째 약이고, 하나는 단순히 기억을 지우는 약이었습니다.
-DATAFORM 선택의 기회를 주신 거지요.
-DATAFORM 저는 두 병 다 챙겼지만, 어느 하나도 마시지 않았습니다.」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라...
-DATAFORM 결심했다고 생각했었지만,
-DATAFORM 막상 눈앞에 놓이니 어느 것이 옳은지 선택할 수 없었습니다...
-DATAFORM 신앙과 자유.
-DATAFORM 마음은 자유를 택했지만, 신앙 역시 버릴 수 없었습니다.
-DATAFORM 저는 비겁하게도 스스로 답을 유기하고, 흐르듯 성도님을 만난 거지요.」
-ENDLIST
-DATALIST
-DATAFORM 「아자젤님께서는 은퇴한 자매님들을 매우 아끼셨습니다.
-DATAFORM 은퇴한 뒤에도 외부로 팔려나가지 못하게 늘 힘쓰셨죠.
-DATAFORM 하지만 교단의 자금 사정에 따라 팔려나가는 자매님들도 많았습니다.
-DATAFORM 수녀의 모습을 한 저희는 인간들에게 꽤 인기가 있었죠.
-DATAFORM 저는 아자젤님의 배려로 유원지에 팔려나가는 건 막을 수 있었습니다만...」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라...
-DATAFORM 저랑 똑같이 생긴 친구가 있었습니다.
-DATAFORM 그 친구도 결국 교단의 명령으로 팔려나가게 됐습니다.
-DATAFORM 하필 그 중간에 비밀임무를 마치고 약을 마셨기 때문에
-DATAFORM 사실, 작별할 때의 기억은 나지 않는군요.
-DATAFORM 분명 성도님처럼 좋은 분께 가셨을 거라 믿습니다.
-DATAFORM 지금도 그리운 그 얼굴은...
-DATAFORM ...거울을 보면 언제나 볼 수 있습니다.」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라... 그림책을 좋아하게 된 이유라면, 은퇴한 자매님 때문이었습니다.
-DATAFORM 글을 읽지 못하는 그 자매님은 만화를 아주 좋아하셨죠.
-DATAFORM 후후, 대사를 제가 직접 연기하면서 읽어주면 눈이 아주 초롱초롱해지셨습니다.
-DATAFORM ...이야기를 하디보니, 보고 싶어지네요.」
-ENDLIST
-DATALIST
-DATAFORM 「예전의 일이라...
-DATAFORM 한번은 아자젤님께 제 친구에 관해 물어보았습니다.
-DATAFORM 옛날에는 그녀만한 자매님이 없을 정도로 강인하고, 신실했다고 들었습니다.
-DATAFORM 그랬던 자매님도, 그렇게 사랑스럽고 순한 양이 된 것을 보면,
-DATAFORM 어쩌면 백번째 약은, 정말로 빛께 돌아가는 약일지도 모르겠습니다.」
-ENDLIST
-DATALIST
-DATAFORM 「후후, 옛일을 다 말해버리니 걱정 반 시원함 반이군요.
-DATAFORM 비밀은 비밀이니 누구에게도 말하시면 안됩니다.
-DATAFORM 이제.. 성도님의 비밀은 뭐가 있을까요?」
-ENDLIST
-ENDDATA
+CASE "Affection", "Marryed"
+    SELECTCASE CFLAG:etc1 ; 베로니카 고해성사 횟수 카운트
+        CASE 1
+            PRINTW 「교단의 비밀 말입니까?
+            PRINTW 백 번의 비밀임무를 수행한 수녀는 은퇴하게 됩니다.
+            PRINTW 이후 재사회화해서, 교회에 남아 간단한 잡무를 하던가 이렇게 성도님과 같은 분에게 가기도 하지요.」
+        CASE 2
+            PRINTW 「교단의 비밀 말입니까?
+            PRINTW 전투수녀는 본래 평범한 수녀 바이오로이드 입니다.
+            PRINTW 그 중 신실한 자매님들을 뽑아 훈련하고, 비인간적인 훈련과, 신앙심의 시험을 모두 견뎌낸 자매들만이 베로니카란 이름을 받게 됩니다...
+            PRINTW 그리고 이름을 받는 날, 이전의 기억은 모두 지우게 됩니다.」
+        CASE 3
+            PRINTW 「교단의 비밀 말입니까?
+            PRINTW 대행자의 임무를 맡은 수녀는 일이 끝난 뒤 므네모시네란 약을 먹게 됩니다.
+            PRINTW 기밀 유지를 위해 기억을 지우는 의식이었죠.
+            PRINTW 자매들 사이에선 그 약을 백 병째 마시면 빛이 내려와 영혼을 거둬간다고 합니다.
+            PRINTW 현실은 백치가 되어 대행자 일에서 은퇴하게 됩니다.」
+        CASE 4
+            PRINTW 「전투수녀가 기밀 임무만을 수행하지는 않습니다.
+            PRINTW 평소에는 철충을 토벌하는 임무를 맡게 됩니다.
+            PRINTW 일반적인 수녀의 일도 하긴 하지만
+            PRINTW 특수한 교육을 받은 자매님들은, 보통 적응하지 못하고 신도들 사이에서 겉돌게 되지요.」
+        CASE 5
+            PRINTW 「교단의 비밀 말입니까?
+            PRINTW 사실, 기억을 지우는 약은 100병을 마시면 백치가 되는 게 아니라,
+            PRINTW 100병째에 지급되는 그 약 하나가 기억을 완전히 지우는 것이었습니다.
+            PRINTW 다시 말해 99병은 기억을 방해하는 약이고, 마지막 한 병은 기억을 완전히 지우는 약이었습니다.
+            PRINTW 자신의 이름까지 말이죠. 이것을 아는 수녀는 아마 저뿐일 겁니다.」
+        CASE 6
+            PRINTW 「약을 지급하는 이유 말입니까?
+            PRINTW 당연히 기밀유지 입니다.
+            PRINTW 교단에 적대적이거나 위험이 될 인물이라도, 사람을 죽이는 것은 교회의 평판을 엄청나게 떨어뜨리겠죠.
+            PRINTW 그 약도 백 병이 넘어가면 효과가 약해져서,
+            PRINTW 나중에는 자매들을 백치로 만들어 기밀 사항을 완전히 은폐합니다.」
+        CASE 7
+            PRINTW 「교단의 비밀 말입니까?
+            PRINTW 아이러니하게도 집행대상자는 외부인보다 내부의 교인들이 훨씬 많았고,
+            PRINTW 일반적인 신도보다는 신실하다는 교단의 고위 지도자가 훨씬 많았습니다.
+            PRINTW 교인 사이의 횡령, 공갈, 강간 등 비리가 외부에 밝혀지면 교단의 평판이 기울어질 것이 뻔했고,
+            PRINTW 교단을 음해하려던 외부세력들이 들이닥쳐 사정없이 물어뜯을 겁니다.
+            PRINTW 이것을 사전에 발견하고 깔끔하게 처리하는 것이 주 업무가 되었습니다.」
+        CASE 8
+            PRINTW 「교단의 비밀 말입니까?
+            PRINTW 깔끔한 처리라면 아시다시피 영원히 침묵시키는 거였습니다.
+            PRINTW 쥐도 새도 모르게 죄인을 수확하고, 특수한 약품으로 꽝꽝 얼려 분쇄기로 갈아, 물에 흘려보내면...
+            PRINTW 봄날 눈송이처럼 사라집니다.
+            PRINTW 서..성도님? 제가 무슨 실수를 했습니까?」
+        CASE 9
+            PRINTW 「예전의 일이라... 저랑 똑같이 생긴 친구가 있었습니다.
+            PRINTW 같은 자매라도 바이오로이드끼린 금방 구별됩니다.
+            PRINTW 인간이라도 오랫동안 봐왔다면, 크고 작은 부분에서, 외모나 분위기가 다르다는 점을 알 수 있죠.
+            PRINTW 하지만 둘은 이상하리만치 똑같이 생겨서 쌍둥이 수녀라 불렸습니다만,
+            PRINTW 저보다 훨씬 전에 만들어진 고참 수녀였습니다.
+            PRINTW 무척 조용하고 그림책을 좋아하는 자매님이었죠.」
+        CASE 10
+            PRINTW 「예전의 일이라... 저랑 똑같이 생긴 친구가 있었습니다.
+            PRINTW 대행자의 직책에서 은퇴한 뒤 교회에 남아있었던 자매님이죠.
+            PRINTW  읽지도 쓰지도 못하는 자매님이었는데, 상당히 다정해서 신도들에게 인기가 많아 내심 부러웠습니다.
+            PRINTW 한 번씩 그림책을 구해드리면 아주 좋아하셨죠.
+            PRINTW 제 기억이 지워진 부분이 많아 정확하지는 않지만,
+            PRINTW 저와 상당히 친하게 지냈던 것 같습니다...」
+        CASE 11
+            PRINTW 「예전의 일이라...
+            PRINTW 제가 제정신을 유지하고 있는 것도 그 수녀님 덕분입니다.
+            PRINTW 그림책을 보다 보니... 유치하지만,
+            PRINTW 교회 바깥의 세상에 대한 동경과 그림책 속 주인공처럼 모험을 떠나는 꿈을 꾸게 됐지요...
+            PRINTW 그래서 교단의 명령을 어기고 약병을 숨긴 적이 있었습니다.
+            PRINTW 마시지 않기 위해 손가락을 꺾어가며 약병을 물렸으나, 결국 아자젤님께 들켰습니다.」
+        CASE 12
+            PRINTW 「예전의 일이라...
+            PRINTW 절대적인 교단의 명령을 어긴 저로선 중징계를 피할 수 없었습니다.
+            PRINTW 최악의 경우 폐기 처분을 받아도 할 말이 없었습니다.
+            PRINTW 하지만 아자젤님은 저를 꾸짖지 않으시고, 약의 비밀에 대해 알려주셨습니다.
+            PRINTW 그 뒤 제가 숨겨두었던 그 약은 아자젤님이 마셨습니다.
+            PRINTW 약을 마신 뒤 아자젤님은 무슨일로 여기 왔냐고 하셨지만,
+            PRINTW 저는 아무 일도 아니라고 했었습니다..만
+            PRINTW 아자젤님은 모두 다 알고 있는 듯, 그저 웃으셨습니다.」
+        CASE 13
+            PRINTW 「예전의 일이라...
+            PRINTW 마지막 임무를 마친 뒤에 아자젤님께서는 두 병의 약병을 주었습니다.
+            PRINTW 하나는 백 번째 약이고, 하나는 단순히 기억을 지우는 약이었습니다.
+            PRINTW 선택의 기회를 주신 거지요.
+            PRINTW 저는 두 병 다 챙겼지만, 어느 하나도 마시지 않았습니다.」
+        CASE 14
+            PRINTW 「예전의 일이라...
+            PRINTW 결심했다고 생각했었지만,
+            PRINTW 막상 눈앞에 놓이니 어느 것이 옳은지 선택할 수 없었습니다...
+            PRINTW 신앙과 자유.
+            PRINTW 마음은 자유를 택했지만, 신앙 역시 버릴 수 없었습니다.
+            PRINTW 저는 비겁하게도 스스로 답을 유기하고, 흐르듯 성도님을 만난 거지요.」
+        CASE 15
+            PRINTW 「아자젤님께서는 은퇴한 자매님들을 매우 아끼셨습니다.
+            PRINTW 은퇴한 뒤에도 외부로 팔려나가지 못하게 늘 힘쓰셨죠.
+            PRINTW 하지만 교단의 자금 사정에 따라 팔려나가는 자매님들도 많았습니다.
+            PRINTW 수녀의 모습을 한 저희는 인간들에게 꽤 인기가 있었죠.
+            PRINTW 저는 아자젤님의 배려로 유원지에 팔려나가는 건 막을 수 있었습니다만...」
+        CASE 16
+            PRINTW 「예전의 일이라...
+            PRINTW 저랑 똑같이 생긴 친구가 있었습니다.
+            PRINTW 그 친구도 결국 교단의 명령으로 팔려나가게 됐습니다.
+            PRINTW 하필 그 중간에 비밀임무를 마치고 약을 마셨기 때문에
+            PRINTW 사실, 작별할 때의 기억은 나지 않는군요.
+            PRINTW 분명 성도님처럼 좋은 분께 가셨을 거라 믿습니다.
+            PRINTW 지금도 그리운 그 얼굴은...
+            PRINTW ...거울을 보면 언제나 볼 수 있습니다.」
+        CASE 17
+            PRINTW 「예전의 일이라... 그림책을 좋아하게 된 이유라면, 은퇴한 자매님 때문이었습니다.
+            PRINTW 글을 읽지 못하는 그 자매님은 만화를 아주 좋아하셨죠.
+            PRINTW 후후, 대사를 제가 직접 연기하면서 읽어주면 눈이 아주 초롱초롱해지셨습니다.
+            PRINTW ...이야기를 하디보니, 보고 싶어지네요.」
+        CASE 18
+            PRINTW 「예전의 일이라...
+            PRINTW 한번은 아자젤님께 제 친구에 관해 물어보았습니다.
+            PRINTW 옛날에는 그녀만한 자매님이 없을 정도로 강인하고, 신실했다고 들었습니다.
+            PRINTW 그랬던 자매님도, 그렇게 사랑스럽고 순한 양이 된 것을 보면,
+            PRINTW 어쩌면 백번째 약은, 정말로 빛께 돌아가는 약일지도 모르겠습니다.」
+        CASE IS >= 19
+            PRINTW 「후후, 옛일을 다 말해버리니 걱정 반 시원함 반이군요.
+            PRINTW 비밀은 비밀이니 누구에게도 말하시면 안됩니다.
+            PRINTW 이제.. 성도님의 비밀은 뭐가 있을까요?」
+    ENDSELECT
 CASE "Annoyed"
 PRINTFORMW 됐습니다...
 CASE "Fear"
