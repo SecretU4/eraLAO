@@ -116,7 +116,7 @@ SELECTCASE NO:TARGET
             ENDIF
         ENDIF
     CASE 91
-        SIF !CFLAG:조교여부
+        SIF !CFLAG:조교여부 ;슬레이프니르 첫 연애
             CFLAG:개별선택지유무 = 1
     CASE 108
         IF TALENT:혼인 == 2
@@ -361,22 +361,25 @@ SELECTCASE NO:대상
             ;일단 초기화
             CFLAG:대상:개별선택지유무 = -1
 
-            PRINTW TODO 슬레이프니르 문장 추가
-            CALL ASK_M("슈퍼스타가 된다.", 1, "군인 신분을 유지한다.", 1)
-            ;CFLAG:선택지확인 = 땡컨 etc4 슈퍼스타 출력 유무
-            IF RESULT == 0
-                SETBIT CFLAG:대상:선택지확인, 0
-                TALENT:대상:군인 = 0
-                TALENT:대상:슈퍼스타 = 1
-                ABL:대상:전투lv = 0
-                EXP:대상:출격경험 = 0
-                CSTR:대상:1 = Star
-                RETURN 1
-            ELSEIF RESULT == 1
-                CFLAG:대상:선택지확인 = CFLAG:대상:선택지확인 ^ 1
-                CSTR:대상:1 = BR
-                RETURN 1
-            ENDIF
+            CALLFORM M_No{NO:TARGET}_TRAIN_START_{CFLAG:조교여부}
+            PRINTL [1] 슈퍼 스타지!
+            PRINTL [2] 블랙리버의 실험기야!
+            WHILE 1 ;CFLAG:선택지확인 = 땡컨 etc4 슈퍼스타 출력 유무
+                INPUT
+                IF RESULT == 1
+                    SETBIT CFLAG:대상:선택지확인, 0
+                    TALENT:대상:군인 = 0
+                    TALENT:대상:슈퍼스타 = 1
+                    ABL:대상:전투lv = 0
+                    EXP:대상:출격경험 = 0
+                    CSTR:대상:1 = Star
+                    RETURN 1
+                ELSEIF RESULT == 2
+                    CFLAG:대상:선택지확인 = CFLAG:대상:선택지확인 ^ 1
+                    CSTR:대상:1 = BR
+                    RETURN 1
+                ENDIF
+            WEND
         ENDIF
 ENDSELECT
 RETURN 0
