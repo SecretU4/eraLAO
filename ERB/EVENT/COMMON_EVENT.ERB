@@ -1,0 +1,271 @@
+﻿;========================================================================
+;함수명: COMMON_EVENT
+;휴식 실행시 호출
+;========================================================================
+@COMMON_EVENT
+
+CALL EVENT_SET_COMMON
+
+;========================================================================
+;함수명: EVENT_SET_COMMON
+;원본 api /event1 대응
+;대상배열_A, B는 bit 연산(0 제외), 63까지만 가능
+;필요시 대상배열_A2 같은 식으로 추가로 만들어야함
+;이벤트 선출 함수
+;========================================================================
+@EVENT_SET_COMMON
+#DIMS 이벤트배열 ;even
+#DIM 이벤트배열수
+#DIM 이벤트대상
+#DIM EVENTNO_LAST ;총 이벤트 수
+#DIM 공용이벤트번호
+#DIM 대상
+#DIM 대상배열_A ;who_a
+#DIM 대상배열_B ;who_b
+
+VARSET LOCAL
+이벤트배열 '= "0/0/4"
+이벤트배열수 = 3
+EVENTNO_LAST = 17
+
+IF FLAG:자택상황 != 2 ;저택 아님
+    이벤트배열 += "/1"
+    이벤트배열수 ++
+ENDIF
+IF FLAG:자택상황 == 0 ;원룸임
+    이벤트배열 += "/2"
+    이벤트배열수 ++
+ENDIF
+IF TALENT:MASTER:요리사
+    이벤트배열 += "/3"
+    이벤트배열수 ++
+ENDIF
+
+대상배열_A = 0
+대상배열_B = 0
+
+;이벤트별 조건 체크
+FOR 대상, 1, CHARANUM
+    SIF ITEM:(ITEM_BIO(NO:대상)) != 1 ;보유여부 체크
+        CONTINUE
+
+    ;---------------------------------------------------------------
+    ;이하 대상배열 관련 처리
+    ;---------------------------------------------------------------
+    IF !CFLAG:대상:출격중 && !TALENT:대상:정신쇠약
+        IF CFLAG:대상:공포 < 150 
+            SELECTCASE NO:대상
+                CASE 91
+                    SETBIT 대상배열_A, 1
+                    IF !TALENT:대상:짜증
+                        IF !TALENT:대상:슈퍼스타
+                            SETBIT 대상배열_B, 9
+                        ELSE
+                            SETBIT 대상배열_A, 10
+                        ENDIF
+                    ENDIF
+                CASE 89
+                    SETBIT 대상배열_B, 1
+                    SIF !TALENT:대상:짜증
+                        SETBIT 대상배열_A, 3
+                CASE 31
+                    SETBIT 대상배열_A, 2
+                    SIF !TALENT:대상:짜증
+                        SETBIT 대상배열_B, 8
+                CASE 51
+                    SETBIT 대상배열_B, 2
+                    IF !TALENT:대상:짜증
+                        SETBIT 대상배열_B, 3
+                        SETBIT 대상배열_A, 16
+                    ENDIF
+                CASE 21
+                    SIF !TALENT:대상:짜증 && TALENT:대상:사랑 < 2
+                        SETBIT 대상배열_A, 8
+                CASE 68
+                    IF !TALENT:대상:짜증
+                        SETBIT 대상배열_A, 9
+                        SETBIT 대상배열_A ,10
+                    ENDIF
+                CASE 113
+                    SIF !TALENT:대상:짜증
+                        SETBIT 대상배열_A, 11
+                CASE 132
+                    SIF !TALENT:대상:짜증
+                        SETBIT 대상배열_B, 11
+                CASE 52
+                    SIF !TALENT:대상:짜증
+                        SETBIT 대상배열_B, 16
+            ENDSELECT
+        ENDIF
+
+        IF !TALENT:대상:얀데레 && TALENT:대상:사랑 ;원본은 연모만
+            SETBIT 대상배열_A, 4
+        ELSEIF TALENT:대상:얀데레
+            SETBIT 대상배열_B, 4
+        ENDIF
+
+        IF TALENT:대상:체형 == 0
+            SETBIT 대상배열_A, 6
+        ELSE
+            SETBIT 대상배열_B, 6
+        ENDIF
+
+        IF !TALENT:대상:짜증
+            SELECTCASE NO:대상
+                CASE 68
+                    SIF TALENT:대상:사랑 < 2
+                        SETBIT 대상배열_A, 7
+                CASE 113
+                    SETBIT 대상배열_B, 7
+                CASE 106
+                    SIF TALENT:대상:혼인 == 1 && CFLAG:대상:etc1 == 0
+                        SETBIT 대상배열_A, 12
+                CASE 108
+                    SIF TALENT:대상:사랑 == 2 && TALENT:대상:체형 == 0
+                        SETBIT 대상배열_B, 12
+            ENDSELECT
+        ENDIF
+
+        SIF NO:대상 == 126
+            SETBIT 대상배열_A, 15
+    ENDIF
+
+    IF !CFLAG:대상:출격중
+        IF (TALENT:대상:사랑 == 2 && !TALENT:대상:혼인) && (CFLAG:대상:공포 < 30 && CFLAG:대상:스트레스 < 200) && !CFLAG:대상:etc1
+            IF NO:대상 == 31
+                SETBIT 대상배열_A, 5
+            ELSEIF NO:대상 == 32
+                SETBIT 대상배열_B, 5
+            ENDIF
+
+        ENDIF
+    ENDIF
+
+    SELECTCASE NO:대상
+        CASE 126
+            SETBIT 대상배열_A, 14
+        CASE 51
+            SIF TALENT:대상:정신쇠약 == 2
+                SETBIT 대상배열_A, 17
+        CASE 52
+            SIF TALENT:대상:정신쇠약 == 2
+                SETBIT 대상배열_B, 17
+    ENDSELECT
+
+    IF CFLAG:대상:출격중 == 3
+        IF NO:대상 == 138 && TALENT:정신쇠약 != 2 && TALENT:대상:혼인 == 1 && TALENT:대상:사랑 == 2 && CFLAG:대상:etc3 == 0 && CFLAG:대상:etc1 > 18
+            SETBIT 대상배열_B, 14
+            SETBIT 대상배열_B, 15
+        ENDIF
+    ENDIF
+    ;---------------------------------------------------------------
+    ;이하 공용 이벤트 관련 처리 (100, 101은 바이오로이드와 무관계)
+    ;---------------------------------------------------------------
+    FOR 공용이벤트번호, 102, 125
+        SIF STRFIND(이벤트배열, TOSTR(공용이벤트번호)) != -1
+            CONTINUE
+        SELECTCASE 공용이벤트번호
+            CASE 102
+                SIF CFLAG:대상:출격중 && TALENT:대상:사랑 && !TALENT:대상:정신솨약 ;원본 연모만
+                    이벤트배열 += "/102"
+            CASE 103
+                SIF !CFLAG:대상:출격중 && TALENT:대상:사랑 && !TALENT:대상:정신솨약 && !TALENT:대상:짜증 ;원본 연모만
+                    이벤트배열 += "/103"
+            CASE 104
+                SIF !CFLAG:대상:출격중 && !TALENT:대상:사랑 && !TALENT:대상:정신솨약 && !TALENT:대상:짜증
+                    이벤트배열 += "/104"
+            CASE 105
+                SIF !CFLAG:대상:출격중 && TALENT:대상:정신솨약 == 1
+                    이벤트배열 += "/105"
+            CASE 106
+            CASE 107
+            CASE 108
+            CASE 109
+            CASE 110
+            CASE 111
+            CASE 112
+            CASE 113
+            CASE 114
+            CASE 115
+            CASE 116
+            CASE 117
+            CASE 118
+            CASE 119
+            CASE 120
+            CASE 121
+            CASE 122
+            CASE 123
+            CASE 124
+            CASE 125
+        ENDSELECT
+    NEXT
+NEXT
+
+;이벤트 조건 충족시 이밴트배열에 반영
+FOR 이벤트대상, 1, EVENTNO_LAST
+    IF GETBIT(대상배열_A, 이벤트대상) && GETBIT(대상배열_B, 이벤트대상)
+        SELECTCASE 이벤트대상
+            CASE 1
+                이벤트배열 += "/1015"
+            CASE 2
+                SIF FLAG:자택상황
+                    이벤트배열 += "/1016"
+            CASE 3
+                이벤트배열 += "/1019"
+            CASE 4
+                이벤트배열 += "/201"
+            CASE 5
+                CONTINUE
+            CASE 6
+                SIF TALENT:MASTER:나이 == 0 ;소년
+                    이벤트배열 += "/202"
+            CASE 7
+                이벤트배열 += "/1025"
+            CASE 8
+                SIF TALENT:MASTER:나이 == 0 && FLAG:자택상황 ;소년, 원룸아님
+                    이벤트배열 += "/1026"
+            CASE 9
+                이벤트배열 += "/1036"
+            CASE 10
+                이벤트배열 += "/1037"
+            CASE 11
+                SIF TIME == 1
+                    이벤트배열 += "/1038"
+            CASE 12
+                CONTINUE
+            CASE 13
+                CONTINUE
+            CASE 14
+                CONTINUE
+            CASE 15
+                CONTINUE
+            CASE 16
+                ;보유 여부 자체는 이벤트대상 bit값 설정때 확인함
+                LOCAL:1 = GETCHARA(51)
+                LOCAL:2 = GETCHARA(52)
+                SIF TALENT:(LOCAL:1):사랑 ;원본은 연모만
+                    LOCAL ++
+                SIF TALENT:(LOCAL:2):사랑 ;원본은 연모만
+                    LOCAL ++
+                    
+                IF LOCAL < 2
+                    이벤트배열 += "/1045"
+                ELSEIF LOCAL == 2
+                    이벤트배열 += "/1046"
+                ENDIF
+            CASE 17
+                이벤트배열 += "/1047"
+        ENDSELECT
+        이벤트배열수 ++
+    ENDIF         
+NEXT
+
+IF FLAG:현캐릭터수 > 1
+    이벤트배열 += "/100"
+    SIF FLAG:자택상황 ;원룸 아님
+        이벤트배열 += "/101"
+ENDIF
+
+IF ITEM:(ITEM_BIO(12)) > 0
+    ; 4번, 125번 이벤트배열 삭제
+ENDIF
