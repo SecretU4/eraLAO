@@ -61,8 +61,9 @@ FOR LOCAL, 1, CHARANUM
         IF TALENT:MASTER:관심법
             PRINTFORM 호감도 : {CFLAG:LOCAL:호감도} 
             PRINTFORM 스트레스 : {CFLAG:LOCAL:스트레스} 
-            PRINTFORML 공포 : {CFLAG:LOCAL:공포} 
+            PRINTFORM 공포 : {CFLAG:LOCAL:공포} 
         ENDIF
+        PRINTFORML
         ALIGNMENT RIGHT
         CALL SHOW_SPECIAL_STATUS(LOCAL)
         PRINTL
