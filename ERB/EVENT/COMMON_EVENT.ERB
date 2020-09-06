@@ -211,7 +211,7 @@ SIF 선택이벤트번호 == -1
 SIF 선택이벤트번호 == -1
     선택이벤트번호 = TOINT(TEXTR(이벤트배열))
 
-CALLF SELECT_EVENT_CHARA(선택이벤트번호)
+CALL SELECT_EVENT_CHARA(선택이벤트번호)
 
 선택캐릭터_A = RESULT:0
 선택캐릭터_B = RESULT:1
@@ -224,7 +224,7 @@ WHILE 선택캐릭터_B == -1
         선택이벤트번호 = TOINT(TEXTR(이벤트배열))
         DEBUGPRINTFORML 재선택된 이벤트 : {선택이벤트번호}
 
-        CALLF SELECT_EVENT_CHARA(선택이벤트번호)
+        CALL SELECT_EVENT_CHARA(선택이벤트번호)
         선택캐릭터_A = RESULT:0
         선택캐릭터_B = RESULT:1
     ELSE
@@ -613,7 +613,6 @@ RETURNF -1
 ;ARG = 이벤트번호
 ;=================================================================
 @SELECT_EVENT_CHARA(ARG)
-#FUNCTION
 #DIM 선택캐릭터, 2
 #DIM 랜덤대상, 2
 
@@ -694,4 +693,4 @@ WHILE 선택캐릭터:1 == -1
             BREAK
     ENDSELECT
 WEND
-RETURNF 선택캐릭터:0, 선택캐릭터:1
+RETURN 선택캐릭터:0, 선택캐릭터:1
