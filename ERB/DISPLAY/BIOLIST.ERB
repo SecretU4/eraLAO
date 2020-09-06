@@ -230,9 +230,15 @@ PRINTL
 DRAWLINE
 PRINTL
 IF ARG != 0
-    PRINTFORM 호감도 : {CFLAG:ARG:호감도} 
-    PRINTFORM 공포 : {CFLAG:ARG:공포} 
-    PRINTFORML 스트레스 : {CFLAG:ARG:스트레스} 
+    IF TALENT:MASTER:관심법
+        PRINTFORM 호감도 : {CFLAG:ARG:호감도} 
+        PRINTFORM 공포 : {CFLAG:ARG:공포} 
+        PRINTFORML 스트레스 : {CFLAG:ARG:스트레스} 
+    ELSE
+        PRINTFORM 호감도 : ??? 
+        PRINTFORM 공포 : ??? 
+        PRINTFORML 스트레스 : ??? 
+    ENDIF
     PRINTL
     PRINTFORM 출격한 횟수 : {EXP:ARG:출격경험} 
     PRINTFORM 전투 레벨 : {ABL:ARG:전투lv} 
