@@ -10,6 +10,7 @@ PRINTFORML %CALLNAME:ARG%(은)는 당신의 사진을 보고 말한다.
 PRINTFORML 어렸을 때는 지금과 많이 다르다고."
 PRINTFORML 칭찬인지 욕인지는 아리송했지만, 당신은 대답의 답례로 %CALLNAME:ARG%의 머리를 쓰다듬어 주었다.
 PRINTFORMW 호감도+10
+CFLAG:ARG:호감도 += 10
 RETURN 1
 CASE 1
 PRINTFORMW 당신은 사놓고 구석에 박아두었던 체스 세트를 꺼내들었다.
@@ -20,6 +21,8 @@ PRINTFORMW 치열한 공방전 끝에 당신은 퀸과 비숍으로 체크메이
 PRINTFORML %CALLNAME:ARG%(은)는 다음에는 지지 않겠다며 승부욕에 찬 모습이었다.
 PRINTFORML 호감도+15
 PRINTFORMW 스트레스-5"
+CFLAG:ARG:호감도 += 15
+CFLAG:ARG:스트레스 -= 5
 RETURN 1
 CASE 2
 PRINTFORMW 당신은 구석에 박아두었던 젠가를 꺼낸다.
@@ -32,6 +35,8 @@ PRINTFORML 나이스!
 PRINTFORML 당신은 승리의 기쁨에 환호했다.
 PRINTFORML 호감도+15
 PRINTFORMW 스트레스-5
+CFLAG:ARG:호감도 += 15
+CFLAG:ARG:스트레스 -= 5
 RETURN 1
 CASE 3
 PRINTFORMW 당신은 구석에 박아두었던 젠가를 꺼낸다.
@@ -43,6 +48,8 @@ PRINTFORML 아, 이게...
 PRINTFORML 당신이 아쉬워하는 동안 %CALLNAME:ARG%(은)는 기뻐하고 있었다.
 PRINTFORML 호감도+15
 PRINTFORMW 스트레스-5
+CFLAG:ARG:호감도 += 15
+CFLAG:ARG:스트레스 -= 5
 RETURN 1
 CASE 4
 PRINTFORML 당신은 TV를 켰다.
@@ -61,6 +68,9 @@ PRINTFORML 당신은 %CALLNAME:ARG%에게 애써 환하게 웃어 보인다.
 PRINTFORML 호감도+7
 PRINTFORML 스트레스-5
 PRINTFORMW 공포-4
+CFLAG:ARG:호감도 += 7
+CFLAG:ARG:스트레스 -= 5
+CFLAG:ARG:공포 -= 4
 RETURN 1
 CASE 5
 PRINTFORMW 당신은 %CALLNAME:ARG%(와)과 함께 시내에 나왔다.
@@ -73,6 +83,7 @@ PRINTFORML 흥이 오르면서도 막 날뛰지는 않고, 잔잔하면서도 �
 PRINTFORML 그래서 더욱 좋은 인디 밴드의 노래.
 PRINTFORML 노래를 듣던 도중, 당신은 의식하지 못 한 사이%CALLNAME:ARG%(와)과 더 가까이 붙어 있는 것을 보았다.
 PRINTFORMW 호감도+15
+CFLAG:ARG:호감도 += 15
 RETURN 1
 CASE 6
 PRINTFORMW 당신은 갑자기 그림이 그리고 싶어서 종이와 펜을 꺼냈다.

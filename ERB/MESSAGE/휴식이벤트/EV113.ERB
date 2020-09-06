@@ -6,6 +6,7 @@ PRINTFORMW 눈 앞에 보이는 무채색의 천장은 지루했지만 편안했
 PRINTFORMW 한참을 멍하니 그러고 있었는데 %CALLNAME:ARG%의 얼굴이 불쑥 당신의 앞을 가린다.
 PRINTFORML 뭐하냐고 묻는 %CALLNAME:ARG%에게 당신은 웃을 수 밖에 없었다.
 PRINTFORMW 호감도+5
+CFLAG:ARG:호감도 += 5
 RETURN 1
 CASE 1
 PRINTFORMW 당신은 게임을 하다가 상대의 플레이에 화가 나 소리쳤다.
@@ -31,6 +32,10 @@ PRINTFORML 소지금-20000
 PRINTFORML 호감도+30
 PRINTFORML 스트레스-20
 PRINTFORMW 공포-10
+MONEY -= 20000
+CFLAG:ARG:호감도 += 30
+CFLAG:ARG:스트레스 -= 20
+CFLAG:ARG:공포 -= 10
 RETURN 1
 CASE 3
 PRINTFORMW 당신은 아이들이 왁자지껄 떠드는 소리에 밖을 내다보았다.
@@ -49,6 +54,9 @@ PRINTFORML 흐음, %CALLNAME:ARG%(와)과 같이 먹을까?
 PRINTFORML 소지금-1000
 PRINTFORML 호감도+14
 PRINTFORMW 스트레스-7
+MONEY -= 1000
+CFLAG:ARG:호감도 += 14
+CFLAG:ARG:스트레스 -= 7
 RETURN 1
 CASE 4
 PRINTFORMW 당신은 화장실에서 세수를 했다.

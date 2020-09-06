@@ -11,6 +11,9 @@ PRINTFORML 따스한 기쁨이 온몸으로 퍼진다.
 PRINTFORML 호감도+35
 PRINTFORML 스트레스-20
 PRINTFORMW 공포-10
+CFLAG:ARG:호감도 += 35
+CFLAG:ARG:스트레스 -= 20
+CFLAG:ARG:공포 -= 10
 RETURN 1
 CASE 1
 PRINTFORMW 어느새 까무룩 잠들어버렸다...
@@ -20,6 +23,7 @@ PRINTFORMW 언제 내 방에 들어온 거지.
 PRINTFORMW 새근새근 잠든 모습이 사랑스러워 천천히 %CALLNAME:ARG%의 머리를 쓰다듬어 준다.
 PRINTFORML 왠지 %CALLNAME:ARG%(이)가 미소 짓는 것 같았다.
 PRINTFORMW 호감도+40
+CFLAG:ARG:호감도 += 40
 RETURN 1
 CASE 2
 PRINTFORML 당신은 %CALLNAME:ARG%의 손톱을 깎아주기로 했다.
@@ -30,6 +34,7 @@ PRINTFORML 다 깎고 난 뒤 자신의 손톱을 들여다보던 %CALLNAME:ARG%
 PRINTFORML 당신에게 미소를 지으며 고마움을 표한다.
 PRINTFORML 당신은 그녀의 손톱 위로 후 바람을 불어주고 따라 웃는다.
 PRINTFORMW 호감도+30
+CFLAG:ARG:호감도 += 30
 RETURN 1
 CASE 3
 PRINTFORMW 당신은 쉬는 동안 집안을 둘러보고 있었다.
@@ -38,6 +43,8 @@ PRINTFORMW 당신은 조용히 %CALLNAME:ARG%의 곁으로 가, 흘러내린 이
 PRINTFORML 조용한 숨소리만이 둘 사이에 있었을 뿐이었다.
 PRINTFORML 호감도+30
 PRINTFORMW 스트레스-5
+CFLAG:ARG:호감도 += 30
+CFLAG:ARG:스트레스 -= 5
 RETURN 1
 CASE 4
 PRINTFORMW 당신은 골동품 가게에서 폴라로이드 카메라를 샀다.
@@ -51,6 +58,9 @@ PRINTFORML 당신은 폴라로이드 카메라의 필름이 다 떨어질 때까
 PRINTFORML 소지금-5000
 PRINTFORML 호감도+45
 PRINTFORMW 스트레스-15
+MONEY -= 5000
+CFLAG:ARG:호감도 += 45
+CFLAG:ARG:스트레스 -=15
 RETURN 1
 CASE 5
 PRINTFORML 당신은 문득 여성은 꽃다발을 받는 것을 좋아한다는 것을 떠올렸다. 예전에 TV에서 그랬지.
@@ -63,6 +73,9 @@ PRINTFORML 꽃처럼 환해지는 %CALLNAME:ARG%의 얼굴을 본 당신은 그�
 PRINTFORML 소지금-5000
 PRINTFORML 호감도+50
 PRINTFORMW 스트레스-15
+MONEY -= 5000
+CFLAG:ARG:호감도 += 50
+CFLAG:ARG:스트레스 -=15
 RETURN 1
 CASE 6
 PRINTFORMW 당신은 당신 옆에 앉아 있는 %CALLNAME:ARG%의 볼따구가 무척 탐스러워 보였다.

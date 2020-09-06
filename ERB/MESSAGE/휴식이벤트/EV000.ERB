@@ -41,6 +41,7 @@ PRINTFORML !
 PRINTFORML 당신은 5만원짜리 지폐를 주웠다!
 PRINTFORML 횡재했다!
 PRINTFORMW 소지금+50000
+MONEY += 50000
 RETURN 1
 CASE 5
 PRINTFORML 잠시 밖에 나와 걷고 있었는데
@@ -52,6 +53,7 @@ PRINTFORML ..
 PRINTFORML !
 PRINTFORML 당신은 500원짜리 동전을 주웠다!
 PRINTFORMW 소지금+500
+MONEY += 500
 RETURN 1
 CASE 6
 PRINTFORML 잠시 밖에 나와 걷고 있었는데
@@ -63,6 +65,7 @@ PRINTFORML ..
 PRINTFORML !
 PRINTFORML 당신은 10000원짜리 지폐를 주웠다!
 PRINTFORMW 소지금+10000
+MONEY += 10000
 RETURN 1
 CASE 7
 PRINTFORML 잠시 밖에 나와 걷고 있었는데
@@ -127,6 +130,7 @@ PRINTFORML ..
 PRINTFORML !
 PRINTFORML 당신은 10원짜리 동전을 주웠다...
 PRINTFORMW 소지금+10
+MONEY += 10
 RETURN 1
 CASE 13
 PRINTFORML 잠시 밖에 나와 걷고 있었는데
@@ -138,6 +142,7 @@ PRINTFORML ..
 PRINTFORML !
 PRINTFORML 당신은 1000원짜리 지폐를 주웠다!
 PRINTFORMW 소지금+1000
+MONEY += 1000
 RETURN 1
 CASE 14
 PRINTFORML 잠시 밖에 나와 걷고 있었는데
@@ -149,6 +154,7 @@ PRINTFORML ..
 PRINTFORML !
 PRINTFORML 당신은 100원짜리 동전을 주웠다.
 PRINTFORMW 소지금+100
+MONEY += 100
 RETURN 1
 CASE 15
 PRINTFORMW 당신이 TV를 켜니 광고가 송출되고 있었다.
@@ -288,6 +294,7 @@ PRINTFORML 아, 막판에 잘 마무리했으면 따는건데!
 PRINTFORML 집으로 돌아가면서 아쉬워하는 당신이었다.
 PRINTFORMW 소지금-1000
 RETURN 1
+MONEY -= 1000
 CASE 29
 PRINTFORMW 당신은 밖이 소란스러워서 창밖을 내다보았다.
 PRINTFORMW 밖을 보니 거리에 피켓과 현수막을 들고 시위하는 사람들이 보였다.

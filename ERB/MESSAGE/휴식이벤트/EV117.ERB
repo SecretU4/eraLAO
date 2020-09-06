@@ -13,6 +13,8 @@ PRINTFORMW 와, 얘 왜 이렇게 잘 하는거야?
 PRINTFORML 당신은 무어라 손 쓸 틈도 없이 속수무책으로 지고 말았다.
 PRINTFORML 호감도+15
 PRINTFORMW 스트레스-5
+CFLAG:ARG:호감도 += 15
+CFLAG:ARG:스트레스 -= 5
 RETURN 1
 CASE 1
 PRINTFORMW 당신은 사놓고 구석에 박아두었던 체스 세트를 꺼내들었다.
@@ -29,6 +31,8 @@ PRINTFORML 완벽한 역전!
 PRINTFORML 이럴리는 없다고 절규하는 %CALLNAME:ARG%의 얼굴을 보며, 당신은 승자의 기쁨을 누린다.
 PRINTFORML 호감도+15
 PRINTFORMW 스트레스-5
+CFLAG:ARG:호감도 += 15
+CFLAG:ARG:스트레스 -= 5
 RETURN 1
 ENDSELECT
 RETURN 0

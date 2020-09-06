@@ -8,6 +8,9 @@ PRINTFORML %CALLNAME:ARG%(은)는 복잡한 눈으로 보고만 있다.
 PRINTFORML 호감도+20
 PRINTFORML 스트레스-10
 PRINTFORMW 공포-10
+CFLAG:ARG:호감도 += 20
+CFLAG:ARG:스트레스 -= 10
+CFLAG:ARG:공포 -= 10
 RETURN 1
 CASE 1
 PRINTFORMW 당신은 문득 심심해서 변덕을 부리기로 했다.
@@ -22,6 +25,10 @@ PRINTFORML 소지금-25000
 PRINTFORML 호감도-50
 PRINTFORML 스트레스+30
 PRINTFORMW 공포+5
+MONEY -= 25000
+CFLAG:ARG:호감도 -= 50
+CFLAG:ARG:스트레스 += 30
+CFLAG:ARG:공포 += 5
 RETURN 1
 CASE 2
 PRINTFORMW 당신은 가만히 있기에는 지루해서 변덕을 부리기로 했다.
@@ -38,6 +45,9 @@ PRINTFORML 당신은 기만의 짜릿함에 전율하며 %CALLNAME:ARG%의 방�
 PRINTFORML 소지금-75000
 PRINTFORML 호감도-70
 PRINTFORMW 스트레스+50
+MONEY -= 75000
+CFLAG:ARG:호감도 -= 70
+CFLAG:ARG:스트레스 += 50
 RETURN 1
 CASE 3
 PRINTFORMW 당신은 감성이 충만해져서 변덕을 부리기로 했다.
@@ -48,6 +58,10 @@ PRINTFORML 소지금-10000
 PRINTFORML 호감도+20
 PRINTFORML 스트레스-20
 PRINTFORMW 공포-5
+MONEY -= 10000
+CFLAG:ARG:호감도 += 20
+CFLAG:ARG:스트레스 -= 20
+CFLAG:ARG:공포 -= 5
 RETURN 1
 CASE 4
 PRINTFORMW 당신은 아이스 버킷 챌린지 영상에서 영감을 받아 변덕을 부리기로 했다.
@@ -62,6 +76,8 @@ PRINTFORML 당신은 그 말을 남긴 채 흠뻑 젖은 %CALLNAME:ARG%(을)를 
 PRINTFORML 생각해보니 얼음이 빠졌네, 뒤늦게 떠올리고 아쉬워하는 당신이었다.
 PRINTFORML 스트레스+40
 PRINTFORMW 공포+7
+CFLAG:ARG:스트레스 += 40
+CFLAG:ARG:공포 += 7
 RETURN 1
 CASE 5
 PRINTFORMW 당신은 커피향 같은 감성에 취해 변덕을 부리기로 했다.
@@ -73,8 +89,11 @@ PRINTFORML 안 하던 짓을 하려니 온 몸에 닭살이 돋는 당신이었�
 PRINTFORML 소지금-5000
 PRINTFORML 호감도+20
 PRINTFORML 스트레스-10
-PRINTFORML 공포-5
 PRINTFORMW 공포-5
+MONEY -= 5000
+CFLAG:ARG:호감도 += 20
+CFLAG:ARG:스트레스 -= 10
+CFLAG:ARG:공포 -= 5
 RETURN 1
 CASE 6
 PRINTFORMW 당신은 게임에서 하드캐리한 김에 변덕을 부리기로 했다.
@@ -87,6 +106,8 @@ PRINTFORMW 당신은 아슬아슬하게 %CALLNAME:ARG%의 방에서 나와 근�
 PRINTFORML 얼마나 지났을까, 뿔피리 소리에 이은 와장창 소리에 당신은 희열을 느끼며 달아난다.
 PRINTFORML 스트레스+50
 PRINTFORMW 공포+20
+CFLAG:ARG:스트레스 += 50
+CFLAG:ARG:공포 += 20
 RETURN 1
 CASE 7
 PRINTFORMW 당신은 부른 배를 두드리다가 변덕을 부리기로 했다.
@@ -103,6 +124,10 @@ PRINTFORML 소지금-10000
 PRINTFORML 호감도+20
 PRINTFORML 스트레스-30
 PRINTFORMW 공포-10
+MONEY -= 10000
+CFLAG:ARG:호감도 += 20
+CFLAG:ARG:스트레스 -= 30
+CFLAG:ARG:공포 -= 10
 RETURN 1
 ENDSELECT
 RETURN 0
