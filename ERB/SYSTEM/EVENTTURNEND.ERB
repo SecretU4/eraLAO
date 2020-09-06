@@ -7,7 +7,7 @@
 ;========================================================================
 @EVENTTURNEND
 #DIM DYNAMIC 주회
-#DIM 지휘lv증가
+#DIM DYNAMIC 지휘lv증가
 #DIM DYNAMIC 총수입, 5
 ;지출, 수입 모두 양수값 저장이니 계산시 연산자의 올바른 사용 필수
 ;0 = 총합/1 = 유지비/2 = 출격수입/3,4,5 예비
@@ -211,7 +211,7 @@ NEXT
 @TURNEND_NIGHT_to_DAY_PRE
 #FUNCTION
 #DIM 대상
-#DIM 총유지비
+#DIM DYNAMIC 총유지비
 
 FOR 대상, 1, CHARANUM
     ;미보유 캐릭터 제외
