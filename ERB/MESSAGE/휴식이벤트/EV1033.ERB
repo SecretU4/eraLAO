@@ -5,6 +5,41 @@ PRINTFORMW 리제는 슬픔이 가득한 눈으로 당신을 바라보았다.
 PRINTFORMW 「제가 싫어지신 건가요? 그런 게 아니라면...」
 PRINTFORMW 「오늘 밤은 저와 함께 있어주세요.」
 PRINTFORMW 리제가 울먹이며 부탁하자...
-PRINTFORML 1. 오늘 밤은 리제와 지내기로 했다.
-PRINTFORMW 2. 리제를 방으로 돌려보냈다.
+PRINTFORML [1] 오늘 밤은 리제와 지내기로 했다.
+PRINTFORMW [2] 리제를 방으로 돌려보냈다.
+WHILE 1
+    INPUT
+    SELECTCASE RESULT
+        CASE 1,2
+            LOCAL = 1033 + RESULT
+            CALLFORM MSG_EV_{LOCAL}(ARG, ARG:1)
+            BREAK
+        CASEELSE
+            PRINTW 1, 2 중 하나를 입력해주세요.
+    ENDSELECT
+WEND
+RETURN 1
+
+@MSG_EV_1034(ARG, ARG:1)
+PRINTFORMW 당신은 조용히 리제를 품에 안았다.
+PRINTFORMW 「흐윽, 흑... 지금까지 너무 무섭고 외로웠어요...」
+PRINTFORMW 「그러니까 오늘은, 저만을 사랑해주셔야 해요. 아셨죠?」
+PRINTFORMW 리제는 자신의 얼굴을 당신의 가슴팍에 파묻고, 이리저리 비벼댔다.
+PRINTFORML 당신은 밤새도록 리제를 달래주었다.
+PRINTFORMW 호감도+5 스트레스-10 공포-30
+CFLAG:ARG:호감도 += 5
+CFLAG:ARG:스트레스 -= 10
+CFLAG:ARG:공포 -= 30
+RETURN 1
+
+@MSG_EV_1035(ARG, ARG:1)
+PRINTFORMW 당신은 리제에게 단호하게 자신의 방으로 돌아가라고 했다.
+PRINTFORMW 「부탁이에요, 주인님... 오늘 하루만이라도 저와 함께 있어주시면 안 돼요?」
+PRINTFORMW 「혼자 있는 건... 너무 무섭고 외로워요...」
+PRINTFORMW 리제의 간곡한 부탁에도, 당신은 리제에게 다시 한 번 방으로 돌아가라고 단호하게 명령했다.
+PRINTFORMW 「...너무하세요, 주인님...」
+PRINTFORML 리제는 흐르는 눈물을 소맷자락으로 훔치며, 방으로 돌아갔다.
+PRINTFORMW 스트레스+10 공포+20
+CFLAG:ARG:스트레스 += 10
+CFLAG:ARG:공포 += 20
 RETURN 1

@@ -4,6 +4,35 @@ PRINTFORMW 문을 열고 집 안으로 들어가려던 당신은,
 PRINTFORMW 무표정하게 정원을 다듬고 있는 리제를 보았다.
 PRINTFORMW 당신의 손에 들린 봉투에는 시원한 음료수 몇 개가 들어있었다.
 PRINTFORMW 그래서...
-PRINTFORML 1. 음료수 하나를 꺼내 리제에게 건넸다.
-PRINTFORMW 2. 알 게 뭐람. 그대로 집 안으로 들어갔다.
+PRINTFORML [1] 음료수 하나를 꺼내 리제에게 건넸다.
+PRINTFORMW [2] 알 게 뭐람. 그대로 집 안으로 들어갔다.
+WHILE 1
+    INPUT
+    SELECTCASE RESULT
+        CASE 1,2
+            LOCAL = 1030 + RESULT
+            CALLFORM MSG_EV_{LOCAL}(ARG, ARG:1)
+            BREAK
+        CASEELSE
+            PRINTW 1, 2 중 하나를 입력해주세요.
+    ENDSELECT
+WEND
+RETURN 1
+
+@MSG_EV_1031(ARG, ARG:1)
+PRINTFORMW 당신은 슬그머니 리제 곁으로 다가가, 음료수 하나를 건넸다.
+PRINTFORMW 리제는 조금 놀란 표정으로 얼떨결에 음료수를 받았다.
+PRINTFORMW 「...저한테 주시는 건가요?」
+PRINTFORMW 「...감사...합니다. 잘 마실게요.」
+PRINTFORMW 리제는 쭈뼛거리며 당신에게 감사인사를 전했다.
+PRINTFORML 손에 든 음료수를 쳐다보는 리제의 입꼬리가 슬쩍 올라가있었다.
+PRINTFORMW 호감도+5 스트레스-30
+CFLAG:ARG:호감도 += 5
+CFLAG:ARG:스트레스 -= 30
+RETURN 1
+
+@MSG_EV_1032(ARG, ARG:1)
+PRINTFORMW 당신은 리제를 무시하고, 그대로 집 안으로 들어갔다.
+PRINTFORMW 리제는 당신을 못 본 것인지, 아니면 못 본 체 하는 것인지,
+PRINTFORMW 그저 계속해서 정원만 다듬을 뿐이었다.
 RETURN 1
