@@ -2,14 +2,22 @@
 RETURN 1
 
 @M_No7_TRAIN_START_0
-PRINTFORMW 「후후... 반가워요, 주인님.」
-PRINTFORMW 「시저스 리제라고 해요.」
-PRINTFORMW 「편하게 '리제'라고 불러주세요.」
-PRINTFORMW 「처음 뵙겠습니다, 주인님.」
-PRINTFORMW 「'리제'라고 불러주세요. 후후후...」
-PRINTFORMW 「안녕하세요, 주인님.」
-PRINTFORMW 「엘리자베스 A형 바이오로이드, 시저스 리제라고 해요.」
-PRINTFORMW 「'리제'라고 불러주세요.」
+PRINTDATAW
+    DATALIST
+        DATA 「후후... 반가워요, 주인님.」
+        DATA 「시저스 리제라고 해요.」
+        DATA 「편하게 '리제'라고 불러주세요.」
+    ENDLIST
+    DATALIST
+        DATA 「처음 뵙겠습니다, 주인님.」
+        DATA 「'리제'라고 불러주세요. 후후후...」
+    ENDLIST
+    DATALIST
+        DATA 「안녕하세요, 주인님.」
+        DATA 「엘리자베스 A형 바이오로이드, 시저스 리제라고 해요.」
+        DATA 「'리제'라고 불러주세요.」
+    ENDLIST
+ENDDATA
 CFLAG:조교여부 = 1
 
 @M_No7_TRAIN_START_1
