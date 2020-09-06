@@ -14,7 +14,11 @@ CALL EVENT_SET_COMMON
 
 RESULT = 0
 TRYCALLFORM MSG_EV_{이벤트번호}(선정캐릭터:0, 선정캐릭터:1)
-RETURN RESULT
+SIF RESULT == 0
+    PRINTFORMW {이벤트번호}번 이벤트를 발견하지 못했습니다.
+
+;엔딩도 어차피 TURNEND에서 처리 가능하므로
+BEGIN TURNEND
 ;========================================================================
 ;함수명: EVENT_SET_COMMON
 ;원본 api /event1 대응
