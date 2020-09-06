@@ -96,6 +96,7 @@ WHILE RESULT != 0
     CALL SHOW_SALES_LIST(INDEX_START, INDEX_END)
     PRINTL
     PRINTL
+    PRINTL [999] 보유 아이템 사용
     PRINTFORML [0] 돌아간다
     PRINTL
     DRAWLINE
@@ -109,7 +110,9 @@ WHILE RESULT != 0
         ENDIF
 
         SIF RESULT > 0
-            CALL USE_ITEM(RESULT)
+            CALL WILL_USE_ITEM(RESULT)
+    ELSEIF RESULT == 999
+        CALL CURRENT_ITEMLIST
     ELSE
         PRINTW 제시된 숫자를 골라주세요.
     ENDIF
@@ -143,7 +146,7 @@ WHILE RESULT != 0
     ELSEIF ITEMNAME:(RESULT + INDEX_START) != ""
         CALL BUY_ITEM(RESULT, INDEX_START)
         SIF RESULT > 0
-            CALL USE_ITEM(RESULT)
+            CALL WILL_USE_ITEM(RESULT)
     ELSE
         PRINTW 제시된 숫자를 골라주세요.
     ENDIF
@@ -234,22 +237,31 @@ SELECTCASE RESULT
         PRINTFORMW %아이템을% 5개 구매하였습니다.
         RETURN ARG
     CASE 3
+        PRINTFORML 구매하실 개수를 입력해주세요. 최대 구매 가능수량 {ITEMSALES:ARG}, [0] 돌아가기
         WHILE 1
-            PRINTFORML 구매하실 개수를 입력해주세요. 최대 구매 가능수량 {ITEMSALES:ARG}
+            INPUT
+            IF RESULT == 0
+                RETURN -1
+            ELSEIF ITEMSALES:ARG >= RESULT && (ITEMPRICE:ARG) * RESULT <= MONEY
+                MONEY:0 -= (ITEMPRICE:ARG * RESULTS)
+                ITEMSALES:ARG -= RESULTS
+                ITEM:ARG += RESULTS
+                PRINTFORMW %아이템을% {RESULTS}개 구매하였습니다.
+                RETURN ARG
+            ELSEIF ITEMSALES:ARG < RESULT
+                PRINTW 재고가 부족합니다.
+            ELSEIF (ITEMPRICE:ARG) * RESULT > MONEY
+                PRINTW 돈이 부족합니다.
+            ENDIF
         WEND
 ENDSELECT 
 ;===========================================================
-;함수명: USE_ITEM
-;ARG로 받은 아이템을 사용하는 함수.
-;추후 복수 사용 가능한 아이템 처리 필요
-;아이템 효과 처리는 이곳에서 실시함.
+;함수명: WILL_USE_ITEM(ARG)
+;ARG로 받은 아이템의 사용 준비 함수
+;단일 아이템만 지원
 ;ARG = ITEM.CSV상 인덱스값
-;ITEM_EFFECT:0 = +호감도 1: -공포 2: -스트레스 3: 마음속상처
-;여기서 TARGET값은 CURRENT_BIOLIST에서 RETURN 받으며 그 값은 CSV가 아닌 현 캐릭터값
 ;===========================================================
-@USE_ITEM(ARG)
-#DIM ITEM_EFFECT, 4
-
+@WILL_USE_ITEM(ARG)
 WHILE 1
     IF GROUPMATCH(ARG, 1,2,3,4)
         PRINTFORML %아이템을% 누구에게 선물하시겠습니까?
@@ -266,10 +278,50 @@ WHILE 1
     IF RESULT
         PRINTFORML %아이템을% 사용하지 않았습니다.
         RETURN -1
+    ELSEIF GROUPMATCH(ARG, 2,3,4) && ITEM:ARG > 1
+        PRINTFORML %CALLNAME:TARGET%에게 %아이템을% 여러개 선물하시겠습니까?
+        CALL ASK_M("1개만 선물한다", 1, "5개 선물한다", ITEM:ARG >= 5, "개수 지정", 1)
+        SELECTCASE RESULT
+            CASE 0 ;1개만 선물
+                CALL USE_ITEM(ARG)
+                RETURN 1
+            CASE 1 ;5개 선물
+                REPEAT 5
+                    CALL USE_ITEM(ARG)
+                REND
+                RETURN 1
+            CASE 2 ;개수 지정
+                PRINTFORML 선물할 개수를 지정해주세요. 최대 {ITEM:ARG} 개, [0] 돌아가기
+                WHILE 1
+                    INPUT
+                    IF RESULT == 0
+                        RETURN -1
+                    ELSEIF ITEM:ARG >= RESULT
+                        REPEAT RESULT
+                            CALL USE_ITEM(ARG)
+                        REND
+                        RETURN 1
+                    ELSEIF ITEM:ARG < RESULT
+                        PRINTW 재고가 부족합니다.
+                    ENDIF
+                WEND
+        ENDSELECT
     ELSE
+        CALL USE_ITEM(ARG)
         BREAK
     ENDIF
 WEND
+;===========================================================
+;함수명: USE_ITEM
+;ARG로 받은 아이템을 사용하는 함수.
+;추후 복수 사용 가능한 아이템 처리 필요
+;아이템 효과 처리는 이곳에서 실시함.
+;ARG = ITEM.CSV상 인덱스값
+;ITEM_EFFECT:0 = +호감도 1: -공포 2: -스트레스 3: 마음속상처
+;여기서 TARGET값은 CURRENT_BIOLIST에서 RETURN 받으며 그 값은 CSV가 아닌 현 캐릭터값
+;===========================================================
+@USE_ITEM(ARG)
+#DIM ITEM_EFFECT, 4
 
 ;이미 아이템은 소지중이며, 아이템 효과 처리는 여기에서.
 SELECTCASE ARG
@@ -391,3 +443,25 @@ IF TALENT:TARGET:짜증 && CFLAG:TARGET:스트레스 < 200
     PRINTFORMW %CALLNAME:TARGET%의 짜증이 풀린 것 같습니다.
 ENDIF
 RETURN 0
+;=========================================================================
+;함수명:CURRENT_ITEMLIST
+;현재 보유중인 아이템 목록 출력
+;일단은 기본아이템만
+;=========================================================================
+@CURRENT_ITEMLIST
+PRINTL
+PRINTL 사용할 아이템을 선택해주세요.
+PRINTL
+DRAWLINE
+REPEAT 50
+    IF ITEM:COUNT > 0
+        PRINTBUTTON @"[{COUNT}] %ITEMNAME:COUNT% 보유 수 : {ITEM:COUNT}", COUNT 
+    ENDIF
+REND
+PRINTL [999] 돌아가기
+INPUT
+IF RESULT == 999
+    RETURN -1
+ELSE
+    CALL WILL_USE_ITEM(RESULT)
+ENDIF
