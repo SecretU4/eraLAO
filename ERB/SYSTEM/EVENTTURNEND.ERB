@@ -17,6 +17,10 @@ SIF CFLAG:MASTER:엔딩플래그
 
 IF TIME == 0 ;낮 > 밤
     TIME = 1
+
+    ;기본 아이템 재고 추가
+    CALL SET_ITEM_SALES(2, 50, 10)
+
     ;낮 > 밤 캐릭터 변동 체크 ;원본 uptime1 대응
     CALL TURNEND_DAY_to_NIGHT
 
@@ -83,6 +87,11 @@ ELSEIF TIME == 1 ;밤 > 낮
 
     ;총수입:0은 기록 및 디버그용
     총수입 = 총수입:2 - 총수입:1
+
+    ;기본 아이템 재고 보충 처리
+    ;약혼반지는 하나만
+    CALL SET_ITEM_SALES(0, 1, 1)
+    CALL SET_ITEM_SALES(2, 50, 20)
 
     ;MASTER의 전투레벨처리
     CALL BattleLV_UP(MASTER)

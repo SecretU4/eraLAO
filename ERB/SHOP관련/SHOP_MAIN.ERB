@@ -30,7 +30,6 @@ WHILE RESULT != 0
             CALL STOCK_MARKET
     ENDSELECT
 WEND
-
 ;===========================================================
 ;함수명: SHOW_SALES_LIST
 ;현재 판매중(ITEMSALES:COUNT > 0)인 아이템 표시
@@ -50,22 +49,22 @@ FOR COUNT, ARG:0, ARG:1
     PRINTFORMLC %ITEMNAME:COUNT, 8% %MONEYSTR(ITEMPRICE:COUNT), 7% 
     RESETCOLOR
 NEXT
-
 ;===========================================================
 ;함수명: SET_ITEM_SALES
 ;아이템명이 정해지지 않은 번호를 제외한 아이템의 재고를 5로 함.
-;ARG:0 = INDEX_START, ARG:1 = INDEX_END
+;ARG:0 = INDEX_START, ARG:1 = INDEX_END, ARG:2 = 있으면 해당값이 재고 최대치
 ;===========================================================
-@SET_ITEM_SALES(ARG:0, ARG:1)
+@SET_ITEM_SALES(ARG:0, ARG:1, ARG:2 = 0)
 FOR LOCAL, ARG:0, ARG:1
     IF ITEMNAME:LOCAL == ""
         CONTINUE
+    ELSEIF ARG:2
+        ITEMSALES:LOCAL = MAX(ITEMSALES:LOCAL, ARG:2)
     ELSE
-        ITEMSALES:LOCAL = 5
+        ITEMSALES:LOCAL = MAX(ITEMSALES:LOCAL, 5)
     ENDIF
 NEXT
 RETURN 1
-
 ;===========================================================
 ;함수명: SET_EX_ITEM_SALES
 ;아이템명이 정해지지 않은 번호를 제외한 아이템의 재고를 1로 함.
@@ -83,7 +82,6 @@ FOR LOCAL, ARG:0, ARG:1
     ENDIF
 NEXT
 RETURN 1
-
 ;===========================================================
 ;함수명: ITEM_SHOP
 ;일반적인 아이템을 구매할 수 있는 화면
@@ -94,8 +92,6 @@ RETURN 1
 #DIM STR_START = 200
 WHILE RESULT != 0
     DRAWLINE
-    ;추후 하루 지날때마다로 이관
-    CALL SET_ITEM_SALES(INDEX_START, INDEX_END)
 
     CALL SHOW_SALES_LIST(INDEX_START, INDEX_END)
     PRINTL
@@ -106,14 +102,18 @@ WHILE RESULT != 0
     INPUT
     IF RESULT == 0
     ELSEIF ITEMNAME:(RESULT + INDEX_START) != ""
-        CALL BUY_ITEM(RESULT, INDEX_START, STR_START)
+        IF GROUPMATCH(RESULT + INDEX_START, 2,3,4)
+            CALL BUY_MULTIPLE_ITEM(RESULT, INDEX_START, STR_START)
+        ELSE
+            CALL BUY_ITEM(RESULT, INDEX_START, STR_START)
+        ENDIF
+
         SIF RESULT > 0
             CALL USE_ITEM(RESULT)
     ELSE
         PRINTW 제시된 숫자를 골라주세요.
     ENDIF
 WEND
-
 ;===========================================================
 ;함수명: EX_ITEM_SHOP
 ;일반적인 아이템이 아닌 특수 아이템을 구매할 수 있는 화면
@@ -148,7 +148,6 @@ WHILE RESULT != 0
         PRINTW 제시된 숫자를 골라주세요.
     ENDIF
 WEND
-
 ;===========================================================
 ;함수명: BUY_ITEM
 ;바이오로이드 제외 모든 아이템의 구매 가부 확인 화면. 조건절 처리도 여기서 한다.
@@ -193,8 +192,52 @@ ELSE
 ENDIF
 ;===========================================================
 ;함수명: BUY_MULTIPLE_ITEM
+;ARG:0 = INDEX_START, ARG:1 = INDEX_END, ARG:2 = (존재시) STR 인덱스값
 ;===========================================================
-@BUY_MULTIPLE_ITEM
+@BUY_MULTIPLE_ITEM(ARG, ARG:1, ARG:2)
+SIF ARG:1
+    ARG += ARG:1
+PRINTFORML 품목명: %ITEMNAME:ARG% 가격: %MONEYSTR(ITEMPRICE:ARG)% 재고: {ITEMSALES:ARG} 개
+PRINTL
+SIF ARG:2 && STR:(ARG + ARG:2) != ""
+    PRINTSL STR:(ARG + ARG:2)
+PRINTL
+IF ITEMSALES:ARG <= 0
+    PRINTW 재고가 없어 구매하실 수 없습니다.
+    RETURN -1
+ENDIF
+DRAWLINE
+PRINTFORML %아이템을% 구매하시겠습니까?
+CALL ASK_M("아니오", 1, "1개 구매", MONEY >= ITEMPRICE:ARG, "5개 구매", (ITEMSALES:ARG >= 5 && MONEY >= ITEMPRICE:ARG * 5), "개수 입력", ITEMSALES:ARG)
+SELECTCASE RESULT
+    CASE 0 ;아니오
+        PRINTFORMW %아이템을% 구매하지 않았습니다.
+        RETURN -1
+    CASE 1 ;1개 구매
+        IF MONEY:0 < ITEMPRICE:ARG
+            PRINTFORMW 돈이 부족합니다.
+            RETURN -1
+        ENDIF
+        MONEY:0 -= ITEMPRICE:ARG
+        ITEMSALES:ARG --
+        ITEM:ARG ++
+        PRINTFORMW %아이템을% 구매하였습니다.
+        RETURN ARG
+    CASE 2 ;5개 구매
+        IF MONEY:0 < (ITEMPRICE:ARG * 5)
+            PRINTFORMW 돈이 부족합니다.
+            RETURN -1
+        ENDIF
+        MONEY:0 -= (ITEMPRICE:ARG * 5)
+        ITEMSALES:ARG -= 5
+        ITEM:ARG += 5
+        PRINTFORMW %아이템을% 5개 구매하였습니다.
+        RETURN ARG
+    CASE 3
+        WHILE 1
+            PRINTFORML 구매하실 개수를 입력해주세요. 최대 구매 가능수량 {ITEMSALES:ARG}
+        WEND
+ENDSELECT 
 ;===========================================================
 ;함수명: USE_ITEM
 ;ARG로 받은 아이템을 사용하는 함수.

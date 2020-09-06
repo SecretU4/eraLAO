@@ -29,6 +29,9 @@ CALL COMMANDER_MAKING
 CALL ADD_ALL_CHARA
 CALL UPDATE_STOCK
 
+;약혼반지는 하나만
+CALL SET_ITEM_SALES(0, 1, 1)
+CALL SET_ITEM_SALES(2, 50, 20)
 CALL SET_EX_ITEM_SALES(200, 203)
 
 ;보너스 퀴즈
@@ -192,12 +195,19 @@ CALLNAME:MASTER = 아이샤
 ;게임 시작시 변수 데이터 처리
 CALL ADD_ALL_CHARA
 
+;약혼반지는 하나만
+CALL SET_ITEM_SALES(0, 1, 1)
+CALL SET_ITEM_SALES(2, 50, 20)
 CALL SET_EX_ITEM_SALES(200, 203)
 
 PRINTW 디버그 설정이 완료되었습니다.
 
 BEGIN SHOP
 
+;===========================================================
+;함수명:COMMANDER_NAMESET
+;MASTER 이름 변경 기능
+;===========================================================
 @COMMANDER_NAMESET
 IF GROUPMATCH(NAME:MASTER, "복","규동","아이샤","오렌지","에이드","돈부리")
     SETCOLOR 250, 0, 0
