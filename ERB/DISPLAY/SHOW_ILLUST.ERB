@@ -117,6 +117,34 @@ ELSEIF ARGS == "DATECOM"
             RETURN 0
     ENDSELECT
 
+ELSEIF ARGS == "REST_1"
+    SELECTCASE ARG:1
+        CASE 1
+            LOCALS = 머리
+        CASE 2
+            LOCALS = 켈베에밀리
+        CASE 3
+            LOCALS = 리제이벤1
+        CASE 4
+            LOCALS = 리제이벤2
+        CASE 5
+            LOCALS = 리제이벤3
+        CASE 6
+            LOCALS = 리제이벤4
+        CASE 7
+            LOCALS = KakaoTalk_20200521_194845826
+    ENDSELECT
+
+ELSEIF ARGS == "REST_2"
+    SELECTCASE ARG:1
+        CASE 1
+            LOCALS = 공포영화
+        CASE 2
+            LOCALS = 로맨스영화
+        CASE 3
+            LOCALS = 코미디영화
+    ENDSELECT
+
 ELSEIF ARGS == "ENDING" ;TODO 그림 이름 변경
     SELECTCASE ARG:1
         CASE 1 ;메이 1번 엔딩플래그
