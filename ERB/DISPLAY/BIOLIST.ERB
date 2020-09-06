@@ -58,9 +58,11 @@ FOR LOCAL, 1, CHARANUM
         ENDIF
         PRINTFORM %LOCALS% 
         RESETCOLOR
-        PRINTFORM 호감도 : {CFLAG:LOCAL:호감도} 
-        PRINTFORM 스트레스 : {CFLAG:LOCAL:스트레스} 
-        PRINTFORML 공포 : {CFLAG:LOCAL:공포} 
+        IF TALENT:MASTER:관심법
+            PRINTFORM 호감도 : {CFLAG:LOCAL:호감도} 
+            PRINTFORM 스트레스 : {CFLAG:LOCAL:스트레스} 
+            PRINTFORML 공포 : {CFLAG:LOCAL:공포} 
+        ENDIF
         ALIGNMENT RIGHT
         CALL SHOW_SPECIAL_STATUS(LOCAL)
         PRINTL
