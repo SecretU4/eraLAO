@@ -243,10 +243,10 @@ SELECTCASE RESULT
             IF RESULT == 0
                 RETURN -1
             ELSEIF ITEMSALES:ARG >= RESULT && (ITEMPRICE:ARG) * RESULT <= MONEY
-                MONEY:0 -= (ITEMPRICE:ARG * RESULTS)
-                ITEMSALES:ARG -= RESULTS
-                ITEM:ARG += RESULTS
-                PRINTFORMW %아이템을% {RESULTS}개 구매하였습니다.
+                MONEY:0 -= (ITEMPRICE:ARG * RESULT)
+                ITEMSALES:ARG -= RESULT
+                ITEM:ARG += RESULT
+                PRINTFORMW %아이템을% {RESULT}개 구매하였습니다.
                 RETURN ARG
             ELSEIF ITEMSALES:ARG < RESULT
                 PRINTW 재고가 부족합니다.
