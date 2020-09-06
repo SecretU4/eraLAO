@@ -14,6 +14,8 @@ PRINTFORMW 「해충 처리는 언제든 저한테 맡겨주세요, 주인님!�
 PRINTFORMW 당신은 눈 하나 깜짝 않고 해충을 처리해주는 리제가 새삼 달리 보였다.
 PRINTFORML 당신은 리제가 만족할 때까지 칭찬해주었다.
 PRINTFORMW 호감도+20 스트레스-10
+CFLAG:ARG:호감도 += 20
+CFLAG:ARG:스트레스 -= 10
 RETURN 1
 CASE 1
 PRINTFORMW 당신은 콘크리트 틈새 사이로 핀 노란 꽃 한 송이를 보았다.
@@ -29,6 +31,7 @@ PRINTFORMW 「어느 정도 자라고 난 뒤에는... 저한테 그 꽃을 선�
 PRINTFORMW 당신은 보일 듯 말 듯 입꼬리를 올리며, 다시 한 번 고개를 끄덕였다.
 PRINTFORML 그 모습에 리제는 뛸 듯이 기뻐했다.
 PRINTFORMW 호감도+25
+CFLAG:ARG:호감도 += 25
 RETURN 1
 ENDSELECT
 RETURN 0

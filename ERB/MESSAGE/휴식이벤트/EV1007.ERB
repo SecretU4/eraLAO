@@ -1,6 +1,35 @@
 ﻿@MSG_EV_1007(ARG, ARG:1)
-SELECTCASE RAND:2
+SELECTCASE RAND:3
 CASE 0
+PRINTFORMW 당신은 입이 심심해져서 근처 편의점으로 갔다.
+PRINTFORML 탄산음료 한 캔과 닭꼬치 하나를 집어 들고 돌아가려는 순간,
+PRINTFORML 소완이 어느새 그의 뒤에 있는 것을 보고 소스라치게 놀란다.
+PRINTFORML 소완은 왜 여기 있냐고 물어보는 당신의 손에서 군것질거리를 뺏으며
+PRINTFORML 「이것 때문이옵니다.」
+PRINTFORML 라고 답한다.
+PRINTFORMW 「입이 심심하시다면 다음부터는 소첩에게 말씀하십시오. 간식거리를 만들어드리겠습니다.」
+PRINTFORML 당신은 먹지도 못 하고 버려지는 군것질거리를 보며 아쉬운 입맛만 다신다.
+PRINTFORML 소지금-3000
+PRINTFORML 호감도+10
+PRINTFORMW 스트레스+3
+MONEY -= 3000
+CFLAG:ARG:호감도 += 10
+cFLAG:ARG:스트레스 += 3
+RETURN 1
+CASE 1
+PRINTFORMW 당신은 배가 출출해서 냉장고를 열어보았지만, 냉장고 안에는 마땅히 배를 채울 것이 없었다.
+PRINTFORMW 재료들을 사와서 요리를 하기엔 귀찮았던 당신은 배달 어플을 열어서 메뉴들을 훑어본다.
+PRINTFORMW 무난하게 치킨이나 한 마리 뜯을까 생각하는 그 순간, 소완이 당신의 손에서 휴대폰을 낚아챘다.
+PRINTFORMW 「지금 뭐 하시는 겁니까?」
+PRINTFORMW 당신은 출출해서 뭐라도 시켜먹으려고 했다며, 음식이 오면 소완과 같이 먹으려고 했다는 연막을 쳤다.
+PRINTFORMW 하지만 소완은 강경했다.
+PRINTFORMW 「주인께서는 소첩이 조리한 것만을 드셔야 합니다. 그것이 소첩에게도, 주인에게도 옳은 일이옵니다.」
+PRINTFORMW 「지금 바로 요리를 만들어 올리겠사옵니다. 다음부턴 시장하실 때마다 소첩을 찾으시옵소서.」
+PRINTFORMW 당신은 부엌으로 들어가는 소완의 뒷모습에 대고 섭섭해했다.
+PRINTFORMW 하지만, 소완이 만들어준 오믈렛을 맛 본 당신은 엄지손가락을 치켜들 수 밖에 없었다.
+PRINTFORMW 역시, 요리는 소완이다.
+RETURN 1
+CASE 2
 PRINTFORMW 당신은 TV를 통해 바이오로이드들이 등장하는 게임 리그 중계를 보고 있었다.
 PRINTFORMW 게임 속에서 소완은 다른 바이오로이드들의 호위를 받으며 적진으로 가고 있었다.
 PRINTFORMW 소완 아이템을 보시면 아시겠지만 지금 소완 완전 괴물입니다.
@@ -20,19 +49,6 @@ PRINTFORMW 그 곳에는 언제 다가왔는지 소완이 서 있었다.
 PRINTFORMW 갑작스러운 등장에 기겁한 당신은 내버려둔 채,
 PRINTFORMW 소완은 하이라이트에서 자신을 죽인 쇼비의 플레이를 빤히 쳐다보더니 말 없이 방으로 들어가버렸다.
 PRINTFORMW 괜히 등골이 서늘해진 당신은 다시 TV로 고개를 돌렸다.
-RETURN 1
-CASE 1
-PRINTFORMW 당신은 배가 출출해서 냉장고를 열어보았지만, 냉장고 안에는 마땅히 배를 채울 것이 없었다.
-PRINTFORMW 재료들을 사와서 요리를 하기엔 귀찮았던 당신은 배달 어플을 열어서 메뉴들을 훑어본다.
-PRINTFORMW 무난하게 치킨이나 한 마리 뜯을까 생각하는 그 순간, 소완이 당신의 손에서 휴대폰을 낚아챘다.
-PRINTFORMW 「지금 뭐 하시는 겁니까?」
-PRINTFORMW 당신은 출출해서 뭐라도 시켜먹으려고 했다며, 음식이 오면 소완과 같이 먹으려고 했다는 연막을 쳤다.
-PRINTFORMW 하지만 소완은 강경했다.
-PRINTFORMW 「주인께서는 소첩이 조리한 것만을 드셔야 합니다. 그것이 소첩에게도, 주인에게도 옳은 일이옵니다.」
-PRINTFORMW 「지금 바로 요리를 만들어 올리겠사옵니다. 다음부턴 시장하실 때마다 소첩을 찾으시옵소서.」
-PRINTFORMW 당신은 부엌으로 들어가는 소완의 뒷모습에 대고 섭섭해했다.
-PRINTFORMW 하지만, 소완이 만들어준 오믈렛을 맛 본 당신은 엄지손가락을 치켜들 수 밖에 없었다.
-PRINTFORMW 역시, 요리는 소완이다.
 RETURN 1
 ENDSELECT
 RETURN 0
