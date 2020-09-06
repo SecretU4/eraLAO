@@ -191,7 +191,10 @@ ELSE
     PRINTFORMW %아이템을% 구매하지 않았습니다.
     RETURN -1
 ENDIF
-
+;===========================================================
+;함수명: BUY_MULTIPLE_ITEM
+;===========================================================
+@BUY_MULTIPLE_ITEM
 ;===========================================================
 ;함수명: USE_ITEM
 ;ARG로 받은 아이템을 사용하는 함수.
@@ -208,9 +211,9 @@ WHILE 1
     IF GROUPMATCH(ARG, 1,2,3,4)
         PRINTFORML %아이템을% 누구에게 선물하시겠습니까?
         CALL CURRENT_BIOLIST("선물")
-        TARGET = RESULT
-        SIF RESULT == 999
+        SIF RESULT == -1
             RETURN -1
+        TARGET = RESULT
         PRINTFORML %아이템을% %CALLNAME:TARGET%에게 선물합니다.
         CALL ASK_YN("예", "다시 생각좀...")
     ELSE
