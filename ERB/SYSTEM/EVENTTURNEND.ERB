@@ -111,6 +111,9 @@ ELSEIF TIME == 1 ;밤 > 낮
             PRINTFORMW 당신의 지휘레벨이 {지휘lv증가}레벨이 되었습니다.
     ENDIF
 
+    SIF MONEY < 0
+        CALL BANKRUPT
+
     SIF TARGET == 0
         GOTO NULL_TARGET
 
@@ -310,3 +313,40 @@ SELECTCASE NO:ARG
         SIF CFLAG:ARG:etc2 > 0 && CFLAG:ARG:etc2 < 11
             CFLAG:ARG:etc2 += 1 ;etc2 = 베로니카 실종 일수
 ENDSELECT
+;========================================================================
+;함수명: BANKRUPT
+;파산 처리 함수
+;========================================================================
+@BANKRUPT
+PRINTL 돈이 부족하여 파산하셨습니다.
+PRINTL
+PRINTL
+WHILE 1
+    PRINTFORML 부족한 금액 : %MONEYSTR(MONEY)%
+    PRINTL
+    PRINTL 
+    PRINTL [1] 바이오로이드 판매
+    PRINTL [2] 주식 판매
+    PRINTL [0] 그냥 파산할게요.
+    INPUT
+    SELECTCASE RESULT
+        CASE 0
+            PRINTL 모든 정보를 초기화합니다.
+            PRINTL 동의하십니까?
+            CALL ASK_YN("아뇨, 뚱인데요", "예")
+            SELECTCASE RESULT
+                CASE 0 ;아뇨
+                    CONTINUE
+                CASE 1 ;예
+                    BREAK
+            ENDSELECT
+        CASE 1
+            CALL FAREWELL(1)
+        CASE 2
+            CALL STOCK_MARKET
+    ENDSELECT
+    SIF MONEY > 0
+        RETURN 1
+WEND
+
+BEGIN TITLE

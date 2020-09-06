@@ -7,7 +7,8 @@
     138 실종 일때
 불가능한 캐릭터 선택시 - 이별 불가능한 상태입니다.
 [SKIPEND]
-@FAREWELL
+;ARG = 1이면 파산처리용
+@FAREWELL(ARG = 0)
 #DIM CSV_ID
 #DIM SELL_PRICE
 #DIM PREV_TARGET
@@ -41,8 +42,10 @@ WHILE 1
     PRINTL
     PRINTBUTTON @" [판매]", 1
     PRINTL
-    PRINTBUTTON @" [폐기]", 2
-    PRINTL
+    IF !ARG
+        PRINTBUTTON @" [폐기]", 2
+        PRINTL
+    ENDIF
     PRINTBUTTON @" [돌아가기]", 0
     PRINTL
     INPUT
@@ -52,7 +55,7 @@ WHILE 1
         CALL ENDING_FAREWELL_FLAG(TARGET,"판매")
         BREAK
     ;폐기
-    ELSEIF RESULT == 2
+    ELSEIF !ARG && RESULT == 2
         CALL DISPOSAL_BIO(CSV_ID)
         CALL ENDING_FAREWELL_FLAG(TARGET,"폐기")
         BREAK
@@ -60,6 +63,11 @@ WHILE 1
         RETURN -1
     ENDIF
 WEND
+
+;파산처리시
+SIF ARG
+    RETURN 1
+
 ;턴종료처리
 BEGIN TURNEND
 
