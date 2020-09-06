@@ -70,6 +70,9 @@ WHILE 1
     ENDIF
 WEND
 
+SIF TARGET == 출격대상
+    TARGET = 0
+
 CALL MSG_Sortie(출격대상)
 
 CFLAG:출격대상:출격중 = 1
