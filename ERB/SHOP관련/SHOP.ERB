@@ -72,7 +72,10 @@ SELECTCASE RESULT
         RETURN 1
     ;휴식
     CASE 102
-        PRINTW 미실장입니다.
+        CALL COMMON_EVENT
+        SIF RESULT == 0
+            PRINTL 작동된 메시지가 없었습니다.
+        RETURN 1
     ;출격
     CASE 103
         SIF FLAG:속박상태 || TIME == 1

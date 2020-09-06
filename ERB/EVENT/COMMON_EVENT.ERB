@@ -6,7 +6,7 @@
 #DIM 이벤트번호
 #DIM 선정캐릭터, 2
 
-CALLF EVENT_SET_COMMON
+CALL EVENT_SET_COMMON
 
 이벤트번호 = RESULT:0
 선정캐릭터:0 = RESULT:1
@@ -24,7 +24,6 @@ RETURN RESULT
 ;이벤트 선출 함수
 ;========================================================================
 @EVENT_SET_COMMON
-#FUNCTION
 #DIMS 이벤트배열 ;even
 #DIM 이벤트bit값
 #DIM EVENTNO_LAST ;총 이벤트 수
@@ -229,7 +228,7 @@ WHILE 선택캐릭터_B == -1
     ENDIF
 WEND
 
-RETURNF 선택이벤트번호, 선택캐릭터_A, 선택캐릭터_B
+RETURN 선택이벤트번호, 선택캐릭터_A, 선택캐릭터_B
 ;=================================================================
 ;함수명: IS_SINGLE_EVENT_AVAILABLE(ARG, ARG:1)
 ;이벤트 대상 선정시 이벤트 조건 정리 함수
@@ -620,6 +619,9 @@ VARSET 선택캐릭터, -1
 WHILE 선택캐릭터:0 == -1
     랜덤대상 = RAND(1, CHARANUM)
     SELECTCASE ARG
+        ;바이오로이드를 뽑지 않는 이벤트
+        CASE 0 TO 4
+            선택캐릭터:0 = MASTER
         ;공용 이벤트
         CASE 100, 101
             선택캐릭터:0 = 랜덤대상
