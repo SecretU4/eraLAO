@@ -1,0 +1,34 @@
+﻿@MSG_EV_117(ARG, ARG:1)
+SELECTCASE RAND:2
+CASE 0
+PRINTFORMW 당신은 사놓고 구석에 박아두었던 체스 세트를 꺼내들었다.
+PRINTFORMW 그것을 본 %CALLNAME:ARG%(이)가 당신에게 체스룰 둘 줄 아나며 물었고, 그렇다고 답한 당신에게 체스 배틀을 신청한다.
+PRINTFORMW 당신은 %CALLNAME:ARG%의 머리를 알기에 망설였지만, 여기서 빼기엔 자존심이 허락치 않아 배틀을 수락해버리고 만다.
+PRINTFORMW 당신의 선공으로 시작된 체스 배틀.
+PRINTFORML 나이트로 튀어나온 폰들을 잘라내고,
+PRINTFORML 폰을 미끼삼아 룩을 끌어들여 잡아먹고,
+PRINTFORML 체크를 유도해 비숍을 끊어 먹고,
+PRINTFORML 케슬링으로 킹을 보호하고...
+PRINTFORMW 와, 얘 왜 이렇게 잘 하는거야?
+PRINTFORML 당신은 무어라 손 쓸 틈도 없이 속수무책으로 지고 말았다.
+PRINTFORML 호감도+15
+PRINTFORMW 스트레스-5
+RETURN 1
+CASE 1
+PRINTFORMW 당신은 사놓고 구석에 박아두었던 체스 세트를 꺼내들었다.
+PRINTFORMW 그것을 본 %CALLNAME:ARG%(이)가 당신에게 체스룰 둘 줄 아나며 물었고, 그렇다고 답한 당신에게 체스 배틀을 신청한다.
+PRINTFORMW 당신은 %CALLNAME:ARG%의 머리를 알기에 망설였지만, 여기서 빼기엔 자존심이 허락치 않아 배틀을 수락해버리고 만다.
+PRINTFORMW 당신의 선공으로 시작된 체스 배틀.
+PRINTFORML 폰을 앞으로 내보내면 나이트로 끊어먹고,
+PRINTFORML 폰을 끊었더니 그걸 미끼삼아 룩을 끌어들여 잡아먹고,
+PRINTFORML 체크를 유도해서 비숍을 끊어 먹고.
+PRINTFORML 절망스러운 상황 속에서, 캐슬링을 시도해 킹을 지키려는%CALLNAME:ARG%...
+PRINTFORMW 잠깐, 이거 체크메이트 각이다!
+PRINTFORML 당신은 눈을 번뜩이며 반쯤 잊혀져있던 나이트를 움직여 체크메이트를 선언했다.
+PRINTFORML 완벽한 역전!
+PRINTFORML 이럴리는 없다고 절규하는 %CALLNAME:ARG%의 얼굴을 보며, 당신은 승자의 기쁨을 누린다.
+PRINTFORML 호감도+15
+PRINTFORMW 스트레스-5
+RETURN 1
+ENDSELECT
+RETURN 0

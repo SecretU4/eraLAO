@@ -1,0 +1,108 @@
+﻿@MSG_EV_110(ARG, ARG:1)
+SELECTCASE RAND:8
+CASE 0
+PRINTFORMW 당신은 문득 가슴이 간지러워서 변덕을 부리기로 했다.
+PRINTFORMW 손수 흰죽을 쑨 당신은 %CALLNAME:ARG%의 방으로 찾아가 %CALLNAME:ARG%에게 죽을 먹여준다.
+PRINTFORML 뜨겁지 않게 호호 불어서 죽을 먹여주는 당신의 모습을
+PRINTFORML %CALLNAME:ARG%(은)는 복잡한 눈으로 보고만 있다.
+PRINTFORML 호감도+20
+PRINTFORML 스트레스-10
+PRINTFORMW 공포-10
+RETURN 1
+CASE 1
+PRINTFORMW 당신은 문득 심심해서 변덕을 부리기로 했다.
+PRINTFORMW 당신은 %CALLNAME:ARG%의 방에 전기 스토브와 프라이팬을 들고 가 고기를 굽는다.
+PRINTFORMW 정성스레 쌈을 싼 뒤, %CALLNAME:ARG%의 코 앞까지 들고 가 유혹한다.
+PRINTFORML 먹고 싶어? 먹고 싶음 말을 해.
+PRINTFORML  당신의 말에 %CALLNAME:ARG%(이)가 입을 여는 그 순간,
+PRINTFORML 당신은 들고 있던 쌈을 던져버리고 프라이팬을 걷어차버린다.
+PRINTFORML 말한다고 누가 준다고 했냐?
+PRINTFORML 당신은 통쾌함에 크게 웃으며 %CALLNAME:ARG%의 방을 나선다.
+PRINTFORML 소지금-25000
+PRINTFORML 호감도-50
+PRINTFORML 스트레스+30
+PRINTFORMW 공포+5
+RETURN 1
+CASE 2
+PRINTFORMW 당신은 가만히 있기에는 지루해서 변덕을 부리기로 했다.
+PRINTFORMW 당신은 옷 가게에서 예쁜 옷을 사서 %CALLNAME:ARG%의 방으로 찾아간다.
+PRINTFORML 자, 너에게 주는 선물이야.
+PRINTFORML 당신의 말을 %CALLNAME:ARG%(은)는 믿지 못하는 눈빛이었다.
+PRINTFORML 진짜 너에게 주려고 가져온 거라니깐. 사이즈 맞는지 한 번 입어봐.
+PRINTFORML 당신의 은근한 명령에 %CALLNAME:ARG%(은)는 당신에게 옷을 받아 든다.
+PRINTFORML 옷은 %CALLNAME:ARG%에게는 터무니없이 작다.
+PRINTFORML 그것을 확인한 %CALLNAME:ARG%의 표정은 굳고, 당신의 표정은 활짝 편다.
+PRINTFORML 안 맞아? 이런, 맞을 줄 알고 태그도 때버려서 반품할 수도 없는데, 어쩌겠어.
+PRINTFORML 잘 입고 다녀, %CALLNAME:ARG%!
+PRINTFORML 당신은 기만의 짜릿함에 전율하며 %CALLNAME:ARG%의 방을 나선다.
+PRINTFORML 소지금-75000
+PRINTFORML 호감도-70
+PRINTFORMW 스트레스+50
+RETURN 1
+CASE 3
+PRINTFORMW 당신은 감성이 충만해져서 변덕을 부리기로 했다.
+PRINTFORMW 당신은 근처 가게에서 싸구려 곰 인형을 사서는 %CALLNAME:ARG%의 방으로 찾아간다.
+PRINTFORMW 그리고 %CALLNAME:ARG%의 앞에 곰 인형을 둔 뒤, 아무 말도 않고 그대로 나가 버린다.
+PRINTFORML 당신은 '인간적인' 일을 한 것 같아 마음이 편해진다.
+PRINTFORML 소지금-10000
+PRINTFORML 호감도+20
+PRINTFORML 스트레스-20
+PRINTFORMW 공포-5
+RETURN 1
+CASE 4
+PRINTFORMW 당신은 아이스 버킷 챌린지 영상에서 영감을 받아 변덕을 부리기로 했다.
+PRINTFORMW 당신은 양동이에 찬 물을 가득 받아 %CALLNAME:ARG%의 방으로 향했다.
+PRINTFORML %CALLNAME:ARG%에게 다가가 냄새를 맡는 시늉을 한 당신은
+PRINTFORML 냄새가 너무 많이 나는데, 내가 씻겨줄까?
+PRINTFORML 라고 말한다."
+PRINTFORML 고개를 들어 당신을 올려다보는 %CALLNAME:ARG%의 얼굴에
+PRINTFORML  당신은 양동이 속 물을 그대로 부어버린다.
+PRINTFORML 이제 좀 깨끗해 보이네.
+PRINTFORML 당신은 그 말을 남긴 채 흠뻑 젖은 %CALLNAME:ARG%(을)를 뒤로 하고 방을 나간다.
+PRINTFORML 생각해보니 얼음이 빠졌네, 뒤늦게 떠올리고 아쉬워하는 당신이었다.
+PRINTFORML 스트레스+40
+PRINTFORMW 공포+7
+RETURN 1
+CASE 5
+PRINTFORMW 당신은 커피향 같은 감성에 취해 변덕을 부리기로 했다.
+PRINTFORMW 당신은 자그마한 꽃다발을 사서 %CALLNAME:ARG%의 방으로 찾아갔다.
+PRINTFORMW 당신 손에 들린 것을 본 %CALLNAME:ARG%(은)는 믿기지 않는다는 표정이었다.
+PRINTFORMW 뭐, 내가 구경만 하라고 여기에 가져 온 걸로 보이냐? 받아.
+PRINTFORMW 당신은 퉁명스럽게 %CALLNAME:ARG%의 손에 꽃다발을 쥐어주고선 재빨리 %CALLNAME:ARG%의 방을 빠져나왔다.
+PRINTFORML 안 하던 짓을 하려니 온 몸에 닭살이 돋는 당신이었다.
+PRINTFORML 소지금-5000
+PRINTFORML 호감도+20
+PRINTFORML 스트레스-10
+PRINTFORML 공포-5
+PRINTFORMW 공포-5
+RETURN 1
+CASE 6
+PRINTFORMW 당신은 게임에서 하드캐리한 김에 변덕을 부리기로 했다.
+PRINTFORMW %CALLNAME:ARG%(이)가 잠시 화장실에 간 틈을 타, 당신은 그녀의 방에 들어갔다."
+PRINTFORML 옷장 속에 공구상자를 아슬아슬하게 걸쳐놓고,
+PRINTFORML 옷장 문은 소리에 반응해 열리게 하는 장치를 설치하고,
+PRINTFORML 옷장 바로 아래에는 뿔 피리를 놔두었다.
+PRINTFORMW 호기심에 뿔피리를 불면, 옷장 문이 활짝 열리고 공구상자가 떨어지면서...
+PRINTFORMW 당신은 아슬아슬하게 %CALLNAME:ARG%의 방에서 나와 근처에서 뿔피리 소리가 들리기를 기다렸다.
+PRINTFORML 얼마나 지났을까, 뿔피리 소리에 이은 와장창 소리에 당신은 희열을 느끼며 달아난다.
+PRINTFORML 스트레스+50
+PRINTFORMW 공포+20
+RETURN 1
+CASE 7
+PRINTFORMW 당신은 부른 배를 두드리다가 변덕을 부리기로 했다.
+PRINTFORMW 당신은 빔 프로젝트를 구해서 %CALLNAME:ARG%의 방 한 편에 비치도록 설치했다.
+PRINTFORMW 그리고 인터넷에 만연한 먹방 영상들을 연속 재생으로 틀어준다.
+PRINTFORML 처음에는 어리둥절해하던 %CALLNAME:ARG%(은)는 이내 먹방 영상들에 눈을 빼앗기고,
+PRINTFORML 침샘의 컨트롤도 빼앗겨 입가에 침이 고인다.
+PRINTFORMW 이미 배가 부른 당신 역시 컵라면을 후루룩 빨아들이는 장면에 꼴깍 침을 삼킨다.
+PRINTFORMW 겨우 정신을 차린 당신은 %CALLNAME:ARG%에게 묻는다.
+PRINTFORMW 뭐 먹고 싶은 거 있어?
+PRINTFORMW 당신은 %CALLNAME:ARG%의 입에서 나온 음식을 구해다가 그녀 앞에 놓아주고 방을 나온다.
+PRINTFORML 빔 프로젝트를 끄는 걸 잊었지만 뭐, 상관없겠지.
+PRINTFORML 소지금-10000
+PRINTFORML 호감도+20
+PRINTFORML 스트레스-30
+PRINTFORMW 공포-10
+RETURN 1
+ENDSELECT
+RETURN 0
