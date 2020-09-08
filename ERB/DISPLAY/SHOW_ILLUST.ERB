@@ -8,183 +8,186 @@ VARSET LOCALS
 SIF ARG == -1
     RETURN 0
 
-IF ARGS == "DATESTART"
-    SELECTCASE ARG:1
-        CASE 1 ;메이, 연애시작, 정신붕괴
-            IF CSV_ID != 51
-                RETURN 0
-            ELSE
-                SIF TALENT:ARG:정신쇠약 != 2
+SELECTCASE ARGS
+    CASE "DATESTART"
+        SELECTCASE ARG:1
+            CASE 1 ;메이, 연애시작, 정신붕괴
+                IF CSV_ID != 51
                     RETURN 0
-                LOCALS = 메이붕괴
-            ENDIF
-        CASE 2 ;리제, 연애시작
-            IF CSV_ID != 7
-                RETURN 0
-            ELSEIF CSTR:ARG:1 == "Confession" ;고백시 일러 표출 X
-                RETURN 0
-            ELSEIF TALENT:ARG:정신쇠약 == 2
-                LOCALS = 8_break
-            ELSEIF TALENT:ARG:정신쇠약 == 1
-                LOCALS = 7_weak
-            ELSEIF TALENT:ARG:짜증
-                LOCALS = 5_annoyed
-            ELSEIF TALENT:ARG:혼인 == 1
-                LOCALS = 4_marryed
-            ELSEIF CFLAG:ARG:공포 > 149
-                LOCALS = 6_fear
-            ELSEIF TALENT:ARG:사랑 ;원판은 연모시에만
-                LOCALS = 3_affection
-            ELSEIF CFLAG:ARG:호감도 > 499
-                LOCALS = 2_high
-            ELSE
-                LOCALS = 1_low
-            ENDIF
-        CASE 3 ;소완, 연애시작
-            IF CSV_ID != 12
-                RETURN 0
-            ELSEIF TALENT:ARG:정신쇠약 == 2
-                LOCALS = 8_break
-            ELSEIF TALENT:ARG:정신쇠약 == 1
-                LOCALS = 7_weak
-            ELSEIF TALENT:ARG:짜증
-                LOCALS = 5_annoyed
-            ELSEIF TALENT:ARG:혼인 == 1
-                LOCALS = 4_marryed
-            ELSEIF CFLAG:ARG:공포 > 149
-                LOCALS = 6_fear
-            ELSEIF TALENT:ARG:사랑 ;원판은 연모시에만
-                LOCALS = 3_affection
-            ELSEIF CFLAG:ARG:호감도 > 499
-                LOCALS = 2_high
-            ELSE
-                LOCALS = 1_low
-            ENDIF
-        CASE 4 ;메이, 연애시작, fLove
-            IF CSV_ID != 51
-                RETURN 0
-            ELSE
-                SIF CSTR:ARG:1 != "fLove"
+                ELSE
+                    SIF TALENT:ARG:정신쇠약 != 2
+                        RETURN 0
+                    LOCALS = 메이붕괴
+                ENDIF
+            CASE 2 ;리제, 연애시작
+                IF CSV_ID != 7
                     RETURN 0
-                LOCALS = 오프닝1
-            ENDIF
-        CASE 5 ;베로니카, 연애시작, First
-            IF CSV_ID != 138
-                RETURN 0
-            ELSE
-                SIF CFLAG:ARG:조교여부
+                ELSEIF CSTR:ARG:1 == "Confession" ;고백시 일러 표출 X
                     RETURN 0
-                LOCALS = 베로니카_연애시작시
-            ENDIF
-        CASE 6 ;베로니카, 연애시작, 고백
-            IF CSV_ID != 138
-                RETURN 0
-            ELSE
-                SIF CSTR:ARG:1 != "Confession"
+                ELSEIF TALENT:ARG:정신쇠약 == 2
+                    LOCALS = 8_break
+                ELSEIF TALENT:ARG:정신쇠약 == 1
+                    LOCALS = 7_weak
+                ELSEIF TALENT:ARG:짜증
+                    LOCALS = 5_annoyed
+                ELSEIF TALENT:ARG:혼인 == 1
+                    LOCALS = 4_marryed
+                ELSEIF CFLAG:ARG:공포 > 149
+                    LOCALS = 6_fear
+                ELSEIF TALENT:ARG:사랑 ;원판은 연모시에만
+                    LOCALS = 3_affection
+                ELSEIF CFLAG:ARG:호감도 > 499
+                    LOCALS = 2_high
+                ELSE
+                    LOCALS = 1_low
+                ENDIF
+            CASE 3 ;소완, 연애시작
+                IF CSV_ID != 12
                     RETURN 0
-                LOCALS = 베로니카_이벤트_confession
-            ENDIF
-        CASEELSE
-            DEBUGPRINTFORML %ARGS% 조건에 맞지 않는 {ARG:1}
-            RETURN 0
-    ENDSELECT
-
-ELSEIF ARGS == "DATECOM"
-    SELECTCASE ARG:1
-        CASE 1 ;메이 파후파후
-            IF SELECTCOM != 18 || CSV_ID != 51
+                ELSEIF TALENT:ARG:정신쇠약 == 2
+                    LOCALS = 8_break
+                ELSEIF TALENT:ARG:정신쇠약 == 1
+                    LOCALS = 7_weak
+                ELSEIF TALENT:ARG:짜증
+                    LOCALS = 5_annoyed
+                ELSEIF TALENT:ARG:혼인 == 1
+                    LOCALS = 4_marryed
+                ELSEIF CFLAG:ARG:공포 > 149
+                    LOCALS = 6_fear
+                ELSEIF TALENT:ARG:사랑 ;원판은 연모시에만
+                    LOCALS = 3_affection
+                ELSEIF CFLAG:ARG:호감도 > 499
+                    LOCALS = 2_high
+                ELSE
+                    LOCALS = 1_low
+                ENDIF
+            CASE 4 ;메이, 연애시작, fLove
+                IF CSV_ID != 51
+                    RETURN 0
+                ELSE
+                    SIF CSTR:ARG:1 != "fLove"
+                        RETURN 0
+                    LOCALS = 오프닝1
+                ENDIF
+            CASE 5 ;베로니카, 연애시작, First
+                IF CSV_ID != 138
+                    RETURN 0
+                ELSE
+                    SIF CFLAG:ARG:조교여부
+                        RETURN 0
+                    LOCALS = 베로니카_연애시작시
+                ENDIF
+            CASE 6 ;베로니카, 연애시작, 고백
+                IF CSV_ID != 138
+                    RETURN 0
+                ELSE
+                    SIF CSTR:ARG:1 != "Confession"
+                        RETURN 0
+                    LOCALS = 베로니카_이벤트_confession
+                ENDIF
+            CASEELSE
+                DEBUGPRINTFORML %ARGS% 조건에 맞지 않는 {ARG:1}
                 RETURN 0
-            ELSEIF TALENT:ARG:짜증 || TALENT:ARG:정신쇠약 || !TALENT:ARG:사랑
+        ENDSELECT
+    CASE "DATECOM"
+        SELECTCASE ARG:1
+            CASE 1 ;메이 파후파후
+                IF SELECTCOM != 18 || CSV_ID != 51
+                    RETURN 0
+                ELSEIF TALENT:ARG:짜증 || TALENT:ARG:정신쇠약 || !TALENT:ARG:사랑
+                    RETURN 0
+                ELSE
+                    LOCALS = 메이파후
+                ENDIF
+            CASE 3 ;유미 배만지기
+                IF SELECTCOM != 13 || CSV_ID != 132
+                    RETURN 0
+                ELSEIF GROUPMATCH(CSTR:ARG:1, "High","Affection")
+                    LOCALS = 술배
+                ELSE
+                    RETURN 0
+                ENDIF
+            ;베로니카 연애커맨드 일부 경우, 임의 번호 산정
+            CASE 10 ;배설기관
+                LOCALS = X문은_배설기관_1
+            CASE 11 ;불경한
+                LOCALS = 뚝배기
+            CASEELSE
+                DEBUGPRINTFORML %ARGS% 조건에 맞지 않는 {ARG:1}
                 RETURN 0
-            ELSE
-                LOCALS = 메이파후
-            ENDIF
-        CASE 3 ;유미 배만지기
-            IF SELECTCOM != 13 || CSV_ID != 132
-                RETURN 0
-            ELSEIF GROUPMATCH(CSTR:ARG:1, "High","Affection")
-                LOCALS = 술배
-            ELSE
-                RETURN 0
-            ENDIF
-        ;베로니카 연애커맨드 일부 경우, 임의 번호 산정
-        CASE 10 ;배설기관
-            LOCALS = X문은_배설기관_1
-        CASE 11 ;불경한
-            LOCALS = 뚝배기
-        CASEELSE
-            DEBUGPRINTFORML %ARGS% 조건에 맞지 않는 {ARG:1}
-            RETURN 0
-    ENDSELECT
-
-ELSEIF ARGS == "REST_1"
-    SELECTCASE ARG:1
-        CASE 1
-            LOCALS = 머리
-        CASE 2
-            LOCALS = 켈베에밀리
-        CASE 3
-            LOCALS = 리제이벤1
-        CASE 4
-            LOCALS = 리제이벤2
-        CASE 5
-            LOCALS = 리제이벤3
-        CASE 6
-            LOCALS = 리제이벤4
-        CASE 7
-            LOCALS = KakaoTalk_20200521_194845826
-    ENDSELECT
-
-ELSEIF ARGS == "REST_2"
-    SELECTCASE ARG:1
-        CASE 1
-            LOCALS = 공포영화
-        CASE 2
-            LOCALS = 로맨스영화
-        CASE 3
-            LOCALS = 코미디영화
-    ENDSELECT
-
-ELSEIF ARGS == "ENDING" ;TODO 그림 이름 변경
-    SELECTCASE ARG:1
-        CASE 1 ;메이 1번 엔딩플래그
-            LOCALS = 메이_엔딩
-        CASE 2 ;메이 2번 엔딩플래그
-            LOCALS = 메이_엔딩2
-        CASE 3 ;리제 1번 엔딩플래그
-            LOCALS = 엔딩1
-        CASE 4 ;세이렌 1번 엔딩플래그
-            LOCALS = 엔딩1
-        CASE 5 ;세이렌 2번 엔딩플래그
-            LOCALS = 엔딩2
-        CASE 6 ;리제 3번 엔딩플래그
-            LOCALS = 엔딩2_1
-            LOCALS:1 = 엔딩2_2
-        CASE 7 ;모모 1번 엔딩플래그
-            LOCALS = 엔딩1
-        CASE 8 ;모모 2번 엔딩플래그
-            LOCALS = 엔딩2
-        CASE 9 ;메이 4번 엔딩플래그
-            LOCALS = 엔딩4
-        CASE 10 ;리제 2번 엔딩플래그
-            LOCALS = 엔딩2
-        CASE 11 ;리제 히든 엔딩(4번 엔딩플래그)
-            LOCALS = 히든엔딩
-        CASE 12 ;리제 5번 엔딩플래그(4번 엔딩)
-            LOCALS = 엔딩4
-        CASE 13 ;소완 1번 엔딩플래그
-            LOCALS = 엔딩1
-        CASE 14 ;베로니카 1번 엔딩플래그
-            LOCALS '= "베로니카_엔딩10,25x"
-        CASE 15 ;베로니카 2번 엔딩플래그
-            LOCALS '= "베로니카_엔딩_20,25x"
-        CASE 16 ;베로니카 3번 엔딩플래그 1번째
-            LOCALS '= "베로니카_엔딩3-1"
-        CASE 17 ;베로니카 3번 엔딩플래그 2번째
-            LOCALS '= "베로니카_엔딩3-2"
-    ENDSELECT
-
-ENDIF
+        ENDSELECT
+    CASE "REST_1"
+        SELECTCASE ARG:1
+            CASE 1
+                LOCALS = 머리
+            CASE 2
+                LOCALS = 켈베에밀리
+            CASE 3
+                LOCALS = 리제이벤1
+            CASE 4
+                LOCALS = 리제이벤2
+            CASE 5
+                LOCALS = 리제이벤3
+            CASE 6
+                LOCALS = 리제이벤4
+            CASE 7
+                LOCALS = KakaoTalk_20200521_194845826
+        ENDSELECT
+    CASE "REST_2"
+        SELECTCASE ARG:1
+            CASE 1
+                LOCALS = 공포영화
+            CASE 2
+                LOCALS = 로맨스영화
+            CASE 3
+                LOCALS = 코미디영화
+        ENDSELECT
+    CASE "COOKING"
+        SELECTCASE ARG:1
+            CASE 1 ;메이 실패
+                LOCALS = 메이음식먹기
+            CASE 2 ;발키리 5분
+                LOCALS = 요리
+        ENDSELECT
+    CASE "ENDING" ;TODO 그림 이름 변경
+        SELECTCASE ARG:1
+            CASE 1 ;메이 1번 엔딩플래그
+                LOCALS = 메이_엔딩
+            CASE 2 ;메이 2번 엔딩플래그
+                LOCALS = 메이_엔딩2
+            CASE 3 ;리제 1번 엔딩플래그
+                LOCALS = 엔딩1
+            CASE 4 ;세이렌 1번 엔딩플래그
+                LOCALS = 엔딩1
+            CASE 5 ;세이렌 2번 엔딩플래그
+                LOCALS = 엔딩2
+            CASE 6 ;리제 3번 엔딩플래그
+                LOCALS = 엔딩2_1
+                LOCALS:1 = 엔딩2_2
+            CASE 7 ;모모 1번 엔딩플래그
+                LOCALS = 엔딩1
+            CASE 8 ;모모 2번 엔딩플래그
+                LOCALS = 엔딩2
+            CASE 9 ;메이 4번 엔딩플래그
+                LOCALS = 엔딩4
+            CASE 10 ;리제 2번 엔딩플래그
+                LOCALS = 엔딩2
+            CASE 11 ;리제 히든 엔딩(4번 엔딩플래그)
+                LOCALS = 히든엔딩
+            CASE 12 ;리제 5번 엔딩플래그(4번 엔딩)
+                LOCALS = 엔딩4
+            CASE 13 ;소완 1번 엔딩플래그
+                LOCALS = 엔딩1
+            CASE 14 ;베로니카 1번 엔딩플래그
+                LOCALS '= "베로니카_엔딩10,25x"
+            CASE 15 ;베로니카 2번 엔딩플래그
+                LOCALS '= "베로니카_엔딩_20,25x"
+            CASE 16 ;베로니카 3번 엔딩플래그 1번째
+                LOCALS '= "베로니카_엔딩3-1"
+            CASE 17 ;베로니카 3번 엔딩플래그 2번째
+                LOCALS '= "베로니카_엔딩3-2"
+        ENDSELECT
+ENDSELECT
 
 CALL PRINT_ILLUST(LOCALS)
 
