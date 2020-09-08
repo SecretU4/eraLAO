@@ -78,14 +78,20 @@ SELECTCASE RESULT
         RETURN 1
     ;출격
     CASE 103
-        SIF FLAG:속박상태 || TIME == 1
+        IF FLAG:속박상태           
+            CALL MSG_SHOP_HIDDEN(103)
             RETURN -1
+        ELSEIF TIME == 1
+            RETURN -1
+        ENDIF
         CALL SORTIE
         RETURN 1
     ;대상변경
     CASE 104
-        SIF FLAG:속박상태
+        IF FLAG:속박상태
+            CALL MSG_SHOP_HIDDEN(104)
             RETURN -1
+        ENDIF
         PRINTL
         CALL CURRENT_BIOLIST("대상변경")
         TARGET = RESULT
@@ -94,23 +100,33 @@ SELECTCASE RESULT
         RETURN 1
     ;상점
     CASE 105
-        SIF FLAG:속박상태
+        IF FLAG:속박상태
+            CALL MSG_SHOP_HIDDEN(105)
             RETURN -1
+        ENDIF
         CALL MAIN_SHOP
         RETURN 1
     ;요리
+    ;정상 실행시 바로 TURNEND이므로 여기 오는 경우는 미실행시뿐임.
     CASE 106
-        PRINTW 미실장입니다.
+        CALL COOK
+        RETURN 0
     ;헤어진다
     CASE 107
-        SIF FLAG:속박상태 || TIME == 1
+        IF FLAG:속박상태
+            CALL MSG_SHOP_HIDDEN(107)
             RETURN -1
+        ELSEIF TIME == 1
+            RETURN -1
+        ENDIF
         CALL FAREWELL
         RETURN 1
     ;사령관 이름 변경
     CASE 108
-        SIF FLAG:속박상태
+        IF FLAG:속박상태
+            CALL MSG_SHOP_HIDDEN(108)
             RETURN -1
+        ENDIF
         CALL COMMANDER_NAMESET
         RETURN 1
     ;SAVE
