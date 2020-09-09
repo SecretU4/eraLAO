@@ -1,12 +1,60 @@
 ﻿;SYSTEM CALL
+;필터링, 속박상태 대응 등을 위해 시스템의 PRINT TRAIN 기능을 사용하지 않고 이곳에서 처리
 @SHOW_USERCOM
+TFLAG:연애중여부 = 1
+FOR LOCAL, 0, 200
+    CALL TOTAL_COMABLE(LOCAL)
+    IF !RESULT
+        CONTINUE
+    ELSEIF GROUPMATCH(NO:TARGET, 108)
+        SELECTCASE NO:TARGET
+            CASE 108
+                SELECTCASE LOCAL
+                    CASE 13
+                        PRINTFORMLC [{COM_ALTER_SELECT(LOCAL), 3}] 안마를 부탁한다
+                        CONTINUE
+                    CASE 14
+                        PRINTFORMLC [{COM_ALTER_SELECT(LOCAL), 3}] 볼을 만진다
+                        CONTINUE
+                    CASE 15
+                        PRINTFORMLC [{COM_ALTER_SELECT(LOCAL), 3}] 이마를 맞댄다
+                        CONTINUE
+                    CASE 16
+                        PRINTFORMLC [{COM_ALTER_SELECT(LOCAL), 3}] 머리를 빗어준다
+                        CONTINUE
+                    CASE 18
+                        PRINTFORMLC [{COM_ALTER_SELECT(LOCAL), 3}] 발 마사지를 해준다
+                        CONTINUE
+                ENDSELECT
+        ENDSELECT
+    ENDIF
+    ;일반적인 경우
+    IF STRLENS(TRAINNAME:LOCAL)
+        PRINTFORMLC [{LOCAL, 3}] %TRAINNAME:LOCAL%
+    ENDIF
+NEXT
 PRINTL
 DRAWLINE
 PRINTL [999] 종료한다
 
 @USERCOM
-SIF RESULT == 999
-    BEGIN AFTERTRAIN
+LOCAL = RESULT
+
+CALL COM_Misery_FLAG
+SIF RESULT
+    LOCAL = RESULT
+
+SELECTCASE LOCAL
+    CASE 999
+        BEGIN AFTERTRAIN
+    CASEELSE
+        CALL TOTAL_COMABLE(LOCAL)
+        SIF !RESULT
+            RETURN
+
+        TFLAG:연애중여부 = 0
+        DOTRAIN LOCAL
+ENDSELECT
 
 ;SYSTEM_CALL
 ;COM 선택시
@@ -22,3 +70,68 @@ CALLFORM COM{SELECTCOM}_MSG
 SIF TIME:2 >= TIMELIMIT
     BEGIN AFTERTRAIN
 
+;커맨드 실행 가능 여부 전역처리 함수
+@TOTAL_COMABLE(ARG)
+SIF !STRLENS(TRAINNAME:ARG)
+    RETURN 0
+
+TRYCALLFORM COM_ABLE{ARG}
+IF RESULT
+    RETURN 1
+ELSE
+    RETURN 0
+ENDIF
+;속박상태용 선택지 랜덤 선출
+@COM_Misery_FLAG
+#DIM 선택지 = -1
+IF FLAG:속박상태
+    PRINTW 당신은 묶여있어 움직일 수 없다.
+    SELECTCASE NO:(FLAG:속박상태)
+        CASE 7 ;리제 ;정해진 커맨드 중 하나 랜덤 실행
+            SELECTCASE RAND:10
+                CASE 0 ;잡담
+                    선택지 = 2
+                CASE 1 ;야한농담
+                    선택지 = 3
+                CASE 2 ;손을잡는다
+                    선택지 = 4
+                CASE 3 ;머리쓰다듬기
+                    선택지 = 5
+                CASE 4 ;포옹한다
+                    선택지 = 9
+                CASE 5 ;뽀뽀한다
+                    선택지 = 12
+                CASE 6 ;귀를깨문다
+                    선택지 = 14
+                CASE 7 ;키스
+                    선택지 = 15
+                CASE 8 ;목덜미핥기
+                    선택지 = 16
+                CASE 9 ;파후파후
+                    선택지 = 18
+            ENDSELECT
+    ENDSELECT
+ENDIF
+PRINTVW 선택지
+RETURN 선택지
+
+;캐릭터에 따라 같은 번호 다른 선택지가 주어지는 경우
+;ARG = 원 선택지번호
+@COM_ALTER_SELECT(ARG)
+#FUNCTION
+SELECTCASE NO:TARGET
+    CASE 108
+        SELECTCASE LOCAL
+            CASE 13
+                RETURNF 90
+            CASE 14
+                RETURNF 91
+            CASE 15
+                RETURNF 92
+            CASE 16
+                RETURNF 93
+            CASE 18
+                RETURNF 94
+        ENDSELECT
+ENDSELECT
+RETURNF ARG
