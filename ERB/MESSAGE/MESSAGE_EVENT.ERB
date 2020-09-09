@@ -109,14 +109,26 @@ ENDSELECT
 ;출력 경로 확인
 SELECTCASE ARGS
     CASE "Cook_Self" ;MASTER의 조리
+        PRINTW 당신은 요리를 시작했다.
         TRYCALLFORM M_No{NO:대상}_EVENT_Cook_Self
     CASE "Cook_Bio" ;TARGET의 조리
+        IF FLAG:속박상태
+            PRINTFORMW %조사처리(CALLNAME:대상, "이")% 당신에게 요리를 만들어주겠다고 했다.
+        ELSE
+            PRINTFORMW 당신은 %CALLNAME:대상%에게 요리를 부탁했다.
+        ENDIF
         TRYCALLFORM M_No{NO:대상}_EVENT_Cook
     CASE "Eat_Com" ;MASTER의 요리
+        PRINTFORMW 당신은 %조사처리(CALLNAME:대상, "과")% 함께 식사를 했다.
         TRYCALLFORM M_No{NO:대상}_EVENT_Eat_Com
         SIF NO:대상 == 51 && ABL:MASTER:조리lv < 3 ;Lowlv
             CALL ILLUST(대상, 1, "COOKING")
     CASE "Eat_Bio" ;TARGET의 요리
+        IF FLAG:속박상태
+            PRINTW 당신은 묶여있어, 스스로 식사를 할 수 없다.
+        ELSE
+            PRINTFORMW 당신은 %ARG와% 함께 식사를 했다.
+        ENDIF
         TRYCALLFORM M_No{NO:대상}_EVENT_Eat_Lunch
         SIF NO:대상 == 32 && ABL:대상:조리lv < 3 && TALENT:ARG:사랑
             CALL ILLUST(대상, 2, "COOKING")
