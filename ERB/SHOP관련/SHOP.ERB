@@ -72,6 +72,10 @@ SELECTCASE RESULT
         RETURN 1
     ;휴식
     CASE 102
+        IF NO:(FLAG:히든메시지) == 7 ; 리제 히든엔딩시 휴식도 연애로 이동
+            BEGIN TRAIN
+            RETURN 1
+        ENDIF
         CALL COMMON_EVENT
         SIF RESULT == 0
             PRINTL 작동된 메시지가 없었습니다.
