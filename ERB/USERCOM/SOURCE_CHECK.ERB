@@ -128,6 +128,15 @@ ELSE
     SOURCE:공포 = -1000
 ENDIF
 
+;캐릭터별 특수 보정 처리
+SELECTCASE NO:TARGET
+    CASE 76 ;닥터
+        IF SOURCE:호감도 > 0
+            SOURCE:스트레스 = MIN(SOURCE:스트레스, 0)
+            SOURCE:공포 = MIN(SOURCE:공포, 0)
+        ENDIF
+ENDSELECT
+
 TFLAG:호감도증감 += SOURCE:호감도
 ;TFLAG:신뢰도증감 += SOURCE:신뢰도
 TFLAG:스트레스증감 += SOURCE:스트레스
@@ -143,9 +152,9 @@ CALL BIO_COM_MSG
 
 PRINTFORML %CALLNAME:TARGET%의 
 IF TALENT:MASTER:관심법
-    PRINTFORML 호감도 {SOURCE:호감도}
-    PRINTFORML 스트레스 {SOURCE:스트레스}
-    PRINTFORMW 공포 {SOURCE:공포}
+    PRINTFORML 호감도 \@ SOURCE:호감도 > 0 ? + # \@{SOURCE:호감도}
+    PRINTFORML 스트레스 \@ SOURCE:스트레스 > 0 ? + # \@{SOURCE:스트레스}
+    PRINTFORMW 공포 \@ SOURCE:공포 > 0 ? + # \@{SOURCE:공포}
 ELSE
     PRINTFORML 호감도 + ???
     PRINTFORML 스트레스 + ???
