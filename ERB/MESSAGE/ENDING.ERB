@@ -101,8 +101,8 @@ TARGET = ARG
 CALL SET_MSG_CSTR(ARG)
 
 IF REAL_NUM == 68
-    SIF TALENT:대상:정신쇠약 == 1 && TALENT:대상:사랑 == 2
-        CSTR:대상:1 = Weak2
+    SIF TALENT:ARG:정신쇠약 == 1 && TALENT:ARG:사랑 == 2
+        CSTR:ARG:1 = Weak2
 ENDIF
 
 SELECTCASE ARGS
