@@ -11,19 +11,22 @@ FOR LOCAL, 0, 200
             CASE 108
                 SELECTCASE LOCAL
                     CASE 13
-                        PRINTFORMLC [{COM_ALTER_SELECT(LOCAL), 3}] 안마를 부탁한다
+                        PRINTBUTTONLC @"[{LOCAL, 3}] 안마를 부탁한다", COM_ALTER_SELECT(LOCAL)
                         CONTINUE
                     CASE 14
-                        PRINTFORMLC [{COM_ALTER_SELECT(LOCAL), 3}] 볼을 만진다
+                        PRINTBUTTONLC @"[{LOCAL, 3}] 볼을 만진다", COM_ALTER_SELECT(LOCAL)
                         CONTINUE
                     CASE 15
-                        PRINTFORMLC [{COM_ALTER_SELECT(LOCAL), 3}] 이마를 맞댄다
+                        PRINTBUTTONLC @"[{LOCAL, 3}] 이마를 맞댄다", COM_ALTER_SELECT(LOCAL)
                         CONTINUE
                     CASE 16
-                        PRINTFORMLC [{COM_ALTER_SELECT(LOCAL), 3}] 머리를 빗어준다
+                        PRINTBUTTONLC @"[{LOCAL, 3}] 머리를 빗어준다", COM_ALTER_SELECT(LOCAL)
                         CONTINUE
                     CASE 18
-                        PRINTFORMLC [{COM_ALTER_SELECT(LOCAL), 3}] 발 마사지를 해준다
+                        PRINTBUTTONLC @"[{LOCAL, 3}] 발 마사지를 해준다", COM_ALTER_SELECT(LOCAL)
+                        CONTINUE
+                    ;실제 커맨드번호는 표시 안하고 통과
+                    CASE 90, 91, 92, 93, 94
                         CONTINUE
                 ENDSELECT
         ENDSELECT
@@ -38,24 +41,25 @@ DRAWLINE
 PRINTL [999] 종료한다
 
 @USERCOM
-LOCAL = RESULT
+#DIM 선택커맨드
+선택커맨드 = RESULT
+선택커맨드 = COM_ALTER_SELECT(선택커맨드)
 
 CALL COM_Misery_FLAG
-SIF RESULT
-    LOCAL = RESULT
+SIF RESULT != -1
+    선택커맨드 = RESULT
 
-SELECTCASE LOCAL
+SELECTCASE 선택커맨드
     CASE 999
         BEGIN AFTERTRAIN
     CASEELSE
-        CALL TOTAL_COMABLE(LOCAL)
+        CALL TOTAL_COMABLE(선택커맨드)
+        TFLAG:연애중여부 = 0
         SIF !RESULT
             RETURN
 
-        TFLAG:연애중여부 = 0
-        DOTRAIN LOCAL
+        DOTRAIN 선택커맨드
 ENDSELECT
-
 ;SYSTEM_CALL
 ;COM 선택시
 @EVENTCOM
@@ -74,6 +78,8 @@ SIF TIME:2 >= TIMELIMIT
 @TOTAL_COMABLE(ARG)
 SIF !STRLENS(TRAINNAME:ARG)
     RETURN 0
+SIF COM_ALTER_SELECT(ARG) != ARG
+    ARG = COM_ALTER_SELECT(ARG)
 
 TRYCALLFORM COM_ABLE{ARG}
 IF RESULT
@@ -112,7 +118,6 @@ IF FLAG:속박상태
             ENDSELECT
     ENDSELECT
 ENDIF
-PRINTVW 선택지
 RETURN 선택지
 
 ;캐릭터에 따라 같은 번호 다른 선택지가 주어지는 경우
@@ -120,8 +125,8 @@ RETURN 선택지
 @COM_ALTER_SELECT(ARG)
 #FUNCTION
 SELECTCASE NO:TARGET
-    CASE 108
-        SELECTCASE LOCAL
+    CASE 108 ;더치 걸
+        SELECTCASE ARG
             CASE 13
                 RETURNF 90
             CASE 14
@@ -132,6 +137,27 @@ SELECTCASE NO:TARGET
                 RETURNF 93
             CASE 18
                 RETURNF 94
+        ENDSELECT
+ENDSELECT
+RETURNF ARG
+
+;COM_ALTER_SELECT의 원본값이 필요한 경우 사용
+;ARG = 원 선택지번호
+@COM_ALTER_SELECT_Rev(ARG)
+#FUNCTION
+SELECTCASE NO:TARGET
+    CASE 108 ;더치 걸
+        SELECTCASE ARG
+            CASE 90
+                RETURNF 13
+            CASE 91
+                RETURNF 14
+            CASE 92
+                RETURNF 15
+            CASE 93
+                RETURNF 16
+            CASE 94
+                RETURNF 18
         ENDSELECT
 ENDSELECT
 RETURNF ARG
