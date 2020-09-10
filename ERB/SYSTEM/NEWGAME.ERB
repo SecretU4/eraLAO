@@ -171,41 +171,6 @@ SORTCHARA
 PRINTW 엔터 키를 눌러 계속...
 CLEARLINE 5000
 BEGIN FIRST
-
-
-
-@DEBUG
-PRINTL 디버그 모드입니다.
-
-;세이브파일의 현 버전 설정
-FLAG:LAST_LAOVERSION = GAMEBASE_VERSION
-
-;전역변수 초기화
-DAY = 1
-MASTER = 0
-TARGET = 0
-ASSI = 0
-MONEY:0 = 100000000
-
-;원룸으로 설정
-FLAG:캐릭터보유고 = 2
-
-NAME:MASTER = 아이샤
-CALLNAME:MASTER = 아이샤
-
-;게임 시작시 변수 데이터 처리
-CALL ADD_ALL_CHARA
-
-;약혼반지는 하나만
-CALL SET_EX_ITEM_SALES(1, 1)
-
-CALL SET_ITEM_SALES(2, 50, 20)
-CALL SET_EX_ITEM_SALES(200, 203)
-
-PRINTW 디버그 설정이 완료되었습니다.
-
-BEGIN SHOP
-
 ;===========================================================
 ;함수명:COMMANDER_NAMESET
 ;MASTER 이름 변경 기능

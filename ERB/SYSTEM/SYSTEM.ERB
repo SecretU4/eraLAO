@@ -19,3 +19,76 @@ SIF FLAG:LAST_LAOVERSION == GAMEBASE_VERSION
 
 FLAG:LAST_LAOVERSION = GAMEBASE_VERSION
 RETURN 1
+;=========================================================================
+;시작시 디버그
+;=========================================================================
+@DEBUG
+PRINTL 디버그 모드입니다.
+
+;세이브파일의 현 버전 설정
+FLAG:LAST_LAOVERSION = GAMEBASE_VERSION
+
+;전역변수 초기화
+DAY = 1
+MASTER = 0
+TARGET = 0
+ASSI = 0
+MONEY:0 = 100000000
+
+;원룸으로 설정
+FLAG:캐릭터보유고 = 2
+
+NAME:MASTER = 아이샤
+CALLNAME:MASTER = 아이샤
+
+;게임 시작시 변수 데이터 처리
+CALL ADD_ALL_CHARA
+
+;약혼반지는 하나만
+CALL SET_EX_ITEM_SALES(1, 1)
+
+CALL SET_ITEM_SALES(2, 50, 20)
+CALL SET_EX_ITEM_SALES(200, 203)
+
+PRINTW 디버그 설정이 완료되었습니다.
+
+BEGIN SHOP
+;=========================================================================
+;개별 디버그
+;=========================================================================
+@EPC_DEBUG
+
+CALL EPC_MENU
+WHILE 1
+    INPUT
+    SELECTCASE RESULT
+        CASE 0 ; 돌아가기
+        CASE 1 ; 캐릭터 설정
+            CALL CURRENT_BIOLIST()
+        CASE 2 ; 당신 설정
+        CASE 9 ; 현재시간 변경
+            CALL CHANGE_TIME
+        CASE 10 ; 엔딩 설정
+    ENDSELECT
+WEND
+;-------------------------------------------------------------------------
+@EPC_MENU
+FOR LOCAL, 0, 11
+    PRINTFORM [{LOCAL}]
+    SELECTCASE LOCAL
+        CASE 0
+            PRINTL 돌아가기
+        CASE 1
+            PRINTL 캐릭터 설정
+        CASE 2
+            PRINTL 플레이어 설정
+        CASE 9
+            PRINTL 현재시간 변경
+        CASE 10
+            PRINTL 엔딩 설정
+        CASEELSE
+            CLEARLINE 1
+    ENDSELECT
+NEXT
+;-------------------------------------------------------------------------
+@CHANGE_TIME
