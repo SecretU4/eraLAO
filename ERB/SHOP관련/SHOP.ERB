@@ -153,6 +153,10 @@ SELECTCASE RESULT
         PRINTL 게임을 종료합니다.
         PRINTW 엔터 키를 눌러 계속...
         QUIT
+    ;개별디버그(debug)
+    CASE 1048596
+        CALL EPC_DEBUG
+        RETURN RESULT
     CASEELSE
         PRINTW 제시된 숫자를 입력해주세요.
 ENDSELECT
