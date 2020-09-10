@@ -90,8 +90,10 @@ ELSEIF TIME == 1 ;밤 > 낮
 
     ;기본 아이템 재고 보충 처리
     ;약혼반지는 하나만
-    CALL SET_ITEM_SALES(0, 1, 1)
+    CALL SET_EX_ITEM_SALES(1, 1)
     CALL SET_ITEM_SALES(2, 50, 20)
+    ;방추가 보충처리
+    CALL SET_ITEM_SALES(203, 203, 1)
 
     ;MASTER의 전투레벨처리
     CALL BattleLV_UP(MASTER)

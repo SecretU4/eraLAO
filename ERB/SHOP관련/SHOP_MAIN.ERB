@@ -55,7 +55,7 @@ NEXT
 ;ARG:0 = INDEX_START, ARG:1 = INDEX_END, ARG:2 = 있으면 해당값이 재고 최대치
 ;===========================================================
 @SET_ITEM_SALES(ARG:0, ARG:1, ARG:2 = 0)
-FOR LOCAL, ARG:0, ARG:1
+FOR LOCAL, ARG:0, (ARG:1 + 1)
     IF ITEMNAME:LOCAL == ""
         CONTINUE
     ELSEIF ARG:2
@@ -68,11 +68,11 @@ RETURN 1
 ;===========================================================
 ;함수명: SET_EX_ITEM_SALES
 ;아이템명이 정해지지 않은 번호를 제외한 아이템의 재고를 1로 함.
-;이미 재고가 있거나 1보다 큰 경우는 패스.
+;이미 가지고 있거나 1보다 큰 경우는 패스.
 ;ARG:0 = INDEX_START, ARG:1 = INDEX_END
 ;===========================================================
 @SET_EX_ITEM_SALES(ARG:0, ARG:1)
-FOR LOCAL, ARG:0, ARG:1
+FOR LOCAL, ARG:0, (ARG:1 + 1)
     IF ITEMNAME:LOCAL == ""
         CONTINUE
     ELSEIF ITEM:LOCAL >= 1
@@ -127,10 +127,6 @@ WEND
 #DIM INDEX_END
 INDEX_START = ARG
 INDEX_END = ARG:1
-
-;추후 하루 지날때마다로 이관
-ITEMSALES:203 = 1
-CALL SET_EX_ITEM_SALES(INDEX_START, INDEX_END)
 
 WHILE RESULT != 0
     DRAWLINE
