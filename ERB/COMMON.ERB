@@ -161,7 +161,9 @@ SIF GROUPMATCH(ARG, 0,-1)
 
 ITEM:(ITEM_BIO(NO:ARG)) = -1
 ;호감도, 공포, 스트레스값 초기화
-VARSET CFLAG:ARG 0, 1, 4
+CFLAG:ARG:호감도 = 0
+CFLAG:ARG:공포 = 0
+CFLAG:ARG:스트레스 = 0
 FLAG:현캐릭터수 --
 SETBIT CFLAG:이별대상:이별사유, ARG:1
 RETURN 1
