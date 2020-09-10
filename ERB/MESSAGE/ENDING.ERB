@@ -61,8 +61,8 @@ IF TALENT:정신쇠약 == 2
 ELSEIF TALENT:사랑 == 2
     PRINTFORML %타겟은% 눈물을 글썽이며 손에 반지를 받아들였다.
     CFLAG:엔딩플래그 = 1
-    ;리제, 50% 확률
-    IF REAL_NUM == 7 && RAND:1
+    ;리제 히든, 10% 확률
+    IF REAL_NUM == 7 && !RAND:10
         CFLAG:엔딩플래그 = 4
     ;팬텀
     ELSEIF REAL_NUM == 73 && EXP:출격경험 > 6
@@ -316,7 +316,7 @@ RETURN 1
 TARGET = -1
 
 ;bit 1값은 약혼반지 관련으로 ENDING_MARRY_FLAG에서 처리됨
-FOR LOCAL, 1, 63
+FOR LOCAL, 1, 64
     IF GETBIT(CFLAG:MASTER:엔딩플래그, LOCAL)
         SELECTCASE LOCAL
             CASE 1 ;약혼반지 공용
@@ -560,7 +560,7 @@ RETURN 0
 ;============================================================================================
 @ENDING_COMMON
 
-FOR LOCAL, 19, 21
+FOR LOCAL, 19, 22
     IF GETBIT(CFLAG:MASTER:엔딩플래그, LOCAL)
         SELECTCASE LOCAL
             CASE 19 ;EndingA
