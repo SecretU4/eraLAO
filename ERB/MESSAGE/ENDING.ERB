@@ -313,23 +313,23 @@ RETURN 1
 ;============================================================================================
 @Classify_EndingFlag
 #DIM 비트값
-TARGET = -1
 
 ;bit 1값은 약혼반지 관련으로 ENDING_MARRY_FLAG에서 처리됨
-FOR LOCAL, 1, 64
-    IF GETBIT(CFLAG:MASTER:엔딩플래그, LOCAL)
-        SELECTCASE LOCAL
-            CASE 1 ;약혼반지 공용
+FOR 비트값, 1, 64
+    IF GETBIT(CFLAG:MASTER:엔딩플래그, 비트값)
+        SELECTCASE 비트값
+            CASE 1 ;약혼반지 공용, TARGET 값도 이미 처리됨
             CASE 19, 20, 21 ;범용구상
+                TARGET = MASTER
                 RETURN 0
             CASE 2 ;세이렌 연모 폐기
                 TARGET = GETCHARA(89)
                 CFLAG:TARGET:엔딩플래그 = 3
             CASE 3, 8 ;리제
                 TARGET = GETCHARA(7)
-                IF LOCAL == 3
+                IF 비트값 == 3
                     CFLAG:TARGET:엔딩플래그 = 3
-                ELSEIF LOCAL == 8
+                ELSEIF 비트값 == 8
                     CFLAG:TARGET:엔딩플래그 = 5
                 ENDIF
             CASE 4 ;켈베로스 정신붕괴 폐기
@@ -340,9 +340,9 @@ FOR LOCAL, 1, 64
                 CFLAG:TARGET:엔딩플래그 = 3
             CASE 6, 10 ;메이
                 TARGET = GETCHARA(51)
-                IF LOCAL == 6 ;연모 정신쇠약 폐기
+                IF 비트값 == 6 ;연모 정신쇠약 폐기
                     CFLAG:TARGET:엔딩플래그 = 3
-                ELSEIF LOCAL == 10 ;사랑 출격경험 50 이상 폐기
+                ELSEIF 비트값 == 10 ;사랑 출격경험 50 이상 폐기
                     CFLAG:TARGET:엔딩플래그 = 4
                 ENDIF
             CASE 7 ;모모 연모 판매
@@ -365,16 +365,16 @@ FOR LOCAL, 1, 64
                 CFLAG:TARGET:엔딩플래그 = 4
             CASE 15, 22 ;에밀리
                 TARGET = GETCHARA(68)
-                IF LOCAL == 15
+                IF 비트값 == 15
                     CFLAG:TARGET:엔딩플래그 = 4
-                ELSEIF LOCAL == 22 ;연애시작 선택지
+                ELSEIF 비트값 == 22 ;연애시작 선택지
                     CFLAG:TARGET:엔딩플래그 = 5
                 ENDIF
             CASE 16, 17 ;유미
                 TARGET = GETCHARA(132)
-                IF LOCAL == 16
+                IF 비트값 == 16
                     CFLAG:TARGET:엔딩플래그 = 3
-                ELSEIF LOCAL == 17
+                ELSEIF 비트값 == 17
                     CFLAG:TARGET:엔딩플래그 = 4
                 ENDIF
             CASE 18 ;닥터
@@ -390,10 +390,10 @@ FOR LOCAL, 1, 64
                 TARGET = GETCHARA(71)
                 CFLAG:TARGET:엔딩플래그 = 3
             CASEELSE
-                THROW 미확인 엔딩 번호 {LOCAL}
+                THROW 미확인 엔딩 번호 {비트값}
         ENDSELECT
-        CLEARBIT CFLAG:MASTER:엔딩플래그, LOCAL
-        RETURN LOCAL
+        CLEARBIT CFLAG:MASTER:엔딩플래그, 비트값
+        RETURN 비트값
     ENDIF
 NEXT
 ;이상상황 처리용
