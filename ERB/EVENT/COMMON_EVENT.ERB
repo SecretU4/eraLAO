@@ -109,9 +109,9 @@ FOR 대상, 1, CHARANUM
             CONTINUE
 
         이벤트번호문자열:1 = /{이벤트번호}
-        IF STRFIND(이벤트배열, 이벤트번호문자열:1) != -1
-            THROW 중복된 개별 이벤트 {이벤트번호}
-        ELSEIF IS_SINGLE_EVENT_AVAILABLE(이벤트번호, 대상)
+        IF IS_SINGLE_EVENT_AVAILABLE(이벤트번호, 대상)
+            SIF STRFIND(이벤트배열, 이벤트번호문자열:1) != -1
+                THROW 중복된 개별 이벤트 {이벤트번호}
             이벤트배열 += 이벤트번호문자열:1
         ENDIF
     NEXT
