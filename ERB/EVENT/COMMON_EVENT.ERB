@@ -654,16 +654,36 @@ WHILE 선택캐릭터:0 == -1
             선택캐릭터:0 = GETCHARA(123)
         CASE 1001 TO 1003, 1007 ;소완 우선순위 & 개인 이벤트
             선택캐릭터:0 = GETCHARA(12)
+        CASE 1008, 1039 ;세이렌 개인 이벤트
+            선택캐릭터:0 = GETCHARA(89)
+        CASE 1012 ;켈베로스 개인 이벤트
+            선택캐릭터:0 = GETCHARA(113)
+        CASE 1015 ;세이렌/슬레이프니르 이벤트
+            선택캐릭터:0 = GETCHARA(91)
+        CASE 1016 ;메이/레오나 이벤트
+            선택캐릭터:0 = GETCHARA(31)
+        CASE 1019 ;메이/세이렌 이벤트
+            선택캐릭터:0 = GETCHARA(89)
         CASE 1020 ;메이 개인 이벤트
             선택캐릭터:0 = GETCHARA(51)
+        CASE 1025 ;에밀리/켈베로스 이벤트
+            선택캐릭터:0 = GETCHARA(68)
+        CASE 1026 ;마리/레오나 이벤트
+            선택캐릭터:0 = GETCHARA(21)
         CASE 1028 ;레오나 개인 이벤트
             선택캐릭터:0 = GETCHARA(31)
         CASE 1029 ;오드리 개인 이벤트
             선택캐릭터:0 = GETCHARA(106)
-        CASE 1039 ;세이렌 개인 이벤트
-            선택캐릭터:0 = GETCHARA(89)
+        CASE 1036, 1037 ;에밀리/슬레이프니르 이벤트
+            선택캐릭터:0 = GETCHARA(68)
+        CASE 1038 ;켈베로스/유미 이벤트
+            선택캐릭터:0 = GETCHARA(113)
         CASE 1041 TO 1044 ;베로니카 우선순위 이벤트
             선택캐릭터:0 = GETCHARA(138)
+        CASE 1045 TO 1047 ;메이/나엔 이벤트
+            선택캐릭터:0 = GETCHARA(51)
+        CASE 1048 ;에밀리 개인 이벤트
+            선택캐릭터:0 = GETCHARA(68)
         CASEELSE
             THROW 미상정된 이벤트번호 {ARG}
     ENDSELECT
@@ -691,10 +711,26 @@ WHILE 선택캐릭터:1 == -1
             SIF IS_ARRAY_EVENT_AVAILABLE(6, 랜덤대상:1, 1)
                 선택캐릭터:1 = 랜덤대상:1
         ;캐릭터 고정 이벤트
+        CASE 1015 ;세이렌/슬레이프니르 이벤트
+            선택캐릭터:1 = GETCHARA(89)
+        CASE 1016 ;메이/레오나 이벤트
+            선택캐릭터:1 = GETCHARA(51)
+        CASE 1019 ;메이/세이렌 이벤트
+            선택캐릭터:1 = GETCHARA(51)
         CASE 1023, 1024  ;레오나/발키리 공용 이벤트
             선택캐릭터:1 = GETCHARA(32)
+        CASE 1025 ;에밀리/켈베로스 이벤트
+            선택캐릭터:1 = GETCHARA(113)
+        CASE 1026 ;마리/레오나 이벤트
+            선택캐릭터:1 = GETCHARA(31)
+        CASE 1036, 1037 ;에밀리/슬레이프니르 이벤트
+            선택캐릭터:1 = GETCHARA(91)
+        CASE 1038 ;켈베로스/유미 이벤트
+            선택캐릭터:1 = GETCHARA(132)
         CASE 1040 ;오드리/더치걸 이벤트
             선택캐릭터:1 = GETCHARA(108)
+        CASE 1045 TO 1047 ;메이/나엔 이벤트
+            선택캐릭터:1 = GETCHARA(52)
         CASEELSE ; 1명만 뽑는 경우
             BREAK
     ENDSELECT
