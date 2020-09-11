@@ -194,27 +194,44 @@ FOR LOCAL, 21, 100
         CONTINUE
     ELSEIF !TALENT:ARG:LOCAL
         CONTINUE
-    ELSEIF GROUPMATCH(LOCAL, 30,62,70,72)
+    ;-1 < 0 > 1 형 TALENT
+    ELSEIF GROUPMATCH(LOCAL, 30,62,70)
         SELECTCASE LOCAL
-            CASE 30
+            CASE 30 ;나이속성
                 IF TALENT:ARG:LOCAL == -1
                     LOCALS += "[동생]"
                 ELSEIF TALENT:ARG:LOCAL == 1
                     LOCALS += "[누님]"
                 ENDIF
-            CASE 62
+            CASE 62 ;긍정도
                 IF TALENT:ARG:LOCAL == -1
                     LOCALS += "[비관적]"
                 ELSEIF TALENT:ARG:LOCAL == 1
                     LOCALS += "[긍정적]"
                 ENDIF
-            CASE 70
+            CASE 70 ;지능
                 IF TALENT:ARG:LOCAL == -1
                     LOCALS += "[무식]"
                 ELSEIF TALENT:ARG:LOCAL == 1
                     LOCALS += "[지식]"
                 ENDIF
-            CASE 72
+        ENDSELECT
+    ;0 > 1 > 2 형 TALENT
+    ELSEIF GROUPMATCH(LOCAL, 25,26,72)
+        SELECTCASE LOCAL
+            CASE 25 ;사랑
+                IF TALENT:ARG:LOCAL == 1
+                    LOCALS += "[연모]"
+                ELSEIF TALENT:ARG:LOCAL == 2
+                    LOCALS += "[사랑]"
+                ENDIF
+            CASE 26 ;혼인
+                IF TALENT:ARG:LOCAL == 1
+                    LOCALS += "[혼인]"
+                ELSEIF TALENT:ARG:LOCAL == 2
+                    LOCALS += "[입양]"
+                ENDIF
+            CASE 72 ;정신쇠약
                 IF TALENT:ARG:LOCAL == 1
                     LOCALS += "[정신쇠약]"
                 ELSEIF TALENT:ARG:LOCAL == 2
