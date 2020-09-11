@@ -682,6 +682,7 @@ IF RESULT == 0 ;잠에서 깸
 ELSE ;현실 받아들임
     FLAG:속박상태 = 1
     ;현 TARGET 제외 전부 삭제
+    ;PICKUPCHARA 사용 가능?
     FOR LOCAL, 1, CHARANUM
         SIF NO:LOCAL == 7
             CONTINUE
