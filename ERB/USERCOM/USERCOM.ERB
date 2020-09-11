@@ -42,6 +42,12 @@ PRINTL [999] 종료한다
 
 @USERCOM
 #DIM 선택커맨드
+;연애 시작 고백시 여기서 처리
+IF TFLAG:고백함
+    CFLAG:고백함 = TFLAG:고백함
+    TFLAG:고백함 = 0
+    FLAG:고백받은인수 ++
+ENDIF
 선택커맨드 = RESULT
 선택커맨드 = COM_ALTER_SELECT(선택커맨드)
 
