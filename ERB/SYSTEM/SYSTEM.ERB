@@ -57,45 +57,55 @@ BEGIN SHOP
 ;개별 디버그
 ;=========================================================================
 @EPC_DEBUG
-
-CALL EPC_MENU
+CLEARLINE LINECOUNT
+PRINTL 환영합니다.
+PRINTL
 WHILE 1
+    CALL EPC_MENU
     INPUT
     SELECTCASE RESULT
         CASE 0 ; 돌아가기
             RETURN -1
         CASE 1 ; 캐릭터 설정
             CALL DEBUG_CHARA
-        CASE 2 ; 당신 설정
+            DRAWLINE
+        CASE 7 ; 강제 시간변경
+            TFLAG:98 = 0
+            BEGIN TURNEND
         CASE 8 ; 현재시간 변경
-            CALL CHANGE_TIME
+            CALL DEBUG_TIME
+            DRAWLINE
         CASE 9 ; 휴식 이벤트 설정
+            CALL DEBUG_REST
+            DRAWLINE
         CASE 10 ; 엔딩 설정
+            CALL DEBUG_ENDING
+            DRAWLINE
     ENDSELECT
 WEND
 ;-------------------------------------------------------------------------
 @EPC_MENU
 FOR LOCAL, 0, 11
-    PRINTFORM [{LOCAL}]
+    SIF TFLAG:98 && LOCAL == 7
+        SETCOLOR 255,0,0
     SELECTCASE LOCAL
         CASE 0
-            PRINTL 돌아가기
+            PRINTFORML [{LOCAL}] 돌아가기
         CASE 1
-            PRINTL 캐릭터 설정
-        CASE 2
-            PRINTL 플레이어 설정
+            PRINTFORML [{LOCAL}] 캐릭터 설정
+        CASE 7
+            PRINTFORML [{LOCAL}] 강제 시간변경 실행(선택시 시간대/날짜 변경이 바로 이루어집니다. 엔딩 설정 후에는 필히 이용해주세요)
         CASE 8
-            PRINTL 현재시간 변경
+            PRINTFORML [{LOCAL}] 현재시간 변경
         CASE 9
-            PRINTL 휴식 이벤트 설정
+            PRINTFORML [{LOCAL}] 휴식 이벤트 설정 (휴식 이벤트를 강제 실행합니다)
         CASE 10
-            PRINTL 엔딩 설정
-        CASEELSE
-            CLEARLINE 1
+            PRINTFORML [{LOCAL}] 엔딩 설정 (엔딩 플래그를 설정합니다)
     ENDSELECT
+    RESETCOLOR
 NEXT
 ;-------------------------------------------------------------------------
-@CHANGE_TIME
+@DEBUG_TIME
 #DIM 현재일자
 #DIM 현재시각
 #DIM 변경타임, 2
@@ -141,7 +151,7 @@ WEND
 @DEBUG_CHARA
 #DIM 대상
 ;대상 선택
-CALL SHOW_BIOLIST("DEBUG")
+CALL CURRENT_BIOLIST("DEBUG")
 SIF RESULT == -1
     RETURN 0
 대상 = RESULT
@@ -151,99 +161,114 @@ PRINTL 변경할 수치/능력을 선택해주세요.
 PRINTL 이벤트를 통하지 않기에 수치가 비정상적이라면 오류가 발생할 수 있습니다.
 PRINTL
 DRAWLINE
-PRINTFORMLC [1] 호감도 (현재 {CFLAG:대상:호감도})
-PRINTFORMLC [2] 공포 (현재 {CFLAG:대상:공포})
-PRINTFORMLC [3] 스트레스 (현재 {CFLAG:대상:스트레스})
+PRINTL [0] 돌아가기
+IF 대상 != MASTER
+    PRINTFORMLC [1] 호감도 (현재 {CFLAG:대상:호감도})
+    PRINTFORMLC [2] 공포 (현재 {CFLAG:대상:공포})
+    PRINTFORMLC [3] 스트레스 (현재 {CFLAG:대상:스트레스})
+ENDIF
 PRINTFORMLC [4] CFLAG 수정
+PRINTFORMLC [5] 기초수치 수정
 PRINTL
 DRAWLINE
-FOR LOCAL, 21, 90
-    IF TALENTNAME:LOCAL == ""
-        CONTINUE
-    ELSEIF GROUPMATCH(LOCAL, 30,62,70,72)
-        SELECTCASE LOCAL
-            CASE 30
-                IF TALENT:대상:LOCAL == -1
-                    LOCALS '= "[동생]"
-                ELSEIF TALENT:대상:LOCAL == 1
-                    LOCALS '= "[누님]"
-                ELSE
-                    LOCALS = TALENTNAME:LOCAL
-                ENDIF
-            CASE 62
-                IF TALENT:대상:LOCAL == -1
-                    LOCALS += "[비관적]"
-                ELSEIF TALENT:대상:LOCAL == 1
-                    LOCALS += "[긍정적]"
-                ELSE
-                    LOCALS = TALENTNAME:LOCAL
-                ENDIF
-            CASE 70
-                IF TALENT:대상:LOCAL == -1
-                    LOCALS += "[무식]"
-                ELSEIF TALENT:대상:LOCAL == 1
-                    LOCALS += "[지식]"
-                ELSE
-                    LOCALS = TALENTNAME:LOCAL
-                ENDIF
-            CASE 72
-                IF TALENT:대상:LOCAL == 1
-                    LOCALS += "[정신쇠약]"
-                ELSEIF TALENT:대상:LOCAL == 2
-                    LOCALS += "[정신붕괴]"
-                ELSE
-                    LOCALS = 정신관련
-                ENDIF
-        ENDSELECT
-    ELSE
-        LOCALS += @"[%TALENTNAME:LOCAL%]"
-    ENDIF
-    PRINTFORMLC [{LOCAL}] %LOCALS, 8%
-NEXT
+IF 대상 != MASTER
+    FOR LOCAL, 21, 90
+    LOCALS =
+        IF TALENTNAME:LOCAL == ""
+            CONTINUE
+        ELSEIF GROUPMATCH(LOCAL, 30,62,70,72)
+            SELECTCASE LOCAL
+                CASE 30
+                    IF TALENT:대상:LOCAL == -1
+                        LOCALS '= "[동생]"
+                    ELSEIF TALENT:대상:LOCAL == 1
+                        LOCALS '= "[누님]"
+                    ELSE
+                        LOCALS = [동생]/[누님]
+                    ENDIF
+                CASE 62
+                    IF TALENT:대상:LOCAL == -1
+                        LOCALS += "[비관적]"
+                    ELSEIF TALENT:대상:LOCAL == 1
+                        LOCALS += "[긍정적]"
+                    ELSE
+                        LOCALS = [비관적]/[긍정적]
+                    ENDIF
+                CASE 70
+                    IF TALENT:대상:LOCAL == -1
+                        LOCALS += "[무식]"
+                    ELSEIF TALENT:대상:LOCAL == 1
+                        LOCALS += "[지식]"
+                    ELSE
+                        LOCALS = [무식]/[지식]
+                    ENDIF
+                CASE 72
+                    IF TALENT:대상:LOCAL == 1
+                        LOCALS += "[정신쇠약]"
+                    ELSEIF TALENT:대상:LOCAL == 2
+                        LOCALS += "[정신붕괴]"
+                    ELSE
+                        LOCALS = [정신쇠약]/[정신붕괴]
+                    ENDIF
+            ENDSELECT
+        ELSE
+            LOCALS += @"[%TALENTNAME:LOCAL%]"
+        ENDIF
+        SIF TALENT:대상:LOCAL != 0
+            SETCOLOR 0, 255, 0
+        PRINTFORMLC [{LOCAL}] %LOCALS, 8%
+        RESETCOLOR
+    NEXT
+ELSE ;MASTER 일때
+    FOR LOCAL, 90, 100
+        SIF TALENTNAME:LOCAL == ""
+            CONTINUE
+        SIF TALENT:대상:LOCAL != 0
+            SETCOLOR 0, 255, 0
+        PRINTFORMLC [{LOCAL}] %TALENTNAME:LOCAL%
+        RESETCOLOR
+    NEXT
+ENDIF
 ;위 값 초기화
 VARSET LOCAL
 LOCALS =
-LOCALS:1 =
+LOCALS:1 '= "바꾸지 않는다"
 LOCALS:2 =
 LOCALS:3 =
-LOCALS:4 =
+LOCALS:4 '= "값을 지운다"
 ;실제 구동부
 WHILE 1
     INPUT
     SELECTCASE RESULT
+        CASE 0 ;돌아가기
+            RETURN 0
         CASE 1 ;호감도
             PRINTFORML %CALLNAME:대상%의 호감도값을 지정해주세요.
             INPUT
             LOCAL = RESULT
             PRINTFORML 호감도 수치를 {RESULT} 로 변경합니까?
             CALL ASK_YN
-            IF RESULT == 0
+            SIF RESULT == 0
                 CFLAG:대상:호감도 = LOCAL
-            ELSE
-                CONTINUE
-            ENDIF
+            BREAK
         CASE 2 ;공포
             PRINTFORML %CALLNAME:대상%의 공포값을 지정해주세요.
             INPUT
             LOCAL = RESULT
             PRINTFORML 공포 수치를 {RESULT} 로 변경합니까?
             CALL ASK_YN
-            IF RESULT == 0
+            SIF RESULT == 0
                 CFLAG:대상:공포 = LOCAL
-            ELSE
-                CONTINUE
-            ENDIF
+            BREAK
         CASE 3 ;스트레스
             PRINTFORML %CALLNAME:대상%의 스트레스값을 지정해주세요.
             INPUT
             LOCAL = RESULT
             PRINTFORML 스트레스 수치를 {RESULT} 로 변경합니까?
             CALL ASK_YN
-            IF RESULT == 0
+            SIF RESULT == 0
                 CFLAG:대상:스트레스 = LOCAL
-            ELSE
-                CONTINUE
-            ENDIF
+            BREAK
         CASE 4 ;CFLAG 수정
             PRINTL 변경하실 CFLAG의 인덱스(CFLAG.CSV 내 숫자값)값을 지정해주세요. 0도 유효한 값으로 입력됩니다.
             INPUT
@@ -252,58 +277,114 @@ WHILE 1
                 PRINTW 다시 시도해주세요.
             ELSE
                 LOCAL:1 = RESULT
-                PRINTFORML %CALLANME:대상%의 %CFLAGNAME:(LOCAL:1)%의 현재 값은 {CFLAG:대상:(LOCAL:1)} 입니다.
+                PRINTFORML %CALLNAME:대상% : %CFLAGNAME:(LOCAL:1)%의 현재 값은 {CFLAG:대상:(LOCAL:1)} 입니다.
                 PRINTL 변경할 값을 입력해주세요. 0도 유효한 값으로 입력됩니다.
                 INPUT
                 LOCAL:2 = RESULT
-                PRINTFORML %CALLANME:대상%의 %CFLAGNAME:(LOCAL:1)% 수치를 {RESULT}로 변경합니까?
+                PRINTFORML %CALLNAME:대상%의 %CFLAGNAME:(LOCAL:1)% 수치를 {RESULT}로 변경합니까?
                 CALL ASK_YN
-                IF RESULT == 0
+                SIF RESULT == 0
                     CFLAG:대상:(LOCAL:1) = RESULT
-                ELSE
-                    CONTINUE
-                ENDIF
             ENDIF
+            BREAK
+        CASE 5 ;기초수치 수정
+            PRINTL
+            DRAWLINE
+            PRINTL [0] 돌아가기
+            IF 대상 != MASTER
+                PRINT [1] 체형변경 - 현재  
+                SELECTCASE TALENT:대상:체형
+                    CASE 0 ;작은체구
+                        PRINTL [작은체구]
+                    CASE 1 ;보통체구
+                        PRINTL [보통체구]
+                    CASE 2 ;큰체구
+                        PRINTL [큰체구]
+                ENDSELECT
+            ELSE
+                PRINT [2] 나이변경 - 현재 
+                SELECTCASE TALENT:대상:나이
+                    CASE 0 ;소년
+                        PRINTL [소년]
+                    CASE 1 ;청년
+                        PRINTL [청년]
+                    CASE 2 ;중년
+                        PRINTL [중년]
+                ENDSELECT
+            ENDIF
+            WHILE 1
+                INPUT
+                SELECTCASE RESULT
+                    CASE 0 ;돌아가기
+                        RETURN 0
+                    CASE 1 ;체구변경
+                        PRINTL 어떤 체형으로 할까요?
+                        CALL ASK_M(LOCALS:1, 1, "작은체구", TALENT:대상:체형 != 0, "보통체구", TALENT:대상:체형 != 1, "큰체구", TALENT:대상:체형 != 2)
+                        SELECTCASE RESULT
+                            CASE 0
+                                RETURN 0
+                            CASE 1, 2, 3
+                                TALENT:대상:체형 = (RESULT - 1)
+                        ENDSELECT
+                        BREAK
+                    CASE 2 ;나이변경
+                        PRINTL 어떤 나이대로 할까요?
+                        CALL ASK_M(LOCALS:1, 1, "소년", TALENT:대상:나이 != 0, "청년", TALENT:대상:나이 != 1, "중년", TALENT:대상:나이 != 2)
+                        SELECTCASE RESULT
+                            CASE 0
+                                RETURN 0
+                            CASE 1, 2, 3
+                                TALENT:대상:나이 = (RESULT - 1)
+                        ENDSELECT
+                        BREAK
+                    CASEELSE
+                        PRINTW 주어진 선택지 중에서 선택해주세요.
+                        CONTINUE
+                ENDSELECT
+            WEND
+            RETURN 1
         CASE 21 TO 90 ;일반능력
             LOCAL = RESULT
+            IF 대상 == MASTER || TALENTNAME:LOCAL == ""
+                PRINTW 주어진 선택지 중에서 골라주세요.
+                CONTINUE
+            ENDIF
             PRINTFORML 선택 능력 : %TALENTNAME:LOCAL%
             PRINT 현재 상태 : 
             ;단순 on/off 아님
             ;-1 < 0 > 1 형 TALENT
             IF GROUPMATCH(LOCAL, 30,62,70)
                 ;ASK_M용 선택지 처리
-                LOCALS:1 '= "바꾸지 않는다"
-                LOCALS:2 '= "으로 한다"
-                LOCALS:3 '= "으로 한다"
-                LOCALS:4 '= "값을 지운다"
+                LOCALS:2 '= "(으)로 한다"
+                LOCALS:3 '= "(으)로 한다"
                 SELECTCASE LOCAL
                     CASE 30 ;나이속성
+                        LOCALS:2 '= "[동생]" + LOCALS:2
+                        LOCALS:3 '= "[누님]" + LOCALS:3
                         IF TALENT:대상:LOCAL == -1
                             PRINTL [동생]
-                            LOCALS:2 '= "[동생]" + LOCALS:2
                         ELSEIF TALENT:대상:LOCAL == 1
                             PRINTL [누님]
-                            LOCALS:3 '= "[누님]" + LOCALS:3
                         ELSE
                             PRINTL 없음
                         ENDIF
                     CASE 62 ;긍정도
+                        LOCALS:2 '= "[비관적]" + LOCALS:2
+                        LOCALS:3 '= "[긍정적]" + LOCALS:3
                         IF TALENT:대상:LOCAL == -1
                             PRINTL [비관적]
-                            LOCALS:2 '= "[비관적]" + LOCALS:2
                         ELSEIF TALENT:대상:LOCAL == 1
                             PRINTL [긍정적]
-                            LOCALS:3 '= "[긍정적]" + LOCALS:3
                         ELSE
                             PRINTL 없음
                         ENDIF
                     CASE 70 ;지능
+                        LOCALS:2 '= "[무식]" + LOCALS:2
+                        LOCALS:3 '= "[지식]" + LOCALS:3
                         IF TALENT:대상:LOCAL == -1
                             PRINTL [무식]
-                            LOCALS:2 '= "[무식]" + LOCALS:2
                         ELSEIF TALENT:대상:LOCAL == 1
                             PRINTL [지식]
-                            LOCALS:3 '= "[지식]" + LOCALS:3
                         ELSE
                             PRINTL 없음
                         ENDIF
@@ -323,20 +404,22 @@ WHILE 1
             ;0 > 1 > 2 형 TALENT
             ELSEIF GROUPMATCH(LOCAL, 25,26,72)
                 ;ASK_M용 선택지 처리
-                LOCALS:1 '= "바꾸지 않는다"
-                LOCALS:2 '= "으로 한다"
-                LOCALS:3 '= "으로 한다"
-                LOCALS:4 '= "값을 지운다"
+                LOCALS:2 '= "(으)로 한다"
+                LOCALS:3 '= "(으)로 한다"
                 SELECTCASE LOCAL
                     CASE 25 ;사랑
+                        LOCALS:2 '= "[연모]" + LOCALS:2
+                        LOCALS:3 '= "[사랑]" + LOCALS:3
                         IF TALENT:대상:LOCAL == 1
-                            PRINTL [연모]]
+                            PRINTL [연모]
                         ELSEIF TALENT:대상:LOCAL == 2
                             PRINTL [사랑]
                         ELSE
                             PRINTL 없음
                         ENDIF
                     CASE 26 ;혼인                  
+                        LOCALS:2 '= "[혼인]" + LOCALS:2
+                        LOCALS:3 '= "[입양]" + LOCALS:3
                         IF TALENT:대상:LOCAL == 1
                             PRINTL [혼인]
                         ELSEIF TALENT:대상:LOCAL == 2
@@ -345,6 +428,8 @@ WHILE 1
                             PRINTL 없음
                         ENDIF
                     CASE 72 ;정신쇠약
+                        LOCALS:2 '= "[정신쇠약]" + LOCALS:2
+                        LOCALS:3 '= "[정신붕괴]" + LOCALS:3
                         IF TALENT:대상:LOCAL == 1
                             PRINTL [정신쇠약]
                         ELSEIF TALENT:대상:LOCAL == 2
@@ -369,11 +454,112 @@ WHILE 1
                 PRINTFORML \@ TALENT:대상:LOCAL ? 활성화 # 비활성화 \@
                 PRINTL 현재 값을 변경합니까?
                 CALL ASK_YN()
-                IF RESULT == 0
+                SIF RESULT == 0
                     TALENT:대상:LOCAL = !TALENT:대상:LOCAL
-                ELSE
-                    CONTINUE
-                ENDIF
             ENDIF
+            BREAK
+        CASE 90 TO 100 ;MASTER용 능력조정
+            LOCAL = RESULT
+            IF 대상 != MASTER || TALENTNAME:LOCAL == ""
+                PRINTW 주어진 선택지 중에서 골라주세요.
+                CONTINUE
+            ENDIF
+            PRINTFORML [%TALENTNAME:LOCAL%]의 현재 상태 : \@ TALENT:대상:LOCAL ? 활성화 # 비활성화 \@
+            PRINTL 현재 값을 변경합니까?
+            CALL ASK_YN()
+            SIF RESULT == 0
+                TALENT:대상:LOCAL = !TALENT:대상:LOCAL
+            BREAK
+        CASEELSE
+            PRINTW 주어진 선택지 중에서 골라주세요.
+            CONTINUE
     ENDSELECT
 WEND
+RETURN 1
+;-------------------------------------------------------------------------
+@DEBUG_REST
+#DIM 선택번호
+PRINTL 입력된 이벤트번호의 이벤트를 발생시킵니다.
+PRINTL 휴식 커맨드 실행시 체크되는 플래그 등도 동일하게 작동합니다.
+PRINTL  * 단, 시간 변경은 이뤄지지 않습니다.
+PRINTL 다음과 같은 경우 문제가 발생할 수 있습니다.
+PRINTL   1. 존재하지 않는 이벤트 번호인 경우
+PRINTL   2. 조건에 맞는 상태가 아닌 경우 (이벤트 대상 바이오로이드 미소지 등)
+PRINTL   3. 연계 이벤트 번호인 경우 (선택지에 따라 다르게 출력되는 이벤트의 경우)
+PRINTL 발생시킬 이벤트번호를 입력해주세요.
+WHILE 1
+    INPUT
+    선택번호 = RESULT
+    CALL IS_REST_EXIST(선택번호)
+    IF RESULT == 0
+        PRINTL 선택한 번호가 존재하지 않습니다.
+        PRINTL 설정을 나가시겠습니까?
+        CALL ASK_YN
+        IF RESULT == 0
+            RETURN 0
+        ELSE
+            PRINTL 번호를 다시 입력해주세요.
+            CONTINUE
+        ENDIF
+    ELSE
+        CALL SELECT_EVENT_CHARA(선택번호)
+        LOCAL:1 = RESULT:0
+        LOCAL:2 = RESULT:1
+        PRINTFORMW 선택 이벤트 : {선택번호}, 대상 1 : %CALLNAME:(LOCAL:1)% \@ LOCAL:2 != -1 ? 대상 2 : %CALLNAME:(LOCAL:2)% # \@
+        PRINTL
+        DRAWLINE
+        PRINTL
+        CALLFORM MSG_EV_{선택번호}(LOCAL:1, LOCAL:2)
+        TFLAG:98 = 1
+        RETURN 1
+    ENDIF
+WEND
+;-------------------------------------------------------------------------
+@IS_REST_EXIST(ARG)
+SELECTCASE ARG
+    CASE 0 TO 4
+        RETURN 1
+    CASE 100 TO 127
+        RETURN 2
+    CASE 201 TO 202
+        RETURN 3
+    CASE 1001 TO 1048
+        RETURN 4
+    CASEELSE
+        RETURN 0
+ENDSELECT
+;-------------------------------------------------------------------------
+@DEBUG_ENDING
+#DIM 대상
+#DIM 선택엔딩
+;대상 선택
+CALL CURRENT_BIOLIST("DEBUG")
+SIF RESULT == -1
+    RETURN 0
+대상 = RESULT
+PRINTL 엔딩 번호는 개인 메시지 파일에 있는 값을 따릅니다. 존재하지 않는 값의 경우 오류가 발생할 수 있습니다.
+PRINTL 여러 엔딩을 동시에 실행할 수는 없으며, 설정 이후 강제 시간 이동을 진행해주세요.
+SIF 대상 == MASTER
+    PRINTL   * 당신을 고르신 경우, 특수한 경우에 설정되는 bit값으로 계산됩니다.
+PRINTL 발생하게 하고 싶은 엔딩 번호를 입력해주세요.
+INPUT
+선택엔딩 = RESULT
+IF 대상 == MASTER
+    PRINTFORML 선택 엔딩 : bit {선택엔딩}
+ELSE
+    PRINTFORML 선택 엔딩 : ending{선택엔딩}
+ENDIF
+PRINTL 초기화 후 돌아가시겠습니까? (잘못 입력한 경우 초기화해주세요)
+CALL ASK_YN
+IF RESULT == 0
+    RETURN 0
+ELSE
+    IF 대상 == MASTER
+        SETBIT CFLAG:MASTER:엔딩플래그, 선택엔딩
+    ELSE
+        CFLAG:대상:엔딩플래그 = 선택엔딩
+    ENDIF
+ENDIF
+PRINTW 설정이 완료되었습니다.
+TFLAG:98 = 1
+RETURN 1

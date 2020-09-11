@@ -155,8 +155,15 @@ SELECTCASE RESULT
         QUIT
     ;개별디버그(debug)
     CASE 1048596
-        CALL EPC_DEBUG
-        RETURN RESULT
+        IF TFLAG:99 == 1130209 || TFLAG:99 == 1048596
+            TFLAG:99 = 1048596
+            CALL EPC_DEBUG
+            RETURN RESULT
+        ELSE
+            PRINTW 제시된 숫자를 입력해주세요.
+        ENDIF
     CASEELSE
+        SIF RESULT == 1130209
+            TFLAG:99 = 1130209
         PRINTW 제시된 숫자를 입력해주세요.
 ENDSELECT

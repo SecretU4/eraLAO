@@ -621,9 +621,11 @@ VARSET 선택캐릭터, -1
 ;1명째 대상 선정
 WHILE 선택캐릭터:0 == -1
     랜덤대상 = RAND(1, CHARANUM)
+    IF GROUPMATCH(ARG, 0,1,2,3,4)
     ;보유여부 체크
-    SIF ITEM:(ITEM_BIO(NO:랜덤대상)) < 1
+    ELSEIF ITEM:(ITEM_BIO(NO:랜덤대상)) < 1
         CONTINUE
+    ENDIF
     SELECTCASE ARG
         ;바이오로이드를 뽑지 않는 이벤트
         CASE 0 TO 4
