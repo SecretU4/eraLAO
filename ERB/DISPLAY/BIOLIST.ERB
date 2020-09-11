@@ -16,7 +16,7 @@ DRAWLINEFORM =
 ;목록의 상단에 표시되는 제목
 ALIGNMENT CENTER
 SELECTCASE ARGS
-    CASE "대상변경"
+    CASE "대상변경", "DEBUG"
         PRINTL 대상으로 할 바이오로이드를 선택하세요.
     CASE "이별"
         PRINTL 목록에서 선택해주세요.
@@ -85,7 +85,7 @@ SIF ARGS != "상태보기"
 SELECTCASE ARGS
     CASE "대상변경"
         PRINTL 아무도 선택하지 않는다.
-    CASE "상태보기"
+    CASE "상태보기","DEBUG"
         PRINTL [999] 당신
         PRINTL [0] 돌아가기
     CASEELSE
@@ -98,7 +98,7 @@ WHILE 1
 
     IF RESULT == 0
         RETURN -1
-    ELSEIF ARGS == "상태보기" && RESULT == 999
+    ELSEIF (ARGS == "상태보기" || ARGS == "DEBUG") && RESULT == 999
         RETURN 0
     ELSEIF (RESULT-1) > COUNT
         PRINTW 제시된 숫자에서 선택해주세요.
@@ -112,7 +112,7 @@ WHILE 1
                 ELSE
                     RETURN LOCAL
                 ENDIF                
-            CASE "상태보기"
+            CASE "상태보기", "DEBUG"
                 RETURN LOCAL
             CASEELSE
                 IF CFLAG:LOCAL:출격중
