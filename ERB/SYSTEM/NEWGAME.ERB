@@ -20,6 +20,9 @@ MONEY:0 = 100000
 ;원룸으로 설정
 FLAG:캐릭터보유고 = 2
 
+;새로하기 대응
+SIF GETCHARA(0) == -1
+    ADDCHARA 0
 
 CALL MESSAGE_OPENING
 
