@@ -127,12 +127,14 @@ ELSEIF TIME == 1 ;밤 > 낮
 
     SIF TARGET == 0
         GOTO NULL_TARGET
-
+    PRINTL
+    DRAWLINE
+    PRINTL
     CALL MSG_Morning
 ENDIF
 
 $NULL_TARGET
-
+PRINTL
 IF FLAG:속박상태
     PRINTW ??이 되었습니다.
 ELSE
