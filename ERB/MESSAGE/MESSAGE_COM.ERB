@@ -186,10 +186,7 @@ IF CFLAG:개별그림유무
                 LOCAL = 5
             ENDIF
     ENDSELECT
-    ;미실장이기에 디버그용으로만 열어둠
-    [IF_DEBUG]
     CALL ILLUST(TARGET, LOCAL, "DATESTART")
-    [ENDIF]
 ENDIF
 
 DEBUGPRINTFORML %CSTR:1% 조교여부 = {CFLAG:조교여부}
