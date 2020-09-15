@@ -322,7 +322,7 @@ ENDSELECT
 
 PRINTL
 WHILE 1
-    DEBUGPRINTFORML %CSTR:1%
+    DEBUGPRINTFORML 선정된 메시지 태그 : %CSTR:1%
     TRYCCALLFORM M_No{NO:TARGET}_COM{SELECTCOM}
         IF RESULT == 0 ;해당 구문을 찾을 수 없을때
             CSTR:1 '= Alternative_CSTR(TARGET)
@@ -353,17 +353,28 @@ SIF 꼬릿말 != ""
 ;----------------------------------------------
 @Alternative_CSTR(ARG)
 #FUNCTIONS
+#DIMS SELECTED_CSTR, 5
+LOCALS = 
 DEBUGPRINTFORML 대상 : %CALLNAME:ARG%, 태그 : %CSTR:ARG:1%
-SELECTCASE CSTR:ARG:1
-    CASE "Love"
+
+SPLIT CSTR:ARG:1, "/", SELECTED_CSTR
+REPEAT RESULT
+    IF SELECTED_CSTR:COUNT == ""
+        BREAK
+    ELSEIF COUNT > 0
+        LOCALS += "/"
+    ENDIF
+
+    IF STRFINDU(SELECTED_CSTR:COUNT, "Love") != -1
         DEBUGPRINTL 태그 변경 Love > Affection
-        LOCALS '= "Affection"
-    CASE "Marryed"
+        LOCALS += "Affection"
+    ELSEIF STRFINDU(SELECTED_CSTR:COUNT, "Marryed") != -1
         DEBUGPRINTL 태그 변경 Marryed > Love
-        LOCALS '= "Love"
-    CASEELSE
-        THROW 미상정된 메시지 태그 %CSTR:ARG:1%
-ENDSELECT
+        LOCALS += "Love"
+    ELSE
+        LOCALS += SELECTED_CSTR:COUNT
+    ENDIF
+REND
 
 RETURNF LOCALS
 ;----------------------------------------------
