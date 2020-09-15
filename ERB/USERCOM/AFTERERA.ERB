@@ -6,7 +6,7 @@ CALL SET_MSG_CSTR(TARGET)
 WHILE 1
     TRYCALLFORM M_No{NO:TARGET}_TRAIN_END
     IF RESULT == 0
-        CSTR:1 = Alternative_CSTR(TARGET)
+        CSTR:1 '= Alternative_CSTR(TARGET)
     ELSE
         BREAK
     ENDIF

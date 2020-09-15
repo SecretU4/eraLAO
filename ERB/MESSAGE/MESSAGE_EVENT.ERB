@@ -35,7 +35,7 @@ SIF FLAG:속박상태
 WHILE 1
     TRYCALLFORM M_No{NO:TARGET}_EVENT_Morning
     IF RESULT == 0
-        CSTR:1 = Alternative_CSTR(TARGET)
+        CSTR:1 '= Alternative_CSTR(TARGET)
     ELSE
         BREAK
     ENDIF
@@ -65,7 +65,7 @@ ENDSELECT
 WHILE 1
     TRYCALLFORM M_No{NO:ARG}_EVENT_Sortie
     IF RESULT == 0
-        CSTR:ARG:1 = Alternative_CSTR(ARG)
+        CSTR:ARG:1 '= Alternative_CSTR(ARG)
     ELSE
         BREAK
     ENDIF
@@ -95,7 +95,7 @@ ENDSELECT
 WHILE 1
     TRYCALLFORM M_No{NO:ARG}_EVENT_Sortie_Return
     IF RESULT == 0
-        CSTR:ARG:1 = Alternative_CSTR(ARG)
+        CSTR:ARG:1 '= Alternative_CSTR(ARG)
     ELSE
         BREAK
     ENDIF
@@ -134,7 +134,7 @@ SELECTCASE ARGS
         WHILE 1
             TRYCALLFORM M_No{NO:대상}_EVENT_Cook_Self
             IF RESULT == 0
-                CSTR:대상:1 = Alternative_CSTR(대상)
+                CSTR:대상:1 '= Alternative_CSTR(대상)
             ELSE
                 BREAK
             ENDIF
@@ -148,7 +148,7 @@ SELECTCASE ARGS
         WHILE 1
             TRYCALLFORM M_No{NO:대상}_EVENT_Cook
             IF RESULT == 0
-                CSTR:대상:1 = Alternative_CSTR(대상)
+                CSTR:대상:1 '= Alternative_CSTR(대상)
             ELSE
                 BREAK
             ENDIF
@@ -158,7 +158,7 @@ SELECTCASE ARGS
         WHILE 1
             TRYCALLFORM M_No{NO:대상}_EVENT_Eat_Com
             IF RESULT == 0
-                CSTR:대상:1 = Alternative_CSTR(대상)
+                CSTR:대상:1 '= Alternative_CSTR(대상)
             ELSE
                 BREAK
             ENDIF
@@ -174,7 +174,7 @@ SELECTCASE ARGS
         WHILE 1
             TRYCALLFORM M_No{NO:대상}_EVENT_Eat_Lunch
             IF RESULT == 0
-                CSTR:대상:1 = Alternative_CSTR(대상)
+                CSTR:대상:1 '= Alternative_CSTR(대상)
             ELSE
                 BREAK
             ENDIF

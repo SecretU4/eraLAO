@@ -194,7 +194,7 @@ WHILE 1
 
     TRYCALLFORM M_No{NO:TARGET}_TRAIN_START_{CFLAG:조교여부}
     IF RESULT == 0
-        CSTR:1 = Alternative_CSTR(TARGET)
+        CSTR:1 '= Alternative_CSTR(TARGET)
     ELSE
         BREAK
     ENDIF
@@ -325,14 +325,14 @@ WHILE 1
     DEBUGPRINTFORML %CSTR:1%
     TRYCCALLFORM M_No{NO:TARGET}_COM{SELECTCOM}
         IF RESULT == 0 ;해당 구문을 찾을 수 없을때
-            CSTR:1 = Alternative_CSTR(TARGET)
+            CSTR:1 '= Alternative_CSTR(TARGET)
         ELSE
             BREAK
         ENDIF
     CATCH
         TRYCALLFORM M_No{NO:TARGET}_COM{COM_ALTER_SELECT_Rev(SELECTCOM)}
         IF RESULT == 0 ;해당 구문을 찾을 수 없을때
-            CSTR:1 = Alternative_CSTR(TARGET)
+            CSTR:1 '= Alternative_CSTR(TARGET)
         ELSE
             BREAK
         ENDIF
