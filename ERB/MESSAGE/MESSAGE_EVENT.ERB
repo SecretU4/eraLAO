@@ -14,6 +14,7 @@
 ;대상 없이 밤 > 낮시 에러상황 방지
 SIF TARGET == 0
     RETURN 0
+CSTR:1 = 
 
 CALL SET_MSG_CSTR(TARGET)
 SELECTCASE NO:TARGET
@@ -47,6 +48,7 @@ RETURN 1
 ;ARG = 인게임 캐릭터번호
 ;-------------------------------------------------
 @MSG_Sortie(ARG)
+CSTR:ARG:1 = 
 
 CALL SET_MSG_CSTR(ARG)
 SELECTCASE NO:ARG
@@ -77,6 +79,7 @@ RETURN 1
 ;ARG = 인게임 캐릭터번호, ARG:1 = 출격 수입
 ;-------------------------------------------------
 @MSG_Sortie_Return(ARG, ARG:1)
+CSTR:ARG:1 = 
 
 CALL SET_MSG_CSTR(ARG)
 SELECTCASE NO:ARG
@@ -113,6 +116,7 @@ RETURN 1
 #DIM 대상
 
 ;메시지 태그 설정
+CSTR:대상:1 = 
 CALL SET_MSG_CSTR(대상)
 SELECTCASE NO:대상
     CASE 68
