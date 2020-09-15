@@ -107,7 +107,14 @@ ENDIF
 
 SELECTCASE ARGS
     CASE "판매"
-        TRYCALLFORM M_No{REAL_NUM}_Sell
+        WHILE 1
+            TRYCALLFORM M_No{REAL_NUM}_Sell
+            IF RESULT == 0
+                CSTR:1 = Alternative_CSTR(TARGET)
+            ELSE
+                BREAK
+            ENDIF
+        WEND
         
         IF REAL_NUM == 123 && TALENT:ARG:사랑 == 1
             SETBIT CFLAG:MASTER:엔딩플래그, 7
@@ -115,7 +122,14 @@ SELECTCASE ARGS
             SETBIT CFLAG:MASTER:엔딩플래그, 24
         ENDIF
     CASE "폐기"
-        TRYCALLFORM M_No{REAL_NUM}_Disuse
+        WHILE 1
+            TRYCALLFORM M_No{REAL_NUM}_Disuse
+            IF RESULT == 0
+                CSTR:1 = Alternative_CSTR(TARGET)
+            ELSE
+                BREAK
+            ENDIF
+        WEND
 
         IF REAL_NUM == 89 && TALENT:ARG:사랑 == 1
             SETBIT CFLAG:MASTER:엔딩플래그, 2

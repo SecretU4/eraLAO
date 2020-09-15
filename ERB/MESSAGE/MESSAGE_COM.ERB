@@ -189,10 +189,16 @@ IF CFLAG:개별그림유무
     CALL ILLUST(TARGET, LOCAL, "DATESTART")
 ENDIF
 
-DEBUGPRINTFORML %CSTR:1% 조교여부 = {CFLAG:조교여부}
+WHILE 1
+    DEBUGPRINTFORML %CSTR:1% 조교여부 = {CFLAG:조교여부}
 
-TRYCALLFORM M_No{NO:TARGET}_TRAIN_START_{CFLAG:조교여부}
-
+    TRYCALLFORM M_No{NO:TARGET}_TRAIN_START_{CFLAG:조교여부}
+    IF RESULT == 0
+        CSTR:1 = Alternative_CSTR(TARGET)
+    ELSE
+        BREAK
+    ENDIF
+WEND
 ;----------------------------------------------
 ;COM 실행시 메시지 라인 설정 함수
 ;----------------------------------------------
@@ -314,12 +320,24 @@ SELECTCASE NO:TARGET
     ;그림번호 10: 배설기관, 11: 뚝배기
 ENDSELECT
 
-DEBUGPRINTFORML %CSTR:1%
-
-TRYCCALLFORM M_No{NO:TARGET}_COM{SELECTCOM}
-CATCH
-    TRYCALLFORM M_No{NO:TARGET}_COM{COM_ALTER_SELECT_Rev(SELECTCOM)}
-ENDCATCH
+PRINTL
+WHILE 1
+    DEBUGPRINTFORML %CSTR:1%
+    TRYCCALLFORM M_No{NO:TARGET}_COM{SELECTCOM}
+        IF RESULT == 0 ;해당 구문을 찾을 수 없을때
+            CSTR:1 = Alternative_CSTR(TARGET)
+        ELSE
+            BREAK
+        ENDIF
+    CATCH
+        TRYCALLFORM M_No{NO:TARGET}_COM{COM_ALTER_SELECT_Rev(SELECTCOM)}
+        IF RESULT == 0 ;해당 구문을 찾을 수 없을때
+            CSTR:1 = Alternative_CSTR(TARGET)
+        ELSE
+            BREAK
+        ENDIF
+    ENDCATCH
+WEND
 PRINTL
 
 SIF CFLAG:개별그림유무 && 그림번호 != -1
@@ -327,7 +345,27 @@ SIF CFLAG:개별그림유무 && 그림번호 != -1
 
 SIF 꼬릿말 != ""
     CALL SPLIT_MSG(꼬릿말, 1)
+;----------------------------------------------
+;함수명: Alternative_CSTR(ARG)
+;결과가 없는 메시지 태그값 변환용
+;변환한 CSTR값 반환
+;ARG = 인게임 캐릭터 ID
+;----------------------------------------------
+@Alternative_CSTR(ARG)
+#FUNCTIONS
+DEBUGPRINTFORML 대상 : %CALLNAME:ARG%, 태그 : %CSTR:ARG:1%
+SELECTCASE CSTR:ARG:1
+    CASE "Love"
+        DEBUGPRINTL 태그 변경 Love > Affection
+        LOCALS '= "Affection"
+    CASE "Marryed"
+        DEBUGPRINTL 태그 변경 Marryed > Love
+        LOCALS '= "Love"
+    CASEELSE
+        THROW 미상정된 메시지 태그 %CSTR:ARG:1%
+ENDSELECT
 
+RETURNF LOCALS
 ;----------------------------------------------
 ;question 대용 클래스
 ;CFLAG:ARG:개별선택지 bit 0 값이 1일때 진입
