@@ -110,7 +110,7 @@ SELECTCASE ARGS
         WHILE 1
             TRYCALLFORM M_No{REAL_NUM}_Sell
             IF RESULT == 0
-                CSTR:1 = Alternative_CSTR(TARGET)
+                CSTR:ARG:1 = Alternative_CSTR(ARG)
             ELSE
                 BREAK
             ENDIF
@@ -125,7 +125,7 @@ SELECTCASE ARGS
         WHILE 1
             TRYCALLFORM M_No{REAL_NUM}_Disuse
             IF RESULT == 0
-                CSTR:1 = Alternative_CSTR(TARGET)
+                CSTR:ARG:1 = Alternative_CSTR(ARG)
             ELSE
                 BREAK
             ENDIF
