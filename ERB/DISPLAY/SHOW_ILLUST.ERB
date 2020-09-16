@@ -215,8 +215,8 @@ RETURN 1
 
 PRINT_HTML = 
 배율 = 30
-TITLE_HTML += @"<img src='%ARGS%' height='{배율}00'>"
+PRINT_HTML += @"<img src='%ARGS%' height='{배율}00'>"
 REPEAT 배율
-    TITLE_HTML += "<br>"
+    PRINT_HTML += "<br>"
 REND
-HTML_PRINT TITLE_HTML
+HTML_PRINT PRINT_HTML
