@@ -33,14 +33,16 @@ ENDSELECT
 SIF FLAG:속박상태
     CSTR:1 = Hidden
 
-WHILE 1
+REPEAT 10
     TRYCALLFORM M_No{NO:TARGET}_EVENT_Morning
     IF RESULT == 0
         CSTR:1 '= Alternative_CSTR(TARGET)
+        SIF COUNT == 9
+            DEBUGPRINTFORML 조건(%CSTR:1%)에 맞는 %CALLNAME:TARGET%의 아침 지문이 발견되지 않음
     ELSE
         BREAK
     ENDIF
-WEND
+REND
 
 RETURN 1
 ;-------------------------------------------------
@@ -64,14 +66,16 @@ SELECTCASE NO:ARG
         ENDIF
 ENDSELECT
 
-WHILE 1
+REPEAT 10
     TRYCALLFORM M_No{NO:ARG}_EVENT_Sortie
     IF RESULT == 0
         CSTR:ARG:1 '= Alternative_CSTR(ARG)
+        SIF COUNT == 9
+            DEBUGPRINTFORML 조건(%CSTR:ARG:1%)에 맞는 %CALLNAME:ARG%의 출격 지문이 발견되지 않음
     ELSE
         BREAK
     ENDIF
-WEND
+REND
 
 RETURN 1
 ;-------------------------------------------------
@@ -95,14 +99,16 @@ SELECTCASE NO:ARG
         ENDIF
 ENDSELECT
 
-WHILE 1
+REPEAT 10
     TRYCALLFORM M_No{NO:ARG}_EVENT_Sortie_Return
     IF RESULT == 0
         CSTR:ARG:1 '= Alternative_CSTR(ARG)
+        SIF COUNT == 9
+            DEBUGPRINTFORML 조건(%CSTR:ARG:1%)에 맞는 %CALLNAME:ARG%의 출격복귀 지문이 발견되지 않음
     ELSE
         BREAK
     ENDIF
-WEND
+REND
 
 PRINTFORML %ARG가% 출격에서 복귀했습니다.
 PRINTFORMW 전투원이 구해온 물건을 팔아 총 %MONEYSTR(ARG:1)%을 벌었습니다.
@@ -135,38 +141,44 @@ ENDSELECT
 SELECTCASE ARGS
     CASE "Cook_Self" ;MASTER의 조리
         PRINTW 당신은 요리를 시작했다.
-        WHILE 1
+        REPEAT 10
             TRYCALLFORM M_No{NO:대상}_EVENT_Cook_Self
             IF RESULT == 0
                 CSTR:대상:1 '= Alternative_CSTR(대상)
+                SIF COUNT == 9
+                    DEBUGPRINTFORML 조건(%CSTR:대상:1%)에 맞는 %CALLNAME:대상%의 self요리 지문이 발견되지 않음
             ELSE
                 BREAK
             ENDIF
-        WEND
+        REND
     CASE "Cook_Bio" ;TARGET의 조리
         IF FLAG:속박상태
             PRINTFORMW %조사처리(CALLNAME:대상, "이")% 당신에게 요리를 만들어주겠다고 했다.
         ELSE
             PRINTFORMW 당신은 %CALLNAME:대상%에게 요리를 부탁했다.
         ENDIF
-        WHILE 1
+        REPEAT 10
             TRYCALLFORM M_No{NO:대상}_EVENT_Cook
             IF RESULT == 0
                 CSTR:대상:1 '= Alternative_CSTR(대상)
+                SIF COUNT == 9
+                    DEBUGPRINTFORML 조건(%CSTR:대상:1%)에 맞는 %CALLNAME:대상%의 Bio요리 지문이 발견되지 않음
             ELSE
                 BREAK
             ENDIF
-        WEND
+        REND
     CASE "Eat_Com" ;MASTER의 요리
         PRINTFORMW 당신은 %조사처리(CALLNAME:대상, "과")% 함께 식사를 했다.
-        WHILE 1
+        REPEAT 10
             TRYCALLFORM M_No{NO:대상}_EVENT_Eat_Com
             IF RESULT == 0
                 CSTR:대상:1 '= Alternative_CSTR(대상)
+                SIF COUNT == 9
+                    DEBUGPRINTFORML 조건(%CSTR:대상:1%)에 맞는 %CALLNAME:대상%의 Com식사 지문이 발견되지 않음
             ELSE
                 BREAK
             ENDIF
-        WEND
+        REND
         SIF NO:대상 == 51 && ABL:MASTER:조리lv < 3 ;Lowlv
             CALL ILLUST(대상, 1, "COOKING")
     CASE "Eat_Bio" ;TARGET의 요리
@@ -175,14 +187,16 @@ SELECTCASE ARGS
         ELSE
             PRINTFORMW 당신은 %조사처리(CALLNAME:대상, "과")% 함께 식사를 했다.
         ENDIF
-        WHILE 1
+        REPEAT 10
             TRYCALLFORM M_No{NO:대상}_EVENT_Eat_Lunch
             IF RESULT == 0
                 CSTR:대상:1 '= Alternative_CSTR(대상)
+                SIF COUNT == 9
+                    DEBUGPRINTFORML 조건(%CSTR:대상:1%)에 맞는 %CALLNAME:대상%의 Bio식사 지문이 발견되지 않음
             ELSE
                 BREAK
             ENDIF
-        WEND
+        REND
         SIF NO:대상 == 32 && ABL:대상:조리lv < 3 && TALENT:대상:사랑
             CALL ILLUST(대상, 2, "COOKING")
     CASE "Sell_Food"

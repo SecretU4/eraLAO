@@ -4,14 +4,16 @@
 
 CSTR:1 = 
 CALL SET_MSG_CSTR(TARGET)
-WHILE 1
+REPEAT 10
     TRYCALLFORM M_No{NO:TARGET}_TRAIN_END
     IF RESULT == 0
         CSTR:1 '= Alternative_CSTR(TARGET)
+        SIF COUNT == 9
+            DEBUGPRINTFORML 조건(%CSTR:1%)에 맞는 %CALLNAME:TARGET%의 커맨드 지문이 발견되지 않음
     ELSE
         BREAK
     ENDIF
-WEND
+REND
 
 ;일반적인 에라가 아니라서 통과
 ;BEGIN ABLUP

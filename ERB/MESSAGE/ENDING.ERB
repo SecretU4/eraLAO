@@ -107,14 +107,16 @@ ENDIF
 
 SELECTCASE ARGS
     CASE "판매"
-        WHILE 1
+        REPEAT 10
             TRYCALLFORM M_No{REAL_NUM}_Sell
             IF RESULT == 0
                 CSTR:ARG:1 '= Alternative_CSTR(ARG)
+                SIF COUNT == 9
+                    DEBUGPRINTFORML 조건(%CSTR:ARG:1%)에 맞는 %CALLNAME:ARG%의 판매 지문이 발견되지 않음
             ELSE
                 BREAK
             ENDIF
-        WEND
+        REND
         
         IF REAL_NUM == 123 && TALENT:ARG:사랑 == 1
             SETBIT CFLAG:MASTER:엔딩플래그, 7
@@ -122,14 +124,16 @@ SELECTCASE ARGS
             SETBIT CFLAG:MASTER:엔딩플래그, 24
         ENDIF
     CASE "폐기"
-        WHILE 1
+        REPEAT 10
             TRYCALLFORM M_No{REAL_NUM}_Disuse
             IF RESULT == 0
                 CSTR:ARG:1 '= Alternative_CSTR(ARG)
+                SIF COUNT == 9
+                    DEBUGPRINTFORML 조건(%CSTR:ARG:1%)에 맞는 %CALLNAME:ARG%의 폐기 지문이 발견되지 않음
             ELSE
                 BREAK
             ENDIF
-        WEND
+        REND
 
         IF REAL_NUM == 89 && TALENT:ARG:사랑 == 1
             SETBIT CFLAG:MASTER:엔딩플래그, 2
