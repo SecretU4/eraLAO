@@ -166,6 +166,7 @@ SIF TALENT:ARG:짜증 || TALENT:ARG:정신쇠약
     RETURN 0
 IF !TALENT:ARG:사랑 && CFLAG:ARG:호감도 > 999 && CFLAG:ARG:공포 < 100
     TALENT:ARG:사랑 = 1
+    FLAG:연모인수 ++
     IF TALENT:ARG:억압 ;억압 소멸
         TALENT:ARG:억압 = 0
         RETURN 2
