@@ -7,7 +7,7 @@
 ;========================================================================
 @EVENTTURNEND
 #DIM DYNAMIC 주회
-#DIM 지휘lv증가
+#DIM DYNAMIC 지휘lv증가
 #DIM DYNAMIC 총수입, 5
 ;지출, 수입 모두 양수값 저장이니 계산시 연산자의 올바른 사용 필수
 ;0 = 총합/1 = 유지비/2 = 출격수입/3,4,5 예비
@@ -17,6 +17,10 @@ SIF CFLAG:MASTER:엔딩플래그
 
 IF TIME == 0 ;낮 > 밤
     TIME = 1
+
+    ;기본 아이템 재고 추가
+    CALL SET_ITEM_SALES(2, 50, 10)
+
     ;낮 > 밤 캐릭터 변동 체크 ;원본 uptime1 대응
     CALL TURNEND_DAY_to_NIGHT
 
@@ -84,6 +88,13 @@ ELSEIF TIME == 1 ;밤 > 낮
     ;총수입:0은 기록 및 디버그용
     총수입 = 총수입:2 - 총수입:1
 
+    ;기본 아이템 재고 보충 처리
+    ;약혼반지는 하나만
+    CALL SET_EX_ITEM_SALES(1, 1)
+    CALL SET_ITEM_SALES(2, 50, 20)
+    ;방추가 보충처리
+    CALL SET_ITEM_SALES(203, 203, 1)
+
     ;MASTER의 전투레벨처리
     CALL BattleLV_UP(MASTER)
     지휘lv증가 = RESULT
@@ -111,14 +122,19 @@ ELSEIF TIME == 1 ;밤 > 낮
             PRINTFORMW 당신의 지휘레벨이 {지휘lv증가}레벨이 되었습니다.
     ENDIF
 
+    SIF MONEY < 0
+        CALL BANKRUPT
+
     SIF TARGET == 0
         GOTO NULL_TARGET
-
+    PRINTL
+    DRAWLINE
+    PRINTL
     CALL MSG_Morning
 ENDIF
 
 $NULL_TARGET
-
+PRINTL
 IF FLAG:속박상태
     PRINTW ??이 되었습니다.
 ELSE
@@ -144,7 +160,7 @@ BEGIN SHOP
 #FUNCTION
 #DIM DYNAMIC 유지비
 
-유지비 = ITEMPRICE(ITEM_BIO(NO:ARG)) / 20
+유지비 = ITEMPRICE:(ITEM_BIO(NO:ARG)) / 20
 유지비 += 유지비 * RAND(1, 100)
 IF TALENT:ARG:분류 == 2 ;기동
     유지비 = 유지비 * 6 / 5
@@ -208,7 +224,7 @@ NEXT
 @TURNEND_NIGHT_to_DAY_PRE
 #FUNCTION
 #DIM 대상
-#DIM 총유지비
+#DIM DYNAMIC 총유지비
 
 FOR 대상, 1, CHARANUM
     ;미보유 캐릭터 제외
@@ -310,3 +326,40 @@ SELECTCASE NO:ARG
         SIF CFLAG:ARG:etc2 > 0 && CFLAG:ARG:etc2 < 11
             CFLAG:ARG:etc2 += 1 ;etc2 = 베로니카 실종 일수
 ENDSELECT
+;========================================================================
+;함수명: BANKRUPT
+;파산 처리 함수
+;========================================================================
+@BANKRUPT
+PRINTL 돈이 부족하여 파산하셨습니다.
+PRINTL
+PRINTL
+WHILE 1
+    PRINTFORML 부족한 금액 : %MONEYSTR(MONEY)%
+    PRINTL
+    PRINTL 
+    PRINTL [1] 바이오로이드 판매
+    PRINTL [2] 주식 판매
+    PRINTL [0] 그냥 파산할게요.
+    INPUT
+    SELECTCASE RESULT
+        CASE 0
+            PRINTL 모든 정보를 초기화합니다.
+            PRINTL 동의하십니까?
+            CALL ASK_YN("아뇨, 뚱인데요", "예")
+            SELECTCASE RESULT
+                CASE 0 ;아뇨
+                    CONTINUE
+                CASE 1 ;예
+                    BREAK
+            ENDSELECT
+        CASE 1
+            CALL FAREWELL(1)
+        CASE 2
+            CALL STOCK_MARKET
+    ENDSELECT
+    SIF MONEY > 0
+        RETURN 1
+WEND
+
+BEGIN TITLE

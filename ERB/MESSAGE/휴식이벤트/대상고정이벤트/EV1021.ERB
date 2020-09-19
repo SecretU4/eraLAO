@@ -1,0 +1,16 @@
+﻿@MSG_EV_1021(ARG, ARG:1)
+PRINTFORMW 똑똑,
+PRINTFORMW 누군가 당신의 방 문을 두드린다.
+PRINTFORMW 당신은 들어오라고 했고, 열린 문의 뒤엔 땋은머리를 길게 푼 닥터가 서 있었다.
+PRINTFORMW 「저기... 오빠? 나 머리 푼거는 어때?」
+PRINTFORMW 「아, 아니 물론... 그... 오빠가 싫어하면 어쩌나 해서...」
+PRINTFORMW 당신은 닥터는 어떤 머리스타일을 해도 귀엽다고 했다.
+PRINTFORMW 「ㅈ..정말? 히히 오빠 사랑해~ 나 오빠가 너무 좋아!!」
+PRINTFORMW 닥터는 날아갈듯 기뻐하며 당신의 품에 뛰어들었다.
+CALL ILLUST(ARG, 1, "REST_1")
+PRINTFORML 당신은 그런 닥터를 쓰다듬으며, 처음으로 닥터가 애처럼 귀엽다고 느껴 무심코 웃어버린 것이었다.
+PRINTFORML 호감도+15
+PRINTFORMW 스트레스-5
+CFLAG:ARG:호감도 += 15
+CFLAG:ARG:호감도 -= 5
+RETURN 1

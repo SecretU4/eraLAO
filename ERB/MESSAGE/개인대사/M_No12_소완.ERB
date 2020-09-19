@@ -1,0 +1,2510 @@
+﻿@IS_M_No12
+RETURN 1
+
+@M_No12_TRAIN_START_0
+PRINTFORMW 「처음 뵙겠사옵니다」
+PRINTFORMW 「소첩은 소완이라 하옵니다」
+PRINTFORMW 「본래 요리사이긴 하옵니다만, 주인께서 원하신다면 소첩을 마음껏 이용해 주시옵소서」
+CFLAG:조교여부 = 1
+RETURN 1
+
+@M_No12_TRAIN_START_1
+SELECTCASE CSTR:1
+CASE "Confession"
+PRINTFORMW 당신은 소완을 바라본다.
+PRINTFORMW 소완 또한 당신을 바라본다.
+PRINTFORMW 「소첩은, 주인께서 생각하시는 것 보다 더 많이 주인에 대한 생각으로 가득 차 있사옵니다.」
+PRINTFORMW 소완다운 말투지만, 목소리는 소완답지 않게 가느다란 목소리였다.
+PRINTFORMW 그녀는 천천히 걸어가 당신에게 안겨들었다. 적당하고 풍만한 흉부가 당신의 가슴을 짓누른다.
+PRINTFORMW 당신도 그녀에게 보답하듯 팔을 그녀의 허리에 둘러 꽉 안았다. 허리가 으스러질 정도로.
+PRINTFORMW 「후후후, 주인께서도 소첩과 똑같은 마음이셨다니. 소첩은 참으로 행복하옵니다.」
+PRINTFORMW 「하지만, 오늘은 기이하게도, 주인께선 적극적이시군요. 무슨 일이라도 있사옵니까?」
+PRINTFORMW 당신이 아무 말 않고 그녀의 머리를 쓸어내리자, 가볍게 웃음 섞인 한숨을 쉬었다.
+PRINTFORMW 「소첩이 주인께 항상 말했던, 쾌락에 눈을 뜬 것인지요?」
+PRINTFORMW 당신은 소완에게 그런 것과 관계없이, 그녀를 사랑한다고 말했다.
+PRINTFORMW 「아...!」
+PRINTFORMW 「소첩은, 오늘 일을 결코 잊지 않겠사옵니다. 아니, 잊더라도 다시 기억해내겠사옵니다.」
+PRINTFORMW 「이제는 주인께서 계속해서 다른 자매들에게 눈이 돌아가도 상관없사옵니다.」
+PRINTFORMW 「주인은 오직, 소첩의 것이옵니다.」
+PRINTFORMW 소완은 당신의 양 볼을 어루만지더니, 두 팔을 당신의 목에 감았다.
+PRINTFORMW 그리고는 아주아주 작은 목소리로 속삭였다.
+PRINTFORMW 「주인도, 맹세하시겠사옵니까? 숨이 끊어져도, 언제까지나 소첩의 것이 될 것이라고.」
+PRINTFORMW 당신은 그러겠다고 대답했다. 소완은 만족스러운 듯 당신이 그녀에게서 한 번도 보지 못했던 행복한 미소를 지었다.
+PRINTFORMW 「후후후후, 아주 잘 하셨사옵니다.」
+TFLAG:고백함 = 1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「다행히도 늦지 않은 모양이옵니다.」
+DATAFORM 「예? 뭘 했느냐고 물으시면...후후, 비밀이옵니다.」
+ENDLIST
+DATALIST
+DATAFORM 「소첩은 준비되었사옵니다.」
+DATAFORM 「무엇이든 말씀하시옵소서. 달게 받겠나이다.」
+ENDLIST
+DATALIST
+DATAFORM 「오늘도 소첩을 찾아오셨사옵니까.」
+DATAFORM 「후후후, 쾌락이란 것이 무엇인지, 알려 드리겠사옵니다.」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「요즘, 주인께서 소첩을 자주 찾아주시는군요.」
+DATAFORM 「소첩은 몹시 행복하옵니다.」
+ENDLIST
+DATALIST
+DATAFORM 「또 다른 이들에게 눈이 돌아가는 것이옵니까? 아니되옵니다.」
+DATAFORM 「주인께선 오직, 소첩만 바라보시면 되옵니다.」
+ENDLIST
+DATALIST
+DATAFORM 「오늘은 어떤 요리를 드시겠사옵니까?」
+DATAFORM 「소첩만 있으면 된다고...후, 후후후...알겠사옵니다.」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「후후후. 오늘은 어이하여 늦으셨는지요.」
+DATAFORM 「아니면, 다른 자매들과 함께 있었사옵니까?」
+DATAFORM 「어머, 어찌 사죄를 하시는지요. 괜찮사옵니다. 소첩은, 그저 주인과 함께 있으면 그것으로 족하옵니다.」
+DATAFORM 「허나 진심으로 사죄를 하시고 싶으시다면...소첩을 즐겁게 해 주시옵소서.」
+ENDLIST
+DATALIST
+DATAFORM 당신이 들어오자마자, 소완은 당신을 앉히고 등에 딱 달라붙었다.
+DATAFORM 당신은 잠시 당황했으나, 그녀의 적당히 풍만한 감촉에 아무런 저항도 하지 못했다.
+ENDLIST
+DATALIST
+DATAFORM 「소첩은 참으로 기쁘옵니다.」
+DATAFORM 소완은 당신의 손바닥에 그림을 그리듯 손가락을 움직였다.
+DATAFORM 정말, 정말로 행복해서, 소첩은 소첩이 아니게 되어 버릴지도 모르겠사옵니다.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「오늘은 많이 늦으시지 않았사옵니까.」
+DATAFORM 「기다리기에 지쳐서, 잠깐 채소 케이크를 만들었사옵니다.」
+DATAFORM 소완은 채소 케이크를 적당한 크기로 잘라내, 포크로 케이크를 집어 당신에게 다가갔다.
+DATAFORM 「아~하시옵소서.」
+DATAFORM 당신은 묵묵히 소완의 케이크를 받아먹었다. 아삭아삭 씹히는 당근과 토마토, 그리고 양파와 꿀이
+DATAFORM 서로 단맛을 잡아주는 듯 입안 가득 어우러졌다.
+DATAFORM 당신이 당신 모르게 아주 만족스러운 표정을 짓자, 그녀는 부드럽게 웃었다.
+DATAFORM 「후후, 입에 맞으시는지요?」
+DATAFORM 소완의 마냥 상냥한 모습에 당신은 넋을 잃었다가, 케이크가 그만 기도로 들어가 사레에 들렸다.
+DATAFORM 「저런! 소첩이 물을 드리겠사옵니다. 잠시만 기다려 주시옵소서.」
+DATAFORM 그녀가 물을 따르자, 이미 케이크는 다 나와 괜찮다고 하려 했다.
+DATAFORM 하지만 소완이 따른 물을 마셔 입에 머금고는, 당신에게 다가갔다.
+DATAFORM 「흐읍.」
+DATAFORM 소완이 물이 가득 찬 자신의 입에 당신의 입을 포개었다.
+DATAFORM 그녀는 다시 자리로 돌아가 입을 휴지로 닦고는, 슬쩍 흘겨보며 말했다.
+DATAFORM 「어찌, 진정은 되셨는지요.」
+ENDLIST
+DATALIST
+DATAFORM 「주인.」소완이 나지막이 당신을 불렀다.
+DATAFORM 당신은 그녀를 바라보려 고개를 돌리자, 당신은 소완에게 기습 키스를 당했다.
+DATAFORM 그녀는 입술을 엄지로 훑으며, 말없이 당신의 어깨에 머리를 파묻었다.
+ENDLIST
+DATALIST
+DATAFORM 「오셨는지요.」소완은 당신을 바라보며 인사했다.
+DATAFORM 하지만 당신은 소완의 인사를 받아줄 수 없었다. 당신이 보고 있는 것은...
+DATAFORM 「후훗, 이 옷 말이옵니까. 최고의 요리사라고 자부하는 자가, 어찌 앞치마를 입지 않겠사옵니까.」
+DATAFORM 맨몸이 드러난 것 처럼 보이는 복장에, 전면부를 가리는 앞치마를 입은 소완에, 당신은 할 말을 잃었다.
+DATAFORM 「걱정하지 마시옵소서. 안은 제대로 입고 있사옵니다.」
+DATAFORM 소완은 그런 당신을 보고 몇 번 킥킥댔다.
+ENDLIST
+DATALIST
+DATAFORM 「최근, 다른 자매들에게 조금 너그러워진 것 같사옵니다.」
+DATAFORM 그게 무슨 소리냐는 당신의 말에, 소완은 미소를 지으며 당신의 손등 위에 자신의 손을 덮었다.
+DATAFORM 「마치 날씨 좋은 날 꽃길을 걷는 것 같고, 아직도 주인을 보면 소첩은 가슴 한켠이 아려옵니다.」
+DATAFORM 「물론 이 마음은 주인께서 소첩을 선택하기 전에도 느꼈던 감정이옵니다. 허나...」
+DATAFORM 그녀는 조금 부끄러워하는 듯 기어들어가는 목소리로 말했다.
+DATAFORM 「아마도 주인께서, 소첩에게 사랑을 듬뿍 주신 것이겠지요.」
+DATAFORM 「주인의 사랑은 그 어떤 향신료보다도 코를 찌르듯 달콤하기 그지없사옵니다.」
+DATAFORM 당신도 쑥쓰러워서 머리를 벅벅 긁자, 소완은 당신의 고개를 자신에게 돌렸다.
+DATAFORM 「결코 사탕발림이 아니옵니다. 그러니까...소첩과 함께, 애정을 확인해 주시옵소서.」
+DATAFORM 그리고 그녀는 당신에게 진하게 입맞춤했다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 방에 들어오자마자 살벌하게 차가운 기운을 느꼈다.
+DATAFORM 한켠에는 소완이 칼을 들고 무언가를 썰고 있었다.
+DATAFORM 당신은 아주 조심스럽게 앉았다.
+DATAFORM 당신이 온 것을 알고 있었는지, 소완은 무언가를 계속 썰면서 말했다.
+DATAFORM 「오셨사옵니까. 지금은 칼을 들고 있으니 방해하지 마시옵소서.」
+DATAFORM 당신은 살기가 등을 타고 올라오는 것을 느꼈다.
+ENDLIST
+DATALIST
+DATAFORM 「오셨사옵니까.」
+DATAFORM 당신은 알 수 없는 소완의 표정을 보고는 뭔가 불안해졌다.
+DATAFORM 「후후, 왜 그러시는지요. 지금은 소첩이 조금...예민해지기는 했사오나, 주인의 요구를 듣지 못할 정도는 아니옵니다.」
+DATAFORM 소완의 입은 웃고 있지만, 눈은 그렇지 않았다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「?!오셨사옵니까?」
+DATAFORM 최대한 평정심을 유지하는 소완이었지만, 당신이 들어오자 몸을 떨었다.
+DATAFORM 「오늘은..무엇을 하시려는지 여쭈어도 되겠사옵니까..?」
+DATAFORM 아무 말도 하지 않는 당신의 반응에, 소완은 더더욱 몸을 떨었다.
+ENDLIST
+DATALIST
+DATAFORM 「오늘도...하는 것이옵니까.」
+DATAFORM 「소첩은 괜찮사옵니다. 아픈 것에는 익숙하옵니다.」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「제발 그만...그만...」
+DATAFORM 당신이 들어오는 것을 모르는지, 소완은 엎드린 채 흐느꼈다.
+DATAFORM 바닥에는 빨간 액체가 휘날렸고, 그녀의 몸 여러 곳에서 그 흔적이 보였다.
+ENDLIST
+DATALIST
+DATAFORM 「죄송합니다...」
+DATAFORM 소완이 난데없이 사과하자, 당신은 갑자기 화가 나 그녀를 뻥 찼다.
+DATAFORM 「죄송합니다...죄송합니다...」
+DATAFORM 하지만 그녀는 아랑곳 않고 당신의 바짓가랑이를 붙잡고 연신 사죄했다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 「오셨사옵니까.」
+PRINTFORMW 흐리멍텅하게 생기를 잃은 두 눈. 하지만 정말 환하게 웃고 있는 소완은 당신을 보자마자 무릎 꿇어 절했다.
+PRINTFORMW 「소첩은 주인님을 만나 정말로 행복하옵니다. 앞으로도 소첩을 사랑해 주시옵소서.」
+PRINTFORMW 마치 기계가 말하는 듯이 감정이 없는 목소리.
+PRINTFORMW 당신은 엎드려 있는 소완의 머리채를 잡았다. 그녀는 머리를 잡힌 채로 일어서 당신에게 혀를 내밀었다. 일종의 신호다.
+PRINTFORMW 그러고는, 그녀는 아무렇지도 않게 당신의 입을 향해 돌진했다.
+PRINTFORMW 적나라한 소리가 멈추자, 그녀는 입을 벌린 채로 헤 웃으며 말했다.
+PRINTFORMW 「소첩에게 있어 주인님은 전부이옵니다. 주인님이 죽으라 하시면 죽고, 개처럼 짖으라 하시면 그 어느 개보다 더 개처럼 짖겠사옵니다.」
+PRINTFORMW 그녀의 눈동자는, 생기를 잃어 흐리멍텅했다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_TRAIN_END
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATAFORM 「그리 유익한 시간은 아니었사오나, 주인께서 기뻐하신다면, 그것으로 됐사옵니다.」
+DATALIST
+DATAFORM 당신은 소완에게 즐거웠냐고 질문했다.
+DATAFORM 「후후후, 글쎄요.」
+DATAFORM 그녀는 알 수 없는 미소를 지었다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「조금만 더 있으면 아니되는 것이옵니까?」
+DATAFORM 소완은 일어서려는 당신을 바라보았다.
+DATAFORM 「아직 시간이 더 남지 않았사옵니까. 조금만 더 쉬시지요.」
+DATAFORM 당신은 거절하려고 했으나, 알 수 없는 이유로 도로 앉으며, 갑자기 그녀의 부탁을 들어주고 싶어졌다.
+ENDLIST
+DATALIST
+DATAFORM 「시간도 매정하군요. 알겠사옵니다. 소첩은 주인께서 다시 돌아오실 때 까지 얌전히 기다리겠사옵니다.」
+DATAFORM 당신은 소완의 배웅을 받고 방에서 나갔다.
+DATAFORM 「후후, 이제 정말로 얼마 남지 않았사옵니다. 주인을 소첩의 것으로 만들기 위한 준비는...」
+DATAFORM 아주 작게 어떤 소리가 들리기는 했지만, 당신은 무시하고 방을 나왔다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「벌써 시간이 그리 되었사옵니까?」
+DATAFORM 당신이 일어나자, 소완은 그런 당신의 손을 잡았다.
+DATAFORM 「아쉬우니, 마지막으로 차 한잔 하시는 것은 어떻겠사옵니까. 걱정은 마시옵소서. 이상한 것은 넣지 않았사옵니다.」
+DATAFORM 결국 당신은 소완과 차 한잔을 더 마시며 잡담을 나누었다.
+ENDLIST
+DATALIST
+DATAFORM 「언제나 항상 수고하십니다.」
+DATAFORM 「항상 생각하지마는, 소첩이 주인을 위해 고마움의 의미로 요깃거리를 준비했사옵니다.」
+DATAFORM 그리고 당신이 평소 좋아하는 간식이나 군것질거리가 소완의 쟁반 위에 놓여 있었다.
+DATAFORM 당신은 고맙다며 머리를 쓰다듬었다.
+DATAFORM 「어머! 후후, 망극하옵니다.」
+DATAFORM 당신은 남은 시간을 소완과 함께 간식을 먹으며 잡담을 나눴다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「가시는 것이옵니까?」
+DATAFORM 당신이 고개를 끄덕이고 일어서려 하자, 소완은 당신의 옷 소매를 당기며 수줍게 말했다.
+DATAFORM 「조금만...더 있어 주시옵소서. 주인은 신첩과 조금이라도 함께 있는 것이 싫은 것이옵니까?」
+DATAFORM 당신은 피식 웃으며, 다시 앉아 소완과 함께 시간을 보냈다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 장난삼아 소완에게 '여보'라고 불렀다.
+DATAFORM 「....!」
+DATAFORM 소완은 얼굴이 새빨개지며, 당신과는 눈을 마주치려 하지 않았다.
+DATAFORM 당신은 그런 소완의 두 손을 잡으며 뚫어져라 쳐다봤다.
+DATAFORM 「무, 무슨 일이신지요?」
+DATAFORM 떨리는 목소리로 기어들어가듯 대답한 소완을 보며, 당신은 그녀를 꼭 안으며 사랑한다고 말했다.
+DATAFORM 「아...」
+DATAFORM 「신첩도..언제나 사모하고 있사옵니다. 서방님」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「팍!」
+DATAFORM 당신이 일어나자, 갑자기 바닥 쪽에 소완의 식칼이 박혔다.
+DATAFORM 「어머, 송구하옵니다. 바닥에 벌레가 있었기에.」
+DATAFORM 당신은 바짝 긴장해 방을 나가는 와중에도, 소완이 날린 식칼을 뚫어져라 쳐다보았지만,
+DATAFORM 벌레는 어디에도 없었다.
+ENDLIST
+DATALIST
+DATAFORM 「이제 끝난 것이옵니까?」
+DATAFORM 「그럼 소첩은 주방 식기 점검을 하러 가겠사옵니다. 그럼.」
+DATAFORM 이 말을 남기고는, 소완은 당신을 버려둔 채 방을 나갔다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「이제야..끝난 것이옵니까.」
+DATAFORM 당신이 불만 있었냐며 신경질적으로 묻자, 소완은 흠칫 놀라 두 눈이 커졌다.
+DATAFORM 「아, 아니옵니다. 소첩은...언제나 주인의 요구를 충실히 할 준비가 되어 있사옵니다.」
+DATAFORM 무릎까지 꿇은 소완을 본 당신은 크게 한숨을 쉬며 방 밖을 나갔다.
+DATAFORM 「준비는 되었사옵니다만, 이대로면 소첩은...」
+DATAFORM 그녀는 당신이 들리지 않을 만큼 작은 소리로 중얼거렸지만, 당신은 소완을 괴롭힐 명분이 생겨 기뻤다.
+ENDLIST
+DATALIST
+DATAFORM 「...즐거우셨사옵니까.」
+DATAFORM 소완이 슬픔을 꾹꾹 눌러담은 채로 당신에게 음식을 먹였다.
+DATAFORM 당신은 그런 모습이 마음에 들지 않아, 먹었던 음식을 소완에게 도로 뱉었다.
+DATAFORM 「......」
+DATAFORM 음식물 범벅이 된 소완을 내버려두고, 당신은 방을 나왔다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「흑...흐흑..흐윽..흑..」
+DATAFORM 당신은 마음껏 소완을 구타해 스트레스가 풀렸다.
+DATAFORM 그녀의 몸에는 피멍투성이었지만, 당신은 그것을 무시하고 방을 나왔다.
+ENDLIST
+DATALIST
+DATAFORM 「오늘도..흑. 주인을 만족...시키지..흑. 못해...송구하옵니다...」
+DATAFORM 소완은 상처투성이인 몸을 이끌고 울며 당신에게 무릎을 꿇으며 절했다.
+DATAFORM 당신은 소완의 머리채를 잡으며 상체를 들어올렸고, 복부에 주먹을 꽂아넣었다.
+DATAFORM 「커헉...!」
+DATAFORM 배를 움켜쥐고 쓰러져 곡소리를 내는 소완을 뒤로하고, 당신은 방을 나왔다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 소완은 당신이 일어나자마자 엎드려 절했다.
+PRINTFORMW 「오늘도 소첩같은 미개하고 하등 쓸모없는 계집의 응석을 받아주어, 성은이 망극하옵니다.」
+PRINTFORMW 당신이 소완의 머리를 발로 톡톡 치자, 그녀는 고개를 들었다.
+PRINTFORMW 「소첩의 더러운 방을 다니신 발, 소첩이 닦겠사옵니다.」
+PRINTFORMW 그러고는 당신의 발을 깨끗이 청소했다.
+PRINTFORMW 당신은 사악하게 웃으며 그녀를 내려다보았다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM2
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 소완과 실없는 이야기를 주고받았다.
+PRINTFORMW %TEXTR("「빠른 칼질과 튼튼한 하체는 요리의 기본이옵니다.」/「가끔은, 주인의 요리 실력을 조금 교정하고 싶사온데, 어찌하시겠사옵니까?」")%
+CASE "High"
+PRINTFORMW 당신은 소완과 실없는 이야기를 주고받았다.
+PRINTDATAW
+DATAFORM 「후후후, 주인은 정말 재미있는 이야기를 하시는군요.」
+DATALIST
+DATAFORM 「소첩의 주특기는 채소 케이크이옵니다. 재료..말이옵니까?」
+DATAFORM 「양파, 당근,토마토, 꿀, 그리고 소첩의 비밀 재료를 섞은 반죽이옵니다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 소완과 실없는 이야기를 주고받았다.
+PRINTDATAW
+DATAFORM 「소첩이 요리로도 전투로도 도움이 된다니, 황송하옵니다.」
+DATALIST
+DATAFORM 「앞으로 요리는 소첩이 도맡아 하겠사옵니다.」
+DATAFORM 「주인도 소첩이 주는 극상의 쾌락을 잊지 못하시는 것 아니옵니까?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 소완과 실없는 이야기를 주고받았다.
+PRINTDATAW
+DATALIST
+DATAFORM 「주인. 소첩의 요리는 맛있었사옵니까?」
+DATAFORM 「후후, 걱정은 마시옵소서. 소첩은 더 이상 약을 넣지 않사옵니다.」
+ENDLIST
+DATAFORM 「언제나, 소첩과 함께 계셔 주신 것에 감사하고 있사옵니다.」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW %TEXTR("「예. 그러셨군요. 그것으로 끝이옵니까.」/「...송구하옵니다. 잠시 다른 생각에 잠겨, 주인의 말을 듣지 못했사옵니다.」")%
+CASE "Fear"
+PRINTFORMW 당신은 소완에게 말했다.
+PRINTFORMW 그녀는 억지웃음을 지으며 말했다.
+PRINTFORMW %TEXTR("「예...예에. 그러셨사옵니까.」/「....우후후..」")%
+CASE "Weak"
+PRINTFORMW 당신이 말을 했는데도 소완이 아무런 반응이 없자, 당신은 식탁을 탁 쳤다.
+PRINTFORMW 그녀는 깜짝 놀라며 그제서야 대답했다.
+PRINTFORMW %TEXTR("「그..그래서..어찌, 되셨사옵니까...?」/「죽을 죄를 지었사옵니다! 제발...」")%
+CASE "Break"
+PRINTFORMW 당신은 옆에서 혼이 나간 듯, 멍하니 정면을 바라보고 있는 소완의 뺨을 후려쳤다.
+PRINTFORMW 그러자 그녀는 기계가 움직이듯 목이 부러질 기세로 당신을 바라봤다.
+PRINTFORMW %TEXTR("「......」「정말 재미있는 이야기옵니다. 좀 더 들려주시옵소서.」")%
+PRINTFORMW 그녀는 보기만 해도 섬뜩한 미소를 지었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 소완의 가슴을 칭찬했다.
+PRINTFORMW 소완은 부드럽게 웃었다.
+PRINTFORMW %TEXTR("「우후후, 주인은 정말 짓궂으시군요.」/「우후후후....」")%
+CASE "High"
+PRINTFORMW 당신은 소완의 가슴을 칭찬했다.
+PRINTFORMW 소완은 슬며시 당신의 손을 잡았다.
+PRINTDATAW
+DATAFORM 「우후후, 주인은 정말 짓궂으시군요.」
+DATAFORM 「어머, 아직은 아니되옵니다.」
+DATALIST
+DATAFORM 「주인..」
+DATAFORM  소완은 당신을 부드럽게 바라볼 뿐이었다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 소완의 가슴을 칭찬했다.
+PRINTFORMW 소완은 당신을 뜨겁게 바라보았다.
+PRINTFORMW %TEXTR("「정말로 그것 뿐이옵니까?」/「소첩이 가져다 주는 쾌락이 무엇인지, 제대로 아셨겠지요?」")%
+CASE "Marryed"
+PRINTFORMW 당신은 소완의 가슴을 칭찬했다.
+PRINTFORMW 소완은 어깨를 움츠리며 부끄러워했다.
+PRINTDATAW
+DATAFORM 「주인..칭찬만 하지 마시고..직접 하시는 것은, 어떠시옵니까?」
+DATALIST
+DATAFORM 「주인도 참..알겠사옵니다.」
+DATAFORM 당신은 상의를 벗으려는 소완을 극구 말렸다.
+DATAFORM 소완은 쿡쿡 웃으며 당신에게 입맞췄다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 소완의 가슴을 칭찬했다.
+PRINTFORMW 소완은 조금 날이 선 목소리로 말했다..
+PRINTFORMW %TEXTR("「주인. 이런 짓은, 나중에 하는 것이 어떠신지요?」/「소첩, 주제 넘기는 하오나..주인께 지적을 하여도 괜찮겠사옵니까?」/「...흠.」")%
+CASE "Fear"
+PRINTFORMW 당신은 소완의 가슴을 칭찬했다.
+PRINTFORMW 소완은 당신을 외면했다.
+PRINTFORMW %TEXTR("「무엇을 바라시는지...」/「아...황송..하옵니다.」")%
+CASE "Weak"
+PRINTFORMW 당신은 소완의 %TEXTR("가슴 점/가슴")%을 칭찬했다.
+PRINTFORMW 소완은 당신을 떨리는 눈으로 쳐다봤다.
+PRINTFORMW %TEXTR("「소첩, 무언가 잘못이라도 했사옵니까..?」/「송구..송구하옵니다.」")%
+CASE "Break"
+PRINTFORMW 당신은 소완의 가슴을 칭찬했다.
+PRINTFORMW 소완은 텅빈 눈으로 당신을 쳐다봤다.
+PRINTDATAW
+DATAFORM 「후후, 성은이 망극하옵니다.」
+DATALIST
+DATAFORM 「제 가슴을 원하시는지요?」
+DATAFORM 소완은 상의를 벗었다.
+DATAFORM 상체에는 피멍 자국이 선명했다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 살며시 소완의 손에 손을 겹쳤다.
+PRINTFORMW 소완은 웃으며 당신의 손을 손끝으로 톡 쳤다.
+PRINTFORMW %TEXTR("「아직은..아니되옵니다.」/「소첩의 손이 좋으신지요?」")%
+CASE "High"
+PRINTFORMW 당신은 살며시 소완의 손에 손을 겹쳤다.
+PRINTFORMW 소완은 웃으며 당신의 손을 잡았다.
+PRINTDATAW
+DATAFORM 「손을 잡고 싶으시다니..후후, 주인도 참.」
+DATALIST
+DATAFORM 「소첩의 손이 좋으신지요?」
+DATAFORM 「후후, 알겠사옵니다.」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 살며시 소완의 손에 손을 겹쳤다.
+PRINTFORMW 소완은 흡족하게 미소를 지으며 당신의 손을 잡았다.
+PRINTDATAW
+DATAFORM 「후후후, 기꺼이.」
+DATAFORM 「소첩도 바라던 바이옵니다.」
+DATALIST
+DATAFORM 당신은 소완의 손을 잡은 상태에서, 엄지손가락으로 그녀의 손바닥을 간지럽혔다.
+DATAFORM 「후후, 아하하. 간지럽사옵니다.」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 살며시 소완의 손에 손을 겹쳤다.
+PRINTFORMW 소완은 웃으며 손을 탁 쳤다.
+PRINTFORMW %TEXTR("「주인. 이런 짓은, 나중에 하는 것이 어떠신지요?」/「소첩, 주제 넘기는 하오나..주인께 지적을 하여도 괜찮겠사옵니까?」")%
+CASE "Fear"
+PRINTFORMW 당신은 살며시 소완의 손에 손을 겹쳤다.
+PRINTFORMW 소완은 조금 불안한 눈빛으로 당신을 바라봤다.
+PRINTFORMW 「무엇을 바라시는지...」
+CASE "Weak"
+PRINTFORMW 당신은 살며시 소완의 손에 손을 겹쳤다.
+PRINTFORMW 소완의 몸이 흠칫 떨렸다.
+PRINTFORMW %TEXTR("「아니...되옵니다.」/「소첩, 무언가 잘못이라도 했사옵니까..?」")%
+CASE "Break"
+PRINTFORMW 당신은 살며시 소완의 손에 손을 겹쳤다.
+PRINTFORMW 소완은 텅빈 눈으로 당신을 쳐다봤다.
+PRINTDATAW
+DATALIST
+DATAFORM 「손을...잡으신다 하오면..」
+DATAFORM 그녀는 그대로 정신이 나간 듯 멍하게 천장을 바라봤다.
+ENDLIST
+DATALIST
+DATAFORM 「알겠사옵니다.」
+DATAFORM 소완은 당신에게 손을 내밀었다.
+DATAFORM 그녀의 손목에는 칼자국이 있었다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 살며시 소완의 손에 손을 겹쳤다.
+PRINTFORMW 소완은 흡족하게 미소를 지으며 당신의 손을 잡았다.
+PRINTDATAW
+DATAFORM 「후후후, 기꺼이.」
+DATAFORM 「소첩도 바라던 바이옵니다.」
+DATALIST
+DATAFORM 당신은 소완의 손을 잡은 상태에서, 엄지손가락으로 그녀의 손바닥을 간지럽혔다.
+DATAFORM 「후후, 아하하. 간지럽사옵니다.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 소완의 머리를 쓰다듬었다.
+PRINTFORMW 소완은 당신의 손을 거부하지 않았다.
+PRINTFORMW %TEXTR("「무엇이신지요?」/「후후, 주인의 손은 굉장히 크군요.」/「우후후후....」")%
+CASE "High"
+PRINTFORMW 당신은 소완의 머리를 쓰다듬었다.
+PRINTFORMW 소완은 얌전히 당신의 손에 의지했다..
+PRINTFORMW %TEXTR("「주인께 머리를 쓰다듬어지는 것은, 마치 애완동물 같사옵니다.」/「소첩은 이것이 극상의 쾌락이옵니다.」/「으음...」")%
+CASE "Affection"
+PRINTFORMW 당신은 소완의 머리를 쓰다듬었다.
+PRINTFORMW 소완은 부드럽게 웃으며 당신의 손을 잡아 머리에 얹었다.
+PRINTFORMW %TEXTR("「이렇게 하는 것은 어떠시옵니까?」/「소첩, 주인께 길들여지는 기분이 드옵니다.」")%
+CASE "Marryed"
+PRINTFORMW 당신은 소완의 머리를 쓰다듬었다.
+PRINTFORMW 소완은 얼굴을 붉힌 채 당신의 손에 머리를 더 들이밀었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「주인은 참으로 짓궂사옵니다..」
+DATAFORM 소완이 부끄러워하는 목소리로 말했다.
+ENDLIST
+DATAFORM 「주인의 손은 크고...따뜻하고...진정이 되옵니다.」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 소완의 머리를 쓰다듬었다.
+PRINTFORMW 소완은 얼굴을 입은 웃고있지만, 눈은 웃고 있지 않았다..
+PRINTFORMW %TEXTR("「...흐음.」/「주인. 이런 짓은, 나중에 하는 것이 어떠신지요?」/「소첩, 주제 넘기는 하오나..주인께 지적을 하여도 괜찮겠사옵니까?」")%
+CASE "Fear"
+PRINTFORMW 당신은 소완의 머리를 쓰다듬었다.
+PRINTFORMW 소완은 조금 불안한 눈칩으로 당신을 바라봤다.
+PRINTFORMW 「무엇을 바라시는지...」
+CASE "Weak"
+PRINTFORMW 당신은 소완의 머리를 쓰다듬었다.
+PRINTFORMW 소완의 몸이 흠칫 떨렸다.
+PRINTFORMW %TEXTR("「아니...되옵니다.」/「소첩, 무언가 잘못이라도 했사옵니까...?」")%
+CASE "Break"
+PRINTFORMW 당신은 소완의 머리를 쓰다듬었다.
+PRINTFORMW 소완은 텅빈 눈으로 당신을 쳐다봤다.
+PRINTFORMW 「주인의 손은 크고, 따뜻하고, 진정이 되옵니다. 이 미천한 계집이 이런 것을 받아도 될런지..」
+PRINTFORMW 그녀는 아무런 감정도 없이 작은 목소리로 중얼거렸다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM6
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 소완의 옆구리를 찔렀다.
+PRINTFORMW 소완은 가볍게 웃으며 당신의 손을 밀었다.
+PRINTDATAW
+DATAFORM 「아직은...아니되옵니다.」
+DATALIST
+DATAFORM 「후후, 조금 놀랐사옵니다.」
+DATAFORM 「다음부턴, 놀라는 시늉이라도 할까요?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 소완의 옆구리를 찔렀다.
+PRINTFORMW 소완은 쿡쿡대면서도, 당신의 손가락을 저지하지는 않았다.
+PRINTFORMW %TEXTR("「후후, 아하하. 간지럽사옵니다.」/「주인께서는, 여기가 어떠신지요?」")%
+CASE "Marryed"
+PRINTFORMW 당신은 소완의 옆구리를 찔렀다.
+PRINTFORMW 소완은 쿡쿡대면서도, 당신의 손가락을 저지하지는 않았다.
+PRINTFORMW %TEXTR("「후후, 아하하. 간지럽사옵니다.」/「주인께서는, 여기가 어떠신지요?」")%
+CASE "Annoyed"
+PRINTFORMW 당신은 소완의 옆구리를 찌르려 했다.
+PRINTFORMW 소완은 당신의 손을 탁 쳐냈다.
+PRINTFORMW %TEXTR("「..송구하옵니다. 지금은 그럴 생각이 없사옵니다.」/「주인. 이런 짓은, 나중에 하는 것이 어떠신지요?」")%
+CASE "Fear"
+PRINTFORMW 당신은 소완의 옆구리를 찔렀다.
+PRINTFORMW 소완은 조금 겁먹은 표정을 지었다.
+PRINTFORMW 「무엇을 바라시는지...」
+CASE "Weak"
+PRINTFORMW 당신은 소완의 옆구리를 찔렀다.
+PRINTFORMW 소완은 덜덜 떨며 당신을 바라보았다.
+PRINTFORMW %TEXTR("「아니...되옵니다.」/「소첩, 무언가 잘못이라도 했사옵니까...?」")%
+CASE "Break"
+PRINTFORMW 당신은 소완의 옆구리를 찔렀다.
+PRINTFORMW 아무 반응이 없자, 당신은 소완의 손톱을 난폭하게 긁어내었다.
+PRINTFORMW 「......」.
+CASE "High"
+PRINTFORMW 당신은 소완의 옆구리를 찔렀다.
+PRINTFORMW 소완은 가볍게 웃으며 당신의 손을 밀었다.
+PRINTDATAW
+DATAFORM 「아직은...아니되옵니다.」
+DATALIST
+DATAFORM 「후후, 조금 놀랐사옵니다.」
+DATAFORM 「다음부턴, 놀라는 시늉이라도 할까요?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM7
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 소완에게 자신의 무릎에 누우라고 했다.
+PRINTFORMW 소완은 얌전히 당신의 무릎 위에 누웠다.
+PRINTFORMW 「후후, 주인의 무릎은 따뜻하군요.」
+CASE "High"
+PRINTFORMW 당신은 소완에게 자신의 다리에 누우라고 했다.
+PRINTFORMW 소완은 당신의 허벅지를 만지작거리며 누웠다.
+PRINTDATAW
+DATALIST
+DATAFORM 「주인은 정말 상냥하시옵니다.」
+DATAFORM 「다른 계집에게도 이런 짓을 하시는 것인지...」
+ENDLIST
+DATALIST
+DATAFORM 「소첩에게 이런 짓을..혹시 주인도..」
+DATAFORM 소완은 거기서 말을 멈췄다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 소완에게 자신의 다리에 누우라고 했다.
+PRINTFORMW 소완은 당신의 무릎 위에 누웠다.
+PRINTFORMW 당신은 소완의 머리를 쓰다듬으려고 했다.
+PRINTFORMW 「후후, 쓰다듬으셔도 괜찮사옵니다.」
+PRINTFORMW 소완의 귀는 새빨개졌다.
+CASE "Annoyed"
+PRINTFORMW 당신은 소완에게 자신의 다리에 누우라고 했다.
+PRINTFORMW 소완은 거절했다.
+PRINTFORMW %TEXTR("「..송구하옵니다. 지금은 그럴 생각이 없사옵니다.」/「주인. 이런 짓은, 나중에 하는 것이 어떠신지요?」")%
+CASE "Fear"
+PRINTFORMW 당신은 소완에게 자신의 무릎에 누우라고 했다.
+PRINTFORMW 소완은 거절했다.
+PRINTFORMW %TEXTR("「무엇을 바라시는지...」")%
+CASE "Weak"
+PRINTFORMW 당신은 소완에게 자신의 무릎에 누우라고 했다.
+PRINTFORMW 소완은 거절했다.
+PRINTFORMW %TEXTR("「무엇을 바라시는지...」")%
+CASE "Break"
+PRINTFORMW 당신은 소완에게 자신의 무릎에 누우라고 했다.
+PRINTFORMW 소완은 당신의 무릎 위에 누워, 바지 지퍼를 천천히 내렸다..
+PRINTFORMW 「오늘도 소첩의 봉사를...」
+PRINTFORMW 그녀는 당신에게 봉사를 했다.
+CASE "Marryed"
+PRINTFORMW 당신은 소완에게 자신의 다리에 누우라고 했다.
+PRINTFORMW 소완은 당신의 무릎 위에 누웠다.
+PRINTFORMW 당신은 소완의 머리를 쓰다듬으려고 했다.
+PRINTFORMW 「후후, 쓰다듬으셔도 괜찮사옵니다.」
+PRINTFORMW 소완의 귀는 새빨개졌다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM8
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 소완에게 무릎베개를 부탁했다.
+PRINTFORMW 소완은 당신의 부탁을 들어주려 했으나, 어째서인지 거절했다.
+PRINTFORMW 「..후후, 다음에 해드리겠사옵니다.」
+CASE "High"
+PRINTFORMW 당신은 소완에게 무릎베개를 부탁했다.
+PRINTFORMW 소완은 얌전히 당신에게 무릎을 내주었다.
+PRINTFORMW %TEXTR("「소첩의 다리는 어떠신지요? 따뜻하시옵니까?」/「후후, 주인의 머리카락 때문에 조금, 간지럽사옵니다.」")%
+CASE "Affection"
+PRINTFORMW 당신은 소완에게 무릎베개를 부탁했다.
+PRINTFORMW 소완은 당신의 말이 끝나자마자 어깨를 잡고 자신의 다리로 이끌었다.
+PRINTFORMW 「주인을 이렇게 내려다보는 것은 참으로 미묘한 기분이 드옵니다.」
+PRINTFORMW 「후후, 물론 좋은 뜻이옵니다.」
+CASE "Marryed"
+PRINTFORMW 당신은 소완에게 무릎베개를 부탁했다.
+PRINTFORMW 소완은 당신의 말이 끝나자마자 어깨를 잡고 자신의 다리로 이끌었다.
+PRINTFORMW 「주인을 이렇게 내려다보는 것은 참으로 미묘한 기분이 드옵니다.」
+PRINTFORMW 「후후, 물론 좋은 뜻이옵니다.」
+CASE "Annoyed"
+PRINTFORMW 당신은 소완에게 무릎베개를 부탁했다.
+PRINTFORMW 소완은 거절했다.
+PRINTFORMW %TEXTR("「..송구하옵니다. 지금은 그럴 생각이 없사옵니다.」/「주인. 이런 짓은, 나중에 하는 것이 어떠신지요?」")%
+CASE "Fear"
+PRINTFORMW 당신은 소완에게 무릎베개를 하라고 명령했다.
+PRINTFORMW 소완의 무릎에 누웠지만 그녀는 당신의 시선을 피했다.
+PRINTFORMW 「주인..소첩..」
+PRINTFORMW 「...아무것도 아니옵니다.」
+CASE "Weak"
+PRINTFORMW 당신은 소완에게 무릎베개를 하라고 명령했다.
+PRINTFORMW 소완의 무릎에 눕자, 그녀는 몸을 흠칫 하고 떨었다.
+PRINTFORMW 「읏?!」
+PRINTFORMW 「...」
+CASE "Break"
+PRINTFORMW 당신은 소완에게 무릎베개를 하라고 명령했다.
+PRINTFORMW 당신이 거칠게 소완에 다리에 눕자, 갑자기 그녀가 눈물을 흘렸다.
+PRINTFORMW 「......」
+PRINTFORMW 소완은 아무 말 않고 당신을 텅빈 눈으로 바라봤다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM9
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 소완을 껴안았다.
+PRINTFORMW 소완은 조금 곤란한 얼굴로 당신을 밀어냈다.
+PRINTFORMW %TEXTR("「아직은...아니되옵니다.」/「갑자기 이러시면..소첩, 어찌해야 하옵니까?」/「조금은..자제해 주시옵소서.」")%
+CASE "High"
+PRINTFORMW 당신은 소완을 껴안았다.
+PRINTFORMW 소완은 딱히 저항하지 않았다.
+PRINTFORMW 「후후후..주인은 참으로 응석을 부리시는군요.」
+PRINTFORMW 「혹, 다른 계집에게도 이러시는 것이옵니까?」
+CASE "Affection"
+PRINTFORMW 당신은 소완을 껴안았다.
+PRINTFORMW 소완 또한 당신의 몸을 안았다.
+PRINTDATAW
+DATALIST
+DATAFORM 「......」
+DATAFORM 소완은 당신의 머리를 묻어 얼굴은 보이지 않았지만, 그녀의 귀는 새빨개져 있었다.
+ENDLIST
+DATAFORM 「후후, 소첩. 기쁘옵니다.」
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 소완을 껴안았다.
+PRINTFORMW 소완은 양 팔로 당신의 몸을 휘감았다.
+PRINTDATAW
+DATALIST
+DATAFORM 「아...!」
+DATAFORM 그녀는 가볍게 탄식했다.
+DATAFORM 「주인의 품은 따뜻하옵니다. 하지만 더 따뜻한 것이 무엇인지 아시는지요?」
+DATAFORM 소완은 양 팔로 당신의 목을 둘렀다.
+DATAFORM 「소첩의 입술이옵니다.」
+DATAFORM 그녀는 당신의 얼굴을 향해 천천히 입술을 포개었다.
+ENDLIST
+DATALIST
+DATAFORM 「주인...주인...!」
+DATAFORM 소완은 물기 젖은 목소리로 당신을 불렀지만, 당신은 부끄러운 나머지 모른 척 했다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 소완을 껴안았다.
+PRINTFORMW 소완은 당신을 밀쳐냈다.
+PRINTFORMW %TEXTR("「..송구하옵니다. 지금은 그럴 생각이 없사옵니다.」/「주인. 이런 짓은, 나중에 하는 것이 어떠신지요?」")%
+CASE "Fear"
+PRINTFORMW 당신은 소완을 껴안았다.
+PRINTFORMW 소완은 조심스럽게 당신의 몸을 밀어냈다.
+PRINTFORMW 「주인은, 소첩을 이리 하는 것이 즐거운 것이옵니까?」
+PRINTFORMW 당신은 아무 말도 하지 않았다.
+CASE "Weak"
+PRINTFORMW 당신은 소완을 껴안았다.
+PRINTFORMW 소완의 몸이 흠칫 하고 떨렸다
+PRINTFORMW 「읏?!」
+PRINTFORMW 「...」
+CASE "Break"
+PRINTFORMW 당신은 소완을 껴안았다.
+PRINTFORMW 소완은 텅빈 눈을 크게 뜨며 고개를 갸웃거렸다.
+PRINTFORMW 「이것은, 무슨 의미이옵니까?」
+PRINTFORMW 당신은 그녀에게 무능하다며 발로 정강이를 후려쳤다.
+PRINTFORMW 「으극?!」
+PRINTFORMW 당신은 바닥을 뒹굴며 다리를 부여잡는 소완을 싸늘한 눈으로 바라보았다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM10
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 소완의 뒤에서 그녀를 껴안았다.
+PRINTFORMW 소완은 조금 놀라며 당신을 밀어냈다.
+PRINTFORMW %TEXTR("「어머, 아직은 아니되옵니다.」/「갑자기 이러시면..소첩, 어찌해야 하옵니까?」/「조금은..자제해 주시옵소서.」/「읏...」")%
+CASE "High"
+PRINTFORMW 당신은 소완의 뒤에서 그녀를 껴안았다.
+PRINTFORMW 소완은 당황하면서도 당신을 거부하지는 않았다.
+PRINTDATAW
+DATAFORM 「읏..」
+DATALIST
+DATAFORM 「후후, 소첩에게 응석부리는 것이옵니까?」
+DATAFORM 소완의 귀는 새빨갰다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 소완의 뒤에서 그녀를 껴안았다.
+PRINTFORMW 소완은 당신의 손을 만지작거렸다.
+PRINTDATAW
+DATAFORM 「주인...소첩은, 어찌해야 좋을까요?」
+DATALIST
+DATAFORM 「주인의 따뜻한 온기가 느껴지옵니다.」
+DATAFORM 소완은 젖은 눈으로 당신을 돌아봤다.
+DATAFORM 그녀의 얼굴은 홍당무처럼 새빨갛게 물들었다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 소완의 뒤에서 그녀를 껴안았다.
+PRINTFORMW 소완은 당신의 손에 자신의 손을 덮었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「주인...」
+DATAFORM 소완은 당신의 손등을 만지작거리고는, 가쁜 숨을 쉬었다.
+DATAFORM 「여기를 만지시면...더 기분 좋아진답니다?」
+DATAFORM 그러곤 당신의 손을 자신의 가슴으로 움직였다.
+DATAFORM 「...어떠신지요?」
+ENDLIST
+DATAFORM 「주인은 역시...소첩의 쾌락에 당해내지 못하신 것 같군요. 후후..」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 소완의 뒤에서 그녀를 껴안았다.
+PRINTFORMW 소완은 당신을 거칠게 떼어냈다.
+PRINTFORMW %TEXTR("「..송구하옵니다. 지금은 그럴 생각이 없사옵니다.」/「주인. 이런 짓은, 나중에 하는 것이 어떠신지요?」")%
+CASE "Fear"
+PRINTFORMW 당신은 소완의 뒤에서 그녀를 껴안았다.
+PRINTFORMW 소완은 조금 떨었지만 내색하지 않았다.
+PRINTFORMW 「갑자기 이게 무슨...」
+CASE "Weak"
+PRINTFORMW 당신은 소완의 뒤에서 그녀를 껴안았다.
+PRINTFORMW 소완의 몸이 흠칫 하고 떨렸다
+PRINTFORMW 「읏?!」
+PRINTFORMW 「...」
+CASE "Break"
+PRINTFORMW 당신은 소완의 뒤에서 그녀를 껴안았다.
+PRINTFORMW 소완은 텅빈 눈을 크게 뜨며 고개를 갸웃거렸다.
+PRINTFORMW 「이것은, 무슨 의미이옵니까?」
+PRINTFORMW 당신은 그녀에게 무능하다며 발로 정강이를 후려쳤다.
+PRINTFORMW 「으극?!」
+PRINTFORMW 당신은 바닥을 뒹굴며 다리를 부여잡는 소완을 싸늘한 눈으로 바라보았다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM11
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 누워서 소완을 불렀다.
+PRINTFORMW 소완은 당신의 곁에 다가갔다.
+PRINTFORMW %TEXTR("「후후, 나중에, 어떠신지요?」/「소첩과 함께 낮잠을 하시고 싶으신 것이옵니까?」/「아직은, 아니되옵니다.」")%
+CASE "High"
+PRINTFORMW 당신은 누워서 소완을 불렀다.
+PRINTFORMW 소완은 천천히 다가가 당신의 머리를 쓰다듬었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「소첩에게 응석부리는 것이옵니까? 후훗.」
+DATAFORM 소완은 당신을 귀여워했다.
+ENDLIST
+DATALIST
+DATAFORM 「벌써 약의 효과가...」
+DATAFORM 소완이 작게 중얼거리자, 당신은 고개를 갸웃거렸다.
+DATAFORM 「아무것도 아니옵니다.」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 누워서 소완을 불렀다.
+PRINTFORMW 소완은 당신 옆에 누웠다.
+PRINTDATAW
+DATALIST
+DATAFORM 「어머, 팔베게도 해 주시는 것이옵니까?」
+DATAFORM 「황송하옵니다.」
+ENDLIST
+DATAFORM 「조금만 더..가까이 오시겠사옵니까?」
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 누워서 소완을 불렀다.
+PRINTFORMW 소완은 곧장 당신의 옆에 누웠다.
+PRINTDATAW
+DATALIST
+DATAFORM 「주인...」
+DATAFORM 소완은 당신의 몸을 더 파고들었다.
+DATAFORM 「스으읍...하아아...」
+DATAFORM 당신은 애써 모른 척 했다.
+ENDLIST
+DATALIST
+DATAFORM 「음...쪽.」
+DATAFORM 소완은 당신을 보자마자 가볍게 입을 맞췄다.
+DATAFORM 「주인도...해 주시면..」
+DATAFORM 소완이 기어들어가는 목소리로 말하자, 당신은 보답하듯 그녀에게 입맞췄다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 누워서 소완을 불렀다.
+PRINTFORMW 소완은 정중히 거절했다.
+PRINTFORMW %TEXTR("「..송구하옵니다. 지금은 그럴 생각이 없사옵니다.」/「주인. 이런 짓은, 나중에 하는 것이 어떠신지요?」")%
+CASE "Fear"
+PRINTFORMW 당신은 누워서 소완을 불렀다.
+PRINTFORMW 소완은 쭈뼛거리며 당신에게 다가갔다.
+PRINTFORMW 「......」
+PRINTFORMW 그녀의 떨림이 멈추지 않는다.
+CASE "Weak"
+PRINTFORMW 당신은 누워서 소완을 불렀다.
+PRINTFORMW 소완이 당신에게 가까이 다가가자, 당신은 팔을 접어 팔꿈치로 그녀의 안면을 후려쳤다.
+PRINTFORMW 「...즐거우신지요?」
+PRINTFORMW 당신이 깔깔 웃자, 소완은 무덤덤하게 대답했다.
+CASE "Break"
+PRINTFORMW 당신은 누워서 소완을 불렀다.
+PRINTFORMW 소완이 정리 안된 수북한 머리칼을 가지런히 모아 당신의 옆에 누웠다.
+PRINTFORMW 
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM12
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 소완의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+PRINTFORMW 소완은 고개를 갸웃거렸다.
+PRINTDATAW
+DATALIST
+DATAFORM 「..우후후♩」
+DATAFORM 그녀는 옅게 미소지었다.
+ENDLIST
+DATAFORM 「어머...아직 이르온데, 주인은 참으로 빠르시군요.」
+DATAFORM 「후훗, 어떠셨는지요?」
+ENDDATA
+CASE "High"
+PRINTFORMW 당신은 소완의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+PRINTFORMW 소완은 조금 부끄러운 것 같다.
+PRINTDATAW
+DATALIST
+DATAFORM 「벌써 약의 효과가...」
+DATAFORM 소완이 작게 중얼거리자, 당신은 고개를 갸웃거렸다.
+DATAFORM 「아무것도 아니옵니다.」
+ENDLIST
+DATALIST
+DATAFORM 「..우후후♩」
+DATAFORM 그녀는 옅게 미소지었다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 소완의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+PRINTFORMW 소완의 얼굴이 빨갛게 변했다.
+PRINTDATAW
+DATALIST
+DATAFORM 「......」
+DATAFORM 그녀는 반쯤 입을 벌린 채, 믿을 수 없다는 표정으로 당신을 바라보았다.
+ENDLIST
+DATALIST
+DATAFORM 「후훗.」
+DATAFORM 소완이 입맞춘 곳을 더듬자, 부드럽게 웃었다.
+DATAFORM 「이곳으로만, 만족하시는 것인지요?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 소완의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+PRINTFORMW 소완은 별 반응이 없다.
+PRINTFORMW %TEXTR("「..송구하옵니다. 지금은 그럴 생각이 없사옵니다.」/「주인. 이런 짓은, 나중에 하는 것이 어떠신지요?」")%
+CASE "Fear"
+PRINTFORMW 당신은 소완의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+PRINTFORMW 소완은 표정관리가 안된 채 어쩔 줄 몰라하는 표정이었다.
+PRINTFORMW 「갑자기 이게 무슨...」
+CASE "Weak"
+PRINTFORMW 당신은 소완의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+PRINTFORMW 덜덜 떨며 조심스레 말했다.
+PRINTFORMW 「...소첩이, 뭔가 잘못이라도 했는지요..?」
+CASE "Break"
+PRINTFORMW 당신은 소완의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+PRINTFORMW 「......」
+PRINTFORMW 그녀는 무표정으로 당신을 바라보았다.
+CASE "Marryed"
+PRINTFORMW 당신은 소완의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+PRINTFORMW 소완의 얼굴이 빨갛게 변했다.
+PRINTDATAW
+DATALIST
+DATAFORM 「......」
+DATAFORM 그녀는 반쯤 입을 벌린 채, 믿을 수 없다는 표정으로 당신을 바라보았다.
+ENDLIST
+DATALIST
+DATAFORM 「후훗.」
+DATAFORM 소완이 입맞춘 곳을 더듬자, 부드럽게 웃었다.
+DATAFORM 「이곳으로만, 만족하시는 것인지요?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM13
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 소완의 배를 주물럭 거렸다.
+PRINTFORMW 소완은 비명에 가까운 소리를 내었다.
+PRINTFORMW %TEXTR("「앗..!」/n「아무리 소첩을 원한다 하시어도, 아직은...」/「소첩은 아직, 마음의 준비가 되지 아니하였사옵니다.」")%
+CASE "Affection"
+PRINTFORMW 당신은 소완의 배를 주물럭 거렸다.
+PRINTFORMW 소완은 쿡쿡거리면서도, 당신의 손길을 방해하지는 않았다.
+PRINTDATAW
+DATAFORM 「후후, 아하하. 간지럽사옵니다.」
+DATALIST
+DATAFORM 「자고로 요리사는 몸이 튼튼해야 하는 법이옵니다.」
+DATAFORM 「어떠신지요? 군살 하나 없지 않사옵니까?」
+DATAFORM 당신이 대답을 뜸들이자, 그녀는 돌아보며 나지막이 말했다.
+DATAFORM 「...있사옵니까?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 소완의 배를 주물럭 거렸다.
+PRINTFORMW 소완은 쿡쿡거리면서도, 당신의 손길을 방해하지는 않았다.
+PRINTDATAW
+DATAFORM 「후후, 아하하. 간지럽사옵니다.」
+DATALIST
+DATAFORM 「자고로 요리사는 몸이 튼튼해야 하는 법이옵니다.」
+DATAFORM 「어떠신지요? 군살 하나 없지 않사옵니까?」
+DATAFORM 당신이 대답을 뜸들이자, 그녀는 돌아보며 나지막이 말했다.
+DATAFORM 「...있사옵니까?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 소완의 배를 주물럭 거렸다.
+PRINTFORMW 소완은 아무 말도 하지 않았지만, 당신은 한기가 들었다.
+PRINTFORMW %TEXTR("「..송구하옵니다. 지금은 그럴 생각이 없사옵니다.」/「주인. 이런 짓은, 나중에 하는 것이 어떠신지요?」")%
+CASE "Fear"
+PRINTFORMW 당신은 소완의 배를 주물럭 거렸다.
+PRINTFORMW 소완은 표정관리가 안된 채 어쩔 줄 몰라하는 표정이었다.
+PRINTFORMW 「갑자기 이게 무슨...」
+CASE "Weak"
+PRINTFORMW 당신은 소완의 배를 주물럭 거렸다.
+PRINTFORMW 소완은 눈에 보일 정도로 크게 떨기 시작했다.
+PRINTFORMW 「대체 이번엔 무엇을...?」
+CASE "Break"
+PRINTFORMW 당신은 소완의 배를 주물럭 거렸다.
+PRINTFORMW 소완은 아무 거리낌 없이 상의를 걷어올려 배를 보였다.
+PRINTFORMW 온통 피멍투성이였다.
+CASE "High"
+PRINTFORMW 당신은 소완의 배를 주물럭 거렸다.
+PRINTFORMW 소완은 비명에 가까운 소리를 내었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「앗..!」
+DATAFORM 「아무리 소첩을 원한다 하시어도, 아직은...」
+ENDLIST
+DATAFORM 「소첩은 아직, 마음의 준비가 되지 아니하였사옵니다.」
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM14
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 소완의 귀를 살짝 깨물었다.
+PRINTFORMW 소완은 새된 소리를 내었다.
+PRINTFORMW %TEXTR("「흐아앗...!」/「아읏, 갑자기 왜 이러시는지요.」")%
+CASE "Affection"
+PRINTFORMW 당신은 소완의 귀를 살짝 깨물었다.
+PRINTFORMW 소완은 몸을 움츠렸다.
+PRINTDATAW
+DATALIST
+DATAFORM 「으읏..읏」
+DATAFORM 당신이 한 감각을 온몸으로 참고 있다.
+ENDLIST
+DATAFORM 「흐읏..하으으...」
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 소완의 귀를 살짝 깨물었다.
+PRINTFORMW 소완은 당신에게 기대었다.
+PRINTFORMW 「주인께서..원하신다면.」
+CASE "Annoyed"
+PRINTFORMW 당신은 소완의 귀를 살짝 깨물었다.
+PRINTFORMW 소완은 격한 반응을 보이면서도 당신을 약간 밀어내었다.
+PRINTFORMW %TEXTR("「이런 짓은..윽?! 아직..!」/「주인..나중에...나중에 하시옵소서..!」")%
+CASE "Fear"
+PRINTFORMW 당신은 소완의 귀를 살짝 깨물었다.
+PRINTFORMW 소완은 소스라치게 놀랐다.
+PRINTFORMW 「...대체 무얼 하시려는..?」
+CASE "Weak"
+PRINTFORMW 당신은 소완의 귀를 살짝 깨물었다.
+PRINTFORMW 소완은 당신에게 순순히 귀를 내주었다.
+PRINTFORMW 「...윽...읏..」
+CASE "Break"
+PRINTFORMW 당신은 소완의 귀를 살짝 깨물었다.
+PRINTFORMW 그녀답지 않게 꽤나 격한 반응을 보였다.
+PRINTFORMW 「앗..흣..」
+PRINTFORMW 재미가 없어지자 당신은 귀를 물어 뜯을 기세로 매우 세게 깨물었다.
+PRINTFORMW 「꺄아아악!」
+PRINTFORMW 소완은 비명을 지르며 바닥을 뒹굴었다.
+CASE "High"
+PRINTFORMW 당신은 소완의 귀를 살짝 깨물었다.
+PRINTFORMW 소완은 새된 소리를 내었다.
+PRINTFORMW %TEXTR("「흐아앗...!」/「아읏, 갑자기 왜 이러시는지요.」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM15
+SELECTCASE CSTR:1
+CASE "First/Low"
+PRINTFORMW 소완의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 현실감이 느껴지지 않는다는 듯 소완은 굳어버렸다.
+PRINTFORMW 「아...」
+PRINTFORMW 소완은 당신을 똑바로 쳐다보고는 멍한 얼굴이 되어버렸다.「소첩이 진정으로 염원하던 것이었사옵니다.」
+PRINTFORMW 그녀는 멍한 채로 아무 말 없이 당신의 손을 잡았다.
+CASE "First/High"
+PRINTFORMW 소완의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 예상하지 못한 첫키스에 소완은 굳어버렸다.
+PRINTFORMW 「..어머.」
+PRINTFORMW 소완은 약간 믿겨지지 않는지 자신의 입술을 어루만졌다.「저는 아직 준비가 되지 않았사온데, 참으로 짖궃사옵니다.」
+CASE "First/Affection"
+PRINTFORMW 「어머?」
+PRINTFORMW 소완의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 소완은 담담히 당신의 키스에 응해주었다.
+PRINTFORMW 「후후」
+PRINTFORMW 「드디어」
+PRINTFORMW 「소첩이 사용한 약의 효과가...」
+PRINTFORMW 「아..아니, 아무것도 아니옵니다.」
+CASE "First/Marryed"
+PRINTFORMW 소완의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 소완은 가만히 받아들였다.
+PRINTFORMW 「도대체.」
+PRINTFORMW 「주인은 참으로 짖궃사옵니다.」
+PRINTFORMW 「이제부턴, 소첩이 다시 해도 괜찮겠지요?」
+CASE "First/Annoyed"
+PRINTFORMW 소완의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 원치 않았던 첫키스에 소완은 굳어버렸다.
+PRINTFORMW 「지금은 이런 것을 원치는 않았사온데..」
+PRINTFORMW 「방금 건 없는 걸로 치면 안되겠사옵니까?」
+CASE "First/Fear"
+PRINTFORMW 소완의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 원치 않았던 첫키스에 소완은 굳어버렸다.
+PRINTFORMW 「이..이게 무슨..」
+PRINTFORMW 「소첩이 그토록 바란 것일텐데, 어째서...?」
+PRINTFORMW 소완은 울먹이며 혼란스러워하고 있다.
+CASE "First/Weak"
+PRINTFORMW 소완의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 원치 않았던 첫키스에 소완은 굳어버렸다.
+PRINTFORMW 「아....」
+PRINTFORMW 소완은 망연자실한 얼굴로 멍하니 당신을 바라봤다.
+CASE "First/Break"
+PRINTFORMW 소완의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 당신이 입술을 떼자, 소완은 다시 당신을 낚아채 키스를 하려고 시도했다.
+PRINTFORMW 「아직 아니되옵니다..소첩은 주인께 키스받으면 만족하실 때 까지 해야 하는 것이 의무이옵니다!」
+PRINTFORMW 당신은 짜증이 나 그녀의 복부를 후려쳤고, 그녀는 짧은 비명을 지르며 바닥에 나뒹굴었다.
+CASE "Low"
+PRINTFORMW 소완의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 소완은 당신의 입이 가까워지자, 손바닥을 당신의 입에 갖다댔다.
+PRINTFORMW %TEXTR("「후후」/「가벼이 이러시면 곤란하옵니다.」/「아직은, 아니되옵니다.」")%
+CASE "High"
+PRINTFORMW 소완의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 당신의 쇄골을 조금 밀어내기는 하였으나, 별다른 저항은 없었다.
+PRINTFORMW 「소첩과 이런 걸 하는 것이...」
+PRINTFORMW 「아니, 아무것도 아니옵니다.」
+CASE "Affection"
+PRINTFORMW 소완의 입술에 당신의 입술을 맞췄다.
+PRINTDATAW
+DATALIST
+DATAFORM 「이제는 약을 쓰지 않아도 되겠사옵니다.」
+DATAFORM 「아, 그렇다고 여태까지 써온 것은 아니옵니다!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 소완의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 소완은 당신의 입이 가까워지자, 손바닥을 당신의 입에 갖다댔다.
+PRINTFORMW 「지금은, 아니되옵니다.」
+CASE "Fear"
+PRINTFORMW 소완의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 「......」
+PRINTFORMW 소완은 아랫입술을 깨물며 부들부들 떨었다.
+CASE "Break"
+PRINTFORMW 소완의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 소완은 텅빈 눈으로 당신의 키스에 응했다.
+PRINTFORMW 「음...쪽.」
+PRINTFORMW 소완의 혀가 당신을 강렬하게 섞으려 한다.
+PRINTFORMW 하지만, 거기에는 아무런 감정도 느껴지지 않았다.
+CASE "Marryed"
+PRINTFORMW 소완의 입술에 당신의 입술을 맞췄다.
+PRINTDATAW
+DATALIST
+DATAFORM 「이제는 약을 쓰지 않아도 되겠사옵니다.」
+DATAFORM 「아, 그렇다고 여태까지 써온 것은 아니옵니다!」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 소완의 입술에 당신의 입술을 맞췄다.
+PRINTFORMW 「......」
+PRINTFORMW 소완은 아랫입술을 깨물며 부들부들 떨었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM16
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 소완의 목에 혀를 기었다.
+PRINTFORMW 소완은 비명에 가까운 소리를 내었다.
+PRINTDATAW
+DATAFORM 「아읏..!」
+DATALIST
+DATAFORM 「하읏!」
+DATAFORM 「아..후후, 왜 그러시는지요.」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 소완의 목에 혀를 기었다.
+PRINTFORMW 소완은 잘게 떨며 숨을 흘렸다.
+PRINTDATAW
+DATAFORM 「주인의 대답이시옵니까?」
+DATALIST
+DATAFORM 「...」
+DATAFORM 아무 반응이 없자, 당신은 그녀를 돌아보려 했다.
+DATAFORM 소완은 필사적으로 얼굴을 보여주지 않았다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 소완의 목에 혀를 기었다.
+PRINTFORMW 소완은 약간의 한숨을 쉬었다.
+PRINTFORMW 「하아...!」
+PRINTFORMW 「..이것뿐이옵니까?」
+CASE "Annoyed"
+PRINTFORMW 소완의 목에 혀를 기었다.
+PRINTFORMW 소완은 당신의 행동을 피했다.
+PRINTFORMW %TEXTR("「..송구하옵니다. 지금은 그럴 생각이 없사옵니다.」/「주인. 이런 짓은, 나중에 하는 것이 어떠신지요?」")%
+CASE "Fear"
+PRINTFORMW 소완의 목에 혀를 기었다.
+PRINTFORMW %TEXTR("소완은 간단히 피했다./소완은 무표정으로 피했다.")%
+PRINTFORMW 「....」
+CASE "Weak"
+PRINTFORMW 소완의 목에 혀를 기었다.
+PRINTFORMW 소완은 떨며 자신의 목을 내주었다.
+PRINTFORMW 「...이..이 다음은 무엇인지요..?」
+CASE "Break"
+PRINTFORMW 소완의 목에 혀를 기었다.
+PRINTFORMW 소완은 입술만 움직인 채로 재미없는 반응을 했다.
+PRINTFORMW 「간지럽사옵니다.」
+CASE "High"
+PRINTFORMW 소완의 목에 혀를 기었다.
+PRINTFORMW 소완은 비명에 가까운 소리를 내었다.
+PRINTDATAW
+DATAFORM 「아읏..!」
+DATALIST
+DATAFORM 「하읏!」
+DATAFORM 「아..후후, 왜 그러시는지요.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM17
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 소완의 등을 손가락으로 훑었다.
+PRINTFORMW 소완은 비명에 가까운 소리를 내었다.
+PRINTDATAW
+DATAFORM 「아읏..!」
+DATALIST
+DATAFORM 「하읏!」
+DATAFORM 「아..후후, 왜 그러시는지요.」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 소완의 등을 손가락으로 훑었다.
+PRINTFORMW 소완은 잘게 떨며 숨을 흘렸다.
+PRINTDATAW
+DATAFORM 「주인의 대답이시옵니까?」
+DATALIST
+DATAFORM 「...」
+DATAFORM 아무 반응이 없자, 당신은 그녀를 돌아보려 했다.
+DATAFORM 소완은 필사적으로 얼굴을 보여주지 않았다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 소완의 등을 손가락으로 훑었다.
+PRINTFORMW 소완은 약간의 한숨을 쉬었다.
+PRINTFORMW 「하아...!」
+PRINTFORMW 「..이것뿐이옵니까?」
+CASE "Annoyed"
+PRINTFORMW 소완의 등을 손가락으로 훑었다.
+PRINTFORMW 소완은 당신의 행동을 피했다.
+PRINTFORMW %TEXTR("「..송구하옵니다. 지금은 그럴 생각이 없사옵니다.」/「주인. 이런 짓은, 나중에 하는 것이 어떠신지요?」")%
+CASE "Fear"
+PRINTFORMW 소완의 등을 손가락으로 훑었다.
+PRINTFORMW %TEXTR("소완은 간단히 피했다./소완은 무표정으로 피했다.")%
+PRINTFORMW 「....」
+CASE "Weak"
+PRINTFORMW 소완의 등을 손가락으로 훑었다.
+PRINTFORMW 소완은 떨며 자신의 목을 내주었다.
+PRINTFORMW 「...이..이 다음은 무엇인지요..?」
+CASE "Break"
+PRINTFORMW 소완의 등을 손가락으로 훑었다.
+PRINTFORMW 소완은 입술만 움직인 채로 재미없는 반응을 했다.
+PRINTFORMW 「간지럽사옵니다.」
+CASE "High"
+PRINTFORMW 소완의 등을 손가락으로 훑었다.
+PRINTFORMW 소완은 비명에 가까운 소리를 내었다.
+PRINTDATAW
+DATAFORM 「아읏..!」
+DATALIST
+DATAFORM 「하읏!」
+DATAFORM 「아..후후, 왜 그러시는지요.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM18
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 소완의 가슴에 얼굴을 묻었다.
+PRINTFORMW 소완은 조심스레 당신을 떨쳐냈다.
+PRINTFORMW %TEXTR("「갑지기 이런 짓을 하시면 곤란하옵니다.」/「후후, 소첩은 아직 준비가 되지 않았사옵니다.」")%
+CASE "High"
+PRINTFORMW 소완의 가슴에 얼굴을 묻었다.
+PRINTFORMW 소완은 아무 말 하지 않고 가만히 있다.
+PRINTFORMW %TEXTR("「어머..」/「주인..소첩을 놀리는 것이옵니까?」")%
+CASE "Affection"
+PRINTFORMW 소완의 가슴에 얼굴을 묻었다.
+PRINTFORMW 소완은 살며시 당신의 머리를 안았다.
+PRINTFORMW %TEXTR("「후후후, 아이 같사옵니다.」/「「주인은 정말..어쩔 수 없군요.」")%
+CASE "Marryed"
+PRINTFORMW 소완의 가슴에 얼굴을 묻었다.
+PRINTFORMW 소완은 당신의 머리를 꼬옥 안았다.
+PRINTFORMW 좋은 향기가 났다.
+PRINTDATAW
+DATAFORM 「소첩의 가슴은, 부드러우신지요.」
+DATALIST
+DATAFORM 「주인이 원한다 하시어도, 모유는 나오지 않사옵니다.」
+DATAFORM 「...이 다음에 할 것이 무엇인지는 아시겠사옵니까?」
+ENDLIST
+DATAFORM 「소첩의 심장소리가 들리시옵니까?」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 소완에게 파후파후를 부탁했다.
+PRINTFORMW 소완은 거절했다.
+PRINTFORMW 「주인. 이런 짓은, 나중에 하는 것이 어떠신지요?」
+CASE "Fear"
+PRINTFORMW 소완의 가슴에 얼굴을 묻었다.
+PRINTFORMW 소완는 당신을 떨쳐냈다.
+PRINTFORMW 「가..갑자기 이런 짓은..」
+CASE "Weak"
+PRINTFORMW 소완의 가슴에 얼굴을 묻었다.
+PRINTFORMW 소완은 당신을 떨쳐내고 싶었지만, 그러지 못했다.
+PRINTFORMW 「......」
+PRINTFORMW 어쩔 줄 몰라 가슴이 부들부들 떨려오는게 느껴진다.
+CASE "Break"
+PRINTFORMW 소완의 가슴에 얼굴을 묻었다.
+PRINTFORMW 당신은 슬쩍 위를 올려다봤다.
+PRINTFORMW 그곳에는, 소완이 텅빈 눈으로 당신을 쳐다볼 뿐이었다.
+PRINTFORMW 「......」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM19
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 소완에게 소리를 지르며 욕을 했다.
+PRINTFORMW 소완은 이해할 수 없다는 얼굴이다.
+PRINTFORMW %TEXTR("「..송구하옵니다.」/「받아들이겠사옵니다.」")%
+CASE "Fear"
+PRINTFORMW 소완에게 소리를 지르며 욕을 했다.
+PRINTFORMW 소완은 믿을 수 없다는 듯 망연자실했다..
+PRINTFORMW 「...어..째서..?」
+CASE "Weak"
+PRINTFORMW 소완에게 소리를 지르며 욕을 했다.
+PRINTFORMW 소완은 반쯤 무시하고 있다.
+PRINTFORMW 「알려주십시오. 소첩이 대체 무엇을 잘못했사옵니까!」
+PRINTFORMW 물론 당신은 대답하지 않았다.
+CASE "Break"
+PRINTFORMW 소완에게 소리를 지르며 욕을 했다.
+PRINTFORMW 소완은 해진 옷을 정리하지도 않고 그대로 바닥에 무릎을 꿇어 절했다.
+PRINTFORMW 「송구하옵니다.」
+CASE "High"
+PRINTFORMW 소완에게 소리를 지르며 욕을 했다.
+PRINTFORMW 소완은 이해할 수 없다는 얼굴이다.
+PRINTFORMW %TEXTR("「..송구하옵니다.」/「받아들이겠사옵니다.」")%
+CASE "Affection"
+PRINTFORMW 소완에게 소리를 지르며 욕을 했다.
+PRINTFORMW 소완은 이해할 수 없다는 얼굴이다.
+PRINTFORMW %TEXTR("「..송구하옵니다.」/「받아들이겠사옵니다.」")%
+CASE "Marryed"
+PRINTFORMW 소완에게 소리를 지르며 욕을 했다.
+PRINTFORMW 소완은 이해할 수 없다는 얼굴이다.
+PRINTFORMW %TEXTR("「..송구하옵니다.」/「받아들이겠사옵니다.」")%
+CASE "Annoyed"
+PRINTFORMW 소완에게 소리를 지르며 욕을 했다.
+PRINTFORMW 소완은 이해할 수 없다는 얼굴이다.
+PRINTFORMW %TEXTR("「..송구하옵니다.」/「받아들이겠사옵니다.」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM20
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 소완의 뺨을 때렸다.
+PRINTFORMW 소완은 믿을 수 없다는 듯 맞은 뺨을 어루만지며 망연자실했다..
+PRINTFORMW 「...어..째서..?」
+CASE "Fear"
+PRINTFORMW 소완의 뺨을 때렸다.
+PRINTFORMW 소완은 당신을 쳐다도 보지 않고 두려움에 떨어 아랫입술을 꽉 깨물었다.
+PRINTFORMW 「...... 」
+CASE "Weak"
+PRINTFORMW 소완의 뺨을 때렸다.
+PRINTFORMW 소완은 맞자마자 눈물을 흘리며 주저앉아 당신에게 외쳤다.
+PRINTFORMW 「알려주십시오. 소첩이 대체 무엇을 잘못했사옵니까!」
+PRINTFORMW 물론 당신은 대답하지 않았다.
+CASE "Break"
+PRINTFORMW 소완의 뺨을 때렸다.
+PRINTFORMW 소완은 맞자마자 반대쪽 뺨을 내주었다..
+PRINTFORMW 짝!
+PRINTFORMW 「흐윽!」
+PRINTFORMW 그러곤 다시 반대쪽 뺨을 내밀었다.
+PRINTFORMW 짝!
+PRINTFORMW 「하악!」
+PRINTFORMW 이 짓을 3번 정도 더 반복하더니, 당신은 지루해져 그만하기로 했다.
+CASE "High"
+PRINTFORMW 소완의 뺨을 때렸다.
+PRINTFORMW 소완은 믿을 수 없다는 듯 맞은 뺨을 어루만지며 망연자실했다..
+PRINTFORMW 「...어..째서..?」
+CASE "Affection"
+PRINTFORMW 소완의 뺨을 때렸다.
+PRINTFORMW 소완은 믿을 수 없다는 듯 맞은 뺨을 어루만지며 망연자실했다..
+PRINTFORMW 「...어..째서..?」
+CASE "Marryed"
+PRINTFORMW 소완의 뺨을 때렸다.
+PRINTFORMW 소완은 믿을 수 없다는 듯 맞은 뺨을 어루만지며 망연자실했다..
+PRINTFORMW 「...어..째서..?」
+CASE "Annoyed"
+PRINTFORMW 소완의 뺨을 때렸다.
+PRINTFORMW 소완은 믿을 수 없다는 듯 맞은 뺨을 어루만지며 망연자실했다..
+PRINTFORMW 「...어..째서..?」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM21
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 소완의 배에 주먹을 날렸다.
+PRINTFORMW 소완은 쓰러져서 심하게 콜록대고 있다.
+PRINTFORMW 「커흑?! 쿨럭...으흑, 주인..」
+CASE "Break"
+PRINTFORMW 소완의 배에 주먹을 날렸다.
+PRINTFORMW 소완은 쓰러져서 심하게 콜록대고 있다.
+PRINTFORMW 「......」
+CASE "High"
+PRINTFORMW 소완의 배에 주먹을 날렸다.
+PRINTFORMW 소완은 쓰러져서 심하게 콜록대고 있다.
+PRINTFORMW 「커흑?! 쿨럭...으흑, 주인..」
+CASE "Affection"
+PRINTFORMW 소완의 배에 주먹을 날렸다.
+PRINTFORMW 소완은 쓰러져서 심하게 콜록대고 있다.
+PRINTFORMW 「커흑?! 쿨럭...으흑, 주인..」
+CASE "Marryed"
+PRINTFORMW 소완의 배에 주먹을 날렸다.
+PRINTFORMW 소완은 쓰러져서 심하게 콜록대고 있다.
+PRINTFORMW 「커흑?! 쿨럭...으흑, 주인..」
+CASE "Annoyed"
+PRINTFORMW 소완의 배에 주먹을 날렸다.
+PRINTFORMW 소완은 쓰러져서 심하게 콜록대고 있다.
+PRINTFORMW 「커흑?! 쿨럭...으흑, 주인..」
+CASE "Fear"
+PRINTFORMW 소완의 배에 주먹을 날렸다.
+PRINTFORMW 소완은 쓰러져서 심하게 콜록대고 있다.
+PRINTFORMW 「커흑?! 쿨럭...으흑, 주인..」
+CASE "Weak"
+PRINTFORMW 소완의 배에 주먹을 날렸다.
+PRINTFORMW 소완은 쓰러져서 심하게 콜록대고 있다.
+PRINTFORMW 「커흑?! 쿨럭...으흑, 주인..」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_COM22
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 소완을 발로 밀어 찼다.
+PRINTFORMW 소완은 알 수 없다는 듯 당신을 쳐다봤다.
+PRINTFORMW 「커흑?! 쿨럭...으흑, 주인..」
+CASE "Break"
+PRINTFORMW 소완을 발로 밀어 찼다.
+PRINTFORMW 소완은 쓰러져서 그저 바닥을 바라보고 있다.
+PRINTFORMW 「......」
+CASE "High"
+PRINTFORMW 소완을 발로 밀어 찼다.
+PRINTFORMW 소완은 알 수 없다는 듯 당신을 쳐다봤다.
+PRINTFORMW 「커흑?! 쿨럭...으흑, 주인..」
+CASE "Affection"
+PRINTFORMW 소완을 발로 밀어 찼다.
+PRINTFORMW 소완은 알 수 없다는 듯 당신을 쳐다봤다.
+PRINTFORMW 「커흑?! 쿨럭...으흑, 주인..」
+CASE "Marryed"
+PRINTFORMW 소완을 발로 밀어 찼다.
+PRINTFORMW 소완은 알 수 없다는 듯 당신을 쳐다봤다.
+PRINTFORMW 「커흑?! 쿨럭...으흑, 주인..」
+CASE "Annoyed"
+PRINTFORMW 소완을 발로 밀어 찼다.
+PRINTFORMW 소완은 알 수 없다는 듯 당신을 쳐다봤다.
+PRINTFORMW 「커흑?! 쿨럭...으흑, 주인..」
+CASE "Fear"
+PRINTFORMW 소완을 발로 밀어 찼다.
+PRINTFORMW 소완은 알 수 없다는 듯 당신을 쳐다봤다.
+PRINTFORMW 「커흑?! 쿨럭...으흑, 주인..」
+CASE "Weak"
+PRINTFORMW 소완을 발로 밀어 찼다.
+PRINTFORMW 소완은 알 수 없다는 듯 당신을 쳐다봤다.
+PRINTFORMW 「커흑?! 쿨럭...으흑, 주인..」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+
+
+
+@M_No12_EVENT_Morning
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 소완의 목소리에 잠에서 깨어났다.
+PRINTFORMW %TEXTR("「주인? 아침이옵니다. 일어나시지요.」/「후후, 주인께서 명하신 대로, 시간에 딱 맞춰 왔사옵니다.」/「주인, 소첩이옵니다. 문을 여시옵소서.」")%
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 소완의 목소리에 잠에서 깨어났다.
+DATAFORM %TEXTR("「주인, 일어나시지요. 소첩이 주인을 위한 아침을 만들었사옵니다.」/「이대로 일어나지 않으면, 해가 중천이 될 것이옵니다.」")%
+ENDLIST
+DATALIST
+DATAFORM 당신은 소완의 목소리에 잠에서 깨어났다.
+DATAFORM 「후후, 안녕히 주무셨사옵니까?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 침대 옆에서 느껴지는 약간의 중량감에 뒤척였다.
+DATAFORM 「주인? 주인. 잠에서 깨셨사옵니까?」
+DATAFORM 당신이 누운 채로 기지개하자, 소완은 쿡쿡 웃으며 당신의 앞머리를 쓰다듬었다.
+DATAFORM 「아침이 준비되었사오니, 어서 눈을 뜨시지요.」
+ENDLIST
+DATALIST
+DATAFORM 당신이 눈을 뜨니 옆에는 소완이 옅게 웃으며 당신을 바라보고 있었다.
+DATAFORM 한동안 당신을 바라본 소완은, 당신에게 파고들어 들리지 않는 목소리로 말했다.
+DATAFORM 「주인의 얼굴이 보고 싶어, 직접 찾아왔사옵니다.」
+ENDLIST
+DATALIST
+DATAFORM 「주인, 어서 일어나시옵소서. 벌써 아침이옵니다.」
+DATAFORM 당신이 눈을 뜨자 소완이 얼굴을 내밀었다.
+DATAFORM 「쪽. 후후후..」
+DATAFORM 최대한 절제된 웃음이었지만, 표정 관리가 전혀 되지 않자 소완은 입을 두 손으로 가렸다.
+DATAFORM 당신은 쓴웃음 지으며 소완을 껴안았다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「주인~?」
+DATAFORM 당신이 눈을 뜨자, 소완이 흰색 에이프런만 입은 상태로 당신을 불렀다.
+DATAFORM 한 손에는 국자를 들고 있었고, 눈웃음 지으며 당신에게 다가갔다.
+DATAFORM 「몇 번을 말했사옵니까? 속옷은 제대로 입고 있다 하지 않았사옵니까? 후후후후.」
+DATAFORM 소완은 침대에서 일어난 당신을 꼭 껴안고 키스를 했다.
+DATAFORM 「아침이 준비되었사옵니다. 언제나 주인이 좋아하시는 찬으로만 준비하였사오니, 염려 마시옵소서.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 목과 쇄골 쪽에 약간의 흡착력과 같은 감각에 깨어났다.
+DATAFORM 눈을 떠 보니, 소완이 키스마크를 남기고 있었다.
+DATAFORM 뭘 하나 더 지켜보려 하자, 소완의 눈과 딱 마주쳤다.
+DATAFORM 「흐읍?! 주..주인?!」
+DATAFORM 평소보다 심하게 당황하는 소완이 귀여워서, 당신은 소완을 쓰다듬었다.
+ENDLIST
+DATALIST
+DATAFORM 「주인, 일어나시지요?」」
+DATAFORM 「후후, 안녕히 주무셨사옵니까?」
+DATAFORM 「오늘 하루도 주인과 함께 할 수 있다는 것이, 소첩으로선 더할 나위 없는 기쁨이옵니다.」
+DATAFORM 소완 그대로 내 품에 안겨왔다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「주인?」.
+DATAFORM 스릉.
+DATAFORM 칼 가는 소리, 당신은 신경이 쭈뼛 서 저도 모르게 일어났다.
+DATAFORM 「어머, 아침에도 빨리 일어나시는군요.」
+ENDLIST
+DATALIST
+DATAFORM 문을 노크하는 소리에 당신의 눈이 떠졌다.
+DATAFORM 「안녕히 주무셨사옵니까? 소첩은 이만 아침을 만들러 물러나겠사옵니다.」
+DATAFORM 소완은 당신이 일어났는지 확인도 하지 않고 이 말을 하곤 어디론가 사라졌다..
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW 당신은 소완의 목소리에 잠에서 깨어났다.
+PRINTFORMW %TEXTR("「아...안녕히 주무셨사옵니까?」/「명하신 대로..소첩이 왔사옵니다.」")%
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 소완의 목소리에 잠에서 깨어났다.
+DATAFORM 「소첩은..이만 물러가도 되겠사옵니까..?」
+ENDLIST
+DATALIST
+DATAFORM 당신이 눈을 뜨니 이미 아침이 지나가 있었다.
+DATAFORM 옆에는 소완이 덩그러니 서 있었다.
+DATAFORM 「..소첩의 불찰이옵니다. 송구하옵니다.」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 소완의 목소리에 잠에서 깨어났다.
+PRINTFORMW %TEXTR("「주인님. 아침이옵니다.」/「소첩은 얌전히 주인님의 곁에 있었사옵니다.」")%
+PRINTFORMW 소완은 일어난 당신을 보자마자 절했다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_EVENT_Sortie
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW %TEXTR("「주인의 명을 받들겠사옵니다.」/「후후, 주인이 원하시는 대로.」")%
+CASE "Annoyed"
+PRINTFORMW %TEXTR("「오늘은 조금 더 많은 식재를 찾아야겠사옵니다.」/「..주인을 탓하지는 않겠사오나, 평소보다 더 힘이 들 듯 하옵니다.」")%
+CASE "Fear"
+PRINTFORMW 「...명을, 받들겠사옵니다」
+CASE "High"
+PRINTFORMW %TEXTR("「주인의 명을 받들겠사옵니다.」/「후후, 주인이 원하시는 대로.」")%
+CASE "Affection"
+PRINTFORMW %TEXTR("「주인의 명을 받들겠사옵니다.」/「후후, 주인이 원하시는 대로.」")%
+CASE "Marryed"
+PRINTFORMW %TEXTR("「주인의 명을 받들겠사옵니다.」/「후후, 주인이 원하시는 대로.」")%
+CASE "Weak"
+PRINTFORMW 「...명을, 받들겠사옵니다」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_EVENT_Sortie_Return
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「소첩이 그리우셨사옵니까?」
+CASE "Fear"
+PRINTFORMW 「다녀왔사옵니다..」
+CASE "High"
+PRINTFORMW 「소첩이 그리우셨사옵니까?」
+CASE "Affection"
+PRINTFORMW 「소첩이 그리우셨사옵니까?」
+CASE "Marryed"
+PRINTFORMW 「소첩이 그리우셨사옵니까?」
+CASE "Annoyed"
+PRINTFORMW 「소첩이 그리우셨사옵니까?」
+CASE "Weak"
+PRINTFORMW 「다녀왔사옵니다..」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_EVENT_Cook_Self
+IF ABL:MASTER:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「주인의 요리를, 어디 한번 기대해도 되겠사옵니까?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「후후, 주인의 요리라니.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「원래 요리는 소첩이 해야 할 일이온데..」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「...」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「주인의 요리를, 어디 한번 기대해도 되겠사옵니까?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「후후, 주인의 요리라니.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「원래 요리는 소첩이 해야 할 일이온데..」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「주인의 요리를, 어디 한번 기대해도 되겠사옵니까?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「후후, 주인의 요리라니.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「원래 요리는 소첩이 해야 할 일이온데..」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「...」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「주인의 요리를, 어디 한번 기대해도 되겠사옵니까?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「후후, 주인의 요리라니.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「원래 요리는 소첩이 해야 할 일이온데..」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「주인의 요리를, 어디 한번 기대해도 되겠사옵니까?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「후후, 주인의 요리라니.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「원래 요리는 소첩이 해야 할 일이온데..」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「...」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「주인의 요리를, 어디 한번 기대해도 되겠사옵니까?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「후후, 주인의 요리라니.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「원래 요리는 소첩이 해야 할 일이온데..」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No12_EVENT_Eat_Com
+IF ABL:MASTER:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW %TEXTR("「..으음.」/「주인은 노력했사옵니다. 그것으로 소첩은 족하옵니다.」")%
+CASE "Annoyed"
+PRINTFORMW 「...우욱.」
+CASE "Fear"
+PRINTFORMW 「...아, 아무것도 아니옵니다!」
+CASE "Weak"
+PRINTFORMW 「...」
+PRINTFORMW 소완은 말없이 먹었다.
+CASE "High"
+PRINTFORMW %TEXTR("「..으음.」/「주인은 노력했사옵니다. 그것으로 소첩은 족하옵니다.」")%
+CASE "Affection"
+PRINTFORMW %TEXTR("「..으음.」/「주인은 노력했사옵니다. 그것으로 소첩은 족하옵니다.」")%
+CASE "Marryed"
+PRINTFORMW %TEXTR("「..으음.」/「주인은 노력했사옵니다. 그것으로 소첩은 족하옵니다.」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW %TEXTR("「흐음. 정말 맛있었사옵니다.」/「후후, 소첩이 만족하면서 먹을 수 있었사옵니다.」")%
+CASE "Annoyed"
+PRINTFORMW 「..흐음.」
+CASE "Weak"
+PRINTFORMW 「...」」
+CASE "High"
+PRINTFORMW %TEXTR("「흐음. 정말 맛있었사옵니다.」/「후후, 소첩이 만족하면서 먹을 수 있었사옵니다.」")%
+CASE "Affection"
+PRINTFORMW %TEXTR("「흐음. 정말 맛있었사옵니다.」/「후후, 소첩이 만족하면서 먹을 수 있었사옵니다.」")%
+CASE "Marryed"
+PRINTFORMW %TEXTR("「흐음. 정말 맛있었사옵니다.」/「후후, 소첩이 만족하면서 먹을 수 있었사옵니다.」")%
+CASE "Fear"
+PRINTFORMW 「..흐음.」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「소첩의 요리와 비견되는 솜씨였사옵니다.」
+CASE "Annoyed"
+PRINTFORMW 「....」
+PRINTFORMW 소완은 말없이 먹었지만, 왠지 맛있게 먹는 듯 하다
+CASE "Weak"
+PRINTFORMW 「...」
+PRINTFORMW 소완은 말없이 당신의 눈치를 보며 먹었지만, 접시는 깔끔하게 비웠다.
+CASE "High"
+PRINTFORMW 「소첩의 요리와 비견되는 솜씨였사옵니다.」
+CASE "Affection"
+PRINTFORMW 「소첩의 요리와 비견되는 솜씨였사옵니다.」
+CASE "Marryed"
+PRINTFORMW 「소첩의 요리와 비견되는 솜씨였사옵니다.」
+CASE "Fear"
+PRINTFORMW 「....」
+PRINTFORMW 소완은 말없이 먹었지만, 왠지 맛있게 먹는 듯 하다
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No12_EVENT_Cook
+IF ABL:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「알겠사옵니다.」
+PRINTFORMW 「후후, 소첩의 요리가 기대되시옵니까?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 「알겠사옵니다.」
+PRINTFORMW 「후후후, 이제는 소첩의 요리가 아니면, 입도 대시지 않는 듯 하옵니다.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 「..알겠사옵니다.」
+PRINTFORMW 「...」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 「요리..를..」
+PRINTFORMW 「......」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 「알겠사옵니다.」
+PRINTFORMW 「후후, 소첩의 요리가 기대되시옵니까?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 「알겠사옵니다.」
+PRINTFORMW 「후후후, 이제는 소첩의 요리가 아니면, 입도 대시지 않는 듯 하옵니다.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 「..알겠사옵니다.」
+PRINTFORMW 「...」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「알겠사옵니다.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 「요리가 다 되었사옵니다.」
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 「후후, 알겠사옵니다.」
+PRINTFORMW 「♪~」
+PRINTFORMW 「♪♪~」
+PRINTFORMW 「♪~♪~」
+PRINTFORMW 
+PRINTFORMW 「주인? 요리가 되었사옵니다.」
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 「..알겠사옵니다」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 「......」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 「알겠사옵니다.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 「요리가 다 되었사옵니다.」
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 「후후, 알겠사옵니다.」
+PRINTFORMW 「♪~」
+PRINTFORMW 「♪♪~」
+PRINTFORMW 「♪~♪~」
+PRINTFORMW 
+PRINTFORMW 「주인? 요리가 되었사옵니다.」
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 「..알겠사옵니다」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「알겠사옵니다.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 「후후후, 알겠사옵니다.」
+PRINTFORMW 「이제는 소첩의 요리가 아니면 만족을 하지 못하시는지요? 후후.」
+PRINTFORMW 「♪~」
+PRINTFORMW 「♪♪~」
+PRINTFORMW 「♪~♪~」
+PRINTFORMW 
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 「..알겠사옵니다.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 「......」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 「알겠사옵니다.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 「후후후, 알겠사옵니다.」
+PRINTFORMW 「이제는 소첩의 요리가 아니면 만족을 하지 못하시는지요? 후후.」
+PRINTFORMW 「♪~」
+PRINTFORMW 「♪♪~」
+PRINTFORMW 「♪~♪~」
+PRINTFORMW 
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 「..알겠사옵니다.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No12_EVENT_Eat_Lunch
+IF ABL:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 소완이 만든 음식은 굉장히 맛있었다.
+PRINTFORMW 
+PRINTFORMW 「후후, 당연히 맛있었겠지요?」
+CASE "Affection"
+PRINTFORMW 소완이 만든 음식은 굉장히 맛있었다.
+PRINTFORMW 당신은 배를 쓰다듬었다
+PRINTFORMW 
+PRINTFORMW %TEXTR("「후후후, 소첩의 요리는 어떠셨는지요. 말 하지 않아도 알겠군요.」")%
+CASE "Annoyed"
+PRINTFORMW 메이가 만든 음식은 끔찍했다.
+CASE "High"
+PRINTFORMW %TEXTR("메이가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+CASE "Marryed"
+PRINTFORMW %TEXTR("메이가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+PRINTFORMW 「...연습할거야」
+CASE "Fear"
+PRINTFORMW 메이가 만든 음식은 끔찍했다.
+CASE "Weak"
+PRINTFORMW %TEXTR("메이가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 소완이 만든 음식은 굉장히 맛있었다.
+PRINTFORMW 
+PRINTFORMW 「후후, 당연히 맛있었겠지요?」
+CASE "Affection"
+PRINTFORMW 소완이 만든 음식은 굉장히 맛있었다.
+PRINTFORMW 당신은 배를 쓰다듬었다
+PRINTFORMW 
+PRINTFORMW %TEXTR("「후후후, 소첩의 요리는 어떠셨는지요. 말 하지 않아도 알겠군요.」")%
+CASE "High"
+PRINTFORMW 메이가 한 음식은 맛있었다.
+CASE "Marryed"
+PRINTFORMW 메이가 한 음식은 맛있었다.
+PRINTFORMW %TEXTR("「배불러? 그럼 할 게 있겠지?」/「맛있었으면 칭찬하는게 어때?」")%
+CASE "Annoyed"
+PRINTFORMW %TEXTR("메이가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+CASE "Fear"
+PRINTFORMW %TEXTR("메이가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+CASE "Weak"
+PRINTFORMW %TEXTR("메이가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 소완이 만든 음식은 굉장히 맛있었다.
+PRINTFORMW 
+PRINTFORMW 「후후, 당연히 맛있었겠지요?」
+CASE "Affection"
+PRINTFORMW 소완이 만든 음식은 굉장히 맛있었다.
+PRINTFORMW 당신은 배를 쓰다듬었다
+PRINTFORMW 
+PRINTFORMW %TEXTR("「후후후, 소첩의 요리는 어떠셨는지요. 말 하지 않아도 알겠군요.」")%
+CASE "High"
+PRINTFORMW 소완이 만든 음식은 굉장히 맛있었다.
+PRINTFORMW 
+PRINTFORMW 「후후, 당연히 맛있었겠지요?」
+CASE "Marryed"
+PRINTFORMW 소완이 만든 음식은 굉장히 맛있었다.
+PRINTFORMW 당신은 배를 쓰다듬었다
+PRINTFORMW 
+PRINTFORMW %TEXTR("「후후후, 소첩의 요리는 어떠셨는지요. 말 하지 않아도 알겠군요.」")%
+CASE "Annoyed"
+PRINTFORMW %TEXTR("메이가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+CASE "Fear"
+PRINTFORMW %TEXTR("메이가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+CASE "Weak"
+PRINTFORMW %TEXTR("메이가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No12_Sell
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 소완에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「..그렇사옵니까.」
+PRINTFORMW 「그것이 주인의 뜻이라면,」
+PRINTFORMW 「소첩은, 받아들이겠사옵니다.」
+PRINTFORMW 「안녕히.」
+CASE "High"
+PRINTFORMW 당신은 소완에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「그렇..사옵니까..」
+PRINTFORMW 「...」
+PRINTFORMW 「...아직은 때가 아니온데,」
+PRINTFORMW 「그것이 정녕 주인의 뜻이라면, 받아들이겠사옵니다.」
+PRINTFORMW 「허나, 소첩은 절대 주인을 잊지 않겠사옵니다.」
+PRINTFORMW 「언젠가, 마음이 바뀌어 소첩을 다시 사겠다 하여도,」
+PRINTFORMW 「소첩은, 기쁘게 다시 주인을 모시겠사옵니다.」
+PRINTFORMW 「그럼 소첩은 이만, 물러나겠사옵니다.」
+CASE "Affection"
+PRINTFORMW 당신은 소완에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「...에?」
+PRINTFORMW 「방금 무어라..?」
+PRINTFORMW 「소, 소첩..을 팔겠다고...요..?」
+PRINTFORMW 「왜, 대체...어쨰서..? 소첩에게..」
+PRINTFORMW 「아..이 분들은..」
+PRINTFORMW 「......」
+PRINTFORMW 「후후, 아하하하..」
+PRINTFORMW 「결국 소첩은, 주인을 만족시키지 못한 것이었사옵니까?」
+PRINTFORMW 「주인께 극상의 쾌락을 드리겠다 했건만, 소첩은 참으로..」
+PRINTFORMW 「아..아무것도 아니옵니다. 그게 주인께서 바라는 것이라면, 따라야지요..」
+PRINTFORMW 「데려가도 좋사옵니다. 소첩은 이제 누구의 것도 아니니..」
+PRINTFORMW 그렇게 소완은, 뒤로 돌아가 두 사람들에게 끌려갔다.
+PRINTFORMW 「흑...흐흑..」
+CASE "Marryed"
+PRINTFORMW 당신은 소완에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「...에?」
+PRINTFORMW 「방금 무어라..?」
+PRINTFORMW 「소, 소첩..을 팔겠다고...요..?」
+PRINTFORMW 「왜, 대체...어쨰서..? 소첩에게..」
+PRINTFORMW 「아..이 분들은..」
+PRINTFORMW 「......」
+PRINTFORMW 「후후, 아하하하..」
+PRINTFORMW 「결국 소첩은, 주인을 만족시키지 못한 것이었사옵니까?」
+PRINTFORMW 「주인께 극상의 쾌락을 드리겠다 했건만, 소첩은 참으로..」
+PRINTFORMW 「아..아무것도 아니옵니다. 그게 주인께서 바라는 것이라면, 따라야지요..」
+PRINTFORMW 「데려가도 좋사옵니다. 소첩은 이제 누구의 것도 아니니..」
+PRINTFORMW 그렇게 소완은, 뒤로 돌아가 두 사람들에게 끌려갔다.
+PRINTFORMW 「흑...흐흑..」
+CASE "Annoyed"
+PRINTFORMW 당신은 소완에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「..그렇사옵니까.」
+PRINTFORMW 「그것이 주인의 뜻이라면,」
+PRINTFORMW 「소첩은, 받아들이겠사옵니다.」
+PRINTFORMW 「안녕히.」
+CASE "Weak"
+PRINTFORMW 당신은 소완에게 사실을 전했다.
+PRINTFORMW 「그렇사옵니까.」
+PRINTFORMW 「알겠사옵니다.」
+PRINTFORMW 「...주인.」
+PRINTFORMW 「소첩이 만약 폭주한다 하여도, 소첩에게는 죄가 없사옵니다.」
+PRINTFORMW 「기억하시옵소서.」
+CASE "Break"
+PRINTFORMW 당신은 소완을 두들겨 팼다.
+PRINTFORMW 「커흑?! 카학!」
+PRINTFORMW 「아윽...흑...」
+PRINTFORMW 어느덧 문이 열리자, 두 남자가 나타났다.
+PRINTFORMW 「......」
+PRINTFORMW 소완의 보고되었던 것 보다 심각한 몰골에, 두 남자는 말없이 서로를 바라봤다.
+PRINTFORMW 「......」
+PRINTFORMW 당신이 널브러진 소완을 발로 찬 뒤 두 남자들 쪽으로 턱짓하자, 그들은 그제서야 소완을 끌고갔다.
+PRINTFORMW 「하...하하..」
+PRINTFORMW 「아하하하...하하하..」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_Disuse
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 소완에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「..그러십니까.」
+PRINTFORMW 「소첩의 요리가 마음에 들지 않았던 것이옵니까?」
+PRINTFORMW 「아..하하..그럴 리가.」
+PRINTFORMW 「아마, 소첩이 마음에 들지 않은 것이었겠지요.」
+PRINTFORMW 「...」
+PRINTFORMW 「그럼 안녕히」
+CASE "High"
+PRINTFORMW 당신은 소완에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「....」
+PRINTFORMW 「.....그러십니까.」
+PRINTFORMW 「소첩이 마음에 들지 않으셨사옵니까.」
+PRINTFORMW 「아직, 할 일이 남았는데...」
+PRINTFORMW 「아..하하하..이미, 늦었겠지요.」
+PRINTFORMW 「...」
+PRINTFORMW 「그럼..안녕히」
+PRINTFORMW 뒤돌아선 소완은 숨길 수 없을 정도로 어깨를 떨며 흐느꼈다.
+CASE "Affection"
+PRINTFORMW 당신은 소완에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「...에?」
+PRINTFORMW 「방금 무어라..?」
+PRINTFORMW 「소, 소첩..을 해체하겠다고...요..?」
+PRINTFORMW 「왜, 대체...어쨰서..? 소첩에게..」
+PRINTFORMW 「아..이 분들은..」
+PRINTFORMW 「......」
+PRINTFORMW 「후후, 아하하하..」
+PRINTFORMW 「결국 소첩은, 주인을 만족시키지 못한 것이었사옵니까?」
+PRINTFORMW 「주인께 극상의 쾌락을 드리겠다 했건만, 소첩은 참으로..」
+PRINTFORMW 「아..아무것도 아니옵니다. 그게 주인께서 바라는 것이라면, 따라야지요..」
+PRINTFORMW 「데려가도 좋사옵니다. 소첩은 이제 누구의 것도 아니니..」
+PRINTFORMW 그렇게 소완은, 뒤로 돌아가 두 사람들에게 끌려갔다.
+PRINTFORMW 「흑...흐흑..」
+CASE "Marryed"
+PRINTFORMW 당신은 소완에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「...에?」
+PRINTFORMW 「방금 무어라..?」
+PRINTFORMW 「소, 소첩..을 팔겠다고...요..?」
+PRINTFORMW 「왜, 대체...어쨰서..? 소첩에게..」
+PRINTFORMW 「아..이 분들은..」
+PRINTFORMW 「......」
+PRINTFORMW 「후후, 아하하하..」
+PRINTFORMW 「결국 소첩은, 주인을 만족시키지 못한 것이었사옵니까?」
+PRINTFORMW 「주인께 극상의 쾌락을 드리겠다 했건만, 소첩은 참으로..」
+PRINTFORMW 「아..아무것도 아니옵니다. 그게 주인께서 바라는 것이라면, 따라야지요..」
+PRINTFORMW 「데려가도 좋사옵니다. 소첩은 이제 누구의 것도 아니니..」
+PRINTFORMW 그렇게 소완은, 뒤로 돌아가 두 사람들에게 끌려갔다.
+PRINTFORMW 「흑...흐흑..」
+CASE "Annoyed"
+PRINTFORMW 당신은 소완에게 사실을 전했다.
+PRINTFORMW 「...」
+PRINTFORMW 「..그렇사옵니까.」
+PRINTFORMW 「그것이 주인의 뜻이라면,」
+PRINTFORMW 「소첩은, 받아들이겠사옵니다.」
+PRINTFORMW 「안녕히.」
+CASE "Weak"
+PRINTFORMW 당신은 소완에게 사실을 전했다.
+PRINTFORMW 「그렇사옵니까.」
+PRINTFORMW 「알겠사옵니다.」
+PRINTFORMW 「...주인.」
+PRINTFORMW 「소첩이 만약 폭주한다 하여도, 소첩에게는 죄가 없사옵니다.」
+PRINTFORMW 「기억하시옵소서.」
+CASE "Break"
+PRINTFORMW 당신은 소완을 두들겨 팼다.
+PRINTFORMW 「커흑?! 카학!」
+PRINTFORMW 「아윽...흑...」
+PRINTFORMW 어느덧 문이 열리자, 두 남자가 나타났다.
+PRINTFORMW 「......」
+PRINTFORMW 소완의 보고되었던 것 보다 심각한 몰골에, 두 남자는 말없이 서로를 바라봤다.
+PRINTFORMW 「......」
+PRINTFORMW 당신이 널브러진 소완을 발로 찬 뒤 두 남자들 쪽으로 턱짓하자, 그들은 그제서야 소완을 끌고갔다.
+PRINTFORMW 「하...하하..」
+PRINTFORMW 「아하하하...하하하..」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No12_ENDING
+SELECTCASE CFLAG:엔딩플래그
+CASE 1
+PRINTFORMW 「역시 그럴 거라 생각했사옵니다.」
+PRINTFORMW 「결국 주인께서 소첩이 그리는 쾌락에서 벗어나지 못한단 걸요.」
+PRINTFORMW 「걱정하지 마시옵소서,」
+PRINTFORMW 「소첩이 영원한 쾌락을... 준비하겠사옵니다.」
+PRINTFORMW 「......」
+PRINTFORMW 「하지만, 그것은 소첩도..흑..마찬가지였나..봅니다..」
+PRINTFORMW 「예..! 소첩은...흑...이제 주인의 것이옵니다..!」
+PRINTFORMW 소완은 눈물을 흘리며 팔을 감싸 당신을 안았다.
+PRINTFORMW 항상 눈을 가늘게 뜨며 음산하기도 하고 알 수 없었던 그녀의 눈은 지금,
+PRINTFORMW 행복감과 순수함으로 가득 찼다.
+PRINTFORMW ............
+PRINTFORMW .........
+PRINTFORMW ......
+PRINTFORMW 그로부터 약간의 시간이 흘렀다.
+PRINTFORMW 당신과 소완은 소파에 나란히 앉아 있었다. 그리고..
+PRINTFORMW 「꿀꺽 꿀꺽」
+PRINTFORMW 「후후후, 누구 자식인지, 정말 잘 먹는구나.」
+PRINTFORMW 소완은 아이에게 모유를 주고 있었다.
+PRINTFORMW 당신과 소완 사이에 태어난 아이 말이다.
+PRINTFORMW 「예? 어머..어찌 그런 말을 하시는지요? 신첩이옵니다. 당연히 맛이 좋지요.」
+PRINTFORMW 「출산 후에도 그렇게 많이 드셔 놓고는..정말, 짖궃사옵니다.」
+PRINTFORMW 그녀는 질린다는 듯 말했지만, 실제로는 웃고 있었다.
+PRINTFORMW 「으아앙!」
+PRINTFORMW 소완이 수유를 그만두자, 아기는 더 달라고 하는지 바로 울음을 터뜨렸다.
+PRINTFORMW 「그만. 이 이상 그렇게 먹어대면 배탈이 날 것이다. 조금만 참거라.」
+PRINTFORMW 소완이 아이를 달래며 등을 토닥이자, 트림을 하고는 곧바로 잠잠해졌다.
+PRINTFORMW 「후후, 착하구나.」
+PRINTFORMW 그러곤 아이가 자는지 확인하고는, 침대로 두고 소파로 돌아와 앉은 뒤, 당신을 바라봤다.
+PRINTFORMW 「...주인.」
+PRINTFORMW 당신을 보자마자 어깨에 얼굴을 파묻고 살며시 당신의 허벅지에 손을 얹은 소완.
+PRINTFORMW 당신이 왜 그러느냐고 묻자, 그녀는 얼굴을 비벼대며 말했다.
+PRINTFORMW 「아무것도 아니옵니다. 그저..」
+PRINTFORMW 「주인의 얼굴을 보는 것 만으로도, 이리도 기쁠 뿐이옵니다.」
+PRINTFORMW 당신은 멋쩍은 듯 볼을 긁었다. 소완은 그런 당신의 모습에 웃었다
+PRINTFORMW 「후후, 예전의 신첩이었다면 상상도 못 했겠지요.」
+PRINTFORMW 「어떻게든 주인을 가지고 싶어 안달이 난 바이오로이드...」
+PRINTFORMW 「주인을 가지기 위해선 무엇이든 할 바이오로이드」
+PRINTFORMW 「하오나, 주인께서 신첩에게 서약의 맹세를 했을 때 부터, 갑자기 생각이 바뀌었사옵니다.」
+PRINTFORMW 「정녕, 주인과 신첩을 해쳐야만, 신첩의 뜻이 이루어질 것이었을까. 하고 말이옵니다.」
+PRINTFORMW 당신은 소완의 말에, 여태껏 보아왔던 소완을 생각한다.
+PRINTFORMW 당신의 음식에 이상한 짓을 하려던 소완,
+PRINTFORMW 다른 바이오로이드는 신경조차 쓰지 않던 소완,
+PRINTFORMW 당신을 가까이 바라보고는, 돌연 부끄러워 말하지 못하던 소완,
+PRINTFORMW 당신을 팔로 감싸안고 고백을 한 소완,
+PRINTFORMW 알몸에 에이프런을 입은 척 하며 짖궃은 장난을 치던 소완,
+PRINTFORMW 소완의 말에, 당신도 설득되었다.
+PRINTFORMW 「후후, 그렇지요?」
+PRINTFORMW 「신첩은, 주인께서 신첩을 사셨을 때부터, 줄곧 주인을 따르고 헌신했사옵니다.」
+PRINTFORMW 「하지만 그 이면에는, 주인을 믿지 못하는 불신을 숨겼나 봅니다.」
+PRINTFORMW 「이 사람이, 과연 나와...하는 그런, 불신을 말이옵니다.」
+PRINTFORMW 소완이 당신을 바라보았다.
+PRINTFORMW 두 눈에는 울먹이는 듯이 눈이 물에 찬 듯 보였다.
+PRINTFORMW 하지만 그러면서도, 입가는 환한 듯이 웃는 얼굴이었다.
+PRINTFORMW 「하오나, 주인께선 그런 신첩을, 끝까지 믿어주셨사옵니다.」
+PRINTFORMW 「신첩이 약을 타 주인을 해하려 했을 때도」
+PRINTFORMW 「다른 이를 돌아보지 못하게 수단방법을 가리지 않을 때도」
+PRINTFORMW 「주인은 그저, 웃으며 신첩을 달랬사옵니다.」
+PRINTFORMW 「신첩이 주인을 해하면 해할 수록, 신첩의 가슴도 찢어지는 것 같았사옵니다.」
+PRINTFORMW 소완은 당신을 돌려세워 꼭 안았다. 당신은 그런 소완을 안아주었다.
+PRINTFORMW 당신의 옷이 약간 젖은 듯한 느낌과 함께, 옷에 대어 잘 들리지 않는 소완의 목소리가 들렸다.
+PRINTFORMW 「하지만 저희는 이렇게, 서로를 바라보며 사랑한다고 할 수 있다는 것이---」
+PRINTFORMW 그리고 고개를 들어 물기 젖은 얼굴로 행복한 표정을 보여주었다.
+PRINTFORMW 「신첩에게는, 더할 나위 없는 행복이옵니다」
+PRINTFORMW 당신을 오랫동안 바라보던 소완은, 당신을 두 팔로 감아 얼굴을 내밀었다.
+PRINTFORMW 「주인...」
+PRINTFORMW 소완의 의도를 모를 리가 없는 당신은, 그대로 소완과 입을 맞췄다.
+PRINTFORMW 「....흐응..」
+PRINTFORMW 입맞춤을 하면서 갑자기 감정이 북받쳤는지, 소완은 키스하면서 코를 훌쩍거렸다.
+PRINTFORMW 당신은 그런 소완에게 괜찮다며 머리를 쓰다듬어주었다.
+PRINTFORMW 욕정은 느껴지지 않는, 순수한 애정으로부터 나오는 키스.
+PRINTFORMW 당신은 소완과 몇번 더 입을 맞추었고, 소완은 그대로 입을 뗐다.
+PRINTFORMW 「아아...후후, 얼굴이 말이 아니로군요.」
+PRINTFORMW 소완은 멋쩍은 듯이 웃으며 손바닥으로 자신의 눈물을 닦았다.
+PRINTFORMW 「주인. 신첩이, 한 가지 부탁을 해도 되겠사옵니까?」
+PRINTFORMW 「주인과 신첩의 아이가 커서, 어른이 되고, 결혼을 하여 손주도 보고,」
+PRINTFORMW 「언젠가, 아무도 없는 땅의 끝자락에서, 바다가 보이는 곳에 나란히 앉아 하늘이 지는 것을 바라보며..」
+PRINTFORMW 「지금의 일을, 그저 추억이라고 생각하며 웃게 될 때 까지, 신첩과 백년해로 하여 주시옵소서.」
+PRINTFORMW 그 말을 한 소완의 얼굴은
+PRINTFORMW 당신이 처음 만났을 때에 쾌락으로 가득 찬 얼굴이 아닌,
+PRINTFORMW 한명의 행복한 여자이자 아내의 모습이었다.
+PRINTFORMW ..
+PRINTFORMW ....
+PRINTFORMW ......
+PRINTFORMW --라는, 그들이 맞이하게 될 수도 있는 미래의 이야기.
+PRINTFORMW 소완 엔딩 No. 1
+PRINTFORMW 
+PRINTFORMW 신혼의 쾌락...?
+RETURN 1
+CASE 2
+PRINTFORMW 당신은 무표정인 소완을 내려다보았다.
+PRINTFORMW 감옥과 같이 미세하게 빛이 내려오는 방 안에서, 소완의 텅 빈 눈이 당신을 응시했다.
+PRINTFORMW 「주인님, 소첩은 주인님의 명령을 기다리고 있었사옵니다.」
+PRINTFORMW 당신은 주머니를 뒤적여 반지를 꺼냈다.
+PRINTFORMW 「주인님..? 그것은..」
+PRINTFORMW 소완의 말을 무시한 채, 당신은 소완의 피멍투성이의 손에 반지를 끼웠다.
+PRINTFORMW 「......」
+PRINTFORMW 소완은 자신의 약지에 끼워진 반지를 멍하니 보았다.
+PRINTFORMW 「소첩이 염원하던 것이었사옵니다. 그런데,」
+PRINTFORMW 「그 어떤 감정도 들지 않사옵니다.」
+PRINTFORMW 그제서야 당신은 형용할 수 업는 희열에 소완의 산발된 머리를 끌어안고 안았다.
+PRINTFORMW 아무런 반응이 없다.
+PRINTFORMW 당신은 소완에게 웃으라고 했다.
+PRINTFORMW 감정이 느껴지지 않는 웃음이었다.
+PRINTFORMW 당신은 소완에게 울라고 했다.
+PRINTFORMW 감정이 느껴지지 않는 흐느낌이었다.
+PRINTFORMW 이제 모든 것이 끝났다.
+PRINTFORMW 그녀의 정신을 완전히 망가뜨렸다
+PRINTFORMW 시도때도 없이 자신을 위협하던 방해꾼 같은 년은 이제 없다.
+PRINTFORMW 살아 있는 인형이나 마찬가지다.
+PRINTFORMW 이제 어떻게 그녀를 가지고 놀까,
+PRINTFORMW 비릿하게 한쪽 입꼬리를 일그러뜨리며, 당신은 그렇게 생각했다.
+PRINTFORMW 소완 엔딩 No. 2
+PRINTFORMW 
+PRINTFORMW 최고의 요리사 장난감
+RETURN 1
+CASE 3
+PRINTFORMW ..
+PRINTFORMW ....
+PRINTFORMW ......
+PRINTFORMW 당신은 온몸에 느껴오는 고통에 정신이 들었다.
+PRINTFORMW 당신은 지금 앉아 있다.
+PRINTFORMW 앞이 보이지 않는다.
+PRINTFORMW 몸은 묶여 있다.
+PRINTFORMW 눈을 감아도 희미하게 느껴질 법한 빛조차 느껴지지 않는다.
+PRINTFORMW 끼이익.
+PRINTFORMW 당신이 혼란스러워한 채 몸을 이리저리 움직이고 있었을 때, 문이 열리는 소리가 들렸다.
+PRINTFORMW 「아까 드셨던 음식은 입에 맞으셨는지요?」
+PRINTFORMW 소완의 목소리였다. 당신은 무슨 짓이냐며 그녀에게 묻고 싶었다.
+PRINTFORMW 하지만 말이 나오지 않았다.
+PRINTFORMW 「소첩은, 노력했사옵니다.」
+PRINTFORMW 그녀의 말에는 약간의 물기가 젖어 있었다.
+PRINTFORMW 「주인께서 소첩을 주먹질하시어도.」
+PRINTFORMW 「주인께서 소첩을 발길질하시어도..!」
+PRINTFORMW 「주인께서 소첩에게 욕을 하시어도」
+PRINTFORMW 「음식을 뱉으시어도」
+PRINTFORMW 「소첩의 몸에 피멍을 들게 하시어도!」
+PRINTFORMW 「소첩은 인내하였사옵니다. 결코 주인이 소첩을 학대하지 않으실 것이라는 것을.」
+PRINTFORMW 「하지만, 소첩의 인내는 부질없게 되어버렸사옵니다.」
+PRINTFORMW 갑자기 공기가 차가워진다. 당신은 저도 모르게 마른침을 삼켰다.
+PRINTFORMW 「어째서, 소첩이 아닌 다른 계집에게 눈이 돌아가신 것이옵니까?」
+PRINTFORMW 「도대체, 왜...왜!!!」
+PRINTFORMW 소완은 절규에 찬 소리를 질렀다.
+PRINTFORMW 당신은 당장 풀어주지 않으면 당신이 사랑하는 바이오로이드를 부르고,
+PRINTFORMW 신고하여 해체해 버리겠다고 말하려 했다.
+PRINTFORMW 하지만, 당신의 말은 들리지 않았다.
+PRINTFORMW 「예, 그 말씀은 이미 예상했사옵니다.」
+PRINTFORMW 갑자기 철을 맞부딪히는 소리가 들렸다.
+PRINTFORMW 그리고 거기에서는, 따뜻한 열과 고기 냄새가 났다.
+PRINTFORMW 그리고..어쨰서인지 당신이 가장 익숙한 냄새도 났다.
+PRINTFORMW 「하오나, 어차피 이제 소첩에게 생이란 부질이 없어졌사옵니다. 그러니..」
+PRINTFORMW 「뭐라도 드시옵소서. 다 드시면 풀어드리겠사옵니다.」
+PRINTFORMW 어째서인지 소완의 말에, 당신은 배가 고파졌다.
+PRINTFORMW 며칠이 지났는지도 모르지만, 확실한 것은 당신의 몸에 힘이 제대로 들어가지 않는다는 것이었다.
+PRINTFORMW 갑자기, 당신은 소완의 음식이 맛있을 것 같다는 생각이 들었다.
+PRINTFORMW 「주인, 아앙..」
+PRINTFORMW 당신의 입 앞에 소완이 숟가락을 내밀었고, 당신은 저항 없이 그것을 받아먹었다.
+PRINTFORMW 그냥 평범한 고기 맛이었다.
+PRINTFORMW 하지만 당신이 익숙한 냄새였다.
+PRINTFORMW 그리고..머리카락이 씹혔다.
+PRINTFORMW 당신은 반사적으로 씹었던 음식물을 뱉었고 헛구역질을 했다.
+PRINTFORMW 「후후, 어이하여 거부하시는지요」
+PRINTFORMW 「주인께서 가장 아끼시는 계집이 싫어지기라도 하신 것이옵니까?」
+PRINTFORMW 「하지만 이미 늦었사옵니다.」
+PRINTFORMW 당신은 저항하고 싶었다.
+PRINTFORMW 하지만 아까와 다르게 몸이 움직이지 않았다.
+PRINTFORMW 점점..당신의 의식이 흐려진다.
+PRINTFORMW 「이제 주인은 소첩에게 빠져서..」
+PRINTFORMW 「아무것도 생각하지 못하고, 소첩이 원하는 대로 움직이게 될 것이옵니다.」
+PRINTFORMW 「아마, 주인이 소첩을 이렇게 만든 것도, 소첩을 원하는 대로 하기 위해서였겠지요?」
+PRINTFORMW 「후후, 대답하지 않으셔도 되옵니다. 어차피 이제 주인은..」
+PRINTFORMW 「소첩만의 남자가 될 테니.」
+PRINTFORMW 당신의 의식은 소완의 말을 끝으로 끊어졌다.
+PRINTFORMW 소완 배드 엔딩
+PRINTFORMW 
+PRINTFORMW 소완의 장난감
+RETURN 1
+ENDSELECT
+RETURN 0
+

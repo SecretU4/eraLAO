@@ -1,0 +1,18 @@
+﻿@MSG_EV_107(ARG, ARG:1)
+SELECTCASE RAND:2
+CASE 0
+PRINTFORML 당신은 볼일이 있어 밖으로 나왔다.
+PRINTFORML  순간, 누군가의 시선이 느껴진다.
+PRINTFORML 당신은 획하고 뒤돌아본다.
+PRINTFORML 당신을 지켜보는 존재는 보이지 않았다.
+PRINTFORMW 가려진 커튼 틈 사이로 %CALLNAME:ARG%(이)가 잠시 보인 것 같았지만, 착각일 것이다.
+RETURN 1
+CASE 1
+PRINTFORMW 당신은 물이나 한 잔 마시려고 부엌으로 가고 있었다.
+PRINTFORMW 부엌으로 걸어가던 도중, 당신은 서늘한 시선을 느끼고 뒤를 돌아보았다.
+PRINTFORMW 애매하게 빛이 통하는 복도의 끝에서, 당신은 누군가가 당신을 지켜보고 있는 것만 같았다.
+PRINTFORMW 혹시, %CALLNAME:ARG%인가?
+PRINTFORMW 당신은 괜히 무서워서 빠른 발걸음으로 밝은 부엌으로 달아났다.
+RETURN 1
+ENDSELECT
+RETURN 0

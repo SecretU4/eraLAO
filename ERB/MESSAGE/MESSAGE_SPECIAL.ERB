@@ -1,0 +1,60 @@
+﻿;함수명: MSG_SHOP_HIDDEN
+;홈 화면 내 특수 출력 메시지
+;FLAG:속박상태 는 MASTER의 부자유 여부만 지정
+;FLAG:히든메시지 = 인게임 캐릭터번호
+;ARG = 선택한 항목 번호
+@MSG_SHOP_HIDDEN(ARG)
+SELECTCASE NO:(FLAG:히든메시지)
+    CASE 7 ;리제
+        SELECTCASE ARG
+            CASE 103 ;출격
+                PRINTDATAW
+                    DATA 「출격이요? 후훗... 전 어디도 가지 않아요, 주인님.」
+                    DATALIST
+                        DATA 「저를 어디로 보내시려고요? 제가 보기 싫으신 건가요? 네? 네? 네?」
+                        DATA 리제가 당신에게 얼굴을 바짝 들이대며 말했다.
+                    ENDLIST
+                    DATALIST
+                        DATA 「제가 없으면 누가 주인님을 돌보겠어요. 후후후...」
+                        DATA 리제는 당신의 말을 듣지 않았다.
+                    ENDLIST
+                    DATALIST
+                        DATA 「주인님과 떨어져 있으라뇨. 다시는 그런 말씀 마세요.」
+                        DATA 리제의 대답은 단호했다.
+                    ENDLIST
+                ENDDATA
+            CASE 104 ;대상변경
+                PRINTDATAW
+                    DATA 「다른 바이오로이드요? 무슨 말씀이세요. 주인님 곁에 있을 수 있는 바이오로이드는 저밖에 없어요.」
+	                DATA 「주인님께 저 말고 다른 바이오로이드가 있을 리가 없잖아요?」
+	                DATA 「후훗... 다른 해충들은 생각하지 마세요. 저만 바라보시면 돼요.」
+	                DATA 「아직도 해충들을 생각하시나요? 너무 슬퍼요, 주인님...」
+                ENDDATA
+            CASE 105 ;상점
+                PRINTDATAW
+                    DATA 「필요한 게 있으시면 저한테 말씀해주세요.」
+	                DATA 「뭐든지 저한테 말씀해주시면 돼요.」
+	                DATA 「후훗... 주인님께서는 손가락 하나 까딱하지 않으셔도 돼요.」
+	                DATA 「제가 모든 걸 챙겨드리는데 더 필요한 게 있으신가요? 욕심쟁이시네요, 주인님. 후후후...」
+                ENDDATA
+            CASE 107 ;헤어진다
+                PRINTDATAW
+                    DATALIST
+                        DATA 「...헤어져요? 어째서죠? 그런 농담... 별로 재미있지 않아요...」
+                        DATA 리제가 색이 바랜 눈동자로 당신을 쳐다보았다.
+                    ENDLIST
+	                DATA 「후훗... 이별이라뇨. 우리는 이제 쭉... 영원히 함께인걸요.」
+                    DATALIST
+	                    DATA 「헤어져요? 절대 안 돼요!」
+                        DATA 리제가 큰 소리로 외쳤다.
+                        DATA 「...소리질러서 죄송해요. 하지만 그런 슬픈 말씀은 마세요. 저한테는 주인님밖에 없어요...」
+                    ENDLIST
+                    DATALIST
+	                    DATA 「안 돼요, 안 돼요, 안 돼요, 안 돼요, 안 돼요...」
+                        DATA 「절대로... 아무데도 보내드리지 않을 거에요.」                 
+                    ENDLIST
+                ENDDATA
+            CASE 108 ;사령관 이름변경
+                PRINTW 지금은 사용할 수 없습니다.
+        ENDSELECT
+ENDSELECT

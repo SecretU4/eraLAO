@@ -1,0 +1,2925 @@
+﻿@IS_M_No32
+RETURN 1
+
+@M_No32_TRAIN_START_0
+PRINTFORMW 「당신이 사령관 각하이십니까?」
+PRINTFORMW 「전 T-8W 발키리라고 합니다.」
+PRINTFORMW 「앞으로 잘 부탁드리겠습니다. 각하」
+CFLAG:조교여부 = 1
+RETURN 1
+
+@M_No32_TRAIN_START_1
+SELECTCASE CSTR:1
+	CASE "Confession"
+		PRINTFORMW 「저, 각하...드릴 말씀이 있습니다.」
+		PRINTFORMW 발키리는 당신의 앞에 서서 당신을 바라보았다.
+		PRINTFORMW 「처음 지휘관 각하를 만났을때는 ,전 그저 각하를 제 주인이라고만 생각했습니다.」
+		PRINTFORMW 「그저 명령하는 쪽과 그 명령을 받아들이는 쪽으로 말입니다.」
+		PRINTFORMW 「하지만 각하께서 저에게 상냥하게 대해주실 때마다 전 두려워지기 시작했습니다.
+		PRINTFORMW 「혹시라도 이 감정이 잘못된건 아닐까 ,저 혼자 착각한게 아닐까」
+		PRINTFORMW 「...혹은 이 감정이 각하에게 크게 민폐를 끼치는건 아닐까라고요」
+		PRINTFORMW 「정말 오랫동안 혼자서 생각해봤습니다.」
+		PRINTFORMW 「하지만, 저 혼자서는 도저히 알 수 없었습니다.」
+		PRINTFORMW 「그래서 전 더 이상 버틸수가 없었습니다.」
+		PRINTFORMW 발키리는 이내 결심한듯 내 품에 살짝 안기며 말했다.
+		PRINTFORMW 「각하」
+		PRINTFORMW 「저를 사랑해주실 수 있습니까?」
+		PRINTFORMW 「...」
+		PRINTFORMW 당신은 품에 살짝 안긴 그녀를 꼭 끌어안으며
+		PRINTFORMW 그녀가 그토록 바래왔을 말을 그녀의 귀에 속삭여 주었다.
+		PRINTFORMW 발키리는 그 말을 듣고 안심한듯 한참 훌쩍이다가
+		PRINTFORMW 쪽
+		PRINTFORMW 행복한 미소로 당신에게 길게 키스하였다.
+		TFLAG:고백함 = 1
+	CASE "Low"
+		A = RAND:4
+		IF A == 0
+			PRINTFORMW 「오셨습니까 각하」
+		ELSEIF A == 1
+			PRINTFORMW 「무슨 일로 부르셨습니까 ,각하」
+		ELSEIF A == 2
+			PRINTFORMW 「각하, 오늘의 일정은 무엇입니까?」
+		ELSEIF A == 3
+			PRINTFORMW 「오늘은 무슨일로 찾아오셨습니까? 각하」
+		ENDIF
+	CASE "High"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「아, 오셨습니까」
+			PRINTFORMW 「그럼 이제 무엇을 하시겠습니까?」
+		ELSEIF A == 1
+			PRINTFORMW 「피곤하시다면 말씀하십시오」
+			PRINTFORMW 「언제라도 쉴수있게 준비하겠습니다.」
+		ELSEIF A == 2
+			PRINTFORMW 「언제나 이 눈으로 각하의 상태를 파악하고 있습니다.」
+			PRINTFORMW 「그러니 안심하시길 바랍니다.」
+		ENDIF
+	CASE "Affection"
+		A = RAND:5
+		IF A == 0
+			PRINTFORMW 「기다렸습니다.」
+			PRINTFORMW 「오늘은 무엇을 하시겠습니까?」
+		ELSEIF A == 1
+			PRINTFORMW 「아, 각하가 오시길 기다렸습니다.」
+			PRINTFORMW 「그럼, 오늘은 뭘 하시겠습니까?」
+		ELSEIF A == 2
+			PRINTFORMW 「전투에는 적합하지 않은 복장입니다만...
+			PRINTFORMW 「자, 잘 어울립니까?」
+			PRINTFORMW 「가, 감사합니다...」
+		ELSEIF A == 3
+			PRINTFORMW 「오셨습니까?」
+			PRINTFORMW 「오늘따라, 더 멋져보이시군요」
+		ELSEIF A == 4
+			PRINTFORMW 「이젠 각하랑 만나는것이 익숙해져버렸군요」
+			PRINTFORMW 「그럼 오늘의 일정은 무엇입니까?」
+		ENDIF
+	CASE "Marryed"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「아, 왔어요?」
+			PRINTFORMW 「저기, 혹시 오늘 큰 일이 없으면 같이...」
+			PRINTFORMW 「ㅇ..아뇨, 아무것도 아니에요..」
+		ELSEIF A == 1
+			PRINTFORMW 「아, 기다렸어요」
+			PRINTFORMW 「다음부턴 이렇게 기다리게 하지 말아주세요」
+			PRINTFORMW 「...혹시라도 안오실까봐 걱정했단 말이에요...」
+		ELSEIF A == 2
+			PRINTFORMW 「왔어요?」
+			PRINTFORMW 발키리는 미소지으며 팔을 벌렸다.
+			PRINTFORMW 당신은 그런 발키리를 꽉 껴안았다.
+			PRINTFORMW 「응, 어서와요♡」
+		ENDIF
+	CASE "Annoyed"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「...네, 오셨습니까 사령관 각하」
+			PRINTFORMW 싸늘한 목소리로 발키리는 마지못해 대답했다.
+		ELSEIF A == 1
+			PRINTFORMW 「급한 일이 아니라면 다시 돌아가주시길 바랍니다.」
+		ELSEIF A == 2
+			PRINTFORMW 「각하, 급한 용무가 아니라면 다시 돌아가시면 안되겠습니까?」
+		ENDIF
+	CASE "Fear"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「ㄴ..네, 부르셨습니까 사령관 각하」
+			PRINTFORMW 당신이 발키리를 부르자, 그녀는 긴장한 얼굴로 찾아왔다.
+		ELSEIF A == 1
+			PRINTFORMW 「오, 오셨습니까..?」
+			PRINTFORMW 발키리는 긴장하고 있었다.
+		ENDIF
+	CASE "Weak"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「흑, 흐윽...」
+			PRINTFORMW 발키리는 당신이 들어오자 겁에 질려 나지막이 중얼거렸다.
+			PRINTFORMW 「너무 아파요...이제 그만해주세요...제발..」
+		ELSEIF A == 1
+			PRINTFORMW 불이 꺼져 어두워진 발키리의 방에 들어가자 당신은 어디선가 중얼거리는것을 들었다.
+			PRINTFORMW 「죽고싶지않아이제안전할거야여긴안전해아무도날괴롭히지않아그사람도날찾지못할거야누구라도좋으니까구해줘왜나한테만그러는거야더이상맞고싶지않아제발누가좀구해줘」
+			PRINTFORMW ...
+			PRINTFORMW 당신은 소리가 들려오는 %TEXTR("옷장 안/침대 밑/커튼 뒤/책상 밑")%에 숨어있던 발키리의%TEXTR("손목/발목")%을 잡고 끌어냈다
+		ENDIF
+	CASE "Break"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 발키리의 방에 문을 열고 들어가자
+			PRINTFORMW 발키리는 어질러진 방안에서 텅빈 눈으로 당신을 바라보며 웃고 있었다.
+			PRINTFORMW 「아, 당신 왔어?」
+			PRINTFORMW 발키리는 당신에게 천천히 다가왔다.
+			PRINTFORMW 「내가 얼마나 기다렸는지 알아?」
+			PRINTFORMW 발키리는 아무것도 비치지 않는 텅빈 눈으로 웃고 있었다.
+			PRINTFORMW 발키리는 당신을 껴안으며 귀에 대고 다정하게 얘기했다.
+			PRINTFORMW 「오늘도 날 행복하게 해줘야해 알겠지?」
+			PRINTFORMW 「여보?」
+		ELSEIF A == 1
+			PRINTFORMW 발키리의 방에 들어가기위해
+			PRINTFORMW 문을 열려고 하자 문이 잠겨 들어가지못했다.
+			PRINTFORMW 결국 열쇠로 문을 열고 들어가자
+			PRINTFORMW 「...」
+			PRINTFORMW 당신은 할말을 잃었다.
+			PRINTFORMW 발키리는 어질러진 방안에서 다리를 끌어안아 울고있는 발키리를 보았다.
+			PRINTFORMW 「아...」
+			PRINTFORMW 발키리는 당신이 자신의 방에 들어온것을 깨닫자
+			PRINTFORMW 초점이 맞춰지지 않은 텅빈 눈으로 당신의 품에 안겨왔다.
+			PRINTFORMW 「여보...있지...나 엄청 무서운 꿈을 꿨어...」
+			PRINTFORMW 「분명 당신은 이렇게나 나한테 잘해주는데...」
+			PRINTFORMW 「꿈속에서 당신이 엄청 무서운 얼굴로 욕하고 때리는거야...」
+			PRINTFORMW 「당연히 꿈인게 분명할텐데, 너무 생생해서 무서웠어...」
+			PRINTFORMW 「당신이 그럴리가 없잖아...」
+			PRINTFORMW 「그렇지?」
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;10개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_TRAIN_END
+SELECTCASE CSTR:1
+	CASE "Low"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「수고하셨습니다 각하, 그럼 이만 가보겠습니다.」
+		ELSEIF A == 1
+			PRINTFORMW 「오늘의 일정은 여기까지입니까?」
+			PRINTFORMW 「그렇군요, 그럼 수고하십시오 각하」
+		ENDIF
+	CASE "High"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「아, 벌써 시간이 이렇게...」
+			PRINTFORMW 「아쉽지만 내일 다시 불러주시기 바랍니다.」
+		ELSEIF A == 1
+			PRINTFORMW 「저기, 내일 또 다시 불러주실 수 있습니까?」
+			PRINTFORMW 「아, 바쁘시다면 괜찮습니다」
+		ENDIF
+	CASE "Affection"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「각하...」
+			PRINTFORMW 발키리는 뭔가 말하려는지 당신을 바라보고있다.
+			PRINTFORMW 「저, 괜찮으시다면 가시기 전에 커피 한잔 마시고가지 않으시겠습니까?」
+			PRINTFORMW 당신은 발키리가 타준 믹스 커피를 마셨다.
+		ELSEIF A == 1
+			PRINTFORMW 「아, 좀더 있다 가셔도 상관없는데...」
+			PRINTFORMW 발키리는 아쉬워보인다.
+		ENDIF
+	CASE "Marryed"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「괜찮으면 여기서 주무시고...」
+			PRINTFORMW 발키리는 얼굴이 붉게 물들어졌다.
+			PRINTFORMW 「아, 아뇨 어서 들어가봐요」
+		ELSEIF A == 1
+			PRINTFORMW 「여보, 잠시만...」
+			PRINTFORMW 발키리는 당신의 얼굴을 잡고 오랫동안 키스했다.
+			PRINTFORMW 이내 만족스런 얼굴로 당신의 얼굴을 놔준후 말했다.
+			PRINTFORMW 「후훗, 이제 가보셔도 돼요」
+		ENDIF
+	CASE "Annoyed"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「각하, 시간이 많이 지났습니다.」
+			PRINTFORMW 「이제 그만 돌아가시기 바랍니다.」
+		ELSEIF A == 1
+			PRINTFORMW 「죄송하지만, 지금부터 청소를 할 예정이라 돌아가셔야겠습니다.」
+		ELSEIF A == 2
+			PRINTFORMW 「이제 그만 가보겠습니다.」
+			PRINTFORMW 「수고하십시오 각하」
+		ENDIF
+	CASE "Fear"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「이, 이제 가시는겁니까...?」
+			PRINTFORMW 「수, 수고하셨습니다」
+		ELSEIF A == 1
+			PRINTFORMW 당신이 문을 열고나가자 발키리는 안도하는 모습을 보였다.
+		ENDIF
+	CASE "Weak"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「윽..흐윽..아으..」
+			PRINTFORMW 당신이 다시 돌아올까봐 발키리는 숨죽여 울고있다.
+		ELSEIF A == 1
+			PRINTFORMW 「윽..흐윽..아으흑..」
+			PRINTFORMW 당신이 문을 열고나가자 몇분뒤 발키리의 방에서 울음소리가 들려왔다.
+		ENDIF
+	CASE "Break"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「아...당신 벌써 나가...?」
+			PRINTFORMW 당신이 나가려하자 텅빈 눈을 한 발키리가 애절하게 당신의 옷깃을 잡았다.
+			PRINTFORMW 「아직 굿나잇 키스도 안했는데...」
+		ELSEIF A == 1
+			PRINTFORMW 「...벌써 가는거야?」
+			PRINTFORMW 발키리는 당신이 떠나는게 싫은지 아무말 없이 당신이 문을 열고 나가는 모습을 텅빈 두 눈으로 좇았다
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM2
+SELECTCASE CSTR:1
+	CASE "Low"
+		A = RAND:4
+		IF A == 0
+			PRINTFORMW 「딱히 잡담은 관심 없습니다..」
+		ELSEIF A == 1
+			PRINTFORMW 당신은 발키리가 뭘 좋아하는지 물어보았다.
+			PRINTFORMW 「좋아하는건 딱히 없습니다만...」
+		ELSEIF A == 2
+			PRINTFORMW 「각하, 그거 아십니까?」
+			PRINTFORMW 「스코프는 사실 생존율을 낮출 뿐입니다.」
+			PRINTFORMW 당신은 처음 알았다며 맞장구쳤다.
+		ELSEIF A == 3
+			PRINTFORMW 「저와 얘기하는것이 즐거우십니까..?」
+		ENDIF
+	CASE "High"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「최근에 좋아하는...생겼습니다.」
+			PRINTFORMW 「음...다음에 말씀드리겠습니다.
+		ELSEIF A == 1
+			PRINTFORMW 「...가끔씩은 이렇게 이야기를 하는것도 나쁘지 않겠군요.」
+		ELSEIF A == 2
+			PRINTFORMW 「각하, 피곤하시진 않으십니까?」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리와 즐겁게 이야기를 주고받았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「제 개조된 눈에 감사할 때가 있습니다.」
+			PRINTFORMW 「덕분에 각하를 조금 더 자세히 볼 수 있으니까요.」
+		ELSEIF A == 1
+			PRINTFORMW 「과거엔 남녀가 같이 있을때 꼭 챙겨와야 하는 게 있었다고 들었습니다만..」
+			PRINTFORMW 「혹시, 뭔지 아십니까?」
+		ENDIF
+	CASE "Marryed"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「응, 듣고있어요 여보」
+			PRINTFORMW 발키리는 행복하게 당신의 이야기를 듣고있다.
+		ELSEIF A == 1
+			PRINTFORMW 「아, 반지말이에요?」
+			PRINTFORMW 「항상 끼고다니고 있어요.」
+			PRINTFORMW 발키리는 반지를 보며 미소짓고 있었다.
+		ENDIF
+	CASE "Annoyed"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「각하」
+			PRINTFORMW 「쓸데없는 잡담은 사양하겠습니다.」
+		ELSEIF A == 1
+			PRINTFORMW 「각하, 언제 돌아가실겁니까?」
+		ELSEIF A == 2
+			PRINTFORMW 「각하, 절 화나게 하지말아주십시오.」
+		ENDIF
+	CASE "Fear"
+		PRINTFORMW %TEXTR("「드, 듣고있습니다 각하」/「그, 그렇습니까..?」")%
+	CASE "Weak"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「...제가 대체 뭘 잘못해서 이러시는 거에요...?」
+			PRINTFORMW 발키리는 덜덜 떨며 떨리는 목소리로 물었다.
+		ELSEIF A == 1
+			PRINTFORMW 「싫어...무서워 제발...」발키리는 겁에 질려 당신의 얘기를 잘 듣지못하고 있다.
+		ENDIF
+	CASE "Break"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「응, 여보 나 듣고있어」
+			PRINTFORMW 발키리는 텅빈 눈으로 행복하게 당신의 이야기를 듣고있다.
+		ELSEIF A == 1
+			PRINTFORMW 「난 내 개조된 눈이 너무 좋아」
+			PRINTFORMW 「덕분에 당신을 더 자세히 들여다 볼 수 있거든」
+			PRINTFORMW 발키리는 소름끼칠 정도로 텅 비어있는 눈으로 턱을 괴고 당신을 깊이 들여다보고있다.
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM3
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리의 %TEXTR("큰 가슴을/엉덩이를/긴 다리를")% 칭찬했다.
+		PRINTFORMW 발키리는 살짝 기분이 나빠진 모양이다.
+		PRINTFORMW %TEXTR("「각하, 그런 농담은 그만두십시오.」/「각하, 농담이 조금 지나치시군요.」")%
+	CASE "High"
+		PRINTFORMW 당신은 발키리의 %TEXTR("큰 가슴을/엉덩이를/긴 다리를")% 칭찬했다.
+		PRINTFORMW 발키리는 조금 당황하며 대답했다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「조금 부끄럽지만 감사합니다 각하...」
+		ELSEIF A == 1
+			PRINTFORMW 「각하께선 정말 짓궂으시군요」
+			PRINTFORMW 발키리는 얼굴을 붉혔다.
+			PRINTFORMW 「...그래도 감사합니다.」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리의 %TEXTR("큰 가슴을/엉덩이를/긴 다리를")% 칭찬했다.
+		PRINTFORMW 발키리는 그 얘기를 듣자 얼굴을 붉게 물들였다.
+		PRINTFORMW %TEXTR("「각하께서 그렇게 말씀하시니 저도 기분이 좋군요」/「칭찬 감사합니다 각하」")%
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리의 %TEXTR("큰 가슴을/엉덩이를/긴 다리를")% 칭찬했다.
+		PRINTFORMW 발키리는 당신에게 미소 지었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「여보, 오늘따라 적극적이네요?」
+		ELSEIF A == 1
+			PRINTFORMW 「후훗, 10번 넘겨봐야 정신차릴거에요?」
+			PRINTFORMW 발키리는 장난스럽게 웃고있다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리의 %TEXTR("큰 가슴을/엉덩이를/긴 다리를")% 칭찬했다.
+		PRINTFORMW 발키리는 당신을 노려봤다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「각하, 신고를 원하십니까?」
+		ELSEIF A == 1
+			PRINTFORMW 「제가 언제까지 참아줄거라고 생각하시는 겁니까?」
+		ELSEIF A == 2
+			PRINTFORMW 「...후우」
+			PRINTFORMW 발키리는 화를 참아내려는듯 심호흡하였다.
+		ENDIF
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리의 %TEXTR("큰 가슴을/엉덩이를/긴 다리를")% 칭찬했다.
+		PRINTFORMW 발키리는 당신의 심기가 거슬리지않게 긴장하며 대답했다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「치, 칭찬 감사합니다 사령관 각하」
+		ELSEIF A == 1
+			PRINTFORMW 발키리는 무언가 말을 꺼내려다가
+			PRINTFORMW 「...」
+			PRINTFORMW 이내 입을 다물었다.
+		ENDIF
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리의 %TEXTR("큰 가슴을/엉덩이를/긴 다리를")% 칭찬했다.
+		PRINTFORMW 발키리는 겁에 질리며 고개를 떨궜다.
+		PRINTFORMW %TEXTR("「감..사합니다...」/「칭찬...감사합니다...」")%
+	CASE "Break"
+		PRINTFORMW 당신은 발키리의 %TEXTR("큰 가슴을/엉덩이를/긴 다리를")% 칭찬했다.
+		PRINTFORMW 발키리는 텅빈 눈으로 미소지으며 당신의 손을 잡았다.
+		PRINTFORMW %TEXTR("「여보, 오늘따라 적극적이네?」/「당신도 그렇게 생각해?」")%
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM4
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 살며시 발키리의 손을 잡았다.
+		PRINTFORMW 발키리는 의아한 모양이다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「각하?」
+			PRINTFORMW 「갑자기 손은 왜...」
+		ELSEIF A == 1
+			PRINTFORMW 「제 손에 뭐가 묻었습니까?」
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 살며시 발키리의 손을 쥐었다.
+		PRINTFORMW 발키리의 얼굴이 조금 붉어진 것 같다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「각하, 조금 갑작스럽군요.」
+		ELSEIF A == 1
+			PRINTFORMW 「제 손같은건 별로 재미없을 거라 생각합니다만...」
+			PRINTFORMW 「...즐거우십니까?」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 살며시 발키리의 손을 잡고 손깍지를 끼었다.
+		PRINTFORMW 발키리의 얼굴을 붉게 물들이며, 표정이 풀어졌다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「손만 쥐었는데도 이렇게 안심이 된적은 처음입니다.」
+		ELSEIF A == 1
+			PRINTFORMW 「각하는 손이 참 따스하시군요」
+		ELSEIF A == 2
+			PRINTFORMW 발키리는 손깍지가 풀리지않게 더 세게 쥐었다.
+			PRINTFORMW 「...아프진 않으십니까?」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 살며시 발키리의 손등을 쓰다듬었다.
+		PRINTFORMW 발키리는 미소지으며 당신을 바라보았다.
+		A = RAND:1
+		IF A == 0
+			PRINTFORMW 「여보...」
+			PRINTFORMW 당신은 역으로 손을 잡혀 손각지에 끼어졌다.
+			PRINTFORMW 「역시, 이렇게 있는게 더 편안해요.」
+			PRINTFORMW 발키리는 따뜻한 눈길로 당신을 바라보았다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 살며시 발키리의 손을 잡았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 발키리는 얼굴을 조금 찌푸리며 손을 빼내었다.
+		ELSEIF A == 1
+			PRINTFORMW 「...」
+			PRINTFORMW 발키리는 손이 닿자 손을 뒤로 숨겼다.
+		ENDIF
+		PRINTFORMW %TEXTR("「불필요한 신체접촉은 거부하겠습니다.」/「각하, 전 지금 바쁩니다.」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 살며시 발키리의 손을 잡았다.
+		PRINTFORMW 발키리는 놀랐는지 일순간 주먹을 쥐었다가 이내 다시 풀었다.
+		PRINTFORMW %TEXTR("「가, 갑자기 왜 그러십니까...?」/「제, 제 손은 갑자기 왜...」")%
+	CASE "Weak"
+		PRINTFORMW 당신은 살며시 발키리의 손을 잡았다.
+		PRINTFORMW 발키리는 몸을 흠칫 떨며 손을 빼내었다.
+		PRINTFORMW %TEXTR("「때리지마세요...잘못했어요...손은 제발...」/「각하...제가 잘못했으니 제발...」")%
+	CASE "Break"
+		PRINTFORMW 당신은 살며시 발키리의 손을 잡았다.
+		PRINTFORMW 발키리는 텅빈 눈으로 당신을 쳐다봤다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「여보 왜 그래?」
+			PRINTFORMW 「아」
+			PRINTFORMW 「내 손이 잡고 싶었던 거구나?」
+		ELSEIF A == 1
+			PRINTFORMW 「내 손이 그렇게 잡고싶었어?」
+			PRINTFORMW 발키리는 당신의 손을 휘감아 잡았다.
+			PRINTFORMW 「후훗, 사실 나도 손 잡고싶었어」
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM5
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리의 머리를 쓰다듬었다.
+		PRINTFORMW 발키리는 영문을 모르겠다는 표정이다.
+		PRINTFORMW %TEXTR("「무슨 일이십니까?」/「갑자기 머리는 왜...」/「혹시 먼지라도 묻었습니까?」/「...?」")%
+	CASE "High"
+		PRINTFORMW 당신은 발키리의 머리를 쓰다듬었다.
+		PRINTFORMW 발키리의 얼굴이 조금 붉어진 것 같다.
+		PRINTFORMW %TEXTR("「조금, 당혹스럽군요...」/「이러시면 곤란해집니다...」/「음, 감사합니다..?」")%
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리의 머리를 쓰다듬었다.
+		PRINTFORMW 발키리는 얼굴을 붉게 물들이며, 표정이 풀어졌다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「각하...」
+			PRINTFORMW 「제 머리가 그리 좋으십니까..?」
+		ELSEIF A == 1
+			PRINTFORMW 「왠지 나른해지는군요...」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리의 머리를 쓰다듬었다.
+		PRINTFORMW 발키리는 편안하게 머리를 맡기고 미소를 지었다.
+		PRINTFORMW %TEXTR("「이젠 익숙해져버렸네요.」/당신이 쓰다듬기 쉽게 발키리는 고개를 내밀었다./「앞으로도 자주 부탁할게요 여보」")%
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리의 머리를 쓰다듬었다.
+		PRINTFORMW %TEXTR("발키리는 기분이 잡친것 같다./발키리는 조금 화가 난것 같다.")%
+		PRINTFORMW %TEXTR("「그만하십시오」/「각하, 자꾸 왜 그러십니까」/발키리는 머리를 살짝 옮겨 손을 피했다.")%
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리의 머리를 쓰다듬었다.
+		PRINTFORMW %TEXTR("발키리는 긴장하고 있었다./발키리는 동공이 흔들렸다.")%
+		PRINTFORMW %TEXTR("「가, 감사합니다..」/「각하...? 갑자기 왜...」")%
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리의 머리를 쓰다듬었다.
+		PRINTFORMW 발키리의 몸이 흠칫 떨렸다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「각하...읍..구윽...」
+			PRINTFORMW 발키리는 손으로 입을 가리고 구토를 가까스로 참아냈다.
+		ELSEIF A == 1
+			PRINTFORMW 「때, 때리지말아주세요...」
+			PRINTFORMW 발키리는 굉장히 혼란스러워 하고있다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 발키리의 머리를 쓰다듬었다.
+		PRINTFORMW 발키리는 텅빈 눈으로 미소를 머금고있다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「응, 원하는만큼 쓰다듬어줘...」
+			PRINTFORMW 발키리는 당신의 손길을 느끼고 있다.
+		ELSEIF A == 1
+			PRINTFORMW 「분명 당신이 매일 해주는걸텐데도」
+			PRINTFORMW 「가끔 왜 이렇게 낯설게 느껴지는지 모르겠어」
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM6
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리의 옆구리를 찔렀다.
+		PRINTFORMW 발키리는 움찔거리며 작은 신음소리를 내었다.
+		PRINTFORMW %TEXTR("「흣!」/「읏!」/「윽!」/「히익!」")%
+		PRINTFORMW 「가, 각하, 그만해주십시오!」
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리의 옆구리를 찔렀다.
+		PRINTFORMW 발키리는 간지러웠는지 웃기 시작했다.
+		PRINTFORMW 「자, 잠깐 뭐하시는..」
+		PRINTFORMW 「풉! 푸흡! 그,그만..!」
+		PRINTFORMW 당신은 발키리가 한참 웃는걸 보고나서야 그만뒀다.
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리의 옆구리를 찔렀다.
+		PRINTFORMW 발키리는 당신의 손을 잡고 밀어냈다.
+		PRINTFORMW %TEXTR("「각하, 체면을 차리십시오」/「각하, 이런 짓은 그만두십시오.」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리의 옆구리를 찔렀다.
+		PRINTFORMW %TEXTR("발키리는 긴장하고있다가 예상치못한 습격에 놀라 목소리가 흐트러졌다./발키리는 깜짝 놀라 넋을 잃었다가 재빨리 정신을 차렸다.")%
+		PRINTFORMW 「읏! 가, 각하 왜 그러십니까...?」
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리의 옆구리를 찔렀다.
+		PRINTFORMW %TEXTR("발키리는 하얗게 질리며 그대로 굳었다./발키리는 소스라치게 놀라며 덜덜 떨었다.")%
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「흐익...!」
+			PRINTFORMW 「자, 잘못했어요 아파요 때리지마세요 제발 그만...」
+		ELSEIF A == 1
+			PRINTFORMW 「제, 제가 잘못했어요...그러니 제발...」
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 발키리의 옆구리를 찔렀다.
+		PRINTFORMW 발키리는 텅빈 눈으로 당신에게 미소짓고있다.
+		PRINTFORMW 「아하하」
+		PRINTFORMW 「당신, 너무 함부로 건들면 나중에 감당못하게 될지도 몰라?」
+		PRINTFORMW 발키리는 의미심장한 말을 하며 그저 웃고있다.
+	CASE "High"
+		PRINTFORMW 당신은 발키리의 옆구리를 찔렀다.
+		PRINTFORMW 발키리는 움찔거리며 작은 신음소리를 내었다.
+		PRINTFORMW %TEXTR("「흣!」/「읏!」/「윽!」/「히익!」")%
+		PRINTFORMW 「가, 각하, 그만해주십시오!」
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리의 옆구리를 찔렀다.
+		PRINTFORMW 발키리는 간지러웠는지 웃기 시작했다.
+		PRINTFORMW 「자, 잠깐 뭐하시는..」
+		PRINTFORMW 「풉! 푸흡! 그,그만..!」
+		PRINTFORMW 당신은 발키리가 한참 웃는걸 보고나서야 그만뒀다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM7
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리에게 무릎베개를 해주겠다고 했다.
+		PRINTFORMW 발키리는 당황하며 거절했다.
+		PRINTFORMW %TEXTR("「각하, 죄송하지만 전 피곤하지 않습니다.」/「음...다음에 부탁드려도 되겠습니까...?」")%
+	CASE "High"
+		PRINTFORMW 당신은 발키리에게 무릎베개를 해주겠다고 했다.
+		PRINTFORMW 발키리는 거절하려다 마지못해 당신의 허벅지에 누웠다.
+		PRINTFORMW 조금 자세가 뻣뻣해보인다.
+		PRINTFORMW %TEXTR("「각하, 이런 행동은 조금...」/「저, 역시 이건 조금...」")%
+		PRINTFORMW 발키리는 귓볼까지 새빨개져 있다.
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리에게 무릎베개를 해주겠다고 했다.
+		PRINTFORMW 발키리는 당신의 허벅지에 편안하게 누워 당신을 바라보았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「이렇게 있으니 마치 연인같군요...」
+		ELSEIF A == 1
+			PRINTFORMW 「밑에서 바라보니 더 멋있으시군요.」
+			PRINTFORMW 발키리는 당신의 턱을 부드럽게 쓰다듬었다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리에게 무릎베개를 해주겠다고 했다.
+		PRINTFORMW 발키리는 당신의 허벅지에 편안하게 누워 허벅지를 쓰다듬고있다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「당신이랑 결혼하기전에도 이랬었는데...」
+			PRINTFORMW 「기억나죠 여보?」
+		ELSEIF A == 1
+			PRINTFORMW 발키리는 눈을 감고 휴식을 즐기고있다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리에게 무릎베개를 해주겠다고 했다.
+		PRINTFORMW 발키리는 거절했다.
+		PRINTFORMW %TEXTR("「아뇨, 괜찮습니다.」/「아직 할일이 남아있으니 사양하겠습니다 각하」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리에게 무릎베개를 해주겠다고 했다.
+		PRINTFORMW 발키리는 거절하지 못하고 긴장하며 당신의 허벅지에 누웠다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「부, 불편하시다면 부디 말씀해주십시오」
+			PRINTFORMW 발키리는 굉장히 뻣뻣한 자세로 누워있다.
+		ELSEIF A == 1
+			PRINTFORMW 발키리는 당신과 눈이 마주치지 않게 옆으로 누워있다.
+		ENDIF
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리에게 무릎베개를 해주겠다고 했다.
+		PRINTFORMW 발키리는 거절하지 못하고 덜덜 떨며 당신의 허벅지에 누웠다.
+		PRINTFORMW 「힉..히익...!」
+		PRINTFORMW 당신이 발키리의 머리를 쓰다듬자 발키리는 하얗게 질리면서 온몸을 떨었다.
+	CASE "Break"
+		PRINTFORMW 당신은 발키리에게 무릎베개를 해주겠다고 했다.
+		PRINTFORMW 발키리는 쓰러지듯이 당신의 허벅지에 누웠다.
+		PRINTFORMW 「우리 결혼하기전에도 항상 이랬었는데...」
+		PRINTFORMW 「당신도 기억나지?」
+		PRINTFORMW %TEXTR("발키리는 텅빈 눈으로 미소지으며 당신을 올려다보고 있다./발키리는 손을 들어올려 당신의 얼굴을 부드럽게 쓰다듬었다.")%
+		PRINTFORMW 하지만 당신은 발키리와 결혼한 적이 없으니 아무 대답도 하지 못했다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM8
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리에게 무릎베개를 해달라고 부탁했다.
+		PRINTFORMW 발키리는 당황하며 거절했다.
+		PRINTFORMW 「각하, 피곤하시다면 제 허벅지보단 저쪽에 있는 베개에 누우시는게 더 좋을 것 같습니다.」
+	CASE "High"
+		PRINTFORMW 당신은 발키리에게 무릎베개를 해달라고 부탁했다.
+		PRINTFORMW 발키리는 거절하려다 마지못해 당신을 허벅지에 눕혔다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「제 딱딱한 허벅지보단 베개가 나을거라 생각합니다만...」
+		ELSEIF A == 1
+			PRINTFORMW 발키리는 당신을 쳐다보다가
+			PRINTFORMW 「...!」
+			PRINTFORMW 당신과 눈이 마주치자 얼굴을 붉게 물들이며 급히 고개를 돌렸다.
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리에게 무릎베개를 해달라고 부탁했다.
+		PRINTFORMW 발키리는 미소지으며 흔쾌히 허락했다.
+		PRINTFORMW 「많이 피곤하신가 보군요.」
+		PRINTFORMW 당신은 누워서 발키리를 쳐다보자
+		PRINTFORMW 발키리는 당신의 머리를 부드럽게 쓰다듬었다.
+		PRINTFORMW 「각하와의 이 시간이 오래오래 갔으면 좋겠습니다...」
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리에게 무릎베개를 해달라고 부탁했다.
+		PRINTFORMW 발키리는 사랑스러운 표정으로 당신을 허벅지에 눕혔다.
+		PRINTFORMW 「많이 피곤하세요?」
+		PRINTFORMW 발키리는 당신의 머리를 부드럽게 쓰다듬었다.
+		PRINTFORMW 「조금 주무셔도 돼요」
+		PRINTFORMW 「여보가 힘든 모습은 보고싶지않으니까요」
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리에게 무릎베개를 해달라고 부탁했다.
+		PRINTFORMW 발키리는 냉정하게 거절했다.
+		PRINTFORMW %TEXTR("「거절하겠습니다.」/「각하, 정말 꼭 그러셔야 되겠습니까?」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리에게 무릎베개를 해달라고 부탁했다.
+		PRINTFORMW 발키리는 거절하지 못하고 긴장하며 당신을 허벅지에 눕혔다.
+		PRINTFORMW %TEXTR("발키리는 잔뜩 긴장했는지 허벅지에 힘이 잔뜩 들어가 있었다. /「부, 불편하시다면 부디 말씀해주십시오」")%
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리에게 무릎베개를 해달라고 부탁했다.
+		PRINTFORMW 발키리는 떨리는 목소리로 허락했다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「헉..허억...흡...」
+			PRINTFORMW 발키리는 호흡곤란이라도 온듯 불규칙적으로 호흡하였다.
+		ELSEIF A == 1
+			PRINTFORMW 당신은 너무나도 딱딱하게 굳은 허벅지에 목이 아파 금방 일어났다.
+			PRINTFORMW 「자, 잘못했어요...」
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 발키리에게 무릎베개를 해달라고 부탁했다.
+		PRINTFORMW 발키리는 쓰러지듯이 당신을 허벅지에 눕혔다.
+		PRINTFORMW 「이렇게 행복한 날만 계속 됐으면 좋겠어...」
+		PRINTFORMW 발키리는 분명 평소처럼 텅빈 눈으로 웃고있는데
+		PRINTFORMW 왠지 모르게 슬픈 표정으로 당신을 바라보고 있다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM9
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리를 껴안았다.
+		PRINTFORMW 발키리는 당황하며 당신을 살짝 밀어냈다.
+		PRINTFORMW %TEXTR("「...안됩니다.」/「쓸데없는 신체접촉은 거부하겠습니다.」/「각하, 죄송하지만 떨어져 주십시오.」/「이러한 행동을 하시는 이유를 모르겠습니다.」")%
+	CASE "High"
+		PRINTFORMW 당신은 발키리를 껴안았다.
+		PRINTFORMW 발키리는 얼굴을 붉게 물들이며, 당신을 살짝 껴안았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「부, 부끄럽습니다」
+			PRINTFORMW 「남이 보면 뭐라고 생각할지...」
+		ELSEIF A == 1
+			PRINTFORMW 「정말이지 어리광이 심하시군요...」
+			PRINTFORMW 「하지만 나쁘다곤 생각하지 않았습니다.」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리를 껴안았다.
+		PRINTFORMW 발키리도 당신을 껴안았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「제 품이 그리우셨나 보군요」
+			PRINTFORMW 「저도 그리웠습니다.」
+		ELSEIF A == 1
+			PRINTFORMW 「네, 잔뜩 안아드리겠습니다...」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리를 껴안았다.
+		PRINTFORMW 발키리는 당신의 가슴에 얼굴을 묻었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「제 품이 많이 그리우셨나 보네요」
+			PRINTFORMW 「네, 잔뜩 안아주세요」
+		ELSEIF A == 1
+			PRINTFORMW 「네, 오늘도 잔뜩 안아주세요」
+			PRINTFORMW 발키리는 당신의 품에 행복하게 안겨있다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리를 껴안았다.
+		PRINTFORMW 발키리는 한숨을 내쉬며, 당신을 밀어냈다.
+		PRINTFORMW %TEXTR("「하아...각하, 이러한 행동을 하시는 이유가 대체 뭡니까?」/「각하, 신고를 원하십니까?」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리를 껴안았다.
+		PRINTFORMW 발키리는 온몸을 긴장하며 당신에게 안겨있다.
+		PRINTFORMW 「읏...」
+		PRINTFORMW 「지휘관 각하, 부디 놓아..주셨으면 합니다...」
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리를 껴안았다.
+		PRINTFORMW 발키리는 겁에 질린채로 당신에게 안겨있다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「힉...제, 제발...」
+			PRINTFORMW 「제발...놔주세요...살려주세요...」
+		ELSEIF A == 1
+			PRINTFORMW 어느순간 발키리에게서 아무 반응이 없길래 살펴보니
+			PRINTFORMW 「...」
+			PRINTFORMW 발키리는 안긴채로 기절하고 있었다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 발키리를 껴안았다.
+		PRINTFORMW 발키리도 당신을 꼬옥 껴안았다.
+		PRINTFORMW 「당신에게 난 이 정도로 소중한 존재구나...」
+		PRINTFORMW 「응, 물론 당신을 믿고있었어...」
+		PRINTFORMW 「그냥」
+		PRINTFORMW 「내가 착각하고 있었던거야...」
+		PRINTFORMW 발키리는 혼자 뭐라고 중얼거리고 있다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM10
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 발키리는 당황하며 당신의 팔을 풀어냈다.
+		PRINTFORMW %TEXTR("「...놓아주시기 바랍니다.」/「이러시면 안됩니다.」/「신체접촉은 자제해달라고 말하지 않았습니까?」")%
+	CASE "High"
+		PRINTFORMW 당신은 발키리의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 발키리는 깜짝 놀란듯하다.
+		PRINTFORMW %TEXTR("「ㄱ..각하, 이러지 마십시오」/「...아직 낮입니다.」/「누가 보면 어쩌려고 그러십니까...」")%
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 긴 머리카락 사이로 좋은 향기가 났다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 발키리는 잠시 그대로 있다가 뒤로 돌아 당신을 껴안았다.
+			PRINTFORMW 「조금만 더...」
+			PRINTFORMW 발키리는 당신을 더 세게 껴안았다.
+			PRINTFORMW 「아주 조금만 더, 이렇게 있겠습니다...」
+		ELSEIF A == 1
+			PRINTFORMW 「이젠 느낌만으로 각하인지 아닌지도 구별할 수 있게 됐습니다.」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 긴 머리카락 사이로 좋은 향기가 났다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 발키리는 잠시 그대로 있다가 뒤로 돌아 당신을 껴안았다.
+			PRINTFORMW 「조금만 더...」
+			PRINTFORMW 발키리는 당신을 더 세게 껴안았다.
+			PRINTFORMW 「아주 조금만 더, 이렇게 있을게요...」
+		ELSEIF A == 1
+			PRINTFORMW 「이젠 느낌만으로 당신인지 아닌지도 구별할 수 있게 됐어요.」
+			PRINTFORMW 「어때요 대단하지않아요?」
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 발키리는 당신의 팔을 풀고, 당신에게서 떨어졌다.
+		PRINTFORMW %TEXTR("「각하, 제발 좀 그만하십시오.」/「각하, 전 지금 각하의 장난을 받아드릴 생각이 없습니다.」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 발키리는 선채로 굳어있다.
+		PRINTFORMW 「가, 각하, 왜 그러십니까..?」
+		PRINTFORMW 「제가 혹시 뭔가 잘못이라도...」
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 발키리는 벌벌 떨고있다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「자, 잘못했어요...때리지 말아주세요...제발...」
+		ELSEIF A == 1
+			PRINTFORMW 「헉..허억...」
+			PRINTFORMW 발키리는 겁에 질렸는지 호흡을 가쁘게 내쉬고있다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 발키리의 뒤에서 그녀를 껴안았다.
+		PRINTFORMW 발키리는 텅빈 눈으로 골똘히 뭔가를 생각하고 있었다.
+		PRINTFORMW 「그러고보니 당신이 백허그를 언제 나한테 처음해줬더라...」
+		PRINTFORMW 「음...분명 당신이 나한테 처음 고백했던 날이었지?」
+		PRINTFORMW 당신은 발키리에게 먼저 고백한적이 없어 당황했다.
+		PRINTFORMW 「당신이 기억못해도 나는 괜찮아」
+		PRINTFORMW 발키리는 뒤로 돌아 순식간에 당신을 껴안으며 얘기했다.
+		PRINTFORMW 「내가 전부 기억할테니 당신은 아무것도 기억못해도 괜찮아」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM11
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 누워서 발키리를 불렀다.
+		PRINTFORMW 발키리는 당황하며 거절했다.
+		PRINTFORMW %TEXTR("「각하 아무리 그래도 그건 안된다고 생각합니다.」/「각하, 전 피곤하지않으니 각하께서 피곤하시다면 주무시기 바랍니다.」/「의미를 모르겠습니다 각하」")%
+	CASE "High"
+		PRINTFORMW 당신은 누워서 발키리를 불렀다.
+		PRINTFORMW 발키리는 거절하려다 마지못해 당신의 옆에 누웠다.
+		PRINTFORMW 「각하, 역시 이건 조금...!」
+		PRINTFORMW 발키리는 눕자마자 얼굴을 붉게 물들이며 바로 일어났다.
+	CASE "Affection"
+		PRINTFORMW 당신은 누워서 발키리를 불렀다.
+		PRINTFORMW 발키리는 자연스럽게 당신의 옆에 누웠다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「각하의 옆에 이렇게 누워있으니 평소보다 더 두근거리는군요」
+		ELSEIF A == 1
+			PRINTFORMW 「앗, 조금만 더 이대로 있어주십시오.
+			PRINTFORMW 발키리는 당신이 일어나려하자
+			PRINTFORMW 당신의 옷깃을 잡아당기며 말했다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 누워서 발키리를 불렀다.
+		PRINTFORMW 발키리는 편안하게 당신의 옆에 누워 몸을 가까이 붙였다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「이렇게 옆에 있어주는게 저한텐 가장 큰 선물이에요 여보.」
+		ELSEIF A == 1
+			PRINTFORMW 「여보, 많이 피곤해 보이세요」
+			PRINTFORMW 「자」
+			PRINTFORMW 「이리로 들어오세요」
+			PRINTFORMW 발키리는 당신을 따뜻하게 감싸안았다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 누워서 발키리를 불렀다.
+		PRINTFORMW 발키리는 일순간 표정이 변하며 매몰차게 거절했다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「각하, 농담이 지나치셔도 너무 지나치시군요」
+			PRINTFORMW 「아무리 여기에 저밖에 없다하셔도 지켜야할 체면은 지켜주십시오.」
+		ELSEIF A == 1
+			PRINTFORMW 「각하, 아직 할일이 남아있지 않으십니까?」
+		ENDIF
+	CASE "Fear"
+		PRINTFORMW 당신은 누워서 발키리를 불렀다.
+		PRINTFORMW 발키리는 혹여나 당신의 심기를 거슬리지않도록 조심스럽게 누웠다.
+		PRINTFORMW %TEXTR("「머, 먼저 일어나보겠습니다...」/발키리는 당신이 멍때린 사이 먼저 일어났다.")%
+	CASE "Weak"
+		PRINTFORMW 당신은 누워서 발키리를 불렀다.
+		PRINTFORMW 발키리는 몸을 떨며, 당신의 옆에 누웠다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「훕..흐으윽...」
+			PRINTFORMW 발키리는 흐느끼며 두 팔로 몸을 감쌌다.
+		ELSEIF A == 1
+			PRINTFORMW 「싫어...」
+			PRINTFORMW 발키리는 천천히 당신에게서 조금 떨어졌다
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 누워서 발키리를 불렀다.
+		PRINTFORMW 발키리는 천천히 당신의 옆에 누웠다.
+		PRINTFORMW 「나는 당신만 있으면 돼」
+		PRINTFORMW 「만약 당신이 내 곁을 떠난다해도」
+		PRINTFORMW 「나는 끝까지 당신을 기다릴게」
+		PRINTFORMW 발키리는 소름끼칠 정도로 텅 비어있는 눈으로 당신의 옆에 꼭 달라붙어있다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM12
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 발키리는 상당히 곤란해 보인다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「각하, 호의는 감사합니다만...」
+			PRINTFORMW 「이러시면 곤란합니다.」
+		ELSEIF A == 1
+			PRINTFORMW 「각하, 장난이 심하시군요.」
+		ELSEIF A == 2
+			PRINTFORMW 「각하, 이러지 말아주십시오.」
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 발키리의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 발키리는 부끄러운것 같다.
+		PRINTFORMW %TEXTR("「기쁘지만 역시 아직은 부끄럽습니다...」/「너, 너무 급하신 것 아닙니까?」")%
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리의 %TEXTR("볼/이마/쇄골/손등")%에 입을 맞췄다.
+		PRINTFORMW 발키리는 얼굴을 붉게 물들이며, 당신의 얼굴을 쓰다듬었다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「각하와의 기억할 추억이 늘었군요.」
+		ELSEIF A == 1
+			PRINTFORMW 「전 제가 이 정도로 행복해줄은 몰랐습니다.」
+			PRINTFORMW 「제게 이런 행복을 주셔서 정말 감사합니다 각하」
+		ELSEIF A == 2
+			PRINTFORMW 「후훗, 저도 해드리겠습니다.」
+			PRINTFORMW 발키리는 당신에게 입을 맞췄다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리의 %TEXTR("볼/이마/쇄골/손등")%에 입을 맞췄다.
+		PRINTFORMW 발키리는 얼굴을 붉게 물들이며, 당신의 얼굴을 쓰다듬었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「기억해야할 소중한 추억이 하나 더 늘어났네요.」
+		ELSEIF A == 1
+			PRINTFORMW 「후훗, 저도 해드릴게요.」
+			PRINTFORMW 발키리는 당신에게 입을 맞췄다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 발키리는 경멸하는 표정으로 당신의 얼굴을 밀어냈다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「미쳤습니까?」
+			PRINTFORMW 「전 각하에게 정말 실망했습니다.」
+		ELSEIF A == 1
+			PRINTFORMW 「...」
+			PRINTFORMW 발키리는 당신에게서 멀리 떨어졌다.
+		ENDIF
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 발키리는 긴장하고있다가
+		PRINTFORMW 당신의 입이 몸에 닿자 화들짝 놀랐다.
+		PRINTFORMW 「가, 각하?!」
+		PRINTFORMW 발키리는 다시 긴장하며 말했다.
+		PRINTFORMW 「갑자기 왜...그러십니까..?」
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 발키리는 당신의 입이 닿자 흐느끼고 있다.
+		PRINTFORMW %TEXTR("「싫어..제발...이러지 말아주세요...」/「이런거 싫어...대체 저한테 왜 이러시는거에요....")%
+	CASE "Break"
+		PRINTFORMW 당신은 발키리의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
+		PRINTFORMW 발키리는 텅빈 눈으로 당신이 입을 맞춘 부위를 천천히 문지르며 웃고 있다.
+		PRINTFORMW 「후훗, 당신이 주는 선물이구나?」
+		PRINTFORMW 발키리는 당신의 팔을 잡고 팔짱을 꼈다.
+		PRINTFORMW 「굳이 이런거 안하더라도」
+		PRINTFORMW 「당신이 내 곁에 있어주는게 가장 큰 선물이야」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM13
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리의 배를 주물럭 거렸다.
+		PRINTFORMW 발키리는 움찔거리며 당신의 손을 떼어냈다.
+		PRINTFORMW 「읏...」
+		PRINTFORMW %TEXTR("「이러지 말아주십시오.」/「그만하십시오.」")%
+	CASE "High"
+		PRINTFORMW 당신은 발키리의 군더더기없는 배를 주물럭 거렸다.
+		PRINTFORMW 발키리의 얼굴이 조금 붉어진거 같다
+		PRINTFORMW 「읏..!」
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「제 배같은건 만져도 재미없을거라 생각합니다만...」
+			PRINTFORMW 「...즐거우십니까?」
+		ELSEIF A == 1
+			PRINTFORMW 「가, 각하! 남들이 보면 어쩌시려고..!」
+		ELSEIF A == 2
+			PRINTFORMW 「이런걸 좋아하시다니...정말 특이하시군요.
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리의 배를 쓰다듬었다.
+		PRINTFORMW 발키리는 몸에 힘을 빼고 당신의 손을 받아들이고 있다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「후훗, 어느새 익숙해지고 말아버렸군요.」
+		ELSEIF A == 1
+			PRINTFORMW 「각하의 손은 이렇게나 따스했었군요」
+		ELSEIF A == 2
+			PRINTFORMW 「아...왠지는 몰라도 기분이 이상해집니다...」
+			PRINTFORMW 발키리는 얼굴을 붉히고 미소짓고있다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리를 무릎에 앉히고 배를 쓰다듬었다.
+		PRINTFORMW 그러자 발키리는 편안하게 당신의 품안에 살짝 누웠다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「아, 그렇게 만지시면...」
+			PRINTFORMW 발키리는 움찔거렸다.
+			PRINTFORMW 「가, 간지럽단 말이에요.」
+		ELSEIF A == 1
+			PRINTFORMW 「당신 손은 언제나 따뜻하네요...」
+			PRINTFORMW 발키리는 당신의 품에 행복하게 누워있다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리의 배를 만지려고 했다.
+		PRINTFORMW 발키리는 손이 닿기전에 간단히 피했다.
+		PRINTFORMW %TEXTR("「각하, 체면을 지키십시오.」/「각하, 쓸데없는 신체접촉은 자제해주십시오.」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리의 배를 주물럭 거렸다.
+		PRINTFORMW %TEXTR("발키리는 당신의 너무 갑작스러운 행동에 그대로 굳었다./발키리는 긴장한 탓에 거절하지 못하고 당신에게 배를 주물러졌다.")%
+		PRINTFORMW 「으..으윽..」
+		PRINTFORMW %TEXTR("「가, 각하 그만해주십시오...」/발키리는 아무 소리도 못하고 주물러지고 있다.")%
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리의 배를 주물럭 거렸다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「시, 싫어...!!」
+			PRINTFORMW 발키리는 당신이 배를 주물럭거릴때마다 무서운지 호흡이 흐트러지고있다.
+		ELSEIF A == 1
+			PRINTFORMW 「흡..흐윽...」
+			PRINTFORMW 발키리는 입을 틀어막고 울고있다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 발키리의 배를 주물럭 거렸다.
+		PRINTFORMW 발키리는 텅빈 눈으로 배가 만져지는 것을 보고만 있다.
+		PRINTFORMW 「응? 갑자기 내 배는 왜?」
+		PRINTFORMW 「당신한테 만져지는거라면 괜찮긴한데...」
+		PRINTFORMW 어째선지 발키리는 몸을 살짝 떨며 배에 힘을 주고 있었다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM14
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리의 귀를 살짝 깨물었다.
+		PRINTFORMW 「윽!」
+		PRINTFORMW 발키리는 놀랐는지 당신을 밀어냈다.
+		PRINTFORMW %TEXTR("「각하, 이러지 말아주십시오.」/「각하, 불필요한 행동은 자제해주십시오.」")%
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리의 귀를 상냥하게 깨물었다.
+		PRINTFORMW 발키리는 작게 한숨을 흘렸다.
+		PRINTFORMW 「흐읏...」
+		PRINTFORMW %TEXTR("「가, 각하, 제 귀는 먹을게 아닙니다...」/「이, 이런건 밤에 부탁드립니다...」")%
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리의 귀를 상냥하게 깨물었다.
+		PRINTFORMW 발키리는 익숙한지 편안한 얼굴로 깨물려지고 있다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「...당신이라면 10번 이상도... 괜찮아요...」
+		ELSEIF A == 1
+			PRINTFORMW 「이제는 편안할 정도에요」
+			PRINTFORMW 발키리는 당신을 껴안으며 말했다.
+			PRINTFORMW 「당신도 그렇지 않아요?」
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리의 귀를 살짝 깨물었다.
+		PRINTFORMW 발키리는 귀를 문지르며 당신을 노려봤다.
+		PRINTFORMW %TEXTR("「각하, 아무리 각하라 하셔도 이건 좀 아닌것 같습니다.」/「제가 언제까지 참아줄거라고 생각하시는 겁니까?」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리의 귀를 살짝 깨물었다.
+		PRINTFORMW 「윽...」
+		PRINTFORMW 발키리는 귀를 깨물리자 그대로 굳어버렸고
+		PRINTFORMW 당신이 그만둘때까지 억지로 버티고있다.
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리의 귀를 살짝 깨물었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「히익...아, 아파요...그만...」
+			PRINTFORMW 발키리는 뭐라 중얼거렸지만, 당신은 신경쓰지않고 계속 귀를 깨물었다.
+		ELSEIF A == 1
+			PRINTFORMW 「...」
+			PRINTFORMW 어느순간 발키리에게서 아무 반응이 없길래 살펴보니 발키리는 기절하고 있었다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 발키리의 귀를 살짝 깨물었다.
+		PRINTFORMW 발키리는 당신이 귀를 깨무는것을 받아들이고 있다.
+		PRINTFORMW 「요즘 꿈때문에 너무 힘들어...」
+		PRINTFORMW  발키리는 당신에게 안겼다./「...당신은 나 안때릴거지...?」발키리는 소름끼칠 정도로 텅 비어있는 눈으로 당신을 바라보고 있다.
+	CASE "High"
+		PRINTFORMW 당신은 발키리의 귀를 살짝 깨물었다.
+		PRINTFORMW 「윽!」
+		PRINTFORMW 발키리는 놀랐는지 당신을 밀어냈다.
+		PRINTFORMW %TEXTR("「각하, 이러지 말아주십시오.」/「각하, 불필요한 행동은 자제해주십시오.」")%
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM15
+SELECTCASE CSTR:1
+	CASE "First/Low"
+		PRINTFORMW 당신은 발키리의 입술에 상냥하게 입술을 맞췄다.
+		PRINTFORMW 예상하지 못한 첫키스에 발키리는 굳어버렸다.
+		PRINTFORMW 「...」
+		PRINTFORMW 이윽고 발키리는 조용히 당신에게 말했다.
+		PRINTFORMW 「각하」
+		PRINTFORMW 「물론 저도 각하를 조금은 마음에 두고는 있었습니다만...」
+		PRINTFORMW 「하지만 좀더...」
+		PRINTFORMW 발키리는 눈시울을 붉혔다.
+		PRINTFORMW 「마, 마음의 준비가 되고나면 하려고...」
+		PRINTFORMW 「...」
+		PRINTFORMW 발키리는 손으로 얼굴을 가리고는 더 이상 말을 하지않았다.
+	CASE "First/High"
+		PRINTFORMW 당신은 발키리의 입술에 상냥하게 입술을 맞췄다.
+		PRINTFORMW 예상하지 못한 첫키스에 발키리는 굳어버렸다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「이윽고 발키리는 조용히 당신에게 말했다.」
+		PRINTFORMW 「사실 나름대로 저도 생각중이긴 했습니다만...」
+		PRINTFORMW 「설마 이 정도로 빨리 키스하게 될줄은 예상치도 못했습니다...」
+		PRINTFORMW 「조금 빠르긴하지만」
+		PRINTFORMW 발키리는 아쉬워보였지만
+		PRINTFORMW 당신에게 미소지었다.
+		PRINTFORMW 「각하께서도 제가 마음에 드셔서 하신걸테니」
+		PRINTFORMW 「전 각하의 결정에 따르겠습니다.」
+	CASE "First/Affection"
+		PRINTFORMW 「각하? 갑자기 왜 가까이 오시는...」
+		PRINTFORMW 당신은 발키리의 입술에 상냥하게 입술을 맞췄다.
+		PRINTFORMW 발키리는 잠깐 놀랐지만 이내 얼굴을 붉게 물들이고 당신을 받아들였다.
+		PRINTFORMW 「후훗」
+		PRINTFORMW 「각하께서 먼저 해주실 날을 기다리고 있었습니다.」
+		PRINTFORMW 발키리는 얼굴을 붉게 물들이고 상기된 표정으로
+		PRINTFORMW 가슴에 손을 올렸다.
+		PRINTFORMW 「제가 상상했던것보다 훨씬 행복하고 두근거리는군요.」
+		PRINTFORMW 발키리는 당신을 바라보며 말했다.
+		PRINTFORMW 「역시 제겐 수많은 추억 중에서도 가장 소중한건, 각하와의 추억입니다.」
+		PRINTFORMW 「 앞으로도 저에게 이런 행복한 추억들을 만들어 주시겠습니까...?」
+	CASE "First/Marryed"
+		PRINTFORMW 당신은 발키리의 입술에 상냥하게 입술을 맞췄다.
+		PRINTFORMW 발키리는 오랫동안 기다렸다는 듯이 당신을 적극적으로 받아들였다.
+		PRINTFORMW 「후훗」
+		PRINTFORMW 「요즈음 이 이상 행복할수는 없다고 생각하고 있었어요.」
+		PRINTFORMW 「그런데 당신은 언제나 제게 그 이상을 주시네요 여보」
+		PRINTFORMW 발키리는 흥분으로 붉게 물든 얼굴로
+		PRINTFORMW 당신에게 몇번이나 더 키스했다.
+		PRINTFORMW 「아직도 꿈만 같아요.」
+		PRINTFORMW 「이렇게나 좋은 일이 계속 일어나도 되는걸까요?」
+		PRINTFORMW 「아, 이상해요...」
+		PRINTFORMW 「어째서 이렇게 기쁜 일만...」
+		PRINTFORMW 발키리는 자신의 기분을 주체할 수 없는지
+		PRINTFORMW 행복한 표정을 감추지 못하고 있다.
+	CASE "First/Annoyed"
+		PRINTFORMW 당신은 발키리의 입술에 입술을 맞췄다.
+		PRINTFORMW 원치 않았던 첫키스에 발키리는 굳어버렸다.
+		PRINTFORMW 「각하께서는 정말 최악이십니다.」
+		PRINTFORMW 발키리는 입을 손등으로 가리고는
+		PRINTFORMW 굉장히 화가 난 목소리로 당신에게 말했다.
+		PRINTFORMW 「각하에게 조금이나마 기대했던 제가 바보같이 느껴질 정도입니다.」
+		PRINTFORMW 곧 발키리는 너무 화가 난 나머지 무표정이 되었다.
+	CASE "First/Fear"
+		PRINTFORMW 당신은 발키리의 입술에 입술을 맞췄다.
+		PRINTFORMW 「힉......」
+		PRINTFORMW 겁에 질려있던 발키리는 당신에게 키스 당하자
+		PRINTFORMW 겁먹은 표정으로 당신에게서 멀어져 갔다.
+	CASE "First/Weak"
+		PRINTFORMW 당신은 발키리의 입술에 입술을 맞췄다.
+		PRINTFORMW 「대체...왜...나만...흑 싫어...」
+		PRINTFORMW 발키리는 당신에게 키스당한 사실을 깨닫자 눈물을 흘리며 흐느끼기 시작했다.
+		PRINTFORMW 「웁...그우웨엑....」
+		PRINTFORMW 그러다 갑자기 비틀거리며 입을 틀어막고 바닥에 구토하기 시작했다.
+	CASE "First/Break"
+		PRINTFORMW 당신은 발키리의 입술에 상냥하게 입술을 맞췄다.
+		PRINTFORMW 발키리는 초점이 안맞는 눈으로 미소지으며 당신에게 말했다
+		PRINTFORMW 「아, 맞다」
+		PRINTFORMW 「내가 당신하고 첫키스를 언제 했었더라?」
+		PRINTFORMW 「맞아, 분명 결혼식때 처음 키스했어」
+		PRINTFORMW 「그때 나 엄청 행복했었다?」
+		PRINTFORMW 「당신도 행복했었지?」
+		PRINTFORMW 당신은 발키리와 결혼은 커녕 오늘 처음으로 발키리에게 키스했다.
+		PRINTFORMW 「부끄러워서 말 못하는거야?」
+	CASE "Low"
+		PRINTFORMW 당신은 발키리의 입술에 상냥하게 입술을 맞췄다.
+		PRINTFORMW 발키리는 깜짝 놀라며 당신을 밀어냈다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「각하, 마음은 알겠지만」
+			PRINTFORMW 「너무 급하신것이 아닐까 생각되는군요.」
+		ELSEIF A == 1
+			PRINTFORMW 「각하, 이런 장난은 하지않는게 좋다고 생각합니다.」
+		ELSEIF A == 2
+			PRINTFORMW 「각하께선 조금 자중하실 필요가 있습니다.」
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 발키리의 입술에 상냥하게 입술을 맞췄다.
+		PRINTFORMW 발키리는 키스가 끝나자 얼굴을 붉게 물들이고 입술을 매만졌다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「이건 각하의 선물인거군요.」
+			PRINTFORMW 「이 선물만큼은 언제 받아도 새로운 느낌입니다...」
+		ELSEIF A == 1
+			PRINTFORMW 「각하의 선물이군요」
+			PRINTFORMW 「하지만 이런 선물은 저에게만 해주셨음 좋겠습니다...」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리의 입술에 상냥하게 입술을 맞췄다.
+		PRINTFORMW 당신이 키스를 끝내려하자, 발키리는 당신에게 가까이 붙어 떨어지지 않았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「...각하라면 저는 10번 이상도... 괜찮습니다.」
+			PRINTFORMW 발키리는 그렇게 말하며 키스를 끝냈다.
+		ELSEIF A == 1
+			PRINTFORMW 「저는 각하만 계시면 됩니다.」
+			PRINTFORMW 발키리는 당신을 껴안았다.
+			PRINTFORMW 「각하께서도 절 소중히 해주셨으면 합니다...」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리의 입술에 상냥하게 입술을 맞췄다.
+		PRINTFORMW 당신이 키스를 끝내려하자, 발키리는 당신에게 가까이 붙어 떨어지지 않았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「...당신이라면 저는 10번 이상도...괜찮아요.」
+			PRINTFORMW 발키리는 그렇게 말하며 키스를 끝냈다.
+		ELSEIF A == 1
+			PRINTFORMW 「저는 당신만 있으면 돼요.」
+			PRINTFORMW 발키리는 당신을 껴안았다.
+			PRINTFORMW 「그냥 제 옆에 있는것만으로도 행복하거든요...」
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리의 입술에 입술을 맞췄다.
+		PRINTFORMW 발키리는 입술이 닿자마자, 당신을 밀어내고, 역겨운 표정으로 입을 손등으로 문질렀다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「각하, 정말 최악이군요.」
+		ELSEIF A == 1
+			PRINTFORMW 「각하, 미쳤습니까?」
+			PRINTFORMW 발키리는 싸늘하게 당신을 노려보고있다.
+		ENDIF
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리의 입술에 입술을 맞췄다.
+		PRINTFORMW 「히익...」
+		PRINTFORMW 발키리는 당신에게 키스당하자 겁먹은 표정으로 몸을 떨었다.
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리의 입술에 입술을 맞췄다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「시...싫어...어째서...」
+			PRINTFORMW 발키리는 당신에게 키스당하자 입을 가리고 덜덜 떨었다.
+		ELSEIF A == 1
+			PRINTFORMW 「진짜 싫어...대체 왜...!」
+			PRINTFORMW 그 사실이 믿기지 않은듯 입을 가리고 덜덜 떨고있다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 발키리의 입술에 상냥하게 입술을 맞췄다.
+		PRINTFORMW 발키리는 텅빈 눈을 살며시 감고 당신의 키스를 받아들였다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「아 정말 행복해...」
+			PRINTFORMW 발키리는 텅빈 눈으로 미소지으며 허공을 바라보고있다.
+		ELSEIF A == 1
+			PRINTFORMW 「이런 날이 오길 항상 기다렸어...」
+			PRINTFORMW  발키리는 당신의 얼굴을 잡고 여러번 키스했다.
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;17개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM16
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리의 목덜미를 핥았다.
+		PRINTFORMW 발키리는 매우 당황한것 같다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「가, 각하!」
+			PRINTFORMW 「이러시면 곤란합니다!」
+		ELSEIF A == 1
+			PRINTFORMW 「각하, 신체접촉은 부디 자제해달라고 부탁하지 않았습니까?」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리의 목덜미를 핥았다.
+		PRINTFORMW 발키리는 작게 한숨을 흘렸다.
+		PRINTFORMW 「...흐읏」
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「...혹시 챙기셨습니까?」
+			PRINTFORMW 「그래서 신호를 주시는 것이겠죠...?」
+		ELSEIF A == 1
+			PRINTFORMW 「이, 이런건 밤에 부탁드립니다...」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리의 목덜미를 핥았다.
+		PRINTFORMW 발키리는 편안하게 받아들이고 있다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「추억할만한 기억이 또 하나 늘었네요.」
+			PRINTFORMW 「전부 당신 덕분이에요...」
+		ELSEIF A == 1
+			PRINTFORMW 「후훗, 오늘따라 공격적이시네요」
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리의 목덜미를 핥았다.
+		PRINTFORMW 발키리는 정색하며 당신에게서 벗어났다.
+		PRINTFORMW %TEXTR("「각하, 자꾸 귀찮게 하지 말아주십시오.」/「각하, 이런 짓은 각하께서 아끼시는 분에게만 하십시오.」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리의 목덜미를 핥았다.
+		PRINTFORMW 발키리는 긴장한 탓에 당신에게서 벗어나지 못했다.
+		PRINTFORMW 「읏...」
+		PRINTFORMW 「이..이러지 마십시오...」
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리의 목덜미를 핥았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「제발 이러지마세요...」
+			PRINTFORMW 당신을 밀어내려했지만 발키리는 당신이 두려워서 밀어내지 못했다.
+		ELSEIF A == 1
+			PRINTFORMW 「으..으윽...」
+			PRINTFORMW 발키리는 벗어나려했지만
+			PRINTFORMW 「힉! 자, 잘못했어요!!」
+			PRINTFORMW 당신은 목을 살짝 깨물자 겁에 질렸다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 발키리의 목덜미를 핥았다.
+		PRINTFORMW 발키리는 텅빈 눈으로 목을 핥아지고 있다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「이상해... 분명 저번에도 당신이 해줬는데...」
+			PRINTFORMW 「왜 이렇게 낯설고 이상하게 느껴지는지 모르겠어...」
+			PRINTFORMW 발키리는 갑자기 두 팔로 자신을 감싸앉아, 혼자 중얼거리고 있다.
+		ELSEIF A == 1
+			PRINTFORMW 「신호 주는거야?」
+			PRINTFORMW  발키리는 당신을 더 세게 껴안았다.
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 발키리의 목덜미를 핥았다.
+		PRINTFORMW 발키리는 매우 당황한것 같다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「가, 각하!」
+			PRINTFORMW 「이러시면 곤란합니다!」
+		ELSEIF A == 1
+			PRINTFORMW 「각하, 신체접촉은 부디 자제해달라고 부탁하지 않았습니까?」
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM17
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리의 등을 손가락으로 훑었다.
+		PRINTFORMW 발키리는 매우 놀라며, 뒤로 돌아 당신을 바라봤다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「각하, 장난이 너무 지나치십니다.」
+		ELSEIF A == 1
+			PRINTFORMW 「각하, 이러지 마십시오」
+			PRINTFORMW 「정말로 신고를 원하시는겁니까?」
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리의 등을 손가락으로 훑었다.
+		PRINTFORMW 발키리는 작게 한숨을 흘렸다.
+		PRINTFORMW 「...흐읏」
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「...혹시 챙기셨습니까? 그, 그런거라면 괜찮습니다...」
+		ELSEIF A == 1
+			PRINTFORMW 「...제가 뭐든지 허용한다고 생각하지 말아 주십시오.」
+			PRINTFORMW 「10번 이상은...안됩니다.」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리의 등을 손가락으로 훑었다.
+		PRINTFORMW 발키리는 등이 훑어질때마다, 편안하게 몸에 힘을 풀었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「당신의 손길은 이제 편안하게 느껴질 정도에요...」
+		ELSEIF A == 1
+			PRINTFORMW 「여보, 혹시 신호 주시는건 아니죠?」
+			PRINTFORMW 발키리는 기대하며 웃고있다.
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리의 등을 손가락으로 훑었다.
+		PRINTFORMW 발키리는 약간 신경질적으로 손가락을 밀어냈다
+		PRINTFORMW %TEXTR("「각하, 자꾸 귀찮게 하지 말아주십시오.」/「각하께선 정도를 지키셔야할 필요가 있습니다.」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리의 등을 손가락으로 훑었다.
+		PRINTFORMW %TEXTR("발키리는 당신의 너무 갑작스러운 행동에 그대로 굳었다./발키리는 긴장한 탓에 거절하지 못하고 당신에게 등을 훑어졌다.")%
+		PRINTFORMW 「읏...으윽...」
+		PRINTFORMW 발키리는 소름이 돋았지만
+		PRINTFORMW 당신이 그만둘때까지 억지로 버티고있다.
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리의 등을 손가락으로 훑었다.
+		PRINTFORMW 「시, 싫...어...」
+		PRINTFORMW 발키리는 뭐라 중얼거렸지만, 당신은 신경쓰지않고 등을 훑었다./「윽...우으윽...」
+		PRINTFORMW 당신이 손가락을 움직일때마다 몸이 덜덜 떨리고있다.
+	CASE "Break"
+		PRINTFORMW 당신은 발키리의 등을 손가락으로 훑었다.
+		PRINTFORMW 발키리는 텅빈 눈으로 등을 훑어지고 있다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「어? 지금은 좀 곤란한데...」
+			PRINTFORMW 「아직 일기 다 못썼단 말이야.」
+			PRINTFORMW 「응, 조금만 더 기다려줘 여보?」
+			PRINTFORMW 당신이 몰래 발키리의 일기장을 들여다보자
+			PRINTFORMW 거기엔 무서울정도로 많은 토끼가 그려져있었다.
+		ELSEIF A == 1
+			PRINTFORMW 「흣!」
+			PRINTFORMW 발키리는 얼굴을 붉히며 당신을 바라보았다.
+			PRINTFORMW 「진짜 짓궃다니깐...」
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 발키리의 등을 손가락으로 훑었다.
+		PRINTFORMW 발키리는 매우 놀라며, 뒤로 돌아 당신을 바라봤다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「각하, 장난이 너무 지나치십니다.」
+		ELSEIF A == 1
+			PRINTFORMW 「각하, 이러지 마십시오」
+			PRINTFORMW 「정말로 신고를 원하시는겁니까?」
+		ENDIF
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM18
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 발키리는 당신의 행동에 살짝 기분이 나빠진 모양이다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「각하, 이건 신체접촉의 수준을 넘었습니다.」
+		ELSEIF A == 1
+			PRINTFORMW 「각하, 대체 왜 그러시는겁니까?」
+		ELSEIF A == 2
+			PRINTFORMW 「자중하십시오.」
+			PRINTFORMW 발키리는 무표정으로 말하고 있다.
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 발키리의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 발키리는 깜짝 놀라며, 당신을 천천히 밀어냈다.
+		PRINTFORMW %TEXTR("「각하, 이런 행동은 자제해달라고 하지않았습니까?」/「각하, 굉장히 당혹스럽군요.」")%
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 발키리는 부드럽게 당신을 끌어안았다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「각하께서 이러시면 안됩니다.」
+			PRINTFORMW 이내 발키리는 미소지었다.
+			PRINTFORMW 「...그래도 가끔씩은 괜찮겠지요.」
+		ELSEIF A == 1
+			PRINTFORMW 「「네, 각하께서 원하신다면 꼬옥 안아드리겠습니다.」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 발키리는 당신을 품에 안으며 머리를 쓰다듬었다.
+		PRINTFORMW 섬유 유연제 향기 사이로
+		PRINTFORMW 미세하게 화약 냄새가 났다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「피곤해 보이시네요.」
+			PRINTFORMW 「자, 제 품이라도 괜찮다면 푹 쉬어주세요.」
+		ELSEIF A == 1
+			PRINTFORMW 「후훗, 마치 아기같네요...」
+			PRINTFORMW 발키리는 그러다 갑자기 얼굴이 붉게 물들었다.
+			PRINTFORMW 「아, 아니 딱히 원한다는건...」
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리에게 가슴으로 안아달라고 부탁했다.
+		PRINTFORMW 발키리는 당신을 혐오스러우면서도 안쓰럽게 쳐다보며 거절했다.
+		PRINTFORMW 「각하, 제발 정신좀 차리십시오.」
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 발키리는 당신의 행동에 그대로 얼었다.
+		PRINTFORMW 「왜, 왜 그러십니까...?」
+		PRINTFORMW 「이러지 말아주십시오...」
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 발키리는 온몸이 후들후들 떨리고있다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「왜...대체 왜...?」
+			PRINTFORMW 발키리는 당신의 행동을 납득하지못하고있다.
+		ELSEIF A == 1
+			PRINTFORMW 「제발...놔주세요...왜 이러시는거에요...」
+			PRINTFORMW 당신을 밀어내려했지만, 발키리는 팔에 힘을 주지못했다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 발키리의 가슴에 얼굴을 묻었다.
+		PRINTFORMW 발키리는 텅빈 눈으로 웃으며 당신을 끌어안았다.
+		PRINTFORMW 「이러고 있으면 당신을 온몸으로 느낄 수 있어서 너무 좋아...」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM19
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 발키리는 충격을 받은것같다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「가, 각하...」
+			PRINTFORMW 「어째서 그런 심한 말씀을...」
+		ELSEIF A == 1
+			PRINTFORMW 「제가..잘못했습니다...」
+		ENDIF
+	CASE "High"
+		PRINTFORMW 당신은 발키리에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 발키리는 점점 안색이 안좋아지고 있다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「가, 각하...」
+			PRINTFORMW 「어째서 그런 심한 말씀을...」
+		ELSEIF A == 1
+			PRINTFORMW 발키리는 고개를 푹 숙이고 당신의 욕을 듣고있다.
+		ENDIF
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 발키리는 당신의 갑작스러운 욕설에 큰 충격을 받았는지, 눈시울이 붉어졌다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「가, 각하...어째서...」
+			PRINTFORMW 「흑...너무 심하십니다...」
+			PRINTFORMW 발키리는 눈물을 흘리고 있다.
+		ELSEIF A == 1
+			PRINTFORMW 「흑..흐윽...」
+			PRINTFORMW 발키리는 고개를 푹 숙이고 눈물을 훔치고 있다.
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 발키리는 당신의 갑작스러운 큰 충격을 받았는지, 눈물을 흘리고 있다.
+		PRINTFORMW 「여, 여보...갑자기 왜 그러세요...」
+		PRINTFORMW 발키리는 몸을 떨며 울음을 터뜨리고 있다.
+		PRINTFORMW 「흑...흐윽...제가 더 잘할테니까 이제 그만해주세요...」
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 발키리는 침묵하고 당신을 노려보고 있다.
+		PRINTFORMW 「...각하 제가 어떤 부분에서 잘못한 부분에 대해서만 말씀해주십시오.」
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 발키리는 약하게 몸을 떨고 있다.
+		PRINTFORMW 「죄, 죄송합니다...」
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 발키리는 구석에서 벌벌 떨고있다.
+		PRINTFORMW 「살려주세요다신안그럴게요제발살려주세요」
+		PRINTFORMW 발키리가 계속해서 중얼거렸지만 당신의 목소리에 묻혀 잘 들리지 않았다.
+	CASE "Break"
+		PRINTFORMW 당신은 발키리에게 소리를 지르며 욕을 했다.
+		PRINTFORMW 발키리의 텅빈 눈에서 눈물이 흘러내리고 있다.
+		PRINTFORMW 「여, 여보...내가 잘못했어...」
+		PRINTFORMW 발키리는 애절하게 용서를 빌고 있다.
+		PRINTFORMW 「나, 나 버리지마...내가 더 잘할테니까 응?」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM20
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리의 뺨을 때렸다.
+		PRINTFORMW 발키리는 당신을 두려워하는 눈빛으로 바라보고 있다.
+		PRINTFORMW 「가, 각하..?」
+		PRINTFORMW 「갑자기...어째서...?」
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리의 뺨을 때렸다.
+		PRINTFORMW 발키리는 당신의 행동이 믿기지않는지 넋을 잃었다.
+		PRINTFORMW 「여, 여보...?」
+		PRINTFORMW 「갑자기...왜...」
+		PRINTFORMW 발키리는 눈물을 뚝뚝 흘리고있다.
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리의 뺨을 때렸다.
+		PRINTFORMW 발키리는 당신을 두려워하는 눈빛으로 바라보고 있다.
+		PRINTFORMW 「가, 각하..?」
+		PRINTFORMW 「갑자기...어째서...?」
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리의 뺨을 때렸다.
+		PRINTFORMW 발키리는 눈물을 흘리며 노려보려했지만 이내 눈을 피했다.
+		PRINTFORMW 「......죄송합니다...」
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리의 뺨을 때렸다.
+		PRINTFORMW 발키리는 당신에게 뺨을 맞자 용서를 빌고있다.
+		PRINTFORMW 「잘못했어요때리지마세요아파요그만때려주세요제발...」
+		PRINTFORMW 발키리는 울면서 뭐라고 말하고있지만 잘 들리지 않았다.
+	CASE "Break"
+		PRINTFORMW 당신은 발키리의 뺨을 때렸다.
+		PRINTFORMW 발키리의 텅빈 눈에서 눈물이 흘러나오고 있다.
+		PRINTFORMW 「여, 여보...내가 잘못했어...」
+		PRINTFORMW 발키리는 덜덜 떨며 용서를 빌고 있다.
+		PRINTFORMW 「내가 더 노력할테니까...나 버리지 말아줘...」
+	CASE "High"
+		PRINTFORMW 당신은 발키리의 뺨을 때렸다.
+		PRINTFORMW 발키리는 당신을 두려워하는 눈빛으로 바라보고 있다.
+		PRINTFORMW 「가, 각하..?」
+		PRINTFORMW 「갑자기...어째서...?」
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리의 뺨을 때렸다.
+		PRINTFORMW 발키리는 당신을 두려워하는 눈빛으로 바라보고 있다.
+		PRINTFORMW 「가, 각하..?」
+		PRINTFORMW 「갑자기...어째서...?」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM21
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리의 배에 주먹을 날렸다.
+		PRINTFORMW 발키리는 고통스러운 얼굴로 쓰러졌다.
+		PRINTFORMW 「윽...케헥...카학...」
+		PRINTFORMW 「자, 잘못...했습니다...」
+	CASE "High"
+		PRINTFORMW 당신은 발키리의 배에 주먹을 날렸다.
+		PRINTFORMW 발키리는 고통스러운 얼굴로 쓰러졌다.
+		PRINTFORMW 「윽...케헥...카학...」
+		PRINTFORMW 「가, 갑자기 왜...제가, 잘못했습니다...」
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리의 배에 주먹을 날렸다.
+		PRINTFORMW 발키리는 고통스러운 얼굴로 쓰러졌다.
+		PRINTFORMW 「윽...케헥...카학...」
+		PRINTFORMW 「제가...뭘 잘못했길래...」
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리의 배에 주먹을 날렸다.
+		PRINTFORMW 발키리는 고통스러운 얼굴로 쓰러져 당신을 바라보고 있다.
+		PRINTFORMW 「흑..여보...제발..이러지 마세요...제발...」
+		PRINTFORMW 발키리는 끝까지 당신의 손을 꼬옥 잡고 있다.
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리의 배에 주먹을 날렸다.
+		PRINTFORMW 발키리는 쓰러졌지만, 당신을 경멸하는 눈빛으로 바라보고 있다.
+		PRINTFORMW 「큭...이젠...폭력까지 행사하는겁니까...?」
+		PRINTFORMW 「제가 잊을거라고 생각하지 마십시오...!」
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리의 배에 주먹을 날렸다.
+		PRINTFORMW 발키리는 당신에게 배를 얻어맞자 쓰러진채로 용서를 빌고있다.
+		PRINTFORMW 「으윽...잘...못했습니다...」
+		PRINTFORMW 발키리는 아파서 그런지 소리를 잘 내지못했다.
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리의 배에 주먹을 날렸다.
+		PRINTFORMW 발키리는 당신에게 배를 얻어맞자 쓰러진채로 용서를 빌고있다.
+		PRINTFORMW 「잘못했어요때리지마세요아파요그만때려주세요제발...」
+		PRINTFORMW 발키리는 울면서 뭐라고 말하고있지만 아파서 그런지 목소리가 잘 들리지 않았다.
+	CASE "Break"
+		PRINTFORMW 발키리의 배에 주먹을 날렸다.
+		PRINTFORMW 발키리는 고통스러운 얼굴로 쓰러졌다.
+		PRINTFORMW 「내...가...더 노력할게...버리지 말아줘...」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_COM22
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리를 발로 걷어 찼다.
+		PRINTFORMW 발키리는 당신을 쓰러져서 두려워하는 눈빛으로 바라보고 있다.
+		PRINTFORMW 「윽! 가, 각하...」
+		PRINTFORMW 「어..어째서...」
+	CASE "High"
+		PRINTFORMW 당신은 발키리를 발로 걷어 찼다.
+		PRINTFORMW 발키리는 당신을 쓰러져서 두려워하는 눈빛으로 바라보고 있다.
+		PRINTFORMW 「윽...가, 각하...」
+		PRINTFORMW 「잘못했습니다 부디 선처를...」
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리를 발로 걷어 찼다.
+		PRINTFORMW 발키리는 당신을 쓰러져서 두려워하는 눈빛으로 바라보고 있다.
+		PRINTFORMW 「윽...」
+		PRINTFORMW 「제가...뭘 잘못...했길래...」
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리를 발로 걷어 찼다.
+		PRINTFORMW 발키리는 고통스러운 얼굴로 쓰러져 당신을 바라보고 있다.
+		PRINTFORMW 「여, 여보...제발...그만해주세요...」
+		PRINTFORMW 「제가...좀더 힘낼테니까...제발...제발..」
+		PRINTFORMW 발키리는 끝까지 당신의 손을 꼬옥 잡고 있다.
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리를 발로 걷어 찼다.
+		PRINTFORMW 발키리는 고통스러워하며, 당신을 노려보고 있다.
+		PRINTFORMW 「윽...이제 행복하십니까..?」
+		PRINTFORMW 「제가 잊을거라고 생각하지 마십시오...」
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리를 발로 걷어 찼다.
+		PRINTFORMW 발키리는 고통스러워하며, 당신에게 용서를 빌고있다.
+		PRINTFORMW 「으윽...잘...못했습니다...이제 그만...」
+		PRINTFORMW 발키리는 아파서 그런지 소리를 잘 내지못했다.
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리의 배에 주먹을 날렸다.
+		PRINTFORMW 발키리는 당신에게 걷어차이자, 신음을 흘리며 용서를 빌고있다.
+		PRINTFORMW 「잘못했어요그만차주세요아파요너무아파요...」
+		PRINTFORMW 발키리는 울면서 뭐라고 말하고있지만 아파서 그런지 목소리가 잘 들리지 않았다.
+	CASE "Break"
+		PRINTFORMW 당신은 발키리를 발로 걷어 찼다.
+		PRINTFORMW 발키리는 고통스러운 얼굴로 쓰러졌다.
+		PRINTFORMW 「당신이 이래도...내가 좀더 노력할게...버리지 말아줘...」
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+
+
+
+@M_No32_EVENT_Morning
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리의 목소리에 잠에서 깨어났다.
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 「각하, 기상 시간입니다.」
+			PRINTFORMW 「어서 일어나십시오.」
+		ELSEIF A == 1
+			PRINTFORMW 「각하, 일어나실 시간입니다.」
+		ELSEIF A == 2
+			PRINTFORMW 「각하, 일어나십시오.」
+		ENDIF
+	CASE "High"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 당신은 발키리의 목소리에 잠에서 깨어났다.
+			PRINTDATAW
+				DATAFORM 「각하, 어서 일어나주시기 바랍니다.」
+				DATALIST
+					DATAFORM 「각하, 벌써 해가 중천입니다.」
+					DATAFORM 「어서 일어나 주십시오.」
+				ENDLIST
+			ENDDATA ;2개의 케이스 존재
+		ELSEIF A == 1
+			PRINTFORMW 당신은 발키리의 목소리에 잠에서 깨어났다.
+			PRINTFORMW 「각하, 어서 일어나셔야 합니다.」
+		ENDIF
+	CASE "Affection"
+		A = RAND:3
+		IF A == 0
+			PRINTFORMW 당신은 발키리의 키스로 잠에서 깼다.
+			PRINTFORMW 「아」
+			PRINTFORMW 눈이 마주쳤다.
+			PRINTFORMW 「이제야 일어나셨군요.」
+			PRINTFORMW 「반응이 너무 느리신것 아닙니까?」
+			PRINTFORMW 발키리는 부드럽게 웃는 표정으로 당신을 바라보고 있다.
+		ELSEIF A == 1
+			PRINTFORMW 당신이 잠에서 천천히 깨어나자, 발키리가 당신의 손을 잡은채 옆에서 자고있었다.
+			PRINTFORMW 그 귀여운 행동을 흐뭇하게 바라보고 있자니, 잠에서 깬 발키리와 눈이 마주쳤다.
+			PRINTFORMW 「아, 벌써 일어나셨습니까...?」
+			PRINTFORMW 발키리는 얼굴을 붉게 물들이고는, 잡고있던 당신의 손을 더 세게 쥐었다.
+			PRINTFORMW 「각하, 조금만 더 이대로 있지 않으시겠습니까?」
+			PRINTFORMW 「가끔씩은 이렇게 늦게 일어나는것도 좋다고 생각합니다...」
+		ELSEIF A == 2
+			PRINTFORMW 「각하...」
+			PRINTFORMW 당신이 눈을 뜨자 눈앞의 발키리가 얼굴을 가까이 하고있었다.
+			PRINTFORMW 「아, 일어나 버리셨군요...」
+			PRINTFORMW 발키리는 어딘가 아쉬워 보였다.
+			PRINTFORMW 「앞으로 조금이면 닿았을텐데 아쉽게됐군요.」
+			PRINTFORMW 당신은 다시 자는척을 하기 시작했다.
+			PRINTFORMW 발키리는 그런 당신을 보며 미소짓고는
+			PRINTFORMW 「쪽」
+			PRINTFORMW 목적이었던 키스를 한후 다시 당신을 깨웠다.
+			PRINTFORMW 「후훗, 이제 일어나십시오」
+		ENDIF
+	CASE "Marryed"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「어서 일어나요 여보♡」
+			PRINTFORMW 당신이 눈을 뜨자마자 보인 것은, 제복도 드레스도 아닌, 스웨터와 치마를 입은채 머리에 리본을 단 색다른 모습의 발키리였다.
+			PRINTFORMW 「혹시, 잘 안 어울려요...?」
+			PRINTFORMW 발키리는 당신이 아무말도 않고있자, 불안해진 모양이다.
+			PRINTFORMW 당신은 굉장히 잘 어울린다고 칭찬했다.
+			PRINTFORMW 「후훗, 아침밥 준비했으니까 어서 드세요」
+		ELSEIF A == 1
+			PRINTFORMW 당신이 눈을 뜨니 옆에는 발키리가 고른 숨을 내쉬며 자고 있었다.
+			PRINTFORMW 목 주변이 간지러워 거울로 들여다보니 발키리가 남긴 자국들이 가득 했다.
+			PRINTFORMW 발키리를 살살 깨워 자국을 보이자
+			PRINTFORMW 「우응...」
+			PRINTFORMW 「쪽」
+			PRINTFORMW 발키리는 잠에 취했는지 무의식적으로 당신에게 키스를 하고는 다시 자고있다.
+		ENDIF
+	CASE "Annoyed"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 당신이 눈을 뜨니 이미 아침이 지나가 있었다.
+			PRINTFORMW 아무래도 발키리는 날 깨우지 않은 것 같다.
+		ELSEIF A == 1
+			PRINTFORMW 「각하, 기상시간입니다.」
+			PRINTFORMW 「지금 당장 일어나십시오.」
+			PRINTFORMW 발키리는 문 너머에서 그렇게 외치고는 내가 일어났는지 확인도 하지 않고, 멀어지는 발소리만이 들려왔다.
+		ENDIF
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리의 목소리에 잠에서 깨어났다.
+		PRINTFORMW 	  %TEXTR("「지, 지휘관 각하...일어나주셨으면 합니다...」/「이...일어나 주십시오...」")%
+	CASE "Weak"
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 당신은 발키리의 떨리는 목소리에 잠에서 깨어났다.
+			PRINTFORMW 「힉...죄..죄송해요...」
+		ELSEIF A == 1
+			PRINTFORMW 당신이 눈을 뜨니 이미 아침이 지나가 있었다.
+			PRINTFORMW 「흑..흐윽...자..잘못했어요...」
+			PRINTFORMW 당신이 나가자 발키리는 문 너머에서 주저앉아 울고있었다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 발키리의 목소리에 잠에서 깨어났다.
+		PRINTFORMW %TEXTR("「여보 아직도 자는거야? 빨리 일어나~」/「정말 잠꾸러기라니깐...」")%
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_EVENT_Sortie
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW %TEXTR("「명령 수행」/「공격 시작합니다.」")%
+	CASE "High"
+		PRINTFORMW %TEXTR("「명령 수행」/「공격 시작합니다.」")%
+	CASE "Affection"
+		PRINTFORMW %TEXTR("「명령 수행」/「공격 시작합니다.」")%
+	CASE "Marryed"
+		PRINTFORMW 「명령을 수행.」
+		PRINTFORMW 「아, 네, 무사히 돌아올게요 여보」
+	CASE "Annoyed"
+		PRINTFORMW %TEXTR("「...임무 수행」/「...출격 시작합니다.」")%
+	CASE "Fear"
+		PRINTFORMW 「이, 임무 수행하겠습니다...」
+	CASE "Weak"
+		PRINTFORMW 「다, 다녀오겠습니다...」
+	CASE "Break"
+		PRINTFORMW %TEXTR("「응, 여보 나 갔다 올게?」/「나, 없을때 이상한짓 하면 안된다?」")%
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_EVENT_Cook_Self
+IF ABL:MASTER:조리lv < 3
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「각하께서 만드시는 요리입니까? 기대되는군요」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「후훗 기대하겠습니다 각하」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「여보가 만드는 요리, 기대되네요」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「식사 준비중이십니까?」
+			PRINTFORMW 「...알겠습니다.」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「시, 식사 준비중이십니까?」
+			PRINTFORMW 「...알겠습니다.」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「시, 식사준비 중이세요...?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASE "High"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「각하께서 만드시는 요리입니까? 기대되는군요」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「각하께서 만드시는 요리입니까? 기대되는군요」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「후훗 기대하겠습니다 각하」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「여보가 만드는 요리, 기대되네요」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「식사 준비중이십니까?」
+			PRINTFORMW 「...알겠습니다.」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「시, 식사 준비중이십니까?」
+			PRINTFORMW 「...알겠습니다.」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「시, 식사준비 중이세요...?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASE "High"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「각하께서 만드시는 요리입니까? 기대되는군요」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「각하께서 만드시는 요리입니까? 기대되는군요」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「후훗 기대하겠습니다 각하」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「여보가 만드는 요리, 기대되네요」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「식사 준비중이십니까?」
+			PRINTFORMW 「...알겠습니다.」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「시, 식사 준비중이십니까?」
+			PRINTFORMW 「...알겠습니다.」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「시, 식사준비 중이세요...?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASE "High"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「각하께서 만드시는 요리입니까? 기대되는군요」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("김밥이/김치볶음밥이/계란말이가/제육덮밥/카레라이스가/치킨이/샌드위치가/핫도그가/돈가스가/냉면이/우동이/육개장이/찜닭이/순대국밥이/돼지국밥이/감자탕이/라면이/햄버거가/부대찌개가/만두가/피자가/미트볼이")% 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ENDIF
+
+@M_No32_EVENT_Eat_Com
+IF ABL:MASTER:조리lv < 3
+	SELECTCASE CSTR:1
+		CASE "Low"
+			A = RAND:2
+			IF A == 0
+				PRINTFORMW 「감사히 먹겠습니다 각하」
+				PRINTFORMW 발키리는 음식을 입에 넣자마자 안색이 안좋아졌다.
+				PRINTFORMW 「저, 정말 맛있습니다...」
+				PRINTFORMW 「저희 고향의 맛을 잘 표현하셨군요...」
+			ELSEIF A == 1
+				PRINTFORMW 「의외로 나쁘진 않습...」
+				PRINTFORMW 발키리는 몇번 맛을 느끼다가 말문을 잇지못했다.
+			ENDIF
+		CASE "Marryed"
+			PRINTFORMW 「잘 먹을게요♡」
+			PRINTFORMW 발키리는 음식을 입에 넣자마자 안색이 안좋아졌다.
+			PRINTFORMW 「저, 정말 맛있어요!」
+			PRINTFORMW 발키리는 당신이 실망하지않게 꾸역꾸역 음식을 삼키고있다.
+		CASE "Annoyed"
+			PRINTFORMW 「...지휘관 각하」
+			PRINTFORMW 「조금은 연습을 하시는것이 좋을 것 같습니다.」
+		CASE "Fear"
+			PRINTFORMW 발키리는 맛이 없어 먹기싫은듯 했지만 억지로 삼키고있다.
+			PRINTFORMW 「...자, 잘 먹었습니다...」
+		CASE "Weak"
+			PRINTFORMW 「마, 맛있어요...네...진짜에요...」
+			PRINTFORMW 발키리는 음식을 적당히 씹다가 맛이 없는지 그냥 꿀꺽 삼켰다.
+		CASE "High"
+			A = RAND:2
+			IF A == 0
+				PRINTFORMW 「감사히 먹겠습니다 각하」
+				PRINTFORMW 발키리는 음식을 입에 넣자마자 안색이 안좋아졌다.
+				PRINTFORMW 「저, 정말 맛있습니다...」
+				PRINTFORMW 「저희 고향의 맛을 잘 표현하셨군요...」
+			ELSEIF A == 1
+				PRINTFORMW 「의외로 나쁘진 않습...」
+				PRINTFORMW 발키리는 몇번 맛을 느끼다가 말문을 잇지못했다.
+			ENDIF
+		CASE "Affection"
+			A = RAND:2
+			IF A == 0
+				PRINTFORMW 「감사히 먹겠습니다 각하」
+				PRINTFORMW 발키리는 음식을 입에 넣자마자 안색이 안좋아졌다.
+				PRINTFORMW 「저, 정말 맛있습니다...」
+				PRINTFORMW 「저희 고향의 맛을 잘 표현하셨군요...」
+			ELSEIF A == 1
+				PRINTFORMW 「의외로 나쁘진 않습...」
+				PRINTFORMW 발키리는 몇번 맛을 느끼다가 말문을 잇지못했다.
+			ENDIF
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+	SELECTCASE CSTR:1
+		CASE "Low"
+			A = RAND:2
+			IF A == 0
+				PRINTFORMW 「감사히 먹겠습니다 각하」
+				PRINTFORMW 발키리는 음식을 입에 넣자 놀란듯하다.
+				PRINTFORMW 「각하, 요리가 상당히 느셨군요」
+				PRINTFORMW 발키리는 음식을 만족하며 먹고있다.
+			ELSEIF A == 1
+				PRINTFORMW 「각하께서 발전하시는 모습이 참 보기 좋습니다.」
+				PRINTFORMW 발키리는 음식을 만족하며 먹고있다.
+			ENDIF
+		CASE "Marryed"
+			PRINTFORMW 「잘 먹을게요♡」
+			PRINTFORMW 발키리는 음식을 입에 넣자 놀란듯하다.
+			PRINTFORMW 「여보, 언제 이렇게 요리가 늘었어요..?」
+			PRINTFORMW 발키리는 당신이 만든 음식을 오물오물 먹고있다.
+		CASE "Annoyed"
+			PRINTFORMW 「...지휘관 각하」
+			PRINTFORMW 「요리실력은 괜찮은 편이시군요.」
+		CASE "Fear"
+			PRINTFORMW 발키리는 당신의 요리를 눈치보며 먹고있다.
+			PRINTFORMW 「...자, 잘 먹었습니다...」
+		CASE "Weak"
+			PRINTFORMW 「마, 맛있어요...」
+			PRINTFORMW 발키리는 당신의 요리를 눈치보며 천천히 먹고있다.
+		CASE "High"
+			A = RAND:2
+			IF A == 0
+				PRINTFORMW 「감사히 먹겠습니다 각하」
+				PRINTFORMW 발키리는 음식을 입에 넣자 놀란듯하다.
+				PRINTFORMW 「각하, 요리가 상당히 느셨군요」
+				PRINTFORMW 발키리는 음식을 만족하며 먹고있다.
+			ELSEIF A == 1
+				PRINTFORMW 「각하께서 발전하시는 모습이 참 보기 좋습니다.」
+				PRINTFORMW 발키리는 음식을 만족하며 먹고있다.
+			ENDIF
+		CASE "Affection"
+			A = RAND:2
+			IF A == 0
+				PRINTFORMW 「감사히 먹겠습니다 각하」
+				PRINTFORMW 발키리는 음식을 입에 넣자 놀란듯하다.
+				PRINTFORMW 「각하, 요리가 상당히 느셨군요」
+				PRINTFORMW 발키리는 음식을 만족하며 먹고있다.
+			ELSEIF A == 1
+				PRINTFORMW 「각하께서 발전하시는 모습이 참 보기 좋습니다.」
+				PRINTFORMW 발키리는 음식을 만족하며 먹고있다.
+			ENDIF
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 「감사히 먹겠습니다 각하」
+			PRINTFORMW 발키리는 음식을 입에 넣자 당신과 음식을 번갈아 봤다.
+			PRINTFORMW 「정말 훌륭하고 맛있는 음식입니다.」
+			PRINTFORMW 「저는 10점 드리겠습니다.」
+			PRINTFORMW 발키리는 당신의 음식을 천천히 맛을 보며 즐기고 있다.
+		CASE "Marryed"
+			PRINTFORMW 「잘 먹을게요♡」
+			PRINTFORMW 발키리는 음식이 혀에 닿자 순식간에 다 먹었다.
+			PRINTFORMW 「여보, 한그릇 더주세요...」
+			PRINTFORMW 발키리는 당신이 만든 요리가 굉장히 맘에 든것같다.
+		CASE "Annoyed"
+			PRINTFORMW 「...맛있습니다...」
+			PRINTFORMW 발키리는 왠지 굴욕적인것같다.
+		CASE "Fear"
+			PRINTFORMW 발키리는 당신의 요리를 눈치보며 먹고있다.
+			PRINTFORMW 「...마, 맛있었습니다...」
+		CASE "Weak"
+			PRINTFORMW 「...맛있어요...」
+			PRINTFORMW 발키리는 다 먹고 남은 텅빈 그릇을 바라만보고있다.
+		CASE "High"
+			PRINTFORMW 「감사히 먹겠습니다 각하」
+			PRINTFORMW 발키리는 음식을 입에 넣자 당신과 음식을 번갈아 봤다.
+			PRINTFORMW 「정말 훌륭하고 맛있는 음식입니다.」
+			PRINTFORMW 「저는 10점 드리겠습니다.」
+			PRINTFORMW 발키리는 당신의 음식을 천천히 맛을 보며 즐기고 있다.
+		CASE "Affection"
+			PRINTFORMW 「감사히 먹겠습니다 각하」
+			PRINTFORMW 발키리는 음식을 입에 넣자 당신과 음식을 번갈아 봤다.
+			PRINTFORMW 「정말 훌륭하고 맛있는 음식입니다.」
+			PRINTFORMW 「저는 10점 드리겠습니다.」
+			PRINTFORMW 발키리는 당신의 음식을 천천히 맛을 보며 즐기고 있다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ENDIF
+
+@M_No32_EVENT_Cook
+IF ABL:조리lv < 3
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 「요, 요리 말씀이십니까..?」
+			PRINTFORMW 「자신은 없습니다만, 열심히 만들어보겠습니다.」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 「제가 만든 요리가 먹고싶으신 겁니까..?」
+			PRINTFORMW 「...기대하지 않는편이 좋습니다..」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 「제가 만든 요리를 먹고싶다고요..?」
+			PRINTFORMW 「...기대하진 마세요...?」
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 「...요리 말씀이십니까.」
+			PRINTFORMW 「명령이라면 어쩔 수 없군요.」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 「요, 요리 말씀이십니까.」
+			PRINTFORMW 「...만들어 보겠습니다...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 「요, 요리...열심히 만들게요...」
+			PRINTFORMW 발키리는 덜덜 떨며 요리하고 있다.
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 「요, 요리 말씀이십니까..?」
+			PRINTFORMW 「자신은 없습니다만, 열심히 만들어보겠습니다.」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 「요리 말씀이십니까?」
+			PRINTFORMW 「열심히 만들어보겠습니다.」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 「제가 만든 요리가 먹고싶으신 겁니까..?」
+			PRINTFORMW 「...알겠습니다 조금만 기다려주십시오.」
+			PRINTFORMW 발키리는 결심한 표정으로 주방으로 걸어갔다.
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW 「자..잘된것 같습니다...」
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 「제가 만든 요리를 먹고싶다고요..?」
+			PRINTFORMW 「...알았어요 잠시만 기다려주세요?」
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW 「자, 잘된것 같아요...」
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 「...요리 말씀이십니까.」
+			PRINTFORMW 「명령이라면 어쩔 수 없군요.」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 「요, 요리 말씀이십니까.」
+			PRINTFORMW 「...만들어 보겠습니다...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 「요, 요리...열심히 만들어 볼게요...」
+			PRINTFORMW 발키리는 덜덜 떨며 요리하고 있다.
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 「요리 말씀이십니까?」
+			PRINTFORMW 「열심히 만들어보겠습니다.」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:조리lv > 4
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 「요리 말씀이십니까?」
+			PRINTFORMW 「...조금만 기다리십시오 금방 만들어오겠습니다.」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 「혹시 드시고싶은 음식이 있으십니까?」
+			PRINTFORMW 「후훗, 알겠습니다.」
+			PRINTFORMW 「조금만 기다리십시오」
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 「네, 조금만 기다리세요?」
+			PRINTFORMW 「아, 원하는 음식 있으면 말해줘요?」
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW 「후훗, 다 만들었어요」
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 「...요리 말씀이십니까.」
+			PRINTFORMW 「명령이라면 어쩔 수 없군요.」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 「요, 요리 말씀이십니까.」
+			PRINTFORMW 「...만들어 보겠습니다...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 「요, 요리...열심히 만들게요...」
+			PRINTFORMW 발키리는 덜덜 떨며 요리하고 있다.
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 「요리 말씀이십니까?」
+			PRINTFORMW 「...조금만 기다리십시오 금방 만들어오겠습니다.」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ENDIF
+
+@M_No32_EVENT_Eat_Lunch
+IF ABL:조리lv < 3
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW %TEXTR("발키리가 만든 음식은 까맣게 불타 형태를 알아볼 수 없었다./발키리가 만든 음식은 살짝 타긴했지만 그럭저럭 괜찮았다.")%
+			PRINTFORMW 「가, 각하, 제가 좀더 노력하겠습니다...」
+		CASE "Affection"
+			PRINTFORMW %TEXTR("발키리가 만든 음식은 까맣게 불타 형태를 알아볼 수 없었다./발키리가 만든 음식은 조금 탄 부분이 보였지만 그럭저럭 괜찮았다.")%
+			PRINTFORMW 「부, 분명 5분동안 구우라고 적혀있길래...아닙니다 죄송합니다...」
+			PRINTFORMW 발키리의 손가락은 반창고 투성이었다.
+		CASE "Marryed"
+			PRINTFORMW %TEXTR("발키리가 만든 음식은 조금 짠맛이 나긴했지만 나쁘진 않았다./발키리가 만든 음식은 조금 탄 부분이 보였지만 그럭저럭 괜찮았다.")%
+			PRINTFORMW 「어, 어때요?」
+			PRINTFORMW 발키리는 걱정하며 당신을 바라보고있다.
+		CASE "Annoyed"
+			PRINTFORMW 발키리가 만든 음식은 정말 끔찍했다.
+			PRINTFORMW 엄청나게 매운 소스향과 그 속에 감춰진 독한 알콜 맛이 자연스럽게 두통을 유발했다.
+			PRINTFORMW 「사령관 각하, 무슨 문제라도 있습니까?」
+			PRINTFORMW 발키리는 표정은 그대로였지만, 살짝 웃고있는것만 같았다.
+		CASE "Fear"
+			PRINTFORMW %TEXTR("발키리가 만든 음식은 좀 심하게 타긴했지만 나쁘진 않았다./발키리가 만든 음식은 형태를 알아볼 수 없었지만 나쁘진 않았다.")%
+			PRINTFORMW 「괘, 괜찮습니까...?」
+		CASE "Weak"
+			PRINTFORMW %TEXTR("발키리가 만든 음식은 좀 심하게 타긴했지만 나쁘진 않았다./발키리가 만든 음식은 형태를 알아볼 수 없었지만 나쁘진 않았다.")%
+			PRINTFORMW 「죄..죄송해요...더 연습할테니까 제발 때리지만...」
+		CASE "High"
+			PRINTFORMW %TEXTR("발키리가 만든 음식은 까맣게 불타 형태를 알아볼 수 없었다./발키리가 만든 음식은 살짝 타긴했지만 그럭저럭 괜찮았다.")%
+			PRINTFORMW 「가, 각하, 제가 좀더 노력하겠습니다...」
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW %TEXTR("발키리가 한 음식은 의외로 형태도 갖추어지고 맛있었다./발키리가 한 음식은 전체적으로 평균을 이루고 있어 맛있었다.")%
+			PRINTFORMW %TEXTR("「...그게 사실입니까?」/「정말로 맛이 괜찮으십니까..?」")
+			PRINTFORMW 발키리는 믿기지 않는 모양이다.
+		CASE "Affection"
+			PRINTFORMW %TEXTR("발키리가 한 음식은 의외로 형태도 갖추어지고 맛있었다./발키리가 한 음식은 전체적으로 평균을 이루고 있어 맛있었다.")%
+			PRINTFORMW 「...정말 맛있었습니까..?」
+			PRINTFORMW 발키리는 믿기지 않는 모양이다.
+		CASE "Marryed"
+			PRINTFORMW %TEXTR("발키리가 한 음식은 의외로 형태도 갖추어지고 맛있었다./발키리가 한 음식은 전체적으로 평균을 이루고 있어 맛있었다.")%
+			PRINTFORMW 「네? 진짜 맛있었다구요..?」
+			PRINTFORMW 발키리는 믿기지 않는 모양이다.
+		CASE "Annoyed"
+			PRINTFORMW 발키리가 만든 음식은 정말 끔찍했다.
+			PRINTFORMW 엄청나게 매운 소스향과 그 속에 감춰진 독한 알콜 맛이 자연스럽게 구토를 유발했다.
+			PRINTFORMW 「사령관 각하, 무슨 문제라도 있습니까?」
+			PRINTFORMW 발키리는 표정은 그대로였지만, 살짝 비웃고 있는것만 같았다.
+		CASE "Fear"
+			PRINTFORMW %TEXTR("발키리가 한 음식은 형태는 찌그러져 있었지만 맛있었다./발키리가 한 음식은 전체적으로 평균을 이루고 있어 맛있었다.")%
+			PRINTFORMW 「정말 맛있으셨습니까...?」
+			PRINTFORMW 발키리는 믿기지 않는 모양이다.
+		CASE "Weak"
+			PRINTFORMW %TEXTR("발키리가 한 음식은 형태는 찌그러져 있었지만 맛있었다./발키리가 한 음식은 전체적으로 평균을 이루고 있어 맛있었다.")%
+			PRINTFORMW 「더, 더 연습할테니까...때리지만 말아주세요...」
+			PRINTFORMW 발키리는 믿기지 않는지 연신 사과만 하고있다.
+		CASE "High"
+			PRINTFORMW %TEXTR("발키리가 한 음식은 의외로 형태도 갖추어지고 맛있었다./발키리가 한 음식은 전체적으로 평균을 이루고 있어 맛있었다.")%
+			PRINTFORMW %TEXTR("「...그게 사실입니까?」/「정말로 맛이 괜찮으십니까..?」")
+			PRINTFORMW 발키리는 믿기지 않는 모양이다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ELSEIF ABL:조리lv > 4
+	SELECTCASE CSTR:1
+		CASE "Low"
+			PRINTFORMW 발키리가 만든 음식은 형태도 잘 갖추어지고, 향도 놀라울만큼 좋았다.
+			PRINTFORMW 「굉장히 빨리 드셨군요.」
+			PRINTFORMW 「그렇게 맛있으셨습니까?」
+		CASE "Affection"
+			PRINTFORMW 발키리가 만든 음식은 마치 예술작품같았다.
+			A = RAND:2
+			IF A == 0
+				PRINTFORMW 「후훗, 맛있게 드셨습니까?」
+				PRINTFORMW 「답례는...」
+				PRINTFORMW 「오늘 기대하겠습니다?」
+			ELSEIF A == 1
+				PRINTFORMW 「후훗, 답례 기대하겠습니다」
+			ENDIF
+		CASE "Marryed"
+			PRINTFORMW 발키리가 만든 음식은 마치 예술작품같았다.
+			A = RAND:2
+			IF A == 0
+				PRINTFORMW 「그렇게 맛있었어요?」
+				PRINTFORMW 「맛있게 먹어주니까 기뻐요 여보♡」
+			ELSEIF A == 1
+				PRINTFORMW 「답례 기다릴게요?」
+			ENDIF
+		CASE "Annoyed"
+			PRINTFORMW 발키리가 만든 음식은 정말 놀라웠다.
+			PRINTFORMW 엄청나게 매운 소스향과 그 속에 감춰진 독한 알콜 맛이 굉장히 자연스럽게 조화되어 딱 기분 나쁠정도로 맛이 없었다.
+			PRINTFORMW 「사령관 각하, 무슨 문제라도 있습니까?」
+			PRINTFORMW 발키리는 표정은 그대로였지만, 살짝 비웃고 있는것만 같았다.
+		CASE "Fear"
+			PRINTFORMW %TEXTR("발키리가 한 음식은 향은 조금 이상했지만 굉장히 맛있었다./발키리가 한 음식은 전체적으로 평균이상으로 굉장히 맛있었다.")%
+			PRINTFORMW 「마, 맛있으셨군요...」
+			PRINTFORMW 발키리는 긴장하고있었지만 살짝 자랑스러워하고있다.
+		CASE "Weak"
+			PRINTFORMW %TEXTR("발키리가 한 음식은 향은 조금 이상했지만 굉장히 맛있었다./발키리가 한 음식은 전체적으로 평균이상으로 굉장히 맛있었다.")%
+			PRINTFORMW 「맛있으셨나요...?」
+			PRINTFORMW 발키리는 당신이 맛있게 먹는 모습을 보자 안도했다.
+		CASE "High"
+			PRINTFORMW 발키리가 만든 음식은 형태도 잘 갖추어지고, 향도 놀라울만큼 좋았다.
+			PRINTFORMW 「굉장히 빨리 드셨군요.」
+			PRINTFORMW 「그렇게 맛있으셨습니까?」
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;8개의 케이스 존재
+	CSTR:1 =
+	RETURN 1
+ENDIF
+
+@M_No32_Sell
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「그렇습니까.」
+		PRINTFORMW 「기대에 못미쳐 정말 죄송합니다 각하.」
+		PRINTFORMW 「시스터즈 오브 발할라 소속 부대원 T-8W 발키리.」
+		PRINTFORMW 「현 시간부로 지휘관의 이탈 명령을 수행하겠습니다.」
+		PRINTFORMW 「부디 건강하시기 바랍니다 각하」
+	CASE "High"
+		PRINTFORMW 당신은 발키리에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「그렇습니까...」
+		PRINTFORMW 「...」
+		PRINTFORMW 「...아닙니다.」
+		PRINTFORMW 「각하의 명령이라면 어쩔 수 없는 것 이겠죠.」
+		PRINTFORMW 「각하와 함께 지내 즐거웠던 시간들을 잊지않겠습니다.」
+		PRINTFORMW 「언젠가 다시 만나뵙으면 좋겠군요.」
+		PRINTFORMW 「부디 건강하시기 바랍니다 각하」
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「각하...?」
+		PRINTFORMW 발키리는 믿기지않는지 동공이 떨렸다.
+		PRINTFORMW 「가, 각하, 농담이 너무 지나치십니다.」
+		PRINTFORMW 「제가 혹시 뭔가 실수를 했다면 시정할테니 부디...」
+		PRINTFORMW 발키리는 당신의 손을 잡으려했지만, 당신은 손을 빼내었다.
+		PRINTFORMW 그제서야 당신의 말이 진심인것을 깨달은 발키리는 눈물을 흘리기 시작했다.
+		PRINTFORMW 「각하 제발...제가 잘못했습니다...」
+		PRINTFORMW 「제게서 떠나지 말아주십시오...제발...」
+		PRINTFORMW 당신은 판매업자들을 불러 데려가라고 했다.
+		PRINTFORMW 「윽! 이, 이거 놓으십시오!」
+		PRINTFORMW 「아..아직 각하에게 못한 말이...!!」
+		PRINTFORMW 당신은 발키리가 끌려가는 모습을 못본체하며, 발걸음을 옮겼다.
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「여보...?」
+		PRINTFORMW 발키리는 믿기지않는지 동공이 떨렸다.
+		PRINTFORMW 「여, 여보 왜 그런 짓궂은 농담을 하시는거에요..?」
+		PRINTFORMW 「제가 뭔가 잘못해서 그래요? 여보 저좀 봐요...」
+		PRINTFORMW 발키리는 당신의 손을 잡으려했지만, 당신은 손을 빼내었다.
+		PRINTFORMW 그제서야 당신의 말이 진심인것을 깨달은 발키리는 눈물을 흘리기 시작했다.
+		PRINTFORMW 「여보 제발...제가 잘못했어요...」
+		PRINTFORMW 「제가 더 잘할테니까 제발...」
+		PRINTFORMW 당신은 판매업자들을 불러 그녀를 데려가라고 했다.
+		PRINTFORMW 「이, 이거 놓으십시오...!!」
+		PRINTFORMW 「이제서야 당신하고 이어졌는데 어째서...!!!」
+		PRINTFORMW 당신은 발키리가 끌려가는 모습을 못본체하며, 발걸음을 옮겼다.
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리에게 사실을 전했다.
+		PRINTFORMW 「그, 그렇습니까..?」
+		PRINTFORMW 「드, 드디어 여기서...」
+		PRINTFORMW 발키리가 뭐라고 중얼거렸지만,
+		PRINTFORMW 당신은 신경쓰지않고 판매업자들을 불러 그녀를 데려가라고 했다.
+		PRINTFORMW 발키리는 전혀 저항하지않고
+		PRINTFORMW 스스로 걸어서 그들을 따라갔다.
+	CASE "Break"
+		PRINTFORMW 당신은 발키리에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「여보...?」
+		PRINTFORMW 발키리는 믿기지않는지 동공이 떨렸다.
+		PRINTFORMW 「여, 여보 왜 그런 짓궂은 농담을 하는거야..?」
+		PRINTFORMW 「내가 뭔가 잘못해서 그래? 당신 나 좀봐...」
+		PRINTFORMW 발키리는 당신의 손을 잡으려했지만, 당신은 손을 처내었다.
+		PRINTFORMW 그제서야 당신의 말이 진심인것을 깨달은 발키리는 눈물을 흘리기 시작했다.
+		PRINTFORMW 「여보 제발...내가 잘못했어...」
+		PRINTFORMW 「나 버리지마 제발...응?」
+		PRINTFORMW 당신은 판매업자들을 불러 그녀를 끌고가라고 했다.
+		PRINTFORMW 「당신들 누구야! 이거 놔!!」
+		PRINTFORMW 「이럴거면 당신 왜 나랑 결혼한거야..!」
+		PRINTFORMW ...
+		PRINTFORMW 당신은 판매업자들에게 잠시 멈춰달라고 부탁하였다.
+		PRINTFORMW 그리고 발키리에게 결혼한적이 없다고 분명하게 말했다.
+		PRINTFORMW 「그게 무슨 소리야...?」
+		PRINTFORMW 「분명 우리 그때 결혼했...」
+		PRINTFORMW 「어...?」
+		PRINTFORMW 「여보...」
+		PRINTFORMW 「우리가 언제 결혼했었지...?」
+		PRINTFORMW 당신은 발키리가 혼란스러워하는 사이 판매업자들에게 끌고가라고하며, 발걸음을 옮겼다.
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「각하...?」
+		PRINTFORMW 발키리는 믿기지않는지 동공이 떨렸다.
+		PRINTFORMW 「가, 각하, 농담이 너무 지나치십니다.」
+		PRINTFORMW 「제가 혹시 뭔가 실수를 했다면 시정할테니 부디...」
+		PRINTFORMW 발키리는 당신의 손을 잡으려했지만, 당신은 손을 빼내었다.
+		PRINTFORMW 그제서야 당신의 말이 진심인것을 깨달은 발키리는 눈물을 흘리기 시작했다.
+		PRINTFORMW 「각하 제발...제가 잘못했습니다...」
+		PRINTFORMW 「제게서 떠나지 말아주십시오...제발...」
+		PRINTFORMW 당신은 판매업자들을 불러 데려가라고 했다.
+		PRINTFORMW 「윽! 이, 이거 놓으십시오!」
+		PRINTFORMW 「아..아직 각하에게 못한 말이...!!」
+		PRINTFORMW 당신은 발키리가 끌려가는 모습을 못본체하며, 발걸음을 옮겼다.
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「각하...?」
+		PRINTFORMW 발키리는 믿기지않는지 동공이 떨렸다.
+		PRINTFORMW 「가, 각하, 농담이 너무 지나치십니다.」
+		PRINTFORMW 「제가 혹시 뭔가 실수를 했다면 시정할테니 부디...」
+		PRINTFORMW 발키리는 당신의 손을 잡으려했지만, 당신은 손을 빼내었다.
+		PRINTFORMW 그제서야 당신의 말이 진심인것을 깨달은 발키리는 눈물을 흘리기 시작했다.
+		PRINTFORMW 「각하 제발...제가 잘못했습니다...」
+		PRINTFORMW 「제게서 떠나지 말아주십시오...제발...」
+		PRINTFORMW 당신은 판매업자들을 불러 데려가라고 했다.
+		PRINTFORMW 「윽! 이, 이거 놓으십시오!」
+		PRINTFORMW 「아..아직 각하에게 못한 말이...!!」
+		PRINTFORMW 당신은 발키리가 끌려가는 모습을 못본체하며, 발걸음을 옮겼다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_Disuse
+SELECTCASE CSTR:1
+	CASE "Low"
+		PRINTFORMW 당신은 발키리에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「그, 그렇습니까...」
+		PRINTFORMW 「각하의 기대에 못미쳐 정말 죄송합니다...」
+		PRINTFORMW 「언제나 최선을 다해보긴 했지만」
+		PRINTFORMW 「각하께선 제가 마음에 들지않으셨나보군요...」
+		PRINTFORMW 「...」
+		PRINTFORMW 「시스터즈 오브 발할라 소속 부대원 T-8W 발키리.」
+		PRINTFORMW 「현 시간부로 지휘관의 폐기 명령에 따르겠습니다.」
+		PRINTFORMW 「부디 건강 하십시오...」
+	CASE "High"
+		PRINTFORMW 당신은 발키리에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「그렇습니까...」
+		PRINTFORMW 「...」
+		PRINTFORMW 「...아닙니다.」
+		PRINTFORMW 「각하의 명령이라면 어쩔 수 없는것이겠죠.」
+		PRINTFORMW 「각하와 함께 지내 즐거웠던 시간들을 절대...잊지않겠습니다.」
+		PRINTFORMW 「이제 다시 만날순 없을 것 같으니, 한마디만 하겠습니다...」
+		PRINTFORMW 「...정말 좋아했습니다.」
+		PRINTFORMW 그 말을 하는 발키리의 표정은
+		PRINTFORMW 이때까지 보았던 많고 많은 표정들중
+		PRINTFORMW 가장 슬퍼보이는 표정이었다.
+	CASE "Affection"
+		PRINTFORMW 당신은 발키리에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「각하...?」
+		PRINTFORMW 발키리는 믿기지않는지 동공이 떨렸다.
+		PRINTFORMW 「가, 각하, 농담이 너무 지나치십니다.」
+		PRINTFORMW 「제가 혹시 뭔가 실수를 했다면 시정할테니 부디...」
+		PRINTFORMW 발키리는 당신의 손을 잡으려했지만, 당신은 손을 빼내었다.
+		PRINTFORMW 그제서야 당신의 말이 진심인것을 깨달은 발키리는 눈물을 흘리며 울기 시작했다.
+		PRINTFORMW 「각하 제발...제가 잘못했습니다...」
+		PRINTFORMW 「절 버리지 말아주십시오...제발...」
+		PRINTFORMW 당신은 폐기업자들을 불러 데려가라고 했다.
+		PRINTFORMW 「윽! 이, 이거 놓으십시오!」
+		PRINTFORMW 「아..아직 각하에게 못한 말이...!!」
+		PRINTFORMW 당신은 발키리가 끌려가는 모습을 못본체하며, 발걸음을 옮겼다.
+	CASE "Marryed"
+		PRINTFORMW 당신은 발키리에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「여보...?」
+		PRINTFORMW 발키리는 믿기지않는지 동공이 떨렸다.
+		PRINTFORMW 「여, 여보 왜 그런 짓궂은 농담을 하시는거에요..?」
+		PRINTFORMW 「제가 뭔가 잘못해서 그래요? 여보 저좀 봐요...」
+		PRINTFORMW 발키리는 당신의 손을 잡으려했지만, 당신은 손을 빼내었다.
+		PRINTFORMW 그제서야 당신의 말이 진심인것을 깨달은 발키리는 눈물을 흘리기 시작했다.
+		PRINTFORMW 「여보 제발...제가 잘못했어요...」
+		PRINTFORMW 「제가 더 잘할테니까 제발...」
+		PRINTFORMW 당신은 폐기업자들을 불러 그녀를 데려가라고 했다.
+		PRINTFORMW 「이, 이거 놓으십시오...!!」
+		PRINTFORMW 「이제서야 각하하고 이어졌는데 어째서...!!!」
+		PRINTFORMW 「대체...왜...!」
+		PRINTFORMW 당신은 발키리가 끌려가는 모습을 못본체하며, 발걸음을 옮겼다.
+	CASE "Weak"
+		PRINTFORMW 당신은 발키리에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「이제...끝이군요...」
+		PRINTFORMW 발키리가 뭐라고 중얼거렸지만,
+		PRINTFORMW 당신은 신경쓰지않고 판매업자들을 불러 그녀를 데려가라고 했다.
+		PRINTFORMW 발키리가 갑자기 멈춰서자
+		PRINTFORMW  폐기업자들은 그녀를 강제로 끌고가려고했다.
+		PRINTFORMW 「한 가지...」
+		PRINTFORMW 발키리는 작은 목소리로 말했다.
+		PRINTFORMW 당신은 폐기업자들에게 잠시 멈춰달라고 했다.
+		PRINTFORMW 「말하고 싶은게 있습니다...」
+		PRINTFORMW 발키리는 당신에게 강인하게 말했다.
+		PRINTFORMW 「그렇게 살지마십시오」
+		PRINTFORMW 「업보가 쌓이면...」
+		PRINTFORMW 「나중에 다 돌려받게 될겁니다...」
+		PRINTFORMW 당신은 들은체만체
+		PRINTFORMW 폐기업자들에게 손짓을 하여 끌고가라고했다.
+	CASE "Break"
+		PRINTFORMW 당신은 발키리에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「여보...?」
+		PRINTFORMW 발키리는 믿기지않는지 동공이 떨렸다.
+		PRINTFORMW 「여, 여보 왜 그런 짓궂은 농담을 하는거야..?」
+		PRINTFORMW 「내가 뭔가 잘못해서 그래? 당신 나 좀봐...」
+		PRINTFORMW 발키리는 당신의 손을 잡으려했지만, 당신은 손을 처내었다.
+		PRINTFORMW 그제서야 당신의 말이 진심인것을 깨달은 발키리는 눈물을 흘리기 시작했다.
+		PRINTFORMW 「여보 제발...내가 잘못했어...」
+		PRINTFORMW 「나 버리지마 제발...응?」
+		PRINTFORMW 당신은 폐기업자들을 불러 그녀를 끌고가라고 했다.
+		PRINTFORMW 「당신들 누구야! 이거 놔!!」
+		PRINTFORMW 「이럴거면 당신 왜 나랑 결혼한거야..!」
+		PRINTFORMW ...
+		PRINTFORMW 당신은 폐기업자들에게 잠시 멈춰달라고 부탁하였다.
+		PRINTFORMW 그리고 발키리에게 결혼한적이 없다고 분명하게 말했다.
+		PRINTFORMW 「그게 무슨 소리야...?」
+		PRINTFORMW 「분명 우리 그때 결혼했...」
+		PRINTFORMW 「어...?」
+		PRINTFORMW 「여보...」
+		PRINTFORMW 「우리가 언제 결혼했었지...?」
+		PRINTFORMW 당신은 발키리가 혼란스러워하는 사이 폐기업자들에게 끌고가라고하며, 발걸음을 옮겼다.
+	CASE "Annoyed"
+		PRINTFORMW 당신은 발키리에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「각하...?」
+		PRINTFORMW 발키리는 믿기지않는지 동공이 떨렸다.
+		PRINTFORMW 「가, 각하, 농담이 너무 지나치십니다.」
+		PRINTFORMW 「제가 혹시 뭔가 실수를 했다면 시정할테니 부디...」
+		PRINTFORMW 발키리는 당신의 손을 잡으려했지만, 당신은 손을 빼내었다.
+		PRINTFORMW 그제서야 당신의 말이 진심인것을 깨달은 발키리는 눈물을 흘리며 울기 시작했다.
+		PRINTFORMW 「각하 제발...제가 잘못했습니다...」
+		PRINTFORMW 「절 버리지 말아주십시오...제발...」
+		PRINTFORMW 당신은 폐기업자들을 불러 데려가라고 했다.
+		PRINTFORMW 「윽! 이, 이거 놓으십시오!」
+		PRINTFORMW 「아..아직 각하에게 못한 말이...!!」
+		PRINTFORMW 당신은 발키리가 끌려가는 모습을 못본체하며, 발걸음을 옮겼다.
+	CASE "Fear"
+		PRINTFORMW 당신은 발키리에게 사실을 전했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「각하...?」
+		PRINTFORMW 발키리는 믿기지않는지 동공이 떨렸다.
+		PRINTFORMW 「가, 각하, 농담이 너무 지나치십니다.」
+		PRINTFORMW 「제가 혹시 뭔가 실수를 했다면 시정할테니 부디...」
+		PRINTFORMW 발키리는 당신의 손을 잡으려했지만, 당신은 손을 빼내었다.
+		PRINTFORMW 그제서야 당신의 말이 진심인것을 깨달은 발키리는 눈물을 흘리며 울기 시작했다.
+		PRINTFORMW 「각하 제발...제가 잘못했습니다...」
+		PRINTFORMW 「절 버리지 말아주십시오...제발...」
+		PRINTFORMW 당신은 폐기업자들을 불러 데려가라고 했다.
+		PRINTFORMW 「윽! 이, 이거 놓으십시오!」
+		PRINTFORMW 「아..아직 각하에게 못한 말이...!!」
+		PRINTFORMW 당신은 발키리가 끌려가는 모습을 못본체하며, 발걸음을 옮겼다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;9개의 케이스 존재
+CSTR:1 =
+RETURN 1
+
+@M_No32_ENDING
+SELECTCASE CFLAG:엔딩플래그
+	CASE 1
+		PRINTFORMW 어느날부턴가
+		PRINTFORMW 발키리는 똑같은 꿈을 반복적으로 꾸었다.
+		PRINTFORMW 당신에게 청혼받아
+		PRINTFORMW 결혼하여 행복하게 사는 꿈이었다.
+		PRINTFORMW 그 꿈을 처음 꿨을때는 발키리는 행복했었다.
+		PRINTFORMW 「후훗, 이런 꿈을 꾸게되는 날도 있군요...」
+		PRINTFORMW 그리고 두 번째로 꿨을때는 행복하지만은 않았다.
+		PRINTFORMW 「꿈은 꿈일 뿐인데 어째서...」
+		PRINTFORMW 「이렇게나 기대가 되는 것입니까...」
+		PRINTFORMW 그날 이후부터 계속 반복되는 그 꿈을 꿀때마다
+		PRINTFORMW 「흑...흐윽...」
+		PRINTFORMW 발키리는 꿈을 꾸는것을 두려워하기 시작했다.
+		PRINTFORMW 어차피 이루어지지 않을 일이라고 생각했기 때문이다.
+		PRINTFORMW 꿈은 꿈일뿐이라고 생각했기 때문이다.
+		PRINTFORMW 그렇게 꿈꾸는것을 두려워하던 어느날
+		PRINTFORMW ...
+		PRINTFORMW 당신은 평소보다 일찍 발키리의 방에 찾아갔다.
+		PRINTFORMW 발키리는 문을 살짝 열어 당신을 마주했다.
+		PRINTFORMW 「각하..?」
+		PRINTFORMW 「오늘은 평소보다 빨리 오셨군요」
+		PRINTFORMW 발키리는 별일 아니라고 생각했다.
+		PRINTFORMW 가끔씩 있는 각하의 변덕이라고 생각했다.
+		PRINTFORMW 「각하, 무슨 급한 일이길래 이렇게 일찍 오셨습니까...?」
+		PRINTFORMW 발키리는 그 순간 꿈의 내용이 생각나서
+		PRINTFORMW 당신을 의식하며 얼굴을 붉게 물들였다.
+		PRINTFORMW 조금은 기대했다.
+		PRINTFORMW 자신이 꾼 꿈과 같은 일이 일어나지않을까.
+		PRINTFORMW 당신이 입을 열기전까지, 발키리는 기대하고 있었다.
+		PRINTFORMW 당신은 그냥 일찍 일어난김에 발키리를 만나러왔다고 했다.
+		PRINTFORMW 「아」
+		PRINTFORMW 아니구나
+		PRINTFORMW 내 착각이구나.
+		PRINTFORMW 「그, 그렇습니까?」
+		PRINTFORMW 「각하께서 그리 말씀하시니 기쁘군요.」
+		PRINTFORMW 그 순간 발키리의 안에서 뭔가가 툭하며 끊어졌다.
+		PRINTFORMW 툭 소리와 함께 눈물이 나려고하는걸 깨닫자
+		PRINTFORMW 「죄송합니다 각하...」
+		PRINTFORMW 「오, 오늘은...몸이 안좋아서...이만...」
+		PRINTFORMW 당신은 발키리가 방문을 닫으려하자
+		PRINTFORMW 잠시만 들어가게 해달라고 했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 발키리는 각하의 명령을 번복할 순 없다고 항상 생각했지만.
+		PRINTFORMW 어째선지 그 순간만큼은 명령을 쉽게 따를 수가 없었다.
+		PRINTFORMW 「각하...흑...지금은 안됩니다...제발...」
+		PRINTFORMW 목소리가 떨리는것과 동시에 몸도 떨렸다.
+		PRINTFORMW 그리고 끝내 멈추지못한 눈물은
+		PRINTFORMW 툭툭 소리를 내며 바닥에 부딪혔다.
+		PRINTFORMW ...
+		PRINTFORMW 당신은 발키리가 있는 방문을 천천히 열었다.
+		PRINTFORMW 문 뒤에 있던 발키리는 주저앉아 울고있었다.
+		PRINTFORMW 「각...하..?」
+		PRINTFORMW 당신은 발키리의 앞에 앉았다.
+		PRINTFORMW 「지금 뭐하시는...」
+		PRINTFORMW 그러고는 발키리의 손을 잡아서
+		PRINTFORMW 그녀의 왼손 약지에 반지를 끼웠다.
+		PRINTFORMW 발키리는 그 순간이 마치 영원처럼 느껴졌지만
+		PRINTFORMW 대체 무슨일이 난건지는 인지하지 못하였다.
+		PRINTFORMW 당신은 발키리를 끌어안았다
+		PRINTFORMW 그녀가 이 사실을 인지할때까지 끌어안고 있었다.
+		PRINTFORMW 「...」
+		PRINTFORMW 「각하...」
+		PRINTFORMW 「이제 노, 놓아주십시오...」
+		PRINTFORMW 당신은 얼굴을 빨갛게 물들인채 당신을 바라보고 있었다.
+		PRINTFORMW 「그러니까...그...」
+		PRINTFORMW 발키리는 평소답지않게 말을 더듬으며
+		PRINTFORMW 수시로 반지가 끼워진 손가락을 들여다보았다.
+		PRINTFORMW 「각하께서...지금...제게 청혼을...」
+		PRINTFORMW 당신은 미소지으며 말없이 바라보고있자
+		PRINTFORMW 발키리는 당신의 손을 잡고는 키스하였다.
+		PRINTFORMW 「각하의 선물...감사합니다...」
+		PRINTFORMW 「그리고...」
+		PRINTFORMW 발키리는 당신을 애정어린 눈으로 바라보았다.
+		PRINTFORMW 「정말, 정말로 사랑해요...」
+		PRINTFORMW 「여보...♡」
+		PRINTFORMW 발키리는 당신에게 청혼받은 다음 날부터는
+		PRINTFORMW 더 이상 그 꿈을 꾸지않게 되었다.
+		PRINTFORMW 그 꿈이 미래를 보여준 꿈인지
+		PRINTFORMW 아니면 자신의 바램이 꿈으로 변한것인지
+		PRINTFORMW 「...」
+		PRINTFORMW 그런건 이제 아무 상관없다.
+		PRINTFORMW 중요한건
+		PRINTFORMW 발키리가 바라고 바랬던 것들이
+		PRINTFORMW 끝내 이루어졌다는 것이다.
+		PRINTFORMW ......
+		PRINTFORMW ...
+		PRINTFORMW .
+		PRINTFORMW 발키리 엔딩 No. 1「꿈만 같은 사랑」
+		PRINTFORMW
+		PRINTFORMW 이후의 이야기는 행복했던 과거의 이야기.
+		RETURN 1
+	CASE 2
+		PRINTFORMW 당신은 아침 일찍 발키리의 방에 찾아갔다.
+		PRINTFORMW 「아, 당신 왔어?」
+		PRINTFORMW 소름이 끼칠정도로 텅빈 눈으로 있던 발키리는
+		PRINTFORMW 당신이 찾아오자 기뻐하며 문을 열어주었고
+		PRINTFORMW 방 안쪽은 평소처럼 마구 어질러져 있었다.
+		PRINTFORMW ...
+		PRINTFORMW 사실 처음부터는 이렇지 않았다.
+		PRINTFORMW 군인이었던 그녀는 항상 똑부러진 태도와 행동을 가지고 있었기에
+		PRINTFORMW 언제 들어가도 방은 항상 깔끔하고 각이 잡혀있었다.
+		PRINTFORMW 그런데 어느날부턴가 그런 그녀가 변했다.
+		PRINTFORMW 더 이상 정리도 하지않고, 당신이 부르거나 오기전까진 방밖으로 나오지도 않게 되었다.
+		PRINTFORMW 「여보?」
+		PRINTFORMW 어째서 그녀가 당신을 여보라고 부르는지는 모르겠다.
+		PRINTFORMW 어쩌면 그녀의 마음속에 있던 조그만 바램들이
+		PRINTFORMW 당신이 준 큰 충격을 이겨내기 위해서
+		PRINTFORMW 그녀를 이렇게 변하게 만든걸지도 모른다.
+		PRINTFORMW ...
+		PRINTFORMW 하지만 그런건 아무 상관없다.
+		PRINTFORMW 그녀가 이렇게 변하게된 이유따윈 상관없다.
+		PRINTFORMW 그야 이렇게나 재미있으니까
+		PRINTFORMW 「여보」
+		PRINTFORMW 그녀의 부름에 당신은 돌아보았다.
+		PRINTFORMW 「왜 갑자기 웃고 있는거야?」
+		PRINTFORMW 당신도 모르는 사이, 당신은 웃고있었던 모양이다.
+		PRINTFORMW 당신은 미소지으며 그녀를 끌어안으며 생각했다.
+		PRINTFORMW 오늘은 뭘하고 놀까?
+		PRINTFORMW 발키리 엔딩 No. 2「현실 부정」
+		RETURN 1
+	CASE 3
+		PRINTFORMW 당신이 저와 레오나 대장을 감싸안은 그 날로부터
+		PRINTFORMW 그리 짧지도, 길지도 않은 시간동안
+		PRINTFORMW 굉장히 많은 일들이 있었어요
+		PRINTFORMW 즐거웠던 일, 그리고 슬펐던 일
+		PRINTFORMW 그리고 지금 이 순간까지도...
+		PRINTFORMW 「앗! 지금 아기가 움직이는 소리가 났어요 레오나님!」
+		PRINTFORMW 「그래? 아무래도 아기도 님프가 마음에 들었나 보네?」
+		PRINTFORMW 「진짜? 알비스도 들을래!」
+		PRINTFORMW 「알비스! 대장님 피곤하시게 하면 안된다고 했지!」
+		PRINTFORMW 「후훗 난 괜찮아 베라, 자 알비스 너도 들어볼래?」
+		PRINTFORMW 「네!」
+		PRINTFORMW 저희 자매들은 항상 한결같네요.
+		PRINTFORMW ...마치 당신처럼
+		PRINTFORMW 「정말 앞으로 감당하실 수 있겠습니까?」
+		PRINTFORMW 제가 슬며시 던진 질문에
+		PRINTFORMW 다시 한번 멋쩍은 미소를 짓고있는 당신
+		PRINTFORMW 그리고는 다시 부드러운 눈으로 절 바라보네요
+		PRINTFORMW ...이렇게 두근거릴 수가 있다니
+		PRINTFORMW 당신은 정말 대단한 사람이에요
+		PRINTFORMW 「그 날 제가 각하의 결정에 따른 것이 옳은 결정인지 아닌지는 아직은 모르겠습니다만...」
+		PRINTFORMW 「...그래도 한 가지는 확실합니다.」
+		PRINTFORMW 「...전 지금 누구보다도 행복합니다♡」
+		PRINTFORMW 발키리는 한 손으로 볼록하게 커진 배를 쓰다듬으며.
+		PRINTFORMW 당신의 어깨에 머리를 기대었다.
+		PRINTFORMW 「어머, 굉장히 좋은 그림이네요」
+		PRINTFORMW 님프가 알비스에게 차례를 넘겨주고는 가까이 다가왔다.
+		PRINTFORMW 그러고는 뒤에서 자그마한 카메라를 미소지으며 꺼내보였다.
+		PRINTFORMW 「기왕 이렇게 모였는데, 다 같이 기념 사진이라도 찍어보는 건 어떨까요 발키리님?」
+		PRINTFORMW 「네, 좋은 생각인것 같습니다.」
+		PRINTFORMW 「사진? 알비스도 찍을래!」
+		PRINTFORMW 「후훗, 잠시만요 알비스, 단체 사진 찍기 전에... 세 분만을 위한 사진을 찍어야 하지 않겠어요?」
+		PRINTFORMW 「앗! 그러네!」
+		PRINTFORMW 님프의 말을 듣고는 쪼르르 님프의 곁에 꼭 붙는 알비스.
+		PRINTFORMW 「네...잠시만요... 앗! 레오나님이랑 발키리님! 사령관님 곁에 조금만 더 붙어주세요!」
+		PRINTFORMW 「아, 알겠습니다.」
+		PRINTFORMW 「알았어, 알았어,」
+		PRINTFORMW 레오나와 발키리는 당신의 곁에 꼭 달라붙었다.
+		PRINTFORMW 「네에, 세 분 모두 너무 아름다워요! 그럼... 찍을게요!」
+		PRINTFORMW 찰칵!
+		PRINTFORMW 찰나같은 카메라 빛에 발키리는 눈을 연신 깜빡이며 생각했다.
+		PRINTFORMW ...
+		PRINTFORMW 우리 셋뿐만 아니라 다섯명 모두의 행복이 영원하길...
+		PRINTFORMW 발키리 엔딩 No. 3「시스터즈」
+		PRINTFORMW  이후의 이야기는 즐거웠던 과거의 이야기.
+		RETURN 1
+ENDSELECT ;3개의 케이스 존재
+RETURN 0
+

@@ -14,13 +14,33 @@
 ;대상 없이 밤 > 낮시 에러상황 방지
 SIF TARGET == 0
     RETURN 0
+CSTR:1 = 
 
 CALL SET_MSG_CSTR(TARGET)
+SELECTCASE NO:TARGET
+    CASE 68
+        IF TALENT:정신쇠약 == 1 && TALENT:사랑 == 2
+            CSTR:1 = Weak2
+        ELSEIF CFLAG:공포 > 199 && TALENT:사랑 == 2
+            CSTR:1 = Fear2
+        ELSEIF TALENT:혼인 == 1 || TALENT:사랑 == 2
+            CSTR:1 = Love
+        ELSEIF TALENT:짜증 && TALENT:사랑 == 2
+            CSTR:1 = Annoyed2
+        ENDIF
+ENDSELECT
 
 SIF FLAG:속박상태
     CSTR:1 = Hidden
 
-TRYCALLFORM M_No{NO:TARGET}_EVENT_Morning
+WHILE 1
+    TRYCALLFORM M_No{NO:TARGET}_EVENT_Morning
+    IF RESULT == 0
+        CSTR:1 '= Alternative_CSTR(TARGET)
+    ELSE
+        BREAK
+    ENDIF
+WEND
 
 RETURN 1
 ;-------------------------------------------------
@@ -28,10 +48,30 @@ RETURN 1
 ;ARG = 인게임 캐릭터번호
 ;-------------------------------------------------
 @MSG_Sortie(ARG)
+CSTR:ARG:1 = 
 
 CALL SET_MSG_CSTR(ARG)
+SELECTCASE NO:ARG
+    CASE 68
+        IF TALENT:ARG:정신쇠약 == 1 && TALENT:ARG:사랑 == 2
+            CSTR:ARG:1 = Weak2
+        ELSEIF CFLAG:ARG:공포 > 199 && TALENT:ARG:사랑 == 2
+            CSTR:ARG:1 = Fear2
+        ELSEIF TALENT:ARG:혼인 == 1 || TALENT:ARG:사랑 == 2
+            CSTR:ARG:1 = Love
+        ELSEIF TALENT:ARG:짜증 && TALENT:ARG:사랑 == 2
+            CSTR:ARG:1 = Annoyed2
+        ENDIF
+ENDSELECT
 
-TRYCALLFORM M_No{NO:ARG}_EVENT_Sortie
+WHILE 1
+    TRYCALLFORM M_No{NO:ARG}_EVENT_Sortie
+    IF RESULT == 0
+        CSTR:ARG:1 '= Alternative_CSTR(ARG)
+    ELSE
+        BREAK
+    ENDIF
+WEND
 
 RETURN 1
 ;-------------------------------------------------
@@ -39,12 +79,126 @@ RETURN 1
 ;ARG = 인게임 캐릭터번호, ARG:1 = 출격 수입
 ;-------------------------------------------------
 @MSG_Sortie_Return(ARG, ARG:1)
+CSTR:ARG:1 = 
 
 CALL SET_MSG_CSTR(ARG)
+SELECTCASE NO:ARG
+    CASE 68
+        IF TALENT:ARG:정신쇠약 == 1 && TALENT:ARG:사랑 == 2
+            CSTR:ARG:1 = Weak2
+        ELSEIF CFLAG:ARG:공포 > 199 && TALENT:ARG:사랑 == 2
+            CSTR:ARG:1 = Fear2
+        ELSEIF TALENT:ARG:혼인 == 1 || TALENT:ARG:사랑 == 2
+            CSTR:ARG:1 = Love
+        ELSEIF TALENT:ARG:짜증 && TALENT:ARG:사랑 == 2
+            CSTR:ARG:1 = Annoyed2
+        ENDIF
+ENDSELECT
 
-TRYCALLFORM M_No{NO:ARG}_EVENT_Sortie_Return
+WHILE 1
+    TRYCALLFORM M_No{NO:ARG}_EVENT_Sortie_Return
+    IF RESULT == 0
+        CSTR:ARG:1 '= Alternative_CSTR(ARG)
+    ELSE
+        BREAK
+    ENDIF
+WEND
 
 PRINTFORML %ARG가% 출격에서 복귀했습니다.
 PRINTFORMW 전투원이 구해온 물건을 팔아 총 %MONEYSTR(ARG:1)%을 벌었습니다.
 
 RETURN 1
+;-------------------------------------------------
+;요리시 개별 메시지
+;대상 = 인게임 캐릭터번호, ARGS = 출력 상황
+;-------------------------------------------------
+@MSG_Cooking(대상, ARGS)
+#DIM 대상
+
+;메시지 태그 설정
+CSTR:대상:1 = 
+CALL SET_MSG_CSTR(대상)
+SELECTCASE NO:대상
+    CASE 68
+        IF TALENT:대상:정신쇠약 == 1 && TALENT:대상:사랑 == 2
+            CSTR:대상:1 = Weak2
+        ELSEIF CFLAG:대상:공포 > 199 && TALENT:대상:사랑 == 2
+            CSTR:대상:1 = Fear2
+        ELSEIF TALENT:대상:혼인 == 1 || TALENT:대상:사랑 == 2
+            CSTR:대상:1 = Love
+        ELSEIF TALENT:대상:짜증 && TALENT:대상:사랑 == 2
+            CSTR:대상:1 = Annoyed2
+        ENDIF
+ENDSELECT
+
+;출력 경로 확인
+SELECTCASE ARGS
+    CASE "Cook_Self" ;MASTER의 조리
+        PRINTW 당신은 요리를 시작했다.
+        WHILE 1
+            TRYCALLFORM M_No{NO:대상}_EVENT_Cook_Self
+            IF RESULT == 0
+                CSTR:대상:1 '= Alternative_CSTR(대상)
+            ELSE
+                BREAK
+            ENDIF
+        WEND
+    CASE "Cook_Bio" ;TARGET의 조리
+        IF FLAG:속박상태
+            PRINTFORMW %조사처리(CALLNAME:대상, "이")% 당신에게 요리를 만들어주겠다고 했다.
+        ELSE
+            PRINTFORMW 당신은 %CALLNAME:대상%에게 요리를 부탁했다.
+        ENDIF
+        WHILE 1
+            TRYCALLFORM M_No{NO:대상}_EVENT_Cook
+            IF RESULT == 0
+                CSTR:대상:1 '= Alternative_CSTR(대상)
+            ELSE
+                BREAK
+            ENDIF
+        WEND
+    CASE "Eat_Com" ;MASTER의 요리
+        PRINTFORMW 당신은 %조사처리(CALLNAME:대상, "과")% 함께 식사를 했다.
+        WHILE 1
+            TRYCALLFORM M_No{NO:대상}_EVENT_Eat_Com
+            IF RESULT == 0
+                CSTR:대상:1 '= Alternative_CSTR(대상)
+            ELSE
+                BREAK
+            ENDIF
+        WEND
+        SIF NO:대상 == 51 && ABL:MASTER:조리lv < 3 ;Lowlv
+            CALL ILLUST(대상, 1, "COOKING")
+    CASE "Eat_Bio" ;TARGET의 요리
+        IF FLAG:속박상태
+            PRINTW 당신은 묶여있어, 스스로 식사를 할 수 없다.
+        ELSE
+            PRINTFORMW 당신은 %조사처리(CALLNAME:대상, "과")% 함께 식사를 했다.
+        ENDIF
+        WHILE 1
+            TRYCALLFORM M_No{NO:대상}_EVENT_Eat_Lunch
+            IF RESULT == 0
+                CSTR:대상:1 '= Alternative_CSTR(대상)
+            ELSE
+                BREAK
+            ENDIF
+        WEND
+        SIF NO:대상 == 32 && ABL:대상:조리lv < 3 && TALENT:대상:사랑
+            CALL ILLUST(대상, 2, "COOKING")
+    CASE "Sell_Food"
+        SELECTCASE NO:대상
+            CASE 91
+                IF TALENT:대상:짜증 ;원본 개인 메시지에서 떼옴, SellFood,Annoyed
+                    PRINTL ?
+                    PRINTL 어?
+                    PRINTL ??
+                    PRINTL 그게 팔렸다고?
+                    PRINTW 이 세계는 알 수 없는 것들로 가득했다.
+                ENDIF
+        ENDSELECT
+        ;문제 발생 예방용 초기화 처리
+        CSTR:대상:1 '= ""
+ENDSELECT
+
+
+

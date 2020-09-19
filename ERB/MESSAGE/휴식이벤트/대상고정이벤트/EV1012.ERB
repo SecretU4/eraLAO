@@ -1,0 +1,57 @@
+﻿@MSG_EV_1012(ARG, ARG:1)
+PRINTFORMW 문득 휴식 도중 목이 말라진 당신은 마실 것을 찾으러 거실로 나왔다.
+PRINTFORMW 거실로 나와보니 부엌 식탁에서 켈베로스가 고로롱 거리며 엎드려 자고 있었다.
+PRINTFORMW 「...헤헤..음냐..」
+PRINTFORMW 켈베로스가 깨지 않도록 조용히 냉장고에서 마실 것을 꺼내던 당신은 문득 켈베로스의 말랑한 볼따구를 찔러 보고 싶다는 욕구에 빠졌다.
+PRINTFORMW 마실 것을 목 너머로 넘기며 잠시 고민의 시간을 가진 당신은 이내
+PRINTFORML [1] 망설임 없이 켈베로스의 볼따구를 손가락으로 눌렀다.
+PRINTFORMW [2] 켈베로스가 깨지 않도록 조용히 방으로 돌아갔다.
+WHILE 1
+    INPUT
+    SELECTCASE RESULT
+        CASE 1,2
+            LOCAL = 1012 + RESULT
+            CALLFORM MSG_EV_{LOCAL}(ARG, ARG:1)
+            BREAK
+        CASEELSE
+            PRINTW 1, 2 중 하나를 입력해주세요.
+    ENDSELECT
+WEND
+RETURN 1
+
+@MSG_EV_1013(ARG, ARG:1)
+PRINTFORMW 당신은 망설임 없이 켈베로스의 볼따구를 콕하고 찔렀다.
+PRINTFORMW 약간의 움찔거림과 함께 켈베로스는 부스스 눈을 떴다.
+PRINTFORMW 「...헤...?」
+PRINTFORMW 눈을 비비며 이리저리 살피던 켈베로스는 이내 당신이 바로 옆에 있다는 걸 깨달은 듯하다.
+PRINTFORML 「엑」
+PRINTFORML 「...」
+PRINTFORML 「보...보셨어요?」
+PRINTFORMW 당신이 말 없이 웃음으로 답하자 이내 켈베로스의 얼굴이 사과처럼 새빨게졌다.
+PRINTFORMW 「으..읏...」
+PRINTFORMW 왠일로 켈베로스답지 않은 반응에 당신은 의문을 표했다.
+PRINTFORML 「...아무리 저라도 여자아이라구요...?」
+PRINTFORML 「좋,좋아하는 사람 앞에서 풀어진 모습을 보이면 부끄럽단 말이에요...」
+PRINTFORMW 당신은 켈베로스의 자는 모습도 귀여웠다고 말했다.
+PRINTFORMW 「헤헤...정말요?..」
+PRINTFORMW 당신의 말 한마디에 이내 다시 밝아진 켈베로스를 보며 당신은 쓴웃음을 지었다.
+PRINTFORML 「귀엽다고 해주셨으니까....음」
+PRINTFORML 「답례로 잠 깰 겸 산책 나가요!」
+PRINTFORML 당신은 어째서 그렇게 되는걸까 라고 고민할 틈도 없이 켈베로스의 손에 붙들려 밖으로 뛰쳐나갔다.
+PRINTFORMW 호감도+20
+CFLAG:ARG:호감도 += 20
+RETURN 1
+
+@MSG_EV_1014(ARG, ARG:1)
+PRINTFORMW 당신은 켈베로스가 깨지 않도록 조용히 당신의 방으로 발걸음을 옮겼다.
+PRINTFORMW 켈베로스는 세상 편한 표정으로 행복하게 자고있었다.
+PRINTFORMW 「헤헤...산책..500배....」
+PRINTFORMW 도대체 무슨 꿈을 꾸는 걸까 공포에 질린 당신은 이내 켈베로스가 저러다가 감기에 걸리지 않을까 걱정되었다.
+PRINTFORMW 당신은 조용히 담요를 들고와 켈베로스에게 덮어 주었다.
+PRINTFORML 「헤헤...」
+PRINTFORML 「사령관님....사랑..해요...」
+PRINTFORMW 잠꼬대 마저 한결 같은 켈베로스를 보며 당신은 쓴웃음을 지었다.
+PRINTFORML 당신은 살며시 켈베로스의 머리를 쓰다듬은 후 조용히 당신의 방으로 돌아갔다.
+PRINTFORMW 스트레스-20
+CFLAG:ARG:스트레스 -= 20
+RETURN 1

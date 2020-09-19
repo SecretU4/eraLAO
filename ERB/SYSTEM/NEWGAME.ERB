@@ -20,6 +20,9 @@ MONEY:0 = 100000
 ;원룸으로 설정
 FLAG:캐릭터보유고 = 2
 
+;새로하기 대응
+SIF GETCHARA(0) == -1
+    ADDCHARA 0
 
 CALL MESSAGE_OPENING
 
@@ -28,8 +31,20 @@ CALL COMMANDER_MAKING
 ;게임 시작시 변수 데이터 처리
 CALL ADD_ALL_CHARA
 CALL UPDATE_STOCK
+;그림 유무 처리
+FOR LOCAL, 1, CHARANUM
+    SELECTCASE NO:LOCAL
+        CASE 7, 12, 32, 51, 68, 89, 113, 123, 132, 138
+            CFLAG:LOCAL:개별그림유무 = 1
+    ENDSELECT
+NEXT
 
-CALL SET_EX_ITEM_SALES(200, 203)
+;약혼반지는 하나만
+CALL SET_EX_ITEM_SALES(1, 1)
+
+CALL SET_ITEM_SALES(2, 50, 20)
+CALL SET_EX_ITEM_SALES(50, 60)
+CALL SET_EX_ITEM_SALES(200, 205)
 
 ;보너스 퀴즈
 PRINTL 스타트 퀴즈가 있습니다.
@@ -121,20 +136,20 @@ LOCALS:7 = 에라라오PE(≒카톡)는 트래픽 걱정이 없다.
 LOCALS:8 = 남성호르몬의 문제로 인해 남성 바이오로이드는 만들지 않는다.
 LOCALS:9 = 철충은 AGS와 바이오로이드를 감염시킨다.
 
-FOR LOCAL, 0, 9
+REPEAT 10
     DRAWLINE
-    PRINTFORML %LOCALS:LOCAL%
-    SIF LOCAL == 7
+    PRINTFORML %LOCALS:COUNT%
+    SIF COUNT == 7
         PRINTFORML (트래픽 : 서버에서 개인에게 전송되는 데이터의 양)
     CALL ASK_YN("YES","NO")
-    IF (GROUPMATCH(LOCAL, 0,1,3,5,6,8) && RESULT == 0) || (GROUPMATCH(LOCAL, 2,4,7,9) && RESULT == 1)
+    IF (GROUPMATCH(COUNT, 0,1,3,5,6,8) && RESULT == 0) || (GROUPMATCH(COUNT, 2,4,7,9) && RESULT == 1)
         PRINTL 정답입니다.
         PRINTW 소지금 + 5000
         MONEY:0 += 5000 
     ELSE
         PRINTW 오답입니다.
     ENDIF
-NEXT
+REND
 DRAWLINE
 PRINTFORML 모든 문제가 끝났습니다.
 
@@ -161,43 +176,16 @@ SORTCHARA
 ;===========================================================
 ;함수명:NEWGAME
 ;새로하기를 눌렀을때의 동작
-;현재 특정 기능을 수행하지 않고 바로 처음 시작시로 직행
 ;===========================================================
 @NEWGAME
 PRINTW 엔터 키를 눌러 계속...
-CLEARLINE 5000
+RESETDATA
+CLEARLINE LINECOUNT
 BEGIN FIRST
-
-
-
-@DEBUG
-PRINTL 디버그 모드입니다.
-
-;세이브파일의 현 버전 설정
-FLAG:LAST_LAOVERSION = GAMEBASE_VERSION
-
-;전역변수 초기화
-DAY = 1
-MASTER = 0
-TARGET = 0
-ASSI = 0
-MONEY:0 = 100000000
-
-;원룸으로 설정
-FLAG:캐릭터보유고 = 2
-
-NAME:MASTER = 아이샤
-CALLNAME:MASTER = 아이샤
-
-;게임 시작시 변수 데이터 처리
-CALL ADD_ALL_CHARA
-
-CALL SET_EX_ITEM_SALES(200, 203)
-
-PRINTW 디버그 설정이 완료되었습니다.
-
-BEGIN SHOP
-
+;===========================================================
+;함수명:COMMANDER_NAMESET
+;MASTER 이름 변경 기능
+;===========================================================
 @COMMANDER_NAMESET
 IF GROUPMATCH(NAME:MASTER, "복","규동","아이샤","오렌지","에이드","돈부리")
     SETCOLOR 250, 0, 0

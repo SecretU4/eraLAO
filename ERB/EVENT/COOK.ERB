@@ -1,0 +1,338 @@
+﻿;==============================================================
+;함수명: COOK
+;요리 기능 관련 총괄 함수
+;==============================================================
+@COOK
+#DIM 조리자 ;요리한 사람
+
+;요리 만들기
+CALL MAKE_FOOD
+
+SELECTCASE RESULT
+    CASE 0
+        RETURN -1
+    CASE 1 ;MASTER가 만든 요리
+        조리자 = MASTER
+        CALL EAT_FOOD(TARGET, 0)
+    CASE 2 ;TARGET이 만든 요리
+        조리자 = TARGET
+        CALL EAT_FOOD(TARGET, 1)
+    CASE 3 ;MASTER가 만든 요리
+        조리자 = MASTER
+        CALL SELL_FOOD(MASTER)
+    CASE 4 ;TARGET이 만든 요리
+        조리자 = TARGET
+        CALL SELL_FOOD(TARGET)
+ENDSELECT
+
+;레벨 처리
+EXP:조리자:요리경험 ++
+
+CALL GET_Cooklv(조리자)
+SIF RESULT != 0
+    PRINTFORMW %CALLNAME:조리자%의 요리레벨이 {RESULT}레벨이 되었습니다.
+CALL GET_Cook_TALENT(조리자)
+SIF RESULT == 1
+    PRINTFORMW %CALLNAME:조리자% [요리사] 취득
+
+BEGIN TURNEND
+;==============================================================
+;함수명: MAKE_FOOD
+;요리할 대상 선택 등 처리
+;반환값 미실행 = 0, 먹기-당신만듦 = 1, 먹기-TARGET만듦 = 2
+;판매-당신만듦 = 3, 판매-TARGET만듦 = 4
+;==============================================================
+@MAKE_FOOD
+
+IF TARGET == MASTER
+    PRINTW 당신은 요리를 만들었다.
+    RETURN 3 ;무조건 판매
+ELSEIF FLAG:속박상태 ;리제 히든
+    CALL MSG_Cooking(TARGET, "Cook_Bio")
+    RETURN 2 ;무조건 먹기
+ELSE
+    PRINTL 누가 요리 하나요?
+    PRINTL
+    PRINTL [1] 당신
+    PRINTFORML [2] %CALLNAME:TARGET%
+    PRINTL
+    PRINTL [0] 돌아가기
+    WHILE 1
+        INPUT
+        SELECTCASE RESULT
+            CASE 0
+                RETURN 0
+            CASE 1
+                CALL MSG_Cooking(TARGET, "Cook_Self")
+                CALL SELECT_HOW_TO_FOOD
+                IF RESULT == 1
+                    RETURN 1
+                ELSEIF RESULT == 2
+                    RETURN 3
+                ENDIF
+            CASE 2
+                ;TARGET의 요리 가능 여부 판별
+                SELECTCASE NO:TARGET
+                    CASE 68 ;에밀리
+                        IF CFLAG:TARGET:호감도 < 300
+                            PRINTFORMW 당신은 %CALLNAME:TARGET%에게 요리를 부탁했지만 거절당했다.
+                            RETURN 0
+                        ELSEIF TALENT:TARGET:정신쇠약 == 2 ;정신붕괴
+                            PRINTFORMW %타겟은% 요리할 수 있는 상태가 아닌 것 같다.
+                            RETURN 0
+                        ELSEIF TALENT:사랑 != 2 && TALENT:정신쇠약
+                            PRINTFORMW %타겟은% 요리할 수 있는 상태가 아닌 것 같다.
+                            RETURN 0
+                        ENDIF
+                    CASE 89 ;세이렌은 호감도 조건 무시
+                        IF TALENT:TARGET:정신쇠약 == 2 ;정신붕괴
+                            PRINTFORMW %타겟은% 요리할 수 있는 상태가 아닌 것 같다.
+                            RETURN 0
+                        ENDIF
+                    CASEELSE
+                        IF CFLAG:TARGET:호감도 < 300
+                            PRINTFORMW 당신은 %CALLNAME:TARGET%에게 요리를 부탁했지만 거절당했다.
+                            RETURN 0
+                        ELSEIF TALENT:TARGET:정신쇠약 == 2 ;정신붕괴
+                            PRINTFORMW %타겟은% 요리할 수 있는 상태가 아닌 것 같다.
+                            RETURN 0
+                        ENDIF
+                ENDSELECT
+                CALL MSG_Cooking(TARGET, "Cook_Bio")
+                CALL SELECT_HOW_TO_FOOD
+                IF RESULT == 1
+                    RETURN 2
+                ELSEIF RESULT == 2
+                    RETURN 4
+                ENDIF
+            CASEELSE
+                PRINTW 주어진 선택지 중에서 입력해주세요.
+        ENDSELECT
+    WEND
+ENDIF
+;-------------------------------------------------------------
+;함수명: SELECT_HOW_TO_FOOD
+;음식의 처리 방식 선택지
+;반환값 1 = 함께 먹기 2 = 팔기
+;-------------------------------------------------------------
+@SELECT_HOW_TO_FOOD
+PRINTL 이 음식을 어떻게 하시겠나요?
+PRINTL
+PRINTL [1] 함께 먹는다
+PRINTL [2] 판다
+WHILE 1
+    INPUT
+    SELECTCASE RESULT
+        CASE 1
+            RETURN 1
+        CASE 2
+            RETURN 2
+        CASEELSE
+            PRINTW 주어진 선택지 중에서 입력해주세요.
+    ENDSELECT
+WEND
+;==============================================================
+;함수명: EAT_FOOD(ARG)
+;만든 음식을 먹음
+;ARG = 인게임 캐릭터번호
+;ARG:1 = 0은 MASTER, 1은 TARGET 이 만듦
+;==============================================================
+@EAT_FOOD(ARG, ARG:1)
+#DIM DYNAMIC 수치변동값 ;호감도 증가, 스트레스 감소
+
+IF ARG:1 == 0
+    CALL MSG_Cooking(ARG, "Eat_Com")
+
+    ;조리lv 보정치
+    SELECTCASE ABL:MASTER:조리lv
+        CASE 0
+            수치변동값 = 5
+        CASE 1
+            수치변동값 = 7
+        CASE 2
+            수치변동값 = 10
+        CASE 3
+            수치변동값 = 12
+        CASE 4
+            수치변동값 = 15
+        CASE 5
+            수치변동값 = 18
+    ENDSELECT
+ELSEIF ARG:1 == 1
+    CALL MSG_Cooking(ARG, "Eat_Bio")
+
+    ;조리lv 보정치
+    SELECTCASE ABL:ARG:조리lv
+        CASE 0
+            수치변동값 = 3
+        CASE 1
+            수치변동값 = 5
+        CASE 2
+            수치변동값 = 7
+        CASE 3
+            수치변동값 = 10
+        CASE 4
+            수치변동값 = 12
+        CASE 5
+            수치변동값 = 15
+    ENDSELECT
+
+    SIF FLAG:속박상태
+        수치변동값 = 1000
+ENDIF
+
+;수치 변동 처리
+CFLAG:ARG:호감도 += 수치변동값
+CFLAG:ARG:스트레스 -= 수치변동값
+
+;짜증 소멸 처리
+CALL GET_Annoyed(ARG)
+IF RESULT == 1
+    THROW 요리로 인한 짜증 획득 문제 발생
+ELSEIF RESULT == -1
+    PRINTFORML %CALLNAME:ARG%의 짜증이 풀린 것 같습니다.
+ENDIF
+
+;연모, 사랑 처리 (연모 우선권)
+CALL GET_Affection(ARG)
+IF RESULT == 1 || RESULT == 2
+    PRINTFORML %CALLNAME:ARG% [연모] 취득
+    IF RESULT == 2
+        PRINTFORML %ARG를% 속박하고 있던 무언가가 풀렸습니다.
+        PRINTL [억압] 소멸
+    ENDIF
+    WAIT
+ELSE
+    CALL GET_LOVE(ARG)
+    IF RESULT == 1 || RESULT == 2
+        PRINTFORML %CALLNAME:ARG% [사랑] 취득
+        IF RESULT == 2
+            PRINTFORML %CALLNAME:ARG% [비관적] 소멸
+        ENDIF
+        WAIT
+    ENDIF
+ENDIF
+PRINTL
+PRINTFORML %CALLNAME:ARG%의 호감도가 {수치변동값} 상승하였습니다.
+PRINTFORMW %CALLNAME:ARG%의 스트레스가 {수치변동값} 감소하였습니다.
+RETURN 1
+;==============================================================
+;함수명: SELL_FOOD(ARG)
+;만든 음식의 판매
+;ARG = 인게임 캐릭터번호 (MASTER 포함)
+;==============================================================
+@SELL_FOOD(ARG)
+#DIM 수익
+;수익 계산부
+수익 = 2000 + RAND:2000
+
+;레벨에 따른 수익 보정
+SELECTCASE ABL:ARG:조리lv
+    CASE 1
+        수익 = 수익 * 3 / 2
+    CASE 2
+        수익 = 수익 * 2
+    CASE 3
+        수익 = 수익 * 5 / 2
+    CASE 4
+        수익 = 수익 * 3
+    CASE 5
+        수익 = 수익 * 7 / 2
+ENDSELECT
+
+;능력에 따른 수익 보정
+SIF TALENT:ARG:요리사
+    수익 = 수익 * 13 / 10
+
+;소완 판매 카운트 관련 처리
+;소완의 기본 능력: EXP:요리경험 = 1000, ABL:조리lv = 5
+IF NO:ARG == 12
+    SELECTCASE CFLAG:ARG:etc2
+        CASE IS < 5
+            수익 = 0
+            CFLAG:ARG:etc2 ++
+        CASE 5
+            수익 = 0
+        CASE IS < 11
+            수익 = 0
+            CFLAG:ARG:etc2 ++
+        CASE 11
+            수익 = 0
+        CASE IS < 17
+            수익 /= 2
+            CFLAG:ARG:etc2 ++
+        CASE 17
+            수익 /= 2
+        CASEELSE ;18 이상
+            수익 *= 4
+            CFLAG:ARG:etc2 ++
+    ENDSELECT
+ENDIF
+
+MONEY += 수익
+CFLAG:ARG:요리수입 += 수익
+FLAG:총요리수입 += 수익
+
+;주체별 특수 수치 처리/메시지 출력부
+IF NO:ARG == 12 && CFLAG:ARG:etc2 < 12
+    PRINTL 요리를 팔려하자 소완이 막아섰다.
+ELSE
+    PRINTFORML %CALLNAME:ARG%의 요리는 %MONEYSTR(수익)%에 팔렸습니다.
+    IF NO:ARG == 12 && CFLAG:ARG:etc2 < 18
+        PRINTL 소완은 복잡한 표정을 보였다.
+        PRINTL 소완 스트레스 20 증가
+        CFLAG:ARG:스트레스 += 20
+    ENDIF
+ENDIF
+WAITANYKEY
+
+CALL MSG_Cooking(ARG, "Sell_Food")
+RETURN 1
+;==============================================================
+;함수명: GET_Cooklv(ARG)
+;조리lv 변동 처리 함수
+;변동시 해당 레벨값 반환, 이외 0 반환
+;ARG = 인게임 캐릭터번호(MASTER 포함)
+;==============================================================
+@GET_Cooklv(ARG)
+SELECTCASE EXP:ARG:요리경험
+    CASE IS > 184
+        SIF ABL:ARG:조리lv >= 5
+            RETURN 0
+        ABL:ARG:조리lv = 5
+        RETURN 5
+    CASE IS > 114
+        SIF ABL:ARG:조리lv >= 4
+            RETURN 0
+        ABL:ARG:조리lv = 4
+        RETURN 4
+    CASE IS > 64
+        SIF ABL:ARG:조리lv >= 3
+            RETURN 0
+        ABL:ARG:조리lv = 3
+        RETURN 3
+    CASE IS > 24
+        SIF ABL:ARG:조리lv >= 2
+            RETURN 0
+        ABL:ARG:조리lv = 2
+        RETURN 2
+    CASE IS > 4
+        SIF ABL:ARG:조리lv >= 1
+            RETURN 0
+        ABL:ARG:조리lv = 1
+        RETURN 1
+ENDSELECT
+RETURN 0
+;==============================================================
+;함수명: GET_Cook_TALENT(ARG)
+;요라사 취득 여부 처리 함수
+;취득시 1 반환, 이외 0 반환
+;ARG = 인게임 캐릭터번호(MASTER 포함)
+;==============================================================
+@GET_Cook_TALENT(ARG)
+IF EXP:ARG:요리경험 > 199 && !TALENT:ARG:요리사
+    TALENT:ARG:요리사 = 1
+    RETURN 1
+ELSE
+    RETURN 0
+ENDIF

@@ -1,0 +1,38 @@
+﻿@MSG_EV_1027(ARG, ARG:1)
+SELECTCASE RAND:2
+CASE 0
+PRINTFORMW 어느 날, 당신은 방 안을 기어다니는 무언가를 보았다.
+PRINTFORMW 어두운 빛을 띠는 농갈색에, 납작하고, 바닥을 사사삭 기어다니는...
+PRINTFORMW 바퀴벌레.
+PRINTFORMW 당신이 비명을 지르자, 거의 동시에 어떤 기척이 느껴졌다.
+PRINTFORMW 「해충!!」
+PRINTFORMW 어느새 당신 옆으로 온 리제는 순식간에 날카로운 가윗날로 바퀴벌레의 몸통을 찍어, 자랑스레 당신 앞에 보였다.
+PRINTFORMW 당신은 그것을 똑바로 바라보지 못하며, 리제를 칭찬했다.
+PRINTFORMW 그리고, 뒤처리를 끝내고 돌아온 리제의 머리를 쓰다듬어주었다.
+PRINTFORMW 「후후후... 주인님께서 날 칭찬해주셨어...」
+PRINTFORMW 「해충 처리는 언제든 저한테 맡겨주세요, 주인님!」
+PRINTFORMW 당신은 눈 하나 깜짝 않고 해충을 처리해주는 리제가 새삼 달리 보였다.
+PRINTFORML 당신은 리제가 만족할 때까지 칭찬해주었다.
+PRINTFORMW 호감도+20 스트레스-10
+CFLAG:ARG:호감도 += 20
+CFLAG:ARG:스트레스 -= 10
+RETURN 1
+CASE 1
+PRINTFORMW 당신은 콘크리트 틈새 사이로 핀 노란 꽃 한 송이를 보았다.
+PRINTFORMW 그 꽃을 충동적으로 빈 화분에 옮겨심은 당신은, 자신이 꽃을 가꾸는 법을 전혀 모른다는 것을 깨달았다.
+PRINTFORMW 당신은 이런 일에 대해서 전문가인, 정원사 리제를 찾아갔다.
+PRINTFORMW 리제는 자신에게 맡겨준다면 정성을 다해서 가꿔주겠다고 했지만,
+PRINTFORMW 왠지 모르게 꽃을 직접 키워보고 싶었던 당신은 이를 거절했다.
+PRINTFORMW 「그럼... 혹시 도중에 모르는 게 생긴다면 꼭 저한테 물어보세요. 아셨죠?」
+PRINTFORMW 당신은 고개를 끄덕였다. 리제는, 손가락을 꼼지락거리며 다시 입을 열었다.
+PRINTFORMW 「...그리고...」
+PRINTFORMW 「...」
+PRINTFORMW 「어느 정도 자라고 난 뒤에는... 저한테 그 꽃을 선물로 주실 수 있으신가요?」
+PRINTFORMW 당신은 보일 듯 말 듯 입꼬리를 올리며, 다시 한 번 고개를 끄덕였다.
+CALL ILLUST(ARG, 4, "REST_1")
+PRINTFORML 그 모습에 리제는 뛸 듯이 기뻐했다.
+PRINTFORMW 호감도+25
+CFLAG:ARG:호감도 += 25
+RETURN 1
+ENDSELECT
+RETURN 0

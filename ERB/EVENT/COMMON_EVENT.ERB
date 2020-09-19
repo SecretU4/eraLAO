@@ -1,0 +1,740 @@
+﻿;========================================================================
+;함수명: COMMON_EVENT
+;휴식 실행시 호출
+;========================================================================
+@COMMON_EVENT
+#DIM 이벤트번호
+#DIM 선정캐릭터, 2
+
+CALL EVENT_SET_COMMON
+
+이벤트번호 = RESULT:0
+선정캐릭터:0 = RESULT:1
+선정캐릭터:1 = RESULT:2
+
+RESULT = 0
+TRYCALLFORM MSG_EV_{이벤트번호}(선정캐릭터:0, 선정캐릭터:1)
+SIF RESULT == 0
+    PRINTFORMW {이벤트번호}번 이벤트를 발견하지 못했습니다.
+
+;엔딩도 어차피 TURNEND에서 처리 가능하므로
+BEGIN TURNEND
+;========================================================================
+;함수명: EVENT_SET_COMMON
+;원본 api /event1 대응
+;대상배열_A, B는 bit 연산(0 제외), 63까지만 가능
+;필요시 대상배열_A2 같은 식으로 추가로 만들어야함
+;시스템(TEXTR) 한계상 이벤트 목록 최대치는 100개
+;이벤트 선출 함수
+;========================================================================
+@EVENT_SET_COMMON
+#DIMS 이벤트배열 ;even
+#DIM 이벤트bit값
+#DIM EVENTNO_LAST ;총 이벤트 수
+#DIM 이벤트번호
+#DIMS 이벤트번호문자열, 2
+#DIM 선택이벤트번호
+#DIM 대상
+#DIM 대상배열_A ;who_a
+#DIM 대상배열_B ;who_b
+#DIM 선택캐릭터_A ;bioA
+#DIM 선택캐릭터_B ;bioB
+
+VARSET LOCAL
+선택이벤트번호 = -1
+EVENTNO_LAST = 17
+
+IF ITEM:(ITEM_BIO(12)) > 0 ;소완 보유시 4번 이벤트 제외
+    이벤트배열 '= "0/0"
+ELSE
+    이벤트배열 '= "0/0/4"
+ENDIF
+
+IF FLAG:자택상황 != 2 ;저택 아님
+    이벤트배열 += "/1"
+ENDIF
+IF FLAG:자택상황 == 0 ;원룸임
+    이벤트배열 += "/2"
+ENDIF
+IF TALENT:MASTER:요리사
+    이벤트배열 += "/3"
+ENDIF
+
+대상배열_A = 0
+대상배열_B = 0
+
+;이벤트별 조건 체크
+FOR 대상, 1, CHARANUM
+    SIF ITEM:(ITEM_BIO(NO:대상)) != 1 ;보유여부 체크
+        CONTINUE
+;---------------------------------------------------------------
+;이벤트 조건배열 관련 처리
+;---------------------------------------------------------------
+    이벤트bit값 = 0
+    FOR 이벤트bit값, 1, (EVENTNO_LAST + 1)
+        IF IS_ARRAY_EVENT_AVAILABLE(이벤트bit값, 대상, 0)
+            SETBIT 대상배열_A, 이벤트bit값
+        ELSEIF IS_ARRAY_EVENT_AVAILABLE(이벤트bit값, 대상, 1)
+            SETBIT 대상배열_B, 이벤트bit값
+        ENDIF
+    NEXT
+;---------------------------------------------------------------
+;공용 이벤트 관련 처리 (100, 101은 바이오로이드와 무관계)
+;---------------------------------------------------------------
+    이벤트번호 = 0
+    FOR 이벤트번호, 102, 200
+        ;보유캐릭터가 1명 이하면 아예 미처리
+        SIF FLAG:현캐릭터수 <= 1
+            BREAK
+
+        이벤트번호문자열 = /{이벤트번호}
+        ;이미 켜져있다면 통과
+        SIF STRFIND(이벤트배열, 이벤트번호문자열) != -1
+            CONTINUE
+        SIF IS_SINGLE_EVENT_AVAILABLE(이벤트번호, 대상)
+            이벤트배열 += 이벤트번호문자열
+    NEXT
+;---------------------------------------------------------------
+;개별 이벤트 관련 처리
+;---------------------------------------------------------------
+;대상배열과 관계없는 개별 이벤트 처리
+;---------------------------------------------------------------
+    이벤트번호 = 0
+    FOR 이벤트번호, 1004, 1050
+        ;이벤트배열에서 제어하는 번호 추가시 이곳에도 추가바람
+        SIF GROUPMATCH(이벤트번호, 1015,1016,1019,1023,1024,1025,1026,1036,1037,1038,1040)
+            CONTINUE
+        ;보유캐릭터가 1명 이하면 일부 이벤트 제외
+        SIF FLAG:현캐릭터수 <= 1 && GROUPMATCH(이벤트번호, 1004,1005,1006,1007,1008,1012,1020,1021,1027,1028,1029,1030,1033,1039,1048)
+            CONTINUE
+
+        이벤트번호문자열:1 = /{이벤트번호}
+        IF IS_SINGLE_EVENT_AVAILABLE(이벤트번호, 대상)
+            SIF STRFIND(이벤트배열, 이벤트번호문자열:1) != -1
+                THROW 중복된 개별 이벤트 {이벤트번호}
+            이벤트배열 += 이벤트번호문자열:1
+        ENDIF
+    NEXT
+NEXT
+
+IF FLAG:현캐릭터수 > 1
+    이벤트배열 += "/100"
+    SIF FLAG:자택상황 ;원룸 아님
+        이벤트배열 += "/101"
+ENDIF
+;---------------------------------------------------------------
+;대상배열 관련 개별 이벤트 처리
+;조건 충족시 이밴트배열에 반영
+;우선순위 이벤트는 바로 선택이벤트번호로 대입
+;---------------------------------------------------------------
+이벤트bit값 = 0
+FOR 이벤트bit값, 1, (EVENTNO_LAST + 1)
+    IF GETBIT(대상배열_A, 이벤트bit값) && GETBIT(대상배열_B, 이벤트bit값)
+        SELECTCASE 이벤트bit값
+            CASE 1
+                이벤트배열 += "/1015"
+            CASE 2
+                SIF FLAG:자택상황
+                    이벤트배열 += "/1016"
+            CASE 3
+                이벤트배열 += "/1019"
+            CASE 4
+                이벤트배열 += "/201"
+            CASE 5
+                IF NO:TARGET == 31
+                    선택이벤트번호 = 1023
+                    BREAK
+                ELSEIF NO:TARGET == 32
+                    선택이벤트번호 = 1024
+                    BREAK
+                ENDIF
+            CASE 6
+                SIF TALENT:MASTER:나이 == 0 ;소년
+                    이벤트배열 += "/202"
+            CASE 7
+                이벤트배열 += "/1025"
+            CASE 8
+                SIF TALENT:MASTER:나이 == 0 && FLAG:자택상황 ;소년, 원룸아님
+                    이벤트배열 += "/1026"
+            CASE 9
+                이벤트배열 += "/1036"
+            CASE 10
+                이벤트배열 += "/1037"
+            CASE 11
+                SIF TIME == 1
+                    이벤트배열 += "/1038"
+            CASE 12
+                IF FLAG:자택상황 == 2 ;저택
+                    선택이벤트번호 = 1040
+                    BREAK
+                ENDIF
+            CASE 13
+                CONTINUE
+            CASE 15
+                IF ITEM:(ITEM_BIO(138)) > 0 && TIME == 1
+                    선택이벤트번호 = 1043
+                    BREAK
+                ENDIF
+            CASE 16
+                ;보유 여부 자체는 이벤트bit값 설정때 확인함
+                LOCAL:1 = GETCHARA(51)
+                LOCAL:2 = GETCHARA(52)
+                SIF TALENT:(LOCAL:1):사랑 ;원본은 연모만
+                    LOCAL ++
+                SIF TALENT:(LOCAL:2):사랑 ;원본은 연모만
+                    LOCAL ++
+                    
+                IF LOCAL < 2
+                    이벤트배열 += "/1045"
+                ELSEIF LOCAL == 2
+                    이벤트배열 += "/1046"
+                ENDIF
+            CASE 17
+                이벤트배열 += "/1047"
+        ENDSELECT
+    ENDIF
+
+    IF 이벤트bit값 == 9 && FLAG:현캐릭터수 > 1 && GETBIT(대상배열_A, 이벤트bit값)
+        이벤트배열 += "/1048"
+    ELSEIF 이벤트bit값 == 14 && ITEM:(ITEM_BIO(138)) > 0 && TIME == 1 && !GETBIT(대상배열_A, 이벤트bit값) && GETBIT(대상배열_B, 이벤트bit값)
+        선택이벤트번호 = 1042
+        BREAK
+    ENDIF
+NEXT
+
+;(이벤트bit값으로 정해지는 값 제외)우선출력 이벤트 지정
+SIF 선택이벤트번호 == -1
+    선택이벤트번호 = IS_PRIORITY_EVENT_AVAILABLE()
+
+;이벤트배열에서 발생할 이벤트 선정 및 이벤트 대상 설정
+;위에서 강제지정시 선택이벤트번호 값이 -1이 아니게 됨
+SIF 선택이벤트번호 == -1
+    선택이벤트번호 = TOINT(TEXTR(이벤트배열))
+
+CALL SELECT_EVENT_CHARA(선택이벤트번호)
+
+선택캐릭터_A = RESULT:0
+선택캐릭터_B = RESULT:1
+
+DEBUGPRINTFORML 선택된 이벤트 : {선택이벤트번호}
+
+;현 캐릭터수는 2명 미만인데 2명 이상이 필요한 경우 재산정
+WHILE 선택캐릭터_B == -1
+    IF GROUPMATCH(선택이벤트번호, 201,202,1023,1024,1040)
+        선택이벤트번호 = TOINT(TEXTR(이벤트배열))
+        DEBUGPRINTFORML 재선택된 이벤트 : {선택이벤트번호}
+
+        CALL SELECT_EVENT_CHARA(선택이벤트번호)
+        선택캐릭터_A = RESULT:0
+        선택캐릭터_B = RESULT:1
+    ELSE
+        BREAK
+    ENDIF
+WEND
+
+RETURN 선택이벤트번호, 선택캐릭터_A, 선택캐릭터_B
+;=================================================================
+;함수명: IS_SINGLE_EVENT_AVAILABLE(ARG, ARG:1)
+;이벤트 대상 선정시 이벤트 조건 정리 함수
+;가능하면 1, 아니라면 0 반환
+;ARG = 이벤트번호, ARG:1 = 이벤트 대상
+;=================================================================
+@IS_SINGLE_EVENT_AVAILABLE(ARG, ARG:1)
+#FUNCTION
+;----------------------------------------
+;출격중이어야 발생하는 이벤트
+;----------------------------------------
+IF CFLAG:(ARG:1):출격중
+    SELECTCASE ARG
+        ;공용 이벤트
+        CASE 102 ;연모 이상(원본 연모만), 정신쇠약 아님
+            SIF TALENT:(ARG:1):사랑 && !TALENT:(ARG:1):정신쇠약
+                RETURNF 1
+        CASE 116 ;공포 150 이상
+            SIF CFLAG:(ARG:1):공포 > 150
+                RETURNF 1
+        CASE 118 ;추가 조건 X
+            RETURNF 1
+    ENDSELECT
+;----------------------------------------
+;출격중이 아니어야 발생하는 이벤트
+;----------------------------------------
+ELSE ;!CFLAG:(ARG:1):출격중
+    ;출격중 아님, 정신쇠약/붕괴 관련없음
+    SELECTCASE ARG
+        ;공용 이벤트
+        CASE 107 ;얀데레 있음, 원룸 아님
+            SIF TALENT:(ARG:1):얀데레 && FLAG:자택상황
+                RETURNF 1
+        CASE 115 ;군인 있음, 원룸 아님
+            SIF TALENT:(ARG:1):군인 && FLAG:자택상황
+                RETURNF 1
+        CASE 119 ;공포 150 이상
+            SIF CFLAG:(ARG:1):공포 > 150
+                RETURNF 1
+    ENDSELECT
+;----------------------------------------
+;출격중 아님, 정신쇠약/붕괴 존재시 이벤트
+;----------------------------------------
+    IF TALENT:(ARG:1):정신쇠약 
+        SELECTCASE ARG
+            ;공용 이벤트
+            CASE 105 ;정신쇠약 존재
+                SIF TALENT:(ARG:1):정신쇠약 == 1
+                    RETURNF 1
+            CASE 110 ;정신쇠약 존재, 연모 아님
+                SIF TALENT:(ARG:1):정신쇠약 == 1 && !TALENT:(ARG:1):사랑
+                    RETURNF 1
+            CASE 124 ;정신붕괴 아님, 경장 아님
+                SIF TALENT:(ARG:1):정신쇠약 < 2 && TALENT:(ARG:1):분류 != 1
+                    RETURNF 1
+            ;개별 이벤트
+            CASE 1033 ;리제, 정신쇠약 존재, 타겟 아님, 원룸 아님, 밤
+                SIF NO:(ARG:1) == 7 && TALENT:(ARG:1):정신쇠약 == 1 && ARG:1 != TARGET && FLAG:자택상황 && TIME == 1
+                    RETURNF 1
+        ENDSELECT
+;----------------------------------------
+;출격중 아님, 정신쇠약/붕괴 없을때 이벤트
+;----------------------------------------
+    ELSE ;!TALENT:(ARG:1):정신쇠약
+        SELECTCASE ARG
+            ;공용 이벤트
+            CASE 103 ;연모 이상(원본 연모만), 짜증 아님
+                SIF TALENT:(ARG:1):사랑 && !TALENT:(ARG:1):짜증
+                    RETURNF 1
+            CASE 104 ;연모 아님
+                SIF !TALENT:(ARG:1):사랑
+                    RETURNF 1
+            CASE 106 ;짜증 아님, 콘챠/바닐라 모두 미보유
+                SIF ITEM:(ITEM_BIO(3))|| ITEM:(ITEM_BIO(5)) ;둘 중 하나라도 보유시 미발생
+                    RETURNF 0
+                SIF !TALENT:(ARG:1):짜증
+                    RETURNF 1
+            CASE 108 ;지휘관 아님, 군인 있음
+                SIF !TALENT:(ARG:1):지휘관 && TALENT:(ARG:1):군인
+                    RETURNF 1
+            CASE 109 ;MASTER = 소년, 짜증 아님
+                SIF TALENT:MASTER:나이 == 0 && !TALENT:(ARG:1):짜증
+                    RETURNF 1
+            CASE 111 ;작은체구 존재, MASTER != 소년
+                SIF TALENT:(ARG:1):체형 == 0 && TALENT:MASTER:나이 != 0
+                    RETURNF 1
+            CASE 112 ;연모/짜증 아님
+                SIF !TALENT:(ARG:1):사랑 && !TALENT:(ARG:1):짜증
+                    RETURNF 1
+            CASE 113 ;추가 조건 X
+                RETURNF 1
+            CASE 114 ;짜증 아님
+                SIF !TALENT:(ARG:1):짜증
+                    RETURNF 1
+            CASE 117 ;짜증 아님, 지식 있음
+                SIF !TALENT:(ARG:1):짜증 && TALENT:(ARG:1):지능 == 1
+                    RETURNF 1
+            CASE 120 ;짜증/원룸 아님, 메이드 있음
+                SIF !TALENT:(ARG:1):짜증 && FLAG:자택상황
+                    RETURNF 1
+            CASE 121 ;작은체구 존재, MASTER == 중년
+                SIF TALENT:(ARG:1):체형 == 0 && TALENT:MASTER:나이 == 2
+                    RETURNF 1
+            CASE 122 ;짜증/무식 아님
+                SIF !TALENT:(ARG:1):짜증 && TALENT:(ARG:1):지능 != -1
+                    RETURNF 1
+            CASE 123 ;메가데레 존재, 짜증 아님
+                SIF TALENT:(ARG:1):메가데레 && !TALENT:(ARG:1):짜증
+                    RETURNF 1
+            CASE 125 ;짜증/요리사 아님
+                SIF ITEM:(ITEM_BIO(12)) > 0 ;소완 보유시 미발생
+                    RETURNF 0
+                SIF !TALENT:(ARG:1):짜증 && !TALENT:(ARG:1):요리사
+                    RETURNF 1
+            CASE 126 ;코헤이 소속
+                SIF TALENT:(ARG:1):소속 == 21
+                    RETURNF 1
+            CASE 127 ;짜증/코헤이 소속 아님
+                SIF !TALENT:(ARG:1):짜증 && TALENT:(ARG:1):소속 != 21
+                    RETURNF 1
+            ;개별 이벤트
+            CASE 1004 ;리제, 짜증/원룸 아님
+                SIF NO:(ARG:1) == 7 && !TALENT:(ARG:1):짜증 && FLAG:자택상황
+                    RETURNF 1
+            CASE 1005 ;닥터, 짜증/원룸 아님
+                SIF NO:(ARG:1) == 76 && !TALENT:(ARG:1):짜증 && FLAG:자택상황
+                    RETURNF 1
+            CASE 1006 ;모모, 짜증/원룸 아님
+                SIF NO:(ARG:1) == 123 && !TALENT:(ARG:1):짜증 && FLAG:자택상황
+                    RETURNF 1
+            CASE 1007 ;소완
+                SIF NO:(ARG:1) == 12
+                    RETURNF 1
+            CASE 1008 ;세이렌, 공포 150 미만, 호감도 499 초과
+                SIF NO:(ARG:1) == 89 && CFLAG:(ARG:1):공포 < 150 && CFLAG:(ARG:1):호감도 > 499
+                    RETURNF 1
+            CASE 1012 ;켈베로스, 공포 150 미만, 호감도 499 초과
+                SIF NO:(ARG:1) == 113 && CFLAG:(ARG:1):공포 < 150 && CFLAG:(ARG:1):호감도 > 499
+                    RETURNF 1
+            CASE 1020 ;메이, 공포 150 미만, 짜증 아님
+                SIF NO:(ARG:1) == 51 && CFLAG:(ARG:1):공포 < 150 && !TALENT:(ARG:1):짜증
+                    RETURNF 1
+            CASE 1021 ;닥터, 짜증 아님, 공포 150 미만, 호감도 499 초과, etc3 닥터 장발이벤 출력 유무
+                SIF NO:(ARG:1) == 76 && CFLAG:(ARG:1):공포 < 150 && CFLAG:(ARG:1):호감도 > 499 && !TALENT:(ARG:1):짜증 && !CFLAG:(ARG:1):etc3
+                    RETURNF 1
+            CASE 1027 ;리제, 짜증 아님, 공포 150 미만, 호감도 499 초과
+                SIF NO:(ARG:1) == 7 && CFLAG:(ARG:1):공포 < 150 && CFLAG:(ARG:1):호감도 > 499
+                    RETURNF 1
+            CASE 1028 ;레오나
+                SIF NO:(ARG:1) == 31
+                    RETURNF 1
+            CASE 1029 ;오드리, MASTER != 소년, 연모 이상
+                SIF NO:(ARG:1) == 106 && TALENT:MASTER:나이 != 0 && TALENT:(ARG:1):사랑 ;원본 연모만
+                    RETURNF 1
+            CASE 1030 ;리제, 짜증 존재, 연모 아님
+                SIF NO:(ARG:1) == 7 && TALENT:(ARG:1):짜증 && !TALENT:(ARG:1):사랑
+                    RETURNF 1
+            CASE 1039 ;세이렌, 공포 150 미만, 짜증 아님, 연모 이상(원본 연모만)
+                SIF NO:(ARG:1) == 89 && CFLAG:(ARG:1):공포 < 150 && !TALENT:(ARG:1):짜증 && TALENT:(ARG:1):사랑
+                    RETURNF 1
+            CASE 1048 ;에밀리, 짜증 아님, 공포 150 미만
+                SIF NO:(ARG:1) == 68 && CFLAG:(ARG:1):공포 < 150 && !TALENT:(ARG:1):짜증
+                    RETURNF 1
+        ENDSELECT
+    ENDIF            
+ENDIF
+RETURNF 0
+;=================================================================
+;함수명: IS_ARRAY_EVENT_AVAILABLE(ARG, ARG:1, ARG:2)
+;복수의 이벤트 대상 선정시 이벤트 조건 정리 함수
+;주로 대상배열이 활용됨
+;가능하면 1, 아니라면 0 반환
+;ARG = bit 좌표, ARG:1 = 이벤트 대상, ARG:2 = 0은 1명째, 1은 2명째
+;=================================================================
+@IS_ARRAY_EVENT_AVAILABLE(ARG, ARG:1, ARG:2)
+#FUNCTION
+;---------------------------------------------------------------
+;이벤트 대상선정 배열 관련 처리
+;---------------------------------------------------------------
+;출격중 아님, 정신쇠약/붕괴 없음
+IF !CFLAG:(ARG:1):출격중 && !TALENT:(ARG:1):정신쇠약
+    ;출격중/정신쇠약/붕괴 아님, 공포 150 미만
+    IF CFLAG:(ARG:1):공포 < 150
+        SELECTCASE ARG
+            CASE 1
+                IF ARG:2 == 0
+                    SIF NO:(ARG:1) == 91
+                        RETURNF 1
+                ELSEIF ARG:2 == 1
+                    SIF NO:(ARG:1) == 89
+                        RETURNF 1
+                ENDIF
+            CASE 2
+                IF ARG:2 == 0
+                    SIF NO:(ARG:1) == 31
+                        RETURNF 1
+                ELSEIF ARG:2 == 1
+                    SIF NO:(ARG:1) == 51
+                        RETURNF 1
+                ENDIF
+            CASE 3
+                IF ARG:2 == 0
+                    SIF NO:(ARG:1) == 89 && !TALENT:(ARG:1):짜증
+                        RETURNF 1
+                ELSEIF ARG:2 == 1
+                    SIF NO:(ARG:1) == 51 && !TALENT:(ARG:1):짜증
+                        RETURNF 1
+                ENDIF
+            CASE 8
+                IF ARG:2 == 0
+                    SIF NO:(ARG:1) == 21 && !TALENT:(ARG:1):짜증 && TALENT:(ARG:1):사랑 < 2
+                        RETURNF 1
+                ELSEIF ARG:2 == 1
+                    SIF NO:(ARG:1) == 31 && !TALENT:(ARG:1):짜증
+                        RETURNF 1
+                ENDIF
+            CASE 9
+                IF ARG:2 == 0
+                    SIF NO:(ARG:1) == 68 && !TALENT:(ARG:1):짜증
+                        RETURNF 1
+                ELSEIF ARG:2 == 1
+                    SIF NO:(ARG:1) == 91 && !TALENT:(ARG:1):짜증 && !TALENT:(ARG:1):슈퍼스타
+                        RETURNF 1
+                ENDIF
+            CASE 10
+                IF ARG:2 == 0
+                    SIF NO:(ARG:1) == 68 && !TALENT:(ARG:1):짜증
+                        RETURNF 1
+                ELSEIF ARG:2 == 1
+                    SIF NO:(ARG:1) == 91 && !TALENT:(ARG:1):짜증 && TALENT:(ARG:1):슈퍼스타
+                        RETURNF 1
+                ENDIF
+            CASE 11
+                IF ARG:2 == 0
+                    SIF NO:(ARG:1) == 113 && !TALENT:(ARG:1):짜증
+                        RETURNF 1
+                ELSEIF ARG:2 == 1
+                    SIF NO:(ARG:1) == 132 && !TALENT:(ARG:1):짜증
+                        RETURNF 1
+                ENDIF
+            CASE 16
+                IF ARG:2 == 0
+                    SIF NO:(ARG:1) == 51 && !TALENT:(ARG:1):짜증
+                        RETURNF 1
+                ELSEIF ARG:2 == 1
+                    SIF NO:(ARG:1) == 52 && !TALENT:(ARG:1):짜증
+                        RETURNF 1
+                ENDIF
+        ENDSELECT
+    ENDIF
+
+    ;출격중/정신쇠약/붕괴/짜증 아님
+    IF !TALENT:(ARG:1):짜증
+        SELECTCASE ARG
+            CASE 7
+                IF ARG:2 == 0
+                    SIF NO:(ARG:1) == 68 && TALENT:(ARG:1):사랑 < 2
+                        RETURNF 1
+                ELSEIF ARG:2 == 1
+                    SIF NO:(ARG:1) == 113
+                        RETURNF 1
+                ENDIF
+            CASE 12
+                IF ARG:2 == 0  ;오드리 etc1 = 더치와 이벤트 일수
+                    SIF NO:(ARG:1) == 106 && TALENT:(ARG:1):혼인 == 1 && CFLAG:(ARG:1):etc1 == 0
+                        RETURNF 1
+                ELSEIF ARG:2 == 1
+                    SIF NO:(ARG:1) == 108 && TALENT:(ARG:1):사랑 == 2 && TALENT:(ARG:1):체형 == 0
+                        RETURNF 1
+                ENDIF
+        ENDSELECT
+    ENDIF
+
+    ;출격중/정신쇠약/붕괴 아님 
+    SELECTCASE ARG
+        CASE 4 ;얀데레 관련 공용 이벤트
+            IF ARG:2 == 0
+                SIF !TALENT:(ARG:1):얀데레 && TALENT:(ARG:1):사랑 ;원본은 연모만
+                    RETURNF 1
+            ELSEIF ARG:2 == 1
+                SIF TALENT:(ARG:1):얀데레
+                    RETURNF 1
+            ENDIF
+        CASE 6 ;작은체구 관련 공용 이벤트
+            IF ARG:2 == 0
+                SIF TALENT:(ARG:1):체형 == 0
+                    RETURNF 1
+            ELSEIF ARG:2 == 1
+                SIF TALENT:(ARG:1):체형 != 0
+                    RETURNF 1
+            ENDIF
+    ENDSELECT
+ENDIF
+
+;캐릭터별 기타 조건 처리
+SELECTCASE ARG
+    CASE 5 ;레오나/발키리 etc1 = 레오나/발키리 공용이벤 출력유무
+        IF !CFLAG:(ARG:1):출격중 && (TALENT:(ARG:1):사랑 == 2 && !TALENT:(ARG:1):혼인) && (CFLAG:(ARG:1):공포 < 30 && CFLAG:(ARG:1):스트레스 < 200)
+            IF ARG:2 == 0
+                SIF NO:(ARG:1) == 31 && !CFLAG:(ARG:1):etc1
+                    RETURNF 1
+            ELSEIF ARG:2 == 1
+                SIF NO:(ARG:1) == 32 && !CFLAG:(ARG:1):etc1
+                    RETURNF 1
+            ENDIF
+        ENDIF
+    CASE 14
+        IF ARG:2 == 0
+            SIF NO:(ARG:1) == 126
+                RETURNF 1
+        ELSEIF ARG:2 == 1 ;베로니카 etc1 = 베로니카 고해성사 횟수 카운트 ,etc3 = 베로니카 휴식이벤 이력 유무
+            SIF NO:(ARG:1) == 138 && CFLAG:(ARG:1):출격중 == 3 && TALENT:정신쇠약 != 2 && TALENT:(ARG:1):혼인 == 1 && TALENT:(ARG:1):사랑 == 2 && (CFLAG:(ARG:1):etc3 == 0 && CFLAG:(ARG:1):etc1 > 18)
+                RETURNF 1
+        ENDIF
+    CASE 15
+        IF ARG:2 == 0
+            SIF NO:(ARG:1) == 126 && !CFLAG:(ARG:1):출격중 && !TALENT:(ARG:1):정신쇠약
+                RETURNF 1
+        ELSEIF ARG:2 == 1 ;베로니카 etc1 = 베로니카 고해성사 횟수 카운트 ,etc3 = 베로니카 휴식이벤 이력 유무
+            SIF NO:(ARG:1) == 138 && CFLAG:(ARG:1):출격중 == 3 && TALENT:정신쇠약 != 2 && TALENT:(ARG:1):혼인 == 1 && TALENT:(ARG:1):사랑 == 2 && (CFLAG:(ARG:1):etc3 == 0 && CFLAG:(ARG:1):etc1 > 18)
+                RETURNF 1
+        ENDIF
+    CASE 17 ;메이/나엔 정신붕괴 상태
+        IF TALENT:(ARG:1):정신쇠약 == 2
+            IF ARG:2 == 0
+                SIF NO:(ARG:1) == 51
+                    RETURNF 1
+            ELSEIF ARG:2 == 1
+                SIF NO:(ARG:1) == 52
+                    RETURNF 1
+            ENDIF
+        ENDIF
+ENDSELECT
+RETURNF 0
+;=================================================================
+;함수명: IS_PRIORITY_EVENT_AVAILABLE()
+;우선순위 이벤트 조건 정리 함수
+;배열을 사용하는 경우는 이벤트bit값 처리할때 같이 처리함
+;우선순위 이벤트가 존재하면 해당 이벤트 번호, 아니라면 -1 반환
+;=================================================================
+@IS_PRIORITY_EVENT_AVAILABLE()
+#FUNCTION
+#DIM 대상
+
+FOR 대상, 1, CHARANUM
+    SIF ITEM:(ITEM_BIO(NO:대상)) != 1 ;보유여부 체크
+        CONTINUE
+
+    SELECTCASE NO:대상
+        CASE 12 ;소완
+            IF !CFLAG:대상:출격중 && CFLAG:대상:etc2 == 5 ;etc2 = 소완 요리 판매 카운트
+                RETURNF 1001
+            ELSEIF !CFLAG:대상:출격중 && CFLAG:대상:etc2 == 11 ;etc2 = 소완 요리 판매 카운트
+                RETURNF 1002
+            ELSEIF !CFLAG:대상:출격중 && CFLAG:대상:etc2 == 17 ;etc2 = 소완 요리 판매 카운트
+                RETURNF 1003
+            ENDIF
+        CASE 76 ;닥터
+            ;원본은 사랑 말고 연모만
+            ;etc1 = 닥터 성장이벤 카운트, etc2 = 닥터 성장이벤 출력 유무
+            SIF !CFLAG:대상:출격중 && (CFLAG:대상:공포 < 150 && TALENT:대상:사랑 && !TALENT:대상:정신쇠약 && !TALENT:대상:짜증) && CFLAG:대상:etc1 > 9 && CFLAG:대상:etc2 == 0
+                RETURNF 1022
+        CASE 138 ;베로니카
+            ;etc2 = 베로니카 실종 일수, etc3 = 베로니카 휴식이벤 이력 유무
+            IF TALENT:대상:실종 && CFLAG:대상:etc2 == 11
+                RETURNF 1041
+            ELSEIF CFLAG:대상:etc3 == 2 && !TALENT:대상:정신쇠약
+                RETURNF 1044
+            ENDIF
+    ENDSELECT
+NEXT
+RETURNF -1
+;=================================================================
+;함수명: SELECT_EVENT_CHARA(ARG, ARG:1)
+;이벤트 대상 캐릭터 랜덤선출
+;선택캐릭터:0 = 1명째, 선택캐릭터:1 = 2명째
+;선택캐릭터:1 이 -1로 반환하는 경우 선출 불가함을 뜻함
+;ARG = 이벤트번호
+;=================================================================
+@SELECT_EVENT_CHARA(ARG)
+#DIM 선택캐릭터, 2
+#DIM 랜덤대상, 2
+
+VARSET 선택캐릭터, -1
+
+;1명째 대상 선정
+WHILE 선택캐릭터:0 == -1
+    랜덤대상 = RAND(1, CHARANUM)
+    IF GROUPMATCH(ARG, 0,1,2,3,4)
+    ;보유여부 체크
+    ELSEIF ITEM:(ITEM_BIO(NO:랜덤대상)) < 1
+        CONTINUE
+    ENDIF
+    SELECTCASE ARG
+        ;바이오로이드를 뽑지 않는 이벤트
+        CASE 0 TO 4
+            선택캐릭터:0 = MASTER
+        ;공용 이벤트
+        CASE 100, 101
+            선택캐릭터:0 = 랜덤대상
+        CASE 102 TO 127
+            SIF IS_SINGLE_EVENT_AVAILABLE(ARG, 랜덤대상)
+                선택캐릭터:0 = 랜덤대상
+        CASE 201 ;대상배열 4번
+            SIF IS_ARRAY_EVENT_AVAILABLE(4, 랜덤대상, 0)
+                선택캐릭터:0 = 랜덤대상
+        CASE 202 ;대상배열 6번 
+            SIF IS_ARRAY_EVENT_AVAILABLE(6, 랜덤대상, 0)
+                선택캐릭터:0 = 랜덤대상
+        ;우선순위 이벤트
+        CASE 1023, 1024 ;레오나/발키리 공용 이벤트
+            선택캐릭터:0 = GETCHARA(31)
+        CASE 1040 ;오드리/더치걸 이벤트
+            선택캐릭터:0 = GETCHARA(106)
+        ;개별이벤트(개인 우선순위 이벤트 포함)는 캐릭터가 고정
+        CASE 1004, 1027, 1030, 1033 ;리제 개인 이벤트
+            선택캐릭터:0 = GETCHARA(7)
+        CASE 1005, 1021, 1022 ;닥터 우선순위 & 개인 이벤트
+            선택캐릭터:0 = GETCHARA(76)
+        CASE 1006 ;모모 개인 이벤트
+            선택캐릭터:0 = GETCHARA(123)
+        CASE 1001 TO 1003, 1007 ;소완 우선순위 & 개인 이벤트
+            선택캐릭터:0 = GETCHARA(12)
+        CASE 1008, 1039 ;세이렌 개인 이벤트
+            선택캐릭터:0 = GETCHARA(89)
+        CASE 1012 ;켈베로스 개인 이벤트
+            선택캐릭터:0 = GETCHARA(113)
+        CASE 1015 ;세이렌/슬레이프니르 이벤트
+            선택캐릭터:0 = GETCHARA(91)
+        CASE 1016 ;메이/레오나 이벤트
+            선택캐릭터:0 = GETCHARA(31)
+        CASE 1019 ;메이/세이렌 이벤트
+            선택캐릭터:0 = GETCHARA(89)
+        CASE 1020 ;메이 개인 이벤트
+            선택캐릭터:0 = GETCHARA(51)
+        CASE 1025 ;에밀리/켈베로스 이벤트
+            선택캐릭터:0 = GETCHARA(68)
+        CASE 1026 ;마리/레오나 이벤트
+            선택캐릭터:0 = GETCHARA(21)
+        CASE 1028 ;레오나 개인 이벤트
+            선택캐릭터:0 = GETCHARA(31)
+        CASE 1029 ;오드리 개인 이벤트
+            선택캐릭터:0 = GETCHARA(106)
+        CASE 1036, 1037 ;에밀리/슬레이프니르 이벤트
+            선택캐릭터:0 = GETCHARA(68)
+        CASE 1038 ;켈베로스/유미 이벤트
+            선택캐릭터:0 = GETCHARA(113)
+        CASE 1041 TO 1044 ;베로니카 우선순위 이벤트
+            선택캐릭터:0 = GETCHARA(138)
+        CASE 1045 TO 1047 ;메이/나엔 이벤트
+            선택캐릭터:0 = GETCHARA(51)
+        CASE 1048 ;에밀리 개인 이벤트
+            선택캐릭터:0 = GETCHARA(68)
+        CASEELSE
+            THROW 미상정된 이벤트번호 {ARG}
+    ENDSELECT
+WEND
+
+;2명째 대상 선정
+WHILE 선택캐릭터:1 == -1
+    ;현재 보유중인 캐릭터가 1명뿐이라면 루프 불가능
+    SIF FLAG:현캐릭터수 < 2
+        BREAK
+
+    랜덤대상:1 = RAND(1, CHARANUM)
+    ;1명째와 동일하면 루프
+    SIF 랜덤대상:1 == 선택캐릭터:0
+        CONTINUE
+    ;보유여부 체크
+    SIF ITEM:(ITEM_BIO(NO:랜덤대상)) < 1
+        CONTINUE
+
+    SELECTCASE ARG
+        CASE 201 ;대상배열 4번
+            SIF IS_ARRAY_EVENT_AVAILABLE(4, 랜덤대상:1, 1)
+                선택캐릭터:1 = 랜덤대상:1
+        CASE 202 ;대상배열 6번 
+            SIF IS_ARRAY_EVENT_AVAILABLE(6, 랜덤대상:1, 1)
+                선택캐릭터:1 = 랜덤대상:1
+        ;캐릭터 고정 이벤트
+        CASE 1015 ;세이렌/슬레이프니르 이벤트
+            선택캐릭터:1 = GETCHARA(89)
+        CASE 1016 ;메이/레오나 이벤트
+            선택캐릭터:1 = GETCHARA(51)
+        CASE 1019 ;메이/세이렌 이벤트
+            선택캐릭터:1 = GETCHARA(51)
+        CASE 1023, 1024  ;레오나/발키리 공용 이벤트
+            선택캐릭터:1 = GETCHARA(32)
+        CASE 1025 ;에밀리/켈베로스 이벤트
+            선택캐릭터:1 = GETCHARA(113)
+        CASE 1026 ;마리/레오나 이벤트
+            선택캐릭터:1 = GETCHARA(31)
+        CASE 1036, 1037 ;에밀리/슬레이프니르 이벤트
+            선택캐릭터:1 = GETCHARA(91)
+        CASE 1038 ;켈베로스/유미 이벤트
+            선택캐릭터:1 = GETCHARA(132)
+        CASE 1040 ;오드리/더치걸 이벤트
+            선택캐릭터:1 = GETCHARA(108)
+        CASE 1045 TO 1047 ;메이/나엔 이벤트
+            선택캐릭터:1 = GETCHARA(52)
+        CASEELSE ; 1명만 뽑는 경우
+            BREAK
+    ENDSELECT
+WEND
+RETURN 선택캐릭터:0, 선택캐릭터:1

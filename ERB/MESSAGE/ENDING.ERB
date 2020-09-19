@@ -61,8 +61,8 @@ IF TALENT:정신쇠약 == 2
 ELSEIF TALENT:사랑 == 2
     PRINTFORML %타겟은% 눈물을 글썽이며 손에 반지를 받아들였다.
     CFLAG:엔딩플래그 = 1
-    ;리제, 50% 확률
-    IF REAL_NUM == 7 && RAND:1
+    ;리제 히든, 10% 확률
+    IF REAL_NUM == 7 && !RAND:10
         CFLAG:엔딩플래그 = 4
     ;팬텀
     ELSEIF REAL_NUM == 73 && EXP:출격경험 > 6
@@ -97,12 +97,24 @@ CALL ENDING(TARGET)
 REAL_NUM = NO:ARG
 
 TARGET = ARG
-
+CSTR:ARG:1 = 
 CALL SET_MSG_CSTR(ARG)
+
+IF REAL_NUM == 68
+    SIF TALENT:ARG:정신쇠약 == 1 && TALENT:ARG:사랑 == 2
+        CSTR:ARG:1 = Weak2
+ENDIF
 
 SELECTCASE ARGS
     CASE "판매"
-        TRYCALLFORM M_No{REAL_NUM}_Sell
+        WHILE 1
+            TRYCALLFORM M_No{REAL_NUM}_Sell
+            IF RESULT == 0
+                CSTR:ARG:1 '= Alternative_CSTR(ARG)
+            ELSE
+                BREAK
+            ENDIF
+        WEND
         
         IF REAL_NUM == 123 && TALENT:ARG:사랑 == 1
             SETBIT CFLAG:MASTER:엔딩플래그, 7
@@ -110,7 +122,14 @@ SELECTCASE ARGS
             SETBIT CFLAG:MASTER:엔딩플래그, 24
         ENDIF
     CASE "폐기"
-        TRYCALLFORM M_No{REAL_NUM}_Disuse
+        WHILE 1
+            TRYCALLFORM M_No{REAL_NUM}_Disuse
+            IF RESULT == 0
+                CSTR:ARG:1 '= Alternative_CSTR(ARG)
+            ELSE
+                BREAK
+            ENDIF
+        WEND
 
         IF REAL_NUM == 89 && TALENT:ARG:사랑 == 1
             SETBIT CFLAG:MASTER:엔딩플래그, 2
@@ -308,23 +327,23 @@ RETURN 1
 ;============================================================================================
 @Classify_EndingFlag
 #DIM 비트값
-TARGET = -1
 
 ;bit 1값은 약혼반지 관련으로 ENDING_MARRY_FLAG에서 처리됨
-FOR LOCAL, 1, 63
-    IF GETBIT(CFLAG:MASTER:엔딩플래그, LOCAL)
-        SELECTCASE LOCAL
-            CASE 1 ;약혼반지 공용
+FOR 비트값, 1, 64
+    IF GETBIT(CFLAG:MASTER:엔딩플래그, 비트값)
+        SELECTCASE 비트값
+            CASE 1 ;약혼반지 공용, TARGET 값도 이미 처리됨
             CASE 19, 20, 21 ;범용구상
+                TARGET = MASTER
                 RETURN 0
             CASE 2 ;세이렌 연모 폐기
                 TARGET = GETCHARA(89)
                 CFLAG:TARGET:엔딩플래그 = 3
             CASE 3, 8 ;리제
                 TARGET = GETCHARA(7)
-                IF LOCAL == 3
+                IF 비트값 == 3
                     CFLAG:TARGET:엔딩플래그 = 3
-                ELSEIF LOCAL == 8
+                ELSEIF 비트값 == 8
                     CFLAG:TARGET:엔딩플래그 = 5
                 ENDIF
             CASE 4 ;켈베로스 정신붕괴 폐기
@@ -335,9 +354,9 @@ FOR LOCAL, 1, 63
                 CFLAG:TARGET:엔딩플래그 = 3
             CASE 6, 10 ;메이
                 TARGET = GETCHARA(51)
-                IF LOCAL == 6 ;연모 정신쇠약 폐기
+                IF 비트값 == 6 ;연모 정신쇠약 폐기
                     CFLAG:TARGET:엔딩플래그 = 3
-                ELSEIF LOCAL == 10 ;사랑 출격경험 50 이상 폐기
+                ELSEIF 비트값 == 10 ;사랑 출격경험 50 이상 폐기
                     CFLAG:TARGET:엔딩플래그 = 4
                 ENDIF
             CASE 7 ;모모 연모 판매
@@ -360,16 +379,16 @@ FOR LOCAL, 1, 63
                 CFLAG:TARGET:엔딩플래그 = 4
             CASE 15, 22 ;에밀리
                 TARGET = GETCHARA(68)
-                IF LOCAL == 15
+                IF 비트값 == 15
                     CFLAG:TARGET:엔딩플래그 = 4
-                ELSEIF LOCAL == 22 ;연애시작 선택지
+                ELSEIF 비트값 == 22 ;연애시작 선택지
                     CFLAG:TARGET:엔딩플래그 = 5
                 ENDIF
             CASE 16, 17 ;유미
                 TARGET = GETCHARA(132)
-                IF LOCAL == 16
+                IF 비트값 == 16
                     CFLAG:TARGET:엔딩플래그 = 3
-                ELSEIF LOCAL == 17
+                ELSEIF 비트값 == 17
                     CFLAG:TARGET:엔딩플래그 = 4
                 ENDIF
             CASE 18 ;닥터
@@ -385,10 +404,10 @@ FOR LOCAL, 1, 63
                 TARGET = GETCHARA(71)
                 CFLAG:TARGET:엔딩플래그 = 3
             CASEELSE
-                THROW 미확인 엔딩 번호 {LOCAL}
+                THROW 미확인 엔딩 번호 {비트값}
         ENDSELECT
-        CLEARBIT CFLAG:MASTER:엔딩플래그, LOCAL
-        RETURN LOCAL
+        CLEARBIT CFLAG:MASTER:엔딩플래그, 비트값
+        RETURN 비트값
     ENDIF
 NEXT
 ;이상상황 처리용
@@ -428,7 +447,7 @@ ENDIF
 ;============================================================================================
 @Ending_Result
 #DIM 그림번호
-
+VARSET LOCAL
 ;LOCAL = exc, LOCAL:1 = 1일때 원판에서 추가처리
 SELECTCASE NO:TARGET
     CASE 7 ;리제
@@ -439,15 +458,15 @@ SELECTCASE NO:TARGET
         ELSEIF CFLAG:엔딩플래그 == 3
             그림번호 = 6 ;TODO 아마도 그림 2개인듯
             LOCAL = 1 ;exc = 1
-        ELSEIF CFLAG:캐릭터히든 ;리제 히든
+        ELSEIF CFLAG:엔딩플래그 == 4 ;리제 히든 엔딩
             그림번호 = 11
             FLAG:히든메시지 = TARGET ;exc = 2
-        ELSEIF CFLAG:엔딩플래그 == 4
+        ELSEIF CFLAG:엔딩플래그 == 5 ;리제 엔딩 No. 4
             그림번호 = 12
             LOCAL = 3 ;exc = 3
         ENDIF
     CASE 12 ;소완
-        SIF CFLAG:엔딩플래그 == -1 ;소완 배드
+        SIF CFLAG:엔딩플래그 == 3 ;소완 배드 엔딩
             LOCAL = 1 ;exc = 1
         SIF CFLAG:엔딩플래그 == 1
             그림번호 = 13
@@ -489,6 +508,8 @@ SELECTCASE NO:TARGET
         ELSEIF CFLAG:엔딩플래그 == 2
             그림번호 = 5
         ENDIF
+    CASE 90 ;TODO 신캐
+        ;CFLAG:etc1 = 21 ;exc = 10
     CASE 106 ;오드리
         SIF CFLAG:엔딩플래그 == 3
             CFLAG:etc1 = 5 ;exc = 7, etc1= 더치 걸 이벤트 일수
@@ -498,13 +519,13 @@ SELECTCASE NO:TARGET
     CASE 123 ;모모
         IF CFLAG:엔딩플래그 == 1
             그림번호 = 7
-        ; ELSEIF 모모는 이제 당신의 속박에서 벗어났다
-        ;     그림번호 = 8
-        ;     LOCAL = 3 ;exc = 3
+        ELSEIF CFLAG:엔딩플래그 == 2
+            그림번호 = 8
+            LOCAL = 3 ;exc = 3
         ENDIF
     CASE 126 ;아자젤
-        ; SIF 중요한 무언가가
-        ;     LOCAL = 3 ;exc = 3
+        SIF CFLAG:엔딩플래그 == 2
+            LOCAL = 3 ;exc = 3
     CASE 132 ;유미
         SIF GROUPMATCH(CFLAG:엔딩플래그, 3,4)
             TALENT:의존증 = 1 ;exc = 6
@@ -514,17 +535,16 @@ SELECTCASE NO:TARGET
         ELSEIF CFLAG:엔딩플래그 == 2
             그림번호 = 15
             LOCAL:1 = 1
+            CFLAG:etc2 = 1 ;etc2 = 베로니카 실종 일수
+            TALENT:실종 = 1 ;exc = 8
         ELSEIF CFLAG:엔딩플래그 == 3
-            ;왜 3번 엔딩이 2개야...
+            ;순차 처리이기에 개인 메시지에서 따로 처리함
             ;여행
                 ; 그림번호 = 16
                 ; LOCAL:1 = 1
             ; 달콤한꿈
                 ; 그림번호 = 17
                 ; LOCAL:1 = 1
-        ; ELSEIF 아침마다 베로니카 수색 이벤트가 진행됩니다
-        ;     CFLAG:etc2 = 1 ;etc2 = 베로니카 실종 일수
-        ;     TALENT:실종 = 1 ;exc = 8
         ENDIF 
 ENDSELECT
 
@@ -554,7 +574,7 @@ RETURN 0
 ;============================================================================================
 @ENDING_COMMON
 
-FOR LOCAL, 19, 21
+FOR LOCAL, 19, 22
     IF GETBIT(CFLAG:MASTER:엔딩플래그, LOCAL)
         SELECTCASE LOCAL
             CASE 19 ;EndingA
@@ -608,7 +628,7 @@ FOR LOCAL, 19, 21
                 TALENT:MASTER:대부호 = 1; exc = 3
         ENDSELECT
         CLEARBIT CFLAG:MASTER:엔딩플래그, LOCAL
-        WAIT
+        WAITANYKEY
         RETURN 1
     ENDIF
 NEXT
@@ -676,6 +696,7 @@ IF RESULT == 0 ;잠에서 깸
 ELSE ;현실 받아들임
     FLAG:속박상태 = 1
     ;현 TARGET 제외 전부 삭제
+    ;PICKUPCHARA 사용 가능?
     FOR LOCAL, 1, CHARANUM
         SIF NO:LOCAL == 7
             CONTINUE

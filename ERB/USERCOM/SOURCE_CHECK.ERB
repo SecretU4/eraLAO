@@ -1,6 +1,7 @@
 ﻿;=============================================================
 ;SYSTEM_CALL
 ;@COMxx 리턴값 0이 아닐때
+;캐릭터 커맨드별 대사 처리도 여기서 호출
 ;=============================================================
 ;20200825 기준 변수 설명
 ;TFLAG TRAIN(연애) 종료시 리셋, 연애 도중 증감 기록용
@@ -16,7 +17,7 @@
 ;#DIM 소요시간값
 
 ;LOCAL:0 = 호감도변동 = f LOCAL:1 = 스트레스변동 = s LOCAL:2 = 공포변동 = fr
-VARSET LOCAL, 10, 5
+VARSET LOCAL, 1000, 0, 5
 
 ;호감도 배율 처리
 SIF TALENT:짜증
@@ -51,7 +52,7 @@ SIF TALENT:MASTER:매력
 SIF TALENT:억압
     LOCAL:0 = LOCAL:0 * 10 / 7
 
-LOCAL:0 = LOCAL:0 / 10
+LOCAL:0 = LOCAL:0 / 1000
 
 ;스트레스 배율 처리
 IF SOURCE:스트레스 < 0
@@ -78,7 +79,7 @@ ELSEIF SOURCE:스트레스 > 0
         LOCAL:1 = LOCAL:1 * 6 / 5
 ENDIF
 
-LOCAL:1 = LOCAL:1 / 10
+LOCAL:1 = LOCAL:1 / 1000
 
 ;공포 배율 처리
 IF SOURCE:공포 > 0
@@ -113,10 +114,10 @@ IF SOURCE:공포 > 0
     ENDSELECT
 ENDIF
 
-LOCAL:2 = LOCAL:2 / 10
+LOCAL:2 = LOCAL:2 / 1000
 
 SIF TALENT:정신쇠약 == 2
-    VARSET LOCAL, 0, 5
+    VARSET LOCAL, 0, 0, 5
 IF !FLAG:속박상태
     SOURCE:호감도 = SOURCE:호감도 * LOCAL:0
     SOURCE:스트레스 = SOURCE:스트레스 * LOCAL:1
@@ -126,6 +127,15 @@ ELSE
     SOURCE:스트레스 = -1000
     SOURCE:공포 = -1000
 ENDIF
+
+;캐릭터별 특수 보정 처리
+SELECTCASE NO:TARGET
+    CASE 76 ;닥터
+        IF SOURCE:호감도 > 0
+            SOURCE:스트레스 = MIN(SOURCE:스트레스, 0)
+            SOURCE:공포 = MIN(SOURCE:공포, 0)
+        ENDIF
+ENDSELECT
 
 TFLAG:호감도증감 += SOURCE:호감도
 ;TFLAG:신뢰도증감 += SOURCE:신뢰도
@@ -137,22 +147,20 @@ CFLAG:호감도 += SOURCE:호감도
 CFLAG:스트레스 += SOURCE:스트레스
 CFLAG:공포 += SOURCE:공포
 
-PRINTFORML %CALLNAME:TARGET%의
+;SOURCE 체크 문제로 여기서 커맨드별 개인 메시지 호출
+CALL BIO_COM_MSG
+
+PRINTFORML %CALLNAME:TARGET%의 
 IF TALENT:MASTER:관심법
-    PRINTFORML 호감도 {SOURCE:호감도}
-    PRINTFORML 스트레스 {SOURCE:스트레스}
-    PRINTFORMW 공포 {SOURCE:공포}
+    PRINTFORML 호감도 \@ SOURCE:호감도 > 0 ? + # \@{SOURCE:호감도}
+    PRINTFORML 스트레스 \@ SOURCE:스트레스 > 0 ? + # \@{SOURCE:스트레스}
+    PRINTFORMW 공포 \@ SOURCE:공포 > 0 ? + # \@{SOURCE:공포}
 ELSE
     PRINTFORML 호감도 + ???
     PRINTFORML 스트레스 + ???
     PRINTFORMW 공포 + ???
 ENDIF
 PRINTL
-
-IF TFLAG:고백함
-    CFLAG:고백함 = TFLAG:고백함
-    FLAG:고백받은인수 ++
-ENDIF
 
 SOURCE:소요시간 ++
 

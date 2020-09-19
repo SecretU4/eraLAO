@@ -1,0 +1,61 @@
+﻿@MSG_EV_1016(ARG, ARG:1)
+PRINTFORMW 당신이 방에서 쉬던 와중 방 밖이 소란스러워졌다.
+PRINTFORMW 소란이 조금 커 당신이 알아보러 나오자 메이와 레오나가 대립 중이였다.
+PRINTFORMW 「그러니까! 그 상황에서는 무조건 전진해서 쓸어버려야 한다니까?」
+PRINTFORMW 「그런 상황에서 전진하면 포위 당해서 괴멸당할 확률이 높아, 무조건 후퇴해야 해」
+PRINTFORMW 아무래도 메이와 레오나는 전략과 관련하여 의견 대립이 생긴 듯 했다.
+PRINTFORMW 이내 의견을 주고받던 둘은 당신을 발견한 듯 했다.
+PRINTFORMW 「흥! 좋아 이대로라면 끝이 안날 것 같으니 차라리 바보 사령관에게 물어보자고」
+PRINTFORMW 「물어볼 필요가 있을까? 결과는 뻔할 것 같은데?」
+PRINTFORMW 메이와 레오나는 당신에게 날카로운 시선을 보내며 의견을 요구하는 듯하다.
+PRINTFORMW 「누가 옳은지는 이 바보 사령관이라도 잘 알겠지?」
+PRINTFORMW 「뭘 고민하는 거야? 이건 당연한거 아니야?」
+PRINTFORMW 계속되는 둘의 압박 속에서 고민하던 당신은 이내.
+PRINTFORML [1] 메이의 의견에 동의를 표했다.
+PRINTFORMW [2] 레오나의 의견에 동의를 표했다.
+WHILE 1
+    INPUT
+    SELECTCASE RESULT
+        CASE 1,2
+            LOCAL = 1016 + RESULT
+            CALLFORM MSG_EV_{LOCAL}(ARG, ARG:1)
+            BREAK
+        CASEELSE
+            PRINTW 1, 2 중 하나를 입력해주세요.
+    ENDSELECT
+WEND
+RETURN 1
+
+@MSG_EV_1017(ARG, ARG:1)
+PRINTFORMW 당신은 메이의 의견에 동의를 표했다.
+PRINTFORMW 「흥! 당연하지!」
+PRINTFORMW 당신의 동의가 기뻤던 건지 메이는 허리에 손을 얹고 우쭐한 표정을 취했다.
+PRINTFORMW 「...진심으로 그게 맞다고 생각하는거야?」
+PRINTFORMW 이에 반해 레오나는 어이가 없는지 조용히 미간에 손을 올렸다.
+PRINTFORMW 「후후...이제 슬슬 인정하지 그래?」
+PRINTFORMW 「그래그래..내가 틀렸어 우리 꼬마 공주님..」
+PRINTFORMW 「야! 누가 꼬마 공주야!」
+PRINTFORMW 당신은 레오나에게 씩씩대면서 달려가는 메이를 필사적으로 달래는데 급했다.
+PRINTFORML 레오나는 씩씩거리는 메이를 말리는 당신을 바라보고 조용히 한숨을 쉰 뒤 자리를 떴다.
+PRINTFORMW 메이 호감도+20
+;TODO 대상 정확한지 확인
+CFLAG:(ARG:1):호감도 += 20
+RETURN 1
+
+@MSG_EV_1018(ARG, ARG:1)
+PRINTFORMW 당신은 레오나의 의견에 동의를 표했다.
+PRINTFORMW 「역시 사령관은 현명하네,」
+PRINTFORMW 당신의 동의가 마음에 들었던 건지 레오나는 옅은 미소를 지었다.
+PRINTFORMW 「뭐? 머리가 어떻게 된거 아니야!? 바보 사령관!」
+PRINTFORMW 이에 반해 메이는 납득이 안가는지 씩씩 거리고 있었다.
+PRINTFORMW 「그쯤 해두지그래? 사령관은 논리적으로 가장 좋은 전략을 택한 것뿐이니까.」
+PRINTFORMW 「이..익....」
+PRINTFORMW 메이는 얼굴이 사과처럼 새빨게졌다.
+PRINTFORMW 「멍청이 사령관한테 기대한 내가 바보지! 흥!」
+PRINTFORMW 이내 메이는 몸을 돌려 씩씩 거리며 자리를 떴다.
+PRINTFORMW 「걱정할 필요없어, 사령관의 선택은 틀리지 않았으니까」
+PRINTFORML 당신과 레오나는 쾅 하는 소리와 함깨 자신의 방으로 들어가는 메이를 지켜보았다.
+PRINTFORMW 레오나 호감도+20
+;TODO 대상 정확한지 확인
+CFLAG:ARG:호감도 += 20
+RETURN 1

@@ -1,0 +1,12 @@
+﻿@MSG_EV_122(ARG, ARG:1)
+PRINTFORMW 당신은 사놓고 구석에 박아두었던 체스 세트를 꺼내들었다.
+PRINTFORML 처음 보는 물건에 %CALLNAME:ARG%(이)가 흥미를 보였고,
+PRINTFORML 당신은 %CALLNAME:ARG%에게 체스를 둬보자고 권유한다.
+PRINTFORMW 간단하게 룰을 설명하고 난 뒤, 당신의 선공으로 시작된다.
+PRINTFORMW 치열한 공방전 끝에, %CALLNAME:ARG%의 나이트를 막아내지 못 한 당신은 패배를 인정하고 만다.
+PRINTFORML %CALLNAME:ARG%의 우쭐한 듯한 표정에, 당신은 승부욕에 불이 붙는 것이 느껴졌다.
+PRINTFORML 호감도+15
+PRINTFORMW 스트레스-5"
+CFLAG:ARG:호감도 += 15
+CFLAG:ARG:스트레스 -= 5
+RETURN 1

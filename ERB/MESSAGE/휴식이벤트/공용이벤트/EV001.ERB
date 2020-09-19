@@ -1,0 +1,44 @@
+﻿@MSG_EV_1(ARG, ARG:1)
+SELECTCASE RAND:4
+CASE 0
+PRINTFORML 멍 멍!
+PRINTFORML 개 짖는 소리가 온 동네를 울린다.
+PRINTFORMW 도대체 어디서 저렇게 개가 짖어대나 신경 쓰인 당신이 몸을 일으킨 순간,
+PRINTFORML 야!!!!!!
+PRINTFORML 개 짖는 소리 좀 안 나게 해라!!!
+PRINTFORML 당신은 아저씨의 사자후에 다시 자리에 앉았다.
+PRINTFORMW 개는 어느새 조용해져 있었다.
+RETURN 1
+CASE 1
+PRINTFORMW 당신의 코 끝에 기름 냄새가 스쳐간다
+PRINTFORML 어디서 튀김 요리라도 하는 건가?
+PRINTFORML 그렇게 생각하면서도 당신의 코는 기름 냄새를 쫓고 있었다.
+PRINTFORML 좀 기름진 걸 먹어야겠어.
+PRINTFORMW 당신은 어느새 다음 식사 메뉴를 정해 버린다.
+RETURN 1
+CASE 2
+PRINTFORML 똑똑.
+PRINTFORML 누군가 현관문을 두드린다.
+PRINTFORML 당신이 문을 여니 화사한 표정의 여성 두 분이 인사한다.
+PRINTFORML 안녕하세요! 좋은 말씀 전하러 왔는데요~
+PRINTFORMW 당신은 그런 것에는 관심 없다 딱 잘라 말하고선 문을 닫아버린다.
+RETURN 1
+CASE 3
+PRINTFORML 누군가 당신의 집 현관문을 두드린다.
+PRINTFORML 휴식을 방해당해 조금 짜증난 당신은 문을 열자마자 보이는 거대한 흉부지방에 눈을 빼앗긴다.
+PRINTFORML 안녕하세요. 엘븐 목장의 엘븐 포레스트메이커입니다!
+PRINTFORML 저희 목장에서 갓 뽑아낸 신선한 우유를 맛보시겠어요?
+PRINTFORMW 흔쾌히 건내주는 머그컵 안에는 흰우유가 들어있었다.
+PRINTFORMW 당신은 우유 안에 뭔가 이상한 걸 넣지 않았을까 생각했지만, 상업용 바이오로이드가 인간을 해칠 일은 거의 없으니 안심하고 한모금 마셨다.
+PRINTFORMW 고소한 우유가 입 안을 정리해주었다.
+PRINTFORMW 어때요? 이 우유를 집에서 두고두고 먹고 싶지 않나요?
+PRINTFORMW 당신이 구매를 망설이는 기색을 보이자, 엘븐이 최후의 수를 던졌다.
+PRINTFORMW 세트로 구매하시면, 목장에서 어떻게 우유를 짜는지 보여줄 수도 있는데...
+PRINTFORMW 당신은 그 말에 홀려 그녀가 가져온 우유 세트를 사 버리고 말았다.
+PRINTFORML ...정말 좋은 경험이었어.
+PRINTFORML 그나저나 이거 언제 다 먹는담?
+PRINTFORMW 소지금-5000
+MONEY -= 5000
+RETURN 1
+ENDSELECT
+RETURN 0

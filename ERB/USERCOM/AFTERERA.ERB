@@ -2,8 +2,16 @@
 ;BEGIN AFTERTRAIN 이후 호출
 @EVENTEND
 
+CSTR:1 = 
 CALL SET_MSG_CSTR(TARGET)
-TRYCALLFORM M_No{NO:TARGET}_TRAIN_END
+WHILE 1
+    TRYCALLFORM M_No{NO:TARGET}_TRAIN_END
+    IF RESULT == 0
+        CSTR:1 '= Alternative_CSTR(TARGET)
+    ELSE
+        BREAK
+    ENDIF
+WEND
 
 ;일반적인 에라가 아니라서 통과
 ;BEGIN ABLUP
@@ -53,45 +61,37 @@ ELSEIF RESULT == -1
 ENDIF
 
 ;짜증 아님, 호감도 999 초과, 공포 100 미만, 정신쇠약 아닐때 연모
-IF !TALENT:짜증 && !TALENT:정신쇠약
-    IF !TALENT:사랑 && CFLAG:호감도 > 999 && CFLAG:공포 < 100
+CALL GET_Affection(TARGET)
+IF RESULT == 1 || RESULT == 2
+    PRINTFORML %타겟은% 당신에게 특별한 감정을 느낀 것 같다.
+    PRINTS 타겟은
+    PRINTPLAIN [연모]
+    PRINTW 를 취득했다.
+    IF RESULT == 2
+        PRINTFORML %타겟을% 속박하고 있던 무언가가 풀렸습니다.
+        PRINTFORM %CALLNAME:TARGET%의
+        PRINTPLAIN [억압]
+        PRINTW 이 소멸했다.
+    ENDIF
+ELSE
+    ;연모/사랑 조건 동시 충족시 연모가 우선
+    ;짜증 아님, 공포 50 미만, 정신쇠약 아닐때가 사랑 최저조건
+    ;에밀리는 호감도가 7999 초과이기만 하면 됨
+    ;나머지는 호감도 9999 초과
+    CALL GET_Love(TARGET)
+    IF RESULT == 1 || RESULT == 2
         PRINTFORML %타겟은% 당신에게 특별한 감정을 느낀 것 같다.
         PRINTS 타겟은
-        PRINTPLAIN [연모]
-        PRINTW 를 취득했다.
-        TALENT:사랑 = 1
-        IF TALENT:억압
-            PRINTFORML %타겟을% 속박하고 있던 무언가가 풀렸습니다.
+        PRINTPLAIN [사랑]
+        PRINTW 을 취득했다.
+        IF RESULT == 2
             PRINTFORM %CALLNAME:TARGET%의
-            PRINTPLAIN [억압]
+            PRINTPLAIN [비관적]
             PRINTW 이 소멸했다.
-            TALENT:억압 = 0
-        ENDIF
-    ;짜증 아님, 공포 50 미만, 정신쇠약 아닐때가 사랑 최저조건
-    ELSEIF TALENT:사랑 != 2 && CFLAG:공포 < 50
-        ;에밀리는 호감도가 7999 초과이기만 하면 됨
-        IF NO:TARGET == 68 && CFLAG:호감도 > 7999
-            PRINTFORML %타겟은% 당신에게 특별한 감정을 느낀 것 같다.
-            PRINTS 타겟은
-            PRINTPLAIN [사랑]
-            PRINTW 을 취득했다.
-            TALENT:사랑 = 2
-        ;나머지는 호감도 9999 초과
-        ELSEIF CFLAG:호감도 > 9999
-            PRINTFORML %타겟은% 당신에게 특별한 감정을 느낀 것 같다.
-            PRINTS 타겟은
-            PRINTPLAIN [사랑]
-            PRINTW 을 취득했다.
-            TALENT:사랑 = 2
-            IF TALENT:긍정도 == -1
-                PRINTFORM %CALLNAME:TARGET%의
-                PRINTPLAIN [비관적]
-                PRINTW 이 소멸했다.
-                TALENT:긍정도 = 0
-            ENDIF
         ENDIF
     ENDIF
 ENDIF
+
 
 ;고백받은인수 5명 초과시 매력 취득
 IF FLAG:고백받은인수 > 5 && !TALENT:MASTER:매력
@@ -109,12 +109,14 @@ ENDIF
 ;v0.9 현재 본 함수군을 사용하는 위치 목록
 ;@EVENTEND - 연애커맨드/종료 대응
 ;@EVENTTURNEND - 날짜변경/(uptime1|uptime2) 대응
+;@EAT_FOOD - 식사시 호감도 상승분 처리
 ;=============================================================
 ;-------------------------------------------------------------
 ;정신쇠약 취득
 ;공포 299 초과시
 ;-------------------------------------------------------------
 @GET_WeakMind(ARG)
+
 IF !TALENT:ARG:정신쇠약 && CFLAG:ARG:공포 > 299
     TALENT:ARG:정신쇠약 = 1
     SIF NO:ARG == 51 && CFLAG:ARG:etc3 < 5 ;etc3 = 메이 쇠약 획득수
@@ -151,5 +153,54 @@ IF !TALENT:ARG:짜증 && CFLAG:ARG:스트레스 > 299
 ELSEIF TALENT:ARG:짜증 && CFLAG:ARG:스트레스 < 200
     TALENT:ARG:짜증 = 0
     RETURN -1
+ENDIF
+RETURN 0
+;-------------------------------------------------------------
+;연모 취득
+;짜증 아님, 호감도 999 초과, 공포 100 미만, 정신쇠약 아닐때 연모
+;억압 처리시 2 반환
+;-------------------------------------------------------------
+@GET_Affection(ARG)
+
+SIF TALENT:ARG:짜증 || TALENT:ARG:정신쇠약
+    RETURN 0
+IF !TALENT:ARG:사랑 && CFLAG:ARG:호감도 > 999 && CFLAG:ARG:공포 < 100
+    TALENT:ARG:사랑 = 1
+    IF TALENT:ARG:억압 ;억압 소멸
+        TALENT:ARG:억압 = 0
+        RETURN 2
+    ELSE
+        RETURN 1
+    ENDIF
+ENDIF
+RETURN 0
+;-------------------------------------------------------------
+;사랑 취득
+;짜증 아님, 공포 50 미만, 정신쇠약 아닐때가 사랑 최저조건
+;연모 있어야 사랑 취득 가능
+;에밀리는 호감도가 7999 초과이기만 하면 됨
+;나머지는 호감도 9999 초과
+; * 연모/사랑 조건 동시 충족시 연모가 우선
+;비관적 처리시 2 반환
+;-------------------------------------------------------------
+@GET_LOVE(ARG)
+
+SIF TALENT:ARG:짜증 || TALENT:ARG:정신쇠약 || !TALENT:ARG:사랑
+    RETURN 0
+IF TALENT:ARG:사랑 != 2 && CFLAG:ARG:공포 < 50
+    ;에밀리는 호감도가 7999 초과이기만 하면 됨
+    IF NO:ARG == 68 && CFLAG:ARG:호감도 > 7999
+        TALENT:사랑 = 2
+        RETURN 1
+    ;나머지는 호감도 9999 초과
+    ELSEIF CFLAG:ARG:호감도 > 9999
+        TALENT:ARG:사랑 = 2
+        IF TALENT:ARG:긍정도 == -1 ;비관적 소멸
+            TALENT:ARG:긍정도 = 0
+            RETURN 2
+        ELSE
+            RETURN 1
+        ENDIF
+    ENDIF
 ENDIF
 RETURN 0

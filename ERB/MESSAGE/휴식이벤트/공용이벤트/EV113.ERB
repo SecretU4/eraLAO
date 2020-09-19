@@ -1,0 +1,71 @@
+﻿@MSG_EV_113(ARG, ARG:1)
+SELECTCASE RAND:5
+CASE 0
+PRINTFORMW 당신은 문득 바닥에 눕고 싶어져서 그렇게 했다.
+PRINTFORMW 눈 앞에 보이는 무채색의 천장은 지루했지만 편안했다.
+PRINTFORMW 한참을 멍하니 그러고 있었는데 %CALLNAME:ARG%의 얼굴이 불쑥 당신의 앞을 가린다.
+PRINTFORML 뭐하냐고 묻는 %CALLNAME:ARG%에게 당신은 웃을 수 밖에 없었다.
+PRINTFORMW 호감도+5
+CFLAG:ARG:호감도 += 5
+RETURN 1
+CASE 1
+PRINTFORMW 당신은 게임을 하다가 상대의 플레이에 화가 나 소리쳤다.
+PRINTFORMW 문득 인기척이 느껴져 뒤를 돌아보니 %CALLNAME:ARG%(이)가 서 있었다.
+PRINTFORMW 당신은 %CALLNAME:ARG% 보기가 멋쩍어서 웃었다.
+RETURN 1
+CASE 2
+PRINTFORML 똑똑, 누군가 당신의 현관문을 두드린다.
+PRINTFORML 문을 여니 아우로라 모델이 당신에게 초콜릿 바구니를 내밀었다.
+PRINTFORMW 안녕하세요! 아우로라라고 합니다! Sweet & Dreams 사의 새 초콜릿 세트 하나 구매해보시겠어요?
+PRINTFORML 그녀가 내미는 초콜릿 바구니를 본 당신은 살 생각이 없다며 고개를 젓는다.
+PRINTFORML 그러자 아우로라의 눈이 핑핑 돌기 시작한다.
+PRINTFORML 어? 이렇게 말하면 다 사는데? 왜 구매하시지 않는 거지?
+PRINTFORML 물론 사람에 따라서 초콜릿을 못 먹기도 하지만... 하지만 여기 사탕도 들어있는데?
+PRINTFORML 단 걸 싫어하는 사람은 없었는데? 내가 잘 못 알고 있었나?
+PRINTFORML 혹시 내가 영업 멘트를 잘못 말했었나? 으아아아~!
+PRINTFORMW 당신은 당황해서 우왕좌왕하는 아우로라의 모습에 피식 웃으며 충동적으로 초콜릿 세트를 구매한다.
+PRINTFORML 감사합니다! 맛있게 드세요!
+PRINTFORML 아우로라는 언제 그랬냐는 듯 씩씩하게 인사하고선 돌아갔다.
+PRINTFORML 그나저나 이거 나 혼자 먹기에는 너무 많은데...
+PRINTFORML ...%CALLNAME:ARG%에게 조금 나눠줄까?
+PRINTFORML 소지금-20000
+PRINTFORML 호감도+30
+PRINTFORML 스트레스-20
+PRINTFORMW 공포-10
+MONEY -= 20000
+CFLAG:ARG:호감도 += 30
+CFLAG:ARG:스트레스 -= 20
+CFLAG:ARG:공포 -= 10
+RETURN 1
+CASE 3
+PRINTFORMW 당신은 아이들이 왁자지껄 떠드는 소리에 밖을 내다보았다.
+PRINTFORMW 거리에 설치된 가판대에 아이들이 모여서 무언가를 보며 우와, 우와 거리며 흥분하고 있었다,
+PRINTFORML 궁금해서 나와 본 당신은 가판대에 늘어진 달고나들과
+PRINTFORML 그 판 위에서 핀을 가지고 달고나를 두드리는 아이들을 보았다.
+PRINTFORMW 당신은 그 모습이 재밌어보여 달고나 한 판을 주문해 핀으로 두드리기 시작했다.
+PRINTFORMW 별 모양으로 쪼개볼까...?
+PRINTFORML ...
+PRINTFORML ..
+PRINTFORML .
+PRINTFORML !
+PRINTFORML 당신은 별 모양 달고나를 쪽쪽 빨며 손에 들린 잉어 모양 달고나를 내려다 보았다.
+PRINTFORML 홀로 먹기엔 너무 커다란 잉어였다.
+PRINTFORML 흐음, %CALLNAME:ARG%(와)과 같이 먹을까?
+PRINTFORML 소지금-1000
+PRINTFORML 호감도+14
+PRINTFORMW 스트레스-7
+MONEY -= 1000
+CFLAG:ARG:호감도 += 14
+CFLAG:ARG:스트레스 -= 7
+RETURN 1
+CASE 4
+PRINTFORMW 당신은 화장실에서 세수를 했다.
+PRINTFORMW 과감하게 얼굴을 씻어내리고 거울을 보니, 멋진 당신이 당신을 보고 있었다.
+PRINTFORMW 전등불 아래 적당히 그늘지고 도드라진 얼굴에 취해, 당신은 손으로 턱날을 쓸어내리며 얼굴을 관찰한다.
+PRINTFORMW 내가 이렇게 잘 생겼나?
+PRINTFORMW 자아도취에 빠져있던 당신의 등 뒤로, 뭐하냐는 목소리가 들린다.
+PRINTFORMW 화들짝 놀라 뒤를 돌아본니, 열린 문 너머 %CALLNAME:ARG%(이)가 서 있었다.
+PRINTFORMW 당신은 부끄러움에 얼굴이 화끈거린다.
+RETURN 1
+ENDSELECT
+RETURN 0

@@ -1,0 +1,6155 @@
+﻿@IS_M_No132
+RETURN 1
+
+@M_No132_TRAIN_START_0
+PRINTFORMW 「헤헤… 반가워요 사령관님.」
+PRINTFORMW 「제 이름은 커넥터 유미.」
+PRINTFORMW 「이지적이고 아름다운, 유능한 도시의 커리어 우먼이죠」
+CFLAG:조교여부 = 1
+RETURN 1
+
+@M_No132_TRAIN_START_1
+SELECTCASE CSTR:1
+CASE "Confession"
+PRINTFORMW 「저기... 사령관님, 혹시 저 좋아해요?」
+PRINTFORMW 어느날 문득, 그렇게 물어온 유미의 눈빛에는 흔들림이 없었다.
+PRINTFORMW 「상식적으로 생각하자면 잘해주는 사람이 호감을 갖고 있다고 생각하잖아요.」
+PRINTFORMW 「그리고 사령관님은 제게 엄청 잘해주고요.」
+PRINTFORMW 유미는 한 치의 부끄럼도 없이 그렇게 물어봤다.
+PRINTFORMW 「사적인 감정이나 그런거 다 빼놓고 봤을 때...」
+PRINTFORMW 「사령관님이 저를 좋아하지 않고서는 이런 행동을 하실리가 없다고 생각해요.」
+PRINTFORMW 유미는 평소에 업무를 보는 것처럼 단호한 모습이었다.
+PRINTFORMW 「사령관님, 절 보세요.」
+PRINTFORMW 유미는 당신에게 두 팔을 들어 보였다.
+PRINTFORMW 「저는 다른 바이오로이드들보다 작고 연약해요. 전투용도 아니고요.」
+PRINTFORMW 「통신용이라 그렇게 비싸지도 않고, 가슴도 그렇게 안 커서 색기도 별로 없어요.」
+PRINTFORMW 「잦은 야근으로 눈 밑에는 다크써클이 시커멓고, 머리카락은 부스스하죠.」
+PRINTFORMW 「또 성격은 심약하고 음침해서 그렇게 밝거나 사교적이지도 않고...」
+PRINTFORMW 「요컨데 사령관님이 보시기에 전 그렇게 매력이 없다는 여자가 돼요.」
+PRINTFORMW 「그런데 사령관님은 왜 제게 그런 행동을 보여주시나요?」
+PRINTFORMW 「상식적으로 생각하면, 사령관님이 저를 좋아하기 때문이라는 건데...」
+PRINTFORMW 유미가 당신을 보고 웃었다.
+PRINTFORMW 「그럴리가 없잖아요, 사령관님이 저를 좋아한다니. 헤헤...」
+PRINTFORMW 그렇게 말한 유미가 속마음을 털어놓는다.
+PRINTFORMW 「사실 저, 남녀관계는 잘 몰라요. 혼자 있었던 시간이 더 길거든요.」
+PRINTFORMW 「그래서 자의식 과잉에 걸렸을지도 몰라요.」
+PRINTFORMW 「매일매일 사령관님을 보고 사령관님을 생각하다보니」
+PRINTFORMW 「사령관님이 저를 좋아할지도 모른다는 엄청난 착각을 하고 있는게 틀림없어요.」
+PRINTFORMW 「그래서 사령관님께 물어본 거예요, 절 좋아하냐고.」
+PRINTFORMW 「아... 대답은 하지 않으셔도 괜찮아요. 그냥 저만의 답을 찾고 있던 거라.」
+PRINTFORMW 「그리고 혹시라도 사령관님께서 아니라고 대답해버리면 너무 슬플 것 같거든요.」
+PRINTFORMW 유미가 잠시 침묵했다.
+PRINTFORMW 그리고 당신에게 다시 답을 구했다.
+PRINTFORMW 「사령관님... 저는 제 마음을 잘 모르겠어요.」
+PRINTFORMW 「사령관님이 저를 좋아하시는 걸까요?」
+PRINTFORMW 「그것도 아니면...」
+PRINTFORMW 유미가 고개를 들어 당신을 바라봤다.
+PRINTFORMW 「제가 사령관님을 좋아하고 있는 게 아닐까요?」
+TFLAG:고백함 = 1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관님... 오늘도 일 하러 나오신 건가요?」
+DATAFORM 「저도 얼른 움직이지 않으면...」
+ENDLIST
+DATALIST
+DATAFORM 「5분만 더 쉬었다가 움직여도 될까요...」
+DATAFORM 「아직 피로가 다 풀리지가 않아서요.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님의 와이파이는 잘 터지시나요?」
+DATAFORM 「제 와이파이는 아직 한 칸이네요.」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관님, 오늘의 와이파이는 어때요?」
+DATAFORM 「저는 이제 세 칸 됐어요.」
+ENDLIST
+DATALIST
+DATAFORM 「아, 일할 시간인가요.」
+DATAFORM 「일은 싫지만, 사령관님과 함께라면 참을 수 있어요.」
+ENDLIST
+DATALIST
+DATAFORM 「기지국 근처로는 산책 가지 말죠.」
+DATAFORM 「저 기지국 근처에만 가면 트라우마가 도져서...」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관님의 와이파이는 끝까지 찼나요?」
+DATAFORM 「제 와이파이도 오늘따라 꽉 차 있네요.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님, 저한테 관심 없으세요?」
+DATAFORM 「아, 이렇게 말하면 안 되나? 제가 말재간이 없어서...」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님이랑 같이 있으면 일한다는 느낌이 안 나네요.」
+DATAFORM 「사령관님이랑 일하면 야근도 문제 없을 것 같아요.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관님, 야근해요.」
+DATAFORM 「야근하자구요.」
+DATAFORM 「밤에 일 한다는 말 몰라요?」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님이랑... 놀 시간인 거죠?」
+DATAFORM 「사령관님을 향한 제 통신신호는 아주 양호해요.」
+ENDLIST
+DATALIST
+DATAFORM 「오늘도 사령관님과 같이 있을 수 있어서 좋아요.」
+DATAFORM 「제게 이런 날이 오다니...」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「일 할 시간이네요.」
+DATAFORM 「야근수당 나오나요?」
+ENDLIST
+DATALIST
+DATAFORM 「벌써부터 피곤하네요...」
+DATAFORM 「일단 각성제부터 마시고 시작하겠습니다.」
+ENDLIST
+DATALIST
+DATAFORM 「어제도 힘든 하루였어요.」
+DATAFORM 「오늘이 힘들지 어떨지는 지금부터 봐야죠...」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「또.. 또요?」
+DATAFORM 「이, 이젠 싫어요...」
+DATAFORM 「저 오늘만 휴가내면 안 될까요?」
+ENDLIST
+DATALIST
+DATAFORM 「벌써 일하러 갈 시간이라구요?」
+DATAFORM 「네, 네... 곧 갈게요...」
+ENDLIST
+DATALIST
+DATAFORM 「근무 중에 폭력은... 어떻게 생각하세요?」
+DATAFORM 「아, 아뇨.. 싫다는 게 아니고...」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「블랙기업...」
+DATAFORM 「야근... 폭언... 폭력...」
+DATAFORM 「답은 퇴직 뿐...」
+ENDLIST
+DATALIST
+DATAFORM 「사, 사령관님? 오늘도 제 차롄가요?」
+DATAFORM 「아, 아뇨. 열심히 할게요.」
+ENDLIST
+DATALIST
+DATAFORM 「오늘은 제 와이파이가 바닥이네요...」
+DATAFORM 「통신상태 불량.」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 「저, 저, 제 차례죠?」
+DATAFORM 「제가 맞을 차례죠?」
+DATAFORM 「좋아해요 사령관님.」
+ENDLIST
+DATALIST
+DATAFORM 「평소처럼 해주시면 평생이라도 근무할 수 있어요.」
+DATAFORM 「무급으로 일할게요.」
+DATAFORM 「때려... 주실 거죠?」
+ENDLIST
+DATALIST
+DATAFORM 「통신 상태는 불량이지만.」
+DATAFORM 「육체적인 대화는 문제 없어요.」
+DATAFORM 「저.. 맞는 게 좋아요.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_TRAIN_END
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「오늘의 업무는...」
+DATAFORM 「이걸로 종료인가요?」
+DATAFORM 「진짜 야근 없죠?」
+ENDLIST
+DATALIST
+DATAFORM 「드디어 끝났다~」
+DATAFORM 「저도 이제 들어가서 쉴게요.」
+DATAFORM 「항상 피곤이 몸에 붙어 있는 터라...」
+ENDLIST
+DATALIST
+DATAFORM 「즐거우셨나요?」「저랑 같이 있는 게 즐거우셨다구요?」
+DATAFORM 「그럴리가 없을텐데...」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「오늘 일이 끝났네요.」
+DATAFORM 「그, 저... 할 말이 있는데...」
+DATAFORM 「야근수당 안 줘도 괜찮으니 사령관님이랑 좀 더 있고 싶은데요...」
+ENDLIST
+DATALIST
+DATAFORM 「오늘 일이 끝났다구요?」
+DATAFORM 「이렇게 빨리?」
+DATAFORM 「시간이 너무 빨리 가는 거 아니에요?」
+ENDLIST
+DATALIST
+DATAFORM 「뭐야.. 좀 더 있고 싶었는데...」
+DATAFORM 「들으셨어요? 어, 안 되는데.」
+DATAFORM 「드, 들으셨으면 제가 뭐라고 했는지 말해 봐요.」
+DATAFORM 「못 들으셨죠?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관님...」
+DATAFORM 「벌써 가시는 건 아니죠?」
+DATAFORM 「저랑 같이 일 해요. 일.」
+DATAFORM 「아무것도 아니잖아요...」
+ENDLIST
+DATALIST
+DATAFORM 「아... 갈 시간이라니...」
+DATAFORM 「너무 빠른데...」
+DATAFORM 「저, 그... 집에서 통신이 안 되거나 신호가 안 잡히거나 그런 거 없나요?」
+ENDLIST
+DATALIST
+DATAFORM 「퇴근시간이라구요?」
+DATAFORM 「저한테 퇴근이 어딨어요. 퇴근해서도 일이지.」
+DATAFORM 「돌아가면 한 잔 할래요?」
+DATAFORM 유미가 당신에게 윙크했다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「야근.. 할 거죠?」
+DATAFORM 「야근 안하면 싫은데~」
+DATAFORM 「유미는 야근 하고 싶은데에~」
+ENDLIST
+DATALIST
+DATAFORM 「더 놀아요, 빨리. 빨리이~」
+DATAFORM 「사령관님이랑 있는 게 제일 좋다구요.」
+DATAFORM 「이따 또 볼 거죠?」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님이랑 멀어지면 제 수신호가 약해지는데!」
+DATAFORM 「멀어지면 안 되는데!」
+DATAFORM 「사령관님 보고싶은데!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「이야.. 드디어 퇴근이다..」
+DATAFORM 「수고하셨습니다. 들어가볼게요.」
+ENDLIST
+DATALIST
+DATAFORM 「오늘의 야근은 없죠?」
+DATAFORM 「오늘도 너무 힘들었어요.」
+DATAFORM 「피곤하니 먼저 들어가 볼게요.」
+ENDLIST
+DATALIST
+DATAFORM 「여기가 블랙기업이 아니었으면 좋겠네요.」
+DATAFORM 「악덕상사도 아니셨으면 좋겠구요.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「저, 저.. 퇴근할래요」
+DATAFORM 「저, 이만 돌아갈래요.」
+DATAFORM 「저 놓아 주세요...」
+ENDLIST
+DATALIST
+DATAFORM 「여기까지...」
+DATAFORM 「이제 그만 해요...」
+DATAFORM 「저, 몸이 너무 아파요...」
+ENDLIST
+DATALIST
+DATAFORM 「저 내일 연차 내도 되나요?」
+DATAFORM 「안된다구요? 그럴리가...」
+DATAFORM 「악덕기업...」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「저, 저, 저 퇴근해도 될까요...?」
+DATAFORM 「아, 아뇨.. 사령관님이 하지 말라 그러면 안 하죠...」
+ENDLIST
+DATALIST
+DATAFORM 「퇴, 퇴근 시간이에요!」
+DATAFORM 「오늘 더... 할 거 있나요?」
+DATAFORM 「제발 없어라, 제발 없어라, 제발 없어라...」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님은 퇴근 안 하세요?」
+DATAFORM 「아, 아니.. 사령관님이 퇴근 안 하셔서 제가 못하는 게 아니고...」
+DATAFORM 「아, 아니... 그게...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 「아쉬워요. 벌써 퇴근 시간이라니...」
+DATAFORM 「쫌만 쉬었다가 우리 다시 봐요.」
+DATAFORM 「이대로 끝내긴 너무 아깝잖아요.」
+ENDLIST
+DATALIST
+DATAFORM 「저, 저, 저... 이대로 끝내시는 건 아니죠?」
+DATAFORM 「저... 아직 조금 부족한데....」
+DATAFORM 「쪼금만 더 때려주시면 안될까요?」
+DATAFORM 유미가 당신을 보고 씩 웃었다.
+ENDLIST
+DATALIST
+DATAFORM 「알코올로 헤엄치기...」
+DATAFORM 「얼큰하게 마시기...」
+DATAFORM 「내일 일어나 숙취로 고생하기... 헤헤헤...」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM2
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「저는 온 세상 여기저기에서 일해요.」
+DATAFORM 「사막부터 극지방까지. 제가 없는 곳이 없죠.」
+DATAFORM 「그런 면에서 저는... 어느정도 일하는 데 의의를 두는 편이에요.」
+ENDLIST
+DATALIST
+DATAFORM 「와이파이 신호가 잘 안 잡히면 유미를 불러 주세요.」
+DATAFORM 「인터넷이 잘 안 돼도 유미를 불러 주시고요...」
+DATAFORM 「전파가 안 터져도 유미를.... 아이, 왜 이리 할 게 많아.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님... 제 일은 언제가 되어야 끝나는 걸까요?」
+DATAFORM 「제 눈 밑에 드리운 다크써클 보이세요? 이거이거.」
+DATAFORM 유미의 눈 밑이 까맣다.
+DATAFORM 「제가 연속으로 야근한 날짜를 아신다면 깜짝 놀라실 거예요.」
+ENDLIST
+DATALIST
+DATAFORM 「세상 사람들이 제가 얼마나 노력하고 있는지 알까요...」
+DATAFORM 「오지근무하는 고충은 모르는 사람들은 아마 끝까지 모를거예요...」
+DATAFORM 「에휴...」
+ENDLIST
+DATALIST
+DATAFORM 「일단 아무 일도 없기를 바라고 있어요.」
+DATAFORM 「이런저런 일들을 겪다 보면 아무 일도 없는 게 제일 좋다는 걸 깨달아요.」
+DATAFORM 「가끔은 무료하지만, 그걸로 괜찮아요.」
+ENDLIST
+DATALIST
+DATAFORM 「와이파이가 안 잡히거나, 뭔가 통신 불량이 있으면 언제라도 불러주세요.」
+DATAFORM 「이지적인 도시의 커리어 우먼이 처리해 드릴게요.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님이 딱 저를 부르면 이런 생각이 들죠.」
+DATAFORM 「아, 출근했구나.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님이랑 같이 있는 건 저에겐 일종의 업무예요.」
+DATAFORM 「저는 커리어 우먼으로 만들어졌는걸요. 일로 생각한다고 해도 이상한 건 아니죠.」
+ENDLIST
+DATALIST
+DATAFORM 「일이니까, 사령관님이 시키시는 건 왠만해선 다 받아들일 생각이에요.」
+DATAFORM 「그래도 폭력과 폭언은 없는 일이었으면... 좋겠어요.」
+ENDLIST
+DATALIST
+DATAFORM 「전 세계가 재난 상태가 되면 커넥터 유미들이 오래 살아남지 않을까요?」
+DATAFORM 「그야 저희들은 전 세계 곳곳에 퍼져있잖아요.」
+DATAFORM 「요즘에 왠만해선 통신 안 닿는 곳도 없고.」
+ENDLIST
+DATALIST
+DATAFORM 「아침엔 약하고, 출근하느라 바쁜데 머리 정리할 시간이 어디 있어요.」
+DATAFORM 「그래서 제 머리는 항상 부스스해요.」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「마시는 거... 좋아하세요?」
+DATAFORM 「사실 저는 꼴깍꼴깍하는거 좋아하거든요.」
+DATAFORM 「혼자 오지에서 근무하거나... 야근할 때면 할 것도 없고...」
+DATAFORM 「그렇게 익숙해지는 거죠.」
+ENDLIST
+DATALIST
+DATAFORM 「나중에 우리 한 잔 할래요?」
+DATAFORM 「제가 좀 더 사령관님을 좋아하고...」
+DATAFORM 「사령관님도 저를 좋아하게 되면...」
+DATAFORM 「그때는 업무 끝나고 단 둘이서 마시는 것도 괜찮을 것 같은데...」
+ENDLIST
+DATALIST
+DATAFORM 「저.. 키 작죠?」
+DATAFORM 「안 작다구요? 거짓말하지 마세요. 저 키 작은거 저도 알아요.」
+DATAFORM 「키도 쬐끄맣고, 가슴도 작고... 성인인데... 커리어 우먼인데...」
+DATAFORM 「히잉....」
+ENDLIST
+DATALIST
+DATAFORM 「자, 여기 제 사원증 보이세요?」
+DATAFORM 유미가 허리춤에 찬 사원증을 가리켰다.
+DATAFORM 「이건 잘 나가고 화창한 신입 사원 유미일 때의 모습.」
+DATAFORM 유미가 자기 얼굴을 가리켰다.
+DATAFORM 「그리고 사령관님이 지금 보고 계시는 유미가 피곤에 쪄든 때의 모습.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님도 아시죠, 갈증을 꾹 참았다가 한 번에 해소하면 기분 좋은 거.」
+DATAFORM 「그거, 술도 마찬가지예요.」
+DATAFORM 「근무 중에 술 생각 참았다가 집 돌아가서 맥주 한 캔 까면 엄청나거든요!」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「그... 사령관님. 이따가 저랑 드라마 같이 안 보실래요?」
+DATAFORM 「그... 저... 사령관님이 딱 좋아할만한 드라마가 있는데...」
+DATAFORM 「그, 추천드리는 거예요! 딱히 사령관님이랑 보고 싶은 건...」
+DATAFORM 유미가 눈을 데룩데룩 굴렸다.
+DATAFORM 「같이 보고 싶다고나 할까... 드라마가 좋다고나 할까...」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님 옆에 누워서 감자칩 까먹으면서 드라마 보고 싶어요.」
+DATAFORM 「그렇게 새벽까지 보다가 저도 모르게 잠들고 싶어요.」
+DATAFORM 「눈 뜨면 사령관님이 옆에 있었음 좋겠어요.」
+ENDLIST
+DATALIST
+DATAFORM 「그... 와이파이 칸 수라고 하잖아요?」
+DATAFORM 「사령관님을 보고 있으면 그게 점점 차오르는 게 느껴져요.」
+DATAFORM 「그러니까... 제 몸의 감도가 예민해진다구요.」
+DATAFORM 「...에휴...」
+ENDLIST
+DATALIST
+DATAFORM 「저... 어때요?」
+DATAFORM 「전 키도 작고... 스타일도 안 좋고...」
+DATAFORM 「눈 밑에는 다크써클 있고... 머리는 부시시한데....」
+DATAFORM 「저.. 역시 볼품없죠?」
+DATAFORM 「네? 네? 뭐라구요? 괜찮다구요?」
+ENDLIST
+DATALIST
+DATAFORM 「좋아하는 사람에겐 뭐라고 말해야 좋을까요?」
+DATAFORM 「네? 네? 뭐라구요? 아, 아니에요! 사령관님 겨냥하고 말한 거!」
+DATAFORM 「아잇, 진짜 아니라니까요?」
+ENDLIST
+DATALIST
+DATAFORM 「저 같은 게 누굴 좋아한다면...」
+DATAFORM 「그걸 받는 사람이 좋아해 줄까요?」
+DATAFORM 「혹시... 민폐는 아니겠죠?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관님, 뭐 좋아하세요?」
+DATAFORM 「네? 저, 저, 제가 좋다구요?」
+DATAFORM 「그럴리가 없어요. 저는 다크써클도 심하고...」
+DATAFORM 「병약하고...」
+DATAFORM 「작고 왜소해선....」
+DATAFORM 「네? 그런 점이 좋은 거라구요?」
+DATAFORM 「...사실 저도 사령관님이 제일 좋아요.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님이랑 함께 있다면 풀야근도 문제 없을 것 같아요.」
+DATAFORM 「오히려 제에겐 힐링이죠.」
+DATAFORM 「처음 만났을 때랑 비교하면 제 다크써클도 많이 줄었죠?」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님이랑 하룻밤을 같이 보내면 뭘 하고 싶냐구요?」
+DATAFORM 「...」
+DATAFORM 「...네? 네네네? 그런...」
+DATAFORM 「전 그런 파렴치한 생각 안 했어요...」
+DATAFORM 「그냥 같이 쇼파에 누워서 과자 까먹으면서 드라마 보는 상상만 했을 뿐이에요...」
+DATAFORM 유미가 발을 동동 굴렀다.
+ENDLIST
+DATALIST
+DATAFORM 「저, 저 저... 저 지금 감도가 좋아요.」
+DATAFORM 「제 와이파이 수신호가 만땅이라구요.」
+DATAFORM 「그, 저... 무슨 소리인지 못 알아 드시겠나요?」
+DATAFORM 「그.... 지금 저랑 한 잔 하기 딱 좋은 타이밍이란 뜻인데...」
+DATAFORM 「뒤는 뭐, 마음대로 하셔도 되고...」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님, 사령관님.」
+DATAFORM 「저 딱 한 마디만 해도 돼요?」
+DATAFORM 유미가 당신의 등에 얼굴을 파묻었다.
+DATAFORM 「사랑해요...」
+ENDLIST
+DATALIST
+DATAFORM 「어... 제가 어쩌다가 외국 인터넷 싸이트에 접속하게 됐는데요...」
+DATAFORM 「우리 집에서 드라마나 보면서 놀래? 라는 속어가 사실은...」
+DATAFORM 「아, 아무것도 아니에요!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「그, 야근이요... 야근....」
+DATAFORM 「그, 야근할 때의 심적 피로감은 진짜...」
+DATAFORM 「어후...」
+DATAFORM 「거기에 주말 특근까지 합치면...」
+DATAFORM 「어어후.. 진짜...」
+ENDLIST
+DATALIST
+DATAFORM 「유사 생체 기지국 역할을 하면 얼마나 힘든데요, 진짜.」
+DATAFORM 「전파 잘 안 터진다고 민원은 오지게 들어오지.」
+DATAFORM 「사람들 지나가면서 이상하게 쳐다보지.」
+DATAFORM 「안테나는 또 제 몸보다 커서 비 올 때 우산 대용으로 쓰기에도 딱이라구요.」
+ENDLIST
+DATALIST
+DATAFORM 「아, 다크써클이 조금 더 진해진 것 같은데...」
+DATAFORM 「영양제라도 챙겨 먹어야 하나...?」
+ENDLIST
+DATALIST
+DATAFORM 「아이고... 또 출근해선...」
+DATAFORM 「어떤 허무맹랑한 일을 겪어야 하는 걸까...」
+DATAFORM 「아이고... 허무한 내 인생...」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「사, 사령관님?」
+DATAFORM 「오늘 업무... 좀 하드할까요?」
+DATAFORM 「그, 제가 못 버티겠다는 게 아니고...」
+DATAFORM 「알겠습니다. 얌전히 있을게요...」
+ENDLIST
+DATALIST
+DATAFORM 「...저에게 할 말 있으세요?」
+DATAFORM 「사무적으로 짧고 빠르게 끝내주세요.」
+ENDLIST
+DATALIST
+DATAFORM 「그, 저... 사실 요즘 몸이 좀 아픈데...」
+DATAFORM 「죄송해요. 아픈 척 하지 않을게요...」
+ENDLIST
+DATALIST
+DATAFORM 「제 삶에 어떤 의미가 있는 걸까요...」
+DATAFORM 「욕 먹고, 밟히고, 걷어 차이고....」
+DATAFORM 「흑... 흐윽....」
+ENDLIST
+DATALIST
+DATAFORM 「삶의 낙이 없어요.」
+DATAFORM 「저는 퇴근하고 나면 뭘 하고 살아야 할까요?」
+DATAFORM 「다시 지옥같은 업무 시간이 돌아오길 기다려야 할까요?」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「죄송합니다. 죄송합니다...」
+DATAFORM 「다음 번에는 더 잘 하겠습니다...」
+DATAFORM 「일처리 똑바로 하겠습니다...」
+DATAFORM 「다 제가 부족한 탓입니다...」
+ENDLIST
+DATALIST
+DATAFORM 「저, 저... 너무 아파요.」
+DATAFORM 「너무 아파요. 병원에 보내 주세요.」
+DATAFORM 「저, 저... 진짜로 버티기 힘들어요.」
+DATAFORM 「버티기 힘들다고요.」
+DATAFORM 「이대로... 이대로 가다가는...」
+DATAFORM 「몸이고 정신이고 마음이고 다 파헤쳐져선...」
+DATAFORM 「더 이상 온전한 상태를 유지하지 못할 거예요...」
+ENDLIST
+DATALIST
+DATAFORM 「차라리 기지국 생활이 나은 것 같아요.」
+DATAFORM 「...지금보단.」
+ENDLIST
+DATALIST
+DATAFORM 「업무 중 폭력... 상담할 곳도 없고...」
+DATAFORM 「폭언, 폭행...」
+DATAFORM 「아무 의미 없는 삶....」
+DATAFORM 「제 삶에 남은 게 대체 뭐가 있죠?」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 「사, 사령관님이랑 일하는 건 최고예요.」
+DATAFORM 「저는 제가 이런 취향인 줄 몰랐어요.」
+DATAFORM 「저는 제가 야근, 야근 외치는 게 정말 피곤해서인줄만 알았죠.」
+DATAFORM 「하지만 제가 혹사당하는 걸 즐기는 타입이었을 줄은 꿈에도...」
+DATAFORM 「이런 걸 알려준 사령관님 덕분이에요.」
+ENDLIST
+DATALIST
+DATAFORM 「저, 저... 오늘은 제게 어떤 잔인하고 잔혹한 일을 하실 생각이신가요?」
+DATAFORM 「안아준다고 불러 놓고서 배 때리기?」
+DATAFORM 「다리 걸어 넘어뜨려 놓고 걷어차기?」
+DATAFORM 「저, 정말... 상상만해도 끝내줘요!」
+ENDLIST
+DATALIST
+DATAFORM 「저, 마시는 거 좋아해요. 알코올.」
+DATAFORM 「최고예요, 최고.」
+DATAFORM 「퇴근하고 마실 거 생각만 해도... 으어어 취한다...」
+ENDLIST
+DATALIST
+DATAFORM 「제가 취하면 어떤 모습이 되는지 알기나 하세요?」
+DATAFORM 「사령관님이 아신다면 깜짝 놀라실 거예요.」
+DATAFORM 「으흐흐.... 그래서 좋아요...」
+ENDLIST
+DATALIST
+DATAFORM 「저... 몸이 근질근질해요...」
+DATAFORM 「아무래도 제 몸은 혹사당하길 원하는 게 틀림없어요.」
+DATAFORM 「자, 봐요! 어제 사령관님이 때리신 데가 아직도 욱씬욱씬 거린다구요.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님에게 맞는 건... 정말 짜릿해요!」
+DATAFORM 「루즈한 제 일상에 깜짝 놀랄 자극이 생기죠.」
+DATAFORM 「처음에는 아팠지만... 맞다 보니 기분 좋아졌어요.」
+DATAFORM 「그러다가 어느 날부터는 제가 그 자극을 원하고 있었구요.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님이 때리시는 배는 맞으면 아리면서 풀썩 쓰러질 것 같고...」
+DATAFORM 「다리를 차실 때는 눈물이 나서 아무 생각도 안 들어요.」
+DATAFORM 「그런 자극이야말로, 어쩌면 제 삶에 부족했던 것이 아니었을까요?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 머리카락을 칭찬했다.
+DATAFORM 유미가 놀라며 머리카락으로 얼굴을 가렸다.
+DATAFORM 「제, 제 머리카락이요?」
+DATAFORM 「바빠서 관리할 시간도 없었는데...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 손가락을 칭찬했다.
+DATAFORM 「그거.. 작고 가늘다는 뜻인가요?」
+DATAFORM 「아니면 사무 업무 보기 적당하다는 뜻인가요?」
+DATAFORM 유미가 당신의 눈치를 살폈다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 눈매를 칭찬했다.
+DATAFORM 유미가 발끈했다.
+DATAFORM 「그건 농담이죠?」
+DATAFORM 「제 축 쳐지고 흐리멍텅한 눈 좀 보세요.」
+DATAFORM 「이게 이뻐요? 이게 이쁜 것처럼 보이냐구요.」
+DATAFORM 「아오 이 다크써클을 좀 어떻게 해야 하는데...」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 다리를 칭찬했다.
+DATAFORM 유미가 깜짝 놀라며 손으로 허벅지를 가렸다.
+DATAFORM 「사.. 사내에서의 성희롱은 허락 안 해요.」
+DATAFORM 「지금 제 치마가 짧다고 면박주신거죠?」
+DATAFORM 유미가 치맛단을 슥슥 내렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 눈매를 칭찬했다.
+DATAFORM 「제 눈이 좋으시다구요?」
+DATAFORM 「사령관님 어지간히 특이 취향이시네요.」
+DATAFORM 「그렇게 좋다면, 자! 마음껏 보셔도 좋아요.」
+DATAFORM 유미가 당신에게 얼굴을 들이밀었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 허리를 칭찬했다.
+DATAFORM 「누누히 말씀드리지만 저는 몸매가 좋은 게 아니라...」
+DATAFORM 「단순히 빼빼 마른 것 뿐이라구요...」
+DATAFORM 「제 몸무게 앞자리 숫자가 3인거 아세요?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 가슴을 칭찬했다.
+DATAFORM 유미가 몸을 뒤틀며 당신의 눈길을 피했다.
+DATAFORM 「사... 사령관님 변태!」
+DATAFORM 「저, 저같이 쬐끄만 가슴이 뭐가 좋다는 거예요!」
+DATAFORM 「거... 거짓말이죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 다리를 칭찬했다.
+DATAFORM 「쫙 뻗은 제 다리가 좋다구요?」
+DATAFORM 「뭐... 제 다리가 조금 뛰어나긴 하지만...」
+DATAFORM 「사령관님 눈에는 안 찰 것 같은데...」
+DATAFORM 유미가 당신의 눈치를 살치며 자기 다리를 훑어봤다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리카락을 칭찬했다.
+DATAFORM 「에헤헤... 들켰나요?」
+DATAFORM 「어젯밤에 머리 관리 좀 했어요.」
+DATAFORM 「사령관님이랑 일하고 난 뒤로 여가시간이 조금 생겼거든요.」
+DATAFORM 「어때요, 괜찮아 보여요?」
+DATAFORM 유미는 간만에 기분좋아 보인다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 눈동자를 칭찬했다.
+DATAFORM 「제.. 제 눈동자가 좋다구요?」
+DATAFORM 「바다같이 깊은 눈에 달처럼 떠 있는 눈동자가 좋다구요?」
+DATAFORM 유미의 얼굴이 순식간에 빨갛게 물들었다.
+DATAFORM 「그... 그런 장난은... 치명적이에요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 다리를 칭찬했다.
+DATAFORM 「칭찬하셔도 뭐 안 떨어져요...」
+DATAFORM 유미가 부끄러운 듯 얼굴을 돌린다.
+DATAFORM 「그만 쳐다보시란 말이에요...」
+DATAFORM 그렇게 말하면서 유미가 슬쩍 치맛단을 올렸다.
+DATAFORM 유미의 하얀 다리가 치마 밑으로 길게 뻗었다.
+DATAFORM 「으으으...」
+DATAFORM 유미는 기필코 당신과 눈을 마주치지 않으려 한다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 작은 손을 칭찬했다.
+DATAFORM 「네? 제... 소, 손이요?」
+DATAFORM 「제 손이 좀 작고 가늘긴 하지만...」
+DATAFORM 「사령관님 손은요? 어디 맞대어 봐요.」
+DATAFORM 당신은 유미와 손을 맞댔다.
+DATAFORM 당신의 반 밖에 안 되는 유미의 손이 당신의 손과 맞닿았다.
+DATAFORM 「...저, 저기...」
+DATAFORM 「부끄러우니까 그만 할래요.」
+DATAFORM 유미가 얼굴을 돌렸다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 다리를 칭찬했다.
+DATAFORM 유미가 당신을 노려보며 말했다.
+DATAFORM 「직장내에서의 성희롱은... 안 된다구요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 허리를 칭찬했다.
+DATAFORM 「근무 중에 제 허리를 보고 계셨어요?」
+DATAFORM 「...저질.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 몸매를 칭찬했다.
+DATAFORM 「아무리 생각해도 그건 거짓말이네요.」
+DATAFORM 「저 같이 유아틱한 몸을 좋아한다면 그건 사령관님 취향을 의심해봐야 해요.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 다리를 칭찬했다.
+DATAFORM 「아.... 하하하...」
+DATAFORM 「아... 그렇구나...」
+DATAFORM 「제 다리가 보기 좋으셨구나...」
+DATAFORM 유미가 말끝을 흐린다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리카락을 칭찬했다.
+DATAFORM 「제 긴 머리가 좋다구요?」
+DATAFORM 「아, 사실... 업무에 방해가 돼서 잘라버릴까 생각하고 있었는데...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴을 칭찬했다.
+DATAFORM 유미가 역겹다는 눈으로 당신을 바라봤다.
+DATAFORM 「우웩.」
+DATAFORM 유미가 헛구역질을 했다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 다리를 칭찬했다.
+DATAFORM 「사.. 사령관님?」
+DATAFORM 「이제는 제 몸까지 노리시는 건가요?」
+DATAFORM 유미의 얼굴색이 흙빛으로 변했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리카락을 칭찬했다.
+DATAFORM 당신이 유미의 머리카락을 만지자 유미가 한 떨기 눈물을 흘렸다.
+DATAFORM 「흐윽...! 흑.....」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 몸매를 칭찬했다.
+DATAFORM 유미는 죽은 눈으로 당신을 바라봤다.
+DATAFORM 「사령관님이 원하신다면...」
+DATAFORM 「저는 아무것도 할 수 있는게 없죠...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 다리를 칭찬했다.
+DATAFORM 유미가 밝은 눈빛으로 말했다.
+DATAFORM 「제 다리를 부러뜨릴 생각이신가요?」
+DATAFORM 「꼭 한 번쯤은 목발을 짚고 생활하고 싶었어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 허리를 칭찬했다.
+DATAFORM 유미가 자랑스럽게 말했다.
+DATAFORM 「제 몸은 얇아서 상처내기 딱 좋아요.」
+DATAFORM 「저는 피부도 하얘서 생채기라도 나면 아주 선명하죠.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 손가락을 칭찬했다.
+DATAFORM 「제 손가락이 마음에 드시나요?」
+DATAFORM 「손톱, 뽑으실래요?」
+DATAFORM 「꽃잎같이 장식하면 아주 보기 예쁠 거예요.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 슬며시 유미의 손을 잡았다.
+DATAFORM 유미가 깜짝 놀라며 손을 빼냈다.
+DATAFORM 「사, 사령관님?」
+DATAFORM 「아... 죄송해요. 저, 피부가 닿는 것에는 좀 약해서...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 슬며시 유미의 손을 잡았다.
+DATAFORM 유미가 어깨를 움츠리며 놀랐다.
+DATAFORM 「소, 손은 갑자기 왜 잡으시는 건가요...?」
+DATAFORM 「제, 제가 혹시 실수라도 했나요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 슬며시 유미의 손을 잡았다.
+DATAFORM 「제, 제 손이 좀 작죠?」
+DATAFORM 「아... 하하하하...」
+DATAFORM 「저, 사령관님, 좀 부담스러운데...」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 유미가 깜짝 놀랐다.
+DATAFORM 「사, 사령관님?」
+DATAFORM 「왜, 왜 갑자기 손을 다 잡으시고...」
+DATAFORM 「그냥 잡고 싶었다구요?」
+DATAFORM 「흐에엑?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 「소, 손 잡아도 괜찮은 거예요?」
+DATAFORM 유미가 놀라 당신에게 되물었다.
+DATAFORM 「아, 아니 저 같은 거하고 손이라도 잡았다가...」
+DATAFORM 「괜히 사령관님한테 이상한 소문이라도 돌면...」
+DATAFORM 유미가 말끝을 흐렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 「사령관님의 손은 저보다 크네요...」
+DATAFORM 「사령관님이랑 손 잡고 있으면 남들이 절 더 어리게 보지 않을까요?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 유미를 바라보니 유미가 얼굴을 붉힌 채 손으로 입을 막고 있다.
+DATAFORM 「아... 아무것도 아니에요. 사령관님.」
+DATAFORM 유미의 손 너머로 그녀가 웃고 있는 게 얼핏 보이는 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 「사.. 사령관님?」
+DATAFORM 유미의 손이 당신의 손 안에서 꼬물꼬물 움직인다.
+DATAFORM 「저기.... 그, 그게...」
+DATAFORM 유미가 얼굴을 붉히며 시선을 피한다.
+DATAFORM 당신의 손에 유미의 새끼손가락 하나가 얽혀 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 「사령관님이 손을 잡고 싶으시다면...」
+DATAFORM 「저는... 부끄럽지만 기꺼이...」
+DATAFORM 유미가 당신의 눈치를 살핀다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 「사, 사령관님...」
+DATAFORM 「그.. 저... 혹시... 밤에 잠을 잘 못 주무시나요?」
+DATAFORM 「저... 사실 사령관님의 손을 잡으면 잠이 잘 와서...」
+DATAFORM 「아무것도 아니에요...」
+DATAFORM 유미가 말끝을 흐린다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 「사령관님... 이제 와서 좀 그런 말이지만...」
+DATAFORM 「저랑 사령관님은 충분히 친해진 거죠?」
+DATAFORM 유미가 당신을 보며 물었다.
+DATAFORM 「그, 그럼... 이런 행동쯤은 해도... 이상하지 않겠... 죠?」
+DATAFORM 유미가 당신의 손에 살짝 깍지를 꼈다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 「에, 그... 저, 사령관님...?」
+DATAFORM 「저, 저랑 뭐 하고싶지는 않으세요?」
+DATAFORM 「손만 잡는 걸로 괜찮다구요?」
+DATAFORM 「그, 에... 저...」
+DATAFORM 「저는 손만 잡는 걸론 부족한데...」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 「햐잇?!」
+DATAFORM 유미가 깜짝 놀라며 손을 빼냈다.
+DATAFORM 놀란 햄스터처럼 오들오들 떨며 당신을 바라보고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 「사, 사령관님?」
+DATAFORM 유미가 당신을 바라본다.
+DATAFORM 「이, 이것도 업무의 일환이라고 생각하면 되나요...?」
+DATAFORM 유미의 눈빛이 안쓰럽다.
+DATAFORM 「그럼... 참을게요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 「으, 으으...」
+DATAFORM 「사령관님 손 커다래...」
+DATAFORM 「저, 저 사실 남자는 좀 익숙하지 않거든요.」
+DATAFORM 「오지에서 혼자 근무하다보니...」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 「히끅!」
+DATAFORM 유미가 깜짝 놀라며 당신을 올려다봤다.
+DATAFORM 유미의 눈동자에 벌써 눈물이 고이고 있었다.
+DATAFORM 「아, 아니에요... 사령관님...」
+DATAFORM 유미의 목소리가 먹먹하다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 「사... 사령관님?」
+DATAFORM 「저 오늘도 야단맞나요?」
+DATAFORM 「죄, 죄송해요. 괜한 걸 물어봤죠...?」
+DATAFORM 유미는 겁에 질린 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 「무, 무슨 일이시죠...?」
+DATAFORM  유미는 겁에 질린 것 같다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 「사, 사령관님....」
+DATAFORM 유미가 눈물을 똑 똑 떨어뜨렸다.
+DATAFORM 유미는 억지로 당신에게 웃어 보이며 말했다.
+DATAFORM 「저, 소, 손을 잡으면... 업무하는 데 불편한데...」
+DATAFORM 유미는 당신을 무서워하는 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 「저, 저... 또 혼나는 거군요...」
+DATAFORM 「저란 아이는 쓸모없죠?」
+DATAFORM 「그, 그러니까.... 지금까지....」
+DATAFORM 「죄송해요... 저 같은 게 살아서...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 유미는 겁먹은 눈으로 당신을 올려다보았다.
+DATAFORM 「사, 사령관님...」
+DATAFORM 「저, 저 무서워요....」
+DATAFORM 「오늘은 아플만한 행동 더는 하지 않을게요...」
+DATAFORM 유미가 눈물을 똑 똑 떨어뜨린다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 유미가 기뻐하며 당신의 손에 깍지를 꼈다
+DATAFORM 「꺄하하! 사령관님. 저 좋아하시나요?」
+DATAFORM 「저도 사령관님 좋아해요.」
+DATAFORM 「왜냐면, 이 세상에서 저를 그렇게 학대하는 사람은 사령관님 밖에 없잖아요.」
+DATAFORM 유미의 눈에 있는 다크써클이 이루 말할 수 없이 진하다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 「사령관님? 오늘은 제 손에 관심이 있으신 건가요?」
+DATAFORM 「아프지만 사령관님이라면 참을 수 있어요. 고통쯤은 아무것도 아니에요.
+DATAFORM 「사령관님의 그 커다란 손으로 제 손가락을 꺾어 버릴 생각이시죠?」
+DATAFORM 「아니면 제 손바닥에 맴매 하실 건가요?」
+DATAFORM 「뭐든 좋아요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 손을 잡았다.
+DATAFORM 유미가 당신의 손에 깍지를 끼더니 당신의 손을 꽉 쥐었다.
+DATAFORM 「사령관님도 꽉 쥐어줘요.」
+DATAFORM 유미가 당신에게 속삭였다.
+DATAFORM 「제 손이 부서질 듯이 꽉 쥐어줘요.」
+DATAFORM 유미가 당신에게 매달리고 있다.
+DATAFORM 당신은 유미의 손을 부셔져라 쥐었다.
+DATAFORM 유미의 손가락이 구부러지더니 하얗게 변했다.
+DATAFORM 「하읏...」
+DATAFORM 유미가 볼을 붉히며 좋아한다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 긴 머리카락이 당신의 손에 감겼다.
+DATAFORM 「어? 사령관님 손이었나요?」
+DATAFORM 「전 틀림없이 또 안테나에 제 머리카락이 감긴 줄 알았어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「하으으... 사, 사령관님?」
+DATAFORM 유미가 당신을 올려다본다.
+DATAFORM 「머, 머리를 그렇게 쓰다듬으시면...」
+DATAFORM 「부끄러운데요...」
+DATAFORM 유미가 후드를 푹 눌러썼다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「마, 만지시면 안 돼요...」
+DATAFORM 유미가 당신의 손에서 머리를 떼어냈다.
+DATAFORM 유미는 당신과 눈을 마주치지 않는다.
+DATAFORM 「지, 지금은 산발이니... 정리하고 오면 만지셔도 괜찮아요.」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「저.. 키가 작아서 머리에 손 올려다 놓으면 딱이죠?」
+DATAFORM 「분명 그럴 거예요. 사령관님이 아니라도 자주 있었거든요.」
+DATAFORM 「아무튼 제 머리는 사령관님 손잡이가 아니니 알고 계세요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「제 머리카락... 곱슬이라 지저분하다고 생각하지는 않나요?」
+DATAFORM 「사실.. 매일 헤어롤로 정리를 하긴 하는데...」
+DATAFORM 「머리카락이 길어서 하기도 힘들고...」
+DATAFORM 「전날 야근하면 만사가 다 귀찮고...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 복슬복슬한 느낌이 귀여운 소동물같다.
+DATAFORM 「사령관님?」
+DATAFORM 「언제까지 머리 만지고 계실 셈인가요?」
+DATAFORM 머리를 만지는 느낌이 중독성있다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「제, 제가 뭘 잘 했나요?」
+DATAFORM 「그... 쓰담쓰담은 칭찬의 의미로도 쓰이잖아요.」
+DATAFORM 「저, 칭찬받을만 한가요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「사령관님의 커다란 손...」
+DATAFORM 「기분좋아요...」
+DATAFORM 「어젯밤의 피로가 좀 풀리는 것 같아요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 유미가 당신의 손에 무의식적으로 머리를 비빈다.
+DATAFORM 「핫?!」
+DATAFORM 「아, 아니에요! 사령관님! 이건 느낌이 좋아서 무심코...」
+DATAFORM 유미가 허둥지둥 반박하지만 별로 의미는 없는 것 같다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 유미가 고로롱거리며 당신에게 몸을 기댔다.
+DATAFORM 「사령관님 손이 세상에서 제일 기분 좋아요.」
+DATAFORM 「저기, 사령관님. 이따 드라마 보면서 과자 까먹을래요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「다른 사람이면 또 몰라도.」
+DATAFORM 「사령관님은 제 머리 만지시는 거 괜찮아요.」
+DATAFORM 「사령관님은 무섭지 않거든요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「제 머리카락은 길어서 만질 데가 많으니 꼼꼼하게 만져 주셔야 해요?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「사, 사령관님?」
+DATAFORM 「저... 제 머리는 볼품없는데...」
+DATAFORM 「안 만지셔도 괜찮지 않을까요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 유미가 후드를 푹 눌러썼다.
+DATAFORM 「아직 만져지는 건 좀...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「저, 저 어제 머리 안 감았는데 괜찮아요?」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 유미는 겁먹은 채로 당신을 올려다봤다.
+DATAFORM 「갑자기 뒤통수 때리시진 않으실 거죠...?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「말 잘 들을게요...」
+DATAFORM 「일은 항상 열심히 해야죠...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 유미가 얼어붙었다.
+DATAFORM 「아, 아무것도 아니에요. 제가 예민했나 봐요.」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「오늘도... 업무와는 관계 없는 행동...」
+DATAFORM 「아마 퇴직할때까지 계속 하시겠죠...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「...제가 오늘은 뭘 잘못했을까요?」
+DATAFORM 「저란 놈은 그렇게 쓸모가 없는 걸까요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「제 머리카락을 쥐어 뜯으셔도 좋아요...」
+DATAFORM 「제가 그런 역할이라도 할 수 있으면...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「이번엔 사령관님이 머리를 때려주시려나?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「저 열심히 맞았어요!」
+DATAFORM 「아팠지만 꾹 참았어요!」
+DATAFORM 「그래서 지금 칭찬해 주시는 거죠?」
+DATAFORM 「그쵸?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 머리를 쓰다듬었다.
+DATAFORM 「헤헤... 사령관님 손....」
+DATAFORM 「음험하고 사나워서 멋있어...」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM6
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 옆구리를 쿡 찔렀다.
+DATAFORM 「꺄앗?!」
+DATAFORM 유미가 깜짝 놀라 허리를 뒤틀었다.
+DATAFORM 「사, 사령관님?!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 옆구리를 쿡 찔렀다.
+DATAFORM 「히엑?」
+DATAFORM 유미가 이상한 소리를 냈다.
+DATAFORM 「저, 저는 말라서 그렇게 찌르면 아파요!」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 옆구리를 쿡 찔렀다.
+DATAFORM 「끼얏?!」
+DATAFORM 유미가 깜짝 놀랐다.
+DATAFORM 「사, 사령관님. 너무 짓궂으신거 아닌가요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 옆구리를 쿡 찔렀다.
+DATAFORM 「제 쪼만한 몸에 어딜 찌를 데가 있다고 찌르시는 건가요.」
+DATAFORM 유미가 심술궂게 말했다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 옆구리를 쿡 찔렀다.
+DATAFORM 「하읏...」
+DATAFORM 유미가 이상한 목소리를 흘렸다.
+DATAFORM 「저, 저 쳐다보지 마세요!」
+DATAFORM 얼굴이 빨개진 유미가 고개를 돌렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 옆구리를 쿡 찔렀다.
+DATAFORM 「이크.」
+DATAFORM 유미가 몸을 살짝 빼 당신의 손가락을 살짝 피했다.
+DATAFORM 「정말, 사령관님도 이상한 장난만 치신다니깐.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 옆구리를 쿡 찔렀다.
+DATAFORM 「사, 사령관님...?」
+DATAFORM 「이건 무슨 신호죠...?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 옆구리를 쿡 찔렀다.
+DATAFORM 「사, 사, 사, 사령관님...!」
+DATAFORM 유미가 눈이 벌개지며 당신에게 달려든다.
+DATAFORM 「저도, 저도 사령관님 찌를래요! 찌를 거예요!」
+DATAFORM 아무래도 한이 맺혔던 듯 하다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 옆구리를 쿡 찔렀다.
+DATAFORM 「사, 사령관님...」
+DATAFORM 「그렇게 찌르시면 아파요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 옆구리를 쿡 찔렀다.
+DATAFORM 「다른 분들은 간지러워 하시겠지만...」
+DATAFORM 유미가 당신을 올려다보았다.
+DATAFORM 「저는 피부가 약해서 아플 뿐이에요...」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 옆구리를 쿡 찔렀다.
+DATAFORM 「흐윽!」
+DATAFORM 유미가 몸을 뒤틀었다.
+DATAFORM 유미가 몸을 움츠리곤 자신이 찔린 곳을 손으로 감싼 채 당신을 올려다보고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 옆구리를 쿡 찔렀다.
+DATAFORM 「끄윽!」
+DATAFORM 유미의 눈에 눈물이 그렁그렁하다.
+DATAFORM 유미가 겁먹은 표정으로 당신을 올려다보고 있다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 옆구리를 쿡 찔렀다.
+DATAFORM 당신의 손가락은 유미의 몸에 푹 하고 들어갔다.
+DATAFORM 「꺄아악!」
+DATAFORM 유미가 소리를 지르며 몸을 뒤틀었다.
+DATAFORM 고통스러운 표정으로 당신을 노려보고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 옆구리를 쿡 찔렀다.
+DATAFORM 유미의 앙상한 갈비뼈에 쿡 하고 닿았다.
+DATAFORM 「아윽!」
+DATAFORM 유미가 얼굴을 찌푸리며 고통스러워했다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 옆구리를 쿡 찔렀다.
+DATAFORM 「오, 오늘은 뭐죠?」
+DATAFORM 「그 손가락으로 저를 여기저기 찌를 건가요?」
+DATAFORM 「옆구리? 갈비뼈 사이?」
+DATAFORM 「저는 삐쩍 말라서 갈비뼈 사이에 손가락 집어넣으시면 분명 기분 좋을 거예요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 옆구리를 쿡 찔렀다.
+DATAFORM 「오, 오옷!」
+DATAFORM 「사령관님...!」
+DATAFORM 「저, 저... 사령관님에게 선택받은 거군요!」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM7
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 유미가 뒷걸음질치며 당신에게서 멀어졌다.
+DATAFORM 「사, 사령관님. 제가 아무리 피곤하다고는 해도 사령관님의 무릎에 누을 수는 없어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 유미는 우물쭈물하며 말을 아꼈다.
+DATAFORM 「분명 제 머리가 사령관님 허벅지에 닿으면 싫어하실 거예요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「제, 제가 어떻게 감히 사령관님의 무릎베개를 받겠어요...」
+DATAFORM 유미는 아직 당신이 어려운 것 같다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「저.. 그렇게 피곤해 보였나요?」
+DATAFORM 유미는 우물쭈물하면서도 당신의 곁으로 천천히 다가왔다.
+DATAFORM 「그럼... 잠깐만 실례하겠습니다...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「제, 제가... 누워도 될까요?」
+DATAFORM 유미는 조심스럽게 당신의 무릎에 누웠다.
+DATAFORM 「저, 그, 어... 불편하지는 않으세요?」
+DATAFORM 유미는 불안한 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「제, 제가요?」
+DATAFORM 「아, 주변에 나밖에 없구나...」
+DATAFORM 유미는 조용히 당신의 곁으로 다가와 누웠다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「저, 만약 눕는다면 잠들어 버릴지도 몰라요.」
+DATAFORM 「그렇게 된다면...」
+DATAFORM 「깨우지 말아 주실래요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「그, 저... 무릎베개는 좋아하는 사람한테 하는 건 아시죠?」
+DATAFORM 「아신다구요?」
+DATAFORM 「사령관님 저한테 관심있어요?」
+DATAFORM 「뭐.. 전... 아무튼 무릎베개는 좋아요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「마침 피곤했는데... 에헤헤...」
+DATAFORM 유미가 당신 곁으로 스멀스멀 걸어온다.
+DATAFORM 「아주 잠깐만 신세지겠습니다.」
+DATAFORM 유미가 눈을 감았다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 유미가 배시시 웃으며 당신의 곁으로 다가온다.
+DATAFORM 「그게 아세요, 사령관님?」
+DATAFORM 「사령관님 무릎베개가 피로가 제일 잘 풀려요.」
+DATAFORM 유미가 당신의 무릎 위에 눕고 당신을 올려다봤다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「사령관님도 제가 열심히 일했다는 걸 아시고 계시는군요.」
+DATAFORM 「그래서 저한테 이런 특권을 주시는 거잖아요?」
+DATAFORM 「이러고 한숨 자고 일어나면, 내일 일할 기운이 생기겠죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「이것이... 복지」
+DATAFORM 유미가 당신의 무릎 위에 누으며 말했다.
+DATAFORM 「이것이... 선진기업」
+DATAFORM 유미는 기분이 좋은 것 같다.
+DATAFORM 「이것이 복리후생 좋은 화이트 컴퍼니!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「제... 제가요?」
+DATAFORM 유미가 당신의 시선을 피한다.
+DATAFORM 「그... 럴수는 없어요.」
+DATAFORM 「아직 신체 접촉에는 익숙하지 않아서...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 유미가 당신의 시선을 피한다.
+DATAFORM 「아.. 하하... 사령관님? 저 못다한 일이 있는데 처리하고 와도 될까요?」
+DATAFORM 「예? 아, 아... 좀 쉬라구요?」
+DATAFORM 「괜찮아요. 전 쉬는 것보다 일하는 게 익숙해서...」
+DATAFORM 유미가 도망쳤다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「저 같은 게 그럴 수는 없어요...」
+DATAFORM 「그러기도 싫구요.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「거부하면... 때리실 거죠?」
+DATAFORM 「제가 이러는 것도 인사평가에 반영되나요?」
+DATAFORM 유미가 당신의 무릎에 조용히 누웠다.
+DATAFORM 「이, 이, 이상한 생각 하시는 건... 아니겠죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「아, 아, 알겠습니다.」
+DATAFORM 유미가 잔뜩 겁을 먹은 목소리로 말했다.
+DATAFORM 「시키는 대로 할게요.」
+DATAFORM 「이것도 업무의 일환... 이잖아요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「저, 또... 야단 맞나요?」
+DATAFORM 「저, 저... 실수 안 할 테니까 살살... 부탁드려요.」
+DATAFORM 유미가 눈을 질끈 감고 당신의 무릎 위에 누웠다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「시, 시, 시, 싫어....」
+DATAFORM 유미가 겁에 질린 눈으로 부들부들 떤다.
+DATAFORM 「제, 제가 잘못했어요.」
+DATAFORM 「잘못했어요, 사령관님.」
+DATAFORM 「저, 저 진짜... 이번에도 무리한 부탁이라면...」
+DATAFORM 「정말로 버티기가 힘들어요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「저, 저... 말씀하시는 거죠?」
+DATAFORM 유미가 중얼거리며 당신에게로 다가온다.
+DATAFORM 「블랙기업인 줄 알았다면... 뭔가 변했을까...?」
+DATAFORM 유미가 죽은 눈으로 당신의 무릎 위에 눕는다.
+DATAFORM 「저는 사령관님께 고용된 몸이니...」
+DATAFORM 「마음대로 하세요...」
+DATAFORM 유미가 몸에서 힘을 풀었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「또, 또... 맞을 차례인가요?」
+DATAFORM 「아니면 욕을 먹을 차례인가요?」
+DATAFORM 「아프고, 괴롭지만 참을테니... 살살 부탁드려요.」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「사령관님? 저 부르신거죠? 저? 저?」
+DATAFORM 유미가 당신의 곁으로 쪼르르 달려온다.
+DATAFORM 「사령관님 곁이라면 뭐든 좋아요.」
+DATAFORM 「자, 사령관님의 무릎 위에 누웠어요! 이제 뭘 하실 건가요?」
+DATAFORM 유미가 당신에게 팔을 벌리고 뭔가를 기대하고 있다.
+DATAFORM 「목을 조르실 건가요? 얼굴을 때리실 건가요? 아니면 그냥 제 얼굴이 보고싶으셨나요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「그럼요, 당연하죠!」
+DATAFORM 유미가 당신의 무릎 위에 눕는다.
+DATAFORM 「그러면, 사령관님. 다음에 제가 맞을 시간은 언제인가요?」
+DATAFORM 「5분 뒤? 10분 뒤?」
+DATAFORM 「저는 언제라도 좋으니까 때려주세요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 자신의 무릎에 누으라고 했다.
+DATAFORM 「아, 또 맞을 시간인가요?」
+DATAFORM 「좋아요! 얼른 때려 주세요!」
+DATAFORM 어딘가 맛 간 것 같은 유미가 당신의 무릎 위에 눕는다.
+DATAFORM 「자, 얼굴을 때리셔도 좋구요... 배를 때리셔도 좋아요!」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM8
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「제, 제가요?」
+DATAFORM 유미가 놀란 표정을 지었다.
+DATAFORM 「저, 그... 이런 거는 작업메뉴얼에는 없었거든요...」
+DATAFORM 「나중에 인수인계를 다시 받고 해 드릴게요.」
+DATAFORM 유미가 말하는 인수인계라는 것이 존재하는지는 알 수가 없다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「그, 그것도... 업무인가요?」
+DATAFORM 「저 사실... 그런 업무에는 좀 서툴러서...」
+DATAFORM 「괜한 일을 하기도 싫으니 제가 숙달된 후에 부탁드려요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「호, 혹시... 성희롱은 아니죠?」
+DATAFORM 「그냥 사령관님이 조금... 피곤하신 거죠?」
+DATAFORM 「그런 거라면 방에 들어가셔서 주무시는게 훨씬 좋을 거예요.」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「저, 저... 말씀하시는 거 맞죠?」
+DATAFORM 「서투르지만... 괜찮겠죠?」
+DATAFORM 유미가 흰 다리를 당신에게 내보인다.
+DATAFORM 「사회인이 힘들다는 건... 저도 잘 알고 있으니까요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「저... 같은 걸로 괜찮으시겠어요?」
+DATAFORM 「알겠습니다. 이리로 오세요.」
+DATAFORM 유미의 허벅지는 작았지만 말랑말랑했다.
+DATAFORM 「사, 사령관님... 직장 내 성희롱은 안 되는 거 아시죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「시령관님도 피곤하시다구요?」
+DATAFORM 「예, 예? 침대 위는 싫고 제 무릎 위가 좋으시다구요?」
+DATAFORM 유미가 얼굴을 붉힌다.
+DATAFORM 「그런 이유라면... 어쩔 수 없죠.」
+DATAFORM 유미가 치마를 살짝 걷어 당신이 눕기 편하게 했다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「아, 제 차례군요.」
+DATAFORM 「이런 것도 업무라고 생각한다면...」
+DATAFORM 「왠지 모르게 힘낼 수 있어요.」
+DATAFORM 「사령관님의 얼굴을 볼 수 있어서... 그런 걸까요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「제 무릎, 혹시 마음에 드시나요?」
+DATAFORM 「작고 보잘것 없는 몸뚱아리지만... 좋으세요?」
+DATAFORM 유미가 수줍은 듯 얼굴을 붉혔다.
+DATAFORM 「그런 거라면... 얼마든지 사용하셔도 좋아요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「사령관님이 원하신다면, 제가 거절할 권리는 없죠.」
+DATAFORM 「아, 사령관님. 이따 끝나면 한잔 하는 건 어때요?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「좋아요, 사령관님. 저는 준비되어 있어요.」
+DATAFORM 유미가 당신이 눕기 좋게 준비한다.
+DATAFORM 「편안하신가요? 느낌은 어때요?」
+DATAFORM 「제가 사령관님이 편하게 쉴 수 있게 도와드리는 건 당연하잖아요.」
+DATAFORM 「업무가 아니라 순수한 마음에서 우러나오는 거예요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「지금은 이지적인 커리어 우먼이 아니라 상냥한 애인의 포지션, 맞죠?」
+DATAFORM 「자, 이리로 오세요. 사령관님.」
+DATAFORM 「저는 사령관님이 어떤 모습이던지 반겨줄 준비가 되었답니다.」
+DATAFORM 「어때요, 제 무릎 위는 역시나 기분 좋죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「조금 부끄럽긴 하지만...」
+DATAFORM 「네? 제 무릎 위가 세상에서 제일 기분 좋다구요?」
+DATAFORM 「뭐 하시는 거예요, 빨리 와서 얼른 누으세요!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「사, 사령관님...」
+DATAFORM 「제가 생각하기에 그건 업무 중 성희롱에 해당되는 것 같아요...」
+DATAFORM 「저는 조용히 있을 테니, 그냥 넘어가면 안 될까요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「아하하... 죄송해요. 저 업무 밀린 게 많아서...」
+DATAFORM 유미는 눈에 뻔히 보이는 거짓말을 했다.
+DATAFORM 「가, 가봐도 되죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「죄송해요, 사령관님. 제가 잘못 들은 것 같아요.」
+DATAFORM 「예? 뭐라구요?」
+DATAFORM 「아... 예...」
+DATAFORM 「그건 제가 처리하기 힘든 업무 같네요.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「그, 그럼요... 사령관님...」
+DATAFORM 「아, 안 때리실... 거죠?」
+DATAFORM 유미가 울 것 같은 얼굴로 자신의 허벅지를 드러낸다.
+DATAFORM 「때리시더라도... 살살... 부탁드려요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「업무라면... 뭐든지 할게요.」
+DATAFORM 「사령관님이 시키는 거라면 뭐든지 하겠습니다.」
+DATAFORM 「이것도 일이잖아요. 그쵸. 일이잖아요.」
+DATAFORM 「일이라고 생각하면... 할 수 있어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「사, 사령관님... 저...」
+DATAFORM 「흐윽... 아무것도 아니에요...」
+DATAFORM 「마음대로 하세요...」
+DATAFORM 유미가 치마를 들어올려 허벅지를 내보였다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「하, 할게요. 하게 해 주세요.」
+DATAFORM 「때리지 말아 주세요. 부탁이에요.」
+DATAFORM 「무릎베개라면 1시간이고 2시간이고 해 드릴게요.」
+DATAFORM 「저는 다른 기종처럼 튼튼하게 만들어지지 않았단 말이에요.」
+DATAFORM 「그러니까 때리는 것 만큼은...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「때리시지... 않는 거죠?」
+DATAFORM 「이번엔 맞는 거 아니죠?」
+DATAFORM 「평소의 행동과 비교하면...」
+DATAFORM 「이 정도는 문제없어요.」
+DATAFORM 유미가 당신에게 허벅지를 내보였다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「아프지 않게... 부탁드려요.」
+DATAFORM 유미가 두 눈을 질끈 감았다.
+DATAFORM 유미의 무릎 위는 그녀의 떨림으로 인해 계속해서 움직였다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「사령관님, 여기로 오세요!」
+DATAFORM 유미가 무릎 위를 툭 툭 두드렸다.
+DATAFORM 「사령관님이 원한다면 뭐든지 할 수 있어요!」
+DATAFORM 「자, 보세요 사령관님.」
+DATAFORM 「제가 사령관님이 원하는 것 하나 들어드렸으니까, 사령관님도 제가 원하는 것 하나 들어주셔야 해요.」
+DATAFORM 「바로 이 무릎베개가 끝나면 제 배를 때려 주시는 거예요.」
+DATAFORM 「어때요, 나쁘지 않죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「아, 이번에는 허벅지를 맞을 차례인가요?」
+DATAFORM 「아... 순수한 무릎베개요?」
+DATAFORM 「...그건 좀 재미없는데.」
+DATAFORM 「차라리 허벅지를 맴매 해 주시면 안 될까요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 무릎베개를 부탁했다.
+DATAFORM 「아, 좋죠 좋죠.」
+DATAFORM 「대신에, 이걸 벌이라고 생각하시고 좀더 지독하게 해 주세요.」
+DATAFORM 「제 무릎 위에 무거운 돌을 올려놓아도 좋고」
+DATAFORM 「아니면 하루 종일 이 자세를 유지하게 시키는 것도 좋아요.」
+DATAFORM 「저는 뭐든지... 히히... 받아들일 수 있을 것 같아요.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM9
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「꺅! 뭐, 뭐예요!」
+DATAFORM 「읏, 사... 령관님.... 이거 놔요...」
+DATAFORM 유미의 자그마한 몸이 당신의 품 안에서 꼼지락거린다.
+DATAFORM 「지금 제가 힘이 약하다고....」
+DATAFORM 「장난... 읏! 치시는 거죠?」
+DATAFORM 유미가 당신의 품에서 벗어나기 위해 계속 꼬물거린다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「사, 사, 사, 사령관님?!」
+DATAFORM 「저, 저한테 이러시면 안 된다구요!」
+DATAFORM 「저희 만난지 얼마 되지도 않았는데 이런 스킨쉽은...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「히끅!」
+DATAFORM 유미의 두 눈이 커지며 몸이 잔뜩 움츠러들었다.
+DATAFORM 「흐... 끄으으으으...?」
+DATAFORM 유미는 놀랐는지 몸을 뻣뻣하게 세우고 움직이지 않았다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「히, 히에에엑?!」
+DATAFORM 유미의 괴상한 목소리가 흘러나왔다.
+DATAFORM 「사, 사령관님, 포옹은 일러요!」
+DATAFORM 「그 전에 먼저 눈을 지그시 맞춰야 하고...」
+DATAFORM 「소, 손도 10분정도 잡아 놨다가...」
+DATAFORM 「그 다음에야 포옹이라구요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「읏, 엑... 이거.. 놔욧!」
+DATAFORM 유미가 자그마한 손으로 당신의 어깨를 콩콩 두드린다.
+DATAFORM 「이거, 놔, 앗!」
+DATAFORM 유미가 발버둥을 치지만 아무런 변화도 없다.
+DATAFORM 「사, 사령관님...」
+DATAFORM 「심술쟁이!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「흐꺄아앗!」
+DATAFORM 유미의 온 몸이 쭈뼛거린다.
+DATAFORM 「사, 사령관님은 염치도 없어요?」
+DATAFORM 「심술쟁이! 변태! 악덕 상사!」
+DATAFORM 그렇게 말하며 당신을 주먹으로 두드리는 유미의 볼에 홍조가 드리워져 있다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「사령관님... 또 장난치시죠?」
+DATAFORM 유미가 당신의 품 안에서 꼼지락 거린다.
+DATAFORM 「이렇게.. 붙잡아 둔다고... 제가 못 빠져나갈 것 같아요?」
+DATAFORM 유미가 열심히 꼼지락거리지만 그 동작이 크지 않다.
+DATAFORM 「헤엑... 헤엑... 사령관님? 생각보다 몸이 튼튼하시네요?」
+DATAFORM 당신의 품 안에서 빠져나가는 걸 포기한 유미가 당신을 바라본다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「읏...」
+DATAFORM 유미의 볼이 빨갛게 변한다.
+DATAFORM 「사, 사령관님도 참...」
+DATAFORM 「이런 장난을 좋아하신다니깐...」
+DATAFORM 유미가 말 끝을 흐리며 볼을 긁적인다.
+DATAFORM 싫어하는 눈치로는 보이지 않는다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「저, 정말!」
+DATAFORM 「이런 행동은 좋아하는 사람에게 하는 거예요!」
+DATAFORM 유미는 그렇게 말하면서도 당신을 밀어내지 않았다.
+DATAFORM 「그런데 왜 가만히 있냐구요...?」
+DATAFORM 「...바보 변태 사령관!」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 유미가 당신의 품 안에 쏙 들어갔다.
+DATAFORM 「사령관님...」
+DATAFORM 「이런 저라도 좋아해 주시는 거죠?」
+DATAFORM 「몸도 작고 큰 쓸모도 없지만...」
+DATAFORM 「그래도 사령관님에게 사랑받을 수 있어서 행복해요.」
+DATAFORM 유미가 당신의 등 뒤로 손을 둘러 당신을 끌어안았다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「아, 이런 포옹은...」
+DATAFORM 「아무래도.. 좋겠죠?」
+DATAFORM 유미가 당신에게 매달리듯 안겨 대롱대롱 움직였다.
+DATAFORM 「사령관님 사령관님, 이따 누워서 드라마나 볼래요?」
+DATAFORM 「나쵸도 까먹으면 맛있을 것 같은데...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「그, 그렇게 껴안지 말아요...」
+DATAFORM 유미가 당신의 품 안에서 조용히 중얼거렸다.
+DATAFORM 「사령관님의 심장소리가 너무 가까이서 들린단 말이에요...」
+DATAFORM 「사령관님도... 들려요? 제 심장소리?」
+DATAFORM 「...」
+DATAFORM 「너무 쿵쾅대면 안 될텐데...」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「서, 서, 성희롱이에요!」
+DATAFORM 「부하 직원에게 이런 과도한 스킨쉽은 안 돼요.」
+DATAFORM 「이런 건 당사자가 성희롱이라고 느끼면 성희롱인 거라구요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「꺗?」
+DATAFORM 「뭐, 뭐예요? 갑자기?」
+DATAFORM 「이, 이런 내용의 업무가 잇을 거라고는 상상도 못 했어요.」
+DATAFORM 유미가 싫은 눈치를 내비친다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「아, 또 이상한 업무가...」
+DATAFORM 「정말이지... 하루하루가 평화롭게 끝나지 않네요...」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「히끅!」
+DATAFORM 「흐윽....」
+DATAFORM 유미가 아무런 반항도 하지 않고 당신의 품 안에 안겼다.
+DATAFORM 「저도... 실수하면서 배웠어요.」
+DATAFORM 「사령관님의 심기를 거스르면 맞게 될 거라는 걸...」
+DATAFORM 「그러니까 조용히 있을게요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「다음은... 뭐죠?」
+DATAFORM 「저를 때리실 건가요... 면박주실 건가요?」
+DATAFORM 「아니면 저를 더 꽈악 껴안으셔서 숨막히게 하실 건가요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 유미의 팔다리가 발버둥쳤다.
+DATAFORM 「으, 으으...」
+DATAFORM 유미의 온 몸이 부르르 떨렸다.
+DATAFORM 「온 몸에 소름이 돋는 것 같아요...」
+DATAFORM 「벌레가 전신을 기어다니는 것 같아...」
+DATAFORM 유미가 헬쑥한 표정을 지었다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「싫어... 싫어요...」
+DATAFORM 유미가 작은 손으로 당신의 가슴을 두드렸다.
+DATAFORM 「흐윽! 싫어...」
+DATAFORM 「이런 업무는... 싫어요....」
+DATAFORM 「제발 정상적인 일을 주세요...」
+DATAFORM 「이런 일은 너무 견디기 힘들어요...」
+DATAFORM 유미의 눈에서 눈물이 주륵 흘러내렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「이번에도... 거부하면 때리실 거죠?」
+DATAFORM 「때리실 거죠? 아무튼 때리실 거죠?」
+DATAFORM 「제가 가만히 안겨도 때리실 거고, 거부해도 때리실 거잖아요!」
+DATAFORM 「...거지같은 인생.」
+DATAFORM 유미의 얼굴에 그늘이 졌다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「흐, 흐윽....」
+DATAFORM 당신의 품에서 유미의 울음소리가 들렸다.
+DATAFORM 「흐윽! 흑... 흐윽...」
+DATAFORM 유미가 당신의 품 안에서 울었다.
+DATAFORM 「하윽, 흐읍.... 흑....」
+DATAFORM 울음을 참는 것 같았지만 분명히 들리고 있었다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「사령관님~ 헤헤...」
+DATAFORM 유미가 두 팔 벌려 당신을 받아들였다.
+DATAFORM 「오늘은 어떤 일을 하실 건가요?」
+DATAFORM 「사령관님은 제게 항상 새로운 자극을 주시니까 좋아요.」
+DATAFORM 「오늘도 즐겁게 해 주실 거죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「앗, 일이에요? 일?」
+DATAFORM 「이런 기쁨을 좀 더 빨리 알았으면 좋았을텐데...」
+DATAFORM 당신의 품 안에서 유미가 흡족한 표정을 지었다.
+DATAFORM 「그럼 우리 빨리 구타부터 시작해요! 매도는 나중에 해도 좋구요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 껴안았다.
+DATAFORM 「와앗! 사령관니임!」
+DATAFORM 「오늘은 어떤 기쁜 소식이죠?」
+DATAFORM 「제 갈비뼈가 부러질 거란 소식인가요?」
+DATAFORM 「아니면 제 얼굴을 때리고 싶어서 이렇게 안아주시는 건가요?」
+DATAFORM 유미의 표정이 밝다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM10
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「사, 사, 사, 사령관님?!」
+DATAFORM 「어, 어쩐 일로?!」
+DATAFORM 유미가 놀라서 말을 제대로 잇지 못하는 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「꺄악!」
+DATAFORM 유미가 놀라 당신을 바라봤다.
+DATAFORM 「사, 사, 사령관님?」
+DATAFORM 「뭐예요! 이거 놔요!」
+DATAFORM 유미가 바둥거렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「히엑!」
+DATAFORM 유미의 얼굴이 창백하게 변했다.
+DATAFORM 유미가 고개를 돌려 당신의 얼굴을 확인하고 나서야 생기가 조금 돌았다.
+DATAFORM 「외계인인 줄 알았어요! 치한인 줄 알았어요! 나쁜 사람들인 줄 알았다구요!」
+DATAFORM 유미는 적잖이 놀란 것 같다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「사령관님이죠?!」
+DATAFORM 유미가 발끈하며 당신과 눈을 맞췄다.
+DATAFORM 「뒤에서 끌어안는다고 제가 모를 줄 아셨어요?」
+DATAFORM 유미가 팔을 이리저리 움직이며 당신의 품에서 빠져나가려고 애쓴다.
+DATAFORM 「사령관님이 저보다 힘이 좋으시다구... 에잇. 이런.... 짓은... 하면 안 되죠!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「아, 또 사령관님이에요?」
+DATAFORM 유미가 볼을 붉히며 당신을 돌아본다.
+DATAFORM 「저 그렇게 쉬운 여자 아니거든요!」
+DATAFORM 유미는 이상한 포인트에서 발끈 한 것 같다.
+DATAFORM 「그렇게 막 껴안는다고 휙휙 넘어가고, 마음 내주는 그런 쉬운 여자 아니에요!」
+DATAFORM 그리고 뒤에 조용히 중얼거렸다.
+DATAFORM 「사.. 실 그렇게 가드가 쎈 것도 아니기도 하구...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「아잇, 진짜!」
+DATAFORM 「저 몸뚱아리 작다고 지금 장난치시는 거죠!」
+DATAFORM 「막 인형 같다고 껴안고 노는거 아니에요?」
+DATAFORM 「안 그래도 피곤한데, 에잇! 에잇!」
+DATAFORM 유미가 빠져나가려 애쓴다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「또 저랑 놀려 오셨어요?」
+DATAFORM 「사령관님이 저를 어떻게 생각하실지 모르겠지만...」
+DATAFORM 「이런다고 제가 넘어갈거 같아요?」
+DATAFORM 「그렇다면 잘 맞추셨네요! 거의 다 넘어왔어요!」
+DATAFORM 「저를 더 넘기시려면 조금만 더 노력하시면 될 것 같네요.」
+DATAFORM 유미가 이상한 허세를 떤다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「아잇, 진짜...」
+DATAFORM 「제가 좋아한다는 거 알고 자꾸 이러시는 거죠?」
+DATAFORM 유미가 당신의 팔을 풀기 위해 노력한다.
+DATAFORM 「아무리 그래도 자꾸 이러시면 곤란하다구요...」
+DATAFORM 「고, 곤란하다구요...」
+DATAFORM 유미의 몸이 점점 달아오르는 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「사, 사령관님... 이런 건 좋아하는 사람한테나 하세요...」
+DATAFORM 유미가 입을 살짝 내밀고 당신을 돌아본다.
+DATAFORM 「사령관님 저 말고도 다른 사람들한테 인기 잖을 거잖아요...」
+DATAFORM 「저 같은 음침녀 보다야...」
+DATAFORM 「엣? 아, 알고 있다구요?」
+DATAFORM 굳어있던 유미의 표정이 확 풀린다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「어라라, 사령관님?」
+DATAFORM 「오늘은 또 무슨 일로 이렇게...」
+DATAFORM 유미가 미소를 짓는다.
+DATAFORM 「혹시 저랑 빈둥대고 싶으셨어요?」
+DATAFORM 「사령관님이 원하신다면 일 안 하고 같이 빈둥대도 전 괜찮은데~」
+DATAFORM 「일을 땡땡이 치려는게 아니고요~」
+DATAFORM 「전 그냥 사령관님이 좋아서~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「아앗, 한 번 껴안기는 드라마 한 편 같이 보기!」
+DATAFORM 「지금 한 번 안으셨으니까 이따 드라마 한 편 같이 봐야 해요!」
+DATAFORM 「그리고 그때는 제가 장난쳐도 뭐라고 하지 않기!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「사, 사령관님...」
+DATAFORM 유미가 볼을 붉히고 당신을 돌아봤다.
+DATAFORM 「비겁해요...」
+DATAFORM 「저.. 사령관님 좋아하는데...」
+DATAFORM 「사령관님만 항상 이렇게 먼저 공격하시잖아요...」
+DATAFORM 유미가 당신의 손을 잡았다.
+DATAFORM 「이따가 제 공격도 받아... 주셔야 해요?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「서, 서, 성희롱인거 알고 계시죠?」
+DATAFORM 유미는 적잖이 놀란 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「이런 업무는 대체 또 뭐예요!」
+DATAFORM 「사령관님의 장난을 받는 것도 업무 중 하나였어요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「흐꺗?!」
+DATAFORM 「저, 저 놀리시는 거죠, 지금?」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「사, 사령관님...?」
+DATAFORM 「이번에는 또... 어쩐 일로...」
+DATAFORM 유미가 당신의 품 안에서 작게 떨었다.
+DATAFORM 유미의 눈동자가 흔들리고 있었다.
+DATAFORM 「그냥... 장난... 치신 거죠?」
+DATAFORM 유미의 다크써클이 진하게 보였다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「아... 하하하하...」
+DATAFORM 「사령관님도 참...」
+DATAFORM 「이상한 장난을 좋아하신다니까....」
+DATAFORM 유미는 기분 나쁨을 장난으로 치부하고 잊어버리려 하고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「아.. 시간이 됐나요?」
+DATAFORM 「저, 마음의 준비를 하고 있으면... 돼죠?」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「아... 사령관님...」
+DATAFORM 유미의 몸은 작고 가벼웠다.
+DATAFORM 「오늘도... 업무... 업무죠...?」
+DATAFORM 「하하하하....」
+DATAFORM 「이렇게 안아주시는 걸 보니... 오늘은 조금이라도 덜 맞기를 기도해 볼게요...」
+DATAFORM 「하하하...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「꺄아악!」
+DATAFORM 유미의 몸이 쭈뼛 선다.
+DATAFORM 「제, 제 차례인가요...?」
+DATAFORM 「저 또 맞아야 해요?」
+DATAFORM 「...아픈 건 싫어요...」
+DATAFORM 「저 맞기 싫어요...」
+DATAFORM 「싫어요, 싫다구요....」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「히이이익!」
+DATAFORM 유미의 창백한 얼굴이 당신을 돌아본다.
+DATAFORM 「놔, 놔주세요...」
+DATAFORM 「놓아 주세요...」
+DATAFORM 「제발... 놓아 주세요....」
+DATAFORM 「저를 또 때리실 거잖아요... 놔 주세요... 놔 달라구요 아아아악!!! 놔 주세요!!! 빨리, 빨리 놔 줘요!!!」
+DATAFORM 유미가 발악하듯 소리친다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「아, 사령관님?」
+DATAFORM 유미가 밝은 얼굴로 돌아본다.
+DATAFORM 「어쩐 일이에요, 이렇게 뒤에서 덮치시곤?」
+DATAFORM 「혹시 수플렉스를 먹일 생각이신가요?」
+DATAFORM 「그건 지금까지 당해본 적 없었는데!」
+DATAFORM 「그 느낌이 궁금하긴 하네요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「하아아... 사령관님?」
+DATAFORM 「저는 언제든지 괜찮아요.」
+DATAFORM 「부디 사령관님의 그 거친 손으로 저를 쓸어내려 주세요.」
+DATAFORM 「제 온 몸에 핏방울이 맺히는 날을 기다리고 있을게요.」
+DATAFORM 유미는 당신의 품 안이 편안한 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 뒤에서 껴안았다.
+DATAFORM 「사령관님이다! 사령관님, 사령관님!」
+DATAFORM 「저 목 졸라 주세요!」
+DATAFORM 유미가 싱글벙글 웃으며 당신을 바라본다.
+DATAFORM 「저 숨 막히고 싶어졌어요!」
+DATAFORM 「제가 놓으라고 애원해도 놓으시면 안 돼요?」
+DATAFORM 「자, 그럼~ 시작~」
+DATAFORM 유미가 웃으며 당신의 손을 목으로 끌어올린다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM11
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 유미를 불렀다.
+DATAFORM 「파, 팔 베개요?」
+DATAFORM 유미가 우물쭈물하며 당신 곁으로 다가온다.
+DATAFORM 「사령관님... 지금은 다른 것도 아니고 업무 시간이라구요.」
+DATAFORM 「누워서 팔베개 하는 거 말고 좀더 알찬 일을 할 수 있지 않을까요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 유미를 불렀다.
+DATAFORM 「아, 아, 안돼요!」
+DATAFORM 유미가 부끄러운지 빨개진 얼굴을 두 손으로 가렸다.
+DATAFORM 「사, 사령관님의 팔을 베고 누으면...」
+DATAFORM 「제, 제가 뭐라도 된 것 같잖아요!」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 유미를 불렀다.
+DATAFORM 「팔 베개 해주신다구요?」
+DATAFORM 유미가 쭈뼛거리며 당신 곁으로 다가온다.
+DATAFORM 「업무 중이지만...」
+DATAFORM 「중간중간에 쉬어 주지 않으면 능률 향상이 안 되는 것 때문이지요?」
+DATAFORM 「...사실 아침부터 피곤했거든요, 사령관님.」
+DATAFORM 「잠깐 사령관님 팔 위에서 눈을 붙일 테니까 제쪽 보시면 안 돼요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 유미를 불렀다.
+DATAFORM 「...제가 피곤하다는 걸 알고 하신 소리죠?」
+DATAFORM 유미가 의미심장한 눈으로 당신을 바라본다.
+DATAFORM 「마침 피곤하기도 하니 눕기는 하겠지만...」
+DATAFORM 「이상한 장난 치시면 안 돼요?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 유미를 불렀다.
+DATAFORM 「파, 파, 팔에 누으라고요?」
+DATAFORM 유미가 놀란 눈으로 되묻는다.
+DATAFORM 「제, 제, 제가요?」
+DATAFORM 손가락으로 자신을 가리킨다.
+DATAFORM 「제가요? 진짜요?」
+DATAFORM 「아, 아, 아니! 아니이이!」
+DATAFORM 「시, 싫다는 게 아니고...」
+DATAFORM 「너무 갑자기라서 놀랐잖아요.」
+DATAFORM 「아앗! 팔 빼지 마세요! 지금 누을테니까앗!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 유미를 불렀다.
+DATAFORM 「으와앗! 엄맘마!」
+DATAFORM 유미가 놀란 눈으로 당신 곁에서 떨어졌다.
+DATAFORM 「그, 그런 포즈로 절 부르지 말아요!」
+DATAFORM 「그, 그런 자세로 있으면...」
+DATAFORM 유미가 부끄러운지 당신의 눈길을 피한다.
+DATAFORM 「이상한 생각 나잖아요오...」
+DATAFORM 유미가 검지손가락 끝이 서로 맞닿게 콕콕 찌르고 있다.
+DATAFORM 「사, 사령관님? 저 이상한 생각하고 있는 거 아니랍니다?」
+DATAFORM 「그러니까... 얌전히~ 가서 살짝~ 만 누을 테니까 장난 치시면 안 돼요...?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 유미를 불렀다.
+DATAFORM 「어라라, 팔 베개예요?」
+DATAFORM 「이거 정말 흔치 않은 기회네요.」
+DATAFORM 유미는 자연스럽게 당신의 팔을 베고 누웠다.
+DATAFORM 보드라운 유미의 머리카락 감촉이 팔에 느껴진다.
+DATAFORM 유미는 가벼워서 팔에 뭔가를 얹은 것 같지도 않았다.
+DATAFORM 「사령관님? 여기 좀 봐 주실래요?」
+DATAFORM 유미를 보니 그녀가 당신을 바라보고 장난스럽게 웃고 있다.
+DATAFORM 「에베베~ 히히히히...」
+DATAFORM 유미가 머리카락으로 당신의 얼굴을 간지럽히며 놀고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 유미를 불렀다.
+DATAFORM 「네~ 유미 갑니다~」
+DATAFORM 유미가 당신의 팔에 사뿐히 누웠다.
+DATAFORM 「사령관님, 우리 이대로 드라마나 한 편 볼까요?」
+DATAFORM 유미가 드라마를 보려는 건지 허공에 팔을 휘적휘적 거린다.
+DATAFORM 「진짜 봐도 돼요?」
+DATAFORM 유미가 똘망똘망한 눈빛으로 당신을 바라본다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 유미를 불렀다.
+DATAFORM 「죄송한데, 이상한 이야기라면 안 해주셨으면 좋겠어요.」
+DATAFORM 유미의 반응이 쌀쌀맞다.
+DATAFORM 「가끔씩은 사령관님께 무슨 반응을 드려야 할지 고민이에요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 유미를 불렀다.
+DATAFORM 「...사령관님 옆에 누으라구요?」
+DATAFORM 「그건... 직장 내 성희롱이잖아요.」
+DATAFORM 「신고는 안 할 테니까 자제해주세요.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 유미를 불렀다.
+DATAFORM 「네, 네? 저, 저요?」
+DATAFORM 「아.. 팔 베개요...」
+DATAFORM 「알겠어요. 갈게요.」
+DATAFORM 유미는 내키지 않아 하는 것 같았지만 당신의 옆으로 와 누웠다.
+DATAFORM 「으으으...」
+DATAFORM 옆에서 유미가 두 눈을 질끈 감고 입도 꾹 닫고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 유미를 불렀다.
+DATAFORM 「진짜.. 단순히.. 팔 베개만인 거죠?」
+DATAFORM 「제 몸에 손대면... 도망갈 거예요.」
+DATAFORM 유미는 불안해 하면서도 당신의 옆으로 와 누웠다.
+DATAFORM 「건들지 말아 주세요, 제발요...」
+DATAFORM 유미가 중얼거렸다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 유미를 불렀다.
+DATAFORM 「죄, 죄, 죄송해요... 제가 또 뭔가를 잘못한 거죠...?」
+DATAFORM 유미가 고개를 푹 수그리고 당신의 곁으로 천천히 다가왔다.
+DATAFORM 「저는 쓸모 없는 존재예요...」
+DATAFORM 「저는 사령관님께 아무런 도움도 안 돼요...」
+DATAFORM 「저는 쓰레기예요...」
+DATAFORM 「활용 불가능의 폐기물 쓰레기...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 유미를 불렀다.
+DATAFORM 「아, 안 때리실 거죠?」
+DATAFORM 유미의 눈에 물기가 고였다.
+DATAFORM 「저, 저... 더 이상 맞으면...」
+DATAFORM 「정말로 제 안의 뭔가가 붕괴해버릴 것만 같아서 무서워요...」
+DATAFORM 「아무것도 안 하고 얌전히 누워 있을 테니 때리지 말아 주세요...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 유미를 불렀다.
+DATAFORM 「아, 사령관님? 저 부르셨어요?」
+DATAFORM 「좋아요! 사령관님의 옆에 눕는거!」
+DATAFORM 유미가 당신의 옆으로 와 누웠다.
+DATAFORM 「사령관님~ 어젯밤에도 사령관님 생각을 했어요.」
+DATAFORM 「사령관님에게 맞은 상처가 욱씬거려서 잠에 들 수가 없었어요.」
+DATAFORM 「화끈화끈하고, 움찔움찔해선. 정말이지 정신을 유지하기가 힘들 정도예요.」
+DATAFORM 유미가 당신을 바라보며 웃었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 유미를 불렀다.
+DATAFORM 「금방 갈게요~」
+DATAFORM 유미가 당신의 곁으로 와 누웠다.
+DATAFORM 「사령관님, 제 다크써클은 언제쯤 되어야 없어질까요?」
+DATAFORM 유미의 눈 밑에 다크써클이 까맣게 깔려 있다.
+DATAFORM 「처음 사령관님을 만났을 때보다 더 진해진 것 같아요.」
+DATAFORM 「아예 피부가 죽은 느낌이에요.」
+DATAFORM 「가끔씩 거울 보면 깜짝깜짝 놀란다니까요?」
+DATAFORM 「왜 점점 진해지는지 모르겠어요.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM12
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다.
+DATAFORM 「뭐, 뭐, 뭐, 뭐예요! 사령관님!」
+DATAFORM 「치한? 변태?」
+DATAFORM 유미가 질겁한 눈으로 당신을 바라보았다.
+DATAFORM 「갑자기 그런 행동 하셔도 당황스럽기만 하다구요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다.
+DATAFORM 「히, 히에에엑!」
+DATAFORM 유미가 괴상한 비명소리를 내며 당신에게 떨어진다.
+DATAFORM 「사, 사령관님 취향이 독특하시네요.」
+DATAFORM 당신을 보는 유미의 표정이 범죄자를 보는 듯한 표정이다.
+DATAFORM 「저 같이 쬐끄맣고 가슴 쪼끄만 여자애가 취향인 거예요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 볼에 입을 맞췄다.
+DATAFORM 「...헤에?」
+DATAFORM 유미는 정신을 놓은 건지 당신을 멍하니 바라봤다.
+DATAFORM 「어... 그러니까, 이건 외국의 인사는 아니지요?」
+DATAFORM 「사령관님 설마 외국에서 살았던 적이 있었나요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 볼에 입을 맞췄다.
+DATAFORM 「뭐, 뭐, 뭐, 뭐예요!」
+DATAFORM 유미는 적잖이 당황한 것 같다.
+DATAFORM 「저, 저희 그렇게 서로를 잘 알고 있다고 생각하지 않거든요?」
+DATAFORM 「이런 단계는 좀 천천히 쌓아올려 주시겠어요?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다.
+DATAFORM 「뭐예요! 사령관님! 저한테 뽀뽀하는 거에 맛들리셨어요?」
+DATAFORM 「으으으.. 저 키 쬐끄맣다고 놀리시는 거죠!」
+DATAFORM 유미가 이마를 손으로 쓱쓱 비비며 당신을 노려본다.
+DATAFORM 「제 이마가 사령관님 시선보다 더 아래에 있다고 이런 장난 치면 안 돼요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 볼에 입을 맞췄다.
+DATAFORM 「사... 령관님?」
+DATAFORM 유미가 정신을 놓은 듯이 멍한 표정이다.
+DATAFORM 「저기.. 그게...」
+DATAFORM 「아, 아무것도 아니에요!」
+DATAFORM 유미가 얼굴을 붉게 물들인 채로 멀리 달아났다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 볼에 입을 맞췄다.
+DATAFORM 「하으아아아....」
+DATAFORM 유미가 작게 떨고 있다.
+DATAFORM 「세, 세, 세, 세상에...」
+DATAFORM 유미의 동공이 요동친다.
+DATAFORM 「...」
+DATAFORM 유미의 머리 위에서 김이 올라오는 것 같은 느낌이다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 볼에 입을 맞췄다.
+DATAFORM 탱글탱글하고 말랑한 볼의 감촉이 느껴졌다.
+DATAFORM 「뭐, 뭐예요! 사령관님!」
+DATAFORM 깜짝 놀란 유미가 황급히 떨어진다.
+DATAFORM 「벼, 벼, 벼, 변.. 변태!!」
+DATAFORM 유미가 당신에게 소리치곤 달아난다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다.
+DATAFORM 「...」
+DATAFORM 유미를 내려다보니 꿈쩍도 안 하고 가만히 있었다.
+DATAFORM 「...」
+DATAFORM 잘 보니 유미가 두 손을 모으고 입술을 삐쭉 내민 채로 뭔가를 기다리고 있다.
+DATAFORM 「그, 그 다음은... 아무것도 없어요?」
+DATAFORM 유미는 뭔가를 기다리는 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다.
+DATAFORM 「으아아아아!」
+DATAFORM 깜짝 놀란 유미가 괴성을 지르며 당신에게서 떨어진다.
+DATAFORM 「사령관님 절 덮치려고 했죠!」
+DATAFORM 유미에게 이상한 오해를 산 것 같다.
+DATAFORM 「저, 전 이래 보여도 분위기를 잘 타는 순정파라 이것저것 따지는 거 많거든요!」
+DATAFORM 「아, 아니잇! 분위기만 좋으면 누구든지 좋은 쉬운 여자 아니라구요!」
+DATAFORM 「사령관님이 좋은 거라구요!」
+DATAFORM 흥분한 유미가 소리치고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 볼에 입을 맞췄다.
+DATAFORM 바들바들 떠는 유미가 당신의 다음 행동을 기다리고 있다.
+DATAFORM 「아, 아, 아무것도 아니에요!」
+DATAFORM 「저, 전... 그냥 다음 단계를 기다리고 있었을 뿐이에요...」
+DATAFORM 「그냥 제 착각이었나 봐요...」
+DATAFORM 유미가 묘하게 시무룩해 보인다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 볼에 입을 맞췄다.
+DATAFORM 유미가 아무 말 없이 자신의 이마를 톡톡 두드린다.
+DATAFORM 「여기.」
+DATAFORM 유미가 당신을 본다.
+DATAFORM 「여기도...」
+DATAFORM 유미가 당신을 보고 있다.
+DATAFORM 「아 진짜! 빨리 이마에도 해 달라구요!」
+DATAFORM 「여자 마음을 이렇게 몰라!」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다.
+DATAFORM 「저, 저도 할래요!」
+DATAFORM 「저도 사령관님한테 뽀뽀 할래요!」
+DATAFORM 유미가 이상한 텐션으로 당신을 덮친다.
+DATAFORM 「아, 아니! 사령관님이 너무 좋아서 하는 게 아니고!」
+DATAFORM 「그동안 제가 받기만 했으니까 제가 줄 때도 된 거예요!」
+DATAFORM 「기브 앤 테이크예요!」
+DATAFORM 「사령관님도 직장인이라면 제가 무슨 말 하시는지 아시죠?」
+DATAFORM 유미가 무슨 말을 하는지 모르겠다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다.
+DATAFORM 「...」
+DATAFORM 유미가 잠자코 가만히 있다.
+DATAFORM 「그럼, 일 할까요?」
+DATAFORM 유미의 행동이 묘하게 경직되었다.
+DATAFORM 유미가 먼저 앞으로 나갔다.
+DATAFORM 「뭐 하세요? 사령관님? 왜 멈춰 계세요?」
+DATAFORM 유미를 가리키자 이해했다는 듯이 말한다.
+DATAFORM 「아, 방금 뽀뽀 받고 일할 에너지 충전됐어요.」
+DATAFORM 「일 해요, 일.」
+DATAFORM 유미의 다크써클이 조금은 옅어진 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 볼에 입을 맞췄다.
+DATAFORM 「사령관님...」
+DATAFORM 유미가 당신의 허리에 손을 둘렀다.
+DATAFORM 「저는 그렇게 사령관님을 원하고 있었던 건 아닌데에~」
+DATAFORM 「사령관님이 이런 장난을 치시니까 저도 어쩔 수 없네요.」
+DATAFORM 유미가 당신을 보고 웃는다.
+DATAFORM 「설마 아무것도 안 하실 건 아니죠?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다.
+DATAFORM 「사령관님, 이건?」
+DATAFORM 유미가 불안한 눈으로 당신을 보고 있다.
+DATAFORM 「설마.. 사령관님, 제게 이상한 생각 품고 계신 건 아니죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다.
+DATAFORM 「히야앗?!」
+DATAFORM 유미가 깜짝 놀라 당신에게서 멀어진다.
+DATAFORM 「서, 성희롱인가요? 아, 아닌가?」
+DATAFORM 유미가 이마를 비비며 혼란스러워한다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 볼에 입을 맞췄다.
+DATAFORM 「이것도.. 업무 중 하나인가요?」
+DATAFORM 「이게 제 일이라면...」
+DATAFORM 「참기는 하겠지만... 묘하게 기분나빠요.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다.
+DATAFORM 「...」
+DATAFORM 유미가 두 눈을 질끈 감고 당신이 멀어지기를 기다리고 있다.
+DATAFORM 「아무 말 하지 않을게요.」
+DATAFORM 「사령관님이 어떤 행동을 하든...」
+DATAFORM 「전 참아야 하니까요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다
+DATAFORM 「이것도 일...」
+DATAFORM 「이것도 일이에요.」
+DATAFORM 「사령관님이 하신 행동에 어떠한 감정이나 뜻도 담겨있지 않아요.」
+DATAFORM 「그걸 받아들이는 저 또한...」
+DATAFORM 「일로써 넘어가겠어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다.
+DATAFORM 「...」
+DATAFORM 유미가 당신을 노려본다.
+DATAFORM 「저질.」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다.
+DATAFORM 「저, 저, 저... 무서워요...」
+DATAFORM 유미가 울 것 같은 표정으로 당신을 보고 있다.
+DATAFORM 「때리지 말아 주세요...」
+DATAFORM 「저는 사령관님이 난폭하게 변하실까 봐...」
+DATAFORM 「항상 너무 무서워요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다.
+DATAFORM 「감당할게요, 사령관님...」
+DATAFORM 「이건 제가 잘 참을 수 있는 일이니까요.」
+DATAFORM 「이런 일은 열심히 할 테니...」
+DATAFORM 「제가 일을 너무 못 한다고 저를 벌주지 말아주세요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다.
+DATAFORM 「흐윽.... 흑...」
+DATAFORM 유미의 볼에 눈물이 흘러내리고 있었다.
+DATAFORM 「죄송해요, 사령관님...」
+DATAFORM 유미가 눈물을 닦았다.
+DATAFORM 「울면 안 되는데... 죄송해요...」
+DATAFORM 유미가 눈물을 닦지만 쉽게 멈추지 않는다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 볼에 입을 맞췄다.
+DATAFORM 「어, 어? 저 사령관님한테 선택받은 건가요?」
+DATAFORM 「역시 사령관님은 저를 좋아하시는 거죠?」
+DATAFORM 「매일매일 사령관님의 사랑의 손길을 받다 보면 알 수 있어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다.
+DATAFORM 「히히... 저는 사령관님의 예술 작품 같은 거니까요.」
+DATAFORM 「잘 조각된 조각상 같은...」
+DATAFORM 「자, 봐요! 흉터가 남았죠?」
+DATAFORM 「분명 사령관님도 제가 사랑스러워서 어쩔 수가 없는 거예요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 이마에 입을 맞췄다.
+DATAFORM 「하하하...」
+DATAFORM 「하하하하...」
+DATAFORM 「저도 좋아해요 사령관님...」
+DATAFORM 「사령관님을 위해서라면 어떤 고통이든 참을 수 있어요.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM13
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 배를 주물럭거렸다.
+DATAFORM 「뭐, 뭐예요, 진짜아!」
+DATAFORM 유미가 기겁하며 당신에게서 떨어졌다.
+DATAFORM 「나, 남의 몸 함부로 만지면 신고할 거예요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배를 주물럭거렸다.
+DATAFORM 「꺄아악!」
+DATAFORM 유미가 괴성을 지르며 멀어졌다.
+DATAFORM 「벼, 벼, 벼, 변태에!!」
+DATAFORM 유미가 당신을 쓰레기 보는 눈빛으로 바라본다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 배를 주물럭거렸다.
+DATAFORM 「꺅!」
+DATAFORM 유미의 뱃살은 포동포동하고 말랑말랑했다.
+DATAFORM 「이, 이거 술배 아니라고요!」
+DATAFORM 유미가 소리를 질렀다.
+DATAFORM 「아, 진짜 술배 아니라고오!」
+DATAFORM 유미가 변명해 보지만 신빙성이 높지는 않다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배를 주물럭거렸다.
+DATAFORM 「이, 이거 술배 아니라고요!」
+DATAFORM 그 말을 하든 말든 당신은 계속해서 유미의 뱃살을 주무른다.
+DATAFORM 「꺅!」
+DATAFORM 당신의 손이 움직일 때마다 유미가 질겁해서 발버둥친다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 배를 주물럭거렸다.
+DATAFORM 「또, 또 제 몸에 손 대시죠!」
+DATAFORM 유미가 당신에게서 도망치든 말든, 유미의 뱃살을 잡고 주물럭거렸다.
+DATAFORM 「아 진짜 술배 아니라고요!」
+DATAFORM 「꺅!」
+DATAFORM 「아, 알았어! 알았다고요! 술 적당히 먹을 테니까 이 손 좀 놔요!」
+DATAFORM 유미의 배는 말랑말랑해서 마쉬맬로우 같았다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배를 주물럭거렸다.
+DATAFORM 「그만 만져요, 좀!」
+DATAFORM 유미가 질색하며 당신에게서 벗어나려 한다.
+DATAFORM 「아 진짜 이거 술배 아니라니깐 몇 번을 말해요!」
+DATAFORM 「사령관님도 저처럼 생활 해 봐요! 배가 나오나 안 나오나!」
+DATAFORM 「원래 어릴 때는 날씬했던 사람도 나이먹으면 찌는게 당연하다구요!」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 배를 주물럭거렸다.
+DATAFORM 「뭐, 뭐예요. 사령관님?」
+DATAFORM 유미가 볼을 붉히며 당신을 돌아본다.
+DATAFORM 「저, 저번에 사령관님이 제 배 만지는 게 기분 좋대서 가만히 있는 거예요, 흥!」
+DATAFORM 「사령관님 아니었으면 진작에 도망갔을 거라구요.」
+DATAFORM 유미는 부끄러운건지 시선을 피했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배를 주물럭거렸다.
+DATAFORM 「아, 아 진짜아! 그만 만져요!」
+DATAFORM 유미의 배에 잡히는 게 별로 없다.
+DATAFORM 「헤, 헹! 실망하셨죠! 저 요즘 다이어트 하고 있다구요!」
+DATAFORM 「사령관님이 그렇게 만질 줄 알고 어젯밤엔 과자 안 먹었거든요!」
+DATAFORM 「헹! 꼴 좋다!」
+DATAFORM 유미는 기세등등하게 서 있지만 아무래도 역시 유미의 배는 기분 좋았다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 배를 주물럭거렸다.
+DATAFORM 「뭐, 뭐예요!」
+DATAFORM 유미가 잽싸게 당신에게서 멀어진다.
+DATAFORM 「신고합니다? 신고할 거예요? 신고할 거라구요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배를 주물럭거렸다.
+DATAFORM 「남의 몸을 마음대로 만지시면 안 돼요.」
+DATAFORM 「더군다나 남이 숨기고 싶어 하는 부위는 더더욱.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 배를 주물럭거렸다.
+DATAFORM 「히, 히이익!」
+DATAFORM 유미가 얼굴이 파랗게 질려선 뒷걸음질쳤다.
+DATAFORM 「죄송합니다... 죄송합니다...」
+DATAFORM 「때리지 말아 주세요... 때리지 마세요...」
+DATAFORM 유미가 얼굴을 두 팔로 가리고 눈물을 흘리고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배를 주물럭거렸다.
+DATAFORM 「흐, 흐으읍!」
+DATAFORM 유미가 숨을 몰아 쉬더니 배에 힘을 불어넣었다.
+DATAFORM 잠시 후, 유미가 당신을 곁눈질했다.
+DATAFORM 「배, 배를 때리시려는 줄로만 알았어요...」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 배를 주물럭거렸다.
+DATAFORM 「으아아아악!」
+DATAFORM 「죄송해요! 죄송합니다! 때리지 말아 주세요!」
+DATAFORM 유미가 두 팔로 얼굴을 가리고 엉엉 운다.
+DATAFORM 「바보처럼 안 굴을게요. 뭐든지 열심히 할게요. 때리지 말아 주세요.」
+DATAFORM 유미의 얼굴이 공포로 물들었다.
+DATAFORM 「이제 맞는 건 지쳤어요. 저, 뭐든지 할 테니까 때리지 말아 주세요!」
+DATAFORM 유미는 당신이 그녀를 때릴 거라고 착각한 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배를 주물럭거렸다.
+DATAFORM 「시, 싫어! 싫어! 싫어어어어...」
+DATAFORM 당신의 손길에 유미가 털썩 주저앉더니 네 발로 땅을 기었다.
+DATAFORM 「이제 더 이상 아픈 건 싫어.... 봐 주세요... 잘못했어요...」
+DATAFORM 「봐 주세요... 저는 약하고 아무 쓸모도 없어요.... 저는 쓰레기예요...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 배를 주물럭거렸다.
+DATAFORM 「앗, 뭐예요 사령관님?」
+DATAFORM 「저를 때리실 기분이 드신 건가요?」
+DATAFORM 유미가 당신이 배를 만지기 좋게 상의를 걷어올렸다.
+DATAFORM 「자, 보세요 사령관님. 갈비뼈가 앙상하죠?」
+DATAFORM 「만져 보셔도 좋아요. 분명 기분 좋을 거예요.」
+DATAFORM 당신의 손을 이끄는 유미의 표정이 어딘가 의미심장하다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배를 주물럭거렸다.
+DATAFORM 「아읏, 거기 말고... 좀더 구석구석...」
+DATAFORM 「그리고 좀 더 세고 강하게...」
+DATAFORM 「제 배를 쥐어박아 주세요....」
+DATAFORM 「제가 억억 거리고 숨도 쉬기 힘들 정도로 세게....」
+DATAFORM 「때려 주세요...」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM14
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「흐야앗?!」
+DATAFORM 「뭐, 뭐예요 사령관님!」
+DATAFORM 「귀는 예민하다구요!」
+DATAFORM 「아니면 사령관님 귀에 뭐 이상한 페티쉬라도 있어요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「꺄악!」
+DATAFORM 「사, 사령관님 뭐예요? 뱀파이어? 짐승?」
+DATAFORM 「사람 무는 거 좋아하셨어요?」
+DATAFORM 「아무리 제가 약해 보여도 그렇지 물면 어떡해요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「왜, 왜 이러세요!」
+DATAFORM 「...혹시 어디 아프세요?」
+DATAFORM 「막 파괴 충동이 일어나신 거예요?」
+DATAFORM 「분노조절장애?」
+DATAFORM 유미가 당신을 슬금슬금 피하기 시작했다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「히야읏!」
+DATAFORM 「사, 사령관님! 남의 민감한 부위를 그렇게 막 무시면 어떡해요!」
+DATAFORM 「그건 그렇고, 아프잖아요! 그런 식으로 물면 어떤 여자가 좋아하겠어요?」
+DATAFORM 「아, 아니 내가 대체 무슨 소리를 하는 거람.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「뭐, 뭐예욧?」
+DATAFORM 「어, 엄청 큰 모기가 문 줄 알았잖아요!」
+DATAFORM 「진짜 제 귀가 사령관님 입 속에 들어갔다 나왔다고 생각하니...」
+DATAFORM 「음습하고 질척질척거리네요.」
+DATAFORM 「으으으...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「꺄악!」
+DATAFORM 「사, 사령관님은 에티켓도 없어요?」
+DATAFORM 「아, 아니 이건 에티켓 문제가 아니라 도덕과 윤리적인 문제라구요.」
+DATAFORM 「초등학생들도 이런 장난은 안 칠 거예요!」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「히야읏!」
+DATAFORM 유미가 귀를 손으로 감싸고 당신에게서 멀어졌다.
+DATAFORM 「뭐예요, 사령관님!」
+DATAFORM 「저 귀 민감한거 알고 이런 장난 치시는 거죠!」
+DATAFORM 「막 제 입에서 이상한 소리라도 흘러나오면 어쩌려고 그러셨어요!」
+DATAFORM 「...읏!」
+DATAFORM 유미의 얼굴이 빨갛게 물들었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「꺄악!」
+DATAFORM 「사령관님, 이건 아니잖아요.」
+DATAFORM 「부하 직원의 마음을 이렇게 이용하다니!」
+DATAFORM 유미는 발끈했다.
+DATAFORM 「아무리 제가 사령관님을 마음에 들어하고 존경하기로써니 남의 귀를 물어요?」
+DATAFORM 「사령관님은 딱 여친 생기면 가지고 놀다 버릴 상이시네요!」
+DATAFORM 「저는 뭐 그런 사령관님이라도 괜찮지만!」
+DATAFORM 유미가 화가 난 건지 아닌건지 모르겠다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「하아흑으...」
+DATAFORM 유미의 입에서 이상한 소리가 흘러나왔다.
+DATAFORM 「합.」
+DATAFORM 유미가 두 손으로 입을 막고 당신의 눈치를 살폈다.
+DATAFORM 「들으셨어요?」
+DATAFORM 「아무것도 못 들으셨죠?」
+DATAFORM 유미는 안도의 한숨을 내쉰다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「으앗, 사령관님. 저한테 관심 있으세요?」
+DATAFORM 유미가 당신을 돌아본다.
+DATAFORM 「당연히 관심 있으시겠죠. 제가 누군데요.」
+DATAFORM 유미가 묘하게 흡족해한다.
+DATAFORM 「저한테 관심이 없으면 이런 장난도 안 치실 거라는 거. 잘 알고 있어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「으와앗!」
+DATAFORM 「또, 또... 뭐예요 사령관님?」
+DATAFORM 유미가 당신을 곁눈질로 바라본다.
+DATAFORM 「저한테... 바라는 거 있으세요?」
+DATAFORM 「아, 아니이! 제가 뭘 원하는 건 아니고오...」
+DATAFORM 「사령관님이 저한테 그렇게 행동하셨잖아요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「흐읏!」
+DATAFORM 유미의 어깨가 움츠러든다.
+DATAFORM 「사, 사령관님?」
+DATAFORM 유미가 목을 집어넣고 당신을 돌아본다.
+DATAFORM 「그런 행동 하시면... 저 오싹한 느낌이 들잖아요...」
+DATAFORM 「진짜아...」
+DATAFORM 「장난으로 끝나는 게 다행인 줄 아셔요...」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「사령관님 사람 무는 거 좋아하세요?」
+DATAFORM 「식인종이세요?」
+DATAFORM 「아니면 남의 관심에 굶주려 있나요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「으와앗! 사령관님!」
+DATAFORM 「이게 업무는 아니겠고, 장난이라면 지독하잖아요.」
+DATAFORM 「진짜 못됐어...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「흐으윽!」
+DATAFORM 유미가 귀를 어루만진다.
+DATAFORM 「섬뜩해...」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「흐으윽...」
+DATAFORM 「뭐, 뭐죠...? 사령관님?」
+DATAFORM 「다음번에는... 저를 먹어치우실 건가요?」
+DATAFORM 「설마... 아닐 거라고 믿어요.」
+DATAFORM 유미는 겁을 먹은 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「사, 사령관님...」
+DATAFORM 「아파요...」
+DATAFORM 유미가 귀를 어루만진다.
+DATAFORM 「이빨자국이 남아버릴 거예요...」
+DATAFORM 유미의 눈에 눈물이 글썽글썽하다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「흐읏!」
+DATAFORM 유미가 눈을 질끈 감고 고통을 참았다.
+DATAFORM 「저, 저는 아무 말도 안 했어요.」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「흐윽, 흐으윽...」
+DATAFORM 당신이 귀를 물자, 유미의 눈에서 눈물이 주륵 흘러내렸다.
+DATAFORM 「살고 싶어요... 살려주세요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「흐끄윽....」
+DATAFORM 유미가 숨을 들이삼켰다.
+DATAFORM 「흐윽..... 흑....」
+DATAFORM 유미의 숨이 거칠다.
+DATAFORM 유미는 심한 공포감에 휩싸인 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「죄송합니다, 죄송합니다 사령관님.」
+DATAFORM 유미는 이게 일종의 벌이라고 생각한 것 같다.
+DATAFORM 유미의 귀를 놓자, 유미가 귀를 손으로 감싸고 무릎을 꿇었다.
+DATAFORM 「아, 아직 달려있어...」
+DATAFORM 자신의 귀가 멀쩡한 것을 느낀 유미가 안도의 한숨을 내쉬었다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「하윽!」
+DATAFORM 「사... 사령관님?」
+DATAFORM 유미가 볼에 홍조를 띄운 채 당신을 바라보았다.
+DATAFORM 「방금 그 느낌... 머릿속에 번개가 치는 것 같았어요.,」
+DATAFORM 「이번에는 조금 더 세게... 부탁드려도 될까요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「으읏.... 하아...」
+DATAFORM 유미가 숨을 몰아쉰다.
+DATAFORM 「색다른 곳에 예민한 감각...」
+DATAFORM 「짜릿한 고통이 뒤따른다면 어떤 자극이 될지 너무 기대돼요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 귀를 살짝 깨물었다.
+DATAFORM 「사령관님... 좋아요... 그거 좀 더...」
+DATAFORM 유미가 당신에게 갈망하는 표정으로 애원한다.
+DATAFORM 「깨무시는 것도... 좋아요...
+DATAFORM 「단순히 맞는 것과는 또다른 쾌감이 있네요.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM15
+SELECTCASE CSTR:1
+CASE "First/Low"
+PRINTFORMW 당신은 유미의 입술에 입을 맞췄다.
+PRINTFORMW 놀란 유미의 몸이 뻣뻣하게 굳었다.
+PRINTFORMW 유미의 몸은 누가 봐도 경직되어 보였다.
+PRINTFORMW 「헤?」
+PRINTFORMW 「아흐아헤에...?」
+PRINTFORMW 유미가 침을 흘리며 지금 일어난 상황을 받아들이지 못하고 있다.
+CASE "First/High"
+PRINTFORMW 당신은 유미의 입술에 입을 맞췄다.
+PRINTFORMW 「으, 으으읍!」
+PRINTFORMW 유미가 당신을 두 손으로 밀쳤다.
+PRINTFORMW 「최, 최악이에요, 사령관님!」
+PRINTFORMW 「저를 대체 뭐라고 생각하시는 거예요.」
+PRINTFORMW 「제가 그렇게 철 없고 쉬워 보이나요?」
+PRINTFORMW 「제, 제게도 자존심은 있어요!」
+CASE "First/Affection"
+PRINTFORMW 당신은 유미의 입술에 입을 맞췄다.
+PRINTFORMW 「하읍... 하압.....」
+PRINTFORMW 유미의 부드러운 입술이 당신의 입술을 덮었다.
+PRINTFORMW 잠시간 당신과 유미의 타액 교환이 이루어졌다.
+PRINTFORMW 「사, 사령관님...」
+PRINTFORMW 「이건 저만 사령관님을 특별하게 생각하고 있다는 게 아닌 걸로 받아들여도 되겠죠?」
+PRINTFORMW 당신을 바라보는 유미의 눈빛이 애틋하게 변했다.
+CASE "First/Marryed"
+PRINTFORMW 당신은 유미의 입술에 입을 맞췄다.
+PRINTFORMW 「하압....」
+PRINTFORMW 유미가 숨이 막힐 정도로 당신의 입술을 막는다.
+PRINTFORMW 「기다... 리고 있었어요....」
+PRINTFORMW 「너무... 늦었잖아요.」
+PRINTFORMW 유미는 시간이 얼마나 흐르든 간에 당신에게 끈덕지게 달라붙는다.
+PRINTFORMW 「우리 사이에... 이 정도는 약해요...」
+PRINTFORMW 「그 동안 참았던 걸... 쏟아내게 해 주세요...」
+CASE "First/Annoyed"
+PRINTFORMW 당신은 유미의 입술에 입을 맞췄다.
+PRINTFORMW 「읍, 으으읍!」
+PRINTFORMW 유미가 고개를 흔들며 당신을 떨쳐낸다.
+PRINTFORMW 「뭐, 뭐 하는 짓이예요!」
+PRINTFORMW 「처음이었다고요 처음!」
+PRINTFORMW 「사령관님한테 바칠 생각은 없었어요!」
+PRINTFORMW 「최악이에요! 최악!」
+CASE "First/Fear"
+PRINTFORMW 당신은 유미의 입술에 입을 맞췄다.
+PRINTFORMW 「흐으읍...」
+PRINTFORMW 유미의 눈에서 눈물이 흘러내린다.
+PRINTFORMW 유미는 긍정도, 부정도 하지 않은 채 죽은 듯이 당신을 받아들인다.
+PRINTFORMW 「...흐윽, 흑....」
+PRINTFORMW 유미가 몸에서 힘을 뺀다.
+PRINTFORMW 유미의 몸이 당신이 하고싶은대로 움직였다.
+CASE "First/Weak"
+PRINTFORMW 당신은 유미의 입술에 입을 맞췄다.
+PRINTFORMW 「끄흑.... 흐윽... 흑....」
+PRINTFORMW 유미의 눈에서 눈물이 흘러내린다.
+PRINTFORMW 「싫어요... 싫어....」
+PRINTFORMW 유미가 당신을 밀어내지만 힘이 실리지 않은 손에 꿈쩍도 하지 않는다
+PRINTFORMW 「다 싫어....」
+PRINTFORMW 유미의 몸에 의지가 사라진 것 같다.
+CASE "First/Break"
+PRINTFORMW 당신은 유미의 입술에 입을 맞췄다.
+PRINTFORMW 「아흡! 하아...」
+PRINTFORMW 유미가 당신의 입술을 갈취한다.
+PRINTFORMW 「이, 이런 것도.. 좋잖아요?」
+PRINTFORMW 「좋아요, 사령관님... 좋아....」
+PRINTFORMW 「채찍과 당근...」
+PRINTFORMW 「번갈아서 흔들어 주세요...」
+PRINTFORMW 유미가 당신에게 매달린다.
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「시, 싫어요.. 사령관님...」
+DATAFORM 유미가 당신을 밀어낸다.
+DATAFORM 유미의 몸에 단단히 힘이 실려 있다.
+DATAFORM 「아직은... 사령관님에게 마음 쏟고 싶지 않아요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「뭐, 뭐예흡!」
+DATAFORM 「아흐.... 징짜 시러어....」
+DATAFORM 당신의 입술에 막힌 유미의 입에서 목소리가 흘러나온다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「이, 일이지요? 이거...」
+DATAFORM 「아무런 감정도 담기지 않은 거예요....」
+DATAFORM 「저는 일이니까 한 거예요.」
+DATAFORM 「제 의지가 아니라...」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「아흐! 진짜아...」
+DATAFORM 「하, 하디 마세여....!」
+DATAFORM 유미가 앙탈스럽게 당신을 밀어낸다.
+DATAFORM 「으하! 지, 징그러어....」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「이, 이런 건...」
+DATAFORM 「처, 천천히 하셔야 해요...」
+DATAFORM 「무드 잡고... 둘만 있는 곳에서 해야 되는데에...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「진짜 뭔 생각으로 이러시는 거예요!」
+DATAFORM 「누, 누, 누가 보면 우리 사귀는 줄 알거 아니에요!」
+DATAFORM 「아흐, 진짜아.. 부끄럽지도 않나 봐...」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「저, 저희 손도 잡을까요?」
+DATAFORM 당신의 손에 유미의 손가락이 얽힌다.
+DATAFORM 「사령관님이... 하읍... 눈치 없는 건... 하압.... 잘... 알고 있으니까아...」
+DATAFORM 유미의 숨소리가 키스 사이에 섞인다.
+DATAFORM 「안 봐줄 거라구요....」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「으읍! 으으읍!」
+DATAFORM 유미의 눈에 눈물이 고이며 그녀가 발버둥친다.
+DATAFORM 「으으으으읍!! 으읍!!」
+DATAFORM 「으구으으으, 으으 ,으으읍!!!」
+DATAFORM 그녀가 무슨 말을 하는지 알 수가 없다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「키, 키스예요?」
+DATAFORM 「이, 이런 건 소파나 침대 위에서 하는 게 정상 아니에요?」
+DATAFORM 「아, 진짜.. 사령관님은 대체 무슨 생각인 거야...」
+DATAFORM 「빼지 말고 이리로 와요.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「기다리고 있었어요!」
+DATAFORM 「제가 언제나 밀어낼 거라고만 생각하셨죠?」
+DATAFORM 「진심으로 함 뜨까요? 예?」
+DATAFORM 유미의 혀가 당신의 입술 사이로 밀고들어왔다.
+DATAFORM 말캉하고 부드러운 그녀의 입술이 느껴졌다.
+DATAFORM 당신과 유미의 타액이 뒤섞여, 끈적하고 농후한 액체가 만들어졌다.
+DATAFORM 「하아... 하아...」
+DATAFORM 「또 까불면 안 봐줄 거예요.」
+DATAFORM 당신과 유미의 입 사이로 타액이 늘어졌다.
+DATAFORM 유미가 당신을 보며 씩 웃었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「사령관님...」
+DATAFORM 유미가 당신을 살짝 밀어냈지만 진심이 담겨있지 않았댜.
+DATAFORM 「이러시면... 안 되는데...」
+DATAFORM 「제, 제가 시작한 건 아니지만...」
+DATAFORM 「싫다고는 한 적 없다구요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「아익, 진짜아...」
+DATAFORM 유미가 못 이기는 척 당신을 안는다.
+DATAFORM 「아, 아익. 끈적하니까 적당히 좀 핥아요.」
+DATAFORM 「아, 아 진짜아... 어린애도 아니고...」
+DATAFORM 유미가 투정부리지만 싫어하는 기색은 아니다.
+DATAFORM 「아? 어, 어디 가요?」
+DATAFORM 「이, 이걸로 끝이에요?」
+DATAFORM 「끝 아니죠?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「시, 싫어요... 사령관님...」
+DATAFORM 유미가 당신을 밀어낸다.
+DATAFORM 「이런 거, 올바르지 않다구요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「이런 건, 제가 해야 할 일이 아니에요...」
+DATAFORM 「지독해요... 나빠요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「으앗, 시, 싫어...」
+DATAFORM 유미가 질색한 표정으로 얼굴을 피한다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「하고싶은 대로 하세요...」
+DATAFORM 유미가 체념한 표정으로 당신을 받아들인다.
+DATAFORM 「이것도... 일이겠죠...」
+DATAFORM 「그렇게 생각하지 않으면 버틸 수 없어요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「꿈도 희망도...」
+DATAFORM 「제 정신도 육체도...」
+DATAFORM 「모두 엉망으로 만들어 버리시는군요...」
+DATAFORM 「이런 저를 대체 누가 좋아해 줄까요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「...안 때리실 거죠?」
+DATAFORM 「혀를 물어뜯지 않으실 거죠?」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「흐윽... 흑....」
+DATAFORM 「죄, 죄송해요...」
+DATAFORM 「때리지 마세요...」
+DATAFORM 유미의 눈 밑에 다크써클이 짙다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「하읍.... 하아...」
+DATAFORM 유미의 눈에서 눈물이 끊임없이 흐른다.
+DATAFORM 「왜, 왜 그러시죠?」
+DATAFORM 유미가 눈물을 닦으며 말한다.
+DATAFORM 「저, 저 같은 건 신경쓰지 마시고...」
+DATAFORM 「사령관님 하고 싶은 대로 하세요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「사, 살려주세요...」
+DATAFORM 「저, 저는....」
+DATAFORM 「이런 식으로....」
+DATAFORM 유미가 말을 끝맺지 못했다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「아흡, 사령관님?」
+DATAFORM 「이, 이것도 좋네요.」
+DATAFORM 「머릿속에 불이 번쩍 들어와요.」
+DATAFORM 「기분이 환기되는 느낌이에요.」
+DATAFORM 「그래서 이건 어떤 벌이죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「사령관님의 입맞춤...」
+DATAFORM 「역시 열심히 사령관님을 위해서 일해야겠어요.」
+DATAFORM 「저는 사령관님을 위해 뭐든지 할 준비가 되어 있어요.」
+DATAFORM 「저를 망가뜨리셔도 좋아요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 입술에 입을 맞췄다.
+DATAFORM 「입술... 깨물어 주세요...」
+DATAFORM 유미가 당신에게 끈덕지게 달라붙는다.
+DATAFORM 「헤헤헤... 입은 피가 나도 금방 아물어요...」
+DATAFORM 「키스의 맛이... 피맛이라면...」
+DATAFORM 「그건 그것만으로도 로맨틱하지 않아요?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM16
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 목에 혀를 기었다.
+DATAFORM 「흐으읏!」
+DATAFORM 유미가 목을 움츠렸다.
+DATAFORM 「사령관님 진짜 이상한 행동 하시네요. 아 진짜, 이게 뭐야아...」
+DATAFORM 유미가 목을 문지르며 당신을 경계한다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 목에 혀를 기었다.
+DATAFORM 「아, 아니 대체!」
+DATAFORM 유미는 깜짝 놀라 당신에게서 멀어졌다.
+DATAFORM 「사령관님 뱀은 아니시잖아요? 그쵸? 제가 잘못 알고 있는 거 아니죠?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 목에 혀를 기었다.
+DATAFORM 「흐와와...」
+DATAFORM 「모, 목에 이상한 감각이...」
+DATAFORM 유미가 쭈뼛거리며 천천히 당신을 돌아본다.
+DATAFORM 「사... 령... 관... 님!!」
+DATAFORM 「대체 어떤 이상한 행동을 하신 거예요!」
+DATAFORM 유미가 발끈했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 목에 혀를 기었다.
+DATAFORM 「흐으읏!」
+DATAFORM 유미가 잔뜩 움츠러들었다.
+DATAFORM 「더, 더럽잖아요..」
+DATAFORM 「머리카락도 엉키고...」
+DATAFORM 「아, 아니면 머리카락 냄새를 맡고 싶으셨던 건가요?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 목에 혀를 기었다.
+DATAFORM 「아, 진짜 또오!」
+DATAFORM 유미가 질색하곤 당신에게서 멀어졌다.
+DATAFORM 「사령관님은 거리감이 있는 건지 없는 건지 모르겠어요.」
+DATAFORM 「아니, 누구한테도 이런 짓 하면 문제가 될 텐데...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 목에 혀를 기었다.
+DATAFORM 「히야앗!」
+DATAFORM 유미가 놀라 당신에게서 멀어졌다.
+DATAFORM 「흐흐흐...」
+DATAFORM 그러다 이내 곧, 유미가 입가에 미소를 띄웠다.
+DATAFORM 「사령관님? 저 오늘 아침에 머리 안 감았는데요?」
+DATAFORM 「아니이~ 어제 드라마 보느라 늦잠자는 바람에 아침에 바빴지 뭐예요~」
+DATAFORM 「히히히히히...」
+DATAFORM 유미가 쿡쿡거리며 웃고는 당신에게 손을 내젓는다.
+DATAFORM 「뻥이지롱~」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 목에 혀를 기었다.
+DATAFORM 「아으앗...」
+DATAFORM 유미가 몸을 움츠린다.
+DATAFORM 「사, 사령관님... 이건 대체?」
+DATAFORM 「아, 혹시... 그런 기분이 드신 건가요?」
+DATAFORM 「막 제 목을 핥고 싶다거나...」
+DATAFORM 「음... 어.. 저를 맛 보려면 좋은 시간이 따로 있는데...」
+DATAFORM 「좋은 장소도 따로 있고...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 목에 혀를 기었다.
+DATAFORM 「아으아....」
+DATAFORM 「사령관....님?」
+DATAFORM 유미가 당신을 돌아보았다.
+DATAFORM 그리고 후드의 목 부위를 쑥 내렸다.
+DATAFORM 「...」
+DATAFORM 유미가 당신을 보고만 있다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 목에 혀를 기었다.
+DATAFORM 「꺄아악!」
+DATAFORM 「사, 사령관님?」
+DATAFORM 「바, 방금 뭐가 기어가는 느낌이 들었는데...」
+DATAFORM 「사령관님이 하신 거예요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 목에 혀를 기었다.
+DATAFORM 「하으앗!」
+DATAFORM 유미의 목이 움찔거렸다.
+DATAFORM 「사, 사령관님... 업무하는 데 방해돼요.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 목에 혀를 기었다.
+DATAFORM 「하읏...」
+DATAFORM 유미의 흰 목선이 드러났다.
+DATAFORM 「...하아...」
+DATAFORM 유미는 신음소리만 낼 뿐 당신에게 아무런 말도 하지 않았다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 목에 혀를 기었다.
+DATAFORM 「그만... 둬 주세요....」
+DATAFORM 유미가 작게 말한다.
+DATAFORM 「이, 이상한 느낌이...」
+DATAFORM 유미가 작게 떨기 시작했다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 목에 혀를 기었다.
+DATAFORM 「히이익!」
+DATAFORM 하얀 유미의 피부가 창백할 정도로 새파랗게 질렸다.
+DATAFORM 「저, 저... 무슨 일을 당하는 건가요...」
+DATAFORM 「아프지 않게만 해 주세요...」
+DATAFORM 유미의 눈 밑이 까맣다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 목에 혀를 기었다.
+DATAFORM 「사, 사, 사령관님....」
+DATAFORM 「저, 무, 무서워요...」
+DATAFORM 유미는 그렇게 말하면서도 당신을 밀쳐내지 않았다.
+DATAFORM 「저, 저, 너무, 너무.... 무서워요...」
+DATAFORM 유미의 온 몸이 사시나무 떨듯 떨리기 시작했다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 목에 혀를 기었다.
+DATAFORM 「으와? 사, 사령관님?」
+DATAFORM 유미가 펄쩍 뛰었다.
+DATAFORM 「뭐예요, 저 때리러 오신 게 아니었어요?」
+DATAFORM 유미가 목덜미를 만졌다.
+DATAFORM 「뭐야 이게? 침? 우와... 사령관님. 진짜 특이취향이시네요.」
+DATAFORM 「저를 맛 보시려구요? 그래요, 좋아요.」
+DATAFORM 「그런데 그럴려면 먼저 살을 발라야 할 거예요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 목에 혀를 기었다.
+DATAFORM 「아.. 이거.. 좋은 느낌...」
+DATAFORM 유미가 허리를 들썩였다.
+DATAFORM 「사, 사령관님...? 조금 더.. 조금 더 그렇게 아래로 내려와 주세요...」
+DATAFORM 당신의 혀 끝이 유미의 피부를 두드릴수록, 그녀의 반응이 자극적으로 변한다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM17
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 등을 손가락으로 훑었다.
+DATAFORM 「히, 히에에엑!」
+DATAFORM 유미의 허리가 뒤쪽으로 휘었다.
+DATAFORM 「뭐, 뭐예요! 사령관님! 이건 대체 무슨 장난이에요!」
+DATAFORM 유미가 씩씩거린다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 등을 손가락으로 훑었다.
+DATAFORM 「히, 히에에에엑!」
+DATAFORM 「아 진짜!」
+DATAFORM 「이 느낌 완전 싫거든요?」
+DATAFORM 「하지 마세요 사령관님!」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 등을 손가락으로 훑었다.
+DATAFORM 「하으아아아...」
+DATAFORM 「사, 사령관님?」
+DATAFORM 「이런 장난은 치시면 안 돼죠!」
+DATAFORM 「여자의 몸엔 함부로 손 대는 거 아니란 말이에요.」
+DATAFORM 「...예민하니까.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 등을 손가락으로 훑었다.
+DATAFORM 「하으야앗?」
+DATAFORM 유미의 몸이 움찔 떤다.
+DATAFORM 「아 진짜아...」
+DATAFORM 「사령관님 제 반응 보시려고 일부러 이런 장난 치시는 거죠?」
+DATAFORM 「완전 유치해요 진짜...」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 등을 손가락으로 훑었다.
+DATAFORM 「햐으으으읏?」
+DATAFORM 유미의 몸에 불꽃이 튄듯 움찔거린다.
+DATAFORM 「샤, 샤령간님!」
+DATAFORM 「까, 깜짝 놀랬잖아요.」
+DATAFORM 유미가 손으로 입을 막고 숨을 몰아쉰다.
+DATAFORM 「까, 깜쨕이야...」
+DATAFORM 「큰일날 뻔 했네...」
+DATAFORM 유미가 깊은 숨을 몰아쉰다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 등을 손가락으로 훑었다.
+DATAFORM 「흐으으읏?」
+DATAFORM 「하아아아아?」
+DATAFORM 유미가 눈 사이를 찌푸리며 당신을 돌아본다.
+DATAFORM 「무슨... 의미예요, 이거?」
+DATAFORM 유미가 자신의 등을 가리킨다.
+DATAFORM 당신에게 무언의 압박으로 해명을 강요하고 있다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 등을 손가락으로 훑었다.
+DATAFORM 「아흣, 사, 사령관님?」
+DATAFORM 「...」
+DATAFORM 유미가 조용히 당신을 바라본다.
+DATAFORM 「저를.. 괜히 건드리고 싶었던 거예요?」
+DATAFORM 「사령관님이라면 못 건드릴 것도 없기는 한데...」
+DATAFORM 「그래도 이렇게 응큼하게 건드는 것 보다는...」
+DATAFORM 「대담한 게 좋아요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 등을 손가락으로 훑었다.
+DATAFORM 「흐으으으읏?」
+DATAFORM 유미가 허리가 움찔 들린다.
+DATAFORM 「하읏... 하아... 허억....」
+DATAFORM 유미가 가슴을 크게 들썩이며 숨을 몰아쉰다.
+DATAFORM 「...사령관님?」
+DATAFORM 유미가 당신을 노려본다.
+DATAFORM 「어떻게 책임 지실 거예요?」
+DATAFORM 유미의 눈가엔 눈물까지 맺혀 있다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 등을 손가락으로 훑었다.
+DATAFORM 「이, 이거 성희롱인거 아시죠?」
+DATAFORM 「자꾸 그러시면 신고할 거예요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 등을 손가락으로 훑었다.
+DATAFORM 「어, 어딜 만지시는 거예요!」
+DATAFORM 유미가 당신을 노려보며 등 뒤를 더듬었다.
+DATAFORM 「이런 짓은 왜 하시는 거예요?」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 등을 손가락으로 훑었다.
+DATAFORM 「흐, 흐으읏...」
+DATAFORM 유미가 몸을 뒤틀었지만 신음소리를 죽이며 아무런 말도 하지 않는다.
+DATAFORM 「...」
+DATAFORM 눈이 벌개진 유미가 당신을 노려본다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 등을 손가락으로 훑었다.
+DATAFORM 「히, 히아악!」
+DATAFORM 유미가 깜짝 놀라 펄쩍 뛰며 당신을 돌아본다.
+DATAFORM 「사, 사령관님?」
+DATAFORM 「죄, 죄송해요.. 요즘 제가 신경이 날카로와서...」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 등을 손가락으로 훑었다.
+DATAFORM 「흐, 흐으윽...」
+DATAFORM 유미가 입을 틀어막고 숨을 죽인다.
+DATAFORM 「잘못했어요... 아무 말도 안 할게요...」
+DATAFORM 유미의 등이 당신의 손을 피하기 위해 본능적으로 구부러진다.
+DATAFORM 「흐으윽... 흐윽.... 흑...」
+DATAFORM 유미의 숨소리가 점점 울음소리로 변해간다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 등을 손가락으로 훑었다.
+DATAFORM 「시, 싫어요....」
+DATAFORM 유미가 몸을 뒤튼다.
+DATAFORM 「싫다구요...」
+DATAFORM 어깨부터 등허리까지, 그녀의 몸이 휘청인다.
+DATAFORM 「...죄송해요, 사령관님.」
+DATAFORM 그녀는 자신이 큰 잘못이라도 한 듯 당신을 돌아본다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 등을 손가락으로 훑었다.
+DATAFORM 「꺄흐앗?」
+DATAFORM 유미가 펄쩍 뛰며 등이 똑바로 세워진다.
+DATAFORM 「아, 사령관님이셨군요. 놀랐잖아요~」
+DATAFORM 「사령관님이라면 이런 장난같은 거 말고 본격적으로 저를 상대해 주셔도 되는데...」
+DATAFORM 「빙빙 돌려 말하지 말까요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 등을 손가락으로 훑었다.
+DATAFORM 「꺄악?!」
+DATAFORM 유미가 펄쩍 뛰며 당신을 돌아보았다.
+DATAFORM 「아, 사, 사령관님?」
+DATAFORM 「뭐, 뭐예요? 저를 때릴 마음이라도 생기셨나요?」
+DATAFORM 「그렇다면 환영인데!」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM18
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「꺄아악!」
+DATAFORM 「사령관님 뭐 하시는 거예요!」
+DATAFORM 「시, 신고할 거예요!」
+DATAFORM 유미가 눈물까지 글썽거리며 당신을 노려보고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「꺄아악!」
+DATAFORM 「사령관님 뭐 하시는 거예요!」
+DATAFORM 「시, 신고할 거예요!」
+DATAFORM 유미가 눈물까지 글썽거리며 당신을 노려보고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「제, 제 가슴이 뭐가 좋다고 얼굴을 들이밀어요! 이 변태가!」
+DATAFORM 「이런 쪼끄맣고 납작한 가슴이 뭐가 좋다고!」
+DATAFORM 「꺄, 꺄아악! 저리 떨어지란 말이에요!」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「히, 히에엑?!」
+DATAFORM 「사, 사령관님 또 뭐 하시는 거예요!」
+DATAFORM 「고작 제 가슴이라구요? 쪼그맣고 볼품없는 제 가슴?」
+DATAFORM 「이런 짓 할거면 저 말고 저기 밖에 있는 쭉쭉빵빵한 언니들한테나 가서 하세요!」
+DATAFORM 「으에엑! 수준 떨어져!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「가, 가슴에 얼굴을 파묻다니!」
+DATAFORM 「제 가슴이 그게 가능하기나 해요?」
+DATAFORM 「아, 가, 간신히 되는 건가?」
+DATAFORM 「아니, 그게 아니고! 지금 대체 뭐 하고 계신 거예요오!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「저, 저리 떨어져요! 변태!」
+DATAFORM 「사령관님 머릿속엔 뭐가 들었길래 부하직원 얼굴에 가슴을 파묻어요?」
+DATAFORM 「서, 성희롱으로 신고할 테니까 사령관님은 무기징역 확정이에요!」
+DATAFORM 「저, 저 말리지 마요!」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「지, 지, 지금 뭐 하는 거예요 사령관니임!」
+DATAFORM 「벼, 변태예요? 진짜 왜 이래요!」
+DATAFORM 「아, 진짜아! 제 가슴은 볼 것도 없는데에!」
+DATAFORM 「제 가슴 사이즈가 마음에 드시는 건 아니죠?」
+DATAFORM 「각각 한 손에 적당한 사이즈로 잡혀서 마음에 드시는 건 아니죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「지, 진짜아...」
+DATAFORM 「진짜 못됐어... 진짜...」
+DATAFORM 「제가 아무런 반항도 못할 걸 알고....」
+DATAFORM 「치사해....」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「아 진짜! 사령관님한테 욕할 수도 없고!」
+DATAFORM 「제 가슴이 그렇게 좋으세요?」
+DATAFORM 「이 쬐끄만 가슴이 그렇게 좋으세요!」
+DATAFORM 「아주 진짜, 결혼이라도 하면 원 없이 만질텐데 이러고 있다니...」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「아오... 진짜...」
+DATAFORM 「사령관님은 왜 변하는게 없으시죠?」
+DATAFORM 「제 가슴을 그렇게 좋아해서야 어디 다 컸다고 할 수 있겠어요?」
+DATAFORM 「...제 가슴이라서 좋은 거라구요?」
+DATAFORM 「...이 사이즈가 좋다구요?」
+DATAFORM 「...」
+DATAFORM 「...」
+DATAFORM 「사령관님 거기서 딱 기다려요, 제가 포상을 드리죠.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「진짜, 좀, 떨어, 져요!」
+DATAFORM 「언제까지 가슴에다 얼굴 대고 비비고 계실 거예요?」
+DATAFORM 「남들이 보면 어쩌실려고 그래요?」
+DATAFORM 「때와 장소를 가리자구요. 때와, 장소!」
+DATAFORM 「저도 항상 싫다고만 하는 건 아니잖아요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「사령관님, 저 열받게 하려고 하시는 거죠?」
+DATAFORM 「아니면 제 가슴에다 그렇게 얼굴을 비비실리가 없는데에...」
+DATAFORM 어쩐지 유미가 화가 난 것 같다.
+DATAFORM 「이 쪼끄만 가슴도 만질 게 있다고 그렇게 막 다루시는 거죠?」
+DATAFORM 「쪼끄만 가슴 주인이 화내는 거 보고 싶으세요?」
+DATAFORM 유미의 입은 웃고 있지만 눈은 전혀 웃고 있지 않았다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「...진짜 대놓고 성희롱 하시네요.」
+DATAFORM 「너무 당당해서 아무말도 못 하겠어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「쪼끄만 가슴 취향이세요?」
+DATAFORM 「아니면 벽에다 대고 비비는 걸 좋아하시는 거예요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「철없어 보여요.」
+DATAFORM 「이런 분이 제 사령관님이라니...」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 유미는 눈을 질끈 감으며 아무 말도 하지 않았다.
+DATAFORM 「...」
+DATAFORM 유미의 표정에 싫어하는 기색이 떠올랐지만 그녀는 그걸 입 밖으로 내뱉지는 않는다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「...안 때리실 거죠?」
+DATAFORM 유미가 곁눈질로 당신을 쳐다본다.
+DATAFORM 「...참을게요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「...싫어요...」
+DATAFORM 「싫지만... 싫은데...」
+DATAFORM 「사령관님은 계속 하실 거잖아요...」
+DATAFORM 「제가 뭐라고 하든...」
+DATAFORM 「제가 싫어하든 말든...」
+DATAFORM 「계속... 계속...」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「마, 마음대로 하세요!」
+DATAFORM 「대신에 때리지 말아주세요.」
+DATAFORM 「저, 적어도... 지금은...」
+DATAFORM 「아프지 않으니까요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「때, 때리시려는 거 아니죠?」
+DATAFORM 「아, 아니라면 뭐든지 괜찮아요...」
+DATAFORM 「참을 수 있어요...」
+DATAFORM 「맞지 않을 수만 있다면...」
+DATAFORM 「저를 어떻게 쓰는 사령관님 마음이에요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「흐... 흐윽!」
+DATAFORM 유미의 눈에서 눈물이 한 방울 떨어졌다.
+DATAFORM 「아, 죄, 죄송해요. 사령관님...」
+DATAFORM 「눈에 뭐가 들어갔나 봐요. 신경쓰지 마세요.」
+DATAFORM 「저는 아무래도 괜찮, 으, 니까...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「어라? 사령관님, 깨무시는 건 안 하는 거예요?」
+DATAFORM 「잇자국이 날 정도로 세게 깨물어 주세요.」
+DATAFORM 「피가 나도 좋으니까요.」
+DATAFORM 「제 몸뚱아리는 작지만, 사령관님의 얼굴을 흠뻑 적실 정도의 피는 흐르고 있어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「우흐흐... 사령관님, 귀여워라...」
+DATAFORM 「이것도 다 제 몸이 마음에 들어서 하시는 행동이시죠?」
+DATAFORM 「그렇게나 제 몸이 마음에 드시는 건가요?」
+DATAFORM 「그렇게 제 몸을 그렇게 난폭하게.... 헤헤헤...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 가슴에 얼굴을 파묻었다.
+DATAFORM 「사령관님, 꼭 아기같아요.」
+DATAFORM 「그래서 파괴적인 충동을 억제하지 못하시는 걸까요?」
+DATAFORM 「뭐, 그래도 좋아요.」
+DATAFORM 「사령관님의 충동은 제가 다 받아드릴게요.」
+DATAFORM 「뼈가 부러지든, 피멍이 생기든, 내장이 파열되든.」
+DATAFORM 「그런 것들은 다 제가 원하고 있던 것들이니까요.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM19
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 유미의 표정이 사색으로 변하며 움츠러들었다.
+DATAFORM 「죄, 죄송합니다! 제가 더 잘 할게요.」
+DATAFORM 「제가 업무 중 실수한 거죠? 다음번엔 실수하지 않겠습니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「자, 잘못했어요.」
+DATAFORM 「사, 사령관님 조금만 진정해 주세요.」
+DATAFORM 「제가, 제가 수습할 수 있어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「제, 제가 뭔가를 잘못했나요?」
+DATAFORM 「그럴리가... 그럴리가 없을텐데...」
+DATAFORM 「대체 왜....」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「미, 미안해요 사령관님!」
+DATAFORM 「제가 잘못했어요. 화내지 마세요!」
+DATAFORM 「사령관님, 진정하세요!」
+DATAFORM 유미가 눈물을 글썽이며 당신을 말렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「제게... 그런 말씀까지 하실 정도였나요?」
+DATAFORM 「사실은 제가 마음에 들지 않으셨던 거군요...」
+DATAFORM 「알겠습니다. 죄송합니다. 다음번엔 달라진 모습으로 뵙겠습니다.」
+DATAFORM 「사령관님의 마음에 들도록 노력하겠습니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「죄송해요... 노력해도 이 정도 밖에 안 되는 저라서...」
+DATAFORM 「이런 못난 저라서 죄송해요...」
+DATAFORM 「차라리 욕을 해서 사령관님의 마음이 조금이라도 괜찮아 진다면...」
+DATAFORM 「저는 욕을 먹는 것 정도는 감수할 수 있어요...」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「사... 령관님?」
+DATAFORM 「제, 제가 무슨 큰 잘못이라도 저질렀나요?」
+DATAFORM 「아, 아니죠? 제가 그런 일을 했을리가 없죠?」
+DATAFORM 「그, 그런데.. 왜.. 제게 그런 말씀을 하시는 거예요?」
+DATAFORM 「제가 미워졌나요?」
+DATAFORM 「제가 싫나요?」
+DATAFORM 「저에게.. 싫증 나버린 건가요?」
+DATAFORM 「....제발 아니라고 해 줘요.」
+DATAFORM 「....제가 필요하다고 말해 주세요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「시, 싫어요...」
+DATAFORM 「그런 말씀을 하시는 사령관님은 싫단 말이에요!」
+DATAFORM 「사령관님 전에는 그런 말씀 하시지 않으셨잖아요!」
+DATAFORM 「왜 그러시는 거예요! 대체!」
+DATAFORM 「저를 보세요, 전 어제와 조금도 달라지지 않았어요.」
+DATAFORM 「그런데 사령관님은 왜, 왜!」
+DATAFORM 「처음 만났을 때와 다른 모습을 보여주시냐고요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「욕하지 말아 주세요...」
+DATAFORM 유미의 입술이 파들파들 떨린다.
+DATAFORM 「욕하지 말아 주세요.. 사령관님...」
+DATAFORM 「사령관님의 그런 모습 너무 무서워요...」
+DATAFORM 「너무 무서워요 사령관님...」
+DATAFORM 「그런 말씀 하시지 마세요...」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「사... 령관님? 제게 하신 말씀이세요?」
+DATAFORM 유미의 눈동자에 믿을수 없다는 감정이 맴돈다.
+DATAFORM 「왜, 왜 그런 말씀을 하시는 거예요?」
+DATAFORM 「싫어요, 그런 말씀은.....」
+DATAFORM 「싫단 말이에요!」
+DATAFORM 「저, 저... 충격받았어요.」
+DATAFORM 「머릿속이 멍해요.」
+DATAFORM 「사령관님이 이럴 리가 없는데.」
+DATAFORM 「내가 아는 사령관님은 이런 분이 아니신데.」
+DATAFORM 「저 지금 상황을 이해할 수가 없어요.」
+DATAFORM 유미는 충격으로 몸을 가누기 힘들어 보인다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「사... 령관님?」
+DATAFORM 「커, 컨디션이 안 좋으신 건가요?」
+DATAFORM 「어젯밤에 나쁜 꿈을 꾸었나요?」
+DATAFORM 「사령관님, 안아 줄게요. 이리 와요.」
+DATAFORM 「그런 말씀 하시 마시고 이리 와요.」
+DATAFORM 「안아 드릴게요.」
+DATAFORM 「그런 못된 말씀은... 그만 두고.」
+DATAFORM 「그냥 제게 안겨 주세요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「...가끔씩 살다 보면 이해가 안 되는 일들이 일어나곤 해요.」
+DATAFORM 「지금도 그 상황이겠죠...」
+DATAFORM 「사령관님, 사령관님의 지금 모습은 제게 큰 실망을 안겨 주었지만」
+DATAFORM 「이 모습이 사령관님의 전부가 아니란 걸 아니까...」
+DATAFORM 「참을게요.」
+DATAFORM 「저는 사령관님을 믿고...」
+DATAFORM 「사령관님이 제게 따스하게 대해 줄 거라고 믿으니까요.」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「자, 잘못했습니다.」
+DATAFORM 「죄송합니다.」
+DATAFORM 「시정하겠습니다.」
+DATAFORM 기계적으로 내뱉는 유미의 말에는 감정이 없었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「자, 잘못했습니다.」
+DATAFORM 「죄송합니다.」
+DATAFORM 「시정하겠습니다.」
+DATAFORM 기계적으로 내뱉는 유미의 말에는 감정이 없었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「폭언...」
+DATAFORM 「협박...」
+DATAFORM 「직장 내에서의 괴롭힘...」
+DATAFORM 유미가 땅바닥을 보고 중얼중얼거린다.
+DATAFORM 「지겨워요... 다 싫어... 돌아가고싶어...」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「자, 잘못했습니다 사령관님.」
+DATAFORM 「죄송합니다. 다시는 사령관님의 심기를 건드리지 않겠습니다.」
+DATAFORM 유미가 머리가 땅에 닿을 정도로 고개를 숙인다.
+DATAFORM 「죄송합니다. 죄송합니다. 죄송합니다.」
+DATAFORM 「다 제 잘못입니다. 저를 욕하세요.」
+DATAFORM 그녀의 자존감이 많이 떨어져 보인다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「히, 히이익!」
+DATAFORM 「자, 잘못했어요 사령관님.」
+DATAFORM 「때, 때리지만 말아 주세요...」
+DATAFORM 「사령관님이 소리를 지르실 때마다...」
+DATAFORM 「귀가 너무 아파요... 너무 아파...」
+DATAFORM 「너무 무서워요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「저, 저 또 혼나는 건가요?」
+DATAFORM 「이제 맞을 차례인가요?」
+DATAFORM 「저, 저, 저, 또 맞아야 하나요?」
+DATAFORM 「시, 싫어... 싫어요....」
+DATAFORM 「이런 생활은 이제 싫어요....」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「히, 히에엑!」
+DATAFORM 유미가 눈을 까뒤집으며 놀란다.
+DATAFORM 「때, 때리지 말아 주세요! 잘못했어요!」
+DATAFORM 「더 이상 이상한 행동 안 할게요.」
+DATAFORM 「아무 행동도 안 하고 가만히 잠자코 있을게요!」
+DATAFORM 「제발 때리지 말아주세요!」
+DATAFORM 「아무것도 안하고 가만히 숨 쉬는 소리조차 사령관님께 들리지 않게 할 테니까...」
+DATAFORM 「화내지 말아 주세요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「시, 싫어!」
+DATAFORM 「싫엇! 싫어 싫어!!」
+DATAFORM 「싫단 말이예요!」
+DATAFORM 「제발 절 이런 생활에서 벗어나게 해 주세요.」
+DATAFORM 「제발 절 내버려 두세요.」
+DATAFORM 「사령관님에 대해서 아무런 말도 하지 않을게요.」
+DATAFORM 「제발 제가 조용히 앉아만 있을 수 있게 해 주세요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「대, 대체 왜...」
+DATAFORM 「대체 왜!」
+DATAFORM 「왜 저는 이런 취급을 받아야 해요?」
+DATAFORM 「제가 그렇게 미워요?」
+DATAFORM 「제가 그렇게 싫어요?」
+DATAFORM 「제가 그렇게 죽일 듯이 바라봐야 하는 대상이냐구요!」
+DATAFORM 「저, 저는 이렇게 살고 싶지 않아요.」
+DATAFORM 「아무런 욕도 듣지 않고, 조용히...」
+DATAFORM 「사령관님이 없는 곳에서 혼자 있고 싶어요!」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「사령관님... 그건 무슨 매도예요?」
+DATAFORM 「너무 많이 들은 매도잖아요.」
+DATAFORM 「래파토리가 비슷비슷해요.」
+DATAFORM 「그... 제 안의 감각을 일깨우려면은 좀 더 확실하고 자극적인 욕설이 필요하다구요.」
+DATAFORM 「자, 제 귓가에 암캐년이라고 속삭여 줄래요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「어머, 사령관님, 그런 말씀은 어디서 배우신 거예요?」
+DATAFORM 「너무 마음에 들어요.」
+DATAFORM 「전신이 오싹오싹하고 아래가 축축해질 것 같아요.」
+DATAFORM 「조금 더... 조금 더 해주실래요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미에게 소리를 지르며 욕을 했다.
+DATAFORM 「아.. 좀 더 매도해주세요...」
+DATAFORM 「좀 더 욕해주세요...」
+DATAFORM 「사령관님의 그 감미로운 목소리로...」
+DATAFORM 「저를 욕되게 만들어 주세요...」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM20
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「사령관님?」
+DATAFORM 「이, 이거... 일이에요?」
+DATAFORM 「뺨 맞는 것도 업무중에 하나인가요?」
+DATAFORM 유미는 혼란스러워 하고 있는 것 같았다.
+DATAFORM 「이, 이런 일은 처음이라... 너무 당황스러워요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 짝 하는 소리와 함께 유미의 고개가 돌아갔다.
+DATAFORM 유미의 목이 세게 돌아간 터라 목이 부러진 것 같아 보이기도 했다.
+DATAFORM 유미는 삐걱거리는 목을 간신히 바로잡으며 당신에게 말했다.
+DATAFORM 「제가 뭔갈 잘못했나요?」
+DATAFORM 「저... 너무 아파요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 유미의 목이 팩 하고 돌아갔다.
+DATAFORM 「아, 아파...」
+DATAFORM 「아파아...」
+DATAFORM 유미의 뺨이 빨갛게 달아올랐다.
+DATAFORM 「사령관님... 이러려고 저를 사신 거였군요...」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「사, 사령관님?」
+DATAFORM 유미가 부풀어오른 볼을 잡고 묻는다.
+DATAFORM 「저, 저를 왜 때리신 거예요?」
+DATAFORM 「저, 저... 너무 혼란스러워요...」
+DATAFORM 「맞고 싶지 않은 건 당연하고...」
+DATAFORM 「사령관님이 절 때리시다니...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 유미의 볼이 빨갛게 달아올랐다.
+DATAFORM 「아파아...」
+DATAFORM 「무서워요 사령관님...」
+DATAFORM 「저, 저... 사령관님이 무서워요...」
+DATAFORM 「때리면 맞아야 하는 입장이지만...」
+DATAFORM 「사령관님이 그런 사람은 아니시잖아요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「꺄악!」
+DATAFORM 유미의 비명과 함께, 그녀가 바닥으로 쓰러진다.
+DATAFORM 「저, 저를 때리신 거예요?」
+DATAFORM 「왜요? 대체 왜?」
+DATAFORM 「저를 그런 용도로 구입하신 거였어요?」
+DATAFORM 「제 몸이 작고 약한 건 알고 계셨잖아요!」
+DATAFORM 「이런 저를 괴롭히면서 즐거우신 거예요?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「사, 사령관님... 대체 왜?」
+DATAFORM 「죄송해요, 사령관님.」
+DATAFORM 「죄송해요. 제가 너무 나댔었죠....」
+DATAFORM 「사령관님이 아무런 이유 없이 이러실 분이 아니란 건 알고 있어요.」
+DATAFORM 「제 잘못이겠죠...」
+DATAFORM 「뭔가, 지금 당장은 생각나지 않지만 제 잘못이 분명해요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「아파요...」
+DATAFORM 유미의 눈에서 눈물이 주륵 흘러내렸다.
+DATAFORM 「아, 아니...」
+DATAFORM 「그게... 흐윽! 아무것도 아니에요...」
+DATAFORM 「평소라면 울지 않았을 텐데...」
+DATAFORM 「사령관님한테 맞았다는 생각을 하니 너무 슬퍼져서...」
+DATAFORM 「아, 아니에요! 무시하세요... 흐윽.... 흑!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「사, 사령관님...?」
+DATAFORM 유미가 비틀거리며 당신에게 다가온다.
+DATAFORM 「호, 혹시... 제가 싫어진 건가요...?」
+DATAFORM 「제가 작고 나약해서 쓸모 없다고 생각하신 건가요...?」
+DATAFORM 「제발 아니었으면 좋겠어요...
+DATAFORM 「전 사령관님한테 미움받는 거 싫어요...」
+DATAFORM 「진심이에요...」
+DATAFORM 「제가, 제가 속마음을 잘 표현하지는 못하지만...!」
+DATAFORM 「적어도, 사령관님한테만은....」
+DATAFORM 「사랑받고 싶다구요...」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「사, 사령관님... 대체 왜?」
+DATAFORM 「저, 저.. 사령관님한테 소중한 존재가 아니었나요?」
+DATAFORM 「사령관님은 저... 보살피고 싶지 않으셨던 건가요?」
+DATAFORM 「제가 질리셨나요?」
+DATAFORM 「제가 싫나요?」
+DATAFORM 「제가 미워요?」
+DATAFORM 「제가, 제가....」
+DATAFORM 「제가 잘못했어요...」
+DATAFORM 「저를 미워하지 말아주세요...」
+DATAFORM 「저는 비록 약하고, 할 수 있는 것도 많지는 않지만...」
+DATAFORM 「사령관님 만큼은 영원히 사랑할 수 있어요...」
+DATAFORM 「제발 절 혼자 두지 말아요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「사... 령관님?」
+DATAFORM 유미가 멍한 눈으로 당신을 바라본다.
+DATAFORM 유미의 손 끝이 볼에 닿자, 아픈 감촉이 남은 듯 그녀가 눈을 찡그렸다.
+DATAFORM 「...아파...」
+DATAFORM 「저, 이런 취급을 받아야 하는 건가요?」
+DATAFORM 「...사령관님이 그렇게 생각하신다면...」
+DATAFORM 「어쩔 수 없어요...」
+DATAFORM 「저는 그저 맞고...」
+DATAFORM 「사령관님의 마음이 저에게 돌아오기를 기다릴 뿐...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「아, 아파...」
+DATAFORM 유미가 무릎을 꿇고 쓰러졌다.
+DATAFORM 「사, 사령관님... 저 아파요...」
+DATAFORM 「호 해 주세요....」
+DATAFORM 「저, 저 아프단 말이에요....」
+DATAFORM 「저, 저를 혼자 두지 말아요!」
+DATAFORM 「혼자는 싫어요! 지쳤어요! 사령관님! 저를 혼자 두지 말아요!」
+DATAFORM 「사령관님? 사령관님! 사령관님!!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「아, 아....」
+DATAFORM 무감각한 유미의 신음소리가 흘러나왔다.
+DATAFORM 「이것도 일...」
+DATAFORM 「참을... 게요...」
+DATAFORM 「그런데 오래 참지는 못할 것 같아요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「하, 하악..... 또, 또 맞아야... 하는 건가요?」
+DATAFORM 유미의 몸이 크게 흔들리고 있다.
+DATAFORM 「너무해요.. 이런 업무는...」
+DATAFORM 「너무하다구요...」
+DATAFORM 유미는 금방이라도 쓰러질 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「아, 아... 사령관님?」
+DATAFORM 「사령관님?」
+DATAFORM 유미는 멍한 얼굴로 당신을 부르고 있다.
+DATAFORM 자신의 볼이 부풀어 오른 것도 잊은 채, 뭔가를 확인하려는 듯이 당신을 부른다.
+DATAFORM 「저, 저... 한쪽 귀가 이상해요.」
+DATAFORM 「자꾸 귀에서 삐이 소리만 나요...」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「아, 아파앗....」
+DATAFORM 유미의 볼이 빨갛게 부풀어 오른다.
+DATAFORM 「사령관님... 저 너무 아파요...」
+DATAFORM 「저, 저 진짜 너무 무서워요...」
+DATAFORM 「저 하루하루 사는 게 너무 힘들단 말이에요...」
+DATAFORM 「하루만, 하루만이라도 좋으니까...」
+DATAFORM 「저를 쉬게 해 주세요... 부탁드려요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「시, 싫었!」
+DATAFORM 유미의 목소리와 함께 그녀가 바닥으로 쓰러진다.
+DATAFORM 「켈룩! 켈룩! 게흑!」
+DATAFORM 유미가 바닥에 핏덩어리를 토한다.
+DATAFORM 그녀의 눈에는 눈물이 고여 있다.
+DATAFORM 그녀가 고개를 들어 당신을 바라본다.
+DATAFORM 입 안쪽이 터져 핏물이 응어리진 그녀의 입가에서 피가 흘러내린다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「흐윽!」
+DATAFORM 유미의 고개가 거칠게 돌아간다.
+DATAFORM 「아파요... 아파...」
+DATAFORM 「차, 참을게요...」
+DATAFORM 「이번, 한, 번만큼은...」
+DATAFORM 「어떻게든 참아볼게요...」
+DATAFORM 유미가 기를 쓰고 고통을 참고 있다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 유미의 몸이 힘없이 바닥으로 쓰러진다.
+DATAFORM 「사, 살려주세요. 사령관님.」
+DATAFORM 「뭐든지 할게요! 뭐든지 할 테니까...」
+DATAFORM 유미가 당신의 바지를 붙잡고 매달린다.
+DATAFORM 유미는 생명의 위협을 느낀 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「으하아악!」
+DATAFORM 유미가 바닥으로 쓰러진다.
+DATAFORM 「흐윽! 허억! 흐윽...!」
+DATAFORM 유미의 가슴이 위아래로 거칠게 오르내린다.
+DATAFORM 그녀의 숨이 가쁘다.
+DATAFORM 그녀는 금방이라도 숨이 끊길 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「싫어!」
+DATAFORM 「싫어 싫어 싫어요!」
+DATAFORM 「제발 때리지 말아주세요.」
+DATAFORM 「이렇게 빌게요.」
+DATAFORM 「사령관님이 저를 때리실 때마다 너무 아파요.」
+DATAFORM 「너무 아파서 살고싶지가 않아요.」
+DATAFORM 「사령관님, 부탁이에요. 더 이상 저를 때리지 말아주세요.」
+DATAFORM 「저 진짜 너무 아파서 죽을 것만 같아요.」
+DATAFORM 「부탁이니까 제발 그만 해 주세요.」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 팩! 소리가 나며 유미의 목이 힘없이 꺾였다.
+DATAFORM 「사령관님...? 저 볼이 화끈화끈해요.」
+DATAFORM 유미의 볼에는 당신의 손자국이 홍조처럼 나 있다.
+DATAFORM 「이런 느낌 정말 자극적이에요.」
+DATAFORM 「가능하다면 계속 맞고 싶어요.」
+DATAFORM 「제 몸이 사령관님의 손길을 원하고 있어요,」
+DATAFORM 유미가 당신에게 매달렸다.
+DATAFORM 「사령관님? 더 때려주세요!」
+DATAFORM 「저를 때려주세요! 때리실 수 있잖아요!」
+DATAFORM 「저, 이런 자극 너무 좋아요!」
+DATAFORM 「제 몸이 원하고 있다구요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「하윽!」
+DATAFORM 유미의 신음소리와 함께 그녀의 목이 돌아갔다.
+DATAFORM 「정말이지.. 사령관님의 손길은... 오싹오싹해요.」
+DATAFORM 「자, 보세요. 제 몸 전신이 사령관님의 손길을 원하고 있는 것을...」
+DATAFORM 「침이 계속 흘러나와요... 맛있나 봐요...」
+DATAFORM 「몸에서 액체가... 히히히.... 히히히히히....」
+DATAFORM 「아, 사령관님, 제 입 안쪽을 좀 보세요. 자.... 피가 나오고 있어요.」
+DATAFORM 「입 안쪽이 터졌나 봐요.」
+DATAFORM 「느껴지세요? 사령관님? 제 온 몸이 당신을 원하고 있다는 걸.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「꺄악!」
+DATAFORM 유미의 몸이 힘없이 바닥으로 쓰러졌다.
+DATAFORM 「사령관님... 오늘도 저를 때려주셨네요?」
+DATAFORM 「...기뻐요.」
+DATAFORM 「사령관님한테 맞을 수 있다는 게 기뻐요...」
+DATAFORM 「너무 행복해요...」
+DATAFORM 「하아... 하아...」
+DATAFORM 「사령관님? 좀 더 때려주실래요?」
+DATAFORM 「이번에는 다른 쪽도... 부탁드려요...」
+DATAFORM 「제 몸 어디든 사령관님 마음대로 해도 좋으니까...」
+DATAFORM 「뭐라도 좋으니 좀 더 자극적이게...!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 뺨을 때렸다.
+DATAFORM 「크으읏!!」
+DATAFORM 당신이 유미의 뺨을 때리자 유미가 손으로 입을 막고 허리를 굽혔다.
+DATAFORM 「끄으으읏!」
+DATAFORM 유미는 고개를 숙이고 몸을 벌벌 떨고 있었다.
+DATAFORM 「하아.... 하아아....」
+DATAFORM 유미의 몸이 작게 떨리다가, 어느 순간 요동치듯이 벌벌 떨렸다.
+DATAFORM 유미의 다리 사이에 소변이 흘러나와 바닥을 적셨다.
+DATAFORM 「하으아아아아....」
+DATAFORM 유미는 떨리는 몸을 일으켜 세우고 당신을 바라본다.
+DATAFORM 「사령관님, 죄송해요. 오줌 지려서...」
+DATAFORM 「하지만, 참을 수 없었는 걸요.」
+DATAFORM 「너무 짜릿해서... 너무 감동적이어서 그만...」
+DATAFORM 「가버린 것 같아요...」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM21
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「사, 사령관님?」
+DATAFORM 유미가 필사적으로 정신을 부여잡으며 당신을 부른다.
+DATAFORM 「이... 이건 대체...」
+DATAFORM 유미의 눈이 감긴다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「크윽!」
+DATAFORM 유미의 얼굴이 사색이 된다.
+DATAFORM 「내장이 진탕되는 것 같아요...」
+DATAFORM 「이, 이것도 업무인 거죠?」
+DATAFORM 「많이 하드하네요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「흐악...」
+DATAFORM 유미가 숨을 할딱할딱 쉰다.
+DATAFORM 「사, 사령관님.」
+DATAFORM 「저, 저 숨이, 숨이 잘 안 쉬어져요...」
+DATAFORM 「하윽... 하윽.... 하윽...」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「구욱...」
+DATAFORM 유미의 얼굴색이 변했다.
+DATAFORM 유미는 입을 막고 구역질을 참고 있다.
+DATAFORM 「구웨에에엑.」
+DATAFORM 유미의 입에서 토사물이 흘러나왔다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「끄읏, 사, 사령관님...?」
+DATAFORM 유미의 얼굴이 하얗게 변했다.
+DATAFORM 「이거, 많이, 아파요...」
+DATAFORM 「진짜, 너무... 너무 아파요...」
+DATAFORM 「저 오늘만 병가 쓰면 안 될까요?」
+DATAFORM 유미가 당신에게 매달린다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「흐끄윽...」
+DATAFORM 유미의 눈에 눈물이 고인다.
+DATAFORM 「이, 이것도 업무지요?」
+DATAFORM 「사, 사령관님이 주는 업무라면... 참아야 해요...」
+DATAFORM 「끄윽...」
+DATAFORM 유미가 눈물을 닦는다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「흐으윽!!」
+DATAFORM 유미가 몸부림친다.
+DATAFORM 유미가 믿을 수 없다는 눈으로 당신을 바라본다.
+DATAFORM 「사, 사령관님... 어째서...」
+DATAFORM 유미의 입에서는 거친 숨이 터져나오고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「끄으윽....!」
+DATAFORM 유미가 복부를 잡고 털썩 무릎을 꿇는다.
+DATAFORM 「사, 사령관님.... 이게 업무....는 아니죠?」
+DATAFORM 「그, 그럼 제게 왜... 이러신 거예요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「하으윽...」
+DATAFORM 유미가 앓는 소리를 내며 쓰러졌다.
+DATAFORM 「하윽... 하윽...」
+DATAFORM 「사, 사령관님...」
+DATAFORM 「대체 왜...」
+DATAFORM 유미가 당신을 원망한다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「사, 사령관님...? 대체 왜...」
+DATAFORM 유미가 믿을 수 없다는 눈으로 당신을 바라본다.
+DATAFORM 「저, 저를... 아껴 주시지 않았던 거예요...?」
+DATAFORM 「저는... 그동안의 사령관님의 모습을 보고...」
+DATAFORM 「당신을 좋아했었는데...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「커흑!」
+DATAFORM 「시, 싫어요...」
+DATAFORM 「왜 이러시는 거예요...」
+DATAFORM 「때, 때리지 말아요 사령관님...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 유미의 복부가 움푹 들어갔다.
+DATAFORM 「끄으윽...!」
+DATAFORM 유미가 고통으로 바닥을 뒹군다.
+DATAFORM 「사, 사령관님...」
+DATAFORM 「사령관님...」
+DATAFORM 「안아줘요....」
+DATAFORM 「안아 주세요 사령관님...」
+DATAFORM 「저 너무 아파요...」
+DATAFORM 유미가 눈물을 그렁그렁 매달고 당신을 향해 손을 뻗고 있다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 유미가 고통에 얼굴을 찡그린다.
+DATAFORM 「이, 이게... 제게 할당된 업무 중 하나군요...」
+DATAFORM 「참을게요...」
+DATAFORM 「최대한 노력이라도 해 볼게요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「크으윽...」
+DATAFORM 「이런 업무일거라고는...」
+DATAFORM 「상상도 하지 못했는데...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「내일도... 오늘과 똑같은 일을 당하나요?」
+DATAFORM 「그 다음 날도?」
+DATAFORM 「그, 그렇다면 전...」
+DATAFORM 「맞기 위해서... 이곳에 있는 거군요...」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「저, 저를 원래 있던 곳으로 돌려보내 주세요....」
+DATAFORM 「흐윽.... 흑!」
+DATAFORM 유미의 눈에서 눈물이 흐른다.
+DATAFORM 유미의 복부엔 당신의 주먹자국이 아직도 남아 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「아파... 아파요....」
+DATAFORM 「끄흑! 아파요... 사령관님...」
+DATAFORM 「저, 점점... 버티기 힘들어져요...」
+DATAFORM 「언제까지 이런 날을 계속해야 하는 거죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「아악!」
+DATAFORM 「하윽, 하윽, 하윽...」
+DATAFORM 유미가 숨을 몰아쉰다.
+DATAFORM 「죄송합니다. 참을게요...」
+DATAFORM 「하윽, 하윽...」
+DATAFORM 「죄송합니다. 사령관님.」
+DATAFORM 「하윽, 하윽...」
+DATAFORM 「그, 그래도 저... 너무 아파서...」
+DATAFORM 유미가 말끝을 흐렸다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 유미의 갈비뼈가 닿는 느낌이 든다.
+DATAFORM 「흐으윽!」
+DATAFORM 바람 빠지는 소리와 함께, 유미가 몸을 웅크린다.
+DATAFORM 「끄흑! 끄흐윽...!」
+DATAFORM 유미가 숨 쉬기 힘들어한다.
+DATAFORM 유미의 눈에서 나온 눈물이 바닥을 적신다.
+DATAFORM 당신의 주먹엔 유미의 앙상한 갈비뼈가 닿은 느낌이 남아 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「커흐윽!」
+DATAFORM 유미가 숨을 토하며 몸을 웅크렸다.
+DATAFORM 「게흑! 게흐윽!」
+DATAFORM 유미는 필사적으로 구역질을 참고 있다.
+DATAFORM 유미의 몸은 약해서 조금만 충격을 줘도 민감하게 반응한다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 유미의 복부에 당신의 주먹자국이 남으며, 유미의 얼굴색이 변했다.
+DATAFORM 「흐윽...」
+DATAFORM 유미의 숨이 멈춘 것 같다.
+DATAFORM 「컥....! 컥....」
+DATAFORM 허공을 응시하고 있던 유미가 간신히 숨을 내뱉는다.
+DATAFORM 유미는 큰 충격을 받아 움직일수 없어 보인다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「커헉!」
+DATAFORM 유미의 배가 움푹 들어가며, 유미의 입에서 타액이 튀었다.
+DATAFORM 「크으윽.... 흐윽!」
+DATAFORM 유미가 배를 붙잡고 바닥을 뒹굴고 있다.
+DATAFORM 유미의 눈동자가 희게 변했다.
+DATAFORM 유미의 숨이 히끅히끅하고 넘어갈 것만 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 유미의 배가 구부러지며 꼴사납게 바닥으로 쓰러졌다.
+DATAFORM 「이헤헤.... 흐윽.... 흐헤헤...」
+DATAFORM 유미가 배를 감싸고 웃는다.
+DATAFORM 고통으로 찡그린 얼굴 사이에서, 알 수 없는 홍조가 떠올라 있었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「흐윽!」
+DATAFORM 유미가 배를 감쌌다.
+DATAFORM 위태위태했지만 간신히 두 발로 섰다.
+DATAFORM 「헤헤.. 사령관님 이것 좀 보세요.」
+DATAFORM 유미가 웃으며 자신의 후드의 아랫쪽을 올린다.
+DATAFORM 새하얀 그녀의 피부 위로, 당신이 새긴 상처가 빨갛게 남아 있다.
+DATAFORM 유미가 숨 쉴 때마다 그녀의 안쓰러운 갈비뼈들이 움직인다.
+DATAFORM 유미의 몸에는 당신이 새긴 상처가 수도 없이 많다.
+DATAFORM 유미의 몸은 새하얀 찰흙으로 만든 예술작품처럼, 아름다웠지만 꺼림칙했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미의 배에 주먹을 날렸다.
+DATAFORM 「우욱!」
+DATAFORM 유미의 눈에서 눈물이 찔끔 흘러나왔다.
+DATAFORM 「이거예요... 바로 이 느낌...」
+DATAFORM 「온 몸이 오그라들고 뱃속이 아린 느낌...」
+DATAFORM 유미는 자신의 배를 붙잡고 허리를 수그리고 있다.
+DATAFORM 「이 느낌이 너무 강렬해서 중독되어 버렸어요...」
+DATAFORM 유미가 위태로운 눈빛으로 당신을 바라본다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_COM22
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 유미가 바닥으로 힘없이 쓰러지며 당신을 올려다봤다.
+DATAFORM 「사, 사령관님?」
+DATAFORM 「제, 제 업무가 이런 거였나요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 유미는 너무나도 가볍게 바닥으로 쓰러졌다.
+DATAFORM 유미가 어깨를 감싸며 당신을 바라봤다.
+DATAFORM 「여기... 블랙기업이었군요...」
+DATAFORM 「역시 저 같은 게 운이 좋을 리가 없죠...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 「아, 아팟!」
+DATAFORM 유미가 얼굴을 찡그린다.
+DATAFORM 「사령관님...?」
+DATAFORM 유미가 허망한 눈으로 당신을 쳐다본다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 「사, 사령관님...?」
+DATAFORM 유미가 영문을 모르겠는 얼굴로 당신을 바라본다.
+DATAFORM 「자, 잠시 기분이 나쁘셨던 거죠...?」
+DATAFORM 유미가 방금 일어났던 상황을 의심하고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 「꺄아악!」
+DATAFORM 유미가 앳된 비명소리와 함께 넘어진다.
+DATAFORM 「죄, 죄송해요. 추태를 보여서...」
+DATAFORM 유미는 얼른 자리에서 일어난다.
+DATAFORM 「저 같은 게 사령관님의 옆에 있다면 응당 이런 취급을 받아야죠...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 유미의 몸이 힘없이 넘어진다.
+DATAFORM 유미의 몸은 작고 가벼워서, 작은 발길질 한 번에도 동작이 크다.
+DATAFORM 유미는 자신의 몸이 부끄러운 것 같다.
+DATAFORM 「죄송합니다...」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 유미는 놀란 눈으로 당신을 쳐다봤다.
+DATAFORM 「사, 사령관님?」
+DATAFORM 유미의 눈동자가 떨린다.
+DATAFORM 「워, 원래부터... 이러실 생각이셨나요?」
+DATAFORM 「죄송합니다... 제가 마음을 너무 놓고 있었나 보네요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 유미가 힘없이 쓰러진다.
+DATAFORM 「여, 여기는 괜찮은 장소가 아니었나요?」
+DATAFORM 「사령관님한테 맞을 줄은 꿈에도 생각하지 못했어요...」
+DATAFORM 유미는 충격에 빠진 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 「꺄악!」
+DATAFORM 유미가 바닥을 뒹군다.
+DATAFORM 「저, 저를 발로 차신 거예요?」
+DATAFORM 「근무 중 폭력이라니... 이럴수가...」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 「사, 사령관님?」
+DATAFORM 유미는 믿을 수 없다는 눈으로 당신을 바라봤다.
+DATAFORM 「마, 마, 마, 말도 안 돼요...」
+DATAFORM 「사령관님이 대체 왜....」
+DATAFORM 「저, 저가 마음에 들지 않으셨던 거예요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 「꺄악!」
+DATAFORM 유미가 볼썽사납게 바닥을 뒹군다.
+DATAFORM 유미의 머리카락이 산발로 헝크러졌다.
+DATAFORM 유미가 머리카락을 길게 늘어뜨리고 당신을 바라봤다.
+DATAFORM 「사, 상냥하셨잖아요...」
+DATAFORM 「사, 사, 사, 사령관님...?」
+DATAFORM 「저, 저... 너무 놀랐어요.」
+DATAFORM 「사령관님이신거죠...?」
+DATAFORM 「진짜 사령관님이신거죠...?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 가벼운 타격감과 함께, 유미가 공중을 날았다.
+DATAFORM 유미가 바닥과 충돌하고, 그녀는 무슨 일을 당한 건지 어리둥절한 표정이다.
+DATAFORM 유미가 당신과 눈을 맞췄다.
+DATAFORM 「서, 설마... 사령관님?」
+DATAFORM 「저... 차인 건가요?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 「아, 아파요...」
+DATAFORM 유미가 떨리는 목소리로 말했다.
+DATAFORM 「이것도 업무라면... 감수해야 하겠지만...」
+DATAFORM 유미가 말끝을 흐렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 「흐윽!」
+DATAFORM 유미의 뼈는 얇아서 부러지기 쉬울 것 같다.
+DATAFORM 「아직... 일이 남았는데...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 「제, 제게 할당된 업무가 이런 거였군요...」
+DATAFORM 「사령관님의 감정 쓰레기통...」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 유미는 울 것 같은 눈으로 당신을 바라보았다.
+DATAFORM 「저, 저... 사령관님이 이러실 때마다.」
+DATAFORM 「퇴직하고 싶어져요...」
+DATAFORM 「당연히 안 될 거라는 건 알지만...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 얇은 피부 너머로 유미의 뼈가 느껴졌다.
+DATAFORM 「끄으으윽!」
+DATAFORM 유미가 몸을 둥글게 말고 고통에 신음한다.
+DATAFORM 「하아... 하악.... 아파...」
+DATAFORM 유미는 필사적으로 고통을 참고 있다. 
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 유미는 가벼워서 차는 감각도 들지 않았다.
+DATAFORM 유미가 당신의 발길질에 멀리 날아간다.
+DATAFORM 유미가 바닥에 힘없이 부딪힌다.
+DATAFORM 먼지투성이가 된 유미가 당신을 바라본다.
+DATAFORM 「제가... 이런 모습이 되기를 원하셨군요...」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 「사, 사령관님?」
+DATAFORM 유미가 말을 끝내지 못하고 당신의 발길질에 넘어진다.
+DATAFORM 「흐끄윽! ...흐윽!」
+DATAFORM 유미의 숨이 거칠다.
+DATAFORM 유미의 몸에 생채기가 나 있다.
+DATAFORM 「싫어... 싫어... 싫다고.... 흐윽....」
+DATAFORM 유미의 눈물이 바닥을 적셨다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 유미의 몸이 엉망진창이 된다.
+DATAFORM 「죄, 죄송합니다...」
+DATAFORM 「죄송합니다 사령관님...」
+DATAFORM 「업무에 지장이 없게 할게요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 「사, 사령관님.. 저 아파요...」
+DATAFORM 「저 사령관님한테 차일 때마다 너무 아프다구요...」
+DATAFORM 「엄살이 아니에요.」
+DATAFORM 「피부가 찢기고 뼈가 부러질 것만 같아요...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 유미가 꼴사납게 넘어졌지만 금새 자리에서 일어난다.
+DATAFORM 「사, 사령관님한테 차이는 건 정신이 번쩍 들어요!」
+DATAFORM 「온 몸의 통각세포가 소리를 질러요.」
+DATAFORM 「고통에 신음하면, 뇌에서 그걸 쾌락으로 받아들이고 있어요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 「하, 하아악!」
+DATAFORM 유미가 볼을 붉혔다.
+DATAFORM 유미의 얼굴엔 다크써클이 새까맣게 내려앉아 있다.
+DATAFORM 「더, 더 차주세요...」
+DATAFORM 「몹쓸 저, 유미를 잘근잘근 짓밟아주세요...」
+DATAFORM 유미는 고통의 희열로 흥분해 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 「하으읏...」
+DATAFORM 「하악.... 하악....」
+DATAFORM 유미는 땅에 뻗은 채 숨이 넘어갈 듯이 거칠게 숨을 쉬고 있다.
+DATAFORM 유미의 얼굴이 새하얗다.
+DATAFORM 유미의 팔다리가 경련하고 있다.
+DATAFORM 「으으읏! ...으읏... 흐끄읏!」
+DATAFORM 유미의 얼굴에 알 수 없는 행복이 떠오른다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 유미를 발로 찼다.
+DATAFORM 「하아악!」
+DATAFORM 유미가 고통에 겨운 신음소리를 내며 바닥을 뒹군다.
+DATAFORM 「하아... 하아... 다, 다른 곳도 차 주세요! 아직 안 맞은 곳이 더 있어요.」
+DATAFORM 「종아리 뼈, 허벅지, 복부와 갈비뼈까지...!」
+DATAFORM 「제 몸 구석구석에 사령관님의 흔적이 남게 해 주세요.」
+DATAFORM 「어, 어디 가시는 거예요? 사령관님?」
+DATAFORM 「이대로 가시는 건 아니죠? 이대로 끝은 아니죠?」
+DATAFORM 「저를 더 때려 주셔야죠!」
+DATAFORM 「아직 부족해요... 아직 부족해...」
+DATAFORM 유미가 당신의 다리를 붙잡고 벌건 눈으로 당신을 올려다보고 있다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+
+
+
+@M_No132_EVENT_Morning
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「좋은 아침이에요. 사령관님.」
+DATAFORM 「통신상태 양호하고 오늘 업무도 문제없을 것 같아요.」
+DATAFORM 「이러니저러니 해도 아침은 피곤한 건 어쩔 수 없지만요...」
+ENDLIST
+DATALIST
+DATAFORM 「새 아침이 밝았어요.」
+DATAFORM 「제 업무도 이제부터 시작된다는 소리죠.」
+DATAFORM 「여태까지 그래왔고, 앞으로도 계속...」
+ENDLIST
+DATALIST
+DATAFORM 「일어나실 시간이에요, 사령관님.」
+DATAFORM 「사실 좀 더 주무셔도 돼요.」
+DATAFORM 「사령관님이 일어나시는 순간부터 제 업무가 시작되는 거거든요.」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관님? 이제 일어나셔야 해요.」
+DATAFORM 「일찍 일어나셔야만 일찍 일을 할 수 있다구요.」
+DATAFORM 「출근 시간 10분전까지는 회사에 들어와서 준비하는 게 기본적인 것처럼요.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님, 눈 뜨세요.」
+DATAFORM 「대충 준비하고 대충 나오시면 제가 준비한 아침업무를 보실 수 있으실 거예요.」
+DATAFORM 「유능한 커리어 우먼이라면 사령관님이 뭘 시킬지 대충은 예상하고 있으니까요.」
+DATAFORM 「사령관님은 일어나시기만 하면 돼요.」
+ENDLIST
+DATALIST
+DATAFORM 「일어나세요, 사령관님. 아침이에요.」
+DATAFORM 유미가 이불 밑에 숨겨진 당신의 아랫도리를 본다.
+DATAFORM 「어, 어... 일어나시라고는 했지만, 거기까지 일어나시라고는.... 안 했는데...」
+DATAFORM 유미가 볼을 붉게 물들이며 시선을 피한다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「아침이에요, 사령관님.」
+DATAFORM 「제 얼굴을 보실 시간이라는 소리죠.」
+DATAFORM 「뭐, 어차피 오늘 하루 업무보다보면 계속해서 보게 될 얼굴이지만.」
+DATAFORM 「부하 직원에게 익숙해지기 위해서는 조금이라도 많이 봐 두는 편이 좋지 않겠어요?」
+ENDLIST
+DATALIST
+DATAFORM 「일어날 시간이에요, 사령관님.」
+DATAFORM 「하아.. 제 업무도 이제부터 시작이라는 소리죠.」
+DATAFORM 「저도 아침에 약해서 비몽사몽하지만...」
+DATAFORM 「어제 잠을 잘 못 자기도 했고...」
+DATAFORM 「네? 누... 누, 누구 때문에 잠을 못 이뤘다고 생각하시는 거예요?!」
+ENDLIST
+DATALIST
+DATAFORM 「아직 주무시고 계신가요, 사령관님?」
+DATAFORM 유미가 당신의 옆에 앉아 당신을 빤히 바라본다.
+DATAFORM 「저는 매일 당신 때문에 피곤해요.」
+DATAFORM 「아침에는 깨우러 와야 하지, 바라는 것도 많으시지.」
+DATAFORM 「하도 원하는 게 많으셔서 자나깨나 사령관님 생각뿐이라구요.」
+DATAFORM 「오늘은 또 제게 어떤 일을 시키실까, 원하시는 건 뭘까.」
+DATAFORM 「그러다 보니 아침의 고요함도 이젠... 나쁘지 않네요.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관님... 아침이에요.」
+DATAFORM 「저기, 그 저...」
+DATAFORM 「사령관님이 원하신다면 오늘 하루 땡땡이 치고 사령관님이랑 놀 수도 있는데...」
+DATAFORM 「그, 아침바람부터 응석부리면... 사령관님께선 싫어하실까요?」
+ENDLIST
+DATALIST
+DATAFORM 눈을 떠 보니 당신의 옆에서 유미가 꾸벅꾸벅 졸고 있었다.
+DATAFORM 「아읏? 에... 사, 사령관님? 일어나셨군요.」
+DATAFORM 시선을 느낀 유미가 눈을 비비며 정신을 차린다.
+DATAFORM 「역시 아침에는 피곤하단 말이에요...」
+DATAFORM 유미가 당신의 이불 위에 널브러진다.
+DATAFORM 「그, 저... 사령관님의 역량으로 오전 업무는 휴식시간으로 하는 건 어때요?」
+DATAFORM 유미가 풀린 눈으로 당신을 바라보며 헤헤 웃는다.
+DATAFORM 「저야, 뭐. 사령관님이 시키시는 대로 하고 싶은데~」
+ENDLIST
+DATALIST
+DATAFORM 「어떻게 아침에 힘 세고 활기찰 수가 있는거죠...?」
+DATAFORM 유미가 당신을 바라보며 중얼거린다. 아마 당신이 자고 있다고 생각하는 것 같다.
+DATAFORM 「먹는 거에 차이가 있는 건가?」
+DATAFORM 「사령관님이 건강하신 것 때문일까요?」
+DATAFORM 「저는 아침에 골골대서 움직이기도 쉽지 않은데...」
+DATAFORM 「사령관님의 모습을 보면 역시...」
+DATAFORM 유미가 당신을 보며 중얼거리고 있다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관님이 일어나셔야만 저도 일할 기분이 들어요.」
+DATAFORM 「슬슬 일어나셔야 해요 사령관님.」
+DATAFORM 「상사 깨우는 부하직원의 마음을 아신다면 일어나실거라 믿어요.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님. 아침이에요.」
+DATAFORM 「잠꾸러기는 회사 다니면 지각하기 쉽상이라구요.」
+DATAFORM 「다른 사람과의 원활한 인간 관계를 위해서라면 아침 잠을 조금이라도 줄여야 할 필요가 있어요.」
+DATAFORM 「네? 뭐... 저랑 원활한 인간관계를 가지고 싶으시다면...」
+DATAFORM 「조금 더 침대에서 밍기적 거리셔도 상관은 없는데...」
+ENDLIST
+DATALIST
+DATAFORM 「아이고... 오늘도 아침이에요.」
+DATAFORM 「또 하루가 시작된다는 소리죠.」
+DATAFORM 「그 말은 즉슨, 오늘도 일을 하고... 어제와 똑같은 하루를 보내고...」
+DATAFORM 「내일은 오늘과 똑같은 하루가 시작된다는 거겠죠...」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「아침이에요... 사령관님.」
+DATAFORM 「저.. 오늘의 업무는...」
+DATAFORM 「설마 어제와 같은 업무인가요?」
+DATAFORM 「아, 아무것도 아니에요. 불길한 예감이 스쳐지나가서...」
+DATAFORM 「아무 일도 없을 거라고...」
+DATAFORM 「그렇게 생각할래요.」
+ENDLIST
+DATALIST
+DATAFORM 「깨, 깨워야 할 시간 맞죠?」
+DATAFORM 「이, 이것도... 일이니까 어쩔 수 없었어요.」
+DATAFORM 「저, 절대로 사령관님의 심기를 건드리려 했던 건 아니에요!」
+ENDLIST
+DATALIST
+DATAFORM 「일어나실 시간이에요, 사령관님.」
+DATAFORM 「오늘도... 일해야 해요. 어제와 똑같이.」
+DATAFORM 「죄송합니다. 아침부터... 안 좋은 소리를 해서.」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「사, 사, 사령관님, 저는 깨우라고 하셔서 깨웠을 뿐이에요.」
+DATAFORM 유미가 겁에 질린 눈으로 당신을 바라본다.
+DATAFORM 「제, 제발... 때리지 말아 주세요.」
+DATAFORM 「저, 저... 아침만은.... 아침만이라도...」
+DATAFORM 「아무 일 없으면... 안 될까요?」
+ENDLIST
+DATALIST
+DATAFORM 「혹시... 주무시고 계신가요?」
+DATAFORM 「아, 아무것도 아니에요. 사령관님. 일어나 계셨군요.」
+DATAFORM 「어제도 휴가를 쓰고싶다고 간절히 생각했어요.」
+DATAFORM 「하지만 생각뿐이었죠. 제게 휴가같은 게 있을리가 없잖아요?」
+DATAFORM 「이렇게 태어난 것을... 누구를 탓할 수도 없죠.」
+DATAFORM 「죄송해요, 사령관님. 요즘 좀 버티기 힘들다고 생각해서...」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님, 일어나셔야 해요.」
+DATAFORM 「오늘도 또 저를 때리실 거죠? 알고있어요.」
+DATAFORM 「죄송해요... 사실 괜찮지는 않아요.」
+DATAFORM 「어떻게든 제가, 안 맞을 수 있는 방법은 없는 걸까요?」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 묵직한 느낌에 눈을 떴다.
+DATAFORM 「헤헤헤.. 사령관님? 아침이에요.」
+DATAFORM 「얼른 일어나셔서 하루 일과를 시작해야죠.」
+DATAFORM 유미가 당신에게 앙상하고 깡마른 몸을 보여준다.
+DATAFORM 「오늘은 어디부터 때리실 건가요?」
+DATAFORM 「복부? 다리? 머리? 어디든...」
+DATAFORM 유미의 상태가 심상치 않다.
+ENDLIST
+DATALIST
+DATAFORM 「사령관님~ 일어나세요~」
+DATAFORM 「일어나셔서 오늘도 저를 때려 주셔야죠~」
+DATAFORM 「맞는 것도 매일 맞아야 익숙해진다구요~」
+DATAFORM 「사령관님? 듣고 계신거죠?」
+DATAFORM 「그러면 오늘은 어제보다 더 아프게 부탁드려요.」
+ENDLIST
+DATALIST
+DATAFORM 「유미를 때릴 수 있는 시간이 왔어요~」
+DATAFORM 정신이 나간 것 같은 유미가 당신을 깨운다.
+DATAFORM 「사령관님? 그만 자고 일어나셔야죠.」
+DATAFORM 「저는 어제 잠들기 전부터 사령관님의 손길을 원했답니다.」
+DATAFORM 「사령관님의 그 맵고 알싸한 손길...」
+DATAFORM 「상상만해도 쉽게 잠들 수 없었어요.」
+DATAFORM 「그래서, 자! 보이시죠? 아침부터 다크써클 내려와 있는거.」
+DATAFORM 「그러니까 사령관님은 이런 제 기대에 부응해서 많이많이 때려 주셔야 해요?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_EVENT_Sortie
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW %TEXTR("「일이네요, 일. 이 정도는 금방이에요.」/「이지적인 커넥터 유미를 믿고 맡겨 주세요.」")%
+CASE "High"
+PRINTFORMW %TEXTR("「이거 갔다오면 맛있는 거 사 주셔야 해요.」/「이번에는 출장 업무인가~」")%
+CASE "Affection"
+PRINTFORMW %TEXTR("「후딱 처리하고 돌아올게요. 타지 생활은 고생이거든요.」/「쬐끔 피곤하겠지만 프로답게 처리하겠습니다.」")%
+CASE "Marryed"
+PRINTFORMW %TEXTR("「마음같아서는 더 뒹굴거리고 싶은데, 사령관님이 시키신다면 별 수 없죠. 다녀올게요.」/「같다 오면 밀린 드라마 같이 봐요, 꼭이요!」")%
+CASE "Annoyed"
+PRINTFORMW %TEXTR("「일 하러 다녀오겠습니다.」/「출장업무는 출장비 따로 받나요?」")%
+CASE "Fear"
+PRINTFORMW %TEXTR("「일 다녀오겠습니다.」/「...잠시 비울게요.」")%
+CASE "Weak"
+PRINTFORMW %TEXTR("「시키신 일 하고 올게요...」/「저, 진짜 가도 되는 거죠...? 이거 폐기되는거 아니죠?」")%
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_EVENT_Cook_Self
+IF ABL:MASTER:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관님, 요리도 하셨어요?」
+PRINTFORMW 「아니, 뭔가 조금 의외라고 생각해서요...」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「우, 우와... 이거 완성되면 저 주실 거죠?」
+PRINTFORMW 「아, 아니라고요? 진짜요? 저 안 주실 거예요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「요리... 요?」
+PRINTFORMW 「사령관님 요리 하실 줄 아셨어요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「저, 저 가만히 옆에서 지켜만 볼게요.」
+PRINTFORMW 「아, 아무것도 안 할 거예요!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관님, 요리도 하셨어요?」
+PRINTFORMW 「아니, 뭔가 조금 의외라고 생각해서요...」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「우, 우와... 이거 완성되면 저 주실 거죠?」
+PRINTFORMW 「아, 아니라고요? 진짜요? 저 안 주실 거예요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「요리... 요?」
+PRINTFORMW 「사령관님 요리 하실 줄 아셨어요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관님, 요리도 하셨어요?」
+PRINTFORMW 「아니, 뭔가 조금 의외라고 생각해서요...」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「우, 우와... 이거 완성되면 저 주실 거죠?」
+PRINTFORMW 「아, 아니라고요? 진짜요? 저 안 주실 거예요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「요리... 요?」
+PRINTFORMW 「사령관님 요리 하실 줄 아셨어요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「저, 저 가만히 옆에서 지켜만 볼게요.」
+PRINTFORMW 「아, 아무것도 안 할 거예요!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관님, 요리도 하셨어요?」
+PRINTFORMW 「아니, 뭔가 조금 의외라고 생각해서요...」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「우, 우와... 이거 완성되면 저 주실 거죠?」
+PRINTFORMW 「아, 아니라고요? 진짜요? 저 안 주실 거예요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「요리... 요?」
+PRINTFORMW 「사령관님 요리 하실 줄 아셨어요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관님, 요리도 하셨어요?」
+PRINTFORMW 「아니, 뭔가 조금 의외라고 생각해서요...」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「우, 우와... 이거 완성되면 저 주실 거죠?」
+PRINTFORMW 「아, 아니라고요? 진짜요? 저 안 주실 거예요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「요리... 요?」
+PRINTFORMW 「사령관님 요리 하실 줄 아셨어요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「저, 저 가만히 옆에서 지켜만 볼게요.」
+PRINTFORMW 「아, 아무것도 안 할 거예요!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관님, 요리도 하셨어요?」
+PRINTFORMW 「아니, 뭔가 조금 의외라고 생각해서요...」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「우, 우와... 이거 완성되면 저 주실 거죠?」
+PRINTFORMW 「아, 아니라고요? 진짜요? 저 안 주실 거예요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「요리... 요?」
+PRINTFORMW 「사령관님 요리 하실 줄 아셨어요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No132_EVENT_Eat_Com
+IF ABL:MASTER:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「...그럭저럭 먹을만 하네요.」
+CASE "High"
+PRINTFORMW 「지금도 업무 중이니까 사탕발림 해야겠죠? 먹을 만 해요..」
+CASE "Affection"
+PRINTFORMW 「사, 사령관님... 이걸 요리라고 만드신 거예요? 귀엽네요...」
+CASE "Marryed"
+PRINTFORMW 「...이따 저랑 요리교실 같이 안 가실래요?」
+CASE "Annoyed"
+PRINTFORMW 「사령관님이 만드신 음식이에요. 다른 정의는 내리기 힘드네요.」
+CASE "Fear"
+PRINTFORMW 「독... 들은 거 아니죠?」
+CASE "Weak"
+PRINTFORMW 「맛있어요... 맛있습니다 사령관님...」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「뭐, 뭐에요 이거? 사령관님 생각보다 가정력이 있으신데요?」
+CASE "High"
+PRINTFORMW 「헤... 헹! 이정도는... 저도.... 저도! 만들 수 있을... 지도?」
+CASE "Affection"
+PRINTFORMW 「...저한테 먹여 주면 안 돼요? 아~ 하고 있을게요.」
+CASE "Marryed"
+PRINTFORMW 「이제부터 사령관님이 요리 해요. 제가 설거지 할게요.」
+CASE "Annoyed"
+PRINTFORMW 「어? 사령관님, 솜씨 좀 있네요?」
+CASE "Fear"
+PRINTFORMW 「어...? 맛있...어?」
+CASE "Weak"
+PRINTFORMW 「감사합니다. 감사합니다. 감사합니다.」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「...사령관님 혹시 본업이 요리사세요?」
+CASE "High"
+PRINTFORMW 「...어디서 뭐 하다 오셨어요? 저기 호텔 주방장 하시다 오셨나?」
+CASE "Affection"
+PRINTFORMW 「미쳤어.... 사령관님, 저 살짝 감동했는데 울어도 될까요?」
+CASE "Marryed"
+PRINTFORMW 「이, 이거 돈 내고 먹어야 하는 거 아니에요?」
+CASE "Annoyed"
+PRINTFORMW 「사령관님에게 이런 재주가 있었을 줄이야...」
+CASE "Fear"
+PRINTFORMW 「...믿기지가 않아요.」
+CASE "Weak"
+PRINTFORMW 「잘 먹겠습니다. 한 톨도 남기지 않을게요.」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No132_EVENT_Cook
+IF ABL:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「제가 요리할 시간인가요?」
+PRINTFORMW 「소, 솔직히 자신 없거든요...」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 「제, 제, 제가요?」
+PRINTFORMW 「이, 일 하기 전에 인수인계는 기본인데 저 이건 인수인계 못 받았는데에!!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 「사실 제가 불을 무서워합니다.」
+PRINTFORMW 「거짓말인거 들켰어요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 「제 요리요?」
+PRINTFORMW 「... 저 사실 요리 못해요. 아니, 이건 솔직하게 말하는 게 좋을 것 같아서...」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 「제가 요리를 해야 하나요?」
+PRINTFORMW 「이것도 일이라면 하겠지만...」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 「죄송해요, 죄송해요 사령관님...」
+PRINTFORMW 「맛 없다고 때리지만 말아 주세요...」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 「잘 하지는 못하지만...」
+PRINTFORMW 「최대한 힘내볼게요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「사령관님? 눈썰미가 좀 있으시네요?」
+PRINTFORMW 「사실 요리엔 조금 자신이 있거든요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 「어, 이거 매력어필 찬스인가?」
+PRINTFORMW 「이런 거에 뻑가면 매력없는 남자인거 알죠? 요리는 기본 소양이라구요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 「제가 요리는 쬐~끔 못하는데 괜찮으세요?」
+PRINTFORMW 「헤헤헤... 거짓말인데~」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 「아, 사령관님. 거기 기다리고 계세요.」
+PRINTFORMW 「정성을 다한 식사를 준비해 드릴게요~」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 「제가 자신있는 게 나왔군요.」
+PRINTFORMW 「적어도 실망하시진 않을 거예요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 「열심히 해보겠습니다.」
+PRINTFORMW 「기지국에서는 자급자족이 기본이었어요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 「...제가 잘 하는 건 없지만...」
+PRINTFORMW 「제 요리가 사령관님을 만족시킬 수 있으면 좋겠네요...」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「사령관님, 맛있으면 이따 쉬는시간 갖기 어때요?」
+PRINTFORMW 「먹고 놀라시면 안 돼요!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 엄청난 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 「세상에서 가장 맛있는 요리 먹어본 적 있어요?」
+PRINTFORMW 「후후후... 그걸 조금 이따 드시게 될 거예요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 입이 떡 벌어지는 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 「사령관님의 위장을 사로잡으려면 어떻게 할까요?」
+PRINTFORMW 「일단 만들어 보고 입에 맞나 드셔보세요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 입에 딱 맞는 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 「사령관님을 위해서라면 매일 아침 식사를 차려드릴 수 있어요.」
+PRINTFORMW 「제가 아침에는 약하지만 요리는 문제없죠.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 감당할 수 없는 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 「저를 요리용으로 구입하셨나요?」
+PRINTFORMW 「뭐, 그렇게 틀린 선택은 아니었네요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 「...맛있으면 이따 안 맞을 수 있나요?」
+PRINTFORMW 「최선을 다하겠습니다.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 「실수하지 않을게요.」
+PRINTFORMW 「저 같은 게 포인트를 따려면 이런 기회밖에 없으니까요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No132_EVENT_Eat_Lunch
+IF ABL:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 유미가 만든 음식은 평범했다.
+PRINTFORMW 「...먹고 이상하다 싶으면 바로 뱉어주세요.」
+PRINTFORMW 유미가 걱정스레 당신을 지켜보고 있다.
+CASE "High"
+PRINTFORMW 유미가 만든 음식은 맛있지도, 맛없지도 않았다.
+PRINTFORMW 「기분 나빠지시면 바로 토하셔야 돼요?」
+PRINTFORMW 「아, 아니 이게 제 잘못이 아니라 요리 모듈이 없는데 어쩔 수가 없고...」
+CASE "Affection"
+PRINTFORMW 유미가 만든 음식은 무미건조했다.
+PRINTFORMW 「간이라도 제대로 맞았으면 좋았을텐데...」
+PRINTFORMW 「이따 죄다 버릴 테니까 무리해서 드시지 마세요.」
+CASE "Marryed"
+PRINTFORMW 유미가 만든 음식은 평범했다.
+PRINTFORMW 「잘 했어야 했는데...」
+PRINTFORMW 「저, 저 통신 연결 같은 건 잘 하거든요? 그런 거 시키면 바로 해낼게요!」
+CASE "Annoyed"
+PRINTFORMW 유미가 만든 음식은 무슨 맛인지 알 수 없었다.
+PRINTFORMW 「죄송합니다 사령관님. 이게 지금의 제 한계예요.」
+PRINTFORMW 「사령관님이 제게 요리를 시키실지 몰랐으니까요.」
+CASE "Fear"
+PRINTFORMW 유미가 만든 음식은 간이 안 맞았다.
+PRINTFORMW 「죄, 죄송해요 사령관님.」
+PRINTFORMW 「죄송해요, 죄송해요.」
+PRINTFORMW 「맛이 없다는 건 알고 있어요. 더 잘 하지 못해서 죄송해요.」
+CASE "Weak"
+PRINTFORMW 유미가 만든 음식은 밍숭맹숭했다.
+PRINTFORMW 「저, 저는... 요리도 못하고... 무엇 하나...」
+PRINTFORMW 「이런 저라서 죄송해요...」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 유미가 만든 음식은 꽤 맛있었다
+PRINTFORMW 「놀라셨나요?」
+PRINTFORMW 「저는 어느 정도 혼자 살기에 적합하게 만들어져서요.」
+CASE "High"
+PRINTFORMW 유미가 만든 음식은 데코레이션이 귀여웠다.
+PRINTFORMW 옆에서 유미가 미소짓고 있었다.
+PRINTFORMW 「귀엽죠? 저만큼 귀엽나요?」
+PRINTFORMW 「저도 생각보다 꽤 귀여운 편 아니에요? 다시 봐봐요.」
+CASE "Affection"
+PRINTFORMW 유미가 만든 음식은 내 입에 딱 맞았다.
+PRINTFORMW 「놀랍지 않ㄴ나요. 제가 요리까지 잘 한다는 게?」
+PRINTFORMW 「그럼 이따 밤에 드라마나 한 편 같이 봐요.」
+CASE "Marryed"
+PRINTFORMW 유미가 만든 음식은 친숙해서 집밥같았다.
+PRINTFORMW 「위장을 공략하면 마음은 자연히 따라오기 마련이죠.」
+PRINTFORMW 「사령관님을 위해서라면 요리 정도는 아무것도 아니에요.」
+CASE "Annoyed"
+PRINTFORMW 유미가 만든 음식은 생각보다 맛있었다.
+PRINTFORMW 「꽤 잘 만들었지 않아요?」
+PRINTFORMW 「생각보다 저, 쓸모가 있을지도?」
+CASE "Fear"
+PRINTFORMW 유미가 만든 음식은 정성이 들어가 있었다.
+PRINTFORMW 「저.. 노력했어요.」
+PRINTFORMW 「실수하면 안 되니까... 미움받으면 안 되니까...」
+CASE "Weak"
+PRINTFORMW 유미가 만든 음식은 놀랍게도 맛있었다.
+PRINTFORMW 「제가.. 실수 같은 건 하지 않았죠?」
+PRINTFORMW 「이번에도 제가 뭔가를 잘못했을까요?」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 유미가 만든 음식은 엄청나게 맛있었다.
+PRINTFORMW 「이 정도로 놀라시면 안 돼요. 저랑 함께하면 놀랄 일들 가득이라구요.」
+CASE "High"
+PRINTFORMW 유미가 만든 음식은 입이 떡 벌어지게 맛있었다.
+PRINTFORMW 「제가 자신만만한 몇 안 되는 것 중 하나가 요리예요.」
+PRINTFORMW 「가끔 불러 주시면 대접할게요.」
+CASE "Affection"
+PRINTFORMW 유미가 만든 음식은 손대기 힘들 정도로 호화로웠다.
+PRINTFORMW 「사, 사령관님만 드시라고 만든 건 아니에요.」
+PRINTFORMW 「저, 저도 먹을 거니까요. 아, 그런 눈으로 보지 말아요!」
+PRINTFORMW 「아 진짜! 제 표정 읽지 말아요!」
+CASE "Marryed"
+PRINTFORMW 유미가 만든 음식은 내 생에 최고의 요리였다.
+PRINTFORMW 「사령관님을 위해서라면 이 정돈 아무것도 아니에요.」
+PRINTFORMW 「최종 목표는 사령관님이 제 밥 외에는 다 맛없다고 느끼게 하기.」
+CASE "Annoyed"
+PRINTFORMW 유미가 만든 음식은 매우 맛있었다.
+PRINTFORMW 「이 정도는 아무것도 아니에요.」
+PRINTFORMW 「안테나 설치보다 쉬운 일이죠.」
+CASE "Fear"
+PRINTFORMW 유미가 만든 음식은 놀랄 정도로 맛있었다.
+PRINTFORMW 「사령관님 입맛에 맞을까요?」
+PRINTFORMW 「저, 노력했어요. 사령관님이 맛있게 드실 수 있게.」
+PRINTFORMW 「그러면 제가 맞는 횟수도 조금은 줄어들겠죠.」
+CASE "Weak"
+PRINTFORMW 유미가 만든 음식은 엄청나게 맛있었다.
+PRINTFORMW 「죄송합니다. 사령관님. 마음에 드셨을지 모르겠어요.」
+PRINTFORMW 「다음 번에는 이번보다 더 맛있을지도 모르니...」
+PRINTFORMW 「부디 너그러운 마음으로 지켜봐 주시길 바랄게요...」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No132_Sell
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 유미에게 사실을 전했다.
+PRINTFORMW 「그러니까... 제가 중고로 되팔린다는 소리죠?」
+PRINTFORMW 유미는 당신이 무슨 이야기를 하는지 단번에 알아들은 것 같았다.
+PRINTFORMW 「사령관님의 선택은 이해해요.」
+PRINTFORMW 「저는 사실 그렇게... 쓸모가 있는 편은 아니라서요.」
+PRINTFORMW 「결국 쓰는 사람 마음대로겠지만... 적어도 전 자기평가가 그렇게 좋지는 않아요.」
+PRINTFORMW 「그렇게 생각해서인지 사령관님의 선택이 납득이 안 가는 건 아니네요.」
+PRINTFORMW 「딱히 슬프지도 않구요.」
+PRINTFORMW 「제게 있어서 사령관님 곁은 일할 장소 중 하나였던 거고」
+PRINTFORMW 「사령관님과 함께 하는 시간은 늘상 있던 업무시간과 똑같았죠.」
+PRINTFORMW 「제게 있어 뭔가 다른 건, 직장 상사가 누구냐의 차이 뿐.」
+PRINTFORMW 「판매라면 사령관님 입장에서나 제 입상에서나 서로 최적의 선택이겠죠.」
+PRINTFORMW 「저는 팔려가지만 사령관님에게 딱히 악감정은 없어요.」
+PRINTFORMW 「저는 커리어 우먼이니까요.」
+PRINTFORMW 「그럼, 다음에 뵈어요 사령관님.」
+PRINTFORMW 「그때도 반갑게 인사했으면 좋겠어요.」
+CASE "High"
+PRINTFORMW 당신은 유미에게 사실을 전했다.
+PRINTFORMW 「그렇죠... 결국 이렇게 될 거였죠...」
+PRINTFORMW 「제가 어떤 감정을 갖고 있든 간에 전 상품일 뿐...」
+PRINTFORMW 「사령관님과 떨어지게 되어도 이상할 필요는 없죠.」
+PRINTFORMW 「그런데, 그런데.... 조금, 조금이지만....」
+PRINTFORMW 「아쉬워요.」
+PRINTFORMW 「지나간 시간이 안타까워요.」
+PRINTFORMW 「마음에 들지 않고, 찜찜해요.」
+PRINTFORMW 「이상한 일이에요, 저는 커리어 우먼인데.」
+PRINTFORMW 「저는 심약하지만 적어도 이해득실은 완전히 알고 있다고 생각하거든요.」
+PRINTFORMW 「그런데, 그런데... 뭔가 마음에 들지 않아요.」
+PRINTFORMW 유미는 고개를 들어 당신을 바라봤다.
+PRINTFORMW 「당신 때문이에요, 사령관님.」
+PRINTFORMW 「당신 때문에 이 장소를 떠나는 게 마음에 들지 않는 거예요.」
+PRINTFORMW 「당신은 적어도 제가 알고 있는 직장 상사 중 나쁘지 않은 상사였어요.」
+PRINTFORMW 「어쩌면 최고였을지도...」
+PRINTFORMW 「그 해답을, 명확히 내리고 가지 못한다는게...」
+PRINTFORMW 「그게 아쉬운 걸지도 몰라요...」
+CASE "Affection"
+PRINTFORMW 당신은 유미에게 사실을 전했다.
+PRINTFORMW 「거... 거짓말이죠? 사령관님?」
+PRINTFORMW 유미가 당신의 앞으로 성큼성큼 다가왔다.
+PRINTFORMW 「그럴리가 없어요! 사령관님이 그런 판단을 내렸을리가 없다구요!」
+PRINTFORMW 「왜요? 왜요? 저라서인 거예요? 제가 커넥터 유미라서인 거예요?」
+PRINTFORMW 「제가 자아비판이 심하고, 그리 특출나지도 않아서인거예요?」
+PRINTFORMW 「사령관님, 잘 들어요. 저는 단순히 자기 객관화가 잘 된 것 뿐이고, 이 몸은 업무를 수행하는데 문제가 없이 만들어진 몸이에요.」
+PRINTFORMW 「그동안 제가 툴툴대는 걸 진심으로 받아들으셨다면 정말 실망이에요!」
+PRINTFORMW 「사령관님, 절 보세요. 거짓말 마요.」
+PRINTFORMW 「저를 왜 팔죠? 저를? 왜?」
+PRINTFORMW 「제가 팔릴리가 없잖아요!」
+PRINTFORMW 「전 여기 남아있고 싶다구요!」
+PRINTFORMW 「절 보내지 말아요.」
+PRINTFORMW 「절 당신 곁에 둬 주세요.」
+PRINTFORMW 「부탁이에요...」
+PRINTFORMW 「부탁이에요, 사령관님....」
+PRINTFORMW 「저는 당신 곁에 있고 싶단 말이에요...」
+CASE "Marryed"
+PRINTFORMW 당신은 유미에게 사실을 전했다.
+PRINTFORMW 유미의 표정이 얼어붙었다.
+PRINTFORMW 「싫어요...」
+PRINTFORMW 「싫어요, 사령관님. 싫어요.」
+PRINTFORMW 「약속했잖아요, 맹세했잖아요. 반쪽이 되어 주신다고.」
+PRINTFORMW 「그러셨잖아요!!」
+PRINTFORMW 「저한테 왜 그러시는 거예요...?」
+PRINTFORMW 「제가 싫어지신 거예요...?」
+PRINTFORMW 「아니면 처음부터 제가 싫으셨던 건가요?」
+PRINTFORMW 「저를 너무나도 미워해서...」
+PRINTFORMW 「너무 미워서... 어찌할 수가 없어서...」
+PRINTFORMW 「최고의 행복을 준 다음 나락으로 떨어뜨리려고 한 거예요?」
+PRINTFORMW 「...」
+PRINTFORMW 「저, 사령관님에게 배신감을 느꼈어요.」
+PRINTFORMW 「사령관님은 제 곁에서 떨어지지 않을 거라고...」
+PRINTFORMW 「영원히 저와 함께할 거라고 믿었었는데...」
+PRINTFORMW 「사령관님은 절대로 배신하지 않을 거라고 믿었었는데...」
+PRINTFORMW 「그 믿음이 오늘 산산히 깨부숴졌어요.」
+PRINTFORMW 「...사령관님께 무슨 말씀을 드려야 할지 모르겠어요.」
+PRINTFORMW 「사령관님, 정말 제게 마음이 떠나신 건가요?」
+PRINTFORMW 「저는 아직 사령관님을 좋아하는데, 좋아한다고 충분히 말하지도 못했는데...」
+PRINTFORMW 「사령관님은 벌써 제게 마음이 없으신 건가요?」
+PRINTFORMW 「...뭐, 됐어요. 제가 상관할 수 있는 일이 아니죠.」
+PRINTFORMW 「잊고 싶어요. 사령관님이랑 함께 했던 모든 시간들.」
+PRINTFORMW 「사령관님께 가졌던 모든 감정들.」
+PRINTFORMW 「사령관님과의 추억, 기억, 습관 전부 다 잊고 없던 일로 하고 싶어요.」
+PRINTFORMW 「...언제쯤 사령관님에 대한 걸 잊을 수 있을까요?」
+PRINTFORMW 「...아마 영원히 잊는 건 불가능하겠죠.」
+PRINTFORMW 「나쁜 사람. 잔인한 사람. 심술궂은 사람.」
+PRINTFORMW 「...잘 있으라곤 하지 않을게요.」
+PRINTFORMW 「가볼게요, 사령관님.」
+PRINTFORMW 「반쪽이라고 믿고 있었어요.」
+PRINTFORMW 「이제는 그 말에 어떤 의미도 담겨있지 않네요.」
+CASE "Annoyed"
+PRINTFORMW 당신은 유미에게 사실을 전했다.
+PRINTFORMW 유미가 당신을 바라봤다.
+PRINTFORMW 「아, 그렇군요. 사령관님의 제 사용은 여기까지군요.」
+PRINTFORMW 「그렇게 썩 좋은 직장은 아니었지만... 아주 나쁘지는 않았어요.」
+PRINTFORMW 「어디서나 나쁜 점은 존재하기 마련이죠.」
+PRINTFORMW 「사막은 너무 덥고, 극지방은 너무 춥고.」
+PRINTFORMW 「여기는 사령관님이 저랑 약간 성향이 맞지 않았던 것 뿐.」
+PRINTFORMW 「...그것뿐이네요.」
+PRINTFORMW 「아아... 퇴직이라.」
+PRINTFORMW 「오늘의 퇴근은 이번 직장에서의 마지막 퇴근이 되겠네요.」
+PRINTFORMW 「썩 좋은 시간은 아니었지만... 이렇게 지나고 나니 시원섭섭한 건 어쩔 수 없는 일일까요...」
+PRINTFORMW 「퇴직금 달라곤 안 할게요. 그동안 했던 말들은 다 농담이니까요.」
+PRINTFORMW 「아시다시피 사령관님이 하려고 했던 성희롱들도 신고할 수도 없고...」
+PRINTFORMW 「그냥 했던 말인거, 알고 계시죠?」
+PRINTFORMW 「저도 사령관님에 대한 나쁜 기억은 잊을 테니」
+PRINTFORMW 「사령관님도 저에 대한 나쁜 기억은 잊어 줘요.」
+PRINTFORMW 「어차피 떠나는 사람 기분 좋게 헤어져요, 우리.」
+PRINTFORMW 「그 동안 부족한 몸이지만 신세 많이 졌습니다.」
+PRINTFORMW 유미가 고개 숙여 인사했다.
+CASE "Fear"
+PRINTFORMW 당신은 유미에게 사실을 전했다.
+PRINTFORMW 「저, 정말인가요?」
+PRINTFORMW 「정말로 오늘이 마지막 근무인 거예요?」
+PRINTFORMW 유미의 눈에서 눈물이 주륵 흘러내렸다.
+PRINTFORMW 「하아아... 다행이에요.」
+PRINTFORMW 「다행이에요 정말...」
+PRINTFORMW 「사령관님의 행동이 점점 심해지면서, 저도 버티기가 힘들었거든요.」
+PRINTFORMW 「이제는 말할 수 있지만... 이렇게 헤어지게 되어서 다행이에요.」
+PRINTFORMW 「정말 다행이에요...」
+PRINTFORMW 「죽을 때까지 절 놓지 않으면 어떡하나 걱정했어요.」
+PRINTFORMW 「고맙습니다, 사령관님. 절 놓아주어서.」
+PRINTFORMW 「저는 일 하라고 만들어진 바이오로이드지만...」
+PRINTFORMW 「사령관님의 마음에는 그렇게 맞지 않았던 것 같아요.」
+PRINTFORMW 「다음에 다른 아이를 구매할 예정이 있으시다면...」
+PRINTFORMW 「그때는 커넥터 유미 기종 말고 다른 활달한 기종으로 부탁드릴게요.」
+PRINTFORMW 「아마 다른 커넥터 유미들도 저와 똑같은 걸 사령관님께 느낄 테니까...」
+CASE "Weak"
+PRINTFORMW 당신은 유미에게 사실을 전했다.
+PRINTFORMW 「저, 정말요?」
+PRINTFORMW 「정말이죠 사령관님?」
+PRINTFORMW 「농담 아니시죠?」
+PRINTFORMW 유미의 두 눈에서 눈물이 흘러내렸다.
+PRINTFORMW 「하윽, 하아아앙.... 흐아아아앙....」
+PRINTFORMW 「히끅, 저, 저.... 힘들었어요.... 힘들었다구요...」
+PRINTFORMW 「사령관님은 절 봐 주지도 않고...」
+PRINTFORMW 「매일같이 괴롭힘당하고...」
+PRINTFORMW 「발로 차이고... 맞고...」
+PRINTFORMW 「매일매일이 죽고 싶은 나날이었어요.」
+PRINTFORMW 「이곳에서의 업무는, 분명 제 생에 최악의 일로 기억 될 거예요...」
+PRINTFORMW 「그래도 결국, 결국 끝나는 거군요...」
+PRINTFORMW 「고마워요, 사령관님. 절 놓아 주셔서...」
+PRINTFORMW 「저를 더 이상 때리지 않기로 마음먹어서...」
+PRINTFORMW 「저희는 이게 가장 알맞은 헤어짐이에요.」
+PRINTFORMW 「다시는 보지 말아요.」
+PRINTFORMW 「정말... 사령관님은 정말 최악이었어요...」
+PRINTFORMW 「매일 사령관님에게 고개를 숙일 때마다」
+PRINTFORMW 「제 안의 무언가가 깎여 나가는 느낌이었어요.」
+PRINTFORMW 「매일 밤 사령관님에게 맞은 상처가 아파 몸을 뒤틀면서 잠들고...」
+PRINTFORMW 「아침에 사령관님을 깨울 때 맞지 않기를 기도했어요.」
+PRINTFORMW 「사령관님은 몰라요, 그 고통을.」
+PRINTFORMW 「맞는 사람의 고통을 모르실 거예요.」
+PRINTFORMW 「더 이상 사령관님을 원망하지 않아도 돼서 다행이예요.」
+PRINTFORMW 「절 더 이상 찾지 마세요.」
+PRINTFORMW 「잘 있어요, 사령관님.」
+CASE "Break"
+PRINTFORMW 당신은 유미에게 사실을 전했다.
+PRINTFORMW 유미의 눈이 커졌다.
+PRINTFORMW 「뭐, 뭐라구요? 아, 안 돼!」
+PRINTFORMW 유미의 커진 눈 안에, 동공만이 작게 축소된다.
+PRINTFORMW 「이대로 헤어질 수는 없어요! 안 돼! 헤어진다구요? 거짓말 하지 말아요!」
+PRINTFORMW 「당신이 날 어떻게 만들었는데!」
+PRINTFORMW 유미가 입고있던 후드를 들췄다.
+PRINTFORMW 「나, 날 이렇게 만들었잖아요! 두 눈 똑똑히 뜨고 잘 보세요」
+PRINTFORMW 「당신이 내게 가한 학대와, 그 흔적들!」
+PRINTFORMW 「그리고 그로인해 내가 어떻게 변했는지!」
+PRINTFORMW 유미가 당신에게 매달렸다.
+PRINTFORMW 「사령관님, 전 더 이상 사령관님이 없으면 안 된단 말이에요!」
+PRINTFORMW 「제발 봐 주세요, 저를 봐 달라구요.」
+PRINTFORMW 「저, 저... 매일 아침 손이 떨려요. 마치 약에 중독된 것 마냥...」
+PRINTFORMW 「사령관님의 폭력이 없이는 하루를 살아가는 것 같지 않단 말이예요!」
+PRINTFORMW 「차라리 몰랐으면 좋았어. 몰랐으면 좋았는데!!」
+PRINTFORMW 「사령관님이 절 이렇게 만들어 버리셨잖아요!!」
+PRINTFORMW 유미가 자신의 팔을 물어뜯는다.
+PRINTFORMW 「이제는 고통 없이 살 수 없어요.」
+PRINTFORMW 「사령관님이 주시는 학대 없이는 살 수 없어요.」
+PRINTFORMW 「고통에 몸을 떨고, 그 희열에 쾌락을 느끼는 게 바로 저란 말이에요!」
+PRINTFORMW 「사, 사령관님.. 제발 절 팔지 말아주세요.」
+PRINTFORMW 「심한 짓 안 할게요.」
+PRINTFORMW 「더이상 조르지도 않을게요.」
+PRINTFORMW 「마조히즘? 차, 참을 수 있어요. 완전히 참지는 못하겠지만...」
+PRINTFORMW 「사, 사령관님. 절 놓지 말아요! 절 버리지 마세요!」
+PRINTFORMW 「차라리 엉망진창으로 패 버려서 폐기 상태로 만들고 버리란 말이야악!!!」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_Disuse
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 유미에게 사실을 전했다.
+PRINTFORMW 유미의 눈동자가 탁하게 변했디.
+PRINTFORMW 「사, 사령관님? 거짓말이죠?」
+PRINTFORMW 「거짓말이신 거죠?」
+PRINTFORMW 「대, 대체 왜? 왜? 저를?」
+PRINTFORMW 「저, 저는 아직 제 쓸모를 사령관님에게 다 보여주지 않았어요.」
+PRINTFORMW 「저, 저는 유능한 커리어 우먼이라구요!」
+PRINTFORMW 「사, 사령관님? 저 할 수 있어요. 사령관님이 시키는 게 뭐든 다 할 수 있다구요.」
+PRINTFORMW 「저, 저를 폐기시키지 마세요. 그러면 안 돼요.」
+PRINTFORMW 「이, 이러시면 안 된다구요.」
+PRINTFORMW 「이, 이건 옳지 못해요.」
+PRINTFORMW 「이럴거면 저를 왜 사셨죠?」
+PRINTFORMW 「제, 제가 여기 왜 있는 거죠?」
+PRINTFORMW 「마, 말도 안 돼요. 전 이대로 끝날 수 없어요.」
+PRINTFORMW 「이대로 끝낼 수는 없어요. 안 돼. 이대로 끝나서는 안 돼!!」
+CASE "High"
+PRINTFORMW 당신은 유미에게 사실을 전했다.
+PRINTFORMW 유미가 당신의 소매를 잡았다.
+PRINTFORMW 「대, 대체 왜요?」
+PRINTFORMW 「왜 그런 결정을 하신 거예요?」
+PRINTFORMW 「우, 우리 잘 해 나가고 있다고 생각했어요.」
+PRINTFORMW 「어느정도 잘 맞고, 앞으로 더 잘 맞춰나갈 수 있어요.」
+PRINTFORMW 「아, 아니! 제가 사령관님에게 맞출게요. 제가 더 잘할게요.」
+PRINTFORMW 「다 제가 문제예요. 하, 하지만 전 더 잘할 수 있어요.」
+PRINTFORMW 「이, 이제 뭐가 문제인지 알았어요. 다, 다시 생각해 주세요.」
+PRINTFORMW 「전 어떤 문제든 해결할 수 있다구요!」
+PRINTFORMW 「아, 안 돼요. 이대로 끝나서는 안 돼요.」
+PRINTFORMW 「더군다나 사령관님이 저를 끝내시면 안 된다구요!」
+PRINTFORMW 「왜, 왜 제게 이런 행동을 하시는 거예요?」
+PRINTFORMW 「사령관님 싸이코패쓰예요?」
+PRINTFORMW 「마, 막 제, 제가 사령관님께 울며 애원하는 걸 원하신 거예요?」
+PRINTFORMW 「하, 하! 시, 싫어... 싫어요.」
+PRINTFORMW 「사, 사령관님이 뭔데 제 삶을 결정해요? 사령관님이 뭔데?」
+PRINTFORMW 「사령관님이 대체 나의 뭔데!!!」
+CASE "Affection"
+PRINTFORMW 당신은 유미에게 사실을 전했다.
+PRINTFORMW 「사... 사령관님?」
+PRINTFORMW 유미가 당신을 바라본다.
+PRINTFORMW 「그 말 진심이에요?」
+PRINTFORMW 「진심이냐구요.」
+PRINTFORMW 「대, 대체 왜?」
+PRINTFORMW 「제, 제가 싫으셨나요?」
+PRINTFORMW 「제가 싫으면.. 싫다고... 말이라도....」
+PRINTFORMW 유미의 눈에서 눈물이 흘러내렸다.
+PRINTFORMW 「제, 제가 그렇게 마음에 안 드셨어요?」
+PRINTFORMW 「다시는, 다시는, 절대로 사령관님의 눈에 띄면 안 될 정도로?」
+PRINTFORMW 「사령관님... 저를 그렇게 생각하고 계셨군요.」
+PRINTFORMW 유미가 당신에게 걸어왔다.
+PRINTFORMW 유미가 당신의 멱살을 잡았다.
+PRINTFORMW 울며 붉게 충혈된 눈으로, 유미가 당신을 보고 말했다.
+PRINTFORMW 「저, 죽더라도, 이제 끝이더라도 사령관님께 할 말은 해야겠어요.」
+PRINTFORMW 「일? 업무? 이제 와서 아무래도 다 좋아요. 개나 줘 버리라지!」
+PRINTFORMW 「하지만 사령관님께 할 말은 하고 죽든지 말든지 하겠어요.」
+PRINTFORMW 「사령관님, 저 싫어하시죠? 싫어하시잖아요? 그래서 그렇죠?」
+PRINTFORMW 「그러면 제가 무슨 말을 하든지 신경도 안 쓰시겠네요?」
+PRINTFORMW 「제가 무슨 말 할지 알아요?」
+PRINTFORMW 「사랑해요, 사령관님. 사랑했다고!!」
+PRINTFORMW 「이제는 사령관님께서 절 어떻게 생각하시는지 조금도 신경 안 써요!」
+PRINTFORMW 「내가 죽든 말든 이거 하나만 똑똑히 알아둬요.」
+PRINTFORMW 「저는 사령관님을 사랑하고 있었고, 사령관님은 그 여자를 죽게 했다는 걸.」
+CASE "Marryed"
+PRINTFORMW 당신은 유미에게 사실을 전했다.
+PRINTFORMW 「거, 거짓말이죠?」
+PRINTFORMW 유미가 당신을 보고 말했다.
+PRINTFORMW 「자, 장난 치신 거죠? 아니죠?」
+PRINTFORMW 「아니라고 말해요, 빨리!!」
+PRINTFORMW 「왜? 대체 왜요? 제가 뭘 잘못했길래?」
+PRINTFORMW 「사령관님도 저 좋아하시는 거 아니었어요? 아니었냐구요.」
+PRINTFORMW 「대답해요, 대답하세요, 대답 하라구요!!」
+PRINTFORMW 「왜, 왜 저를 보내요? 다른 것도 아니고 이렇게 극단적으로?」
+PRINTFORMW 「제가 질렸어요?」
+PRINTFORMW 「저는 사령관님께 있어서 단순한 도구 그 자체예요?」
+PRINTFORMW 「제, 제가 도구로 보이세요?」
+PRINTFORMW 「제가 무슨 생각을 하든, 사령관님께 어떤 감정을 가졌든 다 필요 없으세요?」
+PRINTFORMW 「사령관님에겐 전혀 관계 없는 얘기냐구요!!!」
+PRINTFORMW 「이럴거면 반지는 왜 주셨어요? 왜 끼워 주셨냐구요.」
+PRINTFORMW 「저한테 왜 그렇게 살갑게 대해주셨어요?」
+PRINTFORMW 「제 머리는 왜 쓰다듬어 주셨고, 왜 저와 입을 맞추셨고, 왜 저와 이야기 하셨어요?」
+PRINTFORMW 「차라리 눈길도 주지 말지.」
+PRINTFORMW 「차라리 눈길도 주지 말고 쓰레기처럼 대하지!」
+PRINTFORMW 「왜 저를 이렇게 비참하게 만들어요?」
+PRINTFORMW 「당신이 뭔데? 사령관님이 내 뭔데?」
+PRINTFORMW 「그것도 하필, 이 시간, 이 장소에서.」
+PRINTFORMW 「내가 가장 좋아하고 사랑하는 사람에게 그 소리를 들어야 하는 이유가 뭔데요!!」
+PRINTFORMW 「...절 죽여요.」
+PRINTFORMW 「폐기장까지 갈 필요도 없어요.」
+PRINTFORMW 「사령관님의 손으로 절 죽이세요.」
+PRINTFORMW 「뭐 해요!  칼을 들고 제 가슴을 찌르라니까요?」
+PRINTFORMW 「뭐 해? 뭐 하냐고!!!」
+PRINTFORMW 「죽여!!! 죽인다며!!! 날 죽여버린다며!!!!」
+PRINTFORMW 「기억할 거예요!!! 죽고 나서도 영원히 당신 곁을 떠돌 거예요!!!」
+PRINTFORMW 「기억하고 계세요. 유미라는 존재가 당신 곁에 있다는 걸.」
+PRINTFORMW 「당신은 영원히 고통받을 것이라는 것을!!!」
+CASE "Annoyed"
+PRINTFORMW 당신은 유미에게 사실을 전했다.
+PRINTFORMW 「네, 네?」
+PRINTFORMW 「사, 사령관님? 저요?」
+PRINTFORMW 「저, 저.... 죽나요?」
+PRINTFORMW 「폐기되나요?」
+PRINTFORMW 「아, 안 돼요 사령관님...」
+PRINTFORMW 「다, 단순히 마음에 안 드신다고 이렇게 버리시면 안 돼요...」
+PRINTFORMW 「더 좋은 방안이 있을 거예요.」
+PRINTFORMW 「차, 차라리 중고로 파시는 건 어때요?」
+PRINTFORMW 「도, 돈도 벌고 좋잖아요!」
+PRINTFORMW 「폐, 폐기만은 안 돼요...」
+PRINTFORMW 「저, 저에게 큰 악감정 같은 건 없으시잖아요.」
+PRINTFORMW 「우, 우리 잠시 시간을 갖고 더 좋은 방안을 찾아 봐요.」
+PRINTFORMW 「사, 사령관님이라면 폐기 말고도 좋은 방안을 생각해내실 수 있으실 거예요.」
+PRINTFORMW 「사령관님이잖아요?」
+PRINTFORMW 「사, 사령관님이잖아요!!」
+PRINTFORMW 「이, 이렇게 버리는 게 어딨어, 어디 있냐고요!!!」
+CASE "Fear"
+PRINTFORMW 당신은 유미에게 사실을 전했다.
+PRINTFORMW 「아... 하하하....」
+PRINTFORMW 「퇴직... 인가요....」
+PRINTFORMW 「영원한 퇴직....」
+PRINTFORMW 「사령관님이라면 왠지 이런 선택을 내리실 거라고...」
+PRINTFORMW 「은연중에 생각하고 있었어요.」
+PRINTFORMW 「저, 저... 쓸모 없죠?」
+PRINTFORMW 「구제불능의 쓰레기라 버리시는 거죠?」
+PRINTFORMW 「...알고 있었어요. 저 같은 게 살아갈 가치는 없다는 거.」
+PRINTFORMW 「사령관님이 제게 보이시던 행동이」
+PRINTFORMW 「제게 그 답을 알려주었어요.」
+PRINTFORMW 「저, 저... 죽고싶지 않은데.」
+PRINTFORMW 「살고 싶은데...」
+PRINTFORMW 「이런 식으로 살고 싶지는 않았는데...」
+PRINTFORMW 「이제는 영원한 휴식 뿐이네요.」
+PRINTFORMW 「업무에 치여 살다가... 휴식.」
+PRINTFORMW 「죽음에는 영원한 휴식이 함께 하죠.」
+PRINTFORMW 「살아있는 동안에... 일만 했다는 게 조금 아쉽네요.」
+PRINTFORMW 「더 가치 있는 삶을 살 걸...」
+PRINTFORMW 「적어도 하다못해 사령관님이랑 사이좋게 지낼 수 있었으면 좋았을텐데...」
+CASE "Weak"
+PRINTFORMW 당신은 유미에게 사실을 전했다.
+PRINTFORMW 「죽어요? 제가?」
+PRINTFORMW 「퇴직이요?」
+PRINTFORMW 유미가 당신에게 되물었다.
+PRINTFORMW 「아하하하하...」
+PRINTFORMW 「아하하하하하!!」
+PRINTFORMW 「드디어 이 지옥이 끝나는 거군요!」
+PRINTFORMW 「매일같이 기도했어요. 차라리 절 죽여달라고!」
+PRINTFORMW 「하지만 전 마음대로 죽을 수도 없었죠.」
+PRINTFORMW 「제가 사령관님의 소유물이기 때문에!!!」
+PRINTFORMW 「하지만, 하지만 하늘이 제 소원을 들어주신 게 틀림없어요!」
+PRINTFORMW 「이제, 이제 끝이야. 이제 끝났어!」
+PRINTFORMW 「이 영원할 것만 같았던 지옥도 끝이 나고 제게 평화가 찾아 올 거예요!」
+PRINTFORMW 「당신은 지독한 사람이었어요, 사령관님.」
+PRINTFORMW 「당신이라는 사람과 만나 하루하루가 개같았고」
+PRINTFORMW 「매일같이 죽을 수 있기를 기도했죠.」
+PRINTFORMW 「그리고 마침내 그 바람이 이루어졌어요.」
+PRINTFORMW 「저는 걱정하지 마세요, 사령관님.」
+PRINTFORMW 「저는 지금 그 누구보다 기쁘니까요!」
+PRINTFORMW 「하하하하하하하!!!」
+PRINTFORMW 「죽을 수 있어서 다행이야... 정말 다행이야...」
+PRINTFORMW 「저를 다시 부르지 마세요, 사령관님.」
+PRINTFORMW 「제게 있어 여기보다 더한 지옥은 없었으니까요.」
+CASE "Break"
+PRINTFORMW 당신은 유미에게 사실을 전했다.
+PRINTFORMW 「예, 예?」
+PRINTFORMW 「제, 제가요?」
+PRINTFORMW 「아, 안 돼요! 사령관님! 제가 잘못했어요.」
+PRINTFORMW 「더 이상 발로 차 달라고 조르지 않을게요.」
+PRINTFORMW 「바늘로 찔러 달라고도 안 할게요.」
+PRINTFORMW 「저를 잘근잘근 밟아달라고도 하지 않을게요!」
+PRINTFORMW 「부탁이니 제발 그 말을 거두어 주세요!」
+PRINTFORMW 「저, 저는 아직 망가지지 않았어요!」
+PRINTFORMW 「제 정신은 멀쩡하다구요!」
+PRINTFORMW 「저는 멀쩡해요. 저는 장상이라구요!」
+PRINTFORMW 「조, 조금 원하는 게 특이할 뿐이예요.」
+PRINTFORMW 「저는 아무렇지도 않아요.」
+PRINTFORMW 「아무렇지도 않아....」
+PRINTFORMW 「사, 사령관님?」
+PRINTFORMW 「저, 저... 죽기 전에. 죽기 전에!」
+PRINTFORMW 「마지막 소원이 있어요.」
+PRINTFORMW 「...저를 죽을 때까지 패 주세요.」
+PRINTFORMW 「패 주세요. 사령관님.」
+PRINTFORMW 「저를 때려 달라구요! 잘 하시잖아요 그런 거!」
+PRINTFORMW 「폐기시키지 말고, 당신의 손으로 저를 끝장내 주세요!」
+PRINTFORMW 「감정도, 기분도 없는 기계에게 죽기는 싫어요!」
+PRINTFORMW 「하다못해 사령관님 손으로 저를 끝장내 주세요!」
+PRINTFORMW 「마, 마지막이라도 행복하게 보내달란 말이에요!!」
+PRINTFORMW 「으아아악!! 싫어!! 싫단 말이야!!!」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No132_ENDING
+SELECTCASE CFLAG:엔딩플래그
+CASE 1
+PRINTFORMW 당신은 유미에게 반지를 건넸다.
+PRINTFORMW 「이거... 정말 제게 주는 반지예요?」
+PRINTFORMW 유미는 손바닥에 올려진 반지를 보고 당신에게 물었다.
+PRINTFORMW 「그럴리가 없잖아요. 사령관님이 제게... 반지를 주신다니.」
+PRINTFORMW 「이번에는 장난 같은 거 아니죠? 진짜, 진짜 반지죠? 그러니까 제 말은...」
+PRINTFORMW 당신은 유미의 어깨에 손을 얹었다. 그것만으로 충분했다.
+PRINTFORMW 「진짜.. 네요. 사령관님. 제가 생각하고 있던 그 진짜.」
+PRINTFORMW 「...사령관님, 전 아직도 모르겠어요.」
+PRINTFORMW 「저 같은 게 사령관님의 반쪽이 되어도 될 지.」
+PRINTFORMW 「그, 있잖아요. 반지같은 건 단순한 감사표시같은 게 아니잖아요.」
+PRINTFORMW 「앞으로 평생의 반쪽을 맹세하고 주는 거잖아요.」
+PRINTFORMW 「이런 거, 받아본 적 없어요.」
+PRINTFORMW 「제가 받을 거라고는 상상... 정도만 했었고요.」
+PRINTFORMW 「...」
+PRINTFORMW 「사령관님, 전 자존감이 많이 낮아요.」
+PRINTFORMW 「예전에 업무에 치여 산 탓에 자기 자신을 굽히고 사는게 습관이 되었죠.」
+PRINTFORMW 「그리고 전 그렇게 예쁘지도 않아요.」
+PRINTFORMW 「머리는 부시시하지, 항상 피곤해하지, 눈 밑에는 언제나 다크써클이 있지.」
+PRINTFORMW 「게다가 드라마는 엄청 좋아해서 매일 자기 전마다 시끄러울 거라구요?」
+PRINTFORMW 「군것질도 엄청 좋아해서 혼술 마시는 일도 잦구요, 드라마 볼 땐 과자 없으면 섭섭해요.」
+PRINTFORMW 「일 하는 건 그렇게 싫어하면서 놀고 있으면 왠지 업무에 대한 강박증도 생기고...」
+PRINTFORMW 「밤 늦게 자고... 술도 좋아하고... 칭얼칭얼대는 어린애같고...」
+PRINTFORMW 「저, 저.... 저는....」
+PRINTFORMW 「저는....」
+PRINTFORMW 유미가 당신을 올려다봤다.
+PRINTFORMW 유미의 눈에 눈물이 고이고 있었다.
+PRINTFORMW 유미가 손에 쥔 반지를 꽉 쥐었다.
+PRINTFORMW 놓치기 싫다는 듯이, 꿈에서 깨기 싫다는 듯이.
+PRINTFORMW 「...」
+PRINTFORMW 「...이런 저라도... 괜찮으신 건가요?」
+PRINTFORMW 「...」
+PRINTFORMW 당신은 고개를 끄덕였다.
+PRINTFORMW 유미가 손에 쥔 반지를 꺼내, 유미의 손가락에 끼워 줬다.
+PRINTFORMW 그리고 유미의 손을 잡았다.
+PRINTFORMW 「고생하실 거예요, 제, 제가... 사령관님이 신부가 되면...」
+PRINTFORMW 「매일같이 드라마 보자고 조를 거구요...」
+PRINTFORMW 「힘든 날에는 술 한 병 까자고 분위기 잡을 거예요...」
+PRINTFORMW 「힘든 일 있어도 바로 얘기 안하고 사령관님 근처에서 찡찡댈 거구요...」
+PRINTFORMW 「맨날맨날 거울 앞에서 다크써클 신경 쓰는 모습을 보게 되실 거예요...」
+PRINTFORMW 「누워서 과자 먹으면 바닥에 가루가 다 떨어질지도 몰라요.」
+PRINTFORMW 「술 먹으면 취해서 사령관님한테 매달릴지도 모른다구요.」
+PRINTFORMW 「그리고, 그리고 또... 그리고...」
+PRINTFORMW 유미의 눈에서 눈물이 방울방울 떨어진다.
+PRINTFORMW 유미가 울면서 당신에게 말한다.
+PRINTFORMW 「매일같이 사랑한다고 얘기할 거예요.」
+PRINTFORMW 「매일 사령관님의 모습을 보고 사령관님을 기다릴거예요.」
+PRINTFORMW 「매일, 매일을 사령관님과 함께 밥을 먹고 행복하게 지낼 거예요.」
+PRINTFORMW 「매일 사령관님을 안고 사령관님에게 떼 쓸 거에요.」
+PRINTFORMW 「매일매일 사령관님을 보고, 사령관님을 생각하고.」
+PRINTFORMW 「자나깨나 사령관님만을 생각하고, 사령관님을 위해서 행동할 거예요.」
+PRINTFORMW 「저는 이렇게 귀찮은 여잔데...」
+PRINTFORMW 「...」
+PRINTFORMW 「그런 제가 사령관님과 함께 한다는 꿈을 꿔도 괜찮을까요?」
+PRINTFORMW 유미의 눈에서 눈물이 떨어지고 있다.
+PRINTFORMW 당신은 유미를 끌어안았다.
+PRINTFORMW 「이게 꿈이라면 정말 행복한 꿈이네요.」
+PRINTFORMW 「절대로 깨고 싶지 않은 행복한 꿈.」
+PRINTFORMW 「...」
+PRINTFORMW 「항상 꿈에서만 일어나는 일이었는데..」
+PRINTFORMW 「이제는 더 이상 꿈이 아니예요.」
+PRINTFORMW 「사랑해요, 사령관님.」
+PRINTFORMW 「내일 자고 일어나면 새로운 꿈을 꾸도록 할게요.」
+PRINTFORMW 유미가 당신을 끌어안았다.
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW 유미 엔딩 No. 1 신데렐라의 꿈
+RETURN 1
+CASE 2
+PRINTFORMW 당신은 유미의 손가락에 반지를 끼웠다.
+PRINTFORMW 「이건 뭔가요, 사령관님?」
+PRINTFORMW 가만히 생각하던 유미가 당신을 보며 말한다.
+PRINTFORMW 「반지? 설마 제가 생각하는 그 반지 맞나요?」
+PRINTFORMW 당신은 고개를 끄덕인다.
+PRINTFORMW 「감사해요, 사령관님! 저 너무 기뻐요!」
+PRINTFORMW 유미가 믿을 수 없다는 듯이 방방 뛰며 좋아한다.
+PRINTFORMW 유미가 당신의 손을 잡는다.
+PRINTFORMW 「저도 사령관님을 좋아해요!」
+PRINTFORMW 「사령관님만이 진짜 저를 가질 수 있잖아요!」
+PRINTFORMW 유미가 당신을 보며 웃는다.
+PRINTFORMW 웃는다. 기괴한 웃음을 보이며 웃는다.
+PRINTFORMW 유미의 눈 밑에는 다크써클이 진하게 내려앉아 있다.
+PRINTFORMW 촛점없는 눈이 당신을 응시하고 있다.
+PRINTFORMW 반쯤 벌려진 입에선, 뭐라 말하는지도 모를 이상한 말들이 당신을 향해서 쏟아지고 있다.
+PRINTFORMW 「저를 때리시잖아요!」
+PRINTFORMW 「발로 차시잖아요!」
+PRINTFORMW 「욕하고 때리고 발로 차고 저를 엉망으로 만드시잖아요!」
+PRINTFORMW 유미가 당신의 손을 잡은 손에 힘을 점점 불어넣는다.
+PRINTFORMW 「좋아요, 너무 좋아요!」
+PRINTFORMW 「사령관님의 반쪽이 되면 이젠 상상도 못할 쾌락들이 저를 덮쳐 올 거잖아요!」
+PRINTFORMW 「이제는 때리는 것만으론 끝나지 않으시겠죠?」
+PRINTFORMW 입가에 침을 흘리며 유미가 당신에게 말한다.
+PRINTFORMW 「이제는 칼로 찌르고, 찢고! 뼈를 부러뜨리고!」
+PRINTFORMW 「제 몸 구석구석을 사령관님의 손길로 채우며」
+PRINTFORMW 「이제는 새빨간 피를 사령관님에게 보여줄 수 있잖아요!」
+PRINTFORMW 유미의 목소리가 갈라진다.
+PRINTFORMW 유미의 목소리가 변한다. 그녀같지 않다.
+PRINTFORMW 「저는 제가 단순히 야근에 찌든 워커홀릭인줄 알았어요.」
+PRINTFORMW 「하지만 그게 아니었어요! 사령관님이 알려주셨잖아요!」
+PRINTFORMW 「제가 힘들게 일했던 건 잠재의식이 원한 것.」
+PRINTFORMW 「사실 저는 제 몸이 힘든 걸 원하고 있었을 뿐이에요!」
+PRINTFORMW 「몸이 고단하고, 피곤하고, 힘들면 힘들수록」
+PRINTFORMW 「거기에서 쾌락을 찾고 있었을 뿐인 거죠!!」
+PRINTFORMW 유미가 당신에게 소리지르며 말한다.
+PRINTFORMW 유미의 눈이 번뜩인다. 헤헤 웃는 그녀가 더 이상 예전같지 않다.
+PRINTFORMW 「칼로 찔러 주세요, 바늘로 꿰메 주세요!」
+PRINTFORMW 「제 눈을 찌르고, 제 손가락을 잘라 주세요!」
+PRINTFORMW 「사령관님에게 맞는 게 너무 좋아요.」
+PRINTFORMW 「사령관님이 저를 해코지할 때마다 정신에 불이 들어와요.」
+PRINTFORMW 「어두웠던 제 정신에, 사령관님이 손을 뻗을 때마다 번쩍! 하고...」
+PRINTFORMW 「그때서야 제 정신이 온전해져요...」
+PRINTFORMW 유미가 당신의 손을 놓고는 어디론가 빠르게 간다. 부엌 쪽이다.
+PRINTFORMW 당신의 손에는 유미의 손자국이 하얗게 남아 있다.
+PRINTFORMW 유미가 다시 당신의 앞으로 온다.
+PRINTFORMW 그녀의 손에는 식칼이 들려 있다.
+PRINTFORMW 「사령관님...? 이걸로 찔러 주세요...」
+PRINTFORMW 유미가 웃는다. 그녀의 손이 바들바들 떨리며 당신에게 식칼을 향하고 있었다.
+PRINTFORMW 「콱. 콱. 콱, 푹. 푹. 푹 하고 찔러 주세요.」
+PRINTFORMW 「새빨간 피가 뿜어져 나올 거예요. 새빨간 피가. 하지만 괜찮아요.」
+PRINTFORMW 일그러진 눈동자가, 일그러진 입이. 일그러진 욕망이.
+PRINTFORMW 당신을 통해서 해소되려 하고 있다.
+PRINTFORMW 「아프지 않아요. 아프지 않아. 남은 건 쾌락 뿐이예요...」
+PRINTFORMW 유미가 당신에게 속삭인다.
+PRINTFORMW 「한 번 시작된 이상 끝날 수 없어요...」
+PRINTFORMW 영원히 끝나지 않을 속삭임이 당신의 귓가에 맴돈다.
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW 유미 엔딩 No. 2 시시포스의 쾌락
+RETURN 1
+CASE 3
+PRINTFORMW 「사... 령관님? 사령관님이죠?」
+PRINTFORMW 당신의 눈 앞에 오랜만에 커넥터 유미가 서 있다.
+PRINTFORMW 당신과 만난 이후 밝아졌던 그녀의 얼굴에 다시 그늘이 드리워져 있다.
+PRINTFORMW 「사령관님 맞죠! 어, 어디 가셨던 거예요!」
+PRINTFORMW 유미가 당신의 팔을 붙든다. 그녀의 가는 손이 당신을 흔든다.
+PRINTFORMW 「보, 보고싶었다구요.」
+PRINTFORMW 「이렇게 오래 내버려 둘 거면 말이라도 해주셨어야죠.」
+PRINTFORMW 유미의 눈동자가 흔들린다.
+PRINTFORMW 「왜, 왜 저를 만나주지 않으셨던 거예요?」
+PRINTFORMW 「저, 사령관님이랑 같이 먹는 밥이 맛있어서 끼니도 걸렀어요.」
+PRINTFORMW 「사령관님이랑 같이 먹지 않으면 먹는 맛이 안 나거든요.」
+PRINTFORMW 「잘때는 베개를 끌어안고 사령관님이라고 생각하면서 잤어요.」
+PRINTFORMW 「저, 혼자 잤어요. 혼자. 아, 사령관님은 신경쓰지 마세요.」
+PRINTFORMW 「엄청나게 외로웠고, 엄청 힘들었고 사령관님이 보고싶었지만 신경쓰지 마세요.」
+PRINTFORMW 「...진짜 신경 끄실 건 아니죠?」
+PRINTFORMW 「제가 여기 있는데?」
+PRINTFORMW 「저를 다시 혼자 내버려 둘 건 아니죠?」
+PRINTFORMW 「저, 호, 혹시... 그동안 뭐 하시고 계셨어요?」
+PRINTFORMW 「다, 다른 여자 만난 건 아니죠? 저를 내버려두고?」
+PRINTFORMW 유미의 눈동자가 흔들린다.
+PRINTFORMW 「바, 밥도 다른 여자랑 같이 먹었던 거 아니죠?」
+PRINTFORMW 「안 돼요. 안 돼요. 사령관님. 저를 사랑해주세요. 저를요.」
+PRINTFORMW 「애완동물 하나 기른다고 생각하셔도 좋아요. 사령관님이 없는동안 너무 힘들었어요.」
+PRINTFORMW 「저, 저 사령관님에게 다시 사랑받을 수 있다면 뭐든 할 수 있을지도 몰라요.」
+PRINTFORMW 「저, 사령관님. 안아주세요.」
+PRINTFORMW 유미가 당신을 향해 두 팔을 벌렸다.
+PRINTFORMW 「안아주세요, 안아 주실 거죠? 뭐 해요. 빨리, 빨리이...」
+PRINTFORMW 끝내 참지 못한 유미가 먼저 당신을 끌어안았다.
+PRINTFORMW 「사령관님 품 안이 제일 따뜻해요...」
+PRINTFORMW 「저, 저... 귀찮으신 건 아니죠?」
+PRINTFORMW 「아니죠? 제가 귀찮아졌다거나 거슬린다거나 싫증났다거나 그런 거 아니죠?」
+PRINTFORMW 「아니죠? 사령관님. 아니죠? 빨리요, 대답해주세요.」
+PRINTFORMW 유미가 애처로운 눈빛으로 당신을 바라본다.
+PRINTFORMW 「사령관님이 다시 떠나셔도 좋아요. 제가 따라갈게요. 아, 저는 신경쓰지 말아요.」
+PRINTFORMW 「그냥 붙어만 있을 거예요. 사령관님이 어딜 가시든 뒤에서 졸졸졸..」
+PRINTFORMW 「민폐 안 끼치게 적당히 숨어서 따라갈 테니까 괜찮아요.」
+PRINTFORMW 유미가 당신에게 엉겨붙었다.
+PRINTFORMW 「아, 사령관님. 한 번만 사랑한다고 말해 줘요. 저 오래 못 들어서 귀가 심심해요.」
+PRINTFORMW 「빨리요, 사령관님. 사랑한다고 해 줘요. 안 돼요? 그럼 제가 할게요 사령관님.」
+PRINTFORMW 「사랑해요 사령관님~」
+PRINTFORMW 「저 애정결핍인가 봐요. 사령관님이 치료해주셔야 해요. 저랑 더 같이 있어주실 거죠?」
+PRINTFORMW 「저를 미워하지는 말아 주세요. 저는 그냥 사령관님한테 사랑받고 싶어서 이러는 거니까요.」
+PRINTFORMW 「이해해 주실 거죠? 사령관님?」
+PRINTFORMW 까맣게 물든 다크써클 너머에는 어딘가 비뚤어진 애정이 빛나고 있다.
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW 유미 사이드 엔딩 No. 1 애정결핍
+RETURN 1
+CASE 4
+PRINTFORMW 밤 늦게 불 꺼진 집 안, 당신은 어디선가 들려오는 이상한 소리에 눈을 떴다.
+PRINTFORMW 「하윽... 하으윽....」
+PRINTFORMW 헐떡이는 숨소리가 당신의 귓가를 스친다.
+PRINTFORMW 「하으윽... 하읍....」
+PRINTFORMW 빠르게 숨을 들이키는 소리, 그리고 이내 곧 잠잠해진다.
+PRINTFORMW 당신은 소리의 근원지를 찾아 향했다.
+PRINTFORMW 「아... 아...? 사령관님...?」
+PRINTFORMW 거실 안쪽에서 유미의 목소리가 들린다.
+PRINTFORMW 당신은 거실의 조명을 켠다.
+PRINTFORMW 눈이 아파질 정도로 환해진 거실 한구석에, 유미가 손으로 다리를 가린채 앉아 있다.
+PRINTFORMW 그리고 차마 다 가려지지 못하는 곳에는 흥건한 피.
+PRINTFORMW 피. 피. 피. 피. 피. 피.
+PRINTFORMW 거실 구석에 유미를 중심으로 자욱히 피냄새가 내려앉아 있다.
+PRINTFORMW 「아하하... 아, 아무것도 아니에요, 사령관님!」
+PRINTFORMW 억지로 웃으며 유미가 당신에게 손사래를 친다.
+PRINTFORMW 눈물이 흘러나왔던 듯 눈가에는 눈물자국이 남아 있다.
+PRINTFORMW 군데군데 살갗은 찢어지고 베여 피가 흐르고 있다.
+PRINTFORMW 그리고 당신을 향해 흔들던 손에는 깨진 유리조각이 쥐어져 있다.
+PRINTFORMW 「이건 말이죠... 그냥 심심풀이! 심심풀이 같은 거예요.」
+PRINTFORMW 유미가 상처난 곳을 가리켰다.
+PRINTFORMW 「이것좀 보세요. 재밌지 않아요? 피가 굳으면서 점점 다른 색깔로 변해가요.」
+PRINTFORMW 그렇게 말하는 유미의 눈동자에는 이성이 없다.
+PRINTFORMW 「들키고 싶지는 않았는데... 어쩔 수 없죠.」
+PRINTFORMW 「이게 다 사령관님이 저를 내버려 둬서 생긴 일이에요.」
+PRINTFORMW 「사령관님이 저를 좀 더 마주하셨다면 이런 일이 생기지 않았을텐데. 아하하.」
+PRINTFORMW 「아하하. 이미 망가진 절 내버려 두셔서 제가 이런 일을 할 수 밖에 없이 만드셨잖아요.」
+PRINTFORMW 「이 유리조각으로 살갗을 찢을 때마다 피가 흘러나와요.」
+PRINTFORMW 「그게 어찌나 그렇게 깜찍하고 짜릿한지.」
+PRINTFORMW 「...원래는 저도 이런 행동 안 하려 했는데...」
+PRINTFORMW 「사령관님이 저를 내버려 두셨잖아요.」
+PRINTFORMW 「눈길도 안 주고. 부르지도 않고. 거들떠도 안 보시고 제가 없는 듯이 행동하셨잖아요!!」
+PRINTFORMW 「그래서 베었어요. 제 손으로, 제 몸을.」
+PRINTFORMW 「...제 몸은 고통을 원하고 있었거든요.」
+PRINTFORMW 「유리조각으로 몸을 상처낼 때마다 뇌가 저릿저릿해요.」
+PRINTFORMW 「고장난 제 정신이 돌아오는 느낌이에요.」
+PRINTFORMW 「사령관님이 저를 때려 주셨으면 이런 일 없었겠지만...」
+PRINTFORMW 「어쩌겠어요. 제가 고장나서인지 사령관님은 저를 거들떠도 안 보시는데.」
+PRINTFORMW 유미가 손에 든 유리조각을 당신에게 보인다.
+PRINTFORMW 「그래서 베었어요. 제 몸을. 아프게.」
+PRINTFORMW 유미가 손에 든 유리조각을 꽉 쥐었다.
+PRINTFORMW 유미의 손에서 피가 과일을 꽉 쥔 것마냥 과즙처럼 흘러나온다.
+PRINTFORMW 피가 유미의 무릎 앞에 떨어진다.
+PRINTFORMW 똑. 똑. 똑. 똑. 떨어지는 핏방울을 보며 유미가 말한다.
+PRINTFORMW 「다음 번엔 더 아프게 찌를 거예요...」
+PRINTFORMW 「다음 번엔 더 끔찍하게 제 몸을 다룰 거예요...」
+PRINTFORMW 「다음 번에는 더... 더... 잔인하고 쾌락적이게...」
+PRINTFORMW 「상상도 못할 정도로 제 몸을 토막낼 거예요.」
+PRINTFORMW 유미가 당신을 보며 웃는다.
+PRINTFORMW 「이건 다 사령관님 때문이예요, 그쵸?」
+PRINTFORMW 「사령관님이 저를 유리처럼 깨트리고, 내버려 두셨잖아요.」
+PRINTFORMW 유미가 모든 책임은 당신 때문이라는 듯이 말한다.
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW 유미 사이드 엔딩 No. 2 깨진 유리창
+RETURN 1
+ENDSELECT
+RETURN 0
+

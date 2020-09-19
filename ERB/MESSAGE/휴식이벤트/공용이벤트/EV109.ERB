@@ -1,0 +1,27 @@
+﻿@MSG_EV_109(ARG, ARG:1)
+SELECTCASE RAND:2
+CASE 0
+PRINTFORMW 당신은 면도 도중 턱을 베여 긴 상처가 남았다.
+PRINTFORMW 오늘은 운이 없네. 당신은 그렇게 생각하며 걷다 %CALLNAME:ARG%(와)과 마주친다.
+PRINTFORMW %CALLNAME:ARG%(은)는 당신의 턱에 난 상처가 영 걱정스러운 눈치였다."
+PRINTFORMW 당신은 면도하다가 베였다고 답하며 %CALLNAME:ARG%의 머리를 쓰다듬어 준다.
+PRINTFORML %CALLNAME:ARG%(은)는 당신의 말에 안심하는 눈치였다.
+PRINTFORMW 호감도+10"
+CFLAG:ARG:호감도 += 10
+RETURN 1
+CASE 1
+PRINTFORMW 당신은 %CALLNAME:ARG%(와)과 거리를 걷다가 야구 배팅장을 발견했다.
+PRINTFORMW 당신은 동전을 넣는 기기에 동전을 넣고, 배트를 든 뒤 자세를 잡았다.
+PRINTFORML 퉁!
+PRINTFORML 당신은 날아오는 공을 향해 힘차게 배트를 휘둘렀다.
+PRINTFORMW 하지만 배트는 둔탁한 소리만 냈고, 공은 배트에 부딪혀 바닥을 구르거나 그물로 직배송 되었다.
+PRINTFORMW 배트를 놓고 내려오던 당신은 %CALLNAME:ARG%에게 한 번 해보지 않겠냐고 묻는다.
+PRINTFORML %CALLNAME:ARG%(은)는 잠시 머뭇거리다가 배팅장 안으로 들어갔다.
+PRINTFORML 누가 봐도 방망이를 휘둘러본 적 없어보이는 자세에 당신은 별 기대는 하지 않았다.
+PRINTFORML 하지만,"
+PRINTFORMW 까앙!
+PRINTFORMW 예상을 깨는 청량한 타격음에 당신은 깜짝 놀란다.
+PRINTFORMW 당신은 깡 소리를 내며 시원시원하게 날아가는 야구공들을 보며 역시 바이오로이드는 바이오로이드구나. 라고 생각한다.
+RETURN 1
+ENDSELECT
+RETURN 0

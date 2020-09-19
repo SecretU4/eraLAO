@@ -32,7 +32,7 @@ FOR LOCAL, ARG, ARG:1
     IF GETCHARA(LOCAL:1) != -1
         IF ITEMNAME:LOCAL == ""
             CONTINUE
-        ELSEIF ITEM:LOCAL == -1 ;이미 구매한 적 있음
+        ELSEIF GROUPMATCH(ITEM:LOCAL, -1,1) ;이미 구매한 적 있음
             CONTINUE
         ENDIF
         ITEMSALES:LOCAL = 1

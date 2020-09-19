@@ -1,0 +1,19 @@
+﻿@MSG_EV_105(ARG, ARG:1)
+SELECTCASE RAND:2
+CASE 0
+PRINTFORML 의자 등받이에 편히 기대 앉아 있던 당신은
+PRINTFORML 문득 느껴지는 시선에 벌떡 몸을 일으킨다.
+PRINTFORML 방 온도와 반비례하는 서늘한 시선.
+PRINTFORML 당신은 그 시선이 %CALLNAME:ARG%의 것인 것만 같아 오싹해진다.
+PRINTFORML 그럴 리 없다. 그 애는 이미 꺾인 아이다.
+PRINTFORMW 라고 애써 스스로를 달래며, 당신은 다시 등받이에 몸을 기댄다.
+RETURN 1
+CASE 1
+PRINTFORMW 당신의 귓가에 거슬리는 울음소리가 들린다.
+PRINTFORML 다른 바이오로이드도 충분히 들을 수 있을 정도로 크고 을씨년스러운 울음소리에
+PRINTFORML 당신은 짜증난 얼굴로 소리의 근원을 찾아간다.
+PRINTFORMW %CALLNAME:ARG%의 앞에 도착한 당신은, 다시는 울음소리가 나지 못 하도록 그녀를 '훈육'시켰다."
+PRINTFORMW 잠깐 동안 %CALLNAME:ARG%(은)는 울음소리 대신 비명을 질러야 했지만, 아무럼 어때.
+RETURN 1
+ENDSELECT
+RETURN 0

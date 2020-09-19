@@ -1,0 +1,14 @@
+﻿@MSG_EV_106(ARG, ARG:1)
+PRINTFORML 당신은 다 말랐는데도 아직 걷어가지 않은 빨래들을 보았다.
+PRINTFORML 심심했던 당신은 짬을 내어 빨래들을 걷기 시작했다.
+PRINTFORMW 반쯤 걷었을까, 셔츠를 내려놓던 당신은 어느새 다가온 %CALLNAME:ARG%(을)를 보게 된다.
+PRINTFORML 빨래 걷는 것 좀 도와줄래?
+PRINTFORML 당신의 말에 %CALLNAME:ARG%(은)는 알겠다고 답한 뒤 같이 빨래를 걷어준다.
+PRINTFORML 빨래를 다 걷고 난 뒤 그것들을 개면서, 당신과 %CALLNAME:ARG%(은)는 잡담을 나눈다.
+PRINTFORML 호감도+15
+PRINTFORML 스트레스-5
+PRINTFORMW 공포-3
+CFLAG:ARG:호감도 += 15
+CFLAG:ARG:스트레스 -= 5
+CFLAG:ARG:공포 -= 3
+RETURN 1

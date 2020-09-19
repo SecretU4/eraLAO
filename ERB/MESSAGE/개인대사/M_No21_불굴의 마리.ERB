@@ -1,0 +1,2097 @@
+﻿@IS_M_No21
+RETURN 1
+
+@M_No21_TRAIN_START_0
+SELECTCASE CSTR:1
+CASE "First/Yboy"
+PRINTFORMW 「반갑습니다, 사령ㄱ..읏!?」
+PRINTFORMW 훤칠한 키에, 탄탄한 몸매를 강조하는 바디슈트 차림의 바이오로이드는 자신과는 어울리지 않는 표정을 급히 감추며 뒤돌아섰다.
+PRINTFORMW 잠시후,
+PRINTFORMW 겨우 진정이 되었는지 거수경례로 나머지 인사를 하는 그녀의 볼이 많이 상기되어 있었다.
+PRINTFORMW 호감도+500
+PRINTFORMW [변태]취득
+CASE "First/Nboy"
+PRINTFORMW 「반갑습니다, 사령관 각하.」
+PRINTFORMW 「전 지휘관형 바이오로이드 불굴의 마리라고 합니다.」
+PRINTFORMW 훤칠한 키에, 탄탄한 몸매를 강조하는 바디슈트 차림의 바이오로이드가 당신에게 경례하고 있었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CFLAG:조교여부 = 1
+RETURN 1
+
+@M_No21_TRAIN_START_1
+SELECTCASE CSTR:1
+CASE "Confession/Yboy"
+PRINTFORMW 「각하, 할 말이 있습니다.」
+PRINTFORMW 「이 불충을 용서해 주시길 바랍니다...」
+PRINTFORMW 그녀는 그렇게 말하고는 당신을 벽으로 몰아세웠다.
+PRINTFORMW 그림자가 져서 잘 보이진 않았지만 마리의 숨결이 고르지 않다는 것은 쉽게 느껴질 정도로 둘의 거리가 가까웠다.
+PRINTFORMW 「각하께서는.. 저를.. 어떻게 생각하십니까?」
+PRINTFORMW 「저는 각하를 처음 뵌 순간부터..」
+PRINTFORMW 「각하의 모든 것이 알고 싶어졌습니다.」
+PRINTFORMW 「게다가 각하의 상냥함은 저의 마음에 더 큰 불을 지폈습니다.」
+PRINTFORMW 「이런 못난 감정 하나 추스르지 못하는 저를.. 앞으로도 곁에 둬 주실 수 있으신가요..?」
+PRINTFORMW 잠시 고민하는 시늉을 하던 당신은,
+PRINTFORMW 해맑은 미소로 마리에게 두 팔을 활짝 펼쳐보였다.
+PRINTFORMW 마리는 자세를 낮추어 당신의 품에 조용히 안겼다.
+PRINTFORMW 「앞으로도 잘 부탁드립니다, 각하..」
+PRINTFORMW 마리의 어깨가 긴장이 풀렸는지 수없이 움직였고,
+PRINTFORMW 당신은 그녀의 용기를 칭찬하는 의미로 그녀의 머리를 쓰다듬고만 있었다.
+CASE "Confession/Nboy"
+PRINTFORMW 「각하께서는.. 저를.. 어떻게 생각하십니까?」
+PRINTFORMW 마리 답다면 마리 다운.. 직설적인 질문에 당신은 마리가 준비해 준 커피를 조용히 홀짝거릴 뿐이었다.
+PRINTFORMW 몇번의 홀짝거는 소리가 울린 후, 당신은 솔직하게 그녀에 대한 당신의 모든 것을 이야기해주었다.
+PRINTFORMW 마리는 처음에는 진지하게 듣다가,
+PRINTFORMW 이내 당신의 속셈을 깨닫고 얼굴이 새빨개졌다.
+PRINTFORMW 「가, 각하... 정말 너무하십니다...! 제가 먼저 고백하려는 걸 알고 계셨으면서...」
+PRINTFORMW 당신은 마리에게 천천히 다가가 살며시 안아주었다.
+PRINTFORMW 마리는 당신에게 몸을 맡겼고,
+PRINTFORMW 시간이 얼마나 흘렀을지 모르게 될 때쯤
+PRINTFORMW 마리는 장난스럽게 당신의 품에서 빠져나와 당신을 처음 만났을 때처럼 거수경례로 인사했다.
+PRINTFORMW 「앞으로도.. 잘 부탁드립니다! 각하!」
+PRINTFORMW 마리는 사랑에 빠진 소녀의 얼굴을 하고 있었다.
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 마리가 거수경례로 인사하고 있었다.
+DATAFORM 「어서오십시오, 사령관 각하.」
+ENDLIST
+DATALIST
+DATAFORM 마리가 거수경례로 인사하고 있었다.
+DATAFORM 「빠른 명령을.」
+ENDLIST
+DATALIST
+DATAFORM 마리가 거수경례로 인사하고 있었다.
+DATAFORM 「부르셨습니까?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 마리가 들뜬 얼굴로 인사했다.
+DATAFORM 「기다렸습니다, 각하.」
+ENDLIST
+DATALIST
+DATAFORM 마리가 당신을 보며 반가워했다.
+DATAFORM 「아... 오셨습니까? 오늘은 뭘 하며 보낼 계획이신가요?」
+ENDLIST
+DATALIST
+DATAFORM 마리가 거수경례로 인사하고 있었다.
+DATAFORM 「오늘 하루도 잘 부탁드립니다.」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 마리는 밝은 표정으로 인사했다.
+DATAFORM 「각하, 오늘도 제게 시간을 허락해주셔서 감사합니다.」
+ENDLIST
+DATALIST
+DATAFORM 마리가 손에 무언가를 들고 다가왔다.
+DATAFORM 「각하, 제가 직접 커피를 준비해보았습니다.」
+DATAFORM 「입에.. 맞으십니까?」
+ENDLIST
+DATALIST
+DATAFORM 마리가 심각한 얼굴로 말했다.
+DATAFORM 「요즘따라 군사학 공부가 잘 되지 않습니다.」
+DATAFORM 「 그 이유는 각하께서 더 잘 아실거라 생각합니다만..」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 마리가 당신을 맞이했다.
+DATAFORM 「오셨어요? 각ㅎ..아니, 당신..」
+ENDLIST
+DATAFORM 마리는 말없이 수줍은 얼굴로 당신의 손을 잡았다.
+DATALIST
+DATAFORM 마리는 수줍어하며 말했다.
+DATAFORM 「각하.. 당신과 함께라면 그 무엇도 좋습니다.」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「찾으셨습니까, 사령관 각하.」
+DATAFORM 마리의 말투에 짜증이 배어있는 듯하다.
+ENDLIST
+DATALIST
+DATAFORM 「무슨 일로 부르셨습니까?」
+DATAFORM 「할 일이 많습니다만..」
+DATAFORM 마리의 언행이 차갑다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「네, 사령관 각하.」
+DATAFORM 마리의 표정이 어두워보였다.
+ENDLIST
+DATALIST
+DATAFORM 「최선을 다하겠습니다.」
+DATAFORM 마리의 목소리에 떨림이 느껴진다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 「...」
+PRINTFORMW 마리는 짧은 목례로 인사를 대신했다.
+CASE "Break"
+PRINTFORMW 「...」
+PRINTFORMW 마리는 초점 없는 눈으로 애먼 곳을 보고 있었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_TRAIN_END
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATAFORM 「수고하셨습니다.」
+DATAFORM 「편히 쉬십시오.」
+DATAFORM 「물러나 보겠습니다, 사령관 각하.」
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATAFORM 「오늘 하루도 수고하셨습니다.」
+DATALIST
+DATAFORM 「이후에 제가 하는 일 말입니까? 주로 개인훈련이나 명상에 시간을 씁니다만..」
+DATAFORM 「각하께서도 흥미 있으십니까?」
+DATAFORM 마리의 목소리에 기대감이 가득한건 기분탓인 것 같다.
+ENDLIST
+DATAFORM 「내일도 오늘 같으면 좋겠군요.」
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATAFORM 「즐거운 일을 할 때 시간은 참으로 야속하군요.」
+DATAFORM 「각하와 함께여서 행복했습니다.」
+DATAFORM 「각하, 아직 시간이 되신다면 제 방에서 커피 한 잔.. 아, 아닙니다..!」
+DATAFORM 「하아... 이 옷을 입은 보람이...! 아, 아닙니다! 아무것도..」
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATAFORM 「내일도 각하와 같은 아침을 맞이 할 수 있다는 것이 너무 감사할 뿐입니다.」
+DATAFORM 「수고 많았어요, 당신.」
+DATAFORM 「조금 쉬시는 편이 어떠십니까? 무리하시면 몸에 좋지 않습니다.」
+DATAFORM 「씻고 방에 오시면... 아시죠?」
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATAFORM 「전, 바로 제 방으로 가겠습니다. 따라오지 마십시오.」
+DATAFORM 「부하의 개인시간을 고려해주는 것도 리더의 중요한 덕목 중 하나입니다.」
+DATALIST
+DATAFORM 「수고하십시오.」
+DATAFORM 마리는 순식간에 자신의 방으로 사라졌다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATAFORM 「최선을 다했습니다.」
+DATAFORM 「임무 수행, 완료.」
+ENDDATA
+CASE "Weak"
+PRINTFORMW 「...」
+PRINTFORMW 마리는 짧은 목례만 하고 자리를 떳다.
+CASE "Break"
+PRINTFORMW 마리가 아무런 움직임이 없자 당신은 그녀에게 복귀하라 명령하였고, 그제서야 그녀는 비틀거리며 방으로 돌아갔다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM2
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTDATAW
+DATAFORM 「전 군인입니다. 그저, 명령에 따를 뿐.」
+DATALIST
+DATAFORM 「사령관 각하께서는 스스로를 단련하고 계십니까?」
+DATAFORM 「필요하시다면 제가 도와드리겠습니다.」
+ENDLIST
+DATALIST
+DATAFORM 「반갑습니다, 사령관 각하.」
+DATAFORM 「오늘 만남이 역사적인 순간이 되었으면 좋겠군요.」
+ENDLIST
+ENDDATA
+CASE "High/Yboy"
+PRINTFORMW 「각하, 어제 내드린 숙제는 다 하신겁니까?」
+PRINTFORMW 「각하께는 아직 이른 음료인 것 같습니다.」
+PRINTFORMW 마리는 자신이 마시던 커피를 급히 치우며 말했다.
+PRINTFORMW 「각하, 오늘은 야전 교범에 대해 알려드리겠습니다.」
+PRINTFORMW 「각하, 오늘은 어떤 전술이 궁금하십니까?」
+PRINTFORMW 「각하, 한번만 쓰다듬어봐도.. 아, 실례했습니다!」
+PRINTFORMW 마리는 내밀었던 손을 급히 거두었다.
+CASE "High/Nboy"
+PRINTFORMW 「커피, 말입니까?」
+PRINTFORMW 「커피는 잠이 오지 않게 마시는 것에 불과합니다.」
+PRINTFORMW 「지금처럼만 하시면 좋은 결과가 있으실 겁니다.」
+PRINTFORMW 「각하와 면담을 하게 되어 기쁩니다.」
+PRINTFORMW 「각하, 오늘은 워게임을 같이 진행해보시겠습니까?」
+CASE "Affection"
+PRINTDATAW
+DATAFORM 「지나치게 큰 여성을 싫어하시진 않을까, 내심 걱정했었습니다. 정말 다행입니다!」
+DATALIST
+DATAFORM 「각하? 그렇게 구경만 하고 계시면..... 곤란합니다. 뭐든 좋으니 지시를 내려 주십시오.」
+DATAFORM 즐겁게 대화하는 마리를 바라보기만 하니 마리가 반 농담조로 말했다.
+ENDLIST
+DATALIST
+DATAFORM 「그 커피들이요...?」
+DATAFORM 「설마... 정말 그걸 구하신 건 아니시겠죠? 설마 구하셨습니까?」
+ENDLIST
+ENDDATA
+CASE "Marryed/Yboy"
+PRINTFORMW 잠시 후, 마리는 당신을 무릎에 앉혀놓고 말없이 당신의 머리를 쓰다듬고만 있었다.
+PRINTFORMW 「사랑하는 사람과 잡담으로 시간을 허비하는 것도.. 나쁘지 않군요.」
+PRINTFORMW 「어제보다 키가 더 커지신 것 같습니다?」
+PRINTFORMW 「전술을 의논하는 것보다, 각하를 알아가는게 더 좋아졌습니다.」
+PRINTFORMW 「하루하루 성장하시는 모습이 너무 보기 좋습니다.」
+CASE "Marryed/Nboy"
+PRINTFORMW 「사랑하는 사람과 잡담으로 시간을 허비하는 것도.. 나쁘지 않군요.」
+PRINTFORMW 「전술을 의논하는 것보다, 각하를 알아가는게 더 좋아졌습니다.」
+PRINTFORMW 「대화를 나누면서 마시는 커피 한 잔이 이렇게 좋을 줄은 몰랐습니다.」
+CASE "Annoyed"
+PRINTDATAW
+DATAFORM 「사령관 각하, 명예롭게 행동하십시오.」
+DATAFORM 「이럴 시간에 지휘에 더 신경 써주십시오, 사령관 각하. 지금 이 순간에도 적들은 진격 중일 테니.」
+DATAFORM 「별 일 없으신거라면 물러나도 되겠습니까?」
+ENDDATA
+CASE "Fear"
+PRINTFORMW 「사령관 각하께 드릴 말씀은 없습니다만..」
+CASE "Weak"
+PRINTFORMW 「그녀들의.. 원망이 들립니다..」
+CASE "Break"
+PRINTFORMW 마리의 눈동자 색이 불안정하게 점멸되고 있었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 마리의 %TEXTR("가슴/허벅지")%(을)를 칭찬했다.
+PRINTFORMW  마리는 당황하는 기색 없이 답했다.
+PRINTFORMW %TEXTR("「칭찬은 감사합니다만, 성희롱은 자제해주시길 바랍니다.」/「품행은 방정해야 합니다.」/「조금 조심해서 말씀하십시오… 자매들이 들을 수도 있습니다.」")%
+CASE "High/Yboy"
+PRINTFORMW 당신은 마리의 %TEXTR("가슴/허리/허벅지/다리")%(을)를 칭찬했다.
+PRINTFORMW 마리는 살짝 당황하며 대답했다.
+PRINTFORMW %TEXTR("「각하, 그런 말은 누구에게서 배우셨습니까? 어린 각하께 그런걸 가르친 자에게 주의를 좀 줘야겠습니다.」/「각하에겐 아직 이릅니다. 좀 더 건전한 쪽으로 관심을 돌리시길.」/「각하께서 저를 그런 눈으로 보셨다니..」")%
+PRINTFORMW 마리의 볼이 빨개졌다.
+CASE "High/Nboy"
+PRINTFORMW 당신은 마리의 %TEXTR("가슴/허리/허벅지/다리")%(을)를 칭찬했다.
+PRINTFORMW 마리는 살짝 당황하며 대답했다.
+PRINTDATAW
+DATALIST
+DATAFORM 「각하, 다른 분들께도 그런 농담을 하시는겁니까?」
+DATAFORM 「그게 아니라면 다행이지만서도..」
+ENDLIST
+DATALIST
+DATAFORM 「그만둬주십시오!」
+DATAFORM .
+DATAFORM 「부끄럽습니다...」
+ENDLIST
+DATAFORM 「정말.... 그렇게 흥미가 있으신 겁니까?」
+ENDDATA
+PRINTFORMW 마리의 볼이 빨개졌다.
+CASE "Affection"
+PRINTFORMW 당신은 마리의 %TEXTR("가슴/허리/허벅지/다리/골반")%(을)를 칭찬했다.
+PRINTFORMW 마리는 쑥스러워 하면서도 최대한 차분한 목소리로 대답했다.
+PRINTDATAW
+DATALIST
+DATAFORM 「이.. 이게 그렇게 좋으신겁니까?」
+DATAFORM 마리는 그 부위를 강조하는 포즈를 엉성하게 취했다.
+DATAFORM 「웃지 마십시오!」
+DATAFORM .
+DATAFORM 「우우..」
+ENDLIST
+DATAFORM 「각하를 위해 매일 관리하고 있습니다.」
+DATALIST
+DATAFORM 「각하, 여기 말고도 다른 곳도 칭찬해주셨으면..」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 마리의 %TEXTR("가슴/허리/허벅지/다리/골반/엉덩이/배/머릿결/쇄골")%(을)를 칭찬했다.
+PRINTFORMW 마리는 요염한 눈길로 답했다.
+PRINTFORMW %TEXTR("「.. 궁금하지 않으십니까...?」/「말로만 하지 마시고 직접..」/「각하, 그런 말씀을 하시면 저, 참기 힘들어집니다..」/「각하도 만만치 않으십니다..후후..」")%
+CASE "Annoyed"
+PRINTFORMW 당신은 마리의 %TEXTR("가슴/허벅지")%(을)를 칭찬했다.
+PRINTFORMW %TEXTR("「사령관 각하, 성희롱은 옳지 않습니다.」/「전 군인입니다. 그런 발언은 삼가해주시기 바랍니다.」")%
+PRINTFORMW 목소리에서 화를 참고 있는 것이 느껴졌다.
+CASE "Fear"
+PRINTFORMW 당신은 마리의 %TEXTR("가슴/허벅지")%(을)를 칭찬했다.
+PRINTFORMW 「...」
+PRINTFORMW 마리는 아무 말도 듣지 못했다는듯이 반응조차 하지 않았다.
+CASE "Weak"
+PRINTFORMW 당신은 마리의 %TEXTR("가슴/허벅지")%(을)를 칭찬했다.
+PRINTFORMW 「...」
+PRINTFORMW 마리는 무표정으로 고개를 끄덕였다.
+CASE "Break"
+PRINTFORMW 당신은 마리의 %TEXTR("가슴/허벅지")%(을)를 칭찬했다.
+PRINTFORMW 「...」
+PRINTFORMW 마리는 칭찬받은 부위를 한참이나 바라보다가 갑자기 눈물방울을 떨궜다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신의 손은 마리의 손으로 향했다.
+PRINTFORMW 마리는 당신의 손이 닿기 전에 자신의 손을 다른 곳으로 옮겼다.
+PRINTFORMW 「곤란합니다, 사령관 각하.」
+CASE "High"
+PRINTFORMW 당신의 손은 마리의 손으로 향했다.
+PRINTFORMW 당신과 마리의 손이 포개어졌다.
+PRINTDATAW
+DATALIST
+DATAFORM 「각하, 보는 눈이 많습니다..」
+DATAFORM 하지만 마리의 손은 자리를 떠나지 않았다.
+ENDLIST
+DATAFORM 「아주 잠깐만입니다..」
+DATAFORM 마리는 미동이 없었지만 볼이 상기되어 있었다.
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신의 손은 마리의 손으로 향했다.
+PRINTFORMW 당신과 마리의 손이 포개어졌다.
+PRINTDATAW
+DATAFORM 마리는 당신의 손을 놓지 않았다.
+DATALIST
+DATAFORM 「각하, 잠시만..」
+DATAFORM 마리는 장갑을 벗어던지고 다시 손을 포개었다.
+ENDLIST
+DATAFORM 마리와 당신은 손에 땀이 찰 때까지 손을 포개고 있었다.
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신의 손은 마리의 손으로 향했다.
+PRINTFORMW 당신의 손이 닿기 전에 마리가 먼저 당신의 손을 잡았다.
+PRINTFORMW %TEXTR("「제 손에 땀띠가 나도 놓치지 않을겁니다.」/「기다리다 지쳤습니다..」/「손만 잡으실겁니까?」")%
+CASE "Annoyed"
+PRINTFORMW 당신의 손은 마리의 손으로 향했다.
+PRINTFORMW 마리는 당신의 손이 닿기 전에 자신의 손을 다른 곳으로 옮겼다.
+PRINTFORMW 「곤란합니다, 사령관 각하.」
+CASE "Fear"
+PRINTFORMW 당신의 손은 마리의 손으로 향했다.
+PRINTFORMW 마리가 반사적으로 방어태세를 취하다 정신을 차리고 사과를 해왔다.
+CASE "Weak"
+PRINTFORMW 당신의 손은 마리의 손으로 향했다.
+PRINTFORMW 「그때 그러지만 않았어도..」
+PRINTFORMW 마리는 알 수 없는 말을 내뱉었다.
+CASE "Break"
+PRINTFORMW 당신의 손은 마리의 손으로 향했다.
+PRINTFORMW 그녀가 끼고 있던 장갑이 땀으로 심하게 젖어있었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM5
+SELECTCASE CSTR:1
+CASE "Low/Yboy"
+PRINTFORMW 당신의 손은 마리의 머리로 향했다.
+PRINTFORMW 하지만 마리의 머리는 너무 높은 곳에 있었다.
+PRINTFORMW %TEXTR("「사령관 각하, 제 복장이 흐트러집니다.」/「곤란합니다, 사령관 각하.」")%
+CASE "High/Yboy"
+PRINTFORMW 당신의 손은 마리의 머리로 향했다.
+PRINTFORMW 마리는 당신의 행동을 보며 말했다.
+PRINTFORMW %TEXTR("「자꾸 이러시면 곤란합니다..」/「이.. 이번만입니다.」")%
+PRINTFORMW 그러고는 자세를 낮춰서 머리를 만질 수 있게 해주었다.
+CASE "Affection/Yboy"
+PRINTFORMW 당신의 손은 마리의 머리로 향했다.
+PRINTFORMW 마리는 %TEXTR("웃으며/상냥하게/수줍어하며")% 자세를 낮추어 주었다.
+CASE "Marryed/Yboy"
+PRINTFORMW 당신의 손은 마리의 머리로 향했다.
+PRINTFORMW 마리는 자연스레 자세를 낮추며,
+PRINTFORMW %TEXTR("「제 머릿결이 상하면 각하 때문입니다.」/「각하께서 만지실 수 있는 곳은 여기 말고도 많습니다만..」")%(이)라고 반 농담조로 말했다.
+CASE "Annoyed/Yboy"
+PRINTFORMW 당신의 손은 마리의 머리로 향했다.
+PRINTFORMW 마리는 냉정하게 답했다.
+PRINTFORMW 「명령은 아니잖습니까? 안됩니다.」
+CASE "Fear/Yboy"
+PRINTFORMW 당신의 손은 마리의 머리로 향했다.
+PRINTFORMW 하지만 마리는 당신을 쳐다보지도 않았다.
+CASE "Weak/Yboy"
+PRINTFORMW 당신의 손은 마리의 머리로 향했다.
+PRINTFORMW 「...」
+PRINTFORMW 당신의 모습에서 어떠한 형상을 보았는지 그녀의 동공이 심하게 흔들렸다.
+CASE "Break/Yboy"
+PRINTFORMW 당신의 손은 마리의 머리로 향했다.
+PRINTFORMW 「미안하다.. 미안하다..」
+PRINTFORMW 마리는 연신 미안하다는 말을 되풀이하다가 이내 정신을 차리고는 의자에 털썩 주저앉았다.
+CASE "Low/Nboy"
+PRINTFORMW 당신의 손은 마리의 머리로 향했다.
+PRINTFORMW 마리의 반응은 얼핏 차가웠다.
+PRINTFORMW %TEXTR("「사령관 각하, 제 복장이 흐트러집니다.」/「곤란합니다, 사령관 각하.」")%
+CASE "High/Nboy"
+PRINTFORMW 당신의 손은 마리의 머리로 향했다.
+PRINTFORMW %TEXTR("「제 큰 키가 불편하진 않으십니까..?」/「으읏...」/「이런 기분, 처음입니다..」")%
+PRINTFORMW 마리의 볼이 상기되었다.
+CASE "Affection/Nboy"
+PRINTFORMW 당신의 손은 마리의 머리로 향했다.
+PRINTFORMW 마리는 마치 한 마리의 %TEXTR("순한 양/얌전한 고양이/충직한 개")% 같았다.
+CASE "Marryed/Nboy"
+PRINTFORMW 당신의 손은 마리의 머리로 향했다.
+PRINTFORMW 마리는 이때만큼은 강직한 군인이 아니였다.
+PRINTFORMW %TEXTR("「부하들의 시선은 이제 상관 없습니다.」/「좀 더.. 해주시겠습니까?」/「보살핌 받는듯한 이 느낌.. 너무 좋습니다..」")%
+CASE "Annoyed/Nboy"
+PRINTFORMW 당신의 손은 마리의 머리로 향했다.
+PRINTFORMW 마리의 반응은 얼핏 차가웠다.
+PRINTFORMW %TEXTR("「사령관 각하, 제 복장이 흐트러집니다.」/「곤란합니다, 사령관 각하.」")%
+CASE "Fear/Nboy"
+PRINTFORMW 당신의 손은 마리의 머리로 향했다.
+PRINTFORMW 당신은 마리의 눈동자 색이 바뀌는 것을 인지했지만 신경 쓰지 않고 계속 머리를 쓰다듬었다.
+CASE "Weak/Nboy"
+PRINTFORMW 당신의 손은 마리의 머리로 향했다.
+PRINTFORMW 당신은 마리의 무감각한 반응에 싫증이 나서 머리를 쓰다듬는 것을 포기했다.
+CASE "Break/Nboy"
+PRINTFORMW 당신의 손은 마리의 머리로 향했다.
+PRINTFORMW 「미안하다... 미안하다...」
+PRINTFORMW 마리는 연신 미안하다는 말을 되풀이하다가 이내 입을 다물었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM6
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신의 손은 마리의 옆구리를 찔러댔다.
+PRINTFORMW 마리의 반응은 싸늘했다.
+PRINTFORMW 「사령관 각하, 체통을 지키십시오.」
+CASE "High"
+PRINTFORMW 당신의 손은 마리의 옆구리를 찔러댔다.
+PRINTFORMW 「가..각하!?」
+PRINTFORMW %TEXTR("「꺄핫..?!」/「으읏..?!」")%
+PRINTFORMW 그녀에게는 어울리지 않는 비명소리가 울려퍼졌다.
+CASE "Affection"
+PRINTFORMW 당신의 손은 마리의 옆구리를 찔러댔다.
+PRINTFORMW %TEXTR("「각하, 여기서는 곤란합니다..」/「정말... 각하는 나쁜 분입니다! 어떻게... 이렇게 항상 사람이 제일 약할 때만...!」/「각하, 아니되옵니다..」")%
+PRINTFORMW 대답하는 마리의 목소리에서 색기가 느껴졌다.
+CASE "Marryed"
+PRINTFORMW 당신의 손은 마리의 옆구리를 찔러댔다.
+PRINTFORMW 마리의 표정이 뭔가 스위치가 켜진듯한 느낌이었다.
+PRINTDATAW
+DATAFORM 「각하, 벌써 회복되신겁니까? 후후..」
+DATALIST
+DATAFORM 「많이.. 급하신겁니까..?」
+DATAFORM 조용한 곳으로 가실까요..?
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신의 손은 마리의 옆구리를 찔러댔다.
+PRINTFORMW 마리의 반응은 싸늘했다.
+PRINTFORMW 「사령관 각하, 체통을 지키십시오.」
+CASE "Fear"
+PRINTFORMW 당신의 손은 마리의 옆구리를 찔러댔다.
+PRINTFORMW 마리는 굉장히 놀란 얼굴로 당신을 바라보고는 쓴웃음을 지어보였다.
+CASE "Weak"
+PRINTFORMW 당신의 손은 마리의 옆구리를 찔러댔다.
+PRINTFORMW 마리는 노란 토파즈색 눈동자로 당신을 주시할 뿐이었다.
+CASE "Break"
+PRINTFORMW 당신의 손은 마리의 옆구리를 찔러댔다.
+PRINTFORMW 아무런 반응이 없다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM7
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 마리에게 무릎베개를 권했다.
+PRINTFORMW 마리는 정중하게 거절했다.
+PRINTFORMW 「죄송합니다, 사령관 각하.」
+CASE "High"
+PRINTFORMW 당신은 마리에게 무릎베개를 권했다.
+PRINTFORMW 마리는 쑥스러워 하며 겨우 당신의 무릎에 머리를 기대었다.
+PRINTFORMW %TEXTR("「우읏..」/「무..무겁진 않으십니까?」/「부하들에게 들키는건 아닐지..」")%
+CASE "Affection"
+PRINTFORMW 당신은 마리에게 무릎베개를 권했다.
+PRINTFORMW 마리는 기뻐하며 당신의 무릎에 머리를 기대었다.
+PRINTDATAW
+DATALIST
+DATAFORM 「다리 저리시면 꼭 말씀해주십시오.」
+DATAFORM 「전 한숨 잠을..」
+ENDLIST
+DATAFORM 「머리를.. 쓰다듬어 주실 수 있으십니까?」
+DATAFORM 「편안합니다..」
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 마리에게 무릎베개를 권했다.
+PRINTDATAW
+DATAFORM 행복한 표정을 지어보였다.
+DATALIST
+DATAFORM 자연스레 눈을 감았다.
+DATAFORM 무언가를 원한다는듯이.
+ENDLIST
+DATAFORM 시시콜콜한 이야기들을 주고 받았다.
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 마리에게 무릎베개를 권했다.
+PRINTFORMW 마리는 냉정하게 거절했다.
+PRINTFORMW 「사양하겠습니다.」
+CASE "Fear"
+PRINTFORMW 당신은 마리에게 무릎베개를 권했다.
+PRINTFORMW 마리는 고개를 가로 저었다.
+CASE "Weak"
+PRINTFORMW 당신은 마리에게 무릎베개를 권했다.
+PRINTFORMW 아무런 반응이 없었다.
+CASE "Break"
+PRINTFORMW 당신은 마리에게 무릎베개를 권했다.
+PRINTFORMW 아무런 반응이 없었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM8
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 마리에게 무릎베개를 요청했다.
+PRINTFORMW 마리는 정중하게 거절했다.
+PRINTFORMW 「죄송합니다, 사령관 각하.」
+CASE "High"
+PRINTFORMW 당신은 마리에게 무릎베개를 요청했다.
+PRINTFORMW 마리는 머뭇거리며 자리를 마련했고, 당신은 오랜 기다림 끝에 그녀의 무릎에 머리를 기대었다.
+PRINTFORMW %TEXTR("「불편하진.. 않으십니까?」/「오래 계시면 곤란합니다...」/「이쪽을 보진 말아주십시오..」")%
+CASE "Affection"
+PRINTFORMW 당신은 마리에게 무릎베개를 요청했다.
+PRINTFORMW 기다렸다는듯이 자리를 마련한 그녀의 무릎에 당신의 머리가 기대어졌다.
+PRINTFORMW %TEXTR("「피곤하시다면 한숨 주무셔도 괜찮습니다.」/「실례가 안된다면, 머리 손질을 해드려도 될까요?」/「이런 투박한 몸으로도 편하시다니.. 거짓말은 하지 말아주십시오.」/「어째서.. 제 마음이 더 편해지는거 같은 걸까요..」")%
+CASE "Marryed"
+PRINTFORMW 당신은 마리에게 무릎베개를 요청했다.
+PRINTFORMW 기다렸다는듯이 자리를 마련한 그녀의 무릎에 당신의 머리가 기대어졌다.
+PRINTFORMW %TEXTR("「피곤하시다면 한숨 주무셔도 괜찮습니다.」/「실례가 안된다면, 머리 손질을 해드려도 될까요?」/「이런 투박한 몸으로도 편하시다니.. 거짓말은 하지 말아주십시오.」/「어째서.. 제 마음이 더 편해지는거 같은 걸까요..」")%
+CASE "Annoyed"
+PRINTFORMW 당신은 마리에게 무릎베개를 요청했다.
+PRINTFORMW 마리는 냉정하게 거절했다.
+PRINTFORMW 「안됩니다.」
+CASE "Fear"
+PRINTFORMW 당신은 마리에게 무릎베개를 요청했다.
+PRINTFORMW 마리는 고개를 가로 저었다.
+CASE "Weak"
+PRINTFORMW 당신은 마리에게 무릎베개를 요청했다.
+PRINTFORMW 아무런 반응이 없었다.
+CASE "Break"
+PRINTFORMW 당신은 마리에게 무릎베개를 요청했다.
+PRINTFORMW 아무런 반응이 없었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM9
+SELECTCASE CSTR:1
+CASE "Low/Yboy"
+PRINTFORMW 당신은 마리를 껴안았다.
+PRINTFORMW 당신의 행동에 마리는 많이 당황한 것 같다.
+PRINTFORMW 「그.. 그만둬주십시오, 사령관 각하.」
+CASE "High/Yboy"
+PRINTFORMW 당신은 마리를 껴안았다.
+PRINTFORMW 비록 그녀를 품에 다 안지는 못했지만 마리는 %TEXTR("미처 기쁜 표정을 숨기지 못했다./저항하지 않았다./당신을 귀엽다는 듯이 내려다보고 있었다.")%
+CASE "Affection/Yboy"
+PRINTFORMW 당신은 마리를 껴안았다.
+PRINTFORMW 「각하, 잠시만..」
+PRINTFORMW 마리는 당신의 품에서 빠져나와 %TEXTR("의자에 앉은 뒤/스스로 자세를 낮춰")% 당신의 품에 완전히 파고들 준비를 마쳤다.
+PRINTFORMW 당신의 품에 완전히 안겨진 마리는 %TEXTR("당신의 가슴에 얼굴을 부비었다./당신의 냄새를 맡았다./당신을 바라보며 눈을 감았다./당신을 마주 껴안았다.")%
+CASE "Marryed/Yboy"
+PRINTFORMW 당신은 마리를 껴안았다.
+PRINTFORMW 「각하, 잠시만..」
+PRINTFORMW 마리는 당신의 품에서 빠져나와 %TEXTR("의자에 앉은 뒤/스스로 자세를 낮춰")% 당신의 품에 완전히 파고들 준비를 마쳤다.
+PRINTFORMW 당신의 품에 완전히 안겨진 마리는 %TEXTR("당신의 가슴에 얼굴을 부비었다./당신의 냄새를 맡았다./당신을 바라보며 눈을 감았다./당신을 마주 껴안았다.")%
+CASE "Annoyed/Yboy"
+PRINTFORMW 당신은 마리를 껴안았다.
+PRINTFORMW 「시간 낭비하지 마십시오.」
+PRINTFORMW 마리는 당신의 품을 거칠게 떨쳐냈다.
+CASE "Fear/Yboy"
+PRINTFORMW 당신은 마리를 껴안았다.
+PRINTFORMW 하지만 마리의 무미건조한 반응에 당신은 금새 포옹을 그만두었다.
+CASE "Weak/Yboy"
+PRINTFORMW 당신은 마리를 껴안았다.
+PRINTFORMW 하지만 마리의 무미건조한 반응에 당신은 금새 포옹을 그만두었다.
+CASE "Break/Yboy"
+PRINTFORMW 당신은 마리를 껴안았다.
+PRINTFORMW 갑자기 마리가 %TEXTR("소름끼치게 흐느꼈다./미친 듯이 웃어젖혔다./비명을 질렀다.")%
+PRINTFORMW 당신은 너무 놀라 그녀를 밀어냈다..
+CASE "Low/Nboy"
+PRINTFORMW 당신은 마리를 껴안았다.
+PRINTFORMW 당신의 행동에 마리는 많이 당황한 것 같다.
+PRINTFORMW 「그.. 그만둬주십시오, 사령관 각하.」
+CASE "High/Nboy"
+PRINTFORMW 당신은 마리를 껴안았다.
+PRINTFORMW %TEXTR("「각하.. 보는 눈이 많습니다만..」/「이런 행동은 제게 어울리지 않습니다..」/「갑갑합니다..」")%
+PRINTFORMW 하지만 그녀는 딱히 저항하지 않았다.
+CASE "Affection/Nboy"
+PRINTFORMW 당신은 마리를 껴안았다.
+PRINTFORMW 당신의 품에 완전히 안겨진 마리는 %TEXTR("당신의 가슴에 얼굴을 부비었다./당신의 냄새를 맡았다./당신을 바라보며 눈을 감았다./머리를 쓰다듬어 달라 했다.")%
+CASE "Marryed/Nboy"
+PRINTFORMW 당신은 마리를 껴안았다.
+PRINTFORMW 당신의 품에 완전히 안겨진 마리는 %TEXTR("당신의 가슴에 얼굴을 부비었다./당신의 냄새를 맡았다./당신을 바라보며 눈을 감았다./머리를 쓰다듬어 달라 했다.")%
+CASE "Annoyed/Nboy"
+PRINTFORMW 당신은 마리를 껴안았다.
+PRINTFORMW 「시간 낭비하지 마십시오.」
+PRINTFORMW 마리는 당신의 품을 거칠게 떨쳐냈다.
+CASE "Fear/Nboy"
+PRINTFORMW 당신은 마리를 껴안았다.
+PRINTFORMW 하지만 마리의 무미건조한 반응에 당신은 금새 포옹을 그만두었다.
+CASE "Weak/Nboy"
+PRINTFORMW 당신은 마리를 껴안았다.
+PRINTFORMW 하지만 마리의 무미건조한 반응에 당신은 금새 포옹을 그만두었다.
+CASE "Break/Nboy"
+PRINTFORMW 당신은 마리를 껴안았다.
+PRINTFORMW 갑자기 마리가 %TEXTR("소름끼치게 흐느꼈다./미친 듯이 웃어젖혔다./비명을 질렀다.")%
+PRINTFORMW 당신은 너무 놀라 그녀를 밀어냈다..
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM10
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 마리의 뒤에서 그녀를 껴안았다.
+PRINTFORMW 당신의 행동에 마리는 많이 당황한 것 같다.
+PRINTFORMW 「그.. 그만둬주십시오, 사령관 각하.」
+CASE "High"
+PRINTFORMW 당신은 마리의 뒤에서 그녀를 껴안았다.
+PRINTFORMW 마리는 잠깐 움찔했으나 당신이라는 것을 알고는 %TEXTR("고개를 돌려 눈인사를 했다./저항하지 않았다./안심하는 한숨을 쉬었다.")%
+CASE "Affection"
+PRINTFORMW 당신은 마리의 뒤에서 그녀를 껴안았다.
+PRINTFORMW 마리는 놀라는 기색 없이 %TEXTR("당신의 팔을 안기기 좋은 자세로 고쳤다./당신의 가슴에 편히 기대었다./고개를 돌려 당신의 뺨에 입을 맞추었다./당신의 옆구리를 살살 찔러댔다.")%
+CASE "Marryed"
+PRINTFORMW 당신은 마리의 뒤에서 그녀를 껴안았다.
+PRINTFORMW 마리는 놀라는 기색 없이 %TEXTR("당신의 팔을 안기기 좋은 자세로 고쳤다./당신의 가슴에 편히 기대었다./고개를 돌려 당신의 뺨에 입을 맞추었다./당신의 옆구리를 살살 찔러댔다.")%
+CASE "Annoyed"
+PRINTFORMW 당신은 마리의 뒤에서 그녀를 껴안았다.
+PRINTFORMW 마리는 순식간에 호신술로 포옹을 풀며 차갑게 말했다.
+PRINTFORMW 「사령관 각하, 군인의 뒤는 함부로 노리는 게 아닙니다.」
+CASE "Fear"
+PRINTFORMW 당신은 마리의 뒤에서 그녀를 껴안았다.
+PRINTFORMW 마리의 무미건조한 반응에 당신은 금새 포옹을 그만두었다.
+CASE "Weak"
+PRINTFORMW 당신은 마리의 뒤에서 그녀를 껴안았다.
+PRINTFORMW 마리는 비명을 지르며 주저앉아버렸다.
+CASE "Break"
+PRINTFORMW 당신은 마리의 뒤에서 그녀를 껴안았다.
+PRINTFORMW 하지만 그녀는 아무런 반응을 하지 않았다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM11
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 마리에게 팔베개를 해주려고 했다.
+PRINTFORMW 마리는 정중하게 거절했다.
+PRINTFORMW 「죄송합니다, 사령관 각하.」
+CASE "High"
+PRINTFORMW 당신은 마리에게 팔베개를 해주려고 했다.
+PRINTFORMW 마리는 조심스럽게 당신 옆에 누웠다.
+PRINTFORMW %TEXTR("「실례하겠습니다, 각하.」/「정말.. 괜찮으시겠습니까?」/「크.. 크흠...」")%
+PRINTFORMW 하지만 마리는 오래 누워있질 못하고 일어나 옷매무새를 가다듬었다.
+CASE "Affection"
+PRINTFORMW 당신은 마리에게 팔베개를 해주려고 했다.
+PRINTFORMW 마리는 최대한 당신의 팔에 무리되지 않는 위치에 머리를 기대었다.
+PRINTFORMW %TEXTR("「무.. 무거우면 꼭 말씀해주십시오..」/「누군가에게 기댈 수 있다는건 참 좋은거군요..」/「각하의 뜻을 거역하는 건, 정말 힘들군요.」")%
+CASE "Marryed"
+PRINTFORMW 당신은 마리에게 팔베개를 해주려고 했다.
+PRINTFORMW 당신 옆에 누운 마리는 최대한 당신의 품에 파고든 뒤 %TEXTR("잠이 들었다./당신의 가슴에 손을 얹었다./당신의 배를 쓰다듬었다./시시콜콜한 이야기들을 주고 받았다.")%
+CASE "Annoyed"
+PRINTFORMW 당신은 마리에게 팔베개를 해주려고 했다.
+PRINTFORMW 마리는 냉정하게 거절했다.
+PRINTFORMW 「사양하겠습니다.」
+CASE "Fear"
+PRINTFORMW 당신은 마리에게 팔베개를 해주려고 했다.
+PRINTFORMW 마리는 고개를 가로 저었다.
+CASE "Weak"
+PRINTFORMW 당신은 마리에게 팔베개를 해주려고 했다.
+PRINTFORMW 하지만 마리는 멍하니 %TEXTR("천장/창문/바닥")%만 바라보고 있었다.
+CASE "Break"
+PRINTFORMW 당신은 마리에게 팔베개를 해주려고 했다.
+PRINTFORMW 하지만 마리는 멍하니 %TEXTR("천장/창문/바닥")%만 바라보고 있었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM12
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신의 입술은 마리의 얼굴에 흔적을 남겼다.
+PRINTFORMW 마리는 불쾌한 표정을 감추지 않았다.
+PRINTFORMW %TEXTR("「사령관 각하, 자중해주시길 바랍니다.」/「비쥬(Bisou)는 지양해주셨으면..」")%
+CASE "High"
+PRINTFORMW 당신의 입술은 마리의 얼굴에 흔적을 남겼다.
+PRINTFORMW 마리는 조금 부끄러워 하는 것 같다.
+PRINTFORMW %TEXTR("「으읏..」/「이.. 이런 곳에서 이러시면 곤란합니다..」/「가.. 각하..?」/「아...안됩니다! 아직은...」")%
+CASE "Affection"
+PRINTFORMW 당신의 입술은 마리의 얼굴에 흔적을 남겼다.
+PRINTFORMW 마리는 웃으며 %TEXTR("손으로 다른 곳을 가리켰다./당신에게 똑같이 되갚아주었다./소녀 같은 표정을 하고 있었다.")%
+CASE "Marryed"
+PRINTFORMW 당신의 입술은 마리의 얼굴에 흔적을 남겼다.
+PRINTDATAW
+DATAFORM 아쉽다는 표정을 하며 손가락을 입술에 대었다.
+DATALIST
+DATAFORM 조용히 당신의 품에 안겼다.
+DATAFORM 가슴에 닿는 숨결이 뜨거웠다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신의 입술은 마리의 얼굴에 흔적을 남겼다.
+PRINTFORMW 「하지 마십시오.」
+PRINTFORMW 마리는 급히 손수건으로 흔적을 지워버렸다.
+CASE "Fear"
+PRINTFORMW 당신의 입술은 마리의 얼굴에 흔적을 남겼다.
+PRINTFORMW 「...」
+PRINTFORMW 마리는 무표정한 얼굴로 조용히 흔적을 닦아내었다.
+CASE "Weak"
+PRINTFORMW 당신의 입술은 마리의 얼굴에 흔적을 남겼다.
+PRINTFORMW 마리는 흔적을 긁어내려는건지 마구 얼굴을 긁어대다가 정신을 차렸는지 움직임을 멈우었다.
+CASE "Break"
+PRINTFORMW 당신의 입술은 마리의 얼굴에 흔적을 남겼다.
+PRINTFORMW 마리는 흔적을 긁어내려는건지 마구 얼굴을 긁어대다가 정신을 차렸는지 움직임을 멈우었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM13
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신의 손은 마리의 배로 향했다.
+PRINTFORMW 「사령관 각하, 장난이 지나치십니다.」
+PRINTFORMW 마리의 눈이 푸른 사파이어에서 샛노란 토파즈로 변해가고 있었다.
+CASE "High"
+PRINTFORMW 당신의 손은 마리의 배로 향했다.
+PRINTFORMW %TEXTR("「각하, 이러시는 이유를 여쭤봐도 되겠습니까?」/「각하, 타인의 몸을 그렇게 더듬는건 지양해주시길 바랍니다.」/「명백한 성희롱입니다.」")%
+PRINTFORMW 말은 그렇게 했지만 마리의 목소리에는 화가 느껴지지 않았다.
+CASE "Affection"
+PRINTFORMW 당신의 손은 마리의 배로 향했다.
+PRINTFORMW 마리는 의기양양한 말투로 말했다.
+PRINTDATAW
+DATAFORM 「이런 몸매는 하루아침에 만들어지는게 아닙니다.」
+DATALIST
+DATAFORM 「각하께서도 제 개인 훈련에 동참하시겠습니까?」
+DATAFORM 「확실히 관리해드리겠습니다.」
+ENDLIST
+DATAFORM 「군인에게 건강한 몸은 최고의 재산입니다.」
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신의 손은 마리의 배로 향했다.
+PRINTFORMW 마리는 급히 움츠리며 말했다.
+PRINTDATAW
+DATAFORM 「각하..! 앞으로 매우 중요할 부위를 마구 만지시면 곤란합니다..!」
+DATALIST
+DATAFORM 「우읏.. 갑자기 만지시면..」
+DATAFORM 「요새 훈련을 게을리 해서..」
+DATAFORM 「으읏..! 그게 누구 탓이겠습니까!?」
+ENDLIST
+DATAFORM 「가.. 간지럽습니다..!」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신의 손은 마리의 배로 향했다.
+PRINTFORMW 「무슨 짓이십니까?, 사령관 각하.」
+PRINTFORMW 순간 마리의 주변에서 수상쩍은 기류가 느껴졌다.
+CASE "Fear"
+PRINTFORMW 당신의 손은 마리의 배로 향했다.
+PRINTFORMW 마리의 무미건조한 반응에 당신은 만지는 것을 그만두었다.
+CASE "Weak"
+PRINTFORMW 당신의 손은 마리의 배로 향했다.
+PRINTFORMW 마리의 배에는 그녀가 겪었던 전투의 흔적들이 흉터로 올라와 자리하고 있었다.
+CASE "Break"
+PRINTFORMW 당신의 손은 마리의 배로 향했다.
+PRINTFORMW 「상급자를 함부로 만지면 곤란합니다, 브라우니.」
+PRINTFORMW 마리는 초점 없는 눈으로 말했다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM14
+SELECTCASE CSTR:1
+CASE "Low/Yboy"
+PRINTFORMW 당신은 앉아있는 마리의 귀를 살짝 깨물었다.
+PRINTFORMW 마리는 냉정하게 대답했다.
+PRINTFORMW 「사령관 각하, 부하의 신체를 훼손하는 행위는 엄벌에 처해질 수 있습니다.」
+CASE "High/Yboy"
+PRINTFORMW 당신은 앉아있는 마리의 귀를 살짝 깨물었다.
+PRINTFORMW %TEXTR("「각하, 불결한 행위는 지양해주십시오..」/「그 정도로는 귀가 떨어져 나가지 않습니다.」/「각하, 그런건 어디서 배워오신겁니까?」")%
+PRINTFORMW 일단.. 마리의 시선을 끄는 것은 성공한거 같다.
+CASE "Affection/Yboy"
+PRINTFORMW 당신은 앉아있는 마리의 귀를 살짝 깨물었다.
+PRINTFORMW %TEXTR("「하앗..」/「으응..」/「흐앗..!?」/「읏..」")%
+PRINTFORMW 마리가 낸 소리라고는 전혀 믿을 수 없는 소리에 당신이 오히려 당황했다.
+CASE "Marryed/Yboy"
+PRINTFORMW 당신은 앉아있는 마리의 귀를 살짝 깨물었다.
+PRINTFORMW 마리의 표정과 숨소리가 요염해졌다.
+PRINTFORMW %TEXTR("「몸이 어리다고 정신도 어릴거라고 생각한 제가 어리석었습니다..」/「자칫하면 스위치가 켜질 것 같습니다..」/「각하 때문에 귀가 남아나질 않습니다..」")%
+CASE "Annoyed/Yboy"
+PRINTFORMW 당신은 앉아있는 마리의 귀를 살짝 깨물었다.
+PRINTFORMW 마리는 냉정하게 대답했다.
+PRINTFORMW 「사령관 각하, 부하의 신체를 훼손하는 행위는 엄벌에 처해질 수 있습니다.」
+CASE "Fear/Yboy"
+PRINTFORMW 당신은 앉아있는 마리의 귀를 살짝 깨물었다.
+PRINTFORMW 마리는 고통스러웠는지 외마디 비명을 지르고 당신을 밀치며 자신의 방으로 도망쳤다.
+CASE "Weak/Yboy"
+PRINTFORMW 당신은 앉아있는 마리의 귀를 살짝 깨물었다.
+PRINTFORMW 조금 더 세게 깨물어 보아도 마리는 아무런 반응을 하지 않았다.
+CASE "Break/Yboy"
+PRINTFORMW 당신은 앉아있는 마리의 귀를 살짝 깨물었다.
+PRINTFORMW 「하핫. 간지럽습니다.」
+PRINTFORMW 마리는 생기없는 말투로 말했다.
+CASE "Low/Nboy"
+PRINTFORMW 당신은 마리의 귀를 살짝 깨물었다.
+PRINTFORMW 마리는 냉정하게 대답했다.
+PRINTFORMW 「사령관 각하, 부하의 신체를 훼손하는 행위는 엄벌에 처해질 수 있습니다.」
+CASE "High/Nboy"
+PRINTFORMW 당신은 마리의 귀를 살짝 깨물었다.
+PRINTFORMW %TEXTR("「각하, 불결한 행위는 지양해주십시오..」/「그 정도로는 귀가 떨어져 나가지 않습니다.」")%
+PRINTFORMW 일단.. 마리의 시선을 끄는 것은 성공한거 같다.
+CASE "Affection/Nboy"
+PRINTFORMW 당신은 마리의 귀를 살짝 깨물었다.
+PRINTFORMW %TEXTR("「하앗..」/「으응..」/「흐앗..!?」/「읏..」")%
+PRINTFORMW 마리가 낸 소리라고는 전혀 믿을 수 없는 소리에 당신이 오히려 당황했다.
+CASE "Marryed/Nboy"
+PRINTFORMW 당신은 마리의 귀를 살짝 깨물었다.
+PRINTFORMW 마리의 표정과 숨소리가 요염해졌다.
+PRINTFORMW %TEXTR("「각하 때문에 새로운 것에 눈을 뜬 것 같습니다..」/「각하 때문에 귀가 남아나질 않습니다..」/「하아.. 좀 더..」/「각하, 그때처럼 제 이름을 속삭여 주시겠습니까..?」")%
+CASE "Annoyed/Nboy"
+PRINTFORMW 당신은 마리의 귀를 살짝 깨물었다.
+PRINTFORMW 마리는 냉정하게 대답했다.
+PRINTFORMW 「사령관 각하, 부하의 신체를 훼손하는 행위는 엄벌에 처해질 수 있습니다.」
+CASE "Fear/Nboy"
+PRINTFORMW 당신은 마리의 귀를 살짝 깨물었다.
+PRINTFORMW 마리는 고통스러웠는지 외마디 비명을 지르고 당신을 밀치며 자신의 방으로 도망쳤다.
+CASE "Weak/Nboy"
+PRINTFORMW 당신은 앉아있는 마리의 귀를 살짝 깨물었다.
+PRINTFORMW 조금 더 세게 깨물어 보아도 마리는 아무런 반응을 하지 않았다.
+CASE "Break/Nboy"
+PRINTFORMW 당신은 앉아있는 마리의 귀를 살짝 깨물었다.
+PRINTFORMW 피맛이 살짝 날 정도로 물어보았으나 마리는 아무런 반응을 하지 않았다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM15
+SELECTCASE CSTR:1
+CASE "First/Low/Yboy"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 갑작스런 키스에 마리는 황급히 당신을 밀쳐내고 잔소리를 늘어놓았다.
+PRINTFORMW 「사령관 각하, 부하의 마음을 살펴보실 줄 아셔야 그들을 올바른 길로 이끌 수 있습니다!」
+PRINTFORMW 「부하의 첫 키스를 그렇게 뺏어가시면..!」
+PRINTFORMW 이러쿵
+PRINTFORMW 저러쿵
+PRINTFORMW .
+PRINTFORMW 당신은 마리에게 손이 발이 되도록 싹싹 빌고 나서야 마리의 용서를 받을 수 있었다.
+CASE "First/High/Yboy"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 마리는 매우 당황한 얼굴로 이러지도 저러지도 못했다.
+PRINTFORMW 「이..이럴 때는 이렇게라고.. 앗..! 죄송합니다, 각하..」
+PRINTFORMW 「으읏.. 각하께 모범이 되지 못해 죄송할 따름입니다..」
+PRINTFORMW 당신과 마리의 첫 키스 소동은 십수 번의 버드 키스만으로 끝나고 말았다.
+CASE "First/Affection/Yboy"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 둘은 자연스럽게 서로의 입술을 훔치기 좋은 자세로,
+PRINTFORMW 그 순간만은 오롯이 둘뿐이라는 듯이 서로를 탐닉했다.
+CASE "First/Marryed/Yboy"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 마리는 요염한 눈길로 말했다.
+PRINTFORMW 「음..쇼섹..」
+PRINTFORMW 당신은 빵 터졌지만 이내 마리의 입술에 봉인당해 더는 웃을 수 없었다.
+PRINTFORMW 당신의 첫 키스는 그렇게 강탈(?) 당했다.
+CASE "First/Annoyed/Yboy"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 「사령관 각하, 분위기라는건 알고 계십니까?」
+PRINTFORMW 마리는 짜증 가득한 목소리로 당신을 밀쳐냈다.
+CASE "First/Fear/Yboy"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 갑작스런 입맞춤에 놀란 마리는 그 자리에서 구토를 하고 말았다.
+CASE "First/Weak/Yboy"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 마치 밀랍인형에게 입을 맞추는듯한 느낌에 당신은 소름이 끼쳐 첫 키스를 그렇게 끝내고 말았다.
+CASE "First/Break/Yboy"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 마치 밀랍인형에게 입을 맞추는듯한 느낌에 당신은 소름이 끼쳐 첫 키스를 그렇게 끝내고 말았다.
+CASE "First/Low/Nboy"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 갑작스런 키스에 마리는 매우 토라졌다.
+PRINTFORMW 「사령관 각하.. 어떻게 그러실 수 있으십니까..」
+PRINTFORMW 당신은 마리의 화를 푸느라 꽤 애를 먹었다.
+CASE "First/High/Nboy"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 마리는 매우 당황한 얼굴로 이러지도 저러지도 못했다.
+PRINTFORMW 「이..이럴 때는 이렇게라고.. 앗..! 죄송합니다, 각하..」
+PRINTFORMW 당신과 마리의 첫 키스 소동은 십수 번의 버드 키스만으로 끝나고 말았다.
+CASE "First/Affection/Nboy"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 그녀의 숨결,
+PRINTFORMW 당신의 숨결,
+PRINTFORMW 그녀의 입술,
+PRINTFORMW 당신의 입술,
+PRINTFORMW 그녀의 이빨,
+PRINTFORMW 당신의 이빨,
+PRINTFORMW 그녀의 혀,
+PRINTFORMW 당신의 혀,
+PRINTFORMW ...
+PRINTFORMW 당신과 마리의 시간은 세상과 따로 흐르고 있었다.
+CASE "First/Marryed/Nboy"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 그녀의 숨결,
+PRINTFORMW 당신의 숨결,
+PRINTFORMW 그녀의 입술,
+PRINTFORMW 당신의 입술,
+PRINTFORMW 그녀의 이빨,
+PRINTFORMW 당신의 이빨,
+PRINTFORMW 그녀의 혀,
+PRINTFORMW 당신의 혀,
+PRINTFORMW ...
+PRINTFORMW 당신과 마리의 시간은 세상과 따로 흐르고 있었다.
+CASE "First/Annoyed/Nboy"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 「사령관 각하, 분위기라는건 알고 계십니까?」
+PRINTFORMW 마리는 짜증 가득한 목소리로 당신을 밀쳐냈다.
+CASE "First/Fear/Nboy"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 갑작스런 입맞춤에 놀란 마리는 그 자리에서 구토를 하고 말았다.
+CASE "First/Weak/Nboy"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 마치 밀랍인형에게 입을 맞추는듯한 느낌에 당신은 소름이 끼쳐 첫 키스를 그렇게 끝내고 말았다.
+CASE "First/Break/Nboy"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 마치 밀랍인형에게 입을 맞추는듯한 느낌에 당신은 소름이 끼쳐 첫 키스를 그렇게 끝내고 말았다.
+CASE "Low"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 마리의 반응은 싸늘했다.
+PRINTFORMW 「사령관 각하, 정말 예의가 없으시군요.」
+CASE "High"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 아직은 많이 어색했지만 마리는 최선을 다해 당신의 요청에 응했다.
+PRINTFORMW %TEXTR("「각하.. 이번엔 어땠습니까..?」/「전 괜찮으니, 원하시는대로..」/「아직 부하들에게는.. 비밀입니다..」")%
+CASE "Affection"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 마리는 능숙하게 당신의 요청에 반응했다.
+PRINTDATAW
+DATAFORM 「푸하앗..! 각하, 저를 이렇게 만든 책임은 확실히 지셔야 합니다..」
+DATAFORM 「후아.. 각하.. 나머지는 방에서.. 어떠십니까..?」
+DATALIST
+DATAFORM 「후후.. 이건 어떠십니까?」
+DATAFORM 「.. 응웁..」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 마리는 아무 말도 하지 않은 채 %TEXTR("당신의 입술을 탐했다./눈을 감고 키스를 받아들였다./능숙하게 혀를 굴렸다./지금 상황을 리드했다./당신에게 주도권을 넘겼다.")%
+CASE "Annoyed"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 마리는 격렬하게 당신을 뿌리쳤다.
+PRINTFORMW 그리고 그녀는 자신의 손수건으로 본인의 입술을 닦아냈다.
+CASE "Fear"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 「...!」
+PRINTFORMW 마리는 갑자기 뒤돌아 어딘가로 사라졌다.
+PRINTFORMW 다른 바이오로이드에게 들은 바로는 화장실에서 속을 게워냈다고 한다.
+CASE "Weak"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 여전히 밀랍인형을 상대하는 것 같았다..
+CASE "Break"
+PRINTFORMW 당신은 마리에게 입을 맞추었다.
+PRINTFORMW 여전히 밀랍인형을 상대하는 것 같았다..
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM16
+SELECTCASE CSTR:1
+CASE "Low/Yboy"
+PRINTFORMW 당신은 앉아있는 마리의 목덜미에 혀를 기었다.
+PRINTFORMW 마리는 적잖이 화가 난 것 같다.
+PRINTFORMW %TEXTR("「이건 명백한 성희롱입니다.」/「정신교육이 필요해 보이는군요, 사령관 각하.」/「사령관 각하, 이런 외설스런 행위는 누구한테 배우신겁니까?」/「각하에겐 아직 이릅니다. 좀 더 건전한 쪽으로 관심을 돌리시길.」")%
+CASE "High/Yboy"
+PRINTFORMW 당신은 앉아있는 마리의 목덜미에 혀를 기었다.
+PRINTFORMW 마리는 적잖이 화가 난 것 같다.
+PRINTFORMW %TEXTR("「이건 명백한 성희롱입니다.」/「정신교육이 필요해 보이는군요, 사령관 각하.」/「사령관 각하, 이런 외설스런 행위는 누구한테 배우신겁니까?」/「각하에겐 아직 이릅니다. 좀 더 건전한 쪽으로 관심을 돌리시길.」")%
+CASE "Affection/Yboy"
+PRINTFORMW 당신은 앉아있는 마리의 목덜미에 혀를 기었다.
+PRINTFORMW 마리의 숨소리가 가팔라졌다.
+PRINTFORMW %TEXTR("「정말.... 그렇게 흥미가 있으신 겁니까?」/「각하.. 여기서 계속 이러시면 뒷감당이 힘들어지십니다..」/「으읏.. 거긴..」/「각하를.. 너무 과소평과 한 것 같습니다..」")%
+CASE "Marryed/Yboy"
+PRINTFORMW 당신은 앉아있는 마리의 목덜미에 혀를 기었다.
+PRINTFORMW 그 순간 마리는 단번에 당신을 들어안기로 안고 방으로 들어갔다.
+PRINTFORMW .
+PRINTFORMW %TEXTR("하마터면 오늘 일정이 틀어질 뻔 했다./마리를 겨우 설득해서 빠져 나올 수 있었다./남은 일과는 방에서 처리해야 할 것 같다..")%
+CASE "Annoyed/Yboy"
+PRINTFORMW 당신은 앉아있는 마리의 목덜미에 혀를 기었다.
+PRINTFORMW 마리는 적잖이 화가 난 것 같다.
+PRINTFORMW %TEXTR("「이건 명백한 성희롱입니다.」/「정신교육이 필요해 보이는군요, 사령관 각하.」/「사령관 각하, 이런 외설스런 행위는 누구한테 배우신겁니까?」/「각하에겐 아직 이릅니다. 좀 더 건전한 쪽으로 관심을 돌리시길.」")%
+CASE "Fear/Yboy"
+PRINTFORMW 당신은 앉아있는 마리의 목덜미에 혀를 기었다.
+PRINTFORMW 마리는 가만히 앉아 텅빈 눈으로 눈물을 흘리고 있었다.
+CASE "Weak/Yboy"
+PRINTFORMW 당신은 앉아있는 마리의 목덜미에 혀를 기었다.
+PRINTFORMW 그녀의 목에는 흉터와 상처딱지가 가득했기에 짧게 대기만 했다.
+CASE "Break/Yboy"
+PRINTFORMW 당신은 앉아있는 마리의 목덜미에 혀를 기었다.
+PRINTFORMW 그녀의 목에서 비린맛이 난다.
+PRINTFORMW 최근에 생긴듯한 상처들을 건든 것 같지만 그녀는 초점이 없는 눈을 한 채 먼 곳을 바라볼 뿐이었다.
+CASE "Low/Nboy"
+PRINTFORMW 당신은 마리의 목덜미에 혀를 기었다.
+PRINTFORMW 마리는 적잖이 화가 난 것 같다.
+PRINTFORMW %TEXTR("「이건 명백한 성희롱입니다.」/「아무리 사령관 각하라도 지켜야 할 건 지켜주십시오.」/「사령관 각하, 그 정도밖에 안되는 분이셨습니까?」/「정말 실망입니다, 사령관 각하.」")%
+CASE "High/Nboy"
+PRINTFORMW 당신은 마리의 목덜미에 혀를 기었다.
+PRINTFORMW 마리는 적잖이 화가 난 것 같다.
+PRINTFORMW %TEXTR("「이건 명백한 성희롱입니다.」/「아무리 사령관 각하라도 지켜야 할 건 지켜주십시오.」/「사령관 각하, 그 정도밖에 안되는 분이셨습니까?」/「정말 실망입니다, 사령관 각하.」")%
+CASE "Affection/Nboy"
+PRINTFORMW 당신은 마리의 목덜미에 혀를 기었다.
+PRINTFORMW 마리의 숨소리가 가팔라졌다.
+PRINTFORMW %TEXTR("「각하.. 저의 어디까지 알고 계시는겁니까..?」/「각하.. 여기서 계속 이러시면 뒷감당이 힘들어지십니다..」/「으읏.. 거긴..」")%
+CASE "Marryed/Nboy"
+PRINTFORMW 당신은 마리의 목덜미에 혀를 기었다.
+PRINTFORMW 마리가 상기된 얼굴로 당신의 행동을 잠시 저지하며 말했다.
+PRINTFORMW %TEXTR("「방으로.. 가시겠습니까..?」/「오늘도.. 가능하신겁니까..?」/「저를 이렇게 만드신 값은 톡톡히 받겠습니다..」")%
+PRINTFORMW .
+PRINTFORMW %TEXTR("하마터면 오늘 일정이 틀어질 뻔 했다./마리를 겨우 설득해서 빠져 나올 수 있었다./남은 일과는 방에서 처리해야 할 것 같다..")%
+CASE "Annoyed/Nboy"
+PRINTFORMW 당신은 마리의 목덜미에 혀를 기었다.
+PRINTFORMW 마리는 적잖이 화가 난 것 같다.
+PRINTFORMW %TEXTR("「이건 명백한 성희롱입니다.」/「아무리 사령관 각하라도 지켜야 할 건 지켜주십시오.」/「사령관 각하, 그 정도밖에 안되는 분이셨습니까?」/「정말 실망입니다, 사령관 각하.」")%
+CASE "Fear/Nboy"
+PRINTFORMW 당신은 마리의 목덜미에 혀를 기었다.
+PRINTFORMW 어떤 감정이 복받쳤는지 그녀의 텅빈 눈에서 눈물이 쏟아졌다.
+CASE "Weak/Nboy"
+PRINTFORMW 당신은 앉아있는 마리의 목덜미에 혀를 기었다.
+PRINTFORMW 그녀의 목에는 흉터와 상처딱지가 가득했기에 짧게 대기만 했다.
+CASE "Break/Nboy"
+PRINTFORMW 당신은 앉아있는 마리의 목덜미에 혀를 기었다.
+PRINTFORMW 그녀의 목에서 비린맛이 난다.
+PRINTFORMW 최근에 생긴듯한 상처들을 건든 것 같지만 그녀는 초점이 없는 눈을 한 채 먼 곳을 바라볼 뿐이었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM17
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신의 손가락은 마리의 등을 훑고 지나갔다.
+PRINTFORMW 마리의 반응은 싸늘했다.
+PRINTFORMW 「각하, 체통을 지키십시오.」
+CASE "High"
+PRINTFORMW 당신의 손가락은 마리의 등을 훑고 지나갔다.
+PRINTFORMW 마리의 반응은 싸늘했다.
+PRINTFORMW 「각하, 체통을 지키십시오.」
+CASE "Affection"
+PRINTFORMW 당신의 손가락은 마리의 등을 훑고 지나갔다.
+PRINTFORMW %TEXTR("「각하, 간지럽습니다..」/「읏...」/「가.. 갑자기 그런..」/「아...안됩니다! 아직은...」")%
+PRINTFORMW 마리의 얼굴이 빨개졌다.
+CASE "Marryed"
+PRINTFORMW 당신의 손가락은 마리의 등을 훑고 지나갔다.
+PRINTFORMW 마리는 요염한 표정을 한채 당신에게 %TEXTR("이리오라고 손짓했다./다가간 뒤 「오늘 밤, 각오하세요.」라고 속삭였다./키스를 날렸다.")%
+CASE "Annoyed"
+PRINTFORMW 당신의 손가락은 마리의 등을 훑고 지나갔다.
+PRINTFORMW 마리의 반응은 싸늘했다.
+PRINTFORMW 「각하, 체통을 지키십시오.」
+CASE "Fear"
+PRINTFORMW 당신의 손가락은 마리의 등을 훑고 지나갔다.
+PRINTFORMW 마리의 등에서 상처들이 만져졌다.
+CASE "Weak"
+PRINTFORMW 당신의 손가락은 마리의 등을 훑고 지나갔다.
+PRINTFORMW 마리는 아무런 반응을 보이지 않았다.
+CASE "Break"
+PRINTFORMW 당신의 손가락은 마리의 등을 훑고 지나갔다.
+PRINTFORMW 마리는 아무런 반응을 보이지 않았다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM18
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 마리의 가슴에 얼굴을 묻었다.
+PRINTFORMW 마리는 당황하지 않고 당신을 밀어냈다.
+PRINTFORMW %TEXTR("「사령관 각하, 성희롱은 옳지 않습니다.」/「넘어지신거라면 봐드릴 용의가 있습니다.」")%
+CASE "High"
+PRINTFORMW 당신은 마리의 가슴에 얼굴을 묻었다.
+PRINTFORMW 마리는 침착한 척 했지만 볼이 상기되어 있었다.
+PRINTFORMW %TEXTR("「실수가 잦으십니다, 각하..」/「으읏..」/「고.. 곤란하군요..」")%
+CASE "Affection"
+PRINTFORMW 당신은 마리의 가슴에 얼굴을 묻었다.
+PRINTFORMW 마리는 당신을 더욱 깊게 감싸 안았다.
+PRINTFORMW %TEXTR("「치.. 치유 되십니까..?」/「주변의 시선따위 이젠 저도 모르겠습니다.」/「각하의.. 숨결이 느껴집니다..」")%
+CASE "Marryed"
+PRINTFORMW 당신은 마리의 가슴에 얼굴을 묻었다.
+PRINTFORMW 마리는 당신의 머리를 상냥하게 쓰다듬었다.
+PRINTFORMW %TEXTR("「이대로 세상이 멈춰도.. 괜찮지 않겠습니까..?」/「너무 괴롭히시면 저도 모르게 정전기를 일으킬 수 있으니 조심하십시요.」/「너무 그러시면 더 커져버립니다..」")%
+CASE "Annoyed"
+PRINTFORMW 당신은 마리의 가슴에 얼굴을 묻었다.
+PRINTFORMW 마리는 귀찮다는 투로 말했다.
+PRINTFORMW %TEXTR("「그렇게 만지고 싶으셨습니까?」/「성희롱으로 군법회의에 회부하겠습니다.」")%
+CASE "Fear"
+PRINTFORMW 당신은 마리의 가슴에 얼굴을 묻었다.
+PRINTFORMW 마리는 입술에서 피가 나도록 입을 앙 다물고 있었다.
+CASE "Weak"
+PRINTFORMW 당신은 마리의 가슴에 얼굴을 묻었다.
+PRINTFORMW 마리의 몸에서 %TEXTR("피비린내가 났다./역한 소독약 냄새가 진동했다.")%
+CASE "Break"
+PRINTFORMW 당신은 마리의 가슴에 얼굴을 묻었다.
+PRINTFORMW 마리는 지켜주지 못해 미안하다는 말만 반복할 뿐, 별다른 반응을 하지 않았다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM19
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 마리에게 욕설을 퍼부었다.
+PRINTFORMW 욕설이 끝난 후 마리는 차분하게 말했다.
+PRINTFORMW 「사령관 각하, 감히 말씀드리오나, 그런 강압적인 방법으로는 부하의 신임을 얻기 어렵습니다.」
+CASE "High"
+PRINTFORMW 당신은 마리에게 욕설을 퍼부었다.
+PRINTFORMW 욕설이 끝난 후 마리는 차분하게 말했다.
+PRINTFORMW 「사령관 각하, 감히 말씀드리오나, 그런 강압적인 방법으로는 부하의 신임을 얻기 어렵습니다.」
+CASE "Affection"
+PRINTFORMW 당신은 마리에게 욕설을 퍼부었다.
+PRINTFORMW 마리는 큰 충격을 받았으나 내심 티를 내진 못했다.
+CASE "Marryed"
+PRINTFORMW 당신은 마리에게 욕설을 퍼부었다.
+PRINTFORMW 마리는 큰 충격을 받았으나 내심 티를 내진 못했다.
+CASE "Annoyed"
+PRINTFORMW 당신은 마리에게 욕설을 퍼부었다.
+PRINTFORMW 마리의 표정이 일그러졌지만 상대할 가치도 없다고 판단한건지 대응하지 않았다.
+CASE "Fear"
+PRINTFORMW 당신은 마리에게 욕설을 퍼부었다.
+PRINTFORMW 「...」
+PRINTFORMW 마리는 초점 잃은 눈으로, 듣고 있는 것 같진 않았지만, 부동자세로 욕설이 끝날 때까지 가만히 있을 뿐이었다.
+CASE "Weak"
+PRINTFORMW 당신은 마리에게 욕설을 퍼부었다.
+PRINTFORMW 마리는 아무런 잘못을 하지 않았는데도 큰 죄를 지었던 것처럼 몸을 바들바들 떨고 있었다.
+CASE "Break"
+PRINTFORMW 당신은 마리에게 욕설을 퍼부었다.
+PRINTFORMW 마리는 아무런 잘못을 하지 않았는데도 큰 죄를 지었던 것처럼 몸을 바들바들 떨고 있었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM20
+SELECTCASE CSTR:1
+CASE "Low/Yboy"
+PRINTFORMW 당신은 마리의 뺨을 때리고 싶었으나 그녀의 얼굴은 너무 높은 곳에 위치하고 있었다.
+PRINTFORMW 마리는 낑낑거리는 당신의 모습을 그저 바라볼 뿐이었다.
+CASE "High/Yboy"
+PRINTFORMW 당신은 마리의 뺨을 때리고 싶었으나 그녀의 얼굴은 너무 높은 곳에 위치하고 있었다.
+PRINTFORMW 마리는 낑낑거리는 당신의 모습을 그저 바라볼 뿐이었다.
+CASE "Affection/Yboy"
+PRINTFORMW 당신은 마리의 뺨을 때리고 싶었으나 그녀의 얼굴은 너무 높은 곳에 위치하고 있었다.
+PRINTFORMW 마리는 낑낑거리는 당신의 모습을 그저 바라볼 뿐이었다.
+CASE "Marryed/Yboy"
+PRINTFORMW 당신은 마리의 뺨을 때리고 싶었으나 그녀의 얼굴은 너무 높은 곳에 위치하고 있었다.
+PRINTFORMW 마리는 낑낑거리는 당신의 모습을 그저 바라볼 뿐이었다.
+CASE "Annoyed/Yboy"
+PRINTFORMW 당신은 마리의 뺨을 때리고 싶었으나 그녀의 얼굴은 너무 높은 곳에 위치하고 있었다.
+PRINTFORMW 마리는 낑낑거리는 당신의 모습을 그저 바라볼 뿐이었다.
+CASE "Fear/Yboy"
+PRINTFORMW 당신은 마리의 뺨을 때리고 싶었으나 그녀의 얼굴은 너무 높은 곳에 위치하고 있었다.
+PRINTFORMW 마리는 낑낑거리는 당신의 모습을 그저 바라볼 뿐이었다.
+CASE "Weak/Yboy"
+PRINTFORMW 당신은 마리의 뺨을 때리고 싶었으나 그녀의 얼굴은 너무 높은 곳에 위치하고 있었다.
+PRINTFORMW 마리는 낑낑거리는 당신의 모습을 그저 바라볼 뿐이었다.
+CASE "Break/Yboy"
+PRINTFORMW 당신은 마리의 뺨을 때리고 싶었으나 그녀의 얼굴은 너무 높은 곳에 위치하고 있었다.
+PRINTFORMW 마리는 낑낑거리는 당신의 모습을 그저 바라볼 뿐이었다.
+CASE "Yboy/Danger"
+PRINTFORMW 당신은 마리의 뺨을 때리려 했으나 마리가 당신의 팔을 잡아채며 말했다.
+PRINTFORMW 「계속 그러시면 곤란합니다, 각하..」
+PRINTFORMW 마리의 눈에 광기가 얼핏 지나간 것 같다.
+CASE "Low/Nboy"
+PRINTFORMW 당신은 마리의 뺨을 후려쳤다.
+PRINTFORMW 하지만 마리는 순식간에 손등으로 막아냈다.
+PRINTFORMW %TEXTR("「사령관 각하, 다른 분들께도 이러시면 곤란합니다.」/「저한테 이러시는 이유를 여쭤봐도 되겠습니까?」")%
+CASE "High/Nboy"
+PRINTFORMW 당신은 마리의 뺨을 후려쳤다.
+PRINTFORMW 하지만 마리는 순식간에 손등으로 막아냈다.
+PRINTFORMW %TEXTR("「사령관 각하, 다른 분들께도 이러시면 곤란합니다.」/「저한테 이러시는 이유를 여쭤봐도 되겠습니까?」")%
+CASE "Affection/Nboy"
+PRINTFORMW 당신은 마리의 뺨을 후려쳤다.
+PRINTFORMW 당신을 믿었던 마리는 그대로 뺨을 맞았고, 너무 세게 맞아서 하마터면 바닥에 고꾸라질뻔했다.
+CASE "Marryed/Nboy"
+PRINTFORMW 당신은 마리의 뺨을 후려쳤다.
+PRINTFORMW 당신을 믿었던 마리는 그대로 뺨을 맞았고, 너무 세게 맞아서 하마터면 바닥에 고꾸라질뻔했다.
+CASE "Annoyed/Nboy"
+PRINTFORMW 당신은 마리의 뺨을 후려쳤다.
+PRINTFORMW 마리는 너무 열이 받았는지 근처 물품을 파손하고 말았다.
+CASE "Fear/Nboy"
+PRINTFORMW 당신은 마리의 뺨을 후려쳤다.
+PRINTFORMW 「...」
+PRINTFORMW 마리는 저항하지 않고 당신이 그만둘 때까지 가만히 맞기만 했다.
+CASE "Weak/Nboy"
+PRINTFORMW 당신은 마리의 뺨을 후려쳤다.
+PRINTFORMW 「죄송합니다.. 죄송합니다..」
+PRINTFORMW 마리는 연신 죄송하다는 말만 하며 가만히 서 있었다.
+CASE "Break/Nboy"
+PRINTFORMW 당신은 마리의 뺨을 후려쳤다.
+PRINTFORMW 「죄송합니다.. 죄송합니다..」
+PRINTFORMW 마리는 연신 죄송하다는 말만 하며 가만히 서 있었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM21
+SELECTCASE CSTR:1
+CASE "Low/Yboy"
+PRINTFORMW 당신은 마리의 배를 때렸으나 당신의 여린 몸으로는 그녀에게 아무런 해를 입힐 수 없었다.
+PRINTFORMW 마리는 그런 당신을 보며 생각에 잠긴 것 같았다.
+CASE "High/Yboy"
+PRINTFORMW 당신은 마리의 배를 때렸으나 당신의 여린 몸으로는 그녀에게 아무런 해를 입힐 수 없었다.
+PRINTFORMW 마리는 그런 당신을 보며 생각에 잠긴 것 같았다.
+CASE "Affection/Yboy"
+PRINTFORMW 당신은 마리의 배를 때렸으나 당신의 여린 몸으로는 그녀에게 아무런 해를 입힐 수 없었다.
+PRINTFORMW 마리는 그런 당신을 보며 생각에 잠긴 것 같았다.
+CASE "Marryed/Yboy"
+PRINTFORMW 당신은 마리의 배를 때렸으나 당신의 여린 몸으로는 그녀에게 아무런 해를 입힐 수 없었다.
+PRINTFORMW 마리는 그런 당신을 보며 생각에 잠긴 것 같았다.
+CASE "Annoyed/Yboy"
+PRINTFORMW 당신은 마리의 배를 때렸으나 당신의 여린 몸으로는 그녀에게 아무런 해를 입힐 수 없었다.
+PRINTFORMW 마리는 그런 당신을 보며 생각에 잠긴 것 같았다.
+CASE "Fear/Yboy"
+PRINTFORMW 당신은 마리의 배를 때렸으나 당신의 여린 몸으로는 그녀에게 아무런 해를 입힐 수 없었다.
+PRINTFORMW 마리는 그런 당신을 보며 생각에 잠긴 것 같았다.
+CASE "Weak/Yboy"
+PRINTFORMW 당신은 마리의 배를 때렸으나 당신의 여린 몸으로는 그녀에게 아무런 해를 입힐 수 없었다.
+PRINTFORMW 마리는 그런 당신을 보며 생각에 잠긴 것 같았다.
+CASE "Break/Yboy"
+PRINTFORMW 당신은 마리의 배를 때렸으나 당신의 여린 몸으로는 그녀에게 아무런 해를 입힐 수 없었다.
+PRINTFORMW 마리는 그런 당신을 보며 생각에 잠긴 것 같았다.
+CASE "Yboy/Danger"
+PRINTFORMW 당신은 마리의 배를 때렸다.
+PRINTFORMW 「각하, 여기는 상냥하게 만져주셔야 하는 곳입니다..」
+PRINTFORMW 마리가 섬뜩하게 미소 지으며 말했다.
+CASE "Low/Nboy"
+PRINTFORMW 당신은 마리의 배를 가격했다.
+PRINTFORMW 하지만 마리는 여유롭게 급소를 피해 방어했다.
+PRINTFORMW %TEXTR("「사령관 각하, 지금 무슨 짓을 하시는겁니까?」/「사령관 각하께 그런 취미가 있을 줄은 몰랐습니다.」")%
+CASE "High/Nboy"
+PRINTFORMW 당신은 마리의 배를 가격했다.
+PRINTFORMW 하지만 마리는 여유롭게 급소를 피해 방어했다.
+PRINTFORMW %TEXTR("「사령관 각하, 지금 무슨 짓을 하시는겁니까?」/「사령관 각하께 그런 취미가 있을 줄은 몰랐습니다.」")%
+CASE "Affection/Nboy"
+PRINTFORMW 당신은 마리의 배를 가격했다.
+PRINTFORMW 당신을 믿었던 마리는 정확하게 급소를 맞아 식사 내용물을 다시 보게 되었다.
+CASE "Marryed/Nboy"
+PRINTFORMW 당신은 마리의 배를 가격했다.
+PRINTFORMW 당신을 믿었던 마리는 정확하게 급소를 맞아 식사 내용물을 다시 보게 되었다.
+CASE "Annoyed/Nboy"
+PRINTFORMW 당신은 마리의 배를 가격했다.
+PRINTFORMW 「각하, 비겁하게 그러지 마시고 한번 겨뤄보시겠습니까?」
+PRINTFORMW 마리가 당신을 노려보며 말했다.
+CASE "Fear/Nboy"
+PRINTFORMW 당신은 마리의 배를 가격했다.
+PRINTFORMW 「...」
+PRINTFORMW 마리는 충격에 잠깐 움찔했으나 꿋꿋이 버티고 서 있었다.
+CASE "Weak/Nboy"
+PRINTFORMW 당신은 마리의 배를 가격했다.
+PRINTFORMW 마리는 그 반동으로 뒤로 자빠진 뒤로 멍하게 누워만 있었다.
+CASE "Break/Nboy"
+PRINTFORMW 당신은 마리의 배를 가격했다.
+PRINTFORMW 마리는 그 반동으로 뒤로 자빠진 뒤로 멍하게 누워만 있었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_COM22
+SELECTCASE CSTR:1
+CASE "Low/Yboy"
+PRINTFORMW 당신은 마리를 발로 찼으나 아무런 일도 일어나지 않았다.
+PRINTFORMW 아니, 오히려 당신의 다리가 아팠다.
+PRINTFORMW 하지만 마리의 표정은 여러 부정적인 감정이 섞여있는 형태로 변해 있었다.
+CASE "High/Yboy"
+PRINTFORMW 당신은 마리를 발로 찼으나 아무런 일도 일어나지 않았다.
+PRINTFORMW 아니, 오히려 당신의 다리가 아팠다.
+PRINTFORMW 하지만 마리의 표정은 여러 부정적인 감정이 섞여있는 형태로 변해 있었다.
+CASE "Affection/Yboy"
+PRINTFORMW 당신은 마리를 발로 찼으나 아무런 일도 일어나지 않았다.
+PRINTFORMW 아니, 오히려 당신의 다리가 아팠다.
+PRINTFORMW 하지만 마리의 표정은 여러 부정적인 감정이 섞여있는 형태로 변해 있었다.
+CASE "Marryed/Yboy"
+PRINTFORMW 당신은 마리를 발로 찼으나 아무런 일도 일어나지 않았다.
+PRINTFORMW 아니, 오히려 당신의 다리가 아팠다.
+PRINTFORMW 하지만 마리의 표정은 여러 부정적인 감정이 섞여있는 형태로 변해 있었다.
+CASE "Annoyed/Yboy"
+PRINTFORMW 당신은 마리를 발로 찼으나 아무런 일도 일어나지 않았다.
+PRINTFORMW 아니, 오히려 당신의 다리가 아팠다.
+PRINTFORMW 하지만 마리의 표정은 여러 부정적인 감정이 섞여있는 형태로 변해 있었다.
+CASE "Fear/Yboy"
+PRINTFORMW 당신은 마리를 발로 찼으나 아무런 일도 일어나지 않았다.
+PRINTFORMW 아니, 오히려 당신의 다리가 아팠다.
+PRINTFORMW 하지만 마리의 표정은 여러 부정적인 감정이 섞여있는 형태로 변해 있었다.
+CASE "Weak/Yboy"
+PRINTFORMW 당신은 마리를 발로 찼으나 아무런 일도 일어나지 않았다.
+PRINTFORMW 아니, 오히려 당신의 다리가 아팠다.
+PRINTFORMW 하지만 마리의 표정은 여러 부정적인 감정이 섞여있는 형태로 변해 있었다.
+CASE "Break/Yboy"
+PRINTFORMW 당신은 마리를 발로 찼으나 아무런 일도 일어나지 않았다.
+PRINTFORMW 아니, 오히려 당신의 다리가 아팠다.
+PRINTFORMW 하지만 마리의 표정은 여러 부정적인 감정이 섞여있는 형태로 변해 있었다.
+CASE "Yboy/Danger"
+PRINTFORMW 당신은 마리를 발로 찼다.
+PRINTFORMW 마리는 타격이 없어 보였으나 넘어지면서 %TEXTR("눈물을 흘렸다./비명을 질렀다.")%
+PRINTFORMW 「각하, 너무하십니다..」
+PRINTFORMW 마리의 목소리에는 영혼이 없었다.
+CASE "Low/Nboy"
+PRINTFORMW 당신은 마리를 걷어찼다.
+PRINTFORMW 하지만 마리의 단련된 몸은 꿈쩍도 하지 않았다.
+PRINTFORMW %TEXTR("「백병전 모의연습입니까? 각오하시는 게 좋을 겁니다.」/「이래뵈도 실전으로 다져진 몸입니다.」")%
+CASE "High/Nboy"
+PRINTFORMW 당신은 마리를 걷어찼다.
+PRINTFORMW 하지만 마리의 단련된 몸은 꿈쩍도 하지 않았다.
+PRINTFORMW %TEXTR("「백병전 모의연습입니까? 각오하시는 게 좋을 겁니다.」/「이래뵈도 실전으로 다져진 몸입니다.」")%
+CASE "Affection/Nboy"
+PRINTFORMW 당신은 마리를 걷어찼다.
+PRINTFORMW 마리의 %TEXTR("다리는/몸은/팔은")% 큰 상처가 나지 않았지만 마음에는 심한 멍이 들었다.
+CASE "Marryed/Nboy"
+PRINTFORMW 당신은 마리를 걷어찼다.
+PRINTFORMW 마리의 %TEXTR("다리는/몸은/팔은")% 큰 상처가 나지 않았지만 마음에는 심한 멍이 들었다.
+CASE "Annoyed/Nboy"
+PRINTFORMW 당신은 마리를 걷어찼다.
+PRINTFORMW 「각하, 부하들을 함부로 대하시면 훗날 큰일나십니다.」
+PRINTFORMW 마리는 반쯤 살기를 띈 얼굴로 따졌다.
+CASE "Fear/Nboy"
+PRINTFORMW 당신은 마리를 걷어찼다.
+PRINTFORMW 「...」
+PRINTFORMW 마리는 충격에 잠깐 움찔했으나 꿋꿋이 버티고 서 있었다.
+CASE "Weak/Nboy"
+PRINTFORMW 당신은 마리를 걷어찼다.
+PRINTFORMW 마리는 힘없이 고꾸라져 그대로 일어날 생각을 하지 않았다.
+CASE "Break/Nboy"
+PRINTFORMW 당신은 마리를 걷어찼다.
+PRINTFORMW 마리는 힘없이 고꾸라져 그대로 일어날 생각을 하지 않았다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+
+
+
+@M_No21_EVENT_Morning
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「사령관 각하, 새벽이 밝았습니다.」
+PRINTFORMW 「아침 점호를 실시하겠습니다.」
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「각하, 아침입니다.」
+DATAFORM 「아침 운동이라도 같이 하시겠습니까?」
+ENDLIST
+DATALIST
+DATAFORM 「각하, 아침입니다.」
+DATAFORM 「오늘도 좋은 하루 되시길 바랍니다.」
+ENDLIST
+DATALIST
+DATAFORM 「각하, 편히 주무셨습니까?」
+DATAFORM 마리가 살갑게 인사했다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 깨어나서 방을 둘러보니 책상에는 잘 짜여진 금일 일과표와 %TEXTR("간단한 조식/오늘 입을 옷")%이 준비되어 있었고, 그 옆에는 아기자기한 디자인의 쪽지 한 장이 있었다.
+PRINTFORMW 쪽지에는 「각하, 준비 되시는대로 오시면 되겠습니다.
+PRINTFORMW %TEXTR("아.. 아자아자..아자젤..!!(여러번 썻다 지웠다 한 흔적이 보인다.)」이/얼른 보고 싶습니다.」/오늘 하루도 힘내십시오.」")%라고 적혀 있었다.
+CASE "Marryed"
+PRINTDATAW
+DATAFORM 마리는 당신보다 먼저 일어나 아침을 준비했고, 당신은 침대에 남아있는 그녀의 온기와 냄새를 좀 더 느낀 뒤에 일어났다.
+DATALIST
+DATAFORM 당신은 마리보다 먼저 일어나 아침을 준비했다.
+DATAFORM 아침 준비가 끝나고, 그녀를 깨워보지만 그녀의 「아...안됩니다! 아직은...」이라는 잠꼬대에 홀리듯이 다시 침대에 몸을 뉘었고..
+DATAFORM .
+DATAFORM 둘은 겨우 지각을 면했다.
+ENDLIST
+DATAFORM 당신과 마리는 사이좋게 일어나 아침 운동을 함께 나섰다.
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATAFORM 당신은 늦잠을 잤지만 마리는 개의치 않고 오전 일과를 독단적으로 진행하고 있었다.
+DATAFORM 당신의 방에는 대충 짜여진 금일 일과표만 덩그러니 놓여 있었다.
+ENDDATA
+CASE "Fear"
+PRINTFORMW 「사령관 각하, 새벽이 밝았습니다.」
+PRINTFORMW 「아침 점호를 실시하겠습니다.」
+PRINTFORMW 마리의 말에는 감정이 전혀 느껴지지 않았다.
+CASE "Weak"
+PRINTFORMW 「...」
+PRINTFORMW 마리는 밤새 무슨 악몽을 꾸었는지 굉장히 초췌해 보였고, 몸에서 피비린내가 나는 것 같았다.
+CASE "Break"
+PRINTFORMW 「...」
+PRINTFORMW 마리는 밤새 무슨 악몽을 꾸었는지 굉장히 초췌해 보였고, 몸에서 피비린내가 나는 것 같았다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_EVENT_Sortie
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 「명령 수행, 시작.」
+PRINTFORMW 형식적인 경례 후 마리는 출격했다.
+CASE "High"
+PRINTFORMW 「각하, 다녀오겠습니다!」
+PRINTFORMW 힘찬 경례 후 마리는 출격했다.
+CASE "Affection"
+PRINTFORMW 「부디, 빠르게 끝나야...!」
+PRINTFORMW 「아, 크흠! 그럼, 출발하겠습니다.」
+PRINTFORMW 마리는 아쉬워하는 표정을 뒤로하며 출격했다.
+CASE "Marryed"
+PRINTDATAW
+DATAFORM 「커피가 식기 전에 돌아올 수 있으면 좋으련만..」
+DATALIST
+DATAFORM *쪽*
+DATAFORM 마리는 당신이 자신의 것이라는 표시를 한 뒤 허겁지겁 출격에 나섰다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 「지금은 사령관 각하의 뜻대로 하겠습니다.」
+PRINTFORMW 굳은 표정으로 경례 후 마리는 출격했다.
+CASE "Fear"
+PRINTFORMW 「명령대로..」
+PRINTFORMW 마리는 힘없이 경례를 한 후 출격했다.
+CASE "Weak"
+PRINTFORMW 마리는 당신에게 인사도 없이 출격했다.
+CASE "Break"
+PRINTFORMW 마리는 당신에게 인사도 없이 출격했다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_EVENT_Cook_Self
+IF ABL:MASTER:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「기대해도.. 되는겁니까?」
+PRINTFORMW 마리의 표정이 불안해보였다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「기대해도.. 되는겁니까?」
+PRINTFORMW 마리의 표정이 불안해보였다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「전장에서 단련된 식습관이니 괜찮을겁니다!」
+PRINTFORMW 「...」
+PRINTFORMW 「아마도..」
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「전장에서 단련된 식습관이니 괜찮을겁니다!」
+PRINTFORMW 「...」
+PRINTFORMW 「아마도..」
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「먹을 수는 있게 만들어주십시오.」
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 마리는 별 관심이 없어보였다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 마리는 별 관심이 없어보였다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 마리가 당신 곁에 다가왔다.
+PRINTFORMW 「냄새는 괜찮은거 같습니다만..」
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 마리가 당신 곁에 다가왔다.
+PRINTFORMW 「냄새는 괜찮은거 같습니다만..」
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「점점 실력이 느시는 것 같습니다?」
+PRINTFORMW 마리는 당신을 응원하고 있었다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「점점 실력이 느시는 것 같습니다?」
+PRINTFORMW 마리는 당신을 응원하고 있었다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「전투식량보다는 먹을만 했으면 좋겠습니다.」
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 마리는 관심이 없는거 같았으나 코가 실룩이는게 보였다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 마리는 관심이 없는거 같았으나 코가 실룩이는게 보였다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「기대하겠습니다.」
+PRINTFORMW 마리의 눈빛에는 기대감이 가득해 보였다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「기대하겠습니다.」
+PRINTFORMW 마리의 눈빛에는 기대감이 가득해 보였다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「벌써부터 기대됩니다.」
+PRINTFORMW 마리는 당신의 어깨를 토닥이며 말했다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「벌써부터 기대됩니다.」
+PRINTFORMW 마리는 당신의 어깨를 토닥이며 말했다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「...」
+PRINTFORMW 마리는 당신의 요리하는 모습을 말없이 바라보고 있었다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「...」
+PRINTFORMW 마리는 당신의 요리하는 모습을 말없이 바라보고 있었다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「...」
+PRINTFORMW 마리는 당신의 요리하는 모습을 말없이 바라보고 있었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No21_EVENT_Eat_Com
+IF ABL:MASTER:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 「머..먹을만 합니다..」
+PRINTFORMW 마리는 겨우겨우 당신의 음식을 해치웠다.
+CASE "High"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 「머..먹을만 합니다..」
+PRINTFORMW 마리는 겨우겨우 당신의 음식을 해치웠다.
+CASE "Affection"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 마리는 무리해서 요리를 다 먹고는 체할 뻔했다.
+CASE "Marryed"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 마리는 무리해서 요리를 다 먹고는 체할 뻔했다.
+CASE "Annoyed"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 「전투식량이 더 맛있겠습니다.」
+PRINTFORMW 마리의 반응은 냉담했다.
+CASE "Fear"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 마치 살려고 먹는 것 같았다.
+CASE "Weak"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 마치 살려고 먹는 것 같았다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 「감사히 먹었습니다.」
+PRINTFORMW 마리의 표정이 밝아보였다.
+CASE "High"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 「감사히 먹었습니다.」
+PRINTFORMW 마리의 표정이 밝아보였다.
+CASE "Affection"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 「이러다가 요리사되시는거 아닙니까?」
+PRINTFORMW 마리는 수저를 입에 물고 말했다.
+CASE "Marryed"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 「이러다가 요리사되시는거 아닙니까?」
+PRINTFORMW 마리는 수저를 입에 물고 말했다.
+CASE "Annoyed"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 「나쁘진.. 않았습니다..」
+PRINTFORMW 마리의 표정이 조금은 풀어진 것 같다.
+CASE "Fear"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 말없이 그릇을 깨끗하게 비워냈다.
+CASE "Weak"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 말없이 그릇을 깨끗하게 비워냈다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 「야전에서 자꾸 생각날까봐 두려워지는 맛입니다. 너무 맛있습니다.」
+CASE "High"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 「야전에서 자꾸 생각날까봐 두려워지는 맛입니다. 너무 맛있습니다.」
+CASE "Affection"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 「야전에서 자꾸 생각날까봐 두려워지는 맛입니다. 너무 맛있습니다.」
+CASE "Marryed"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 「매일 이런 식사를 할 수 있다니, 너무 행복합니다.」
+CASE "Annoyed"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 「...」
+PRINTFORMW 마리의 표정은 만족스러운거 같았다.
+CASE "Fear"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 요리를 먹다가 무슨 생각이 났는지 눈시울이 붉어지는게 보였다.
+CASE "Weak"
+PRINTFORMW 마리는 당신의 요리를 먹기 시작했다.
+PRINTFORMW 요리를 먹다가 무슨 생각이 났는지 눈시울이 붉어지는게 보였다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No21_EVENT_Cook
+IF ABL:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 「최선을 다하겠습니다.」
+PRINTFORMW 마리는 최선만 다했다.
+CASE "High"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 「최선을 다하겠습니다.」
+PRINTFORMW 마리는 최선만 다했다.
+CASE "Affection"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 「최.. 최선은 다해보겠습니다..」
+PRINTFORMW 마리의 노력은 가상했다.
+CASE "Marryed"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 「최.. 최선은 다해보겠습니다..」
+PRINTFORMW 마리의 노력은 가상했다.
+CASE "Annoyed"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 「먹어도 죽진 않을겁니다.」
+PRINTFORMW 섬뜩한 농담을 하는 마리였다.
+CASE "Fear"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 마리의 손떰림 때문에 매우 불안해보였다.
+CASE "Weak"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 마리의 손떰림 때문에 매우 불안해보였다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 「최근에 연습한 실력을 보여드리겠습니다.」
+PRINTFORMW 마리는 침착하게 말했다.
+CASE "High"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 「최근에 연습한 실력을 보여드리겠습니다.」
+PRINTFORMW 마리는 침착하게 말했다.
+CASE "Affection"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 「각하께 연습의 성과를 보여드리고 싶습니다..」
+PRINTFORMW 마리는 수줍게 말했다.
+CASE "Marryed"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 「각하께 연습의 성과를 보여드리고 싶습니다..」
+PRINTFORMW 마리는 수줍게 말했다.
+CASE "Annoyed"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 주방에는 아무런 말소리도 들리지 않았다.
+CASE "Fear"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 야전에서 익힌 버릇으로 요리를 하는 것 같았다.
+CASE "Weak"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 야전에서 익힌 버릇으로 요리를 하는 것 같았다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 「야전에 있을수록 질 좋은 음식을 만들 줄 알아야 하는 법입니다.」
+PRINTFORMW 마리의 표정에 자신감이 보였다.
+CASE "High"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 「야전에 있을수록 질 좋은 음식을 만들 줄 알아야 하는 법입니다.」
+PRINTFORMW 마리의 표정에 자신감이 보였다.
+CASE "Affection"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 「야전에 있을수록 질 좋은 음식을 만들 줄 알아야 하는 법입니다.」
+PRINTFORMW 마리의 표정에 자신감이 보였다.
+CASE "Marryed"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 「신부 수업의 결과를 보여드ㄹ.. 자..잘못 말한겁니다! 하으으..」
+PRINTFORMW 마리의 볼이 새빨개졌다.
+CASE "Annoyed"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 고요한 주방에서 먹음직스런 냄새만 풍겨왔다.
+CASE "Fear"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 요리 중 정신을 다른 곳에 둔 것 같았지만 실수는 없었다.
+CASE "Weak"
+PRINTFORMW 마리가 요리를 시작했다.
+PRINTFORMW 요리 중 정신을 다른 곳에 둔 것 같았지만 실수는 없었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No21_EVENT_Eat_Lunch
+IF ABL:조리lv < 3
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 마리에게는 미안하지만 음식을 많이 남겨버렸다.
+CASE "High"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 마리에게는 미안하지만 음식을 많이 남겨버렸다.
+CASE "Affection"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 마리에게는 미안하지만 음식을 많이 남겨버렸다.
+CASE "Marryed"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 마리에게는 미안하지만 음식을 많이 남겨버렸다.
+CASE "Annoyed"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 전투식량이 먹고 싶어졌다.
+CASE "Fear"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 한 입도 대기 힘들었다.
+CASE "Weak"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 한 입도 대기 힘들었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 야전 생활로 다져진 솜씨여서 그런지 무난한 맛이었다.
+CASE "High"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 야전 생활로 다져진 솜씨여서 그런지 무난한 맛이었다.
+CASE "Affection"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 야전 생활로 다져진 솜씨여서 그런지 무난한 맛이었다.
+CASE "Marryed"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 야전 생활로 다져진 솜씨여서 그런지 무난한 맛이었다.
+CASE "Annoyed"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 일단 독은 들어있지 않은 것 같다.
+CASE "Fear"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 평범했다.
+CASE "Weak"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 평범했다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 4
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 맛있다.
+PRINTFORMW 이 한마디로만 끝내기에는 너무 아쉬웠지만, 소감을 늘어놓기에는 당신의 머리는 음식에 집중하느라 너무 바빴다.
+CASE "High"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 맛있다.
+PRINTFORMW 이 한마디로만 끝내기에는 너무 아쉬웠지만, 소감을 늘어놓기에는 당신의 머리는 음식에 집중하느라 너무 바빴다.
+CASE "Affection"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 맛있다.
+PRINTFORMW 이 한마디로만 끝내기에는 너무 아쉬웠지만, 소감을 늘어놓기에는 당신의 머리는 음식에 집중하느라 너무 바빴다.
+CASE "Marryed"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 맛있다.
+PRINTFORMW 이 한마디로만 끝내기에는 너무 아쉬웠지만, 소감을 늘어놓기에는 당신의 머리는 음식에 집중하느라 너무 바빴다.
+CASE "Annoyed"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 분명 실력은 출중한 거 같은데, 당신한테는 실력을 보여주기 싫어하는듯한 맛이었다.
+CASE "Fear"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 요리는 훌륭했으나 요리사의 상태가 좋아보이지는 않았다.
+CASE "Weak"
+PRINTFORMW 당신은 마리의 요리를 먹기 시작했다.
+PRINTFORMW 요리는 훌륭했으나 요리사의 상태가 좋아보이지는 않았다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+ENDIF
+
+@M_No21_Sell
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 불굴의 마리를 판매 처리했다.
+PRINTFORMW 「그렇습니까..」
+PRINTFORMW 「짧았지만 즐거웠습니다.」
+PRINTFORMW 「그럼 안녕히.」
+PRINTFORMW 그것이 그녀의 마지막 말이었다.
+CASE "High"
+PRINTFORMW 당신은 불굴의 마리를 판매 처리했다.
+PRINTFORMW 「군인이 이런 호사를 누리는게 말이 안되는 것이었습니다.」
+PRINTFORMW 「잠깐이었지만 행복했습니다.」
+PRINTFORMW 「언젠가 다시 뵐 수 있길..」
+PRINTFORMW 그것이 그녀의 마지막 말이었다.
+CASE "Affection"
+PRINTFORMW 당신은 불굴의 마리를 판매 처리했다.
+PRINTFORMW 「...」
+PRINTFORMW 「언젠가는 이렇게 될거라 생각하고 있었습니다. 진짜입니다.」
+PRINTFORMW 「아니, 거짓말입니다. 이럴줄은 몰랐습니다.」
+PRINTFORMW 「각하, 장난치시는거라고 해주십쇼.」
+PRINTFORMW 「그동안 각하와 함께 했던 모든 것들이 한순간에 무너지는게 너무 무섭습니다.」
+PRINTFORMW 「제발 거짓말이라고 해주십쇼..!!」
+PRINTFORMW 「제발.. 흐흑..제발요..」
+PRINTFORMW 그것이 그녀의 마지막 말이었다.
+CASE "Marryed"
+PRINTFORMW 당신은 불굴의 마리를 판매 처리했다.
+PRINTFORMW 「...」
+PRINTFORMW 「언젠가는 이렇게 될거라 생각하고 있었습니다. 진짜입니다.」
+PRINTFORMW 「아니, 거짓말입니다. 이럴줄은 몰랐습니다.」
+PRINTFORMW 「각하, 장난치시는거라고 해주십쇼.」
+PRINTFORMW 「그동안 각하와 함께 했던 모든 것들이 한순간에 무너지는게 너무 무섭습니다.」
+PRINTFORMW 「제발 거짓말이라고 해주십쇼..!!」
+PRINTFORMW 「제발.. 흐흑..제발요..」
+PRINTFORMW 그것이 그녀의 마지막 말이었다.
+CASE "Annoyed"
+PRINTFORMW 당신은 불굴의 마리를 판매 처리했다.
+PRINTFORMW 「불굴의 마리, 오늘부로 다른 지역으로의 판매를 명 받았습니다. 이에 신고합니다.」
+PRINTFORMW 「사령관 각하 같은 쓰레기로부터 해방될 수 있어서 너무 기쁩니다.」
+PRINTFORMW 「부디 다시 뵙지는 않았으면 좋겠습니다.」
+PRINTFORMW 그것이 그녀의 마지막 말이었다.
+CASE "Fear"
+PRINTFORMW 당신은 불굴의 마리를 판매 처리했다.
+PRINTFORMW 「불굴의 마리, 오늘부로 다른 지역으로의 판매를 명 받았습니다. 이에 신고합니다.」
+PRINTFORMW 그것이 그녀의 마지막 말이었다.
+CASE "Weak"
+PRINTFORMW 당신은 불굴의 마리를 판매 처리했다.
+PRINTFORMW 「불굴의 마리, 오늘부로 다른 지역으로의 판매를 명 받았습니다. 이에 신고합니다.」
+PRINTFORMW 그것이 그녀의 마지막 말이었다.
+CASE "Break"
+PRINTFORMW 당신은 불굴의 마리를 판매 처리했다.
+PRINTFORMW 「제발 저를 버리지 마시고 그대로 처분해주시기 바랍니다..」
+PRINTFORMW 그것이 그녀의 마지막 말이었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_Disuse
+SELECTCASE CSTR:1
+CASE "Low"
+PRINTFORMW 당신은 불굴의 마리를 폐기 처리했다.
+PRINTFORMW 「그렇습니까..」
+PRINTFORMW 「다음 생에는 온전히 전장에서 싸우다 죽었으면 좋겠군요.」
+PRINTFORMW 「그럼 안녕히.」
+PRINTFORMW 그것이 그녀의 마지막 말이었다.
+CASE "High"
+PRINTFORMW 당신은 불굴의 마리를 폐기 처리했다.
+PRINTFORMW 「각하께서는 참 매정하십니다.」
+PRINTFORMW 「이런 행복을 깨닫게 해주시고 그런 결정을 내리시다니..」
+PRINTFORMW 「하지만 군인에게 명령은 절대적인 것.」
+PRINTFORMW 「각하의 명에 따르겠습니다.」
+PRINTFORMW 「부디 행복하십시오.」
+PRINTFORMW 그것이 그녀의 마지막 말이었다.
+CASE "Affection"
+PRINTFORMW 당신은 불굴의 마리를 폐기 처리했다.
+PRINTFORMW 「...」
+PRINTFORMW 「언젠가는 이렇게 될거라 생각하고 있었습니다. 진짜입니다.」
+PRINTFORMW 「하지만 이런 방식일거라고는.. 생각조차 하지 못했습니다.」
+PRINTFORMW 「지금 장난치시는거라고 해주십쇼.」
+PRINTFORMW 「그동안 각하와 함께 했던 모든 것들이 모두 거짓이었다고 해도 전 용서해드릴 수 있습니다.」
+PRINTFORMW 「제발 거짓말이라고 해주십쇼..!!」
+PRINTFORMW 「제발.. 흐흑..제발요..」
+PRINTFORMW 「당신을 잊고 싶지 않아요..」
+PRINTFORMW 「죽고 싶지 않다고요...!」
+PRINTFORMW 그것이 그녀의 마지막 말이었다.
+CASE "Marryed"
+PRINTFORMW 당신은 불굴의 마리를 폐기 처리했다.
+PRINTFORMW 「...」
+PRINTFORMW 「언젠가는 이렇게 될거라 생각하고 있었습니다. 진짜입니다.」
+PRINTFORMW 「하지만 이런 방식일거라고는.. 생각조차 하지 못했습니다.」
+PRINTFORMW 「지금 장난치시는거라고 해주십쇼.」
+PRINTFORMW 「그동안 각하와 함께 했던 모든 것들이 모두 거짓이었다고 해도 전 용서해드릴 수 있습니다.」
+PRINTFORMW 「제발 거짓말이라고 해주십쇼..!!」
+PRINTFORMW 「제발.. 흐흑..제발요..」
+PRINTFORMW 「당신을 잊고 싶지 않아요..」
+PRINTFORMW 「죽고 싶지 않다고요...!」
+PRINTFORMW 그것이 그녀의 마지막 말이었다.
+CASE "Annoyed"
+PRINTFORMW 당신은 불굴의 마리를 폐기 처리했다.
+PRINTFORMW 「불굴의 마리, 오늘부로 폐기를 명 받았습니다. 이에 신고합니다.」
+PRINTFORMW 「사령관 각하 같은 쓰레기로부터 해방될 수 있어서 너무 기쁩니다만..」
+PRINTFORMW 「전장에서 명예롭게 죽지 못한게 한입니다.」
+PRINTFORMW 그것이 그녀의 마지막 말이었다.
+CASE "Fear"
+PRINTFORMW 당신은 불굴의 마리를 폐기 처리했다.
+PRINTFORMW 「불굴의 마리, 오늘부로 폐기를 명 받았습니다. 이에 신고합니다.」
+PRINTFORMW 그것이 그녀의 마지막 말이었다.
+CASE "Weak"
+PRINTFORMW 당신은 불굴의 마리를 폐기 처리했다.
+PRINTFORMW 「불굴의 마리, 오늘부로 폐기를 명 받았습니다. 이에 신고합니다.」
+PRINTFORMW 그것이 그녀의 마지막 말이었다.
+CASE "Break"
+PRINTFORMW 당신은 불굴의 마리를 폐기 처리했다.
+PRINTFORMW 「이제 그녀들을 만나러 갈 수 있어..」
+PRINTFORMW 그것이 그녀의 마지막 말이었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:1 = 
+RETURN 1
+
+@M_No21_ENDING
+SELECTCASE CFLAG:엔딩플래그
+CASE 1
+PRINTFORMW 불굴: 온갖 어려움에도 굽히지 아니함.
+PRINTFORMW 당신은 그 단어를 처음에는 좋아하지 않았다.
+PRINTFORMW 고지식, 아집, 외곬 등등..
+PRINTFORMW 그런 의미로만 느껴졌었다.
+PRINTFORMW 하지만 그녀를 알게 되고,
+PRINTFORMW 그녀의 '불굴'을 알게 되면서
+PRINTFORMW 당신에게 그 단어는 최고의 단어가 되었다.
+PRINTFORMW 올곧음, 극복, 믿음 등등..
+PRINTFORMW 그리고 이제,
+PRINTFORMW 당신은 세상에 당신의 불굴을 보여주고자 한다.
+PRINTFORMW 편협한 시선들이 괴롭히더라도,
+PRINTFORMW 주위의 축하를 받지 못할지라도,
+PRINTFORMW 멸망이 다가오더라도,
+PRINTFORMW 끝끝내 시간이 그네들을 갈라놓을지라도,
+PRINTFORMW 당신은 그녀와 함께 할 것이라고.
+PRINTFORMW ...
+PRINTFORMW 그렇게 서로를 지켜주겠다는 그들만의 서약을 한,
+PRINTFORMW 인간 남성과 여성 바이오로이드는
+PRINTFORMW 그들을 인정하지 않는 세상으로
+PRINTFORMW 서로의 손을 다정하게 맞잡으며,
+PRINTFORMW 당차게 나아갔다.
+PRINTFORMW 마리 엔딩 No.1 - 불굴
+RETURN 1
+CASE 2
+PRINTFORMW -바이오로이드는 인간이 아닙니다.-
+PRINTFORMW 당신은 이 문구를 참 좋아한다.
+PRINTFORMW 인간과는 매우 흡사하나 정작 인간이 아닌
+PRINTFORMW 최고의 장난감.
+PRINTFORMW 당신은 최근에 -C-1 마리- 라는 바이오로이드를 구매했었다.
+PRINTFORMW 군인이였어서 그런진 모르겠지만, 쉽사리 당신의 장난감이 되질 않았다.
+PRINTFORMW 왕년의 그녀에게 붙었다던 -불굴의 마리- 라는 별명은 장식이 아니였다.
+PRINTFORMW 하지만 바이오로이드가 모셔야 할 주인인, 인간님인 당신에게
+PRINTFORMW 온갖 파렴치한 짓을 당한 그녀의 불굴은, 결국 꺾이고 망가져버렸다.
+PRINTFORMW 기어코 마리가 망가져버리자 당신은 마리에 대한 흥미가 떨어져 버렸다.
+PRINTFORMW ...
+PRINTFORMW 이제 마리에게 처음이자 마지막 선물을 할 시간이다.
+PRINTFORMW 평범한 연인 사이에서는 사랑의 증표를 의미하는 이 반지로
+PRINTFORMW 마리는 당신의 소유라는,
+PRINTFORMW 당신에게서 영원히 벗어날 수 없다는,
+PRINTFORMW 끔찍한 낙인을 마리의 네번째 손가락에 새긴 당신은
+PRINTFORMW 속칭 당신의 -창고- 에 마리를 치워버리고
+PRINTFORMW 새로운 장난감을 사러 밖을 나섰다.
+PRINTFORMW 마리 엔딩 No.2 - 바이오로이드는 인간이 아닙니다.
+RETURN 1
+CASE 3
+PRINTFORMW 뭔가 불편하다.
+PRINTFORMW 그렇게 느끼며 깨어난 당신은 침대에 사지가 묶여있었다.
+PRINTFORMW 이상 상황에 당황한 당신은 안간힘을 써봤으나 묶인 부위의 고통만 커져갈 뿐이었다.
+PRINTFORMW 「깨어나셨습니까, 각하.」
+PRINTFORMW 당신의 시야 바깥에서 들려오는 마리의 목소리에 당신은 마리에게 풀어달라고 악을 쓰고 싶었지만 목소리도 제대로 나오질 않았다.
+PRINTFORMW 「각하, 아직도 정신을 차리지 못하셨군요..」
+PRINTFORMW 이윽고 당신의 눈에 들어온 그녀는,
+PRINTFORMW 옷이라고 말하기에는 옷에게 실례일 정도로 얇고 하늘하늘거리고 투명한 천 조각들을 걸치고 있었다.
+PRINTFORMW 「저는 각하가 저를 아끼고 사랑해주실 거라 믿어 의심치 않았었습니다.」
+PRINTFORMW 「하지만 그건, 저만의 착각이었습니다.」
+PRINTFORMW 「아무리 강직한 저라도 사랑 앞에서는 쉽게 무너져 내려버렸고,」
+PRINTFORMW 「할 수 있는건 그저 당신의 괴롭힘도 사랑이라고 자위하며 지내는 것 뿐이었습니다.」
+PRINTFORMW 「그러던 어느날, 문득 깨달았습니다.」
+PRINTFORMW 「저를 통해서 새로 태어난 각하라면,」
+PRINTFORMW 「다시 시작할 수 있지 않을까?」
+PRINTFORMW 그 말을 하며 그녀는 의문의 액체가 담긴 주사기를 들고 다가왔다.
+PRINTFORMW 당신은 필사적으로 몸을 휘청거렸지만 그녀의 힘에 제압당하자 미동조차 할 수 없게 되었다.
+PRINTFORMW 당신의 목에 예리한 아픔이 파고든다.
+PRINTFORMW 「각하, 한숨 주무시면.. 아니, 좀 많이 주무셨다 깨어나시면..」
+PRINTFORMW 당신의 미각, 촉각, 후각이 세상과 멀어져갔다.
+PRINTFORMW 「모든 것을 다ㅅ...」
+PRINTFORMW 당신의 청각도 그들을 따라갔다.
+PRINTFORMW 「...」
+PRINTFORMW 당신은 마리가 -사랑해요.-라고 입술을 움직인거 같다고 생각하며 눈을 감았다.
+PRINTFORMW ...
+PRINTFORMW C-1 마리
+PRINTFORMW 불굴의 마리 라는 이명을 가졌던 바이오로이드는
+PRINTFORMW 인간, 심지어 미성년을 해한 혐의로 수배되었다.
+PRINTFORMW 하지만 그녀를 찾는 데는 너무 오랜 시간이 걸리고 말았다.
+PRINTFORMW 기어코 발견된 그녀는,
+PRINTFORMW 텅빈 눈으로 자신의 몸에서 커가는
+PRINTFORMW 새로운 주인이 자리한 자신의 배를 쓰다듬으며,
+PRINTFORMW 실없이 웃고 있었다.
+PRINTFORMW 마리 엔딩 No.3 - U.S.S
+RETURN 1
+ENDSELECT
+RETURN 0
+
