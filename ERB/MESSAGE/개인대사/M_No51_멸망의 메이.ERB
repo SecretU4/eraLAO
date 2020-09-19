@@ -18,7 +18,7 @@ CFLAG:조교여부 = 1
 RETURN 1
 
 @M_No51_TRAIN_START_1
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Confession"
 		PRINTFORMW 여느때와 같은 아침을 맞이하고
 		PRINTFORMW 따사로운 햇살에 눈을 뜬 당신은 하루를 시작하기 위해 부엌으로 나선다.
@@ -317,11 +317,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;17개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_TRAIN_END
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		A = RAND:3
 		IF A == 0
@@ -457,11 +457,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM2
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		A = RAND:4
 		IF A == 0
@@ -720,11 +720,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM3
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 당신은 메이의 %TEXTR("가슴 점/가슴")%을 칭찬했다.
 		PRINTFORMW 메이는 어이가 없었는지 그저 웃을 뿐이었다.
@@ -892,11 +892,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM4
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 당신은 살며시 메이의 손에 손을 겹쳤다.
 		PRINTFORMW 메이는 어이가 없는 표정으로 손을 살짝 뺐다.
@@ -1044,11 +1044,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM5
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 당신은 메이의 머리를 쓰다듬었다.
 		PRINTFORMW 메이는 영문을 모르겠다는 표정이다.
@@ -1175,11 +1175,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM6
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 당신은 메이의 옆구리를 찔렀다.
 		PRINTFORMW 메이는 비명에 가까운 소리를 내었다.
@@ -1278,11 +1278,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM7
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 당신은 메이에게 자신의 무릎에 누우라고 했다.
 		PRINTFORMW 메이는 거절했다.
@@ -1402,11 +1402,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM8
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 메이에게 무릎베개를 부탁했다.
 		PRINTFORMW 메이는 거절했다.
@@ -1535,11 +1535,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM9
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 당신은 메이를 껴안았다.
 		PRINTFORMW 메이는 당황하며 당신을 밀쳐냈다.
@@ -1678,11 +1678,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM10
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 당신은 메이의 뒤에서 그녀를 껴안았다.
 		PRINTFORMW 메이는 당황하며 당신을 떨쳐냈다.
@@ -1817,11 +1817,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM11
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 당신은 누워서 메이를 불렀다.
 		PRINTFORMW 메이는 거절했다.
@@ -1930,11 +1930,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM12
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 당신은 메이의 %TEXTR("볼/이마/머리")%에 입을 맞췄다.
 		PRINTFORMW 메이는 불쾌한 모습을 숨기지 않았다.
@@ -2043,11 +2043,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM13
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 메이의 배를 주물럭 거렸다.
 		PRINTFORMW 메이는 비명에 가까운 소리를 내었다.
@@ -2140,11 +2140,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM14
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 메이의 귀를 살짝 깨물었다.
 		PRINTFORMW 메이는 비명에 가까운 소리를 내었다.
@@ -2232,11 +2232,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM15
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "First/Low"
 		PRINTFORMW 메이의 입술에 당신의 입술을 맞췄다.
 		PRINTFORMW 원치 않았던 첫키스에 메이가 황급히 몸을 떨어뜨리고는 당신의 뺨을 후려갈겼다.
@@ -2419,11 +2419,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;19개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM16
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 메이의 목을 부드럽게 훑었다.
 		PRINTFORMW 메이는 비명에 가까운 소리를 내었다.
@@ -2515,11 +2515,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM17
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 메이의 등을 손가락으로 훑어내렸다.
 		PRINTFORMW 메이는 비명에 가까운 소리를 내었다.
@@ -2619,11 +2619,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM18
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 메이의 가슴에 얼굴을 묻었다.
 		PRINTFORMW 메이는 당신을 떨쳐냈다.
@@ -2769,11 +2769,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM19
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 메이에게 %TEXTR("손가락질을 하며/소리를 지르며/고함을 치며")% 욕을 했다.
 		PRINTFORMW 메이는 %TEXTR("어이가 없다는/기가 찬다는듯한")% 얼굴이다.
@@ -2835,11 +2835,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM20
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 메이의 뺨을 후려 갈기며 있는 힘껏 때렸다.
 		PRINTFORMW 메이는 그대로 당신을 노려봤다.
@@ -2887,11 +2887,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM21
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 메이의 %TEXTR("가슴에/배에")% 있는 힘껏 주먹을 날렸다.
 		PRINTFORMW 메이는 쓰러져서 심하게 콜록대고 있다.
@@ -3219,11 +3219,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_COM22
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 메이를 발로 %TEXTR("세차게 밀어 넘어뜨렸다/강타했다")%.
 		PRINTFORMW 메이는 쓰러져서 %TEXTR("바닥에 뒹굴었다/콜록이며 당신을 노려봤다")%.
@@ -3559,14 +3559,14 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 
 
 
 @M_No51_EVENT_Morning
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 당신은 메이의 목소리에 잠에서 깨어났다.
 		PRINTFORMW %TEXTR("「바보 사령관? 아침이야. 오늘은 뭘 준비해뒀을까?」/「귀 막고 있지 말고 빨리 일어나는 게 어때?」/「하아... 사령관, 날 실망시키지 말아줘」")%
@@ -3744,11 +3744,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_EVENT_Sortie
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW %TEXTR("「조금 더 중요한 임무를 부탁해」/「설마, 사령관도 따라나서겠다고 하려고?」")%
 	CASE "High"
@@ -3779,11 +3779,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;9개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_EVENT_Sortie_Return
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 「일단 샤워부터, 이야기는 나중에」/「이정도 임무는 아무것도 아니라고?」
 	CASE "High"
@@ -3812,12 +3812,12 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;8개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_EVENT_Cook_Self
 IF ABL:MASTER:조리lv < 3
-	SELECTCASE CSTR:1
+	SELECTCASE CSTR:GETCHARA(51):1
 		CASE "Low"
 			PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
 			PRINTFORMW %TEXTR("「의외인걸? 사령관이 요리도 할줄 아네?」/메이는 별로 기대하지 않는 눈으로 당신이 요리하는 모습을 보고 있었다./「바보 사령관이? 믿어도 돼?」/「맛 없기만 해봐?」")%
@@ -3879,10 +3879,10 @@ IF ABL:MASTER:조리lv < 3
 		CASEELSE
 			RETURN 0
 	ENDSELECT ;9개의 케이스 존재
-	CSTR:1 =
+	CSTR:GETCHARA(51):1 =
 	RETURN 1
 ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
-	SELECTCASE CSTR:1
+	SELECTCASE CSTR:GETCHARA(51):1
 		CASE "Low"
 			PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
 			PRINTFORMW %TEXTR("「바보 사령관이? 믿어도 돼?」/「의외인걸? 사령관이 요리도 할줄 아네?」/「맛 없기만 해봐?」/메이는 별로 기대하지 않는 눈으로 당신이 요리하는 모습을 보고 있었다.")%
@@ -3962,10 +3962,10 @@ ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
 		CASEELSE
 			RETURN 0
 	ENDSELECT ;9개의 케이스 존재
-	CSTR:1 =
+	CSTR:GETCHARA(51):1 =
 	RETURN 1
 ELSEIF ABL:MASTER:조리lv > 4
-	SELECTCASE CSTR:1
+	SELECTCASE CSTR:GETCHARA(51):1
 		CASE "Low"
 			PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
 			PRINTFORMW %TEXTR("「바보 사령관이? 믿어도 돼?」/「의외인걸? 사령관이 요리도 할줄 아네?」/「맛 없기만 해봐?/메이는 별로 기대하지 않는 눈으로 당신이 요리하는 모습을 보고 있었다.")%
@@ -4041,13 +4041,13 @@ ELSEIF ABL:MASTER:조리lv > 4
 		CASEELSE
 			RETURN 0
 	ENDSELECT ;9개의 케이스 존재
-	CSTR:1 =
+	CSTR:GETCHARA(51):1 =
 	RETURN 1
 ENDIF
 
 @M_No51_EVENT_Eat_Com
 IF ABL:MASTER:조리lv < 3
-	SELECTCASE CSTR:1
+	SELECTCASE CSTR:GETCHARA(51):1
 		CASE "Low"
 			PRINTFORMW %TEXTR("「미묘해...」/「사령관, 연습 좀 해야겠는걸」/「이걸 먹으라고 내온거야?」/「속이...으...잠깐 화장실 좀...」")%
 		CASE "Affection"
@@ -4067,10 +4067,10 @@ IF ABL:MASTER:조리lv < 3
 		CASEELSE
 			RETURN 0
 	ENDSELECT ;9개의 케이스 존재
-	CSTR:1 =
+	CSTR:GETCHARA(51):1 =
 	RETURN 1
 ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
-	SELECTCASE CSTR:1
+	SELECTCASE CSTR:GETCHARA(51):1
 		CASE "Low"
 			PRINTFORMW %TEXTR("「으음, 의외로 먹을만 하네, 사령관.」/「이 정도면 합격이야.」")%
 		CASE "Affection"
@@ -4108,10 +4108,10 @@ ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
 		CASEELSE
 			RETURN 0
 	ENDSELECT ;9개의 케이스 존재
-	CSTR:1 =
+	CSTR:GETCHARA(51):1 =
 	RETURN 1
 ELSEIF ABL:MASTER:조리lv > 4
-	SELECTCASE CSTR:1
+	SELECTCASE CSTR:GETCHARA(51):1
 		CASE "Low"
 			A = RAND:3
 			IF A == 0
@@ -4212,13 +4212,13 @@ ELSEIF ABL:MASTER:조리lv > 4
 		CASEELSE
 			RETURN 0
 	ENDSELECT ;9개의 케이스 존재
-	CSTR:1 =
+	CSTR:GETCHARA(51):1 =
 	RETURN 1
 ENDIF
 
 @M_No51_EVENT_Cook
 IF ABL:조리lv < 3
-	SELECTCASE CSTR:1
+	SELECTCASE CSTR:GETCHARA(51):1
 		CASE "Low"
 			PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
 			PRINTFORMW 「나보고 요릴 하라고?」
@@ -4286,10 +4286,10 @@ IF ABL:조리lv < 3
 		CASEELSE
 			RETURN 0
 	ENDSELECT ;9개의 케이스 존재
-	CSTR:1 =
+	CSTR:GETCHARA(51):1 =
 	RETURN 1
 ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
-	SELECTCASE CSTR:1
+	SELECTCASE CSTR:GETCHARA(51):1
 		CASE "Low"
 			PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
 			PRINTFORMW 「또? 대체 날 뭐라고 생각하는거야?」
@@ -4372,10 +4372,10 @@ ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
 		CASEELSE
 			RETURN 0
 	ENDSELECT ;9개의 케이스 존재
-	CSTR:1 =
+	CSTR:GETCHARA(51):1 =
 	RETURN 1
 ELSEIF ABL:조리lv > 4
-	SELECTCASE CSTR:1
+	SELECTCASE CSTR:GETCHARA(51):1
 		CASE "Low"
 			PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
 			PRINTFORMW 「...하아 알았어」
@@ -4455,13 +4455,13 @@ ELSEIF ABL:조리lv > 4
 		CASEELSE
 			RETURN 0
 	ENDSELECT ;9개의 케이스 존재
-	CSTR:1 =
+	CSTR:GETCHARA(51):1 =
 	RETURN 1
 ENDIF
 
 @M_No51_EVENT_Eat_Lunch
 IF ABL:조리lv < 3
-	SELECTCASE CSTR:1
+	SELECTCASE CSTR:GETCHARA(51):1
 		CASE "Low"
 			PRINTFORMW %TEXTR("메이가 만든 음식은 딱히 맛있지도, 없지도 않았다./조금 탄 부분이 보였지만 먹을만 했다.")%
 		CASE "Affection"
@@ -4486,10 +4486,10 @@ IF ABL:조리lv < 3
 		CASEELSE
 			RETURN 0
 	ENDSELECT ;9개의 케이스 존재
-	CSTR:1 =
+	CSTR:GETCHARA(51):1 =
 	RETURN 1
 ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
-	SELECTCASE CSTR:1
+	SELECTCASE CSTR:GETCHARA(51):1
 		CASE "Low"
 			PRINTFORMW 메이가 한 음식은 맛있었다.
 		CASE "Affection"
@@ -4538,10 +4538,10 @@ ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
 		CASEELSE
 			RETURN 0
 	ENDSELECT ;9개의 케이스 존재
-	CSTR:1 =
+	CSTR:GETCHARA(51):1 =
 	RETURN 1
 ELSEIF ABL:조리lv > 4
-	SELECTCASE CSTR:1
+	SELECTCASE CSTR:GETCHARA(51):1
 		CASE "Low"
 			PRINTFORMW 메이가 만든 음식은 굉장히 맛있었다.
 			PRINTFORMW %TEXTR("「후후, 어때? 내 요리 실력이?」/「이 정도는 되야 둠브링어 지휘관은 하는거라고?」/「어때? 이 완벽한 내 실력이?」")%
@@ -4582,12 +4582,12 @@ ELSEIF ABL:조리lv > 4
 		CASEELSE
 			RETURN 0
 	ENDSELECT ;9개의 케이스 존재
-	CSTR:1 =
+	CSTR:GETCHARA(51):1 =
 	RETURN 1
 ENDIF
 
 @M_No51_Sell
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 당신은 메이에게 사실을 전했다.
 		PRINTFORMW 「...」
@@ -4728,11 +4728,11 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_Disuse
-SELECTCASE CSTR:1
+SELECTCASE CSTR:GETCHARA(51):1
 	CASE "Low"
 		PRINTFORMW 당신은 메이에게 사실을 전했다.
 		PRINTFORMW 「...」
@@ -4871,7 +4871,7 @@ SELECTCASE CSTR:1
 	CASEELSE
 		RETURN 0
 ENDSELECT ;10개의 케이스 존재
-CSTR:1 =
+CSTR:GETCHARA(51):1 =
 RETURN 1
 
 @M_No51_ENDING
