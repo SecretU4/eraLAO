@@ -27,17 +27,17 @@ WEND
 ;ARG = ITEM 내 캐릭터번호 시작, ARG:1 = ITEM 내 캐릭터번호 종료
 @SET_BIO_SALES(ARG, ARG:1)
 FOR LOCAL, ARG, ARG:1
-    COUNT = 1
     LOCAL:1 = LOCAL - ARG
     IF GETCHARA(LOCAL:1) != -1
-        IF ITEMNAME:LOCAL == ""
+        IF LOCAL:1 == MASTER
+            CONTINUE
+        ELSEIF ITEMNAME:LOCAL == ""
             CONTINUE
         ELSEIF GROUPMATCH(ITEM:LOCAL, -1,1) ;이미 구매한 적 있음
             CONTINUE
         ENDIF
         ITEMSALES:LOCAL = 1
     ENDIF
-    COUNT ++
 NEXT
 
 @BIO_BUY(ARG)
