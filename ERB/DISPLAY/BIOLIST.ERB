@@ -10,88 +10,89 @@
 @CURRENT_BIOLIST(ARGS="")
 #DIM CSV_ID
 #DIM COUNT_CHECK,255
-PRINTL
-DRAWLINEFORM =
 
-;목록의 상단에 표시되는 제목
-ALIGNMENT CENTER
-SELECTCASE ARGS
-    CASE "대상변경", "DEBUG"
-        PRINTL 대상으로 할 바이오로이드를 선택하세요.
-    CASE "이별"
-        PRINTL 목록에서 선택해주세요.
-    CASE "출격"
-        PRINTL 출격 시킬 바이오로이드를 선택해주세요.
-    CASE "선물"
-        PRINTL 아이템을 선물할 바이오로이드를 선택해주세요.
-    CASE "", "상태보기"
-    CASEELSE
-        PRINTL 상정하지 않은 경우의 수
-ENDSELECT
-ALIGNMENT LEFT
-
-PRINTL
-DRAWLINE
-COUNT = 0
-FOR LOCAL, 1, CHARANUM
-    CSV_ID = NO:LOCAL
-    IF ITEM:(ITEM_BIO(CSV_ID)) > 0
-        PRINTFORM [{COUNT+1}] 
-        ;노랑, 별
-        IF TALENT:LOCAL:혼인 == 1
-            SETCOLOR 255,255,102
-            LOCALS = %NAME:LOCAL%
-            LOCALS += UNICODE(0x2606)
-        ;보라
-        ELSEIF TALENT:LOCAL:혼인 == 2 ;입양
-            SETCOLOR 204,153,255
-            LOCALS = %NAME:LOCAL%
-        ;짙은 분홍, 하트
-        ELSEIF TALENT:LOCAL:사랑 == 2 ;사랑
-            SETCOLOR 255,102,255
-            LOCALS = %NAME:LOCAL%
-            LOCALS += UNICODE(0x2665)
-        ;옅은 분홍
-        ELSEIF TALENT:LOCAL:사랑 == 1 ;연모
-            SETCOLOR 255,204,255
-            LOCALS = %NAME:LOCAL%
-        ELSE
-            LOCALS = %NAME:LOCAL%
-        ENDIF
-        PRINTFORM %LOCALS% 
-        RESETCOLOR
-        IF TALENT:MASTER:관심법
-            PRINTFORM 호감도 : {CFLAG:LOCAL:호감도} 
-            PRINTFORM 스트레스 : {CFLAG:LOCAL:스트레스} 
-            PRINTFORM 공포 : {CFLAG:LOCAL:공포} 
-        ENDIF
-        PRINTFORML
-        ALIGNMENT RIGHT
-        CALL SHOW_SPECIAL_STATUS(LOCAL)
-        PRINTL
-        ALIGNMENT LEFT
-        COUNT_CHECK:COUNT = LOCAL
-        COUNT ++
-    ENDIF
-NEXT
-SIF !COUNT
-    PRINTL 표시 가능한 바이오로이드가 없습니다.
-
-PRINTL
-DRAWLINE
-PRINTL
-SIF !GROUPMATCH(ARGS, "상태보기","DEBUG")
-    PRINT [0] 
-SELECTCASE ARGS
-    CASE "대상변경"
-        PRINTL 아무도 선택하지 않는다.
-    CASE "상태보기","DEBUG"
-        PRINTL [999] 당신
-        PRINTL [0] 돌아가기
-    CASEELSE
-        PRINTL 돌아가기
-ENDSELECT
 WHILE 1
+    PRINTL
+    DRAWLINEFORM =
+
+    ;목록의 상단에 표시되는 제목
+    ALIGNMENT CENTER
+    SELECTCASE ARGS
+        CASE "대상변경", "DEBUG"
+            PRINTL 대상으로 할 바이오로이드를 선택하세요.
+        CASE "이별"
+            PRINTL 목록에서 선택해주세요.
+        CASE "출격"
+            PRINTL 출격 시킬 바이오로이드를 선택해주세요.
+        CASE "선물"
+            PRINTL 아이템을 선물할 바이오로이드를 선택해주세요.
+        CASE "", "상태보기"
+        CASEELSE
+            PRINTL 상정하지 않은 경우의 수
+    ENDSELECT
+    ALIGNMENT LEFT
+
+    PRINTL
+    DRAWLINE
+    COUNT = 0
+    FOR LOCAL, 1, CHARANUM
+        CSV_ID = NO:LOCAL
+        IF ITEM:(ITEM_BIO(CSV_ID)) > 0
+            PRINTFORM [{COUNT+1}] 
+            ;노랑, 별
+            IF TALENT:LOCAL:혼인 == 1
+                SETCOLOR 255,255,102
+                LOCALS = %NAME:LOCAL%
+                LOCALS += UNICODE(0x2606)
+            ;보라
+            ELSEIF TALENT:LOCAL:혼인 == 2 ;입양
+                SETCOLOR 204,153,255
+                LOCALS = %NAME:LOCAL%
+            ;짙은 분홍, 하트
+            ELSEIF TALENT:LOCAL:사랑 == 2 ;사랑
+                SETCOLOR 255,102,255
+                LOCALS = %NAME:LOCAL%
+                LOCALS += UNICODE(0x2665)
+            ;옅은 분홍
+            ELSEIF TALENT:LOCAL:사랑 == 1 ;연모
+                SETCOLOR 255,204,255
+                LOCALS = %NAME:LOCAL%
+            ELSE
+                LOCALS = %NAME:LOCAL%
+            ENDIF
+            PRINTFORM %LOCALS% 
+            RESETCOLOR
+            IF TALENT:MASTER:관심법
+                PRINTFORM 호감도 : {CFLAG:LOCAL:호감도} 
+                PRINTFORM 스트레스 : {CFLAG:LOCAL:스트레스} 
+                PRINTFORM 공포 : {CFLAG:LOCAL:공포} 
+            ENDIF
+            PRINTFORML
+            ALIGNMENT RIGHT
+            CALL SHOW_SPECIAL_STATUS(LOCAL)
+            PRINTL
+            ALIGNMENT LEFT
+            COUNT_CHECK:COUNT = LOCAL
+            COUNT ++
+        ENDIF
+    NEXT
+    SIF !COUNT
+        PRINTL 표시 가능한 바이오로이드가 없습니다.
+
+    PRINTL
+    DRAWLINE
+    PRINTL
+    SIF !GROUPMATCH(ARGS, "상태보기","DEBUG")
+        PRINT [0] 
+    SELECTCASE ARGS
+        CASE "대상변경"
+            PRINTL 아무도 선택하지 않는다.
+        CASE "상태보기","DEBUG"
+            PRINTL [999] 당신
+            PRINTL [0] 돌아가기
+        CASEELSE
+            PRINTL 돌아가기
+    ENDSELECT
     PRINTL
     DRAWLINEFORM =
     INPUT
@@ -123,7 +124,6 @@ WHILE 1
         ENDSELECT
     ENDIF
 WEND
-
 ;===========================================================
 ;함수명: BIO_INFO
 ;캐릭터 정보 표출
