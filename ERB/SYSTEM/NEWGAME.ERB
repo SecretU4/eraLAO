@@ -20,10 +20,6 @@ MONEY:0 = 100000
 ;원룸으로 설정
 FLAG:캐릭터보유고 = 2
 
-;새로하기 대응
-SIF GETCHARA(0) == -1
-    ADDCHARA 0
-
 CALL MESSAGE_OPENING
 
 CALL COMMANDER_MAKING
@@ -31,13 +27,6 @@ CALL COMMANDER_MAKING
 ;게임 시작시 변수 데이터 처리
 CALL ADD_ALL_CHARA
 CALL UPDATE_STOCK
-;그림 유무 처리
-FOR LOCAL, 1, CHARANUM
-    SELECTCASE NO:LOCAL
-        CASE 7, 12, 32, 51, 68, 89, 113, 123, 132, 138
-            CFLAG:LOCAL:개별그림유무 = 1
-    ENDSELECT
-NEXT
 
 ;약혼반지는 하나만
 CALL SET_EX_ITEM_SALES(1, 1)
@@ -156,23 +145,36 @@ PRINTFORML 모든 문제가 끝났습니다.
 ;===========================================================
 ;함수명:ADD_ALL_CHARA
 ;현재 데이터베이스상 존재하는 캐릭터를 체크 및 구동 메모리에 추가
-;LOCAL = CSV상 번호, COUNT = 인게임 호출번호
+;COUNT = CSV상 번호
 ;===========================================================
 @ADD_ALL_CHARA
 
-FOR LOCAL, 1, TOTAL_CHARANUM
-	SIF !EXISTCSV(LOCAL)
+REPEAT TOTAL_CHARANUM
+    ;CSV 없으면 통과
+	IF !EXISTCSV(COUNT)
 		CONTINUE
-	ADDCHARA LOCAL
-	; TARGET = GETCHARA(LOCAL)
-	; CALL SET_MINIMUM_EXP_ALL(GETCHARA(LOCAL))
-    RESULT = 0
-    TRYCALLFORM IS_M_No{LOCAL}
-    SIF RESULT
-        CFLAG:(GETCHARA(LOCAL)):개별대사유무 = 1
-NEXT
-SORTCHARA
+    ;이미 있는 캐릭터는 통과
+    ELSEIF GETCHARA(COUNT) != -1
+        ;업데이트시 그림 처리용
+        SIF SET_ILLUST_FLAG(COUNT)
+            CFLAG:(GETCHARA(COUNT)):개별그림유무 = 1
+        CONTINUE
+    ENDIF
 
+	ADDCHARA COUNT
+	; TARGET = GETCHARA(COUNT)
+	; CALL SET_MINIMUM_EXP_ALL(GETCHARA(COUNT))
+
+    ;그림 유무 처리
+    SIF SET_ILLUST_FLAG(COUNT)
+        CFLAG:(GETCHARA(COUNT)):개별그림유무 = 1
+
+    RESULT = 0
+    TRYCALLFORM IS_M_No{COUNT}
+    SIF RESULT
+        CFLAG:(GETCHARA(COUNT)):개별대사유무 = 1
+REND
+SORTCHARA
 ;===========================================================
 ;함수명:NEWGAME
 ;새로하기를 눌렀을때의 동작
