@@ -82,6 +82,18 @@ ELSEIF TALENT:사랑 == 2
             TALENT:혼인 = 2
         ENDIF
     ENDIF
+;위 조건에 해당하지 않는 엔딩
+ELSE
+    SELECTCASE REAL_NUM
+        CASE 16 ;리리스
+            IF !TALENT:TARGET:정신쇠약 > 0 && !TALENT:TARGET:사랑 && CFLAG:TARGET:공포 >= 175
+                CFLAG:엔딩플래그 = 3
+            ELSE
+                THROW %CALLNAME:TARGET%의 잘못된 약혼반지 엔딩설정
+            ENDIF
+        CASEELSE
+            THROW %CALLNAME:TARGET%의 잘못된 약혼반지 엔딩설정
+    ENDSELECT
 ENDIF
 
 CALL ENDING(TARGET)
