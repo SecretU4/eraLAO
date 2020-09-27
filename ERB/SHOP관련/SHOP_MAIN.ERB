@@ -332,9 +332,9 @@ SELECTCASE ARG
         ;기본조건: 사랑/공포 30 미만/스트레스 200미만 + 혼인/입양 아님
         ELSEIF TALENT:TARGET:사랑 == 2 && CFLAG:TARGET:공포 < 30 && CFLAG:TARGET:스트레스 < 200
             SELECTCASE NO:TARGET
-                ;리제는 연모 이상인 사람 5명 미만시에만 가능
+                ;리제는 리제 제외 연모 이상인 사람 5명 미만시에만 가능
                 CASE 7
-                    IF FLAG:연모인수 >= 5
+                    IF FLAG:연모인수 >= 6 ; 리제 포함한 수
                         PRINTFORMW %타겟은% 반지를 받아주지 않았습니다...
                         RETURN -1
                     ENDIF
