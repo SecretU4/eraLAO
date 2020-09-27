@@ -127,9 +127,9 @@ WEND
 ;===========================================================
 ;함수명: BIO_INFO
 ;캐릭터 정보 표출
-;ARG = 인게임 캐릭터번호
+;ARG = 인게임 캐릭터번호, ARG:1 = 1일때 상점화면
 ;===========================================================
-@BIO_INFO(ARG)
+@BIO_INFO(ARG,ARG:1=0)
 
 PRINTFORM No.{NO:ARG} %NAME:ARG% 
 CALL SHOW_SPECIAL_STATUS(ARG)
@@ -183,8 +183,11 @@ ELSE
     ENDSELECT
 ENDIF
 PRINTL
-SIF CSTR:ARG:캐릭터소개 != ""
-    PRINTSL %CSTR:ARG:캐릭터소개%
+IF ARG:1
+    CALL ILLUST(ARG, NO:ARG, "BIOSHOP")
+    SIF CSTR:ARG:캐릭터소개 != ""
+        PRINTSL %CSTR:ARG:캐릭터소개%
+ENDIF
 PRINTL
 DRAWLINE
 PRINTL

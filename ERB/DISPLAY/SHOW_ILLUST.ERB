@@ -187,13 +187,21 @@ SELECTCASE ARGS
             CASE 17 ;베로니카 3번 엔딩플래그 2번째
                 LOCALS = End_138_3-2
         ENDSELECT
+    CASE "BIOSHOP"
+        LOCALS '= @"BIO_IMG_{ARG:1}"
+        GCREATEFROMFILE ARG:1, @"SHOP_SELECTION/{ARG:1}.png"
+        SPRITECREATE @"%LOCALS%", ARG:1
 ENDSELECT
 
 ;출력해야 하는 이미지가 없을 때
 SIF LOCALS == ""
     RETURN 0
 
-CALL PRINT_ILLUST(LOCALS)
+IF ARG:1
+    CALL PRINT_ILLUST(LOCALS, 20)
+ELSE
+    CALL PRINT_ILLUST(LOCALS)
+ENDIF
 
 ;출력해야 하는 이미지가 2개일 때
 IF LOCALS:1 != ""
@@ -209,12 +217,11 @@ ENDIF
 RETURN 1
 
 ;ARGS = 출력 대상 파일 문자열
-@PRINT_ILLUST(ARGS)
+@PRINT_ILLUST(ARGS, 배율=30)
 #DIMS PRINT_HTML
 #DIM 배율
 
 PRINT_HTML = 
-배율 = 30
 PRINT_HTML += @"<img src='%ARGS%' height='{배율}00'>"
 REPEAT 배율
     PRINT_HTML += "<br>"
