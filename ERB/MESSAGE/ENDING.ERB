@@ -223,6 +223,9 @@ FOR 주회, 1, CHARANUM
                 PRINTL 저 멀리서 당신을 바라보는 닥터의 모습이 보인다.
                 PRINTW 닥터는 당신에게 불만이 있는 듯 하다.
             ENDIF
+        CASE 90 ;테티스
+            SIF CFLAG:주회:etc1 >= 20
+                SETBIT CFLAG:MASTER:엔딩플래그, 26
         CASE 106 ;오드리
             SIF CFLAG:주회:etc1 == 4 ;etc1 =
                 SETBIT CFLAG:MASTER:엔딩플래그, 23
@@ -419,6 +422,9 @@ FOR 비트값, 1, 64
             CASE 25 ;네오딤
                 TARGET = GETCHARA(71)
                 CFLAG:TARGET:엔딩플래그 = 3
+            CASE 26 ;테티스 사이드엔딩(번호 임의설정)
+                TARGET = GETCHARA(90)
+                CFLAG:TARGET:엔딩플래그 = 3
             CASEELSE
                 THROW 미확인 엔딩 번호 {비트값}
         ENDSELECT
@@ -524,8 +530,6 @@ SELECTCASE NO:TARGET
         ELSEIF CFLAG:엔딩플래그 == 2
             그림번호 = 5
         ENDIF
-    CASE 90 ;TODO 신캐
-        ;CFLAG:etc1 = 21 ;exc = 10
     CASE 106 ;오드리
         SIF CFLAG:엔딩플래그 == 3
             CFLAG:etc1 = 5 ;exc = 7, etc1= 더치 걸 이벤트 일수
