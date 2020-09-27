@@ -180,9 +180,9 @@ FOR 주회, 1, CHARANUM
         CONTINUE
     SELECTCASE NO:주회
         CASE 7 ;리제
-            IF CFLAG:주회:etc1 > 30 ;etc1 =
+            IF CFLAG:주회:etc1 > 30 ;etc1 = 리제 엔딩 3 카운트
                 SETBIT CFLAG:MASTER:엔딩플래그, 3
-            ELSEIF CFLAG:주회:etc2 > 30 ;etc2 =
+            ELSEIF CFLAG:주회:etc2 > 30 ;etc2 = 리제 엔딩 4
                 SETBIT CFLAG:MASTER:엔딩플래그, 8
             ELSEIF CFLAG:주회:etc1 > 15
                 PRINTL 리제가 공포에 휩싸인 채 혼자서 중얼거리고 있다.
@@ -192,20 +192,20 @@ FOR 주회, 1, CHARANUM
                 PRINTW 이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다.
             ENDIF
         CASE 12 ;소완
-            IF CFLAG:주회:etc1 > 30 ;etc1 = 
+            IF CFLAG:주회:etc1 > 30 ;etc1 = 소완 엔딩 3 카운트
                 SETBIT CFLAG:MASTER:엔딩플래그, 5
             ELSEIF CFLAG:주회:etc1 > 25
                 PRINTL 소완의 상태가 어딘가 이상하다.
                 PRINTW 이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다.
             ENDIF
         CASE 21 ;마리
-            SIF CFLAG:주회:etc1 > 19 ;etc1 =
+            SIF CFLAG:주회:etc1 > 19 ;etc1 = 마리 엔딩 3 카운트
                 SETBIT CFLAG:MASTER:엔딩플래그, 11
         CASE 68 ;에밀리
-            SIF CFLAG:주회:etc2 > 4 ;etc2 =
+            SIF CFLAG:주회:etc2 > 4 ;etc2 = 에밀리 엔딩 4 카운트
                 SETBIT CFLAG:MASTER:엔딩플래그, 15
         CASE 71 ;네오딤
-            IF CFLAG:주회:etc1 >= 5 ;etc1 =
+            IF CFLAG:주회:etc1 >= 5 ;etc1 = 스트레스 100상태 카운트
                 SETBIT CFLAG:MASTER:엔딩플래그, 25
             ELSEIF CFLAG:주회:etc1 > 0
                 PRINTL 당신은 네오딤의 자는 모습을 보면서 최근의 이상을 떠올린다.
@@ -214,10 +214,10 @@ FOR 주회, 1, CHARANUM
                 PRINTW 당신은 침대에 누웠다.
             ENDIF
         CASE 73 ;팬텀
-            SIF CFLAG:주회:etc3 > 19 && !TALENT:주회:혼인 ;etc3 =
+            SIF CFLAG:주회:etc3 > 19 && !TALENT:주회:혼인 ;etc3 = 팬텀 엔딩 4 카운트
                 SETBIT CFLAG:MASTER:엔딩플래그, 14
         CASE 76 ;닥터
-            IF CFLAG:주회:etc4 > 19 ;etc4 =
+            IF CFLAG:주회:etc4 > 19 ;etc4 = 닥터 엔딩 3 카운트
                 SETBIT CFLAG:MASTER:엔딩플래그, 18
             ELSEIF CFLAG:주회:etc4 > 15
                 PRINTL 저 멀리서 당신을 바라보는 닥터의 모습이 보인다.
@@ -227,17 +227,17 @@ FOR 주회, 1, CHARANUM
             SIF CFLAG:주회:etc1 >= 20
                 SETBIT CFLAG:MASTER:엔딩플래그, 26
         CASE 106 ;오드리
-            SIF CFLAG:주회:etc1 == 4 ;etc1 =
+            SIF CFLAG:주회:etc1 == 4 ;etc1 = 오드리 더치 이벤트 일수
                 SETBIT CFLAG:MASTER:엔딩플래그, 23
         CASE 108 ;더치 걸
-            IF CFLAG:주회:etc1 > 15 ;etc1 =
+            IF CFLAG:주회:etc1 > 15 ;etc1 = 더치걸 엔딩 3 카운트
                 SETBIT CFLAG:MASTER:엔딩플래그, 9
             ELSEIF CFLAG:주회:etc1 > 10
                 PRINTL 더치 걸의 상태가 어딘가 이상하다.
                 PRINTW 이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다.
             ENDIF
         CASE 132 ;유미
-            IF CFLAG:주회:etc1 == 12 ;etc1 =
+            IF CFLAG:주회:etc1 == 12 ;etc1 = 유미 엔딩 3 카운트
                 PRINTW
                 PRINTL 아침에 일어나 스마트폰을 열어보니 유미에게서 메세지가 와 있었다.
                 PRINTL 「사령관님, 많이... 바쁘신가요?」
@@ -254,7 +254,7 @@ FOR 주회, 1, CHARANUM
                 PRINTW 출처를 알 수 없는 이에게서 메세지가 와 있다.
             ELSEIF CFLAG:주회:etc1 > 14
                 SETBIT CFLAG:MASTER:엔딩플래그, 16
-            ELSEIF CFLAG:주회:etc2 == 12 ;etc2 =
+            ELSEIF CFLAG:주회:etc2 == 12 ;etc2 = 유미 엔딩 4 카운트
                 PRINTL 아침에 일어나 스마트폰을 열어보니 유미에게서 메세지가 와 있다.
                 PRINTL 「사령관님? 어디 있어요? 어디 있어요? 어디 있어요?」
                 PRINTL 「뭐 해요? 저 잊어버리신 거 아니죠?」
@@ -274,7 +274,7 @@ FOR 주회, 1, CHARANUM
                 SETBIT CFLAG:MASTER:엔딩플래그, 17
             ENDIF
         CASE 138 ;베로니카
-            IF CFLAG:주회:etc2 == 1 ;etc2 =
+            IF CFLAG:주회:etc2 == 1 ;etc2 = 베로니카 실종 일수
                 PRINTL 당신은 그녀를 찾기 위해 인근을 돌아다녔다.
                 PRINTL 그녀는 눈에 띄는 복장을 했기 때문에 주변 사람들을 탐문하면 찾을 수 있을지도 모른다.
                 PRINTW 악명높은 코헤이의 전투수녀 복장을 하고 있으니 누가 해코지는 할 리가 없다... 라고 당신은 계속 생각했다.
