@@ -212,8 +212,7 @@ REND
 
 CSTR:1 = 
 
-;아직 첫키스 말고 다른 경우의 첫시도 구상은 찾은 적이 없으므로
-SIF SELECTCOM == 15 && FIRSTTIME(SELECTCOM)
+SIF FIRSTTIME(SELECTCOM)
     CSTR:1 = First/
 
 CALL SET_MSG_CSTR(TARGET)
@@ -356,25 +355,55 @@ SIF 꼬릿말 != ""
 @Alternative_CSTR(ARG)
 #FUNCTIONS
 #DIMS SELECTED_CSTR, 5
+;아래 DIM/DIMS 변수는 구동중이면 계속 저장되어 있으니 취급 요주의
+#DIMS SAVED_CSTR ;실행 당시 태그값 저장
+#DIM FIRST_SWITCH ;First계열 변환 실행시 켜짐
+
 LOCALS = 
 DEBUGPRINTFORML 대상 : %CALLNAME:ARG%, 태그 : %CSTR:ARG:1%
+
+IF FIRST_SWITCH && STRFINDU(SAVED_CSTR, "First") != -1
+    IF STRFINDU(SAVED_CSTR, CSTR:ARG:1) != -1
+        DEBUGPRINTL 태그 재시도 First
+        LOCALS += "First/"
+    ELSE ;저장된 CSTR값이 원 값과 아예 다른 경우 통과
+        FIRST_SWITCH = 0
+    ENDIF
+ENDIF
+
+SAVED_CSTR '= CSTR:ARG:1
 
 SPLIT CSTR:ARG:1, "/", SELECTED_CSTR
 REPEAT RESULT
     IF SELECTED_CSTR:COUNT == ""
         BREAK
-    ELSEIF COUNT > 0
-        LOCALS += "/"
     ENDIF
 
-    IF STRFINDU(SELECTED_CSTR:COUNT, "Love") != -1
-        DEBUGPRINTL 태그 변경 Love > Affection
-        LOCALS += "Affection"
-    ELSEIF STRFINDU(SELECTED_CSTR:COUNT, "Marryed") != -1
-        DEBUGPRINTL 태그 변경 Marryed > Love
-        LOCALS += "Love"
+    ;현재 First가 있다면 해당 값을 지움
+    IF STRFINDU(CSTR:ARG:1, "First") != -1
+        FIRST_SWITCH = 1
+        IF COUNT == 0
+            DEBUGPRINTL 태그 삭제 First
+        ELSE
+            SIF COUNT > 1
+                LOCALS += "/"
+            LOCALS += SELECTED_CSTR:COUNT
+        ENDIF
     ELSE
-        LOCALS += SELECTED_CSTR:COUNT
+        FIRST_SWITCH = 0
+        IF COUNT > 0
+            LOCALS += "/"
+        ENDIF
+
+        IF STRFINDU(SELECTED_CSTR:COUNT, "Love") != -1
+            DEBUGPRINTL 태그 변경 Love > Affection
+            LOCALS += "Affection"
+        ELSEIF STRFINDU(SELECTED_CSTR:COUNT, "Marryed") != -1
+            DEBUGPRINTL 태그 변경 Marryed > Love
+            LOCALS += "Love"
+        ELSE
+            LOCALS += SELECTED_CSTR:COUNT
+        ENDIF
     ENDIF
 REND
 
