@@ -617,10 +617,14 @@ RETURNF -1
 #DIM 랜덤대상, 2
 
 VARSET 선택캐릭터, -1
+VARSET 랜덤대상
 
 ;1명째 대상 선정
 WHILE 선택캐릭터:0 == -1
-    랜덤대상 = RAND(1, CHARANUM)
+    랜덤대상 = RAND:CHARANUM
+    SIF 랜덤대상 == 0
+        CONTINUE
+
     IF GROUPMATCH(ARG, 0,1,2,3,4)
     ;보유여부 체크
     ELSEIF ITEM:(ITEM_BIO(NO:랜덤대상)) < 1
@@ -697,13 +701,17 @@ WHILE 선택캐릭터:1 == -1
     SIF FLAG:현캐릭터수 < 2
         BREAK
 
-    랜덤대상:1 = RAND(1, CHARANUM)
+    랜덤대상:1 = RAND:CHARANUM
+
+    IF 랜덤대상:1 == 0
+        CONTINUE
     ;1명째와 동일하면 루프
-    SIF 랜덤대상:1 == 선택캐릭터:0
+    ELSEIF 랜덤대상:1 == 선택캐릭터:0
         CONTINUE
     ;보유여부 체크
-    SIF ITEM:(ITEM_BIO(NO:랜덤대상)) < 1
+    ELSEIF ITEM:(ITEM_BIO(NO:랜덤대상)) < 1
         CONTINUE
+    ENDIF
 
     SELECTCASE ARG
         CASE 201 ;대상배열 4번
