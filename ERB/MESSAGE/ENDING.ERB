@@ -62,7 +62,7 @@ ELSEIF TALENT:사랑 == 2
     PRINTFORML %타겟은% 눈물을 글썽이며 손에 반지를 받아들였다.
     CFLAG:엔딩플래그 = 1
     ;리제 히든, 10% 확률
-    IF REAL_NUM == 7 && !RAND:10
+    IF REAL_NUM == 7 && FLAG:현캐릭터수 >= 10 && !RAND:10
         CFLAG:엔딩플래그 = 4
     ;팬텀
     ELSEIF REAL_NUM == 73 && EXP:출격경험 > 6
