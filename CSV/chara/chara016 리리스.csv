@@ -6,7 +6,7 @@ TALENT,소속,4,;컴패니언
 TALENT,등급,4,;SS
 TALENT,분류,1,;경장
 TALENT,체형,1,;보통체구
-TALENT,약한얀데레,1,
+TALENT,얀데레,-1,;약한 얀데레
 TALENT,메가데레,1,
 TALENT,경호원,1,
 

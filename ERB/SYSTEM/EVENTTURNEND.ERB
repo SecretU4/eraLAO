@@ -47,7 +47,8 @@ ELSEIF TIME == 1 ;밤 > 낮
         SIF TFLAG:정신붕괴인구 && TALENT:주회:정신쇠약 != 2
             CFLAG:주회:공포 += 2
         ;조건에 맞으면서 본인이 대상이 아닌 경우
-        IF TALENT:주회:얀데레 && 주회 != TARGET
+        ;약한 얀데레(-1)는 미포함
+        IF TALENT:주회:얀데레 == 1 && 주회 != TARGET
             CFLAG:주회:스트레스 += 20
             TFLAG:얀데레질투인구 ++
         ENDIF
