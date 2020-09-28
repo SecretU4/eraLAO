@@ -1,0 +1,4691 @@
+﻿@IS_M_No16
+RETURN 1
+
+@M_No16_TRAIN_START_0
+PRINTFORMW 「드디어 지킬 가치가 있는 분을 만났군요.
+PRINTFORMW 블랙 리리스가 정식으로 인사드리겠어요.」
+PRINTFORMW 리리스는 치맛자락을 잡고 정중히 인사한다.
+PRINTFORMW 당신은 그녀와 몇 마디 나눠보았다.
+PRINTFORMW 세간의 높은 악명과는 달리,
+PRINTFORMW 다정하고 고귀해 보이는 아가씨였다.
+PRINTFORMW 겉으로는.
+CFLAG:조교여부 = 1
+RETURN 1
+
+@M_No16_TRAIN_START_1
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Confession"
+PRINTFORMW 당신은 리리스를 물끄러미 바라보았다.
+PRINTFORMW 리리스도 물기어린 눈으로 당신을 바라본다.
+PRINTFORMW 「믿고 있었어요. 주인님.
+PRINTFORMW  제게 마음을 허락해주시리란 걸.」
+PRINTFORMW 떨리는 목소리로 중얼거린 그녀는,
+PRINTFORMW 천천히 다가와 당신을 얼싸 안았다.
+PRINTFORMW 당신도 그녀를 힘있게 품에 안았다.
+PRINTFORMW 따뜻한 숨결과 향수 냄새가 느껴진다.
+PRINTFORMW 새삼스럽게 당신의 가슴이 벅차오른다.
+PRINTFORMW 「리리스는 행복해서 죽을 것 같아요.」
+PRINTFORMW 「주인님을 모시면서 오늘만을 기다렸어요.」
+PRINTFORMW 당신은 쓴웃음을 지으며 그녀를 말렸다.
+PRINTFORMW 죽으면 안 된다고 농담하며.
+PRINTFORMW 리리스는 슬며시 웃으며 눈을 감는다.
+PRINTFORMW 당신의 품에 모든 것을 맡긴다.
+PRINTFORMW 그녀와 당신은 오랫동안,
+PRINTFORMW 말 없이 서로의 온기를 느낀다.
+PRINTFORMW 하루 이틀 아는 사이도 아니다.
+PRINTFORMW 말은 필요 없었다.
+PRINTFORMW 얼마나 안았을까,
+PRINTFORMW 그녀가 눈을 게츰스레 뜨고는,
+PRINTFORMW 당신을 부둥켜 안은 채로 말한다.
+PRINTFORMW 「주인님은 높으신 분이니까......
+PRINTFORMW 다른 아이들하고 많이 노셔야겠죠?」
+PRINTFORMW 당신은 뭐라 해줄 말이 없었다.
+PRINTFORMW 리리스는 너그럽게 미소 짓는다.
+PRINTFORMW 「그래도, 리리스를 언제나 
+PRINTFORMW 제일 좋아해 주시기만 하면 되요.
+PRINTFORMW 그러실 수 있겠죠?」
+PRINTFORMW 당신은 고개를 끄덕이며,
+PRINTFORMW 물론이라고 대답한다.
+PRINTFORMW 리리스는 이제까지 본 것 중에
+PRINTFORMW 가장 환한 미소를 지으며 화답한다.
+PRINTFORMW 「정말 행복하답니다. 블랙 리리스는.」
+TFLAG:고백함 = 1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「오셨나요?」
+DATAFORM 리리스가 싱긋 웃는다.
+DATAFORM 여유로운 모습이 아름답다.
+DATAFORM 「후후, 뵙지 못할 동안 불안했어요.」
+DATAFORM 당신은 어리둥절했다.
+ENDLIST
+DATALIST
+DATAFORM 「어서 오세요.」
+DATAFORM 리리스가 싱긋 웃는다.
+DATAFORM 살벌하면서도 부드러운 느낌이다.
+DATAFORM 「주인님, 편히 모시겠어요.」
+DATAFORM 리리스는 묘한 미소를 지었다.
+ENDLIST
+DATALIST
+DATAFORM 리리스가 당신을 맞이했다.
+DATAFORM 「오늘도 리리스가 그리우셨나요?」
+DATAFORM 당신은 글쎄, 하고 머리를 긁었다.
+DATAFORM 리리스가 살짝 아쉬워했다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「주인님. 어디 다녀오셨나요?」
+DATAFORM 당신은 적당히 말한다.
+DATAFORM 리리스는 생긋 웃으며, 그러나 분명히 말한다.
+DATAFORM 「다음부턴 제 눈에서 떨어지지 말아주세요.」
+ENDLIST
+DATALIST
+DATAFORM 「주인님. 어디 다녀오셨나요?」
+DATAFORM 당신은 적당히 말한다.
+DATAFORM 「높은 인간님들은 원래 애인이 많으니까요.」
+DATAFORM 리리스는 살짝 질투하는 듯한 기색이 보였다.
+DATAFORM 당신의 인기가 많았기 때문이다.
+ENDLIST
+DATALIST
+DATAFORM 「오늘은 뭘 하고 노실래요?」
+DATAFORM 당신은 리리스와 함께 할 거라고 말했다.
+DATAFORM 「아, 물론 그럴 줄 알고 있었답니다. 후훗.」
+DATAFORM 리리스가 당연하다는 듯이 미소지었다.
+ENDLIST
+DATALIST
+DATAFORM 「주인님만 기다렸어요.」
+DATAFORM 당신도, 너와 만나기를 기다렸다고 말했다.
+DATAFORM 리리스는 살짝 놀란 눈치였다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스는 당신을 보자마자 대뜸 말했다.
+DATAFORM 「이렇게 매일 떨어져 있는 것보다,
+DATAFORM 하나가 되면 더 지켜드리기 편할텐데.
+DATAFORM 후후. 농담이에요.」
+DATAFORM 농담이 농담이 아닌 것 같았다.
+DATAFORM 왜냐하면 당신도 그렇게 생각했으니까.
+ENDLIST
+DATALIST
+DATAFORM 「주인님. 리리스가 그립지 않으셨나요?
+DATAFORM 리리스는 주인님만 기다리고 있었어요.」
+DATAFORM 당신도 그렇다고 대답한다.
+ENDLIST
+DATALIST
+DATAFORM 「주인님! 보고 싶었어요」
+DATAFORM 리리스는 당신을 발견하자마자
+DATAFORM 달려들어 매달렸다.
+DATAFORM 당신은 당황하면서도,
+DATAFORM 그녀를 얼싸안아 들었다.
+DATAFORM 빙그레 미소가 지어진다.
+ENDLIST
+DATALIST
+DATAFORM 「어서 오세요.
+DATAFORM 후후. 오늘도 다른 애들이, 
+DATAFORM 쓸데없이 주인님을 보러 온다길래.」
+DATAFORM 그녀는 슬며시 웃었다.
+DATAFORM 「험하게 쫒아내면 주인님이 싫어할테니,
+DATAFORM 말로 잘 타일러 보냈답니다.」
+DATAFORM 사이가 가까워 질수록,
+DATAFORM 그녀의 행동이 덜 과격해져 간다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「주인님- 리리스는 착하게 기다리고 있었어요.」
+DATAFORM 당신은 그녀를 보고,
+DATAFORM 네가 무슨 애완 동물이냐며 웃는다.
+DATAFORM 「주인님을 위한 애완동물이죠, 뭐」
+DATAFORM 리리스는 목에 걸린 줄을 슬며시 들여보았다.
+DATAFORM 결혼 뒤로 그녀는 쇳덩이 대신,
+DATAFORM 당신이 매어 준 그것을 끼고 다녔다.
+ENDLIST
+DATALIST
+DATAFORM 「주인님- 리리스는 착하게 기다리고 있었어요.」
+DATAFORM 당신은 그녀를 보고,
+DATAFORM 네가 무슨 애완 동물이냐며 웃는다.
+DATAFORM 하지만 당신도 실은 그녀를 목줄로
+DATAFORM 끌고 다닌 적이 있었다.
+DATAFORM 처음에는 알지 못할
+DATAFORM 흥분감에 사로잡혔지만,
+DATAFORM 남들의 경멸스런 시선이 쏟아졌다.
+DATAFORM 미안해져서 그만두었다.
+DATAFORM 당신은 머리를 저었다.
+ENDLIST
+DATALIST
+DATAFORM 리리스는 밝게 웃으며 당신을 맞이했다.
+DATAFORM 아주 가끔 살기 어린 눈을 하거나,
+DATAFORM 어쩌다 살벌한 말을 내뱉던 그녀도,
+DATAFORM 이제는 상당히 부드러워졌다.
+DATAFORM 그것만으로도 당신은 보람을 느낀다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 보자마자 불쑥,
+DATAFORM 오늘따라 사랑스럽다고 말한다.
+DATAFORM 리리스가 눈을 가늘게 떴다.
+DATAFORM 「다른 아이 만나고 오신 거죠?」
+DATAFORM 당신은 당황해서 아니라고 한다.
+DATAFORM 「아니긴요. 냄새가 다 맡아지는데.」
+DATAFORM 리리스는 당신의 목덜미에서 얼굴을 들이댄다.
+DATAFORM 그리고는 슬쩍 혀로 핥는다.
+DATAFORM 「이 땀의 맛은......
+DATAFORM 그 아랫것들의 맛이로군요?」
+DATAFORM 「뭐, 괜찮아요.
+DATAFORM 이젠 리리스의 색으로 채웠으니까. 우후훗!」
+DATAFORM 당신도 그만 웃고 말았다.
+DATAFORM 심심하다거나 질릴 틈이 없었다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스가 당신을 맞이했다.
+DATAFORM 「오늘도 좋은 하루 보내요.」
+DATAFORM 그녀는 싱긋 웃었다.
+DATAFORM 당신은 알 수 없는 압박감을 느꼈다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 들어오자마자 흠칫했다.
+DATAFORM 리리스가 냉혹한 표정을 짓고 있었다.
+DATAFORM 「어머 주인님.
+DATAFORM 저, 지금 나쁜 리리스 될 것 같은데.」
+DATAFORM 당신은 혀로 입술을 핥으며 말했다.
+DATAFORM 협박하는 것이냐고.
+DATAFORM 「협박이라니요. 나쁜 리리스조차,
+DATAFORM 주인님께는 절대로 해를 입히지 않아요.」
+DATAFORM 그녀는 웃는 표정을 지었다.
+DATAFORM 「주제 모르는 노리개들한테만,
+DATAFORM 조금 다짐을 받고 싶어할 뿐이지요.」
+ENDLIST
+DATALIST
+DATAFORM 「어머, 주인님. 나쁜 리리스가
+DATAFORM 얌전히 기다리고 있었어요.」
+DATAFORM 당신은 무심코, 뭐? 하고 되묻는다.
+DATAFORM 리리스는 말없이 웃기만 한다.
+DATAFORM 그녀의 눈은 웃고 있지 않았다.
+DATAFORM 이글이글 타오르는 듯한 살기가 느껴졌다.
+DATAFORM 당신을 향한 것이 아님은,
+DATAFORM 본능적으로 알 수 있었다.
+DATAFORM 그녀의 눈은 좀 더......
+DATAFORM 다른 곳을 바라보고 있는 것이다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스는 당신의 굳은 표정을 보고,
+DATAFORM 「주인......님?」
+DATAFORM 떨리는 목소리로 중얼거렸다.
+DATAFORM 당신은 어떠한 애정도, 배려도 보이지 않았다.
+DATAFORM 세상 무서운 줄 모르는 그녀도,
+DATAFORM 무서워 하는 것이 하나 있었다.
+DATAFORM 당신의 진심어린 노여움이었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 인사하지 않았다.
+DATAFORM 대신, 냉담하게 험한 소리를 내뱉는다.
+DATAFORM 리리스는 겁을 먹었다.
+DATAFORM 당신이 화를 낼까 두려워하는 것이다.
+ENDLIST
+DATALIST
+DATAFORM 다가온 당신은 인사하지 않았다.
+DATAFORM 대신, 냉담하게 험한 소리를 내뱉는다.
+DATAFORM 견디며 듣던 리리스가 조용히 말했다.
+DATAFORM 「주인님. 리리스는 견딜 수 있어요.
+DATAFORM 저는 주인님의 노예이니까.
+DATAFORM 주인님의 마음이 풀리신다면,
+DATAFORM 리리스는 행복해요.」
+DATAFORM 그러나 당신은 냉담하게 비꼰다.
+DATAFORM 얼마나 변태면 행복하기까지 하느냐고.
+DATAFORM 리리스는 눈을 내리고 입술을 깨문다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스는 인사했다.
+DATAFORM 당신은 아무 말도 하지 않고 있었다.
+DATAFORM 리리스에 대한 학대에 지쳤다.
+DATAFORM 손꼽히게 강건한 그녀의 육체였다.
+DATAFORM 당신의 힘으로는 여간 다치지 않는다.
+ENDLIST
+DATALIST
+DATAFORM 리리스는 인사했다.
+DATAFORM 당신은 아무 말도 하지 않고 있었다.
+DATAFORM 단지 슬프게 바라보고 있을 뿐이다.
+DATAFORM 보살펴 드리지 못해 죄송하다고,
+DATAFORM 말할 듯한 눈빛이 당신의 폐부를 찌른다.
+ENDLIST
+DATALIST
+DATAFORM 리리스가 인사한 다음,
+DATAFORM 모처럼 무어라 말하려는 찰나였다.
+DATAFORM 당신은 다짜고짜 그녀의 뺨을 올려붙였다.
+DATAFORM 리리스는 고개를 바로했다.
+DATAFORM 당신은 다른 쪽 뺨을 친다.
+DATAFORM 계속 고개를 바로 세웠다.
+DATAFORM 당신은 더욱 화가 난다.
+DATAFORM 이번에는 그녀의 오금을 걸어 넘어뜨린다.
+DATAFORM 리리스는 아무런 말도 하지 않았다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스는 멍한 눈으로 당신을 바라보기만 한다.
+DATAFORM 튼튼한 몸이 죽지 않았다 뿐이었다.
+DATAFORM 그녀의 마음은 죽어가는 것처럼 보였다.
+ENDLIST
+DATALIST
+DATAFORM 「어서 오세요.」
+DATAFORM 앉아 있던 리리스가 작은 미소를 띠었다.
+DATAFORM 그리고는 당신을 향해 다리를 벌렸다.
+DATAFORM 이어서 그 가운데를 가리켰다.
+DATAFORM 당신은 말하는 대신 그녀의 몸에 파묻혔다.
+ENDLIST
+DATALIST
+DATAFORM 리리스가 인사했다.
+DATAFORM 모처럼 이성적인 모습이었다.
+DATAFORM 당신은 그녀를 다시 쓰러뜨리고 벌준다.
+DATAFORM 「잘못했어요. 잘못했어요.」
+DATAFORM 당신은 그런 그녀의 뺨을 발로 짓누른다.
+ENDLIST
+DATALIST
+DATAFORM 그녀는 당신을 보자마자 빌었다.
+DATAFORM 자존심은 팽개치고 빌었다.
+DATAFORM 「동생들만은 건드리지 말아주세요.
+DATAFORM 제가 다 받아낼 테니.」
+DATAFORM 당신은 입가를 비틀며 웃었다.
+DATAFORM 「짐승 새끼들한테 쑤시는 인간도 있냐?」
+DATAFORM 리리스는 충격을 받은 듯 대답이 없었다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_TRAIN_END
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「오늘도 헤어질 시간이네요.」
+DATAFORM 당신은 가만히 고개를 끄덕였다.
+DATAFORM 「마음 같아선 더 가까워지고 싶지만,」
+DATAFORM 리리스가 살짝 웃는다.
+DATAFORM 「성급하면 주인님한테 미움받겠죠?」
+DATAFORM 당신은 대답하지 못했다.
+ENDLIST
+DATALIST
+DATAFORM 헤어질 시간이 되었다.
+DATAFORM 리리스는 빙글빙글 웃었다.
+DATAFORM 당신은 왜 웃느냐고 물었다.
+DATAFORM 그녀는 웃는 얼굴을 풀지 않고 대답한다.
+DATAFORM 「주인님을 봤으니 잠이 잘 올 것 같아요.」
+ENDLIST
+DATALIST
+DATAFORM 헤어질 시간이 되었다.
+DATAFORM 리리스가 말했다.
+DATAFORM 「리리스를 너무 오래 두지 말아 주세요.」
+DATAFORM 그녀는 웃는 얼굴을 풀지 않았다.
+DATAFORM 당신은 저도 모르게 고개를 끄덕였다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「리리스가 잘 할게요.」
+DATAFORM 그녀는 일부러 슬픈 표정을 지었다.
+DATAFORM 당신의 소매를 잡고 놔주지 않는다.
+DATAFORM 당신은 머리를 긁다가 마음을 굳힌다.
+DATAFORM 얼른 리리스의 뺨에 키스한다.
+DATAFORM 리리스는 빙긋 웃으며 그제야 팔을 놓는다.
+ENDLIST
+DATALIST
+DATAFORM 가려던 중 당신은 뭔가 생각해냈다.
+DATAFORM 혹시 따라오는 거 아니냐고 당신이 말했다.
+DATAFORM 「그, 그럴 리가요.」
+DATAFORM 리리스는 눈에 띄게 당황했다.
+DATAFORM 이윽고 밖으로 나간 당신은,
+DATAFORM 묘한 시선을 조금씩 느끼게 되었다.
+ENDLIST
+DATALIST
+DATAFORM 리리스는 당신을 향해 꾸벅 인사했다.
+DATAFORM 의외로 아무렇지 않게 배웅했다.
+DATAFORM 당신이 고개를 갸웃거리는 때였다.
+DATAFORM 리리스가 기습적으로 달려들어 당신과 입을 맞췄다.
+DATAFORM 「전투에서 방심은 절대 금물이랍니다.」
+DATAFORM 당신은 리리스의 말을 명심했다.
+ENDLIST
+DATALIST
+DATAFORM 리리스가 가는 길에 아쉽다는 듯이,
+DATAFORM 「리리스 혼자서도 잘 할 수 있는데.
+DATAFORM 다른 아이들은 방해만 되요.」
+DATAFORM 당신이 쓴웃음을 짓자,
+DATAFORM 그녀는 한숨을 쉬었다.
+DATAFORM 「어쩔 수 없겠죠?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 헤어질 시간이 왔다.
+DATAFORM 리리스는 당신의 바짓가랑이를 잡고 매달렸다.
+DATAFORM 「리리스가 벗을게요♡. 오늘은 저와 보내요.」
+DATAFORM 당신은 침을 꿀꺽 삼켰다.
+DATAFORM 리리스의 유혹을 이기기가 힘들었다.
+ENDLIST
+DATALIST
+DATAFORM 헤어질 시간이 되었다.
+DATAFORM 리리스가 당신의 눈치를 살폈다.
+DATAFORM 오늘도 어떻게든 스킨십을 할 것 같았다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스와 사무적으로 작별했다.
+DATAFORM 리리스는 실망해서 바라보다,
+DATAFORM 몸을 돌리려고 한다.
+DATAFORM 당신은 그 때를 놓치지 않는다.
+DATAFORM 당신이 잽싸게 달려들었다.
+DATAFORM 리리스의 뺨을 감싸고 입을 맞춘다.
+DATAFORM 기습 키스를 당한 리리스가 빙긋 웃는다.
+DATAFORM 「이젠 주인님도 기습의 묘를 아셨군요? 후후.」
+ENDLIST
+DATALIST
+DATAFORM 리리스와 헤어질 때가 되었다.
+DATAFORM 리리스는 아쉽다는 듯이 보면서도,
+DATAFORM 「리리스는 착하게 기다리고 있을게요.」
+DATAFORM 하고 말하며 순순히 보내 주었다.
+DATAFORM 평소 가끔 엿보이던,
+DATAFORM 당신을 향한 불안감은 느껴지지 않는다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스는 최근 당신을 붙잡으려 하지 않았다.
+DATAFORM 잡은 물고기라고 생각하는 모양이었다.
+DATAFORM 당신은 리리스가 듣도록 일부러,
+DATAFORM 오늘은 누구랑 밤을 보낼까 하고 크게 혼잣말했다.
+DATAFORM 「잠깐만욧 주인님!」
+DATAFORM 리리스는 무섭게 달려들어 당신을 뒤에서 껴안는다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 배웅하는 리리스에게,
+DATAFORM 응, 여보라고 불렀다.
+DATAFORM 리리스는 눈을 동그랗게 떴다.
+DATAFORM 그리고는 곧 다정한 얼굴이 되었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 배웅하는 리리스에게,
+DATAFORM 응, 여보라고 불렀다.
+DATAFORM 리리스도 얼굴을 붉히며 작게 중얼거렸다.
+DATAFORM 「네, 서방님.」
+DATAFORM 당신은 앞으로 이렇게 호칭으로 할까 생각한다.
+DATAFORM 하지만, 부끄러워서 그만두기로 했다.
+DATAFORM 리리스는 행복하게 당신을 배웅한다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「주인님, 제게 하실 말씀 없으세요?」
+DATAFORM 당신은 아무 말 하지 않는다.
+DATAFORM 리리스는 다 들리듯이 한숨을 쉰다.
+DATAFORM 「아아. 어쩔 수 없네요.
+DATAFORM 주인님의 마음을 어지럽히는 애들이 많아서.」
+DATAFORM 당신은 불안감과 미안함으로 헤어진다.
+ENDLIST
+DATALIST
+DATAFORM 리리스는 가만히 배웅한다.
+DATAFORM 무표정한 얼굴이었다.
+DATAFORM 처음과 달리, 입만 웃고 있지도 않는다.
+DATAFORM 왜 제게 이러세요?
+DATAFORM 라고 하는 듯이 힐난하는 눈빛.
+ENDLIST
+DATALIST
+DATAFORM 「리리스가 싫으시다고 해도, 
+DATAFORM 동생들만은 좋아해 주세요. 
+DATAFORM 리리스의 피가 이어진 그 아이들만 봐주셔도 
+DATAFORM 리리스는 그것만으로도 족하니까요.」 
+DATAFORM 배웅하는 길에 리리스는 불쑥 말했다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 나가려 하자 그녀가 불쑥 묻는다.
+DATAFORM 「끝나셨나요?」
+DATAFORM 당신은 더 때려줄까, 라고 묻는다.
+DATAFORM 리리스는 얼른 고개를 저었다.
+DATAFORM 당당한 그녀가 무서워하고 있다.
+ENDLIST
+DATALIST
+DATAFORM 그녀가 조심스럽게 인사했다.
+DATAFORM 당신은 새삼스럽게 짜증이 난다.
+DATAFORM 그녀에 대한 짜증일까,
+DATAFORM 당신 자신에 대한 짜증일까.
+DATAFORM 당신은 이유 모를 못마땅함으로,
+DATAFORM 그녀를 보다가 몸을 돌렸다.
+ENDLIST
+DATALIST
+DATAFORM 「주인님의 무관심이 제일 무서워요.」
+DATAFORM 나가는 당신을 보고 리리스가 불쑥 중얼거렸다.
+DATAFORM 당신은 <그럼 내일도 그럴게>.
+DATAFORM 하고 중얼거렸다.
+DATAFORM 그래도 사랑해요, 라는
+DATAFORM 리리스의 말이 들린 것 같았지만,
+DATAFORM 무시한다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 떠나려 할 때,
+DATAFORM 당당하던 리리스도 무릎 꿇고 용서를 빈다.
+DATAFORM 당신은 얼마간 마음이 풀려서 내려다본다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 떠나려 할 때,
+DATAFORM 당당하던 리리스도 무릎 꿇고 용서를 빈다.
+DATAFORM 자매를 학대하겠다는,
+DATAFORM 당신의 협박에 제대로 굴복한 것이다.
+DATAFORM 「잘못했어요.
+DATAFORM 뭐든지 할게요. 제발.」
+DATAFORM 협박으로밖에 굴복시킬 수 없었을까,
+DATAFORM 당신은 기분이 나빠서 나간다.
+ENDLIST
+DATALIST
+DATAFORM 떠나려는 당신의 꽁무니에 대고,
+DATAFORM 리리스가 절했다.
+DATAFORM 「저는 아무것도 할 줄 모릅니다.
+DATAFORM 총질만 할 줄 아는 바보같은 깡패녀입니다.
+DATAFORM 오늘도 관심을 주셔서 감사합니다.」
+DATAFORM 리리스가 눈물을 흘린다.
+DATAFORM 굴복 선언을 시키자 전에 없이 기분이 좋았다.
+DATAFORM 당신은 만족하며 방을 나선다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스는 아무런 말도 하지 않고 배웅했다.
+DATAFORM 사실 배웅하는지조차 알 수 없었다.
+DATAFORM 물끄러미 보고만 있었기 때문이었다.
+ENDLIST
+DATALIST
+DATAFORM 리리스는 싱긋 웃으며 말했다.
+DATAFORM 「주인님, 고마워요. 후훗!」
+DATAFORM 그녀의 눈은 공허해 보였다.
+DATAFORM 정신이 붕괴되기 직전이었다.
+DATAFORM 아니, 이미 붕괴된지도 모른다.
+DATAFORM 만족함과 씁쓸함을 동시에 느끼며,
+DATAFORM 리리스를 내버려 두고 나간다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 목줄을 잡아 끌었다.
+DATAFORM 다른 이들 앞에서 노출시킬 생각이다.
+DATAFORM 처음엔 사람들 앞에서 끌고 다녔더니,
+DATAFORM 수치스러움에 어쩔 줄 몰라했다.
+DATAFORM 그러나 이젠 반응을 보이지 않는다.
+DATAFORM 쾌락에 빠져 있을 뿐이었다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM2
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스에게 말을 걸었다.
+DATAFORM 아직은 말이 조심스럽다.
+DATAFORM 리리스도 그걸 알았는지 웃을 뿐이다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스에게 말을 걸었다.
+DATAFORM 아직은 말이 조심스럽다.
+DATAFORM 「너무 겁먹지 말아주세요.
+DATAFORM 저는 주인님의 총이며 방패니까,
+DATAFORM 원하시는 대로 쓰시면 되어요.
+DATAFORM 절대 주인님을 해치진 않아요.」
+DATAFORM 당신은 그녀를 믿기로 한다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스에게 말을 걸었다.
+DATAFORM 아직은 말이 조심스럽다.
+DATAFORM 리리스도 그걸 알았는지 묘한 표정이다.
+DATAFORM 「주인님. 리리스를 무서워하지 마세요.
+DATAFORM 저는 주인님이 좋은데.
+DATAFORM 농담이 아니랍니다. 정말이에요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스에게 권총에 대해 물었다.
+DATAFORM 「완벽한 호위를 위해선, 사전 차단이 제일이죠.
+DATAFORM 이 권총들은 그러기 위해서 있답니다.
+DATAFORM 물론 권총따윈 없어도,
+DATAFORM 나약한 애들은 죽이지 못할 것도 아니지만.
+DATAFORM 후훗.」
+DATAFORM 당신은 살짝 무섭다고 느꼈다.
+DATAFORM 리리스는 자랑스럽게 웃기만 한다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스에게 보호막에 대해 물었다.
+DATAFORM 「이 드론들은 로자 아줄이라는 거예요.
+DATAFORM 이름 예쁜가요?
+DATAFORM 리리스만이 쓸 수 있는 이 애들만 있으면,
+DATAFORM 전술핵에서도 무사할 수 있답니다.」
+DATAFORM 당신은 순수하게 감탄했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스와 이야기했다.
+DATAFORM 「리리스는 뭐든지 해 드릴 수 있어요.
+DATAFORM 경호부터 가사에 시중드는 일까지 전부.」
+DATAFORM 당신은 잠자리도 되냐고 농담을 걸었다.
+DATAFORM 리리스는 이상한 듯이 당신을 바라보았다.
+DATAFORM 「그거야 당연한 거고요.
+DATAFORM 물론, 아직은 아니지만요? 후훗.」
+DATAFORM 하고 웃으며 말했다.
+ENDLIST
+DATALIST
+DATAFORM 리리스가 이야기 중에 말했다.
+DATAFORM 「주인님을 보면 몸이 뜨겁지만,
+DATAFORM 참아야겠죠.」
+DATAFORM 농담일까 아닐까 당신은 알 수 없었다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스와 이야기를 나눈다.
+DATAFORM 「호위가 재미없지 않느냐고요?
+DATAFORM 정말 재미있어요.
+DATAFORM 주인님을 나날이 지켜보는 걸요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스와 이야기를 나눈다.
+DATAFORM 「주인님을 쫒......지켜보는 일은
+DATAFORM 정말 재미있어요. 질리지 않아요.
+DATAFORM 할 때마다 새로운 기분이고.」
+DATAFORM 당신은 속으로 한숨을 쉬었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스에게 슬쩍 묻는다.
+DATAFORM 「스, 스토킹이요?
+DATAFORM 그런 거 전혀 안 해요.
+DATAFORM 지금은 착한 리리스라고요.」
+DATAFORM 리리스는 조금 시치미를 떼었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스에게 넌지시 묻는다.
+DATAFORM 「나쁜 리리스를 없애는 법이요?
+DATAFORM 아, 하하. 나쁜 리리스는 없어요.
+DATAFORM 리리스는 언제나 착하다고요.」
+DATAFORM 리리스는 난처하게 웃었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스에게 넌지시 묻는다.
+DATAFORM 「스토킹이요? 서...... 설마요.
+DATAFORM 리리스는 이젠, 아니, 원래 안 해요.」
+DATAFORM 리리스는 난처하게 웃었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스에게 정색하고 묻는다.
+DATAFORM 「스토킹이요? 서...... 설마요.
+DATAFORM 리리스는 이젠, 아니, 원래 안 해요.」
+DATAFORM 당신은 눈을 피하는 그녀에게 캐묻는다.
+DATAFORM 리리스는 우물쭈물하다가 사과한다.
+DATAFORM 죄송해요, 주인님이 너무 신경쓰여서.
+DATAFORM <보통, 신경쓰인다고 사생질은 안 해.>
+DATAFORM 당신의 훈계를 받고 리리스는 얌전해졌다.
+DATAFORM 당신은 혼을 낸 다음 위로해준다.
+DATAFORM 리리스는 그러자 금방 기운을 되찾았다.
+ENDLIST
+DATALIST
+DATAFORM 리리스는 이야기 도중 툭 내뱉었다.
+DATAFORM 「다른 아이들 따윈 필요 없는데.
+DATAFORM 리리스만 있으면 호위는 그만이에요.」
+DATAFORM 당신은, 리리스를 부드럽게 설득한다.
+DATAFORM 약간 불만스럽던 리리스는 곧,
+DATAFORM 「주인님이 원하시니까......
+DATAFORM 말투 고칠게요.」라고 하며 사과한다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「가끔씩은 생각해요.
+DATAFORM 저희 둘만 있으면 어떨까.」
+DATAFORM 당신은 조금 곤란하다고 말한다.
+DATAFORM 「확실히, 그럼 심심하시려나.
+DATAFORM 노리개들이 없으니.」
+DATAFORM 오만한 모습에 당신은 쓴웃음을 지었다.
+DATAFORM 하지만 싫지 않았다.
+DATAFORM 대신 말투는 주의하라고 슬쩍 당부했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스와 정답게 이야기한다.
+DATAFORM 시답잖은 이야기지만, 주의깊게 듣는 그녀였다.
+DATAFORM 그래도 단순히 기분을 맞춰 주려는 것보단,
+DATAFORM 진심으로 당신과의 대화를 즐기고 있었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스와 이야기 도중,
+DATAFORM 요즘 스토킹을 당하는 것 같다고 털어놓았다.
+DATAFORM 인기인답게 팬이 많았기 때문이다.
+DATAFORM 리리스는 듣자마자 화를 냈다.
+DATAFORM 「도대체 어떤 년이 주인님을!
+DATAFORM 리리스가 반드시 잡을게요.
+DATAFORM 스토킹이라니, 용서할 수 없어요.」
+DATAFORM 당신은, 리리스가 할 소리인가 생각한다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스와 즐겁게 이야기한다.
+DATAFORM 「이러니까 둘만의 세계에 있는 것 같네요.
+DATAFORM 주인님도 그러신가요?」
+DATAFORM 당신도 고개를 끄덕여 준다.
+ENDLIST
+DATALIST
+DATAFORM 리리스는 당신이 인기가 많은 걸 질투한다.
+DATAFORM 살짝 투덜거리더니,
+DATAFORM 「그래도 다른 애들을 배제한다면 안되겠죠?
+DATAFORM 주인님을 존중해야 되니까요.」
+DATAFORM 라고 말한다.
+DATAFORM 그녀의 말에 당신은 기특하게 느낀다.
+DATAFORM 오만한 그녀도 조금씩 달라져 가는 것 같다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스와 이야기를 나누었다.
+DATAFORM 그녀는, 문득 이야기 중에 말했다.
+DATAFORM 「주인님. 제 동생들과도 결혼해 주시겠어요?」
+DATAFORM 당신은 괜찮느냐고 묻자, 리리스는 생긋했다.
+DATAFORM 「제 혈족이 늘어나는 거나 마찬가지잖아요.」
+DATAFORM 당신은 이래서 그녀를 좋아한다고 생각했다.
+ENDLIST
+DATALIST
+DATAFORM 리리스와 이야기를 나누었다.
+DATAFORM 그녀와의 이야기는 질리지 않았다.
+DATAFORM 잘난 척은 해도, 보고 있으면 재미있다.
+DATAFORM 당신은 이래서 그녀를 좋아한다고 생각했다.
+ENDLIST
+DATALIST
+DATAFORM 리리스와 이야기를 나누었다.
+DATAFORM 그녀는, 문득 이야기 중에 말했다.
+DATAFORM 「주인님. 다른 아이들과 재밌게 보내셔도요.
+DATAFORM 리리스와도 많이 이야기해주시는 거예요?」
+DATAFORM 당신은 양심에 찔려 가만히 고개를 끄덕인다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스와 일상 이야기를 했다.
+DATAFORM 그러다 실수로 다른 여자 이야기를
+DATAFORM 너무 많이, 즐겁게 했다.
+DATAFORM 리리스는 듣고 있다가 이렇게 말했다.
+DATAFORM 「주인님. 리리스는 주인님을 구속하지 않아요.
+DATAFORM 그래도 조금 신경써 주세요.」
+DATAFORM 당신은 그제야 실수를 깨닫고 사과했다.
+DATAFORM 리리스는 별일 아니라는 듯 웃었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스와 허심탄회하게 이야기한다.
+DATAFORM 리리스는 이야기 도중 무언가 깨달은 듯한 표정이었다.
+DATAFORM 「역시, 저희만의 세계에요.」
+DATAFORM 당신은 어리둥절한 표정으로 그녀를 본다.
+DATAFORM 「둘이 같이 시간을 보내는 것 자체가
+DATAFORM 저희만의 세계인 걸요.
+DATAFORM 왜 이제 느꼈는지.」
+DATAFORM 당신은 기특하니 고개를 끄덕인다.
+ENDLIST
+DATALIST
+DATAFORM 리리스는 문득 이런 말을 했다.
+DATAFORM 「아이 이름은 어떻게 지을까요?」
+DATAFORM 일단 임신도 안 했는데 벌써 짓냐고,
+DATAFORM 당신이 말하자 리리스는 그냥 웃는다.
+DATAFORM 「선행학습도 하는데 이름 쯤이야.」
+DATAFORM 당신도 그럴듯하다 생각하고,
+DATAFORM 궁리하기 시작한다.
+DATAFORM 리리스가 기대감 어린 눈으로 말했다.
+DATAFORM 「딸이면 미니 리리스가 좋을 것 같아요.」
+DATAFORM 리리스 2세라는 것일까.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스에게 시덥잖은 이야기를 건다.
+DATAFORM 「응, 오. 아, 예.」
+DATAFORM 리리스는 한눈에 보기에도 건성으로 대답했다.
+DATAFORM 당신도 슬며시 화가 난다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스에게 이야기를 걸었다.
+DATAFORM 「네네, 그렇군요.」
+DATAFORM 리리스는 한눈에 보기에도 건성으로 대답했다.
+DATAFORM 당신도 슬며시 화가 난다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 말을 걸었다.
+DATAFORM 리리스는 화들짝 놀란다.
+DATAFORM 그러고는 조심스럽게 경청한다.
+ENDLIST
+DATALIST
+DATAFORM 당신의 이야기를 들은 그녀는,
+DATAFORM 무작정 동의한다.
+DATAFORM 「예, 옛! 물론이에요.」
+DATAFORM 뭔가 거슬리기라도 하냐고 당신이 묻자,
+DATAFORM 그녀는 얼른 고개를 저었다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 트집을 잡았다.
+DATAFORM 리리스는 눈치를 살피며 사과했다.
+DATAFORM 「죄송해요, 주인님.」
+DATAFORM 노예 같은 태도가 되었다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 트집을 잡았다.
+DATAFORM 리리스는 눈치를 살피며 사과했다.
+DATAFORM 「리리스가 더 잘 할게요.」
+DATAFORM 자신만만하던 처음 태도와는 딴판이었다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 뒤통수를 쳤다.
+DATAFORM 리리스가 멍한 눈으로 돌아보았다.
+DATAFORM 불렀으면 대답을 해야지, 라고 당신이 말한다.
+DATAFORM 리리스는 가만히 고개를 끄덕인다.
+DATAFORM 정말 알아들었는지는 의문이다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 불렀다.
+DATAFORM 리리스가 멍한 눈으로 바라보았다.
+DATAFORM 불렀으면 대답을 해야지, 라고 당신이 말한다.
+DATAFORM 리리스는 가만히 고개를 끄덕인다.
+DATAFORM 그 눈동자엔 촛점이 없었다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM3
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스에게 아재개그를 한다.
+DATAFORM 리리스는 억지로 웃으려고 한다.
+DATAFORM 「괜찮아요. 주인님.
+DATAFORM 개그는 하루아침에 이루어지지 않으니까.」
+DATAFORM 위로는 당신을 비참하게 만들었다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 리리스에게 우스개를 던졌다.
+DATAFORM 리리스의 표정이 딱딱히 굳어졌다.
+DATAFORM 당신은 스스로 민망해진다.
+DATAFORM 그녀는 곧 생긋 웃으며 당신을 위로했다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 엉덩이를 칭찬했다.
+DATAFORM 리리스는 머리를 쓸어 올리며 으쓱한다.
+DATAFORM 「하체만 아름다운 게 아니에요.
+DATAFORM 가끔 생각하거든요.
+DATAFORM 왜 이렇게 완벽한가 하고.」
+DATAFORM 당신의 눈이 가늘어지자,
+DATAFORM 그녀는 그제야 헛기침을 한다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 제법 웃긴 이야기를 했다.
+DATAFORM 리리스도 이젠 듣다가 피식했다.
+DATAFORM 「주인님 개그 중에 제일 재밌었어요.」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스에게 아첨한다.
+DATAFORM 리리스는 당연하다는 듯이,
+DATAFORM 그러나 행복하게 칭찬을 받아들인다.
+DATAFORM 「이제 리리스가 주인님 거......
+DATAFORM 되기 일보 직전이에요?」
+DATAFORM 리리스는 당신의 손을 잡고는,
+DATAFORM 짓궂게 그녀 자신의 가슴에 가져다 댄다.
+DATAFORM 촉감에 당신은 정신이 아찔한다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스에게 아첨한다.
+DATAFORM 리리스는 당연하다는 듯이,
+DATAFORM 그러나 행복하게 칭찬을 받아들인다.
+DATAFORM 「상을 드릴게요. 주제넘지만.」
+DATAFORM 리리스는 당신의 손을 잡고는,
+DATAFORM 짓궂게 그녀 자신의 가슴에 가져다 댄다.
+DATAFORM 촉감에 당신은 정신이 아찔한다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스를 칭찬한다.
+DATAFORM 리리스는 별 말을 다 한다는 듯이,
+DATAFORM 「아이 참, 당연한 걸 계속 말씀하시면......」
+DATAFORM 그녀는 당신에게 눈웃음을 친다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 칭찬한다.
+DATAFORM 리리스는 별 말을 다 한다는 듯이,
+DATAFORM 「어휴.
+DATAFORM 주인님 때문에 몸이 달았으니까, 책임지세요.」
+DATAFORM 그녀는 당신에게 폴짝 안긴다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 칭찬한다.
+DATAFORM 리리스는 별 말을 다 한다는 듯이,
+DATAFORM 「너무 당연한 말씀을 하신다.
+DATAFORM 후훗, 주인님도 물론,
+DATAFORM 최고로 훌륭한 알파메일이세요.」
+DATAFORM 그녀가 기분 좋게 웃는다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 미모를 칭찬한다.
+DATAFORM 리리스는 시큰둥해한다.
+DATAFORM 「말씀이 능숙하시네요......
+DATAFORM 리리스는 조금 믿지 못하겠답니다.」
+DATAFORM 당신은 민망해졌다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 미모를 칭찬한다.
+DATAFORM 리리스는 시큰둥해한다.
+DATAFORM 「글쎄요. 말이 아니라 행동이에요.」
+DATAFORM 당신은 민망해졌다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스를 칭찬했다.
+DATAFORM 리리스는 불안한 눈이 되었다.
+DATAFORM 「갑자기 리리스를 칭찬해 주시니까,
+DATAFORM 오히려 무서워요.......」
+DATAFORM 두려워 하는 그녀의 약한 모습에,
+DATAFORM 당신은 흡족히 웃는다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 칭찬했다.
+DATAFORM 리리스는 눈을 굴리며 조심스레,
+DATAFORM 「주인님, 더 잘할게요.......」
+DATAFORM 하고 중얼거린다.
+DATAFORM 두려워 하는 그녀의 약한 모습에,
+DATAFORM 당신은 흡족히 웃는다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신은 리리스를 일부러 칭찬했다.
+PRINTFORMW 리리스는 아무런 대답도 하지 않는다.
+PRINTFORMW 눈치만 살필 뿐이다.
+PRINTFORMW 또, 무슨 짓으로 괴롭히려는가.
+PRINTFORMW 어떤 협박을 하려는가.
+PRINTFORMW 괴로워하는 마음이 얼굴에 씌여 있다.
+PRINTFORMW 당신의 가학 욕구가 한껏 만족한다.
+CASE "Break"
+PRINTFORMW 당신이 리리스를 칭찬했다.
+PRINTFORMW 리리스가 돌아서서 당신을 보았다.
+PRINTFORMW 그리고는 이상할 정도로 눈을 빛냈다.
+PRINTFORMW 「후후, 열심히 해서 훌륭한 아내가 될게요.」
+PRINTFORMW 그녀는 다시 돌아서서 콧노래까지 부른다.
+PRINTFORMW 자신만의 세계에 빠진 모양이었다.
+PRINTFORMW 당신과 그녀 사이에 예전에 있었을지 모를,
+PRINTFORMW 이상적인 행복함 속으로.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM4
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 슬며시 리리스의 손을 잡으려고 한다.
+DATAFORM 리리스는 빠른 손놀림으로 용케 피한다.
+DATAFORM 「후훗? 리리스를 잡으시려면,
+DATAFORM 보통의 실력으론 안 된답니다.
+DATAFORM 아니면...... 마음을 공략하는 것도?
+DATAFORM 음. 농담이에요.」
+DATAFORM 당신은 머리를 긁는다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 리리스의 손을 잡으려 한다.
+DATAFORM 리리스는 살짝 피한다.
+DATAFORM 「대놓고 하는 건 기습이 아니랍니다?」
+DATAFORM 경호원 겸 교관 리리스의 강의는 계속된다.
+ENDLIST
+DATALIST
+DATAFORM 당신과 리리스의 손이 닿았다.
+DATAFORM 리리스는 움찔하면서 피했다.
+DATAFORM 「저도 그러고 싶지만, 조금 빠르지 않나요.」
+DATAFORM 조금 더 호감을 쌓아야 할 듯했다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 손을 잡았다.
+DATAFORM 리리스는 당신을 돌아보았다.
+DATAFORM 「피할 수 있었지만, 잡혀 드린 건 알지요?」
+DATAFORM 리리스는 애정 반 탐욕 반으로,
+DATAFORM 당신을 보고 있었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 손을 잡았다.
+DATAFORM 리리스는 당신을 돌아보았다.
+DATAFORM 「후후. 도망치지 못하실 거예요. 종일.」
+DATAFORM 리리스는 애정 반 탐욕 반으로,
+DATAFORM 당신을 보고 있었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 손을 잡았다.
+DATAFORM 리리스가 슬며시 웃었다.
+DATAFORM 「그때 보면서 얼마나 잡고 싶었는지.
+DATAFORM 예? 아, 아니에요. 별로.」
+DATAFORM 그녀는 무언가 실언을 한 듯이 허둥지둥한다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 리리스의 손을 잡자,
+DATAFORM 리리스는 환하게 웃는다.
+DATAFORM 「주인님의 손은 언제나 따뜻해서 좋아요.
+DATAFORM ......라고 하치코가 말하던데,
+DATAFORM 어때요? 저도 귀엽나요?
+DATAFORM 당신은 일부러 아니라고 한다.」
+DATAFORM 리리스는 뺨을 부풀린다.
+DATAFORM 「쫌생이네용.」
+DATAFORM 당신은 그만 웃고 말았다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 리리스의 손을 잡는다.
+DATAFORM 리리스는 살며시 미소짓는다.
+DATAFORM 「손만 잡아도 정말 좋아요.
+DATAFORM 주인님도 그러신가요?」
+DATAFORM 당신과 그녀는 행복함으로 가득하다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 자연스럽게 손을 잡는다.
+DATAFORM 「제 몸은 주인님 거니까,
+DATAFORM 어디든 마음껏 잡아주세요.」
+DATAFORM 당신은 다른 곳도 만지고 싶어졌다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 손을 잡자 리리스가 말했다.
+DATAFORM 「손 말고, 가슴이나 엉덩이도 좋은데.
+DATAFORM 후후훗. 농담인거 아시죠?」
+DATAFORM 농담이 아니었으면 좋겠다고 당신이 말했다.
+DATAFORM 리리스가 깔깔 웃는다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 자연스럽게 리리스의 손을 잡았다.
+DATAFORM 손만 잡고 있어도 서로의 온기가 느껴지고,
+DATAFORM 마음이 편해진다.
+DATAFORM 리리스도 그런 얼굴이었다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 용기를 내어 리리스의 손을 잡는다.
+DATAFORM 리리스는 피하지도 않고 그냥 탁 쳐낸다.
+DATAFORM 「어머나? 저희가 이리 가까웠나요?」
+DATAFORM 리리스는 쌀쌀맞았다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 조심스럽게 리리스의 손을 잡는다.
+DATAFORM 리리스는 말 없이 손을 내주었다.
+DATAFORM 「이번만이에요.」
+DATAFORM 리리스는 마음에 들지 않은 듯했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 용기를 내어 리리스의 손을 잡는다.
+DATAFORM 리리스는 피하지도 않고 그냥 탁 쳐낸다.
+DATAFORM 「경호 중엔 사적인 행위 금지에요.」
+DATAFORM 리리스는 쌀쌀맞았다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW 당신이 리리스의 손을 우악스럽게 잡았다.
+PRINTFORMW 리리스는 움찔 놀라면서도 거부하지 못한다.
+PRINTFORMW 최대한 당신의 눈치를 살피며 손을 떼지 못한다.
+CASE "Weak"
+PRINTFORMW 당신은 거칠게 리리스의 손을 잡았다.
+PRINTFORMW 리리스는 힘없이 손을 내맡긴다.
+PRINTFORMW 「고맙습니다.」
+PRINTFORMW 기어들어가는 목소리에 당신은 만족한다.
+CASE "Break"
+PRINTFORMW 당신은 리리스의 손을 잡았다.
+PRINTFORMW 리리스는 돌연 빙긋 웃는다.
+PRINTFORMW 「주인님, 뭐 하고 놀까요?」
+PRINTFORMW 리리스는 또 다시 자신의 세계로 빠지려 한다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM5
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 당신은 리리스의 머리를 쓰다듬었다.
+PRINTFORMW 그녀는 쓴 웃음 짓다가 말한다.
+PRINTFORMW 「주인님, 여자는 머리 쓰다듬는다고 해서,
+PRINTFORMW 다 좋아하는 건 아니랍니다.
+PRINTFORMW 뭐, 주인님은 예외지만요.」
+PRINTFORMW 그녀는 어쩔 수 없다는 듯했다.
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 리리스의 머리를 쓰다듬었다.
+DATAFORM 리리스는 눈을 감고 즐긴다.
+DATAFORM 「기분 좋아요. 주인님.」
+DATAFORM 리리스의 말에 당신도 기분이 좋아진다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 리리스의 머리를 쓰다듬었다.
+DATAFORM 리리스는 눈을 감고 즐긴다.
+DATAFORM 「여자는 머리 쓰다듬는다고 다 좋아하진 않아요.
+DATAFORM 하지만, 주인님이랑 저는 예외에요.
+DATAFORM 마음껏 해주세요.」
+DATAFORM 당신은 기분이 좋아졌다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 리리스의 머리를 쓰다듬어 주었다.
+PRINTFORMW 부드러운 머릿결이 느껴진다.
+PRINTFORMW 리리스가 살짝 얼굴을 붉힌다.
+PRINTFORMW 「주인님, 더 해주세요, 아아, 더!
+PRINTFORMW ......후훗, 농담이에요.
+PRINTFORMW 머리로 가버리진 않으니 안심하세요.」
+PRINTFORMW 당신도 웃음이 나왔다.
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 리리스의 머리를 쓰다듬어 주자,
+DATAFORM 리리스는 편안히 받아들인다.
+DATAFORM 「주인님의 손길이 편안해요.
+DATAFORM 전에는 그저 흥분했었는데.」
+DATAFORM 당신도 고개를 끄덕인다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 리리스의 머리를 쓰다듬어 주자,
+DATAFORM 리리스는 편안히 받아들인다.
+DATAFORM 「이러고 있으니까, 주인님의 딸이 된 것 같아요.」
+DATAFORM 당신은 피식 웃었다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 리리스의 머리를 쓰다듬는다.
+DATAFORM 리리스는 눈을 가늘게 뜬다.
+DATAFORM 「언젠가 말씀드렸는지도 모르는데,
+DATAFORM 여자는 머리 쓰다듬는 거 안 좋아해요.
+DATAFORM 특히, 애정도 없는 사이에선.」
+DATAFORM 당신은 민망해서 손을 뗀다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 리리스의 머리를 쓰다듬는다.
+DATAFORM 리리스가 차분하게 말한다.
+DATAFORM 「주인님. 쓰다듬는 것보단,
+DATAFORM 먼저 해야 할 말씀이 있으실 것 같은데.」
+DATAFORM 당신은 민망해서 손을 뗀다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 리리스의 머리를 쓰다듬었다.
+DATAFORM 리리스는 흠칫하며 눈을 치뜬다.
+DATAFORM 「저, 주인님? 무언가 하실 말씀이라도.」
+DATAFORM 두려워하는 그녀의 모습에
+DATAFORM 당신은 야릇한 쾌감을 느꼈다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 리리스의 머리를 쓰다듬었다.
+DATAFORM 리리스는 흠칫하며 눈을 치뜬다.
+DATAFORM 「리리스의 머리카락, 조금 거칠텐데.」
+DATAFORM 두려워하는 그녀의 모습을 보고,
+DATAFORM 당신은 야릇한 쾌감을 느꼈다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신이 리리스의 머리에 손을 올렸다.
+PRINTFORMW 리리스는 포기한 듯 아무 반응도 없이,
+PRINTFORMW 당신의 손아귀에 머리카락을 내맡긴다.
+PRINTFORMW 심신이 약해진 그녀의 부드러운 머릿결도
+PRINTFORMW 이제는 점점 푸석해진 게 느껴진다.
+PRINTFORMW 당신은 복잡한 마음이 든다.
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 예고도 없이,
+DATAFORM 리리스의 머리에 손을 올렸다.
+DATAFORM 리리스는 부자연스럽게 활짝 웃는다.
+DATAFORM 「아, 주인님.
+DATAFORM 리리스는 주인님하고 사랑하고 있었어요.」
+DATAFORM 완전히 자기만의 세계에 빠져 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 예고도 없이,
+DATAFORM 리리스의 머리에 손을 올렸다.
+DATAFORM 리리스는 부자연스럽게 활짝 웃는다.
+DATAFORM 「리리스의 머리카락 부드럽죠?
+DATAFORM 주인님만을 위해서 가꾼 거랍니다.」
+DATAFORM 완전히 자기만의 세계에 빠져 있다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM6
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 리리스의 겨드랑이를 간지럽혔다.
+DATAFORM 「하나도 안 웃긴걸요?
+DATAFORM 후후, 고문 버티기는 리리스의 특급 기술이랍니다?」
+DATAFORM 당신은 입맛을 다셨다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 리리스의 겨드랑이를 간지럽혔다,
+DATAFORM 리리스는 슬며시 당신을 밀친다.
+DATAFORM 「가렵지도 아프지도 않아요.」
+DATAFORM 당신은 입맛을 다신다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 리리스의 목덜미에 바람을 분다.
+DATAFORM 리리스는 움찔하면서도 웃으며 돌아본다.
+DATAFORM 「어머, 주인님. 이런 시간부터......
+DATAFORM 리리스랑 즐거운 놀이를 하시려고요?」
+DATAFORM 당신은 글쎄? 하고 씩 웃는다.
+DATAFORM 리리스가 빙글거린다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 리리스의 겨드랑이를 간지럽혔다.
+DATAFORM 리리스가 돌아보며 말했다.
+DATAFORM 「주인님, 혹시 겨드랑이 취향이세요?」
+DATAFORM 당신은 글쎄, 하면서 웃는다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 리리스의 겨드랑이를 간지럽힌다.
+DATAFORM 리리스는 과장되게 깔깔거린다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 리리스의 겨드랑이를 간지럽힌다.
+DATAFORM 웃음을 멈춘 그녀가 돌아본다.
+DATAFORM 「이번엔 제 차례랍니다.」
+DATAFORM 리리스는 무서운 힘으로 당신을 붙들고는,
+DATAFORM 당신의 겨드랑이를 간지럽힌다.
+DATAFORM 당신은 1초만에 웃음을 터뜨린다.
+DATAFORM 「컴패니언 특급 고문 기술!」
+DATAFORM 당신은 눈물이 날 정도로 웃고 말았다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 가슴을 쿡 찔렀다.
+DATAFORM 리리스는 얼굴을 붉힌다.
+DATAFORM 「갑작스럽게 이런 전희는.......」
+DATAFORM 리리스는 기대하는 눈으로 당신을 흘겨본다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 가슴을 쿡 찔렀다.
+DATAFORM 리리스는 얼굴을 붉힌다.
+DATAFORM 「이런 장난은 언제나 환영이에요.」
+DATAFORM 리리스가 가슴팍 단추에 손을 가져다 대고.
+DATAFORM 당신도 침을 삼킨다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신이 리리스의 옆구리를 쿡 찔렀다.
+PRINTFORMW 리리스가 돌아본다.
+PRINTFORMW 「부르실 일이 있다면 말로 해주세요.
+PRINTFORMW 저희가 사적인 사이는 아니잖아요?」
+PRINTFORMW 당신은 그녀의 가시돋친 말에 놀란다.
+CASE "Fear"
+PRINTFORMW 당신은 리리스의 가슴팍을 찔렀다.
+PRINTFORMW 리리스는 찔끔하니 놀라서 얼른 바라본다.
+PRINTFORMW 「무, 무슨 일이신지요.」
+PRINTFORMW 두려워하는 모습에 당신은 만족한다.
+CASE "Weak"
+PRINTFORMW 당신이 리리스의 등을 쿡 찔렀다.
+PRINTFORMW 리리스는 천천히 당신을 돌아본다.
+PRINTFORMW 이제는 감히 마주 보지도 못한다.
+PRINTFORMW 그저 조심스럽게 눈치를 살필 뿐이다.
+PRINTFORMW 당신의 가학심이 끓어오른다.
+CASE "Break"
+PRINTFORMW 당신의 리리스의 몸을 찔러 보아도,
+PRINTFORMW 간지럽혀도 엉뚱한 반응만이 날아온다.
+PRINTFORMW 그녀는 무엇을 보는가.
+PRINTFORMW 당신과의 행복한 때를 보고 있는 것일까.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM7
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 당신은 리리스더러 무릎에 누우라고 했다.
+PRINTFORMW 리리스는 잠시 가만 있다가 웃는다.
+PRINTFORMW 「이러지 않으셔도 그 마음 잘 아는데. 후훗.」
+CASE "High"
+PRINTFORMW 당신은 리리스에게 자신의 다리에 기대라고 했다.
+PRINTFORMW 리리스는 냉큼 당신의 다리를 배개삼아 눕는다.
+PRINTFORMW 「주인님은 따뜻해서 좋아요.」
+PRINTFORMW 당신은 바지 바깥으로도 느껴지냐고 묻자,
+PRINTFORMW 리리스는 피식한다.
+PRINTFORMW 「그게 아니라, 마음이 따뜻하셔요.」
+PRINTFORMW 당신의 마음이 왠지 두근거렸다.
+CASE "Affection"
+PRINTFORMW 당신은 리리스한테 다리에 누우라고 했다.
+PRINTFORMW 리리스가 냉큼 다리를 베고 눕는다.
+PRINTFORMW 흡족한 미소를 짓는 그녀를 보며,
+PRINTFORMW 당신도 어느새 미소가 그려진다.
+PRINTFORMW 한동안 말 없이 그러고 있었다.
+CASE "Marryed"
+PRINTFORMW 당신은 리리스에게 다리를 베고 누우라 했다.
+PRINTFORMW 리리스는 살짝 웃으며 다리를 베고 누운다.
+PRINTFORMW 「이렇게 하니까 연애할 때 떠오르네요.」
+PRINTFORMW 당신도 피식거린다.
+PRINTFORMW 뭐 얼마나 지났다고, 라고 말하자,
+PRINTFORMW 「지금 이 시간도 바로 과거인걸요.」
+PRINTFORMW 하고 의외로 어려운 이야기를 한다.
+CASE "Annoyed"
+PRINTFORMW 당신은 리리스에게 다리에 누우라 했다.
+PRINTFORMW 리리스는,
+PRINTFORMW 「주인님의 명령이라면.」
+PRINTFORMW 하고 다리에 머리를 기댄다.
+PRINTFORMW 오히려 불편한 시간이 흘렀다.
+CASE "Fear"
+PRINTFORMW 당신은 리리스를 보고 다리에 누우라 명했다.
+PRINTFORMW 리리스는 두려운 눈으로 당신을 바라본다.
+PRINTFORMW 「알겠어요.......」
+PRINTFORMW 그녀는 불편한 듯이 다리에 누웠다.
+PRINTFORMW 당신은 정복감과 안타까움이 섞여,
+PRINTFORMW 복잡한 심경이 든다.
+CASE "Weak"
+PRINTFORMW 당신은 리리스를 보고 다리를 베고 누우라 한다.
+PRINTFORMW 리리스는 힘없이 머리를 끄덕였다.
+PRINTFORMW 그녀가 살며시 머리를 눕히려는 그 때,
+PRINTFORMW 당신은 갑자기 그녀를 밀쳐낸다.
+PRINTFORMW 생각이 바뀌었어, 라고 냉담하게 말하자,
+PRINTFORMW 그녀는 슬픈 눈을 한층 더 내리깐다.
+CASE "Break"
+PRINTFORMW 당신은 리리스에게 명령한다.
+PRINTFORMW 다리를 베고 누우라고.
+PRINTFORMW 리리스는 이상한 미소를 지으며 눕는다.
+PRINTFORMW 「따뜻해요. 주인님.
+PRINTFORMW 하치코가 될게요. 페로도 할게요. 헤헤헤.」
+PRINTFORMW 그녀는 또다시 다른 세계에 빠진 듯했다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM8
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스에게 무릎베개를 부탁했다.
+DATAFORM 리리스는 고개를 갸웃하다가 씩 웃는다.
+DATAFORM 「원래는 아직 이르지만,
+DATAFORM 주인님이니까 특별 서비스에요.」
+DATAFORM 당신은 그녀의 허벅지가 부드러워 좋았다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스에게 무릎베개를 부탁했다.
+DATAFORM 리리스는 고개를 갸웃하다가 씩 웃는다.
+DATAFORM 「어쩔 수 없네요. 후훗.」
+DATAFORM 당신은 그녀의 허벅지가 부드러워 좋았다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 허벅지에 눕고 싶다 한다.
+DATAFORM 리리스는 싱긋 웃으며 선선히 허락한다.
+DATAFORM 「리리스의 허벅지는 어때요?
+DATAFORM 기분 좋으세요?」
+DATAFORM 고개를 끄덕이자, 리리스가 요염한 눈을 한다.
+DATAFORM 「다른 곳도 기분 좋은데.」
+DATAFORM 당신은 그녀의 유혹에 흔들린다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 리리스에게 무릎배게를 부탁했다.
+DATAFORM 리리스는 눈을 반짝이며 얼른 해 준다.
+DATAFORM 당신을 내려다보던 그녀가 기대한 듯이 말했다.
+DATAFORM 「다른 아이들 것보다 더 기분 좋으신가죠?」
+DATAFORM 당신은 그렇다고 해 주었다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTFORMW 당신은 리리스에게 무릎베개를 부탁했다.
+PRINTFORMW 리리스는 기쁘게 다리를 내 주었다.
+PRINTFORMW 그녀는 다리를 베고 누운 당신의 머리를,
+PRINTFORMW 「자장, 자장~」
+PRINTFORMW 하면서 아기를 다루듯이 쓰다듬는다.
+PRINTFORMW 당신은 리리스의 손길이 나쁘지 않았다.
+PRINTFORMW 아니, 어떤 의미로는 어머니같다고 느꼈다.
+CASE "Marryed"
+PRINTFORMW 당신은 모처럼 무릎베개를 부탁한다.
+PRINTFORMW 리리스는 주저하지 않고,
+PRINTFORMW 「자, 오세요. 서방님~」
+PRINTFORMW 하면서 장난스레 당신의 어깨를 잡아 끈다.
+PRINTFORMW 당신은 새삼스럽게 결혼의 행복함을 느꼈다.
+PRINTFORMW 정말로 그녀와 한 몸이 된 것 같았다.
+CASE "Annoyed"
+PRINTFORMW 당신은 무릎베개를 부탁했다.
+PRINTFORMW 리리스는 잠깐 머뭇거리다가,
+PRINTFORMW 「네, 네. 오세요.」
+PRINTFORMW 하고 마지못해 허벅지를 내 준다.
+PRINTFORMW 당신은 해야 될까 말아야 할까 고민하다가,
+PRINTFORMW 그녀의 눈초리를 보고는 단념한다.
+CASE "Fear"
+PRINTFORMW 당신은 리리스에게 허벅지를 내라고 시켰다.
+PRINTFORMW 리리스는 얼른 무릎을 꿇었다.
+PRINTFORMW 당신은 그 복종이 마음에 든다.
+PRINTFORMW 그녀의 허벅지에 머리를 베고 누운 뒤로,
+PRINTFORMW 한 마디도 하지 않은 채 시간을 보낸다.
+PRINTFORMW 리리스가 불편해 한다.
+CASE "Weak"
+PRINTFORMW 당신은 리리스를 이리 오게 한다.
+PRINTFORMW 다리를 베게 하라고 명한다.
+PRINTFORMW 리리스는 말없이 고개를 끄덕인다.
+PRINTFORMW 「편안하신가요?」
+PRINTFORMW 그녀가 조심스럽게 묻지만,
+PRINTFORMW 당신은 거만하도록 아무 대답도 않는다.
+CASE "Break"
+PRINTFORMW 당신은 리리스에게 다리를 내어 달라고 한다.
+PRINTFORMW 리리스는 방긋거리며 얼른 다가온다.
+PRINTFORMW 당신은 그 모습이 소름이 돋아서 밀쳐낸다.
+PRINTFORMW 「주인님- 부끄러워하지 마세요- 후후훗!」
+PRINTFORMW 리리스는 텅 빈 눈으로 깔깔 웃는다.
+PRINTFORMW 미쳐버릴 것 같다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM9
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스를 껴안으려고 한다.
+DATAFORM 리리스는 흠칫 놀라다가,
+DATAFORM 「어머나? 성희롱은 좀 더 가까워지면 해요.」
+DATAFORM 라고 웃으며,
+DATAFORM 그러나 분명하게 당신을 밀어낸다.
+DATAFORM 당신은 입맛을 다신다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 껴안으려고 한다.
+DATAFORM 리리스는 흠칫 놀라다가,
+DATAFORM 「에구, 경호하기 힘들어져요.」
+DATAFORM 라고 웃으며,
+DATAFORM 그러나 분명하게 당신을 밀어낸다.
+DATAFORM 당신은 입맛을 다신다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 껴안으려고 한다.
+DATAFORM 리리스는 흠칫 놀라다가,
+DATAFORM 「매너가 사람을 만들어요.」
+DATAFORM 라고 웃으며,
+DATAFORM 그러나 분명하게 당신을 밀어낸다.
+DATAFORM 당신은 입맛을 다신다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스를 껴안았다.
+DATAFORM 리리스는 살짝 놀라다가 싱긋 웃는다.
+DATAFORM 「아직 이럴 시간은 아니지만,
+DATAFORM 주인님하고 있으면 시간 따윈 무의미해요.」
+DATAFORM 그녀도 마주 당신을 안아준다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 리리스를 껴안았다.
+DATAFORM 리리스도 기뻐하며 마주 안겼다.
+DATAFORM 「후후...... 아예 하나가 된 기분이에요.
+DATAFORM 아예 진짜 하나가 되면 어떨까요.
+DATAFORM 물론 농담이에요.」
+DATAFORM 그녀도 마주 당신을 안아준다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 리리스를 껴안았다.
+DATAFORM 리리스는 살짝 놀라다가 싱긋 웃는다.
+DATAFORM 「주인님도 이러고 싶으셨나요? 
+DATAFORM 후후. 이 정도로만 참아주세요.」
+DATAFORM 그녀도 팔을 들어 당신을 안아준다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스를 껴안아 주었다.
+DATAFORM 리리스는 얼굴을 붉히며,
+DATAFORM 「주인님.......」
+DATAFORM 하고 중얼거린다. 다소곳해서 사랑스럽다.
+DATAFORM 그녀는 당신의 품에 머리를 파묻고 행복해 한다.
+DATAFORM 당신도 그녀의 향수와 체취에 정신이 아찔해진다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 확 끌어안았다.
+DATAFORM 리리스는 얼굴을 붉히며 말 없이 안긴다.
+DATAFORM 다소곳해서 사랑스럽다.
+DATAFORM 그녀는 당신의 품에 머리를 파묻고 행복해 한다.
+DATAFORM 당신도 그녀의 향수와 체취에 정신이 아찔해진다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 끌어안았다.
+DATAFORM 리리스는 얼굴을 붉히며,
+DATAFORM 「으음, 리리스는 이럴 때 제일 행복해요.」
+DATAFORM 하고 중얼거린다. 다소곳해서 사랑스럽다.
+DATAFORM 그녀는 당신의 품에 머리를 파묻고 행복해 한다.
+DATAFORM 당신도 그녀의 향수와 체취에 정신이 아찔해진다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스를 힘껏 안았다.
+DATAFORM 리리스도 즐겁게 당신을 마주 안았다.
+DATAFORM 「주인님과의 스킨십은 질리지가 않아요.
+DATAFORM 주인님도 그런가요?」 
+DATAFORM 당신은 물론이라고 대답한다.
+DATAFORM 당신과 그녀는 서로 부둥켜안고
+DATAFORM 블루스를 추듯이 조금씩 돈다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 힘껏 안았다.
+DATAFORM 리리스도 즐겁게 당신을 마주 안았다.
+DATAFORM 「정말이지, 주인님은 리리스를 좋아하세요.」
+DATAFORM 당신도, 당연하지 라고 대답한다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신이 리리스를 안으려고 한다.
+PRINTFORMW 리리스는 마지 못해 안긴다.
+PRINTFORMW 하지만 그 얼굴은 분명히 마뜩찮아 보인다.
+PRINTFORMW 안아도 안는 것이 아니다.
+CASE "Fear"
+PRINTFORMW 당신이 리리스의 몸을 안았다.
+PRINTFORMW 리리스는 화들짝 놀란다.
+PRINTFORMW 거부하고 싶어 하면서도,
+PRINTFORMW 두려워서 가만히 몸을 맡기는 듯하다.
+PRINTFORMW 미세하게 떨리는 그녀의 모습이,
+PRINTFORMW 강력한 그녀가 떠는 모습이,
+PRINTFORMW 기이하게 즐거우면서도 애처롭다.
+CASE "Weak"
+PRINTFORMW 당신은 리리스를 끌어당겨 안았다.
+PRINTFORMW 힘없이 하늘거리던 리리스는,
+PRINTFORMW 「아......」
+PRINTFORMW 하는 약간의 신음 같은 탄성만을 내뱉고는,
+PRINTFORMW 아무런 저항 없이 안긴다.
+PRINTFORMW 그녀의 힘이라면 밀쳐낼 수도 있었겠지만,
+PRINTFORMW 당신에겐 신경조차 쓰지 않으려는 듯하다.
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스를 안았다.
+DATAFORM 리리스는 냉큼 안겼다.
+DATAFORM 조건반사적인 움직임일 뿐이다.
+DATAFORM 이미 당신을 안중에도 두고 있지 않는다.
+DATAFORM 「주인님. 좀 더 리리스를 사랑해 주세요.」
+DATAFORM 그녀는 넋이 나가 중얼거린다.
+DATAFORM 지금의 당신이 아니라,
+DATAFORM 언젠가, 혹은 속으로 꿈꾸었던,
+DATAFORM 당신과의 행복한 나날을 떠올리는 것이리라.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 안았다.
+DATAFORM 리리스는 냉큼 안겼다.
+DATAFORM 조건반사적인 움직임일 뿐이다.
+DATAFORM 이미 당신을 안중에도 두고 있지 않는다.
+DATAFORM 「주인님의 품은 따뜻하고.......」
+DATAFORM 그녀는 넋이 나가 중얼거린다.
+DATAFORM 지금의 당신이 아니라,
+DATAFORM 언젠가, 혹은 속으로 꿈꾸었던,
+DATAFORM 당신과의 행복한 나날을 떠올리는 것이리라.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 안았다.
+DATAFORM 리리스는 냉큼 안겼다.
+DATAFORM 조건반사적인 움직임일 뿐이다.
+DATAFORM 이미 당신을 안중에도 두고 있지 않는다.
+DATAFORM 「훌륭하신 주인님. 영원히 함께해요.」
+DATAFORM 그녀는 넋이 나가 중얼거린다.
+DATAFORM 지금의 당신이 아니라,
+DATAFORM 언젠가, 혹은 속으로 꿈꾸었던,
+DATAFORM 당신과의 행복한 나날을 떠올리는 것이리라.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM10
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 당신은 뒤에서 리리스를 끌어안았다.
+PRINTFORMW 리리스는 별로 놀라는 법도 없이,
+PRINTFORMW 「일부러 안겨 드린 건 아시죠?
+PRINTFORMW 이번만이에요.」
+PRINTFORMW 하고 여유만만하게 웃는다.
+PRINTFORMW 오히려 당신이 민망해진다.
+CASE "High"
+PRINTFORMW 당신이 뒤에서 리리스를 끌어안는다.
+PRINTFORMW 리리스는 눈을 동그랗게 뜨다가,
+PRINTFORMW 「주인님도 참. 급하셔.」
+PRINTFORMW 하고 눈웃음을 친다.
+PRINTFORMW 싫지 않은 듯이 당신의 손을,
+PRINTFORMW 오히려 그녀의 가슴과,
+PRINTFORMW 하복부 쪽으로 슬쩍 당기려 한다.
+PRINTFORMW 당신이 오히려 뜻밖이다.
+CASE "Affection"
+PRINTFORMW 당신이 리리스를 뒤로 끌어 안았다.
+PRINTFORMW 리리스도 능숙하게 손을 뒤로 뻗고는,
+PRINTFORMW 당신의 목을 거꾸로 감싼다.
+PRINTFORMW 뱀과 같은 유혹이었다.
+PRINTFORMW 리리스의 목덜미에서
+PRINTFORMW 페로몬이 느껴진다.
+PRINTFORMW 당신의 숨결이 거칠어지자,
+PRINTFORMW 「망설이지 마세요.
+PRINTFORMW 리리스는 여기에 있어요.」
+PRINTFORMW 하고는 유혹한다.
+PRINTFORMW 당신은 목에 침이 넘어간다.
+PRINTFORMW 이성이 날아가기 일보 직전이다.
+CASE "Marryed"
+PRINTFORMW 당신이 리리스를 뒤로 끌어안았다.
+PRINTFORMW 리리스가 눈웃음을 친다.
+PRINTFORMW 연애 당시의 요염함 대신,
+PRINTFORMW 자애롭고 여유로운 웃음이었다.
+PRINTFORMW 「주인님도 참, 응석꾸러기셔.」
+PRINTFORMW 리리스는 눈을 감고 당신의 품을 느낀다.
+PRINTFORMW 당신도 눈을 감고 리리스의 향을 맡는다.
+PRINTFORMW 시간이 멈추면 좋을 것 같다.
+CASE "Annoyed"
+PRINTFORMW 당신이 뒤로 접근하려는 순간이었다.
+PRINTFORMW 리리스가 빙글 돌며 싱긋 웃는다.
+PRINTFORMW 「주인님? 조금 더 경호에 집중할 수 있도록,
+PRINTFORMW 도와주세요.
+PRINTFORMW 오늘은 틈을 보일 기분이 아니에요.」
+PRINTFORMW 귀신 같은 육감과 단호함에,
+PRINTFORMW 당신은 저도 모르게 겁먹고 물러선다.
+CASE "Fear"
+PRINTFORMW 당신이 뒤로 접근해서 리리스를 안았다.
+PRINTFORMW 리리스는 어깨를 움찔할 정도로 놀란다.
+PRINTFORMW 「저, 주인님?」
+PRINTFORMW 리리스가 전에 없이 겁에 질려한다.
+PRINTFORMW 당신은 그것만으로도 기분이 좋아진다.
+PRINTFORMW 그녀를 굴복시키는 쾌감이 뇌를 망가뜨린다.
+CASE "Weak"
+PRINTFORMW 당신은 숨기는 법도 없이,
+PRINTFORMW 무턱대고 리리스를 뒤로 끌어안았다.
+PRINTFORMW 리리스는 침을 삼키며 겁먹는다.
+PRINTFORMW 안기고 싶지 않겠지만,
+PRINTFORMW 이미 저항할 마음의 기력이 없는 것이다.
+PRINTFORMW 리리스는 입술을 달싹이다가 포기한다.
+PRINTFORMW 당신은 리리스의 반응이 못마땅하다.
+PRINTFORMW 조금 더 저항했으면 좋겠는데.
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 리리스를 뒤에서 끌어안았다.
+DATAFORM 리리스는 멍하니 안긴다.
+ENDLIST
+DATALIST
+DATAFORM 뒤에서 안긴 리리스가 미소를 짓는다.
+DATAFORM 「주인님. 리리스의 몸이 그리우셨어요?
+DATAFORM 뭐든지 해 드릴게요.
+DATAFORM 원하시는 대로 괴롭히세요. 후후.」
+DATAFORM 리리스는 당신의 감촉만을 자각하는 듯했다.
+DATAFORM 퀭한 눈과 고저차 없는 목소리는,
+DATAFORM 이미 당신을 신경쓰지 않는 것 같다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM11
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 리리스를 불렀다.
+DATAFORM 리리스는 곁에 앉는다.
+DATAFORM 「리리스와 같이 주무실래요?」
+DATAFORM 당신은 어떤 것이나 괜찮았다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 리리스를 불렀다.
+DATAFORM 리리스는 곁에 앉는다.
+DATAFORM 「리리스랑 놀아주시려고요?」
+DATAFORM 당신은 어떤 것이나 괜찮았다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 리리스를 불렀다.
+DATAFORM 리리스는 곁에 앉는다.
+DATAFORM 「주인님도 참 응석받이에요.」
+DATAFORM 당신은 어떤 것이나 괜찮았다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 누워서 리리스를 부른다.
+DATAFORM 리리스는 얼른 와서는 당신의 곁에 앉았다.
+DATAFORM 「오구오구, 우리 주인님.」
+DATAFORM 리리스는 자애롭게 웃었다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 누워서 리리스를 부른다.
+DATAFORM 리리스는 얼른 와서는 당신의 곁에 앉았다.
+DATAFORM 「리리스가 달래 드릴까요?」
+DATAFORM 리리스는 방긋방긋 웃었다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 누워서 리리스를 부른다.
+DATAFORM 리리스는 얼른 와서는 당신의 곁에 앉았다.
+DATAFORM 「착한 리리스가 여기 왔어요.」
+DATAFORM 리리스는 생긋 웃었다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 누워서 리리스를 불렀다.
+DATAFORM 리리스는 헐레벌떡 달려왔다.
+DATAFORM 팔베개를 해준다고 하자,
+DATAFORM 그녀는 헤실헤실 웃으며 얼른 곁으로 온다.
+DATAFORM 「머리부터 발끝까지 사랑스러워요.」
+ENDLIST
+DATALIST
+DATAFORM 당신이 누워서 리리스를 불렀다.
+DATAFORM 리리스는 헐레벌떡 달려왔다.
+DATAFORM 팔베개를 해준다고 하자,
+DATAFORM 그녀는 헤실헤실 웃으며 얼른 곁으로 온다.
+DATAFORM 「리리스 조금 응석부릴게요.」
+ENDLIST
+DATALIST
+DATAFORM 당신이 누워서 리리스를 불렀다.
+DATAFORM 리리스는 헐레벌떡 달려왔다.
+DATAFORM 팔베개를 해준다고 하자,
+DATAFORM 그녀는 헤실헤실 웃으며 얼른 곁으로 온다.
+DATAFORM 「아, 편안해요. 마음도. 몸도.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 누워서 리리스를 불렀다.
+DATAFORM 리리스는 자연스럽게 당신의 곁에 누웠다.
+DATAFORM 「가끔은 이러고 있어도 좋지요.
+DATAFORM 옛? 맨날 이러지 않느냐고요?
+DATAFORM 헤헷. 흥 깨기 없기.」
+DATAFORM 당신은 그녀를 보고 웃어준다.
+DATAFORM 자꾸만 웃음이 나온다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 누워서 리리스를 불렀다.
+DATAFORM 리리스는 자연스럽게 당신의 곁에 누웠다.
+DATAFORM 「원래는 이렇게 마주 자는 것뿐인데,
+DATAFORM 이상하게 흥분되서 못 참겠어요.
+DATAFORM 주인님은요?」
+DATAFORM 당신도 말없이 고개를 끄덕인다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 누워서 리리스를 불렀다.
+PRINTFORMW 리리스는 마뜩찮아 한다.
+PRINTFORMW 어쩔 수 없이 곁에 앉지만,
+PRINTFORMW 별 할 말이 없다는 듯이 있다.
+PRINTFORMW 당신도 머쓱해진다.
+CASE "Fear"
+PRINTFORMW 당신은 누워서 리리스를 불렀다.
+PRINTFORMW 리리스는 놀라서 얼른 달려왔다.
+PRINTFORMW 그녀더러 곁에 누우란 말에,
+PRINTFORMW 그녀는 자신 없이 바라만 본다.
+PRINTFORMW 내 말이 그렇게 우습냐고,
+PRINTFORMW 당신이 호통치자,
+PRINTFORMW 리리스는 찔끔 놀라며 빈다.
+PRINTFORMW 그제야 당신은 조금 만족한다.
+CASE "Weak"
+PRINTFORMW 당신이 누워 리리스를 불렀다.
+PRINTFORMW 리리스는 흐느적거리며 옆에 앉았다.
+PRINTFORMW 혼이 빠져나간 인형 같다.
+PRINTFORMW 여기서 더 괴롭히면 아마도 붕괴하겠지.
+PRINTFORMW 당신은 어떻게 할까 생각한다.
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 리리스를 불렀다.
+DATAFORM 리리스는 이상할 정도로 밝게 웃으며
+DATAFORM 「네!」
+DATAFORM 하고 다가왔다.
+DATAFORM 「오늘은 뭘 하고 놀까요?
+DATAFORM 그녀의 멍한 눈을 보며 당신은,
+DATAFORM 저도 모르게 몸서리친다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 리리스를 불렀다.
+DATAFORM 리리스는 이상할 정도로 밝게 웃으며
+DATAFORM 「네!」
+DATAFORM 하고 다가왔다.
+DATAFORM 「리리스가 귀 파 드려요? 네? 네?」
+DATAFORM 그녀의 멍한 눈을 보며 당신은,
+DATAFORM 저도 모르게 몸서리친다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM12
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 예고도 없이,
+DATAFORM 리리스의 %TEXTR("볼/이마/목덜미")%에 입을 맞췄다.
+DATAFORM 리리스는 살짝 놀란다.
+DATAFORM 「어머나? 너무 예고가 없지 않나요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 예고도 없이,
+DATAFORM 리리스의 %TEXTR("볼/이마/목덜미")%에 입을 맞췄다.
+DATAFORM 리리스는 살짝 놀란다.
+DATAFORM 「어머, 숙녀는 부드럽게 대해주세요.」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 %TEXTR("볼/목덜미/이마")%에 입을 맞췄다.
+DATAFORM 리리스는 싱긋 웃는다.
+DATAFORM 「하긴, 절차 따윈 필요없지요.」
+DATAFORM 당신도 피식 웃었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 %TEXTR("볼/목덜미/이마")%에 입을 맞췄다.
+DATAFORM 리리스는 싱긋 웃는다.
+DATAFORM 「너무 급하지만, 그래도 좋아요.
+DATAFORM 주인님이니까.」
+DATAFORM 당신도 피식 웃었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 %TEXTR("볼/목덜미/이마")%에 입을 맞췄다.
+DATAFORM 리리스는 싱긋 웃는다.
+DATAFORM 「리리스도 이러고 싶었어요.
+DATAFORM 이게 바로 이심전심일까요?」
+DATAFORM 당신도 피식 웃었다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 %TEXTR("볼/목덜미/이마")%에 입을 맞췄다.
+DATAFORM 리리스가 얼굴을 붉히고 웃는다.
+DATAFORM 「리리스를 뜨겁게 하시려고. 후훗.」
+DATAFORM 그녀의 눈빛이 당신을 끌어당긴다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 %TEXTR("볼/목덜미/이마")%에 입을 맞췄다.
+DATAFORM 리리스가 얼굴을 붉히고는,
+DATAFORM 당신이 입술을 떼기도 전에,
+DATAFORM 스스로 당신의 머리를 붙든다.
+DATAFORM 「리리스도 맛보고 싶어요.」
+DATAFORM 이번엔 리리스로부터 키스해 온다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 %TEXTR("볼/목덜미/이마")%에 입을 맞췄다.
+DATAFORM 리리스가 얼굴을 붉히고는,
+DATAFORM 당신이 입술을 떼기도 전에,
+DATAFORM 스스로 당신의 머리를 붙든다.
+DATAFORM 「조금은 리리스가 리드하고 싶었는데.」
+DATAFORM 당신은 리리스에게 맡겨 본다.
+DATAFORM 리리스가 뱀처럼 휘감아 온다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 %TEXTR("볼/목덜미/이마")%에 입을 맞췄다.
+DATAFORM 리리스는 자애롭게 미소 짓는다.
+DATAFORM 「서방님- 이렇게 강렬하게. 후훗.」
+DATAFORM 당신은 그런 리리스에게 재차 키스한다.
+DATAFORM 리리스는 황홀하게 받아들인다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 %TEXTR("볼/목덜미/이마")%에 입을 맞췄다.
+DATAFORM 리리스는 자애롭게 미소 짓는다.
+DATAFORM 「한결같으시네요. 물론 리리스도 좋아요.」
+DATAFORM 당신은 그런 리리스에게 재차 키스한다.
+DATAFORM 리리스는 행복해 했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 %TEXTR("볼/목덜미/이마")%에 입을 맞췄다.
+DATAFORM 리리스는 자애롭게 미소 짓는다.
+DATAFORM 「우훗.」
+DATAFORM 당신은 그런 리리스에게 재차 키스한다.
+DATAFORM 리리스는 느긋하게 받아들인다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리리스의 %TEXTR("볼/목덜미/이마")%에 입을 맞췄다.
+PRINTFORMW 리리스는 눈살을 찌푸리지만,
+PRINTFORMW 예의상 아무런 말도 하지 않는다.
+PRINTFORMW 화가 나면 말이 적어지는 그녀다.
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 %TEXTR("볼/목덜미/이마")%에 입을 맞췄다.
+DATAFORM 리리스는 놀라다가 오히려 두려워한다.
+DATAFORM 「리리스가 좋으신가요? 아직?」
+DATAFORM 당신은 대답하지 않는다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 %TEXTR("볼/목덜미/이마")%에 입을 맞췄다.
+DATAFORM 리리스는 놀라다가 오히려 두려워한다.
+DATAFORM 「맛있으셨으면 좋겠어요.」
+DATAFORM 리리스가 조용히 중얼거렸다.
+DATAFORM 당신은 대답하지 않는다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신은 리리스의 %TEXTR("볼/목덜미/이마")%에 입을 맞췄다.
+PRINTFORMW 리리스는 힘없이 받아들인다.
+PRINTFORMW 당신은 그녀를 범하듯이 빤다.
+PRINTFORMW 그녀는 입맞춤을 당했다.
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 %TEXTR("볼/목덜미/이마")%에 입을 맞췄다.
+DATAFORM 리리스는 부자연스럽게 반색한다.
+DATAFORM 「주인님! 리리스도 기다리고 있었어요!」
+DATAFORM 조건반사적인 그 반응에,
+DATAFORM 오히려 당신이 혀를 찬다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 %TEXTR("볼/목덜미/이마")%에 입을 맞췄다.
+DATAFORM 리리스는 부자연스럽게 반색한다.
+DATAFORM 「좋아해요. 히힛.」
+DATAFORM 조건반사적인 그 반응에,
+DATAFORM 오히려 당신이 혀를 찬다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM13
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 배를 쓰다듬었다.
+DATAFORM 리리스는 살짝 놀라면서도 빙긋 웃는다.
+DATAFORM 「어머나?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 배를 쓰다듬었다.
+DATAFORM 리리스는 살짝 놀라면서도 빙긋 웃는다.
+DATAFORM 「주인님 손이 약손인가요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 배를 쓰다듬었다.
+DATAFORM 리리스는 살짝 놀라면서도 빙긋 웃는다.
+DATAFORM 「조금 이른 것 같은데. 흐음.」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 배를 주물렀다.
+DATAFORM 리리스는 자신만만하게 말한다.
+DATAFORM 「리리스의 매끄러운 복근이 어때요?」
+DATAFORM 잘난척은 여전하다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 배를 주물렀다.
+DATAFORM 리리스는 자신만만하게 말한다.
+DATAFORM 「뱃살은 1mm도 없어요. 진짜로요.」
+DATAFORM 그러나 그녀의 배에서 0.25mm정도 잡혔다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 배를 쓰다듬었다.
+DATAFORM 리리스는 자신만만하게 말한다.
+DATAFORM 「착한 리리스라 배탈은 안 났답니다? 후후.」
+DATAFORM 당신의 손은 약손이다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 배를 주물렀다.
+DATAFORM 리리스가 빙글빙글 웃다가 말한다.
+DATAFORM 「리리스의 배가 그리우셨죠?
+DATAFORM 군살은 없다고요? 완벽하게.」
+DATAFORM 리리스는 당신을 보고 씩 웃는다.
+DATAFORM 당신도 아름다워 경탄한다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 배를 주물렀다.
+DATAFORM 리리스가 뭔가 생각하고 말한다.
+DATAFORM 「요즘 활동량이 살짝 줄었어요.」
+DATAFORM 그러더니, 씩 웃는다.
+DATAFORM 「주인님, 저희 운동할까요? 즐거운 운동.」
+DATAFORM 당신도 빙그레 웃었다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 리리스의 배를 주물렀다.
+DATAFORM 리리스가 슬며시 미소 띤 얼굴을 한다.
+DATAFORM 「생각해 봤는데요,
+DATAFORM 주인님이 원하신다면......
+DATAFORM 군살 0.1mm정도는 괜찮지 않을까 해요.」
+DATAFORM 당신은 리리스의 뱃살이 어떨까 기대한다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 리리스의 배를 주물렀다.
+DATAFORM 리리스가 슬며시 미소 띤 얼굴을 한다.
+DATAFORM 「좀 있으면 아가방이 될지 모르는데,
+DATAFORM 그때가 되면 어떨런지?
+DATAFORM 후훗.」
+DATAFORM 당신도 기대감이 든다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 리리스의 배에 손을 갖다 댔다.
+PRINTFORMW 리리스는 무표정하게 손을 받아들였다.
+PRINTFORMW 마치 당신은 무생물이라는 듯이,
+PRINTFORMW 아무 말도 하지 않고 바라본다.
+PRINTFORMW 
+CASE "Fear"
+PRINTFORMW 당신은 리리스의 배를 주물렀다.
+PRINTFORMW 리리스는 불현듯이 무서워하면서,
+PRINTFORMW 당신의 눈치만 본다.
+PRINTFORMW 「리리스의 배는 어떠신가요?」
+PRINTFORMW 돼지 뱃살 같다고,
+PRINTFORMW 당신은 냉담하게 중얼거린다.
+PRINTFORMW 리리스는 눈을 숙인다.
+CASE "Weak"
+PRINTFORMW 당신은 리리스의 배를 주물렀다.
+PRINTFORMW 리리스는 힘없이 배를 내맡긴다.
+PRINTFORMW 「편하게 즐겨 주세요.」
+PRINTFORMW 중얼거리는 그 말을 듣고,
+PRINTFORMW 당신은 도축장에 나온 암퇘지 같다고,
+PRINTFORMW 차게 비웃는다.
+PRINTFORMW 리리스는 마음에 상처를 받는다.
+CASE "Break"
+PRINTFORMW 당신은 리리스의 배를 주물렀다.
+PRINTFORMW 리리스는 멍하게 당신을 바라본다.
+PRINTFORMW 「여기, 아기방 생길 곳이에요.
+PRINTFORMW 주인님하고, 리리스의 예쁜 아기.
+PRINTFORMW 후후훗. 같이 키워요.」
+PRINTFORMW 리리스는 허공을 바라보며 중얼거렸다.
+PRINTFORMW 언젠가 품었을, 혹은 겪었을지 모를 일들.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM14
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 귀에 바람을 불어 넣었다.
+DATAFORM 리리스가 눈을 돌린다.
+DATAFORM 「조금 더 상냥하게 해주세요.」
+DATAFORM 그녀는 살며시 정색한다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 귀에 바람을 불어 넣었다.
+DATAFORM 리리스는 재밌다는 듯이 눈을 돌린다.
+DATAFORM 「깨물어도 보실래요?」
+DATAFORM 그녀는 여유로운 미소를 짓는다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 귀에 바람을 불어 넣었다.
+DATAFORM 리리스는 재밌다는 듯이 눈을 돌린다.
+DATAFORM 「갑작스럽네요.」
+DATAFORM 그녀는 조금 정색한 듯 보였다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 귀에 속삭였다.
+DATAFORM 리리스가 만족스런 미소를 띠었다.
+DATAFORM 「후훗.」
+DATAFORM 은근히 귀가 약한지, 얼굴이 붉어져 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 귀에 속삭였다.
+DATAFORM 리리스가 만족스런 미소를 띠었다.
+DATAFORM 「저도 얘기해도 되요?」
+DATAFORM 당신은 고개를 끄덕였다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 귀에 속삭였다.
+DATAFORM 리리스가 만족스런 미소를 띠었다.
+DATAFORM 「간지러워요, 하시는 말씀도.」
+DATAFORM 은근히 귀가 약한지, 얼굴이 붉어져 있다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 귀를 핥았다.
+DATAFORM 리리스가 움찔 놀라며 웃는다.
+DATAFORM 「조금 더 상냥하게 해주세요.」
+DATAFORM 리리스는 귀가 약하다.
+DATAFORM 여유로운 태도가 살짝 변해 있다.
+DATAFORM 당신은 이긴 것 같아 기분이 좋다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 귀를 핥았다.
+DATAFORM 리리스가 움찔 놀라며 웃는다.
+DATAFORM 「깨물진 마세요?」
+DATAFORM 리리스는 귀가 약하다.
+DATAFORM 여유로운 태도가 살짝 변해 있다.
+DATAFORM 당신은 이긴 것 같아 기분이 좋다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 귀를 핥았다.
+DATAFORM 리리스가 움찔 놀라며 웃는다.
+DATAFORM 「갑작스럽네요.」
+DATAFORM 리리스는 귀가 약하다.
+DATAFORM 여유로운 태도가 살짝 변해 있다.
+DATAFORM 당신은 이긴 것 같아 기분이 좋다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 귀에 속삭였다.
+DATAFORM 「말 안하셔도 알아요.」
+DATAFORM 리리스는 싫지 않은 듯이 속삭임을 즐긴다.
+DATAFORM 이제 귀의 약점도 극복한 걸까.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 귀에 속삭였다.
+DATAFORM 「말만 잘하셔.......」
+DATAFORM 리리스는 싫지 않은 듯이 속삭임을 즐긴다.
+DATAFORM 이제 귀의 약점도 극복한 걸까.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 귀에 속삭였다.
+DATAFORM 「후훗. 따뜻해요. 말씀.」
+DATAFORM 리리스는 싫지 않은 듯이 속삭임을 즐긴다.
+DATAFORM 이제 귀의 약점도 극복한 걸까.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 귀를 살짝 깨물었다.
+DATAFORM 리리스는 화들짝 놀라 당신을 밀친다.
+DATAFORM 「주인님! 실례에요.」
+DATAFORM 리리스는 눈을 가늘게 떴다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 귀를 살짝 깨물었다.
+DATAFORM 리리스는 화들짝 놀라 당신을 밀친다.
+DATAFORM 「하지 말아주세요.」
+DATAFORM 리리스는 눈을 가늘게 떴다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 귀를 살짝 깨물었다.
+DATAFORM 리리스는 화들짝 놀라 당신을 밀친다.
+DATAFORM 「리리스를 자극하지 말아주세요?」
+DATAFORM 리리스는 눈을 가늘게 떴다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 귀를 살짝 깨물었다.
+DATAFORM 귀가 약한 리리스는 놀라면서도,
+DATAFORM 두려워서 당신을 슬며시 돌아본다.
+DATAFORM 「저어. 만족하셨나요.」
+DATAFORM 이처럼 약한 모습은 오랜만이다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 귀를 살짝 깨물었다.
+DATAFORM 귀가 약한 리리스는 놀라면서도,
+DATAFORM 두려워서 당신을 슬며시 돌아본다.
+DATAFORM 「리리스는 귀가 약해요.」
+DATAFORM 이처럼 약한 모습은 오랜만이다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 귀를 살짝 깨물었다.
+DATAFORM 귀가 약한 리리스는 놀라면서도,
+DATAFORM 두려워서 당신을 슬며시 돌아본다.
+DATAFORM 「가능하시다면, 다른 곳으로.......」
+DATAFORM 이처럼 약한 모습은 오랜만이다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신은 리리스의 귀를 살짝 깨물었다.
+PRINTFORMW 리리스는 거부도, 싫음도 표시하지 않고,
+PRINTFORMW 몸을 움츠리기만 한다.
+PRINTFORMW 명백히 약해져 있었다.
+PRINTFORMW 그리고 당신을 두려워한다.
+CASE "Break"
+PRINTFORMW 당신은 리리스의 귀를 깨물었다.
+PRINTFORMW 피가 날 정도로 깨물었다.
+PRINTFORMW 그러자 그녀는 쓱 돌아본다.
+PRINTFORMW 「리리스 귀는 맛있으세요?」
+PRINTFORMW 이러자 오히려 당신이 뒷걸음질친다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM15
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "First/Low"
+PRINTFORMW 당신은 리리스의 입술을 훔쳤다.
+PRINTFORMW 리리스는 눈을 깜박거리더니,
+PRINTFORMW 자기 입술에 손을 댄다.
+PRINTFORMW 「이 제가 예상치 못한 이런.......」
+PRINTFORMW 말은 그렇게 하면서도,
+PRINTFORMW 리리스는 입이 벌어져 어쩔 줄 모른다.
+CASE "First/High"
+PRINTFORMW 당신은 리리스의 입술을 빼앗는다.
+PRINTFORMW 리리스는 살짝만 놀랐을 뿐,
+PRINTFORMW 곧바로 빙그레 웃는다.
+PRINTFORMW 「리리스의 첫 입술은 어떠세요?」
+PRINTFORMW 곧이어 리리스가 혀로 입술을 핥는다.
+PRINTFORMW 뱀 같은 긴 혓바닥에,
+PRINTFORMW 당신은 저도 모르게 시선을 뺏긴다.
+CASE "First/Affection"
+PRINTFORMW 당신은 당당히 리리스와 키스한다.
+PRINTFORMW 리리스는 빙긋이 웃는다.
+PRINTFORMW 「기다리고 있었어요.
+PRINTFORMW 주인님은 애를 잘 태우세요.」
+PRINTFORMW 리리스는 한번 더 해달라는 듯이,
+PRINTFORMW 입술을 오므린다.
+CASE "First/Marryed"
+PRINTFORMW 당신이 자연스럽게 입술을 맞춘다.
+PRINTFORMW 리리스는 놀라는 법 없이 받아들인다.
+PRINTFORMW 「가슴이 두근거려요.
+PRINTFORMW 마치, 주인님과 막 연애할 때처럼요.
+PRINTFORMW 주인님도 그러신가요?」
+PRINTFORMW 리리스가 입술에 손가락을 대고,
+PRINTFORMW 행복한 듯이 중얼거린다.
+CASE "First/Annoyed"
+PRINTFORMW 당신은 리리스의 입술을 훔쳤다.
+PRINTFORMW 리리스는 살짝 눈살을 찌푸린다.
+PRINTFORMW 「이건 좀.......
+PRINTFORMW 아무리 리리스가 메이드라지만,
+PRINTFORMW 아닌 것 같아요.」
+PRINTFORMW 명백히 거슬려하는 태도였다.
+CASE "First/Fear"
+PRINTFORMW 당신이 리리스의 입술을 뺏었다.
+PRINTFORMW 리리스는 놀라면서 어쩔 줄 모른다.
+PRINTFORMW 두려웠지만, 한편 쾌감을 느낀 듯하다.
+PRINTFORMW 리리스는 당신의 눈치를 살핀다.
+PRINTFORMW 마치, 한번 더 해달라는 듯이,
+PRINTFORMW 무섭지 않게.
+CASE "First/Weak"
+PRINTFORMW 당신은 리리스의 입술을 가졌다.
+PRINTFORMW 리리스는 체념한 듯이 눈을 감는다.
+PRINTFORMW 첫 키스에서 아예 혀까지 내민다.
+PRINTFORMW 마음껏 이용해주세요, 라고 하는 듯이.
+PRINTFORMW 당신은 리리스의 입을 범해버린다.
+CASE "First/Break"
+PRINTFORMW 당신은 리리스에게 입을 맞추었다.
+PRINTFORMW 리리스는 어리둥절 하다가,
+PRINTFORMW 「아아. 주인님. 첫 키스네요?」
+PRINTFORMW 기이할 정도로 화색을 띤다.
+PRINTFORMW 「꿈에도 나왔었는데. 후후훗!」
+PRINTFORMW 물론, 눈에는 빛이 없다.
+PRINTFORMW 그녀는 당신을 보는 게 아닐 터다.
+PRINTFORMW 다정한 당신을 꿈꾸고 있을 것이다.
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스의 입술에 당신의 입술을 겹쳤다.
+DATAFORM 리리스가 눈을 동그랗게 떴다.
+DATAFORM 「조금 예상치 못했어요.」
+DATAFORM 약간 불편한 표정이었다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 입술에 당신의 입술을 겹쳤다.
+DATAFORM 리리스는 눈을 깜박거린다.
+DATAFORM 「너무 급하신 거 같아요.」
+DATAFORM 복잡한 표정을 짓고 있었다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 입술에 당신의 입술을 겹쳤다.
+DATAFORM 리리스는 곤란한 듯이 웃는다.
+DATAFORM 「아무리 좋으셔도.......」
+DATAFORM 조금은 불편한 표정이었다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스의 입술에 당신의 입술을 겹쳤다.
+DATAFORM 리리스는 눈매를 늘어뜨린다.
+DATAFORM 오히려 당신의 목을 껴안아 온다.
+DATAFORM 「한번 더 하실래요?」
+DATAFORM 뱀에게 묶인 느낌이다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 입술에 당신의 입술을 겹쳤다.
+DATAFORM 리리스는 눈매를 늘어뜨린다.
+DATAFORM 오히려 당신의 목을 껴안아 온다.
+DATAFORM 「야한 건 아직 계획에 없는데.」
+DATAFORM 그녀가 당신을 놔주지 안는다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 입술에 당신의 입술을 겹쳤다.
+DATAFORM 리리스는 눈매를 늘어뜨린다.
+DATAFORM 오히려 당신의 목을 껴안아 온다.
+DATAFORM 「후훗. 참지 못하신 거겠죠.」
+DATAFORM 리리스가 당신을 놔주지 안는다.
+DATAFORM 뱀에게 묶인 느낌이다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스의 입술에 당신의 입술을 겹쳤다.
+DATAFORM 그녀가 긴 혀를 내밀어 온다.
+DATAFORM 키스를 마치고 나서,
+DATAFORM 리리스는 빙긋 웃는다.
+DATAFORM 「리리스의 혀는 어떠셨어요?」
+DATAFORM 당신은 별미라고 말해 주었다.
+DATAFORM 리리스가 입가를 늘였다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 입술에 당신의 입술을 겹쳤다.
+DATAFORM 그녀가 긴 혀를 내밀어 온다.
+DATAFORM 키스를 마치고 나서,
+DATAFORM 리리스는 빙긋 웃는다.
+DATAFORM 「주인님의 혀, 맛있었어요.」
+DATAFORM 음란하지만 행복한 느낌이다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 리리스의 입술에 당신의 입술을 겹쳤다.
+PRINTFORMW 리리스는 자연스럽게 입술을 맡겨 왔다.
+PRINTFORMW 내친김에 혀도 내밀었다.
+PRINTFORMW 당신은 사랑하는 그녀의 혀를,
+PRINTFORMW 마음껏 탐했다.
+PRINTFORMW 사실 그녀가 당신을 탐하는지도 모른다.
+PRINTFORMW 어느 쪽이든 상관없으리라 생각했다.
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 입술을 가지려 했다.
+DATAFORM 리리스는 손바닥을 세워 가로막았다.
+DATAFORM 「선 넘으면 안 되세요.」
+DATAFORM 명백히 거부하는 태도였다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 입술을 가지려 했다.
+DATAFORM 리리스는 손바닥을 세워 가로막았다.
+DATAFORM 「아직 해결할 게 있지 않나요?.」
+DATAFORM 명백히 거부하는 태도였다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW 당신은 억지로 리리스의 입술을 뺏었다.
+PRINTFORMW 리리스는 놀라면서도 떨며,
+PRINTFORMW 당신의 입과 혀를 받아들이고 만다.
+PRINTFORMW 그녀는 약간의 쾌감을 느꼈는지,
+PRINTFORMW 홍조가 떠오른다.
+PRINTFORMW 당신은 비웃는 듯이 그녀를 훑어본다.
+CASE "Weak"
+PRINTFORMW 당신이 리리스의 입술을 뺏었다.
+PRINTFORMW 리리스는 주저하면서도 몸을 내맡긴다.
+PRINTFORMW 인형에 입을 맞춘 듯하다.
+PRINTFORMW 당신은 오히려 흥이 사라진다.
+PRINTFORMW 나약한 인형을 원한 게 아니었다.
+CASE "Break"
+PRINTFORMW 당신이 리리스의 입술을 범하려고 한다.
+PRINTFORMW 리리스는 돌연 반색하며,
+PRINTFORMW 자기 쪽에서 당신을 끌어안고,
+PRINTFORMW 그대로 입술을 맞춰 왔다.
+PRINTFORMW 리리스는 이상하게 웃었다.
+PRINTFORMW 「이걸로 주인님 돌아오시나요?
+PRINTFORMW 아니에요?
+PRINTFORMW 아, 그럼 기다릴게요.
+PRINTFORMW 리리스는 바보라서.」
+PRINTFORMW 그녀의 웃음은 공허했다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM16
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 리리스의 목덜미를 핥았다.
+PRINTFORMW 리리스는 움찔하며 놀라고는,
+PRINTFORMW 이상한 듯이 바라본다.
+PRINTFORMW 「이 정도로 리리스가 좋으신......
+PRINTFORMW 건 아직 아닌 듯 한데.」
+PRINTFORMW 그녀는 뜻밖이면서도,
+PRINTFORMW 기분이 나쁘진 않아 보였다.
+CASE "High"
+PRINTFORMW 당신이 리리스의 목덜미를 낼름거렸다.
+PRINTFORMW 리리스는 헤실거리며 당신의 혀를 즐겼다.
+PRINTFORMW 「리리스의 체취 맛이 어떠세요?」
+PRINTFORMW 눈을 빛내며 물어 오자,
+PRINTFORMW 당신은 말문이 막힌다.
+CASE "Affection"
+PRINTFORMW 당신은 리리스의 목덜미를 빨았다.
+PRINTFORMW 리리스는 눈을 반짝이며 목을 맡긴다.
+PRINTFORMW 「너무 그렇게 허겁지겁 드시지 마세요.
+PRINTFORMW 시간은 많잖아요?」
+PRINTFORMW 당신의 가슴이 가빠진다.
+PRINTFORMW 어느새 그녀의 숨결도 거칠어진다.
+CASE "Marryed"
+PRINTFORMW 당신은 리리스의 목덜미에 혀를 대고,
+PRINTFORMW 침을 바르듯이 혀를 놀린다.
+PRINTFORMW 리리스는 어쩔 수 없다는 듯이 쓰게 웃는다.
+PRINTFORMW 「그렇게 마크 안하셔도,
+PRINTFORMW 리리스는 주인님 거랍니다.」
+PRINTFORMW 당신은 알고는 있어도 어쩔 수 없다.
+CASE "Annoyed"
+PRINTFORMW 당신이 리리스의 목에 가까이 간다.
+PRINTFORMW 리리스는 움찔하면서 한숨을 쉰다.
+PRINTFORMW 「네, 네. 드릴게요.」
+PRINTFORMW 한심하다는 듯한 태도다.
+PRINTFORMW 「리리스 마음도 헤아려 주세요.」
+CASE "Fear"
+PRINTFORMW 당신은 리리스의 목에 혀를 기었다.
+PRINTFORMW 리리스는 깜짝 놀라며 움츠러든다.
+PRINTFORMW 「저, 괜찮으신......가요?
+PRINTFORMW 오늘 아침은 씻지 않아서.」
+PRINTFORMW 당신이 눈살을 찌푸리자,
+PRINTFORMW 리리스는 면목이 없다는 듯이 눈을 내렸다.
+CASE "Weak"
+PRINTFORMW 당신은 리리스의 목에 혀를 기었다.
+PRINTFORMW 리리스는 목을 기울였다.
+PRINTFORMW 더 쉽게 가지고 놀게 하려는 듯이.
+PRINTFORMW 충성심은 남아 있는 모양이었다.
+CASE "Break"
+PRINTFORMW 당신이 리리스의 목을 핥았다.
+PRINTFORMW 리리스는 멍하게 목을 내주고만 있었다.
+PRINTFORMW 이번에는 망상의 세계에 빠지지 않는다.
+PRINTFORMW 뜻밖이라서일까.
+PRINTFORMW 이성의 끈이 희미하게 돌아왔는가?
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM17
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 등을 어루만졌다.
+DATAFORM 리리스는 별로 놀라지도 않고 뒤를 본다.
+DATAFORM 「리리스의 등은 어떤가요?
+DATAFORM 완벽한 균형을 유지하고 있지 않나요?」
+DATAFORM 잘난척 하면서도,
+DATAFORM 당신의 손길이 싫지 않은 듯했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 등을 어루만졌다.
+DATAFORM 리리스는 별로 놀라지도 않고 뒤를 본다.
+DATAFORM 「너무 부드럽지 않나요?」
+DATAFORM 잘난척 하면서도,
+DATAFORM 당신의 손길이 싫지 않은 듯했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 등을 어루만졌다.
+DATAFORM 리리스는 별로 놀라지도 않고 뒤를 본다.
+DATAFORM 「이 제가 이 정도로 기분 좋으면 안 되는데.」
+DATAFORM 잘난척 하면서도,
+DATAFORM 당신의 손길이 싫지 않은 듯했다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTFORMW 당신은 리리스의 등을 어루만졌다.
+PRINTFORMW 리리스는 기분좋은 듯이 웃었다.
+PRINTFORMW 「아아, 조금 더 해주시겠어요?」
+PRINTFORMW 그녀는 얼굴이 달아오른 듯했다.
+CASE "Affection"
+PRINTFORMW 리리스의 등을 손가락으로 훑었다.
+PRINTFORMW 리리스는 이제는 숨길 생각도 없이,
+PRINTFORMW 금방 숨이 거칠어진 느낌이다.
+PRINTFORMW 「주인님의 손가락 그 자체가
+PRINTFORMW 대단한 테크닉인 것 같아요.
+PRINTFORMW 하아.」
+CASE "Marryed"
+PRINTFORMW 리리스의 등을 손가락으로 훑었다.
+PRINTFORMW 리리스는 싱긋 웃었다.
+PRINTFORMW 「행복해요. 전과 조금 다르게.」
+PRINTFORMW 쾌락 이상의 것이 느껴지는 듯 했다.
+PRINTFORMW 당신도 그러했다.
+CASE "Annoyed"
+PRINTFORMW 리리스의 등에 손을 대었다.
+PRINTFORMW 그녀는 슬쩍 피했다.
+PRINTFORMW 「어머나? 야한 짓 할 기분이 아니랍니다.」
+PRINTFORMW 그녀는 방긋 웃는 듯했지만,
+PRINTFORMW 눈은 웃고 있지 않았다.
+CASE "Fear"
+PRINTFORMW 리리스의 등에 손을 대었다.
+PRINTFORMW 리리스가 살며시 떠는 느낌이,
+PRINTFORMW 당신의 손가락으로 전해져 온다.
+PRINTFORMW 「주인님. 만족하실 때까지.......」
+PRINTFORMW 그녀는 순종적으로 말했다.
+PRINTFORMW 목소리가 떨려 오는 가운데,
+PRINTFORMW 은연중 쾌락에 대한 기대감이 엿보인다.
+CASE "Weak"
+PRINTFORMW 리리스의 등을 손가락으로 훑었다.
+PRINTFORMW 리리스는 아무 말 없이 등을 내맡겼다.
+PRINTFORMW 될 대로 되라는 듯하다.
+PRINTFORMW 하기야 여기서 당신이 등을 후려갈겨도,
+PRINTFORMW 아파할 리가 없었다.
+CASE "Break"
+PRINTFORMW 리리스의 등을 피나게 손가락으로 긁었다.
+PRINTFORMW 피가 손가락에 묻어나왔다.
+PRINTFORMW 그제야 당신은 그만둔다.
+PRINTFORMW 리리스는 당신을 돌아보며,
+PRINTFORMW 「리리스랑 뭐 하고 노실래요?」
+PRINTFORMW 하고 멍하게 물어 왔다.
+PRINTFORMW 현실에서 다시 도피한 모양이었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM18
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 가슴에 얼굴을 묻었다.
+DATAFORM 그러려고 했다.
+DATAFORM 하지만 리리스는 순순히 가슴을 내주지 않고,
+DATAFORM 슬쩍 뒤로 물러선다.
+DATAFORM 「어머? 너무 이르세요.」
+DATAFORM 당신은 머리를 긁적거렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 가슴에 얼굴을 묻었다.
+DATAFORM 그러려고 했다.
+DATAFORM 하지만 리리스는 순순히 가슴을 내주지 않고,
+DATAFORM 슬쩍 뒤로 물러선다.
+DATAFORM 「리리스를 잡아 보세요-
+DATAFORM 주인님이 절 잡으신다면,
+DATAFORM 파묻게 해 드릴게요. 후훗?」
+DATAFORM 당신은 머리를 긁적거렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 가슴에 얼굴을 묻었다.
+DATAFORM 그러려고 했다.
+DATAFORM 하지만 리리스는 순순히 가슴을 내주지 않고,
+DATAFORM 슬쩍 뒤로 물러선다.
+DATAFORM 「아직은 선을 넘을 때가 아닌데.」
+DATAFORM 당신은 머리를 긁적거렸다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 가슴에 얼굴을 묻었다.
+DATAFORM 「역시, 리리스 가슴이 제일이죠?
+DATAFORM 크지도 작지도 않고.」
+DATAFORM 당신은 흥분해서 고개를 끄덕인다.
+DATAFORM 리리스의 가슴에 파묻힌 채로.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 가슴에 얼굴을 묻었다.
+DATAFORM 「리리스 가슴은 무식하게 크진 않지만,
+DATAFORM 주인님을 잘 받아들일 수 있어요.
+DATAFORM 자- 오세요. 후후.」
+DATAFORM 당신은 흥분해서 고개를 끄덕인다.
+DATAFORM 리리스의 가슴에 파묻힌 채로.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 가슴에 얼굴을 묻었다.
+DATAFORM 「아, 주인님을 원하고 싶어졌어요.
+DATAFORM 주인님 책임이에요?」
+DATAFORM 당신은 흥분해서 고개를 끄덕인다.
+DATAFORM 리리스의 가슴에 파묻힌 채로.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스의 가슴에 얼굴을 묻고,
+DATAFORM 이리저리 비빈다.
+DATAFORM 리리스는 까르르 웃는다.
+DATAFORM 「주인님, 너무 애기 같아요.」
+DATAFORM 리리스는 흐뭇하게 내려다본다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 가슴에 얼굴을 묻고,
+DATAFORM 이리저리 비빈다.
+DATAFORM 「이건 애기한테 해주려고 한 건데.
+DATAFORM 무슨 애기요?
+DATAFORM 아이, 다 아시면서.」
+DATAFORM 리리스는 요염하게 웃으며,
+DATAFORM 혀로 입술을 핥는다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스의 가슴에 머리를 기댄다.
+DATAFORM 따뜻한 어머니의 품 같다.
+DATAFORM 「자장, 자장, 우리 주인님.......
+DATAFORM 후후훗!」
+DATAFORM 리리스는 뭐가 그리도 즐거운지,
+DATAFORM 자꾸만 웃는다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 가슴에 머리를 기댄다.
+DATAFORM 따뜻한 어머니의 품 같다.
+DATAFORM 「우리 아이한테도 이래주고 싶어요.」
+DATAFORM 리리스는 뭐가 그리도 즐거운지,
+DATAFORM 자꾸만 웃는다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스의 가슴을 뚫어져라 쳐다보았다.
+DATAFORM 리리스는 슬며시 가슴을 가린다.
+DATAFORM 「리리스라고 항상 드리진 않아요.
+DATAFORM 총과 보호막이라면 몰라도.」
+DATAFORM 리리스는 당신을 마뜩찮게 바라보았다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 가슴을 뚫어져라 쳐다보았다.
+DATAFORM 리리스는 슬며시 가슴을 가린다.
+DATAFORM 「오늘은 조금 내키지 않네요.」
+DATAFORM 리리스는 당신을 마뜩찮게 바라보았다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW 리리스의 가슴에 거칠게 파묻혔다.
+PRINTFORMW 리리스는 깜짝 놀라면서도,
+PRINTFORMW 「원하신다면.」
+PRINTFORMW 하고 떨리는 목소리를 낸다.
+PRINTFORMW 그녀의 숨결이 조금씩 거칠어진다.
+CASE "Weak"
+PRINTFORMW 리리스의 가슴에 파묻혔다.
+PRINTFORMW 리리스는 체념한 듯이 가만히 있는다.
+PRINTFORMW 힘없이 당신의 머리를 쓰다듬을 뿐.
+PRINTFORMW 오히려 당신이 어리둥절한다.
+PRINTFORMW 거칠게 다루고 싶은 마음도 사라졌다.
+CASE "Break"
+PRINTFORMW 리리스의 가슴에 파묻혔다.
+PRINTFORMW 「어머. 우리 아기.
+PRINTFORMW 엄마가 그리워요?」
+PRINTFORMW 당신이 가슴에 파묻힌 것을,
+PRINTFORMW 믿지 못해서 현실을 도피한 듯하다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM19
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스에게 %TEXTR("손가락질을 하며/소리를 지르며/고함을 치며")% 욕을 내뱉었다.
+DATAFORM 리리스는 눈 하나 깜짝하지 않고,
+DATAFORM 듣고만 있었다.
+DATAFORM 어디서 개가 짖나 하는 태도였다.
+DATAFORM 하지만 욕이 이어지자,
+DATAFORM 리리스의 표정도 조금씩 흔들렸다.
+ENDLIST
+DATALIST
+DATAFORM 리리스에게 %TEXTR("손가락질을 하며/소리를 지르며/고함을 치며")% 욕했다.
+DATAFORM 리리스는 순간 어리둥절해 했지만,
+DATAFORM 이내 표정을 관리하고 가만히 있는다.
+DATAFORM 하지만 눈동자가 흔들렸다.
+ENDLIST
+DATALIST
+DATAFORM 리리스에게 호통을 쳤다.
+DATAFORM 리리스는 이해가 되지 않는단 표정이었다.
+DATAFORM 욕과 트집이 이어졌다.
+DATAFORM 리리스의 금빛 눈동자가 흔들렸다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTFORMW 리리스에게 욕을 내뱉었다.
+PRINTFORMW 리리스가 피식한다.
+PRINTFORMW 「너무하세요. 리리스가 암퇘지라니.
+PRINTFORMW 뭐, 그 말은 사실이니까.
+PRINTFORMW 하지만......
+PRINTFORMW 리리스를 암퇘지라 놀리는 건,
+PRINTFORMW 참을 수 없어요.」
+PRINTFORMW 리리스의 뺨이 살짝 붉어져 있다.
+PRINTFORMW 당신은 무심코,
+PRINTFORMW 무슨 소리야. 하고 중얼거린다.
+CASE "Affection"
+PRINTFORMW 당신은 리리스에게 욕을 했다.
+PRINTFORMW 욕할 때마다 창의적으로 궁리한다.
+PRINTFORMW 그렇지 않으면,
+PRINTFORMW 리리스가 좋아하지 않는다.
+PRINTFORMW 「이렇게 참신한 욕을 하시다니......
+PRINTFORMW 역시, 리리스를 사랑해서 준비하셨죠?
+PRINTFORMW 리리스도 최대한 봉사할게요?」
+PRINTFORMW 리리스는 얼굴을 붉히며 몸을 꼰다.
+PRINTFORMW 진성 마조히스트였다.
+CASE "Marryed"
+PRINTFORMW 당신은 리리스에게 욕을 했다.
+PRINTFORMW 욕할 때마다 창의적으로 궁리한다.
+PRINTFORMW 그렇지 않으면,
+PRINTFORMW 리리스가 좋아하지 않는다.
+PRINTFORMW   「이렇게 참신한 욕을 하시다니......
+PRINTFORMW 역시, 리리스를 사랑해서 준비하셨죠?
+PRINTFORMW 리리스도 최대한 봉사할게요?」
+PRINTFORMW 리리스는 얼굴을 붉히며 몸을 꼰다.
+PRINTFORMW 진성 마조히스트였다.
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스에게 비아냥거렸다.
+DATAFORM 기분 좋으라고 하는 욕이 아니라,
+DATAFORM 모욕과 멸시를 위해 냉담하게,
+DATAFORM 툭툭 내뱉는 말들이었다.
+DATAFORM 리리스가 아무리 마조라도,
+DATAFORM 그런 욕에는 불쾌함을 감추지 못했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 협박했다.
+DATAFORM 동생들을 때리러 갈 것이라고.
+DATAFORM 리리스는 눈을 크게 뜬다.
+DATAFORM 당신의 말이 거짓이 아님을,
+DATAFORM 직접 보았기 때문이다.
+DATAFORM 당신이 걸어가자
+DATAFORM 리리스의 동공이 흔들렸다.
+DATAFORM 무섭게 당신을 붙들려고 하지만,
+DATAFORM 당신은 그녀를 뿌리친다.
+DATAFORM 리리스는 멍하게 당신을 바라본다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 의식적으로 무시했다.
+DATAFORM 리리스는 관심을 받지 못하면,
+DATAFORM 큰 마음의 상처를 받고 만다.
+ENDLIST
+DATALIST
+DATAFORM 가끔 돈이나 던져 주는 태도는,
+DATAFORM 오히려 더욱 무시하는 느낌을 주었다.
+DATAFORM 애초에 리리스에게 돈은 필요없었으니까.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 리리스에게 비아냥거렸다.
+DATAFORM 기분 좋으라고 하는 욕이 아니라,
+DATAFORM 모욕과 멸시를 위해 냉담하게,
+DATAFORM 툭툭 내뱉는 말들이었다.
+DATAFORM 리리스가 아무리 마조라도,
+DATAFORM 그런 욕에는 마음이 아파했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 협박했다.
+DATAFORM 지금 동생들을 때릴 거라고.
+DATAFORM 리리스는 눈을 크게 뜬다.
+DATAFORM 당신의 말이 거짓이 아님을,
+DATAFORM 너무도 잘 알고 있었다.
+DATAFORM 그녀는 안절부절못하며,
+DATAFORM 당신을 붙들고 사정한다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 동생들을 때리겠다고 말했다.
+DATAFORM 그리고 바깥으로 나갔다.
+DATAFORM 리리스의 동공이 흔들렸다.
+DATAFORM 이윽고 바깥에서 비명이 울렸다.
+DATAFORM 리리스는 울먹이며 뒤따라 나왔다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 의식적으로 무시했다.
+DATAFORM 리리스는 관심을 받지 못하면,
+DATAFORM 큰 마음의 상처를 받고 만다.
+DATAFORM 그녀는 떨면서 관심을 받으려고 한다.
+ENDLIST
+DATALIST
+DATAFORM 가끔 돈이나 던져 주는 태도는,
+DATAFORM 오히려 더욱 무시하는 느낌을 주었다.
+DATAFORM 애초에 리리스에게 돈은 필요없었으니까.
+DATAFORM 리리스는 울먹이며 고개를 숙였다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스에게 욕설을 해도,
+DATAFORM 점점 반응이 없어져 간다.
+ENDLIST
+DATALIST
+DATAFORM 무시하거나 비꼬아도,
+DATAFORM 반응이 점차 약해졌다.
+DATAFORM 리리스의 마음이 죽어 가는 게 보였다.
+DATAFORM 당신은 이상한 감정을 느꼈다.
+DATAFORM 꼭 당신 몸 어디가 죽어 가는 느낌이다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 리리스에게 소리를 질렀다.
+DATAFORM 리리스는 오히려 싱긋 웃었다.
+DATAFORM 「주인님. 또 리리스를 사랑해 주시려고.」
+DATAFORM 역시, 정상이 아니다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스를 깎아내린다.
+DATAFORM 리리스는 웃으며 대답했다.
+DATAFORM 「리리스는 아무리 주인님이 욕하셔도,
+DATAFORM 다시 일어날 거예요.
+DATAFORM 지금의 리리스는 마법소녀니까. 후훗.」
+DATAFORM 리리스는 방긋방긋 웃었다.
+DATAFORM 명백히 부자연스러웠다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM20
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 리리스의 뺨을 때렸다.
+PRINTFORMW 리리스는 눈을 깜박이기만 했다.
+PRINTFORMW 「주인님? 이게 무슨.」
+PRINTFORMW 그녀가 아플 리 없었지만,
+PRINTFORMW 주인님이 자신을 때린 것 자체가,
+PRINTFORMW 잠깐 받아들이기 힘든 모양이었다.
+PRINTFORMW 피학성향이 있다 해도,
+PRINTFORMW 합의하지 않은 폭력은 싫은 것이다.
+CASE "High"
+PRINTFORMW 리리스의 뺨을 장난삼아 슬쩍 때렸다.
+PRINTFORMW 리리스는 다른 쪽 뺨도 내밀었다.
+PRINTFORMW 「왼뺨을 맞으면 오른뺨도.
+PRINTFORMW 아파도 기분 좋아요. 후후.」
+PRINTFORMW 당신은 입맛을 다셨다.
+PRINTFORMW 또 <장난삼아> 때려 볼까 싶어졌다.
+CASE "Affection"
+PRINTFORMW 당신은 리리스의 뺨을 때렸다.
+PRINTFORMW 리리스는 과장되게 말했다.
+PRINTFORMW 「라비아타한테도 맞은 적 없는데!」
+PRINTFORMW 그래서 이렇게 변태였군, 하고 당신이 말했다.
+PRINTFORMW 실제 폭행이 아니라 일종의 역할놀이였다.
+PRINTFORMW 리리스를 즐겁게 해 주기 위함이었다.
+PRINTFORMW 그러니까 또 때리고 싶어졌다.
+CASE "Marryed"
+PRINTFORMW 당신은 리리스의 뺨을 때렸다.
+PRINTFORMW 리리스는 과장되게 말했다.
+PRINTFORMW 「아버지한테도 맞은 적 없는데!」
+PRINTFORMW 당신은 리리스한테 아버지가 있나 생각했다.
+PRINTFORMW 재밌어서 또 때려줄까 생각했다.
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스의 뺨을 때렸다.
+DATAFORM 리리스는 곧바로 머리를 바로 세웠다.
+DATAFORM 당신은 다른 쪽 뺨을 때렸다.
+DATAFORM 그녀는 다시 원위치했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 느닷없이 리리스의 뺨을 갈겼다.
+DATAFORM 그녀는 무표정한 눈빛으로,
+DATAFORM 당신을 뚫어져라 보면서,
+DATAFORM 이유 없는 폭행을 견뎠다.
+DATAFORM 육체적 고통보다 심적 고통을 받고 있었다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스의 뺨을 때렸다.
+DATAFORM 리리스는 두려워하며 뺨을 감쌌다.
+DATAFORM 「화가 나신 건가요? 리리스한테?」
+DATAFORM 그걸 말로 해야 알겠냐, 이 미련한 년아.
+DATAFORM 당신의 욕설에 리리스는 눈을 내렸다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 뺨을 때렸다.
+DATAFORM 리리스는 두려워하며 뺨을 감쌌다.
+DATAFORM 「화가 나셨으면 말로 알려주세요.」
+DATAFORM 너한텐 말도 아까워.
+DATAFORM 당신의 욕설에 리리스는 눈을 깔았다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 뺨을 때렸다.
+DATAFORM 그녀가 고개를 바로 들자 다른 쪽을 때렸다.
+DATAFORM 리리스의 눈에 눈물이 핑 돈다.
+DATAFORM 뺨이 아파서 서러운 게 아닐 것이다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 느닷없이 리리스의 뺨을 갈기자,
+PRINTFORMW 리리스는 움찔 놀라더니,
+PRINTFORMW 과장되게 아파한다.
+PRINTFORMW 아픈 척 하지 않으면
+PRINTFORMW 더욱 심한 모욕이 기다린다는 사실을,
+PRINTFORMW 뼈저리게 느끼고 있던 것이다.
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스의 뺨을 때렸다.
+DATAFORM 그냥 웃기만 한다.
+DATAFORM 「주인님, 관심 주셔서 고마워요.
+DATAFORM 착한 리리스에요.」
+DATAFORM 이런 말만 반복한다.
+ENDLIST
+DATALIST
+DATAFORM 머리채를 잡아 당기고 때린다.
+DATAFORM 그래도 웃는다.
+DATAFORM 「주인님, 관심 주셔서 고마워요.
+DATAFORM 착한 리리스에요.」
+DATAFORM 이런 말만 반복한다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM21
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스의 배에 주먹을 날렸다.
+DATAFORM 리리스는 쓰러지기는 커녕,
+DATAFORM 무슨 일이냐는 듯이 바라본다.
+DATAFORM 당신의 주먹 따위로 아플 리가 없다.
+DATAFORM 「리리스는 샌드백이 아니랍니다.」
+DATAFORM 리리스의 목소리는 가라앉아 있었다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 배에 주먹을 날렸다.
+DATAFORM 리리스는 쓰러지기는 커녕,
+DATAFORM 의아한 듯이 보기만 한다.
+DATAFORM 당신의 주먹 따위로 아플 리가 없다.
+DATAFORM 「좀 더 힘을 키우셔야겠네요.」
+DATAFORM 리리스의 목소리는 가라앉아 있었다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스의 배에 주먹을 날렸다.
+DATAFORM 리리스는 아픈 척했다.
+DATAFORM 「주인님께서 고통을 보고 싶어하시다면.」
+DATAFORM 리리스는 묘하게 불쾌해 보였다
+ENDLIST
+DATALIST
+DATAFORM 리리스의 배에 주먹을 날렸다.
+DATAFORM 리리스는 영문을 몰라 했다.
+DATAFORM 「이런 것보단 SM으로 해주세요.」
+DATAFORM 리리스는 탐탁치 않은 듯했다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스의 배에 주먹을 날렸다.
+DATAFORM 리리스는 쓴웃음을 지었다.
+DATAFORM 「기왕이면 채찍이나 기구가 더 좋아요.」
+DATAFORM 리리스는 조금 탐탁찮은 듯했다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 배를 주먹으로 때렸다.
+DATAFORM 리리스는 조금 놀란 듯했다.
+DATAFORM 「오랜만에 너무 거칠으시다.」
+DATAFORM 리리스는 아파하지는 않았지만,
+DATAFORM 기분은 좋지 않은 듯했다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스의 배에 주먹을 날렸다.
+DATAFORM 리리스는 쓴웃음을 지었다.
+DATAFORM 「그냥 때리는 건 조금 재미 없지 않나요.」
+DATAFORM 리리스는 조금 탐탁찮은 듯했다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 배를 주먹으로 때렸다.
+DATAFORM 리리스는 이상하다는 표정을 지었다.
+DATAFORM 「가정 폭력은 나빠요.」
+DATAFORM 리리스는 언짢아 보였다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스의 배에 주먹을 꽂아 넣었다.
+DATAFORM 리리스는 신음 하나 없었지만,
+DATAFORM 불쾌함을 감추지 못한다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 배에 주먹을 꽂아 넣었다.
+DATAFORM 「좀 더 세게 해 보는 게 어떠세요.」
+DATAFORM 하고 오히려 비웃는 듯이 미소짓는다.
+DATAFORM 당신은 입술을 깨물었다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스의 복부에 주먹이 꽂혔다.
+DATAFORM 리리스는 깜짝 놀란다.
+DATAFORM 「리리스를 때리고 싶으신가요?」
+DATAFORM 당신은 대답하지 않았다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 리리스의 뺨을 잡고,
+DATAFORM 그녀의 배를 무릎으로 쳐 올린다.
+DATAFORM 주먹으로도 때린다.
+DATAFORM 리리스는 비명 하나 지르지 않고,
+DATAFORM 맞기만 한다.
+DATAFORM 이어지는 구타가 끝났다.
+DATAFORM 그때 리리스의 얼굴에는,
+DATAFORM 묘한 흥분이 엿보였다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 리리스의 배를 주먹으로 때렸다.
+PRINTFORMW 리리스는 별반 반응조차 보이지 않았다.
+PRINTFORMW 이제는 아픈 척하기도 지친 모양이었다.
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스의 배를 주먹으로 때렸다.
+DATAFORM 순간, 리리스가 당신의 주먹을 잡아 멈춘다.
+DATAFORM 당신은 뜻밖으로 눈을 들어 바라본다.
+DATAFORM 「주인님. 리리스는 이런 것보다......
+DATAFORM 더 기분 좋은 놀이가 좋아요.
+DATAFORM 리리스랑 행복하게 신부수업 해요.
+DATAFORM 후후훗!」
+DATAFORM 눈을 묘하게 빛내며 손을 부여잡는다.
+DATAFORM 당신은 오히려 뒷걸음질친다.
+ENDLIST
+DATALIST
+DATAFORM 리리스가 배를 맞았다.
+DATAFORM 그러자 그녀의 눈에 생기가 돌았다.
+DATAFORM 「리리스는 안 아파요.
+DATAFORM 이거 대신 침대에서 혼내주세요. 깔깔깔!」
+DATAFORM 당신은 기분이 나빠졌다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_COM22
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스를 발로 걷어찼다.
+DATAFORM 리리스는 가만히 맞았다.
+DATAFORM 그저 어리둥절해할 뿐이었다.
+DATAFORM 「리리스가 무언가 잘못했나요?」
+ENDLIST
+DATALIST
+DATAFORM 리리스를 발로 걷어찼다.
+DATAFORM 리리스는 가만히 맞았다.
+DATAFORM 그저 어리둥절해할 뿐이었다.
+DATAFORM 「주인님?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스를 발로 걷어찼다.
+DATAFORM 리리스는 슬쩍 웃으면서 맞아준다.
+DATAFORM 「이런 것보단, 매도가 나을지도요?」
+DATAFORM 기분이 썩 좋지만은 않은 듯했다.
+ENDLIST
+DATALIST
+DATAFORM 리리스를 발로 찼다.
+DATAFORM 리리스는 여유롭게 발을 피했다.
+DATAFORM 「말로 해 주세요. 제가 맞는 걸 좋아해도.」
+DATAFORM 그녀는 살짝 뽀로통해 보였다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스를 발로 걷어찼다.
+DATAFORM 리리스는 쓴웃음 지으면서 맞아준다.
+DATAFORM 「채찍이 더 나을 것 같아요.」
+DATAFORM 기분이 썩 좋지만은 않은 듯했다.
+ENDLIST
+DATALIST
+DATAFORM 리리스를 발로 때렸다.
+DATAFORM 리리스는 맞으면서 어리둥절했다.
+DATAFORM 「여기서 갑자기?」
+DATAFORM 그녀는 얼떨떨한 표정이었다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스를 발로 걷어찼다.
+DATAFORM 리리스는 그대로 맞아준다.
+DATAFORM 「가정 폭력은 나쁜데.」
+DATAFORM 기분이 썩 좋지만은 않은 듯했다.
+ENDLIST
+DATALIST
+DATAFORM 리리스를 발로 걷어찼다.
+DATAFORM 리리스는 아프진 않은 듯했지만,
+DATAFORM 「이유라도 설명해 주세요.」
+DATAFORM 납득하기 힘들어했다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스를 발로 걷어찼다.
+DATAFORM 한방 맞은 리리스가 말했다.
+DATAFORM 「주인님, 무게 중심을 좀 더 실어주세요.
+DATAFORM 그러면 조금 더 세지거든요.」
+DATAFORM 오히려 여유로운 태도에,
+DATAFORM 당신은 부아가 치밀었다.
+ENDLIST
+DATALIST
+DATAFORM 리리스를 발로 걷어찼다.
+DATAFORM 한방 맞은 리리스가 말했다.
+DATAFORM 「리리스한테는 말로 해 주세요.
+DATAFORM 때리는 건 효과가 적답니다?」
+DATAFORM 훈계하는 듯 여유로운 태도에,
+DATAFORM 당신은 부아가 치밀었다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 정강이를 차인 리리스는,
+DATAFORM 얼른 고개를 들어 당신을 바로 보았다.
+DATAFORM 묘하게 열띤 표정이었다.
+DATAFORM 학대를 받아들일 준비가 되어 있었다.
+DATAFORM 당신은 기묘한 쾌감에 사로잡혔다.
+ENDLIST
+DATALIST
+DATAFORM 리리스가 배를 얻어맞는다.
+DATAFORM 얼른 고개를 들어 당신을 바로 보았다.
+DATAFORM 묘하게 열띤 표정이었다.
+DATAFORM 당신은 더 때리고 싶어졌다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스는 배를 걷어차이자,
+DATAFORM 한발짝 뒤로 물러섰다.
+DATAFORM 고통스러워하진 않는다.
+DATAFORM 그저 슬픈 눈으로 당신을 볼 뿐이었다.
+DATAFORM 그녀가 무어라 입술을 달싹였지만,
+DATAFORM 이내 말하기를 포기한 듯,
+DATAFORM 다시 눈을 내리깔았다.
+DATAFORM 발을 올리려던 당신은 저도 모르게 내린다.
+ENDLIST
+DATALIST
+DATAFORM 리리스가 발로 걷어채였다.
+DATAFORM 고통스러워하진 않는다.
+DATAFORM 단지 두려워할 뿐이었다.
+DATAFORM 당신은 그 모습에서 야릇한 쾌감을 느꼈다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 리리스의 배를 걷어찼다.
+PRINTFORMW 그러자 리리스가 방긋 웃었다.
+PRINTFORMW 「주인님- 여긴 아기방이에요.
+PRINTFORMW 조심해서 다뤄주세요?
+PRINTFORMW 아기가 곧 여기서 지낼 거라고요.
+PRINTFORMW 우후훗!」
+PRINTFORMW 그녀의 멍한 눈이 갑작스레 반짝였다.
+PRINTFORMW 당신은 침을 삼켰다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+
+
+
+@M_No16_EVENT_Morning
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 눈을 떴다.
+DATAFORM 리리스가 내려다보고 있었다.
+DATAFORM 「훌륭한 주인님은 늦게 일어나시면 안 되요.」
+DATAFORM 훈계받는 느낌에 당신은 머리를 긁적거렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 눈을 떴다.
+DATAFORM 리리스가 내려다보고 있었다.
+DATAFORM 「주인님 잠든 모습은 귀여워요.」
+DATAFORM 약이 오른 당신은 머리를 긁적거렸다.
+ENDLIST
+DATALIST
+DATAFORM 누군가 흔드는 바람에 눈을 떴다.
+DATAFORM 리리스가 당신을 깨운 것이다.
+DATAFORM 「아침이에요. 아침 드셔야죠?」
+DATAFORM 챙겨주는 건 고마웠다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 자동으로 눈이 뜨였다.
+DATAFORM 리리스가 들여다보고 있었다.
+DATAFORM 「깜짝이야. 깨워 드리려 했는데.」
+DATAFORM 리리스의 시선이 마음에 걸렸나 보다.
+ENDLIST
+DATALIST
+DATAFORM 시선을 느끼고 눈을 떠 보았다.
+DATAFORM 리리스가 은은히 미소짓고 있었다.
+DATAFORM 「자, 깨어나실 시간이에요.」
+DATAFORM 깨워 준 것은 고마웠다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 목소리가 들려왔다.
+DATAFORM 눈을 떠 보니 그녀가 웃고 있다.
+DATAFORM 「오늘도 좋은 하루에요.」
+DATAFORM 지켜보고 있으니 부담이 된다.
+ENDLIST
+DATALIST
+DATAFORM 한숨과 함께 눈을 떴다.
+DATAFORM 리리스가 살짝 놀란 듯했다.
+DATAFORM 「벌써 일어나셨네요?
+DATAFORM 자고 계신 모습 보고 싶었는데.」
+DATAFORM 당신은 쓴 웃음을 지었다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 눈을 떴다.
+DATAFORM 리리스가 내려다보고 있었다.
+DATAFORM 「조금 더 주무시게 둘 걸.」
+DATAFORM 당신이 이유를 묻자, 웃기만 한다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 눈을 떴을 때였다.
+DATAFORM 리리스가 싱긋 웃고 있었다.
+DATAFORM 「좋은 밤 보내셨나요?
+DATAFORM 리리스도 같이 꿈꾸고 싶었어요.」
+DATAFORM 나쁘지 않을 것 같다고 생각한다.
+ENDLIST
+DATALIST
+DATAFORM 누군가 흔드는 바람에 눈을 떴다.
+DATAFORM 리리스가 당신을 깨운 것이다.
+DATAFORM 「아침 차렸어요. 드세요, 주인님.」
+DATAFORM 아침도 챙겨주어서 고마웠다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 자동으로 눈이 뜨였다.
+DATAFORM 리리스가 들여다보고 있었다.
+DATAFORM 「제 시선을 느끼셨나요?」
+DATAFORM 당신은 웃으며 고개를 끄덕인다.
+DATAFORM 리리스가 즐거워한다.
+ENDLIST
+DATALIST
+DATAFORM 시선을 느끼고 눈을 떠 보았다.
+DATAFORM 리리스가 은은히 미소짓고 있었다.
+DATAFORM 「자, 깨어나실 시간이에요.」
+DATAFORM 조금 더 자고 싶다고 칭얼거렸다.
+DATAFORM 리리스는 한숨을 쉬면서,
+DATAFORM  「저도 주인님이랑 눕고 싶다고요.」
+DATAFORM 하고는 억지로 잡아 일으킨다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 목소리가 들려왔다.
+DATAFORM 눈을 떠 보니 그녀가 웃고 있다.
+DATAFORM 「좋은 하루에요.」
+DATAFORM 리리스와 함께라서 더 좋은 시작이었다.
+ENDLIST
+DATALIST
+DATAFORM 한숨과 함께 눈을 떴다.
+DATAFORM 리리스가 살짝 놀란 듯했다.
+DATAFORM 「벌써 일어나셨네요?
+DATAFORM 자고 계신 모습 보고 싶었는데.」
+DATAFORM 그럼 그대로 잘까,
+DATAFORM 하고 당신은 다시 눈을 감았다.
+DATAFORM 리리스는 당신을 냉큼 일으켰다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 눈을 떴다.
+DATAFORM 리리스가 따뜻하게 내려다보았다.
+DATAFORM 「조금 늦게 깨워드렸어요.
+DATAFORM 주인님이 편해 보이셔서. 후훗.」
+DATAFORM 당신의 마음이 따뜻해진다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 눈을 떴을 때였다.
+DATAFORM 리리스가 즐겁게 웃고 있었다.
+DATAFORM 「어젯밤은 정말 좋았어요.
+DATAFORM 리리스는 행복해요.」
+DATAFORM 당신도 동감이었다.
+ENDLIST
+DATALIST
+DATAFORM 누군가 흔드는 바람에 눈을 떴다.
+DATAFORM 「주인님, 정말 늦잠꾸러기.」
+DATAFORM 리리스는 살짝 흘겨본다.
+DATAFORM 당신은 그녀가 귀엽다고 느꼈다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 자동으로 눈이 뜨였다.
+DATAFORM 리리스가 들여다보고 있었다.
+DATAFORM 「제 시선을 느끼셨죠? 어때요?」
+DATAFORM 당신은 햇살 같았다고 대답한다.
+DATAFORM 리리스가 까르르 웃으며,
+DATAFORM 당신을 살짝 친다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 눈을 떠 보았다.
+DATAFORM 리리스가 은은히 미소짓고 있었다.
+DATAFORM 「자, 깨어나실 시간이에요.」
+DATAFORM 조금 더 자고 싶다고 칭얼거렸다.
+DATAFORM 리리스는 그러자 잠깐 생각하다가,
+DATAFORM  「저도 주인님이랑 조금만 누울게요.」
+DATAFORM 하고는 이불 속으로 파고 들어온다.
+DATAFORM 당신은 화들짝 놀라서 일어난다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 목소리가 들려왔다.
+DATAFORM 눈이 저절로 뜨인다. 그녀가 웃고 있다.
+DATAFORM 「좋은 하루예요.」
+DATAFORM 당신도 그녀에게 좋은 하루라고 말한다.
+ENDLIST
+DATALIST
+DATAFORM 눈을 뜨고 그녀를 기다리고 있었다.
+DATAFORM 리리스가 살짝 놀란 듯했다.
+DATAFORM 「벌써 일어나셨네요?
+DATAFORM 자고 계신 모습 보고 싶었는데.」
+DATAFORM 그럼 그대로 잘까,
+DATAFORM 하고 당신은 다시 눈을 감았다.
+DATAFORM 리리스는 웃으며 당신을 내려다보았다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 눈을 떴다.
+DATAFORM 리리스가 미소를 띠고 내다본다.
+DATAFORM 「편안하셨어요?.
+DATAFORM 겉보기에도 그래 보이세요」
+DATAFORM 당신도 그녀에게 잘 잤느냐고 인사한다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 눈을 떴을 때였다.
+DATAFORM 리리스가 흐뭇한 표정이었다.
+DATAFORM 「이런 게 사람 사는 거네요.
+DATAFORM 리리스는 행복해요.」
+DATAFORM 당신도 그녀 덕분에 느끼고 있었다.
+ENDLIST
+DATALIST
+DATAFORM 리리스가 당신을 살며시 깨웠다.
+DATAFORM 「가끔은 조금 여유부리셔도 되요.」
+DATAFORM 리리스는 너그럽게 당신을 내려다보았다.
+DATAFORM 당신은 그녀에게 어리광부리고 싶어졌다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 자동으로 눈이 뜨였다.
+DATAFORM 리리스의 얼굴이 보인다.
+DATAFORM 「좋은 아침이에요.」
+DATAFORM 당신은 리리스가 반가웠다.
+DATAFORM 그녀가 없는 아침은 상상할 수 없다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 잠에서 깨어났을 때였다.
+DATAFORM 리리스가 은은히 미소짓고 있었다.
+DATAFORM 「자, 일어나실 시간이에요.」
+DATAFORM 조금 더 자고 싶다고 묻는다.
+DATAFORM 리리스는 그러자 냉큼,
+DATAFORM 이불 속으로 파고 들어온다.
+DATAFORM 당신은 그녀의 봉사를 즐긴다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 목소리가 들려왔다.
+DATAFORM 시키지 않아도 눈이 뜨였다.
+DATAFORM 「이젠 알아서 잘 일어나시네요.
+DATAFORM 후훗, 아이한테 모범을 보이셔야죠?」
+DATAFORM 당신도 그렇다고 생각한다.
+ENDLIST
+DATALIST
+DATAFORM 눈을 뜨고 그녀를 기다리고 있었다.
+DATAFORM 리리스가 당신을 보고 미소짓는다.
+DATAFORM 「벌써 일어나셨네요?
+DATAFORM 주인님의 부지런한 모습 보기 좋아요.」
+DATAFORM 리리스는 아침상을 내 왔다.
+DATAFORM 당신만을 위한.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 눈을 떴다.
+DATAFORM 리리스가 내려다보고 있었다.
+DATAFORM 「너무 늦잠 주무셨네요.」
+DATAFORM 훈계를 받고 당신은 머리를 긁적거렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 눈을 떴다.
+DATAFORM 리리스가 내려다보고 있었다.
+DATAFORM 「입 벌리고 주무시면 안되요.」
+DATAFORM 맞는 말인데 왠지 약이 오른다.
+ENDLIST
+DATALIST
+DATAFORM 누군가 흔드는 바람에 눈을 떴다.
+DATAFORM 리리스가 당신을 깨운 것이다.
+DATAFORM 「아침이에요. 아침 드셔야죠?」
+DATAFORM 당신은 귀찮아서 거부하고 싶었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 자동으로 눈이 뜨였다.
+DATAFORM 리리스가 들여다보려다 멈칫했다.
+DATAFORM 「알아서 일어나시니 다행이네요.」
+DATAFORM 살짝 빈정거리는 말투,
+DATAFORM 당신은 마음이 불편했다.
+ENDLIST
+DATALIST
+DATAFORM 시선을 느끼고 눈을 떠 보았다.
+DATAFORM 리리스가 묵묵히 보고 있었다.
+DATAFORM 「자, 아침이에요. 일어나세요.」
+DATAFORM 깨워 준 것은 고마웠다.
+DATAFORM 하지만 비위에 상하는 면이 있었다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 목소리가 들려왔다.
+DATAFORM 눈을 떠 보니 그녀가 있었다.
+DATAFORM 「좋은 하루 되시길 빌어요.」
+DATAFORM 당신은 대답하지 않고 일어난다.
+DATAFORM 같이 있기 불편했다.
+ENDLIST
+DATALIST
+DATAFORM 한숨을 쉬면서 눈을 떴다.
+DATAFORM 리리스가 어색하게 옆에 서 있었다.
+DATAFORM 「벌써 일어나셨네요?
+DATAFORM 자고 계실 줄 알았는데.」
+DATAFORM 명백하게 비꼬는 말투였다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 눈을 떴다.
+DATAFORM 리리스가 조심스럽게 말했다.
+DATAFORM 「저어, 아침이에요.」
+DATAFORM 당신은 괜히 짜증이 났다.
+DATAFORM 리리스가 그 기색을 눈치채고,
+DATAFORM 몸을 움츠렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 눈을 떴다.
+DATAFORM 리리스가 내려다보고 있었다.
+DATAFORM 「주인님, 편안하셨나요.」
+DATAFORM 당신은 한숨만 쉬고 대답하지 않았다.
+DATAFORM 리리스는 송구스럽다는 듯이 물러갔다.
+ENDLIST
+DATALIST
+DATAFORM 누군가 살며시 당신을 흔들었다.
+DATAFORM 리리스가 당신을 깨운 것이다.
+DATAFORM 「주인님, 아침 드시겠어요?」
+DATAFORM 괜한 성질이 난 당신은,
+DATAFORM 안 먹는다고 중얼거린다.
+DATAFORM 리리스는 가만히 물러갔다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 자동으로 눈이 뜨였다.
+DATAFORM 리리스가 들여다보고 있었다.
+DATAFORM 「죄송해요.」
+DATAFORM 당신의 불쾌한 시선을 느낀 그녀는,
+DATAFORM 얼른 사죄한다. 잘못한 것도 없이.
+ENDLIST
+DATALIST
+DATAFORM 시선을 느끼고 눈을 떠 보았다.
+DATAFORM 리리스가 주저하며 말을 꺼냈다.
+DATAFORM 「주인님, 조금 늦으셨어요.」
+DATAFORM 당신은 짜증이 났다.
+DATAFORM 왜 일찍 깨우지 않았느냐고,
+DATAFORM 당신은 그녀를 탓했다.
+DATAFORM 리리스는 고개를 조아리며 사과했다.
+DATAFORM 덕분에 당신의 기분이 풀렸다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 기척이 느껴졌다.
+DATAFORM 눈을 떠 보니 그녀가 곁에 서 있었다.
+DATAFORM 「간밤에 잘 지내셨나요.」
+DATAFORM 당신은 퉁명스럽게 대답해 버린다.
+DATAFORM 리리스는 작게 한숨을 쉰다.
+ENDLIST
+DATALIST
+DATAFORM 한숨과 함께 눈을 떴다.
+DATAFORM 리리스가 살짝 놀란 듯했다.
+DATAFORM 「저, 잠을 깨웠나요?」
+DATAFORM 당신은 당연하지, 라고 짜증을 낸다.
+DATAFORM 「죄송해요. 하지만 아침이 늦어서.」
+DATAFORM 당신은 한숨을 내쉰다. 또 늦었다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 눈을 떴다.
+DATAFORM 리리스가 내려다보고 있었다.
+DATAFORM 「아침이에요.」
+DATAFORM 리리스는 그러고는 얼른 물러났다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 눈을 떴다.
+DATAFORM 리리스가 내려다보고 있었다.
+DATAFORM 「주인님. 일어나 주세요.」
+DATAFORM 당신이 표정을 찡그리자,
+DATAFORM 리리스는 움찔하며 얼른 자리를 뜬다.
+ENDLIST
+DATALIST
+DATAFORM 누군가 당신을 흔들었다.
+DATAFORM 리리스가 당신을 깨운 것이다.
+DATAFORM 「주인님. 저, 아침이.」
+DATAFORM 당신은 퉁명스럽게 안 먹는다고 하며,
+DATAFORM 돌아누워 버렸다.
+DATAFORM 리리스는 어깨를 늘어뜨렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 자동으로 눈이 뜨였다.
+DATAFORM 리리스가 들여다보고 있었다.
+DATAFORM 당신은 기분 나쁘게 뭐냐고 말한다.
+DATAFORM 리리스는 말없이 그 자리를 뜬다.
+ENDLIST
+DATALIST
+DATAFORM 시선을 느끼고 눈을 떠 보았다.
+DATAFORM 리리스가 무표정히 서 있었다.
+DATAFORM 「아침 식사 시간이 지났어요.」
+DATAFORM 왜 깨우지 않았느냐고 말했다.
+DATAFORM 그녀는 죄송하다고 빌었다.
+ENDLIST
+DATALIST
+DATAFORM 리리스의 목소리가 들려왔다.
+DATAFORM 눈을 떠 보니 그녀가 보고 있다.
+DATAFORM 「좋은 하루예요.」
+DATAFORM 당신은 과연 그럴까, 하고 비꼬았다.
+ENDLIST
+DATALIST
+DATAFORM 한숨을 쉬며 눈을 떴다.
+DATAFORM 리리스가 움찔했다.
+DATAFORM 「일어......나셨나요.」
+DATAFORM 당신은 아무 대답 하지 않는다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 눈을 떴다.
+DATAFORM 리리스가 내려다보고 있었다.
+DATAFORM 이상하게 웃는 것이 기분이 나쁘다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 눈을 떴다.
+DATAFORM 리리스가 곁에 앉아 웃고 있다.
+DATAFORM 「일어나셨어요. 주인님?」
+DATAFORM 부자연스러울 정도로 친절하다.
+DATAFORM 당신은 한숨을 쉰다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_EVENT_Sortie
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「거짓말......!
+DATAFORM 리리스는 경호가 주 임무라고요.」
+ENDLIST
+DATAFORM 「주인님을 두고 가긴 불안해요.」
+DATAFORM 「혹시, 리리스를 떼어 놓으려는 건?」
+DATAFORM 「흥, 이런 임무는 사절이에요.」
+DATAFORM 「주인님을 보호해드리고 싶은데.」
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATAFORM 「빨리 다녀올게요.」
+DATAFORM 「경호에 지장이 될까봐 걱정되요.」
+DATAFORM 「주인님이 그리울 거예요.」
+DATAFORM 「주인님의 명령이니 하는 거예요.」
+DATAFORM 「주인님을 위해서라면 어쩔 수 없죠.」
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATAFORM 「주인님 생각에 두근거릴 텐데.」
+DATAFORM 「맡기셨으니, 성실히 할게요.」
+DATAFORM 「착한 리리스가 빨리 다녀올게요.」
+DATAFORM 「조금만 기다리세요? 총알은 빠르니까요.」
+DATAFORM 「모든 것은 주인님을 위해.」
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATAFORM 「맞벌이란 힘들다고요.」
+DATAFORM 「조금 떨어져 있어도, 한몸이죠.」
+DATAFORM 「훌륭한 어머니가 되려면, 성실해야겠죠?」
+DATAFORM 「다녀오겠습니다. 주인님, 아니, 여보.」
+DATAFORM 「살림을 배우는 게 낫지 않을까요?」
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATAFORM 「이런 건 사절인데.」
+DATAFORM 「리리스가 귀찮으신 건 아니겠죠.」
+DATAFORM 「나쁜 리리스라도, 다녀올게요.」
+DATAFORM 「저 없는 사이에 재밌게 노시려고요?」
+ENDDATA
+CASE "Fear"
+PRINTFORMW 「다녀오겠습니다.」
+CASE "Weak"
+PRINTFORMW 리리스는 눈치를 살피며 떠난다.
+CASE "Break"
+PRINTFORMW 리리스는 이상하게 웃으며 떠난다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_EVENT_Sortie_Return
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 「별 일 없었지요?」
+PRINTFORMW 「주인님이 신경쓰여요.」
+CASE "Marryed"
+PRINTFORMW 「다녀왔어요.」
+PRINTFORMW 「주인님 생각에 힘든 줄도 몰랐다고요?」
+CASE "Annoyed"
+PRINTFORMW 「다음엔 좀 다른 임무였으면.」
+CASE "Fear"
+PRINTFORMW 「다녀왔..어요...」
+CASE "Weak"
+PRINTFORMW 리리스는 힘없이 들어왔다.
+CASE "High"
+PRINTFORMW 「착한 리리스가 돌아왔어요.」
+PRINTFORMW 「혹시 다른 아이와?」
+CASE "Affection"
+PRINTFORMW 「저, 두근거렸어요.」
+PRINTFORMW 「주인님 생각 때문에요. 후훗.」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_EVENT_Cook_Self
+IF ABL:MASTER:조리lv < 3
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「기대할게요. 후훗?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 간신히 다 만들었다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「제가 해드릴 수도 있는데.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 간신히 다 만들었다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「리리스의 묘약은 어떠세요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 간신히 다 만들었다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「그럼 리리스는 리리스를 준비할게요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 간신히 다 만들었다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「안해 주셔도 되는데.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 간신히 다 만들었다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「저...... 리리스도 할 수 있어요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 간신히 다 만들었다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 리리스는 불안하게 당신을 훔쳐본다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 간신히 다 만들었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「주인님의 요리라. 어떨까요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 다 만들었다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「다음엔 리리스가 해 드릴게요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 다 만들었다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「맛있을 거 같아요. 기대되는데.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 다 만들었다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「요리보단 리리스가 더 맛있을 걸요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 다 만들었다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「뭐, 고마운 건 고마운 거니까요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 다 만들었다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「고마워요, 리리스도 배가 고파서.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 다 만들었다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 리리스는 안절부절 못한다.
+PRINTFORMW 자신의 할 일이기 때문이다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 다 만들었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 당신은 자신만만하게 요리를 시작했다.
+PRINTFORMW 「실력이 대단하시단 이야기를 들었어요.
+PRINTFORMW 기대할게요, 주인님?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 금방 다 만들었다.
+CASE "High"
+PRINTFORMW 당신은 즐겁게 요리를 시작했다.
+PRINTFORMW 「매일 대접받을 수 있는 건 아니겠죠?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 재빨리 다 만들었다.
+CASE "Affection"
+PRINTFORMW 당신은 정성껏 요리를 시작했다.
+PRINTFORMW 「주인님이 만들어주신 요리의 맛,
+PRINTFORMW 잊지 않겠습니다. 후후후.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 완벽히 다 만들었다.
+CASE "Marryed"
+PRINTFORMW 당신은 편안히 요리를 시작했다.
+PRINTFORMW 「리리스가 더 맛있으실 텐데요? 후훗.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 쉽게 다 만들었다.
+CASE "Annoyed"
+PRINTFORMW 당신은 으스대며 요리를 시작했다.
+PRINTFORMW 「고마워요. 어쨌든.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 빨리 다 만들었다.
+CASE "Fear"
+PRINTFORMW 당신은 천천히 요리를 시작했다.
+PRINTFORMW 「감사합니다, 주인님.」
+PRINTFORMW 리리스는 눈치를 살핀다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 다 만들었다.
+CASE "Weak"
+PRINTFORMW 당신은 말없이 요리를 시작했다.
+PRINTFORMW 리리스는 안절부절 못한다.
+PRINTFORMW 요리를 안했다고 질책 당할까봐.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리를 다 만들었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+ENDIF
+
+@M_No16_EVENT_Eat_Com
+IF ABL:MASTER:조리lv < 3
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스는 요리를 보고 표정이 굳는다.
+DATAFORM 묵묵히 먹기 시작한다.
+DATAFORM 별로 입맛이 없어 보인다.
+ENDLIST
+DATALIST
+DATAFORM 리리스는 요리를 보고 표정이 굳는다.
+DATAFORM 「어쩔 수 없죠. 이것도 경호원의 임무.」
+DATAFORM 괜히 비장하게 말하며 먹는다.
+DATAFORM 입맛이 없어 보인다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTFORMW 「잘먹겠습니다.」
+PRINTFORMW 리리스는 아무렇지도 않게 당신의 음식을 먹었다.
+CASE "Affection"
+PRINTFORMW 「맛보다 사랑이 중요한 거래요.」
+PRINTFORMW 리리스는 뭔가 의미심장한 말을 남기며 먹는다.
+CASE "Marryed"
+PRINTFORMW 요리를 먹은 리리스가 말했다.
+PRINTFORMW 「아내되는 자로서 죄송해요.」
+PRINTFORMW 무슨 말이냐고 물으니,
+PRINTFORMW 「주인님 대신 제가 해 드렸어야 하는건데.」
+PRINTFORMW 당신은 머쓱했다.
+CASE "Annoyed"
+PRINTFORMW 요리를 먹은 리리스가 입을 닦았다.
+PRINTFORMW 「뭐, 해주신 건 고마워요.
+PRINTFORMW 다음엔 리리스가 하는 게 낫겠어요.」
+PRINTFORMW 당신은 머리를 긁었다.
+CASE "Fear"
+PRINTFORMW 리리스는 당신의 눈치를 살피며,
+PRINTFORMW 조심스럽게 요리를 먹어 갔다.
+PRINTFORMW 맛이 없음에도 불구하고 애써 내색하지 않는다.
+PRINTFORMW 당신도 그것을 알기에 기분이 나쁘다.
+CASE "Weak"
+PRINTFORMW 리리스는 힘없이 요리를 먹는다.
+PRINTFORMW 맛의 유무는 중요하지 않다.
+PRINTFORMW 당신의 학대나 괴롭힘이 없기만을 바란다.
+PRINTFORMW 그녀의 기분을 짐작한 당신은 씩 웃는다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 리리스는 음식을 먹다가 놀란다.
+PRINTFORMW 「생각보다 괜찮아요.」
+PRINTFORMW <생각보다>는 또 뭐야,
+PRINTFORMW 라고 당신은 말하려다 만다.
+CASE "High"
+PRINTFORMW 리리스가 음식을 두고 웃었다.
+PRINTFORMW 「주인님이 주시면 뭐든지 맛있어요.
+PRINTFORMW 후식으로 크림치즈 주시면 더 좋고요.」
+PRINTFORMW 리리스는 제딴에 깔깔 웃는다.
+PRINTFORMW 말뜻을 깨달은 당신은 쓴웃음을 짓는다.
+CASE "Affection"
+PRINTFORMW 리리스는 감격한 눈으로,
+PRINTFORMW 당신과 요리를 번갈아 본다.
+PRINTFORMW 「리리스만을 위한 요리, 정말 고마워요.」
+PRINTFORMW 요리의 외견이 괜찮다는 것도 한몫했으리라.
+CASE "Marryed"
+PRINTFORMW 리리스는 요리를 앞두고,
+PRINTFORMW 「제가 해 드렸어야 하는데.
+PRINTFORMW 하면서 오히려 면목이 없이 바라보았다.」
+PRINTFORMW 당신이 괜찮다고 하자,
+PRINTFORMW 그제야 웃으며 맛있게 먹기 시작한다.
+CASE "Annoyed"
+PRINTFORMW 리리스는 요리를 보고 시큰둥했다.
+PRINTFORMW 하지만 배는 고팠는지 얼른 먹기 시작한다.
+PRINTFORMW 그녀는 조용히 맛있어, 라고 중얼거렸다.
+PRINTFORMW 당신은 속으로 기분이 조금 풀렸다.
+CASE "Fear"
+PRINTFORMW 리리스는 요리를 조심스럽게 먹는다.
+PRINTFORMW 맛있자, 고마워하면서 당신의 눈치를 살핀다.
+PRINTFORMW 당신은 순종적인 그녀를 보고 만족해 한다.
+CASE "Weak"
+PRINTFORMW 힘없는 태도로 리리스가 음식을 먹는다.
+PRINTFORMW 맛이 있었는지 살며시 미소짓지만,
+PRINTFORMW 당신과 눈이 마주치자 금새 눈을 내린다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 한입 먹은 리리스는 표정이 풀어졌다.
+PRINTFORMW 「주인님이 차려주시는 밥상을 먹고 싶어졌어요.」
+PRINTFORMW 농담이에요. 후후.
+CASE "High"
+PRINTFORMW 리리스는 요리를 두고 웃었다.
+PRINTFORMW 「매일 이렇게 주인님과 같이 먹고 싶네요.
+PRINTFORMW 이번엔 농담이 아니라고요?」
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 리리스는 활짝 웃더니,
+DATAFORM 「주인님 덕분에 먹게 되서 감사해요.」
+DATAFORM 라고, 진심으로 고마워했다.
+ENDLIST
+DATALIST
+DATAFORM 요리를 먹고 리리스가 감격했다.
+DATAFORM 「주인님께서 주신의 요리의 맛!
+DATAFORM 결코 잊지 않겠어요.」
+DATAFORM 당신도 흐뭇하게 고개를 끄덕였다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTFORMW 요리를 본 리리스는 활짝 웃었다.
+PRINTFORMW 기대하는 게 분명해 보였다.
+PRINTFORMW 「리리스는 자꾸 대접만 받으면 어쩌죠.
+PRINTFORMW 아내가 대접을 받다니. 참.」
+PRINTFORMW 당신은 리리스를 기쁘게 만들었다.
+CASE "Annoyed"
+PRINTFORMW 요리를 본 리리스는 떨떠름해 했다.
+PRINTFORMW 저기압이지만 맛있는 요리의 유혹이 심한 듯하다.
+PRINTFORMW 그녀는 당신과 요리를 번갈아 보다가 한술 뜬다.
+PRINTFORMW 「맛있네요.」
+PRINTFORMW 그녀가 작게 중얼거렸다.
+CASE "Fear"
+PRINTFORMW 리리스는 조심스럽게 당신을 보았다.
+PRINTFORMW 「잘 먹겠습니다.」
+PRINTFORMW 요리를 먹는 그녀의 표정이 풀어졌다.
+PRINTFORMW 두려움 속에서도 안도함을 느낀 것일까.
+CASE "Weak"
+PRINTFORMW 리리스는 힘없이 요리를 먹었다.
+PRINTFORMW 「고마워요. 주인님.」
+PRINTFORMW 리리스가 중얼거리며 당신의 눈치를 본다.
+PRINTFORMW 공포 때문에 맛있다는 건 아닌 듯했다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+ENDIF
+
+@M_No16_EVENT_Cook
+IF ABL:조리lv < 3
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 리리스는 요리를 시작했다.
+PRINTFORMW 「기대하세요. 리리스의 요리.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 한참 걸려서 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 리리스가 얼른 요리했다.
+PRINTFORMW 「오늘은 다를지도 몰라요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 한참 걸려서 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 리리스가 즐겁게 요리를 한다.
+PRINTFORMW 「리리스만의 미약을 넣어야 하려나.
+PRINTFORMW 노, 농담이에요. 진짜.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 얼마간 후에 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 리리스는 콧노래를 부르며 요리했다.
+PRINTFORMW 「음...... 아내로서 최선을 다할 게요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 시간이 지나서 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 리리스는 마지못해 요리에 나섰다.
+PRINTFORMW 「원망하진 마세요. 맛 없더라도.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 한참이 지나서야 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 리리스는 서둘러 요리에 나섰다.
+PRINTFORMW 「주인님 입맛에 맞을지.」n리리스는 걱정스런 기색이었다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 꽤 지나서 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 리리스는 말없이 요리를 시작했다.
+PRINTFORMW 「네.」
+PRINTFORMW 그녀는 자신이 없어 보였다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 오래 뒤에야 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 리리스가 요리를 시작한다.
+PRINTFORMW 「조금 기대하셔도 좋아요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 「자, 괜찮을 거예요.」
+PRINTFORMW 오래 지나지 않아서 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 리리스가 냉큼 요리에 들어갔다.
+PRINTFORMW 「리리스가 해주는 게 제일일 거예요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 「기다리셨죠? 후훗.」
+PRINTFORMW 잠시 후에 요리가 나왔다.
+CASE "Affection"
+PRINTFORMW 리리스가 웃으며 요리를 시작했다.
+PRINTFORMW 「기대하세요. 주인님.」
+PRINTFORMW 그녀는 콧노래까지 흥얼거렸다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 「오래 기다리셨습니다.」
+PRINTFORMW 빠른 시간 안에 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 리리스는 자신만만하게 요리했다.
+PRINTFORMW 「신부수업의 결과를 보여드릴게요.」
+PRINTFORMW 그녀의 얼굴엔 웃음이 피었다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 「자, 드세요.」
+PRINTFORMW 금방 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 리리스는 내키지 않는 듯이 요리했다.
+PRINTFORMW 「그래도 제가 할 일이니까.」
+PRINTFORMW 요리하는 동안 조용했다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 리리스는 얼른 시키는 대로 요리했다.
+PRINTFORMW 「예, 금방 맛있게 만들어 드릴게요.」
+PRINTFORMW 그녀는 요리하며 당신의 눈치를 살폈다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 리리스는 말없이 요리에 나섰다.
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 얼마 뒤 요리가 완성됐다.
+PRINTFORMW 그녀는 조심스럽게 요리를 차렸다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 4
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 리리스는 순순히 요리를 해 주었다.
+PRINTFORMW 「기대하세요. 생각보다 더 뛰어날테니.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 금방 요리가 완성됐다.
+PRINTFORMW 당신이 한눈에 봐도 맛있어 보였다.
+CASE "High"
+PRINTFORMW 리리스는 얼른 요리를 만들었다.
+PRINTFORMW 「주인님이 리리스의 요리에 중독되면 어쩌죠?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 금방 요리가 완성됐다.
+PRINTFORMW 당신이 한눈에 봐도 맛있어 보였다.
+CASE "Affection"
+PRINTFORMW 리리스는 즐겁게 요리를 만들었다.
+PRINTFORMW 「리리스의 맛을 잊지 못하실 거예요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW   
+PRINTFORMW 순식간에 요리가 완성됐다.
+PRINTFORMW 당신은 침을 꿀꺽 삼켰다.
+PRINTFORMW 리리스는 흐뭇하게 당신을 바라보고 있다.
+CASE "Marryed"
+PRINTFORMW 리리스는 행복하게 요리를 만들었다.
+PRINTFORMW 「조금만 기다리세요, 여보. 후훗.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW   
+PRINTFORMW 순식간에 요리가 완성됐다.
+PRINTFORMW 당신은 둘이서 먹는 것만으로도 기쁘다.
+PRINTFORMW 리리스도 흐뭇하게 당신을 바라보고 있다.
+CASE "Annoyed"
+PRINTFORMW 리리스는 조금 내키지 않게 요리를 시작했다.
+PRINTFORMW 「맛은 괜찮으실 거예요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+PRINTFORMW 확실히 맛있었지만,
+PRINTFORMW 기분 때문에 조금 껄끄러웠다.
+CASE "Fear"
+PRINTFORMW 리리스는 조심스럽게 요리했다.
+PRINTFORMW 「맛있으실 거예요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 얼마 뒤 요리가 완성됐다.
+PRINTFORMW 리리스는 눈치를 보고 있다.
+PRINTFORMW 당신은 일부러 맛이 없는 척했다.
+PRINTFORMW 리리스는 조금 억울한 표정이었다.
+CASE "Weak"
+PRINTFORMW 리리스는 조용히 요리하였다.
+PRINTFORMW 「......」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 곧 요리가 완성됐다.
+PRINTFORMW 맛은 훌륭했다.
+PRINTFORMW 하지만 리리스는 표정이 어두웠다.
+PRINTFORMW 당신의 마음이 불편해졌다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+ENDIF
+
+@M_No16_EVENT_Eat_Lunch
+IF ABL:조리lv < 3
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 리리스의 요리를 먹고 싶진 않았다.
+PRINTFORMW 당신은 한입 먹었다가 이를 드러냈다.
+PRINTFORMW 리리스는 시선을 피했다.
+PRINTFORMW 그녀가 이렇게 당황하는 것도 드물다.
+CASE "High"
+PRINTFORMW 리리스의 요리는 볼품이 없었다.
+PRINTFORMW 당신은 한입 먹자 표정이 굳어졌다.
+PRINTFORMW 리리스는 난처하게 웃었다.
+CASE "Affection"
+PRINTFORMW 리리스의 요리는 그저 그랬다.
+PRINTFORMW 맛은 없었지만, 당신은 사랑으로 견뎠다.
+CASE "Marryed"
+PRINTFORMW 리리스의 요리는 썩 맛있진 않았다.
+PRINTFORMW 당신은 가정의 평화를 위해 맛있다고 해 주었다.
+CASE "Annoyed"
+PRINTFORMW 리리스의 요리는 먹을 만한 게 아니었다.
+PRINTFORMW 당신은 괜히 시켰다고 후회했다.
+CASE "Fear"
+PRINTFORMW 겉보기에도 볼품이 없는 요리였다.
+PRINTFORMW 당신은 한입 먹고 못마땅해졌다.
+PRINTFORMW 리리스는 눈을 떨구었다.
+CASE "Weak"
+PRINTFORMW 리리스의 요리실력은 형편없었다.
+PRINTFORMW 당신도 어차피 기대는 안 하고 있었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 리리스는 요리에 자신있어 보였다..
+PRINTFORMW 그녀 말대로 당신의 입맛에도 괜찮았다.
+CASE "High"
+PRINTFORMW 리리스의 요리엔 정성이 있었다.
+PRINTFORMW 제일은 아니더라도 충분히 맛있었다.
+CASE "Affection"
+PRINTFORMW 리리스가 만든 요리를 맛본다.
+PRINTFORMW 요리도 괜찮았지만,
+PRINTFORMW 사실은 리리스가 더 맛있을 것 같다.
+CASE "Marryed"
+PRINTFORMW 리리스가 해준 요리를 맛있게 먹는다.
+PRINTFORMW 그녀의 정성이 담겨 있었다.
+PRINTFORMW 「역시, 리리스는 일등 신부가 맞지요?」
+PRINTFORMW 그녀는 뿌듯한 얼굴로 당신을 바라보았다.
+CASE "Annoyed"
+PRINTFORMW 리리스가 마지못해서 만든 요리를,
+PRINTFORMW 당신은 불편한 기분으로 먹는다.
+PRINTFORMW 맛이 없진 않았다.
+CASE "Fear"
+PRINTFORMW 리리스의 요리는 썩 훌륭한 편이었다.
+PRINTFORMW 「맛있으신가요?」
+PRINTFORMW 리리스가 조심스럽게 묻는다.
+PRINTFORMW 당신은 말없이 고개를 끄덕였다.
+PRINTFORMW 그러자 그녀는 안도의 한숨을 쉰다.
+CASE "Weak"
+PRINTFORMW 리리스가 만든 요리를 말없이 먹었다.
+PRINTFORMW 먹으면서 당신은 속으로 맛있다고 생각했다.
+PRINTFORMW 그녀는 당신의 눈치만 살피고 있다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 4
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 당신은 요리를 먹었다.
+PRINTFORMW 먹는 데 집중하는 당신을 보고,
+PRINTFORMW 리리스가 만족한 듯이 웃었다.
+CASE "High"
+PRINTFORMW 당신은 요리를 맛있게 먹는다.
+PRINTFORMW 먹는 데에 정신이 팔린 당신을 보고,
+PRINTFORMW 리리스가 기쁘게 바라보고 있다.
+CASE "Affection"
+PRINTFORMW 당신은 기쁘게 요리를 먹었다.
+PRINTFORMW 비단 맛이 좋아서만은 아니었다.
+PRINTFORMW 정성이 담긴 요리라서 더욱 기뻤다.
+PRINTFORMW 리리스도 기뻐했다.
+CASE "Marryed"
+PRINTFORMW 당신은 즐겁게 요리를 먹어준다.
+PRINTFORMW 맛도 좋을 뿐만 아니라 흐뭇하기도 하다.
+PRINTFORMW 다음엔 당신이 하고 싶어졌다.
+PRINTFORMW 「천천히 드세요. 이거 다 드시면 목욕?
+PRINTFORMW 아니면...... 리리스? 후훗.」
+PRINTFORMW 리리스는 부드럽게 당신을 바라보았다.
+CASE "Annoyed"
+PRINTFORMW 당신은 말없이 요리를 먹었다.
+PRINTFORMW 리리스의 요리는 맛이 있었지만,
+PRINTFORMW 왠지 모르게 차가움이 느껴졌다.
+PRINTFORMW 좀 원망스런 시선도 느껴진다.
+CASE "Fear"
+PRINTFORMW 당신은 말없이 요리를 먹었다.
+PRINTFORMW 리리스는 조마조마하게 당신을 보고 있다.
+PRINTFORMW 확실히 리리스의 요리는 맛있었다.
+PRINTFORMW 당신의 표정이 풀어지자 리리스도 안도한다.
+CASE "Weak"
+PRINTFORMW 당신은 조용히 요리를 먹었다.
+PRINTFORMW 리리스는 말없이 당신을 살피고 있다.
+PRINTFORMW 요리는 맛있었다. 당신은 표정을 푼다.
+PRINTFORMW 리리스가 작은 한숨을 내쉰다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+ENDIF
+
+@M_No16_Sell
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 당신은 리리스를 팔겠다고,
+PRINTFORMW 리리스에게 말했다.
+PRINTFORMW 리리스는 잠시 가만히 당신을 보다가,
+PRINTFORMW 「역시, 리리스가 마음에 안 드셨나요?
+PRINTFORMW 그럴 거 같긴 했어요.
+PRINTFORMW 다음에 다시 만나면 좋겠네요.」
+PRINTFORMW 하면서 순순히 물러났다.
+PRINTFORMW 당신은 왠지 씁쓸했다.
+PRINTFORMW 리리스는 얼마 뒤 모습을 감추었다.
+CASE "High"
+PRINTFORMW 당신은 리리스를 팔겠다고,
+PRINTFORMW 리리스에게 말했다.
+PRINTFORMW 리리스는 눈을 부릅뜨고는 아무 말도 못한다
+PRINTFORMW 「이럴 리가......
+PRINTFORMW 주인님, 리리스가 잘못했어요.
+PRINTFORMW 한번만 더 생각해 주세요.」
+PRINTFORMW 리리스가 눈물을 글썽이며 매달렸다.
+PRINTFORMW 당신은 고개를 돌려 외면했다.
+PRINTFORMW 결국 리리스는 팔리게 되었다.
+CASE "Affection"
+PRINTFORMW 당신은 리리스를 팔겠다고,
+PRINTFORMW 리리스에게 말했다.
+PRINTFORMW 리리스는 눈을 부릅뜨고는 아무 말도 못한다
+PRINTFORMW 「뭔가...... 잘못된 거 아닌가요?」
+PRINTFORMW 당신은 아무 대답도 않았다.
+PRINTFORMW 리리스는 무릎까지 꿇고 사정했다.
+PRINTFORMW 「주인님, 리리스가 잘못했어요.
+PRINTFORMW 한번만 더 생각해 주세요.
+PRINTFORMW 리리스가 잘못한 거 다 고칠게요. 네?」
+PRINTFORMW 리리스가 눈물을 글썽이며 매달렸다.
+PRINTFORMW 당신은 고개를 돌려 외면했다.
+PRINTFORMW 결국 리리스는 보이지 않게 되었다.
+CASE "Marryed"
+PRINTFORMW 당신은 리리스를 팔겠다고,
+PRINTFORMW 리리스에게 말했다.
+PRINTFORMW 리리스는 눈을 부릅뜨고는 아무 말도 못한다
+PRINTFORMW 「뭔가...... 잘못된 거 아닌가요?」
+PRINTFORMW 당신은 아무 대답도 않았다.
+PRINTFORMW 리리스는 무릎까지 꿇고 사정했다.
+PRINTFORMW 「주인님, 리리스가 잘못했어요.
+PRINTFORMW 한번만 더 생각해 주세요.
+PRINTFORMW 주인님께 제대로 맞출게요. 그러니까」
+PRINTFORMW 리리스가 눈물을 글썽이며 매달렸다.
+PRINTFORMW 당신은 고개를 돌려 외면했다.
+PRINTFORMW 결국 리리스는 어디론가 팔려갔다.
+CASE "Annoyed"
+PRINTFORMW 당신은 리리스를 팔겠다고,
+PRINTFORMW 리리스에게 말했다.
+PRINTFORMW 리리스는 잠시 가만히 당신을 보다가,
+PRINTFORMW 「역시, 리리스가 마음에 안 드셨나요?
+PRINTFORMW 그럴 거 같긴 했어요.
+PRINTFORMW 다음에 다시 만나면 좋겠네요.」
+PRINTFORMW 하면서 순순히 물러났다.
+PRINTFORMW 그리고 그녀가 사라지자,
+PRINTFORMW 당신은 왠지 씁쓸했다.
+PRINTFORMW 좀 더 잘 할 수 있지 않았을까, 하는
+PRINTFORMW 부질없는 생각도 들었다.
+CASE "Fear"
+PRINTFORMW 당신은 리리스에게 사실을 전했다.
+PRINTFORMW 리리스는 눈을 깜박이다가,
+PRINTFORMW 「역시, 리리스를 받아들이실 수 없었나요?」
+PRINTFORMW 하면서 중얼거렸다.
+PRINTFORMW 너는 내가 싫잖아, 라고 당신이 대답했다.
+PRINTFORMW 리리스는 묘한 표정으로 바라보았다.
+PRINTFORMW 긍정도 부정도 아닌 듯한.
+PRINTFORMW 이윽고 그녀는 팔려가 보이지 않게 되었다.
+CASE "Weak"
+PRINTFORMW 당신은 리리스에게 사실을 전했다.
+PRINTFORMW 리리스는 조심스럽게 당신을 살펴보다가,
+PRINTFORMW 「이제야 리리스가 정말로 싫어지셨군요.」
+PRINTFORMW 라고 중얼거렸다.
+PRINTFORMW 당신은 아무런 대답도 하지 않았다.
+PRINTFORMW 서로 고개를 돌리고 말을 하지 않았다.
+PRINTFORMW 이것이 정답이었는지는 알 수 없었다.
+PRINTFORMW 그리고 그녀는 당신 앞에서 자취를 감추었다.
+CASE "Break"
+PRINTFORMW 당신은 리리스에게 통보했다.
+PRINTFORMW 리리스는 잠시 가만히 있었다.
+PRINTFORMW 그러더니 헤실헤실 웃었다.
+PRINTFORMW 「이제야 진짜 주인님 만나러 가네요.
+PRINTFORMW 후후훗! 리리스를 정말 사랑해 주시는,
+PRINTFORMW 정말 좋은 주인님이 기다리세요.」
+PRINTFORMW 리리스가 눈을 반짝이며 계속 말했다.
+PRINTFORMW 그녀는 곧 모습을 감추었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_Disuse
+SELECTCASE CSTR:GETCHARA(16):1
+CASE "Low"
+PRINTFORMW 당신은 리리스에게 사실을 통보했다.
+PRINTFORMW 리리스는 물끄러미 당신을 바라보았다.
+PRINTFORMW 「어디로 갈지는 모르겠지만,
+PRINTFORMW 리리스가 쓸모 없으셨다는 게
+PRINTFORMW 제일 충격이에요.」
+PRINTFORMW 당신은 어깨를 으쓱했다.
+CASE "High"
+PRINTFORMW 당신이 사실을 말하자,
+PRINTFORMW 리리스는 눈을 부릅뜨고는 아무 말도 못했다.
+PRINTFORMW 「이럴 리가......
+PRINTFORMW 주인님, 리리스가 잘못했어요.
+PRINTFORMW 한번만 더 생각해 주세요.」
+PRINTFORMW 리리스가 눈물을 글썽이며 매달렸다.
+PRINTFORMW 당신은 고개를 돌려 외면했다.
+PRINTFORMW 얼마 뒤 수거반이 도착해 그녀를 데려갔다.
+CASE "Affection"
+PRINTFORMW 당신이 사실을 말하자,
+PRINTFORMW 리리스는 멍하니 서 있었다.
+PRINTFORMW 「주인님. 뭔가...... 잘못된 거 아닌가요?」
+PRINTFORMW 당신은 아무 대답도 않았다.
+PRINTFORMW 리리스는 무릎까지 꿇며 사정했다.
+PRINTFORMW 「주인님, 리리스가 잘못했어요.
+PRINTFORMW 한번만 더 생각해 주세요.
+PRINTFORMW 주인님께 제대로 맞출게요. 그러니까」
+PRINTFORMW 리리스가 눈물을 글썽이며 매달렸다.
+PRINTFORMW 당신은 고개를 돌려 외면했다.
+PRINTFORMW 결국 수거반이 리리스에게 다가왔다.
+PRINTFORMW 그녀는 고개를 푹 숙이고 끌려갔다.
+CASE "Marryed"
+PRINTFORMW 당신이 사실을 말하자,
+PRINTFORMW 리리스는 멍하니 서 있었다.
+PRINTFORMW 「주인님. 뭔가...... 잘못된 거 아닌가요?」
+PRINTFORMW 당신은 아무 대답도 않았다.
+PRINTFORMW 리리스는 무릎까지 꿇며 사정했다.
+PRINTFORMW 「주인님, 리리스가 잘못했어요.
+PRINTFORMW 한번만 더 생각해 주세요.
+PRINTFORMW 주인님께 제대로 맞출게요. 그러니까」
+PRINTFORMW 리리스가 눈물을 글썽이며 매달렸다.
+PRINTFORMW 당신은 고개를 돌려 외면했다.
+PRINTFORMW 결국 수거반이 리리스에게 다가왔다.
+PRINTFORMW 그녀는 고개를 푹 숙이고 끌려갔다.
+CASE "Annoyed"
+PRINTFORMW 당신은 리리스에게 사실을 통보했다.
+PRINTFORMW 리리스는 물끄러미 당신을 바라보았다.
+PRINTFORMW 「어디로 갈지는 모르겠지만,
+PRINTFORMW 리리스가 쓸모 없으셨다는 게
+PRINTFORMW 제일 충격이에요.」
+PRINTFORMW 당신은 어깨를 으쓱했다.
+PRINTFORMW 곧 수거반이 도착해 그녀에게 다가왔다.
+CASE "Fear"
+PRINTFORMW 당신은 리리스에게 사실을 통보했다.
+PRINTFORMW 리리스는 복잡한 눈으로 당신을 바라보았다.
+PRINTFORMW 「결국, 이렇게 된 건가요.
+PRINTFORMW 주인님을 좀 더 잘 모셨다면.」
+PRINTFORMW 그녀는 시원섭섭한 표정을 짓더니,
+PRINTFORMW 두 손을 내밀었다.
+PRINTFORMW 리리스의 눈에선 조금의 미련도 엿보였다.
+PRINTFORMW 수거반이 그녀의 손에 족쇄를 채우고,
+PRINTFORMW 유유히 데려갔다.
+CASE "Weak"
+PRINTFORMW 당신은 리리스에게 사실을 통보했다.
+PRINTFORMW 리리스는 힘없이 눈을 들어 바라보았다.
+PRINTFORMW 체념한 듯한 그녀의 표정에서는,
+PRINTFORMW 어떤 뜻도 읽기 어려웠다.
+PRINTFORMW 리리스는 얌전히 일어섰다.
+PRINTFORMW 그리고.......
+CASE "Break"
+PRINTFORMW 당신은 리리스에게 사실을 통보했다.
+PRINTFORMW 리리스는 아무런 반응도 보이지 않았다.
+PRINTFORMW 멍하니 당신만을 뚫어져라 보고 있었다.
+PRINTFORMW 당신은 수거반을 시켜서 가져가도록 한다.
+PRINTFORMW 수거반에 팔이 붙들리자,
+PRINTFORMW 리리스는 돌연 빙그레 웃었다.
+PRINTFORMW 「언젠가 다시 만나길 바래요. 주인님?」
+PRINTFORMW 당신은 소름이 돋아 눈을 피했다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(16):1 = 
+RETURN 1
+
+@M_No16_ENDING
+SELECTCASE CFLAG:엔딩플래그
+CASE 1
+PRINTFORMW 당신의 선물을 받은 리리스는,
+PRINTFORMW 눈을 동그랗게 뜨다가 얼굴을 붉힌다.
+PRINTFORMW 「이런 거 안 주셔도 그 마음 잘 알아요.」
+PRINTFORMW 「그렇지만, 주셔서 정말로 고마워요.」
+PRINTFORMW 「행복해서 죽을지도...... 후후훗」
+PRINTFORMW 반지를 받고 흐뭇해하던 리리스가,
+PRINTFORMW 정색하고 조용히 말해 왔다.
+PRINTFORMW 「실은, 조금 불안했거든요.」
+PRINTFORMW 「말로만 주인님의 연인이라고 하고」
+PRINTFORMW 「다른 아이들한테 뺏길 것 같고」
+PRINTFORMW 「언제 갑자기 리리스한테 싫증이 나실지.」
+PRINTFORMW 「항상 속으로 걱정했었어요.」
+PRINTFORMW 당신은 그럴 일 없다고 자신있게 말한다.
+PRINTFORMW 리리스는 조금 눈물을 글썽이며 말했다.
+PRINTFORMW 「네. 이제 믿을 수 있어요.」
+PRINTFORMW 「주인님께서 절 버리실 일은 없으리라고.」
+PRINTFORMW 「리리스는 전부터 그랬지만.」
+PRINTFORMW 「앞으로도 주인님 곁에서 보호해드릴 거예요.」
+PRINTFORMW 「제 목숨이 살아 있는 한.......」
+PRINTFORMW 「정말 감사해요. 사랑 그 이상으로.」
+PRINTFORMW ............
+PRINTFORMW .........
+PRINTFORMW ......
+PRINTFORMW 그로부터 시간이 지났다.
+PRINTFORMW 「아, 주인님. 좀 더, 좀 더~
+PRINTFORMW 화끈하게 때려 주세욧!」
+PRINTFORMW 당신과 리리스는 여전히 붙어 다녔다.
+PRINTFORMW 주변의 시선이 따가울 정도로 같이,
+PRINTFORMW 뜨겁게 보냈다.
+PRINTFORMW 낮에는 조금 많이 가까이 지내면서,
+PRINTFORMW 밤에는 리리스를 조금 괴롭히면서,
+PRINTFORMW 궁합이 잘 맞는 커플로 함께 살아갔다.
+PRINTFORMW 당신 덕분에 리리스의 살벌함이나,
+PRINTFORMW 드문 이상 행동은 사그라들었다.
+PRINTFORMW 당신의 사랑이 리리스를 변하게 만들었다.
+PRINTFORMW ............
+PRINTFORMW .........
+PRINTFORMW ......
+PRINTFORMW 더욱 세월이 흘렀을 때.
+PRINTFORMW 리리스는 당신의 딸을 낳았다.
+PRINTFORMW 딸의 이름은 미니 리리스였다.
+PRINTFORMW 「리리스! 아빠 일 방해하면 안 된댔죠?」
+PRINTFORMW 「리리쮸도 전화 할래요-」
+PRINTFORMW 「그건 엄마 몫이라고 했잖아요.」
+PRINTFORMW 딸이 입술을 내민다.
+PRINTFORMW 「쫌생이네용.」
+PRINTFORMW 「그런 말은 대체 어디서 배웠니?」
+PRINTFORMW 이모한테 배웠을 것이다.
+PRINTFORMW 리리스가 딸에게서 전화기를 뺏는다.
+PRINTFORMW 딸이 울상을 짓고는,
+PRINTFORMW 「......나쁜 리리쮸가 가요.......」
+PRINTFORMW BB탄총을 꺼내 쏘려고 든다. 하지만,
+PRINTFORMW 리리스보다 빠를 리 없다.
+PRINTFORMW BB탄총을 빼앗은 리리스가,
+PRINTFORMW 딸을 허리에 끼고 엉덩이를 찰싹 때린다.
+PRINTFORMW 「엄마한테 BB탄 쏘면 안 된댔지요?」
+PRINTFORMW 「이번이 세번째니까 혼내는 거예욧.」
+PRINTFORMW 찡찡 울며 혼나던 미니 리리스는,
+PRINTFORMW 당신이 오자 반색한다.
+PRINTFORMW 「아빠! 엄마가 때려쪄요!」
+PRINTFORMW 「여보. 또 애랑 투닥거릴래.」
+PRINTFORMW 당신은 쓴웃음 지으며,
+PRINTFORMW 딸과 리리스를 마주 꿇어앉힌다.
+PRINTFORMW 미니 리리스의 장난전화를 혼내고
+PRINTFORMW 나잇값 못하는 리리스도 혼낸다.
+PRINTFORMW 둘이 화해 안하면 화낸다고 하니,
+PRINTFORMW 모녀는 마지못해 서로 사과한다.
+PRINTFORMW 당신은 그리고 나서야 하루의 평화를 얻었다.
+PRINTFORMW 착해진 리리스와 지내는 일상이었다.
+PRINTFORMW 조금은 이상하지만, 아주 사랑스런,
+PRINTFORMW 당신의 반쪽과 지내는 일상이다.
+PRINTFORMW 리리스 엔딩 No. 1
+PRINTFORMW 
+PRINTFORMW 유유상종
+RETURN 1
+CASE 2
+PRINTFORMW 당신은 리리스에게 약혼반지를 건넸다.
+PRINTFORMW 리리스는 불신 가득한 표정으로,
+PRINTFORMW 말없이 반지와 당신을 번갈아 보았다.
+PRINTFORMW 오랜만에 이성이 돌아오나 싶다.
+PRINTFORMW 그러던 차, 그녀가 별안간 깔깔 웃는다.
+PRINTFORMW 「주인님. 너무 늦게 돌아오셨어요.」
+PRINTFORMW 당신이 눈썹을 치켜세웠다.
+PRINTFORMW 「주인님은 리리스를 싫어하셨잖아요.」
+PRINTFORMW 「그래서 리리스도 리리스가 싫어요.」
+PRINTFORMW 「리리스는요, 다른 아이들처럼 다정하고,」
+PRINTFORMW 「주인님께 부담드리지 않고,」
+PRINTFORMW 「편안할 수 있는 아이가 되고 싶었어요.」
+PRINTFORMW 「그렇지만 주인님의 마음에」
+PRINTFORMW 「들지 못했어요.」
+PRINTFORMW 당신이 말 없이 리리스를 바라본다.
+PRINTFORMW 그녀의 현실도피는 이제 끝을 맞이하는가.
+PRINTFORMW 속으로 혀를 차는 그 순간이었다.
+PRINTFORMW 리리스가 품에서 권총을 꺼냈다.
+PRINTFORMW 당신은 움찔하고 놀랐지만,
+PRINTFORMW 리리스는 자신의 관자놀이에 권총을 댔다.
+PRINTFORMW 당신의 눈이 부릅떠진다.
+PRINTFORMW 언제나 멍하던 그녀의 눈빛이,
+PRINTFORMW 지금은 처음 만났을 때처럼 빛났다.
+PRINTFORMW 「그래도 반지를 주신 걸 보니......」
+PRINTFORMW 「이런 리리스라도 좋으셨던 건가요?」
+PRINTFORMW 「후후후, 하지만 죄송해요.」
+PRINTFORMW 「리리스는 너무 많이 망가졌어요.」
+PRINTFORMW 「속으로 주인님을 계속 불렀지만,」
+PRINTFORMW 「주인님께서 자꾸 멀어지셔서.」
+PRINTFORMW 당신은 아무 말도 하지 못했다.
+PRINTFORMW 「주인님이 조금 걱정되지만......」
+PRINTFORMW 「리리스보다 더 편안한 아이를 찾으세요.」
+PRINTFORMW 「리리스는 역시 실패작이었어요.」
+PRINTFORMW 리리스의 눈이 순간 이채를 띠었다.
+PRINTFORMW 당신은 얼른 리리스에게,
+PRINTFORMW 멈춰! 라고 말하려 한다.
+PRINTFORMW 하지만 리리스가 방아쇠를 당기는 속도는,
+PRINTFORMW 당신의 세치 혀보다도 빨랐다.
+PRINTFORMW 당신은 비명을 질렀다.
+PRINTFORMW 리리스 엔딩 No. 2
+PRINTFORMW 
+PRINTFORMW 실패한 리리스
+RETURN 1
+CASE 3
+PRINTFORMW 당신의 선물을 받은 리리스는,
+PRINTFORMW 잘 믿지 못하며 선물과 당신을 살핀다.
+PRINTFORMW 「정말 리리스를 선택해 주시는 건가요?」
+PRINTFORMW 「솔직히...... 믿지 못하겠지만.」
+PRINTFORMW 「리리스는 주인님이 좋으니까요.」
+PRINTFORMW 당신도 이날따라 기분이 즐거웠다.
+PRINTFORMW 오랜만에, 혹은 전에 없이,
+PRINTFORMW 리리스를 정말 따뜻하게 대했다.
+PRINTFORMW 사랑스럽게 어루만져 주었고,
+PRINTFORMW 씨를 받게 만들었다.
+PRINTFORMW 그것만으로도 리리스는 감격해 했다.
+PRINTFORMW 하지만 변덕스런 당신은 거기서 끝나지 않았다.
+PRINTFORMW 어떤 날은 리리스를 학대하고,
+PRINTFORMW 어떤 날은 정말로 리리스를 사랑해 주었다.
+PRINTFORMW 당신만이 아니라 리리스도 미쳐갔다.
+PRINTFORMW 리리스는 당신의 눈치를 살필 뿐만 아니라
+PRINTFORMW 학대로 인한 스트레스를 풀고 싶어했다.
+PRINTFORMW 그녀가 선택한 방법은 가학이었다.
+PRINTFORMW 폭력의 악순환이 시작됐다.
+PRINTFORMW 당신이 안 보이는 곳에서,
+PRINTFORMW 다른 바이오로이드를 무시하고,
+PRINTFORMW 폭행하고, 괴롭히고, 비웃었다.
+PRINTFORMW 당신에게 받은 학대 그대로
+PRINTFORMW 리리스는 남에게 되돌려주었다.
+PRINTFORMW 주변에서 처음 리리스에게 품은 이미지처럼.
+PRINTFORMW 나쁜 리리스는 공포의 대상이 되어갔다.
+PRINTFORMW 당신이라고 그것을 모르지는 않았다.
+PRINTFORMW 하지만 당신은 리리스를 방조했다.
+PRINTFORMW 스트레스 해소거리를 남겨줄 뿐더러
+PRINTFORMW 세간의 공포의 대상을 지배할 수 있다는
+PRINTFORMW 비뚤어진 지배욕 때문이었다.
+PRINTFORMW 당신의 묵인하에 리리스는 오늘도
+PRINTFORMW 망가진 마음을 타인에게 쏟아낸다.
+PRINTFORMW 「이게! 네년이 감히 내 어깨를 건드려?」
+PRINTFORMW 「늙어빠진 게 어디서 감히 위협을 해?
+PRINTFORMW  주인님이 오냐오냐 하니까.」
+PRINTFORMW 「그렇게 초콜릿이 좋으면 항문에 쑤셔주지.」
+PRINTFORMW 「야, 다가오지 말라고 몇번이나 말했어?
+PRINTFORMW  주인님의 노리개가 되고 싶으면,
+PRINTFORMW  리리스의 허락부터 받으라고.」
+PRINTFORMW 리리스는 당신을 등에 업고 권력을 휘둘렀다.
+PRINTFORMW 착한 리리스라는 말은 불쾌한 농담이 되었다.
+PRINTFORMW 당신은 멀리서 그 모습을 지켜보며,
+PRINTFORMW 똑같이 가학적인 미소를 띈다.
+PRINTFORMW 저런 리리스조차 당신과 단둘이 있을 때엔,
+PRINTFORMW 누구보다도 순종적인 아내가 될 테니.
+PRINTFORMW 리리스 히든 엔딩
+PRINTFORMW 
+PRINTFORMW 나쁜 리리스
+RETURN 1
+ENDSELECT
+RETURN 0
+

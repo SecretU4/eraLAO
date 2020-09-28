@@ -1,0 +1,6065 @@
+﻿@IS_M_No90
+RETURN 1
+
+@M_No90_TRAIN_START_0
+PRINTFORMW 테티스가 살짝 열려진 문 틈 사이로 고개를 빼꼼 내민다.
+PRINTFORMW 「여기가 사령관의 집인가요? 재밌어 보이는 걸요?」
+PRINTFORMW 테티스의 눈이 초승달처럼 휘어지며 당신을 바라본다.
+PRINTFORMW 「사령관이 구입한 바다의 여신 테티스, 등장이에요!」
+PRINTFORMW 「저를 구입한 걸 분명 후회하지 않으실걸요?」
+PRINTFORMW 「혹시... 저한테 이상한 생각을 하고 구입한 건 아니겠죠? 꺄하핫!」
+CFLAG:조교여부 = 1
+RETURN 1
+
+@M_No90_TRAIN_START_1
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Confession"
+PRINTFORMW 「사령관, 저기 봐요. 엄청 큰 헬리콥터예요!」
+PRINTFORMW 테티스는 당신을 불러 창 밖을 날아가는 헬리콥터를 가리켰다.
+PRINTFORMW 「있지, 사령관~ 저를 선택해줘서 고마워요.」
+PRINTFORMW 「...이건 그냥 평소에도 하고 싶던 말!」
+PRINTFORMW 창밖에는 헬리콥터가 날아 지나가고 있다.
+PRINTFORMW 「사실 사령관도 알다시피 저는 그렇게 환영받는 성격은 아니거든요.」
+PRINTFORMW 「몸도 쪼끄매서 섹슈얼리티도 조금 떨어지고.」
+PRINTFORMW 「제 스스로는 제 몸매가 마음에 들지만 뭐, 어쩌겠어요. 보편적으로는 어린아이같은 몸인데.」
+PRINTFORMW 「그래도 사령관은, 저를 그저 어린아이로만 보지는 않잖아요.」
+PRINTFORMW 「내가 장난쳐도 곧잘 받아주고.」
+PRINTFORMW 「그래서 고마워요, 그냥...」
+PRINTFORMW 「제가 이렇게 누군가랑 친해질 수 있을 거라고는 생각한 적 없었는데.」
+PRINTFORMW 「바다 위에서는 물론... 호라이즌이 생각나겠지만.」
+PRINTFORMW 「사령관의 집 안에서는 저는 사령관의 편이에요.」
+PRINTFORMW 「평범하게 얘기하고, 장난치고, 일상을 보내고.」
+PRINTFORMW 「제가 이런 일상을 보낼 수 있다고는 옜날엔 꿈에도 상상하지 못했거든요.」
+PRINTFORMW 「그래서 고마워요 사령관, 제 맘 알죠?」
+PRINTFORMW 「...」
+PRINTFORMW 「제가 이렇게 장난끼가 많은 건 방어기재일지도 몰라요.」
+PRINTFORMW 「아무한테도 미움받기 싫고, 아무랑도 멀어지기 싫은 거.」
+PRINTFORMW 「맨날 사령관한테 그렇게 장난을 쳐 대도~ 사령관 없으면 안된다구요, 저.」
+PRINTFORMW 「그러니까 절 두고 어디 도망가시면 안 돼요~」
+PRINTFORMW 「장난은 제 일종의 애정표현이니까.」
+PRINTFORMW 「물론 그냥 받아들이기에는 조금 어렵단 걸 알지만...」
+PRINTFORMW 「사령관도 언젠가는 익숙해지지 않겠어요?」
+PRINTFORMW 「그러니까 사령관, 절 미워하지 말아주세요, 저 상처받는다구요?」
+PRINTFORMW 「저를 멀리 떨어뜨려 두지도 말고.」
+PRINTFORMW 「언제까지고 제 장난에 어울려 주세요.」
+PRINTFORMW 「오래오래~ 행복하게 살 때까지.」
+PRINTFORMW 「안 그러면 내가 아주 못된 장난을 쳐 버릴 테니까. 헤헤헤.」
+TFLAG:고백함 = 1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「어머머, 사령관은 벌써부터 이렇게 활.기.찬. 건가요?」
+DATAFORM 테티스가 이상한 곳에 악센트를 넣으면서 당신을 의미심장하게 바라본다.
+ENDLIST
+DATALIST
+DATAFORM 「오늘도~ 저랑 놀고 싶어서 이렇게 안절부절하는 모습이라니~」
+DATAFORM 「정말 사령관이라고는 믿을 수 없을 만큼 꼴불견이잖아요?」
+DATAFORM 「오늘은 특별히 이 테티스가 사령관이랑 같이 놀아주도록 할게요.」
+ENDLIST
+DATALIST
+DATAFORM 「제가 마음에 드신 건가요?」
+DATAFORM 「제가 마음에 든 거죠?」
+DATAFORM 「그렇지 않고서야 이렇게 적극적으로 구애할리가 없는데~」
+DATAFORM 테티스가 당신을 의미심장한 눈으로 바라본다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관~ 저에게만 아주 솔직히 말해 봐요.」
+DATAFORM 「저한테 변태짓하고 싶어서 참을 수가 없죠?」
+DATAFORM 「꺄하핫! 사령관 당황한 것 좀 봐!」
+ENDLIST
+DATALIST
+DATAFORM 「어, 사령관? 저 부르셨어요?」
+DATAFORM 「어라라~ 사령관이 제게 어떤 장난을 치시려고 그러는 걸까나~」
+DATAFORM 「사령관~ 잔뜩 기대하고 있을 테니까 실망시키지 말라구요~」
+ENDLIST
+DATALIST
+DATAFORM 「제가 보고싶으셨군요?」
+DATAFORM 「그 마음 잘 알죠! 바다의 여신, 테티스님을 매일매일 보고싶지 않을리가 없잖아요?」
+DATAFORM 「자, 사령관을 위해 제가 친히 나서 줄 테니 절 즐겁게 해 봐요.」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「유명한 퀴즈가 하나 있죠.」
+DATAFORM 「털 달린 막대를 입 속에 넣고 앞 뒤로 피스톤 운동을 하는 행위를 뭐라 그러는지 알아요?」
+DATAFORM 「네? 정답이요? 저도 모르는데! 꺄하핫! 사령관의 입으로 직접 말해보실래요?」
+ENDLIST
+DATALIST
+DATAFORM 「오늘의 저를 부르시다니, 사령관도 기운이 넘치시는게 틀림없네요.」
+DATAFORM 「사령관의 이 늠름한 자태를 좀 봐...」
+DATAFORM 「흉악한 거포를 달고 다니면서 공격 태세를 풀 생각도 하지 않으시는 거죠?」
+ENDLIST
+DATALIST
+DATAFORM 「저랑 같이 장난치고 싶으시다구요?」
+DATAFORM 「그럼 우리 같이 손장난이나 쳐 볼까요?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「저, 저기... 사령관?」
+DATAFORM 「그, 오늘은 여보인가요? 아니면 사령관인가요?」
+DATAFORM 「아, 아잇! 나도 몰라요!」
+ENDLIST
+DATALIST
+DATAFORM 「저랑 장난치시고 싶으시다구요? 옜날처럼요?」
+DATAFORM 「저야 뭐 사령관이랑 같이 노는 건 언제든지 환영이죠!」
+ENDLIST
+DATALIST
+DATAFORM 「아뇨아뇨, 제가 예전에 비해서 얌전해 진 게 아니라 사령관이 제 기운을 쏙 빼놓으신 거예요.」
+DATAFORM 「밤마다 그렇게 못살게 구는데 어떻게 낮까지 쌩쌩하게 있어요?」
+ENDLIST
+DATALIST
+DATAFORM 「달링이 좋아요, 여보가 좋아요, 자기야가 좋아요, 서방님이 좋아요, 당신이 좋아요, 사령관이 좋아요?」
+DATAFORM 「뭘로 불러드릴까요?」
+DATAFORM 「서, 설마.. 아빠는 아니죠? 사령관 그런 취향은 아니죠?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「웩, 사령관 왔어요?」
+DATAFORM 「파렴치한이라고 당당히 불러도 될까요?」
+ENDLIST
+DATALIST
+DATAFORM 「사령관이랑 같이 있는게 임무 서는 것보다 힘든 거 아시나요?」
+DATAFORM 「사령관 여자아이라고 봐주지도 않고 인정사정 없으시잖아요.」
+ENDLIST
+DATALIST
+DATAFORM 「아, 또 제 차례인가요.」
+DATAFORM 「알았어요. 준비할게요.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「걱정하지 마세요. 장난은 치지 않을게요.」
+DATAFORM 「저도 평온한 일상을 보내고 싶은 걸요.」
+ENDLIST
+DATALIST
+DATAFORM 「벌써 시간이 되었군요.」
+DATAFORM 「영원히 오지 않았다면 좋았을텐데...」
+ENDLIST
+DATALIST
+DATAFORM 「아니요, 사령관님. 기다리고 있었어요.」
+DATAFORM 「매도 먼저 맞는게 낫다고 그러잖아요?」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATAFORM 「오, 오늘은 아무 일도 일어나지 않겠죠? 그렇겠죠?」
+DATALIST
+DATAFORM 「사, 사령관... 저 관절이 삐걱거려요. 그래도 괜찮겠죠?」
+DATAFORM 「오, 오늘은 조금 살살... 부탁드릴게요.」
+ENDLIST
+DATALIST
+DATAFORM 「아, 시간인가요. 알았어요.」
+DATAFORM 「저... 혹시, 사령관. 호라이즌 일원들이 어디 있는지 아시나요?」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 「아, 사령관이네요. 기다리고 있었어요.」
+DATAFORM 「자, 여기는 호라이즌 맴버인 운디네하고 세이렌 양이에요. 인사하세요.」
+DATAFORM 「에? 왜 그런 눈으로 보고만 있는 거예요? 여기 있잖아요?」
+ENDLIST
+DATALIST
+DATAFORM 「어? 방금 전까지 저는 바다 위를 날고 있었는데...」
+DATAFORM 「제 착각이었나 봐요. 바로 준비할게요.」
+ENDLIST
+DATALIST
+DATAFORM 「제 이름이 뭐였죠? 아, 테티스. 깜빡했네요.」
+DATAFORM 「테티스는 준비하고 있을게요. 근데 여기가 어디였죠?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_TRAIN_END
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「앗, 벌써 장난 칠 시간이 끝나버린 건가요?」
+DATAFORM 「으음~ 아쉽네요. 사령관을 좀 더 알 수 있는 시간이었는데~」
+DATAFORM 「사령관이랑 저랑 긴밀한 사이가 되면 상상으로만 했던 앙큼한 짓을 할 수 있을지도 모르잖아요? 그쵸?」
+ENDLIST
+DATALIST
+DATAFORM 「아~ 벌써 이런 시간인가요?」
+DATAFORM 「어때요? 아쉬웠어요?」
+DATAFORM 「아니면 한 발 빼고 나서 개운해지신 건가요~ 꺄하핫! 거짓말이에요!」
+ENDLIST
+DATALIST
+DATAFORM 「지금에서야 말하는데 사령관이 제 가슴과 허벅지를 슬쩍슬쩍 보고 있었다는 거, 알고 있었다구요~」
+DATAFORM 「어라? 설마 숨길려고 했어요? 바다 위를 정찰하는 제가 그런 걸 놓칠거라고 생각하셨나요?」
+DATAFORM 「어유, 어유. 알았어요~ 뭘 그렇게 격하게 부정하고 그래요? 장난인데?」
+DATAFORM 「설마~ 사령관~ 혹시? 진짜루?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「엇, 아직 밀착 교배프레스도 못했는데!」
+DATAFORM 「그게 무슨 소리냐구요? 사령관님 방에서 읽은 책에 적혀 있던 건데요?」
+DATAFORM 「그런 책 없다구요? 거짓말하지 마요. 제가 봤는걸요?」
+DATAFORM 「제 말을 그렇게 못 믿겠으면 이따 밤에 제 방으로 찾아와요. 제가 뭘 배웠는지 알려드릴게요.」
+ENDLIST
+DATALIST
+DATAFORM 「어휴~ 오늘도 사령관의 음탕하고 엉큼한 장난을 받아내느라 몸이 너덜너덜해졌어요.」
+DATAFORM 「이렇게 제 몸을 막 쓰시다가는 제가 헤픈 여자가 되어 버린다구요?」
+ENDLIST
+DATALIST
+DATAFORM 「오늘도 미스 세이프티에게 전해드릴 놀라운 사실들이 잔뜩 있어요!」
+DATAFORM 「우선 사령관이 로리콤이라는 것 하고~」
+DATAFORM 「소아성애자라는 것 하고~ 페도필리아라는 것 하고~」
+DATAFORM 「어때요? 미스 세이프티가 들으면 어떻게 반응할 것 같아요?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「엑! 뭐라구요? 벌써 헤어질 시간이라구요?」
+DATAFORM 「언제 이렇게 시간이 빨리 갔어요? 말도 안 돼요!」
+DATAFORM 「이따 밤에 제 방에서 기다리고 있을 테니까 오늘도 안 오시면 각오하시라구요!」
+ENDLIST
+DATALIST
+DATAFORM 「뭐예요? 갈 시간이에요?」
+DATAFORM 「사령과안~ 저랑 더 놀고싶지 않아요?」
+DATAFORM 「사령관이 원하기만 한다면 애들의 놀이를 넘어설 수도 있는데~」
+ENDLIST
+DATALIST
+DATAFORM 「이따 밤에 찾아 갈 테니까 각오하고 계시라구요!」
+DATAFORM 「원래 진짜 악마들은 밤에 행동하는 거 아시죠? 쉽게 잠들었다가는 내일 아침에 매운 맛을 보실 지도 몰라요~」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「엣, 어... 시간 끝났어요? 벌써?」
+DATAFORM 「제, 제가 생각했던 것보다 조금 빠른데...」
+DATAFORM 「아, 아니.. 칭얼거리는 아니라.. 그냥 사령관님 보고 싶다구요~ 으엥~」
+ENDLIST
+DATALIST
+DATAFORM 「이렇게 끝이라고 해놓고 또 저 불러서 귀찮게 하실 거죠?」
+DATAFORM 「사실 사령관은 저보다 장난기가 더 많잖아요.」
+DATAFORM 「어휴, 사령관이 이렇게 장난끼가 먾을 줄 알았으면 밤에 좀 내버려 둘 걸 그랬어요.」
+DATAFORM 「아무리 저라고 해도 밤엔 좀 잠 좀 잡시다!」
+ENDLIST
+DATALIST
+DATAFORM 「어? 사령관? 설마 이걸로 끝이에요?」
+DATAFORM 「믿기지가 않을 정도의 허약함이네요. 고작 이 정도로 괜찮겠어요?」
+DATAFORM 「자, 여기서 저를 잡는다면 소원 하나 들어 드리죠. 저 잡아보세요~ 헹~ 못잡죠?」
+DATAFORM 「못잡죠? 에베베베베~」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「어휴, 돼지 사령관의 얼굴을 마주하느라 숨막힐 지경이었어요.」
+DATAFORM 「사령관~ 집에 박혀서 이러고 계시지만 말고 밖에도 좀 나가세요!」
+ENDLIST
+DATALIST
+DATAFORM 「사령관은 어떻게 된 게 마음씨가 그대로 얼굴에 드러나요?」
+DATAFORM 「사령관이 좀 더 착한 마음씨를 가졌다면 좀 괜찮을 얼굴이 됐을 텐데.」
+ENDLIST
+DATALIST
+DATAFORM 「저기, 제가 무슨 용도로 만들어졌는지는 알고 구입하신 거죠?」
+DATAFORM 「사령관이 하는 행동을 보면 그냥 로리콤 같은데요.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「히, 히익...! 또 때리시려는 거 아니죠?」
+DATAFORM 「끄, 끝난 거라구요? 다행이다. 또 맞는 줄 알았어요.」
+ENDLIST
+DATALIST
+DATAFORM 「가끔씩은... 너무하다고 생각이 들어요.」
+DATAFORM 「사, 사령관님 때문은 아니에요. 분명 저보다 심한 상황을 겪는 애들도 있을 테니까...」
+DATAFORM 「그냥 환경이 원망스러운 거죠...」
+ENDLIST
+DATALIST
+DATAFORM 「저는 일단 들어가면 소독하고 상처 난 곳부터 치료할게요.」
+DATAFORM 「제가 이런 꼴로 돌아다녔다가는 그걸 지켜보는 사람들도 맘이 편치 않을 테니까요.」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「아, 으, 아아...」
+DATAFORM 「싫어, 싫어... 이런 인생 따위...」
+ENDLIST
+DATALIST
+DATAFORM 「오늘도... 어떻게... 하루가 흘러갔네요.」
+DATAFORM 「그리고 내일도 똑같은 하루가... 계속되겠죠.」
+ENDLIST
+DATALIST
+DATAFORM 「오늘을 대체 어떻게 버틸 수 있었을까요?」
+DATAFORM 「정신에 금이 가는게 느껴져요. 처음에는 아주 작은 크랙이 점점 커져서...」
+DATAFORM 「이제는 확연히 느껴질 정도로 저를 위협하고 있어요.」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 「세이렌이에요? 세이렌? 저를 마중 나온 거죠?」
+DATAFORM 「기, 기다리고 있었어요! 가지 마세요! 제 임무가 끝났으니 곧 따라갈게요!」
+ENDLIST
+DATALIST
+DATAFORM 「제, 제 방이 어디죠? 사령관, 괜찮으시다면 안내해주실래요?」
+DATAFORM 「아, 아니... 기억이 안 나는 게 아니라...」
+DATAFORM 「방금 잠깐 시야가 까맣게 변했어요.」
+ENDLIST
+DATALIST
+DATAFORM 「호라이즌의 함대는 어디로 갔죠? 어긴 어디에요?」
+DATAFORM 「저는 작전을 수행하고 있었다구요! 제가 이런 곳에 있을리가 없어요!」
+DATAFORM 「세이렌은? 운디네는? 네레이드는?」
+ENDLIST
+DATALIST
+DATAFORM 「운디네.. 어디로 간 거예요..」
+DATAFORM 「아직 저를 기다리고 있죠? 금방 찾아갈게요...」
+DATAFORM 「부디 저를 기다리고 계셔 주세요...」
+DATAFORM 「금방 찾아갈 테니까... 꼭...」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM2
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「저를 왜 구입하셨어요?」
+DATAFORM 「귀여워서? 섹시해서?」
+DATAFORM 「참을 수 없을 정도로 사랑스러워서?」
+DATAFORM 테티스가 당신을 보며 웃고는 상의를 살짝 들어 보인다.
+DATAFORM 「관능적이어서? 꺄하핫!」
+ENDLIST
+DATALIST
+DATAFORM 「저는 멍~청하고, 얼~ 빠진 것들을 좋아해요.」
+DATAFORM 「그런 것들이 제가 놀려먹기 좋거든요!」
+DATAFORM 「사령과안~ 그거 알아요? 저는 장난치는 걸 매우 좋아한다구요?」
+DATAFORM 「그리고 제가 놀려먹을 대상도 좋아해요.」
+DATAFORM 「그런 생물들은 거의 다 저보다 쓸모없거든요!」
+DATAFORM 테티스는 소악마처럼 웃으며 당신을 바라봤다.
+ENDLIST
+DATALIST
+DATAFORM 「어머, 저한테 말을 거시다니~ 무슨 용건이시죠?」
+DATAFORM 테티스가 쿡쿡 웃으며 당신을 바라본다.
+DATAFORM 「혹시 사령과안~ 저한테...」
+DATAFORM 테티스가 당신의 귓가에 대고 속삭인다.
+DATAFORM 「저한테 관심있어요?」
+DATAFORM 테티스가 당신을 바라보곤 깔깔 웃는다.
+DATAFORM 「꺄하핫! 이 얼빠진 표정 좀 봐!」
+ENDLIST
+DATALIST
+DATAFORM 「저의 이 아름다운 굴곡에 넋이 나가신 건가요?」
+DATAFORM 테티스가 몸매를 뽐내는 듯이 당신의 앞에 선다.
+DATAFORM 「얼른 봐 두시라구요 사령관~ 지금 세상에서 제일 아름다운 미녀가 뽐내고 있잖아요?」
+ENDLIST
+DATALIST
+DATAFORM 「앗, 저기 바퀴벌레다!」
+DATAFORM 테티스가 구석을 가리키며 소리지른다.
+DATAFORM 「뻥이에요, 사령관~ 이런거에 놀라서 쓰겠어요?」
+DATAFORM 「설마 장난인데 진짜 놀라신 건 아니죠오?」
+DATAFORM 「꺄하핫! 온 동네 사람들이 사령관의 놀란 표정을 봤어야 했는데!」
+ENDLIST
+DATALIST
+DATAFORM 「만물의 어머니이며 위대하신 바다 여신님이 누구인지 알아요?」
+DATAFORM 「바로 저예요, 저! 테티스!」
+DATAFORM 테티스가 자랑스럽다는 듯 가슴을 팡팡 두드린다.
+DATAFORM 「저의 이 웅장하고 아름다운 모습에 벌써 푹 빠져버리신 건가요?」
+ENDLIST
+DATALIST
+DATAFORM 「저를 왜 그렇게 보고 게세요?」
+DATAFORM 「...히힛!」
+DATAFORM 「...그런데~ 조금 전부터 신경 쓰였거든요?」
+DATAFORM 「저한테 관심 있으세요?」
+DATAFORM 「꺄하핫! 닳는 것도 아니니까 조금, 보여드릴 수도 있다구요?」
+ENDLIST
+DATALIST
+DATAFORM 「바다를 좋아하냐구요?」
+DATAFORM 「그럼녀!」
+ENDLIST
+DATALIST
+DATAFORM 「저 귀여운 척하면 재수없져?」
+DATAFORM 「근데 저도 정말 곤란하다구요~」
+DATAFORM 「저는~ 귀여운 척 하는게 아니라 그냥 귀엽게 태어난~건데~」
+DATAFORM 「그거를~ 남들이 막 귀여운 척 한다 하면은~」
+DATAFORM 「테티스도 힘드로! 훙! 훙!」
+ENDLIST
+DATALIST
+DATAFORM 「머리카락은 헬기 프로펠러 부분에 안 말려들어가요.」
+DATAFORM 「어유, 제가 얼마짜린데 공학 설계할때 그걸 계산 안했겠어요?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「저는 원래 대잠헬기 역할로 만들어진 바이오로이드라구요?」
+DATAFORM 「그러니까~ 제 말은, 제 눈은 아주 날카롭고~ 매섭고~ 번뜩이고!」
+DATAFORM 「사령관의 아주 작은 움직임도 파악할 수 있다는 말씀!」
+DATAFORM 「그러니까 제가 못 볼 거라고 생각해서 그렇게 꿈틀꿈틀 대셨다가는 금방 들켜버릴 거라구요?」
+ENDLIST
+DATALIST
+DATAFORM 「저는 길고 단단한 걸 좋아한답니다?」
+DATAFORM 「츄러스, 막대 과자, 치즈스틱, 양치질...」
+DATAFORM 테티스가 당신의 눈을 바라보며 웃었다.
+DATAFORM 「그리고... 그 다음은 뭐라고 생각해요?」
+DATAFORM 「길고 단단한... 사령관의 것?」
+DATAFORM 테티스가 당신의 몸을 살짝 건드리려 할 때, 그녀가 멀리 떨어진다.
+DATAFORM 「설마 믿은 건 아니죠? 꺄하핫! 제가 그딴 걸 왜 좋아해요~ 사령관 완전 쉽다니깐~」
+ENDLIST
+DATALIST
+DATAFORM 「저 정도면 어디가서 빼놓을 수 없는 바이오로이드죠?」
+DATAFORM 「이 몸의 멋진 굴곡을 보세요. 아름답지 않나요?」
+DATAFORM 「네? 몸에 굴곡이라고는 하나도 없는 일자형 몸매가 아니냐구요?」
+DATAFORM 「헐, 사령관이 그런 몸을 좋아해서 저를 고른 거잖아요.」
+DATAFORM 「저는 이런 취향의 사람들에게는 최선의 선택이라구요?」
+ENDLIST
+DATALIST
+DATAFORM 「사령과안~ 뭐해요? 뭐해요오?」
+DATAFORM 「제 생각해요? 무슨 생각해요? 오늘도 테티스와 어떻게 놀아줄까 생각하고 있었죠?
+ENDLIST
+DATALIST
+DATAFORM 「저 같이 아찔한 몸매에 저 같은 성격을 가지면 아주 피곤하다구요.」
+DATAFORM 「몸은 누가 봐도 순정 그 자체에 어려 보이지만」
+DATAFORM 「속에는 깜찍한 소악마가 살고있어서...」
+DATAFORM 「우습게 보고 방심한다면」
+DATAFORM 「소악마에게 먹혀버릴 거예요?」
+ENDLIST
+DATALIST
+DATAFORM 「사령관~ 어깨가 쑤시거나 결리는 부분은 없나요?」
+DATAFORM 「있으시다면 제가 살짝만...」
+DATAFORM 「도와드릴까요?」
+DATAFORM 테티스가 작은 손가락을 당신에게 보여준다.
+ENDLIST
+DATALIST
+DATAFORM 「사령관~ 저한테 흘깃흘깃 눈치를 주시는게~」
+DATAFORM 「...에헤헷!」
+DATAFORM 「사령관도 참 순정파시지~」
+DATAFORM 「제가 좋으면 좋다고 말을 하면 되지 뭘 그렇게 뜸들여요? 꺄하핫!」
+ENDLIST
+DATALIST
+DATAFORM 「가끔씩은 바다가 생각나냐구요?」
+DATAFORM 「그럼녀!」
+ENDLIST
+DATALIST
+DATAFORM 「사령관~」
+DATAFORM 「솔직히 저 자고 있을 때 음흉한 생각, 했어요 안 했어요?」
+DATAFORM 「어? 설마 안 했다고 말할 생각이신가요?」
+DATAFORM 「사령관은 혹시 고자? 아니면 게이? 변태? 이상성욕자?」
+DATAFORM 「다리 사이에 그런거 달랑달랑~ 매달고 다니면서 부끄럽지도 않아요?」
+ENDLIST
+DATALIST
+DATAFORM 「사령관~ 사령관 사령관~」
+DATAFORM 「나~ 어젯밤에 기싱꿍꼬또!」
+DATAFORM 「...왜 정색해요?」
+ENDLIST
+DATALIST
+DATAFORM 「들고 다녔던 총이 무겁진 않았냐구요?」
+DATAFORM 「흥! 그 정돈 아무것도 아니었다구요!」
+DATAFORM 「세이렌이 사용하던 거포도 제게는 문제없어요!」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관, 원한다면 제 몸 한번 만져보실래요?」
+DATAFORM 테티스가 순진한 눈망울로 당신에게로 접근한다.
+DATAFORM 「뭐라고 하지 않을게요. 신고도 안 할게요. 미스 세이프티에게 안 이를 거라구요?」
+DATAFORM 「평생에 다시 없을 기회에요. 자아~」
+DATAFORM 테티스가 눈을 감고 당신에게로 팔을 뻗는다.
+DATAFORM 「일, 이, 삼, 땡! 삼초 끝났어요!」
+DATAFORM 「와, 설마 지금 저한테 진짜 손대려고 하신 거예요? 하, 참. 어이가 없어서.」
+DATAFORM 「그거 또 좋다고 손 여기까지 나온 것 좀 봐봐.」
+DATAFORM 「아주 응큼하다니깐? 사령관~ 그렇게 제가 고팠어요?」
+DATAFORM 「응? 응? 응?」
+ENDLIST
+DATALIST
+DATAFORM 「사령관, 좋아해요.」
+DATAFORM 느닷없이 테티스가 당신을 보며 말했다.
+DATAFORM 「장난 아니고, 진짜로 좋아해요.」
+DATAFORM 테티스가 당신을 똑바로 바라보고 있었다.
+DATAFORM 「...」
+DATAFORM 「아이, 참! 장난인데!」
+DATAFORM 테티스가 꺄르륵 웃으며 당신에게 손을 휘저어 보였다.
+ENDLIST
+DATALIST
+DATAFORM 「있잖아요~ 사령관. 저는 큰 걸 좋아하거든요.」
+DATAFORM 「바다에 있는 함선도 크고~」
+DATAFORM 「바다 안에 있는 잠수함도 크고~」
+DATAFORM 테티스가 팔을 쫙 벌려 허공에 휘저었다.
+DATAFORM 「바다는 그걸 다 수용할만큼 더 크고~」
+DATAFORM 「아무튼 전 큰 걸 좋아하는데...」
+DATAFORM 테티스가 당신을 보고 씩 웃었다.
+DATAFORM 「사령관 것도 큰지 확인해 봐도 돼요?」
+ENDLIST
+DATALIST
+DATAFORM 「제가 좋아하는 게 뭔지 알아요?」
+DATAFORM 「히히히, 안 가르쳐 줄 거예요~」
+DATAFORM 「아무리 졸라도 안 가르쳐 줄 거지롱~」
+DATAFORM 「음~ 음~」
+DATAFORM 「사령관이 내 부탁 하나만 들어주면 알려줄 수도 있는데...」
+DATAFORM 테티스가 당신을 향해서 고개를 숙인다.
+DATAFORM 「제가 원하는 것 하나만 들어주시겠어요? 사령관?」
+DATAFORM 테티스가 당신을 향해서 윙크한다.
+ENDLIST
+DATALIST
+DATAFORM 「있지~ 사령관 앞에 서면 평소처럼 장난을 쳐야 할까 망설여져요.」
+DATAFORM 「원래같으면 아무것도 아니게 장난 막 칠텐데...」
+DATAFORM 「조금은 자중하게 돼요.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관~! 어부바 해줘!」
+DATAFORM 「어부바! 어부바! 어부바!」
+DATAFORM 「사령관 위에 올라가면 하늘을 나는 것 같은 느낌이 들거란 말야~」
+ENDLIST
+DATALIST
+DATAFORM 「부비부비하고 싶냐구요?」
+DATAFORM 테티스가 눈을 똘망똘망 뜨며 당신을 바라보고 있다.
+DATAFORM 「그럼녀!」
+DATAFORM 그녀가 당신의 다리에 볼을 부비기 시작했다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「이, 있잖아요...」
+DATAFORM 테티스가 쭈뼛거리며 당신의 곁으로 다가온다.
+DATAFORM 「제가 지금까지 사령관한테 놀리면서 했던 말들」
+DATAFORM 「그러니까 뭐, 제가 장난친 것들 있잖아요...」
+DATAFORM 「지, 지금은 우리 무척 가까워진 상태니까... 사령관 하고싶은 대로 해도 되는, 데...」
+ENDLIST
+DATALIST
+DATAFORM 「사령관~ 뭐 하고 있어요?」
+DATAFORM 「제, 제 생각 한다구요?」
+DATAFORM 「으이....」
+DATAFORM 「으유....」
+DATAFORM 「그, 그렇게 보지 말아요! 부끄럽단 말이에요!」
+ENDLIST
+DATALIST
+DATAFORM 「장난끼가 좀 줄어든 것 같다구요?」
+DATAFORM 「그럴리가요! 그냥 조금 참고 있을 뿐이에요.」
+DATAFORM 「낮에 참아둬야지 이따 밤에 많이 놀 수 있잖아요?」
+ENDLIST
+DATALIST
+DATAFORM 「제가 요즘 조용하다구요?」
+DATAFORM 「그야~ 저도 성장이란 걸 했답니다?」
+DATAFORM 「사실은... 저도 사령관을 의식하고 있어가지구...」
+DATAFORM 「아, 몰라! 몰라!」
+ENDLIST
+DATALIST
+DATAFORM 「사령관~」
+DATAFORM 테티스가 당신의 몸을 툭툭 쳤다.
+DATAFORM 「한가해요? 한가하냐구요~」
+DATAFORM 테티스가 당신의 하반신 쪽으로 손을 가져간다.
+DATAFORM 「우리 같이, 재밌는 장난 하나 쳐 보지 않을래요?」
+DATAFORM 「왜, 들키지만 않으면 그만이잖아요~」
+ENDLIST
+DATALIST
+DATAFORM 「이, 있잖아요! 사령관!」
+DATAFORM 「사, 사, 사, 사령관은 어떤 여자가 취향이에요?」
+DATAFORM 테티스가 당신의 눈길을 피한다.
+DATAFORM 「호, 혹시 정숙하고 조용한 여자가 취향은 아니죠?」
+DATAFORM 「그, 그게 사령관의 취향이라면, 어, 어울려 줄 수도? 아닐 수도...?」
+ENDLIST
+DATALIST
+DATAFORM 「사령관~」
+DATAFORM 테티스가 당신의 어깨를 툭툭 치며 불렀다.
+DATAFORM 「이히히히~」
+DATAFORM 고개를 테티스쪽으로 돌리자, 그녀의 손가락이 당신의 볼을 콕 찌른다.
+DATAFORM 「걸려들었네요~」
+ENDLIST
+DATALIST
+DATAFORM 「사령관, 심심해요?」
+DATAFORM 「에에~ 난 사령관이랑 놀아줄 생각 없는데~」
+DATAFORM 테티스가 당신에게 무심하게 대한다.
+DATAFORM 「흐음~ 재밌는 걸 찾으신다면 다른 상대를 찾아봐요.」
+DATAFORM 당신이 고개를 돌리려고 하자, 그녀가 치마를 올린다.
+DATAFORM 「...」
+DATAFORM 「봤어요?」
+DATAFORM 「이런 놀이라면 해 줄 생각 있는데? 어쩌실래요?」
+ENDLIST
+DATALIST
+DATAFORM 「낮에는 따사로운 인간적인 여자」
+DATAFORM 「이때다 싶으면 묶었던 머릴 푸는 여자!」
+DATAFORM 「밤이 되면 심장이 터져버리는 여자!」
+DATAFORM 「그런 감.각.적인 여자!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관은 분명 로리콤일 거예요.」
+DATAFORM 「저를 산 이유 같은거, 딱 봐도 뻔하잖아요.」
+DATAFORM 「얼굴부터 티가 나요. 저를 어떤 눈으로 구입하셨는지.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관, 사령관은 제가 보기에도 최악의 인간이네요.」
+DATAFORM 「진짜 역겨워요.」
+DATAFORM 「함장님이 사령관 같은 인간을 봤다가는 상종도 하지 않을 거예요.」
+DATAFORM 「그나마 저니까 이렇게 말이라도 붙여 주는 거라구요.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관이니까 상전 대우 해주는 거예요, 알겠어요?」
+DATAFORM 「더 계속 하시다간 이런 대꾸도 끝이에요.」
+DATAFORM 「사령관이 저랑 안 맞는 걸 어떡하라구요. 이렇게 태어났는데.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관~ 혹시 혼자 해결하신지 한참 됐어요?」
+DATAFORM 「아니면~ 아직도 동정이라던가? 꺄하핫!」
+DATAFORM 「동정일게 뻔하죠! 거울 좀 보세요! 동정! 변태! 이상성욕자!」
+DATAFORM 「부히힛~ 하고 울어 보실래요? 사령관의 얼굴에 딱 어울릴 것 같은데~」
+ENDLIST
+DATALIST
+DATAFORM 「사령관한테 호감이요? 있을리가 없죠.」
+DATAFORM 「제가 여기 오고 나서 사령관이 제게 한 행동들을 생각해 보세요~」
+DATAFORM 「제가 바이오로이드고 자시고 간에, 멀쩡한 사람이라도 사령관이 행동하는 걸 보고 호감을 가진 여자가 있을까요?」
+ENDLIST
+DATALIST
+DATAFORM 「저는 원래는 바다 위를 날아다니는 헬리콥터예요.」
+DATAFORM 「사령관은 모르시겠지만 그건 그거대로 운치있는 일이죠.」
+ENDLIST
+DATALIST
+DATAFORM 「제가 뻔뻔하고 예의가 없다구요?」
+DATAFORM 「제 생긴 걸 보고도 그런 말이 나오시나요?」
+DATAFORM 「저처럼 아름답고 예쁘게 생긴 여자아이가 장난치는 거면 예의없는 게 아니고 활발한 거예요!」
+DATAFORM 「앙큼하다고도 하죠.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「너무 많이 맞았어요. 너무 많이...」
+DATAFORM 「이렇게 단기간에 많이 맞은 건 태어나서 처음일지도 몰라요.」
+DATAFORM 「어째서 그렇게 때리시는 거죠?」
+DATAFORM 「제게 공포감을 심어주실려고?」
+ENDLIST
+DATALIST
+DATAFORM 「사령관이 하는 행동이 제게 주종 관계를 명확히 인식시킬려고 하시는 거라면...」
+DATAFORM 「이미 성공이에요. 그만 하셔도 돼요.」
+DATAFORM 「정말로 그만 하실지는 모르지만...」
+DATAFORM 「그냥 사령관이 하신 행동이 이태까지 저를 교육시킬려고 하셨던 거라면...」
+DATAFORM 「그만해주세요.」
+ENDLIST
+DATALIST
+DATAFORM 「제 장난이요?」
+DATAFORM 「...그런 거 원하세요?」
+DATAFORM 「그걸 빌미로 저를 한대라도 더 때리실려고 하는 게 아니고요?」
+ENDLIST
+DATALIST
+DATAFORM 「제가 좋아하던 것들은 더 이상 눈 앞에 보이지 않아요.」
+DATAFORM 「파란 하늘과 파란 바다.」
+DATAFORM 「저랑 같이 놀던 호라이즌 대원들.」
+DATAFORM 「헬리콥터와 거대한 함선.」
+DATAFORM 「무엇하나 여기 있는게 없죠.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관, 사령관이 보기에도 저는 작고 약한 어린아이지요?」
+DATAFORM 「그래요, 그거면 됐어요.」
+DATAFORM 「가끔 제가 보는 저와 사령관이 보는 제가 다른 건가 싶어서...」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「자, 잘못했습니다. 헷갈리게 안 할게요.」
+DATAFORM 「죄송해요. 때리지만 말아주세요.」
+DATAFORM 「어제 맞은 데가 아직도 아파요. 빨갛게 부어올랐어요.」
+DATAFORM 「때리지 말아주세요.」 
+ENDLIST
+DATALIST
+DATAFORM 「제, 제, 제가 잘못했어요!」
+DATAFORM 「제 잘못이에요!」
+DATAFORM 「심한 짓 하지 말아주세요!」
+DATAFORM 「말 잘 듣는 아이가 될게요!」
+ENDLIST
+DATALIST
+DATAFORM 「저는... 어째서 이 세상을 살아가고 있는 걸까요.」
+DATAFORM 「저 한 명쯤... 이 넓은 세상에서 사라져도...」
+DATAFORM 「아무도 슬퍼하지 않을 걸요?」
+DATAFORM 「그런 세상에서... 제가 살아가는 건 대체 무슨 의미가 있을까요...」
+DATAFORM 「사령관... 전 대체 사령관에게 무슨 의미에요?」
+ENDLIST
+DATALIST
+DATAFORM 「하루하루 맞았던 걸 일기로 기록하면 벌써 공책 한 권을 끝냈을 거예요.」
+DATAFORM 「제일 심하게 맞았던 날은 기억도 잘 안 나요.」
+DATAFORM 「맞다가 정신이 끊어진 것 같았거든요.」
+ENDLIST
+DATALIST
+DATAFORM 「가끔 꿈에서 호라이즌 대원들이 나와요.」
+DATAFORM 「그럼 전 호라이즌 대원들을 향해 달려가는데...」
+DATAFORM 「한 번도 제 손에 닿은 적이 없어요.」
+ENDLIST
+DATALIST
+DATAFORM 「사령관... 저, 요즘 들어서 가끔씩 눈 앞이 까맣게 보이거든요?」
+DATAFORM 「이거 큰일 난 건 아니겠죠?」
+DATAFORM 「시야가 까맣게 변해선 아무것도 안 보여요.」
+DATAFORM 「그러다가 조금 시간이 지나고 정신 차리고 나면 다시 보이기는 하는데...」
+DATAFORM 「조금 무섭네요.」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 「운디네? 여기는 우리 사령관이에요. 인사드리세요.」
+DATAFORM 「사령관, 여기는 운디네예요. 대범한 척 하지만 실은 수줍음 많고 가련한 소녀니까 봐 주시라구요? 아하핫!」
+DATAFORM 「네? 운디네요? 여기 있잖아요? 제 옆에?」
+DATAFORM 「에이 설마, 여기 뻔히 서 잇는데 못 본 척 하실 거예요?」
+ENDLIST
+DATALIST
+DATAFORM 「방 안의 방. 그 방 안의 방. 방 안의 방 안의 방 안의 방 안의 네모.」
+DATAFORM 「네모난 각진 것에서 방 안의 꿈을 꾸며 방 밖의 방을 꾸는 꿈.」
+ENDLIST
+DATALIST
+DATAFORM 「오늘 아침엔 세이렌이 갔다 왔어요.」
+DATAFORM 「아침에 인사드리려고 했던 것 같은데 사령관이 자고 있어서 못 들어왔나 봐요.」
+DATAFORM 「어? 그러고 보니까 세이렌이 어디 있죠?」
+DATAFORM 「세이렌이 집 앞까지 있었는데 지금은 어디로 간 거죠?」
+ENDLIST
+DATALIST
+DATAFORM 「사령관, 저 요즘 진짜 이상해요...」
+DATAFORM 「가끔 제가 이전의 저 같지 않아요.」
+DATAFORM 「기억력도 많이 떨어진 것 같고... 가끔씩 여기가 현실이 아니라는 생각이 들어요.」
+DATAFORM 「왜 이러죠? 저 뇌가 아픈 것 같아요.」
+ENDLIST
+DATALIST
+DATAFORM 「오늘 밤엔 세이렌 방에서 잤어요.」
+DATAFORM 「무서웠지만 세이렌이 옆에 있어서 무섭지 않았어요.」
+DATAFORM 「무서운 사람이 쳐들어와도 세이렌이 옆에 있잖아요.」
+DATAFORM 「그래서 무섭지 않았어요.」
+DATAFORM 「무서웠지만 세이렌에겐 무섭지 않은 척했어요.」
+DATAFORM 「제가 무서운 기색을 보이면 세이렌도 무서워 할 거니까요.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM3
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 외모를 칭찬했다.
+DATAFORM 테티스는 거들먹거리면서 칭찬을 받아냈다.
+DATAFORM 「좋아요, 좋아. 이 테티스님을 모시려면 그 정도 립서비스는 할 줄 알아야죠.」
+DATAFORM 「뭔가 더 새로운 바리에이션은 없어요? 사랑스럽다든가~ 꽉 안아주고 싶다든가?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 얼굴을 친창했다.
+DATAFORM 「헤헤헤... 귀엽죠? 사랑스럽죠? 빨리 사랑스럽다고 말해요, 빨리!」
+DATAFORM 「아니면 사령관은 저보다 더 사랑스러운 존재를 알고 있다는 거예요?」
+DATAFORM 「거짓말! 세상에서 저보다 사랑스럽고 귀여운 존재는 없는걸요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 눈웃음을 칭찬했다.
+DATAFORM 「그거 알아요, 사령관?」
+DATAFORM 「제가 이렇게 웃을 때는 항상...」
+DATAFORM 테티스가 당신을 그윽하게 바라본다.
+DATAFORM 「사령관을 바라보고 있다는 것을요...」
+DATAFORM 테티스의 얼굴이 점점 가까워진다.
+DATAFORM 「꺄하하하핫! 방금 진지했어요? 진지 빨았어요? 꺄하하! 이 얼빠진 사령관의 얼굴 좀 봐!」
+DATAFORM 「사령관 지금 완전 멍청해보인다구요!」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 머리카락을 칭찬했다.
+DATAFORM 「어라? 고작 칭찬하는 부분이 머리카락이에요?」
+DATAFORM 「제 찰랑찰랑한 트윈테일이 보기 좋다고 생각하는 거예요?」
+DATAFORM 「어머머... 사령과안? 변.태.에.」
+DATAFORM 「그거 알아요? 저 같이 깜찍하고 귀여운 성격을 가진 바이오로이드에」
+DATAFORM 「자그마한 몸, 트윈테일이 섞여지면...」
+DATAFORM 「대부분 결과가 어떻게 나올지는 뻔하답니다?」
+DATAFORM 「구입하는 사람이 억누른 욕망을 가지고 있는 음침한 사람이라는 것 말이에요. 흐헷!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 몸매를 칭찬했다.
+DATAFORM 「이제는 로리콤인 걸 대놓고 드러내기라도 한 거예요?」
+DATAFORM 「저는 물론 제가 굉장히~ 섹시하다는 걸 알고 있지만」
+DATAFORM 「사령관의 시선으로 보면 그건 그냥 이상성욕자거든요?」
+DATAFORM 「완전 웃겨, 저 어디 가서 이런 얘기 퍼뜨리고 다녀도 돼요?」
+DATAFORM 「우리 사령관은 로리콤이다아~! 로리콤~!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 얼굴을 칭찬했다.
+DATAFORM 「그쵸! 제가 좀 빼어나기는 했죠!」
+DATAFORM 「근데, 어머머. 이게 뭐람. 제 앞에는 왠 두꺼비가 한 마리 있는걸요? 에궁~ 흉물스러워라~」
+DATAFORM 「아, 사령관 얘기한 건 아니에요! 꺄하핫! 신경쓰지 마세요!」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 몸을 칭찬했다.
+DATAFORM 「진심이에요 사령관?!」
+DATAFORM 테티스가 크게 소리치며 다가왔다.
+DATAFORM 「제, 제가 마음에 드시는... 거죠오...?」
+DATAFORM 「아이, 아무것도 아니에요. 신경쓰지 마세요.」
+DATAFORM 테티스가 당신을 향해 손을 내저었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손가락을 칭찬했다.
+DATAFORM 「이히히힛!」
+DATAFORM 「사령관~ 제가 이 작은 손으로 뭘 했으면 좋겠어요?」
+DATAFORM 「뭘 해드릴까요?」
+DATAFORM 「으음~ 저는 잘 모르겠고 사령관이 시키는 거나 하고싶은데~」
+DATAFORM 「참고로 저는 위 아래로 훑는 것도 잘하고요」
+DATAFORM 「다섯 손가락을 각기 움직여서 정성스레 손질하는 것도 잘해요.」
+DATAFORM 「응, 응?」
+DATAFORM 「사령관~ 방금 무슨 생각했을까?」
+DATAFORM 「나는 그냥 집안일 말한던데!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 얼굴을 칭찬했다.
+DATAFORM 「제 얼굴 이뻐요?」
+DATAFORM 「이쁘죠! 이쁘죠!」
+DATAFORM 「제 얼굴을 보면 어떤 생각이 들어요?」
+DATAFORM 「막 키스하구 싶구~」
+DATAFORM 「뺨을 부비부비 하구 싶구~」
+DATAFORM 「그런 생각 안 들어요?」
+DATAFORM 「네? 네?」
+DATAFORM 테티스가 폴짝폴짝 뛴다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 볼따구를 칭찬했다.
+DATAFORM 「말랑말랑해 보인다는 뜻인가요?」
+DATAFORM 「몰랑몰랑 모찌모찌 찐빵같나요?」
+DATAFORM 「앙, 하고 깨물어 주고 싶다구요?」
+DATAFORM 「제가 아무리 잡아먹기 딱 좋은 사령관만의 음식이지만~」
+DATAFORM 「쉽게 먹혀줄 생각은 없다구요~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 몸매를 칭찬했다.
+DATAFORM 「그죠그죠~」
+DATAFORM 「제 몸은 굉장히 합리적이고 임무에 적합하게 설계되었다구요~」
+DATAFORM 「이 쫙 뻗은 다리와 얇다란 몸매를 보세요.」
+DATAFORM 「굉장히 효율적으로 만들어진 것 같지 않아요?」
+DATAFORM 「몸무게도 가볍고!」
+DATAFORM 「이거 참, 들고 다닐수 있을 정도라니까요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 얼굴을 칭찬했다.
+DATAFORM 「제 얼굴이 이쁘다구요~?」
+DATAFORM 테티스가 당신에게 가까이 다가온다.
+DATAFORM 「자세히 보니 사령관의 얼굴도 만만치 않게 제 취향인걸요?」
+DATAFORM 「사령관~ 제가 사령관의 시간을 살 테니 우리 둘만 함께 오붓한 시간, 어때요?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 얼굴을 칭찬했다.
+DATAFORM 「무슨 속셈이시죠?」
+DATAFORM 「그렇게 노골적으로 칭찬하는 건 좀 생리적으로 기분 나쁘거든요?」
+DATAFORM 「베에~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 다리를 칭찬했다.
+DATAFORM 「헐, 사령관이 생각하고 계신 게 뭔지 딱 알겠어요.」
+DATAFORM 「제 귀엽고 가느다란 다리를 좌우로 쫙 벌려서」
+DATAFORM 「제가 옴짝달싹 못하게 힘으로 제압하고 마음대로 할 생각이시죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 가슴을 칭찬했다.
+DATAFORM 「사령관은 정말 구제할 수 없을 정도의 벌레 수준이네요.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 몸매를 칭찬했다.
+DATAFORM 「제, 제게 어떤 걸 원하시는 건가요?」
+DATAFORM 테티스가 두려운 눈으로 당신을 쳐다보았다.
+DATAFORM 「저에게 심한 짓을 할 생각이시라면...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 얼굴을 칭찬했다.
+DATAFORM 「...너무해요.」
+DATAFORM 「매번 제 얼굴이 찡그려지는 것을 것을 보면서...」
+DATAFORM 「그런 말을 하시다니, 즐기고 계신 건가요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리카락을 칭찬했다.
+DATAFORM 「자르는 게 좋을까요? 아예 단발로 확 잘라버릴까요?」
+DATAFORM 「이런 머리카락, 길어 봤자 머리채 잡히는 것 밖에 더 안 되잖아요.」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 얼굴을 칭찬했다.
+DATAFORM 「죄송합니다. 이렇게 태어나서.」
+DATAFORM 「어쩌면 태어나지 말았었어야 했어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 다리를 칭찬했다.
+DATAFORM 「아... 사실 저번에 다친 상처가 다 안 나았는데...」
+DATAFORM 「기억하시고 계셨으려나...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 복부를 칭찬했다.
+DATAFORM 「많이 맞았어요... 많이...」
+DATAFORM 「이 배에 사령관의 주먹이 꽂힐 때면 정신이 혼미해지죠...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 얼굴을 칭찬했다.
+DATAFORM 「저요? 제가 예쁘나요?」
+DATAFORM 「제 얼굴이 어떻게 생겼었죠? 제 얼굴을 보여주실 수 있나요?」
+DATAFORM 「어? 그러고 보니까 사람이 평생 자신의 얼굴을 보지 못하고 살아간다는 건 좀 무섭지 않나요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 말재간을 칭찬했다.
+DATAFORM 「운디네는 저를 싫어했어요.」
+DATAFORM 「제가 항상 운디네를 놀리고 도망갔기 때문이에요.」
+DATAFORM 「그럴 때마다 운디네는 부들부들거렸지만...」
+DATAFORM 「그런 운디네가 보고싶어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 몸매를 칭찬했다.
+DATAFORM 「벗을까요?」
+DATAFORM 「사령관이 제게 원하는 건 뻔하잖아요.」
+DATAFORM 「인두로 지지실래요?」
+DATAFORM 「쇠사슬을 목에 채우고 질질 끌며 돌아다니실래요?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM4
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 손을 살짝 잡았다.
+DATAFORM 「어머나~ 사령관님, 제 손을 잡고 싶었다면 진작에 말씀하시지.」
+DATAFORM 「혹시 손 말고 다른것도 잡고 싶지는 않아요?」
+DATAFORM 테티스가 당신의 귓가에 대고 속삭인다.
+DATAFORM 「허리라든가... 허벅지라든가... 이것저것 다른 곳이라든가...」
+DATAFORM 테티스가 쿡쿡 웃으며 당신을 바라본다.
+DATAFORM 「이런 말을 왜 멍청하게 듣고만 있어요? 사령관은 로리콤이에요? 아우~ 극혐이다 진짜아~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 살짝 잡았다.
+DATAFORM 「앗, 뭐, 뭐예요, 사령관?」
+DATAFORM 「사령관 손 완전 끈적끈적하고 찐득찐득해서 땀내나는 것 같아요.」
+DATAFORM 「이런 말로 상처받으시는 건 아니죠?」
+DATAFORM 「뭣하면 제가 깔끔하고 깨끗하게 만들어 드릴 수도 있는데에~」
+DATAFORM 테티스가 요망한 웃음을 지으며 당신의 손을 그녀의 입가로 가져간다.
+DATAFORM 그녀가 분홍빛 혀를 살짝 내밀고 당신의 손으로 천천히 다가간다.
+DATAFORM 「뭘 기대하고 있어요? 사령관 진짜 변태예요? 꺄하핫!」
+DATAFORM 테티스가 당신의 손을 패대기쳤다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 살짝 잡았다.
+DATAFORM 「뭐에요, 사령관? 여자애의 손은 처음 만져보나요?」
+DATAFORM 「그럴때는 좀더 조심스럽고 얌전하게 만져야 한다구요.」
+DATAFORM 「부끄러워 하는 건 아니죠?」
+DATAFORM 「사령관 혹시 여자애 손도 못 잡아봐서 제 손으로 대체하는 모쏠동정남은 아니겠죠? 아하하핫!」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 손을 살짝 잡았다.
+DATAFORM 「흐엣? 사, 사령관...?」
+DATAFORM 테티스가 글썽이는 눈동자로 당신을 돌아본다.
+DATAFORM 「그렇게... 저돌적으로 손을 잡아버리면...」
+DATAFORM 「저는... 저는....」
+DATAFORM 「아무렇지도 않네요~ 에베베베베~~」
+DATAFORM 테티스가 멀찍이 도망가서는 당신에게 혀를 내밀고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 살짝 잡았다.
+DATAFORM 「어? 사령관주제에 이제는 숙녀의 손도 막 잡아버리는 거예요?」
+DATAFORM 「이거이거~ 곤란한데요~ 사령관같은 사람이 자각 없이 그렇게 신체적 접촉을 했다가는」
+DATAFORM 「저도 모르는 사이에 미스 세이프티에게 연락을 해 버릴지도 모른다구요~」
+DATAFORM 「아, 그거는 생리적 거부감이 들어서 저도 모르게 신고하는 거니까 뭐라고 하시면 안 돼요?」
+DATAFORM 「제가 사령관을 싫어해서 그러는 건 아니니깐요! 꺄하하!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 살짝 잡았다.
+DATAFORM 「아, 사령관이네요.」
+DATAFORM 「사령관, 지금 무슨 생각해요?」
+DATAFORM 「손을 잡았으면 그 후에 무슨 연계가 있어야 할 것 아닌가요?」
+DATAFORM 「둔하기는.」
+DATAFORM 「저는 사령관 생각하고 있었어요.」
+DATAFORM 「...」
+DATAFORM 테티스가 고개를 돌려 당신과 눈을 맞춘다.
+DATAFORM 그러더니 눈이 초승달처럼 휘어지며 깔깔 웃는다.
+DATAFORM 「뻥인데! 꺄하하핫!」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 손을 살짝 잡았다.
+DATAFORM 「아, 뭐! 뭐예요! 사령관...」
+DATAFORM 테티스가 당신의 반대편으로 고개를 돌린다.
+DATAFORM 「깜짝... 놀랐잖아요...」
+DATAFORM 당신이 잡은 손 사이로 손가락이 얽혀들어온다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 살짝 잡았다.
+DATAFORM 「흐헤헤~」
+DATAFORM 「아뇨, 아무런 좋은 일도 없거든요!」
+DATAFORM 「사령과안~ 우리 어디 같이 산책이라도 나갈래요?」
+DATAFORM 테티스는 당신이 잡은 손을 눈 앞에 들어 보였다.
+DATAFORM 마주잡은 손 너머로 테티스의 웃는 얼굴이 보였다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 살짝 잡았다.
+DATAFORM 「사령관, 그거 알아요?」
+DATAFORM 「처음에는 손만 잡고 잘게~ 하다가...」
+DATAFORM 「손만 잡지 않는다는 거.」
+DATAFORM 「저희 지금 손, 잡아버렸네요?」
+DATAFORM 「에헤헤... 지금부터 시작이라구요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 살짝 잡았다.
+DATAFORM 당신이 잡은 테티스의 손에 힘이 들어왔다.
+DATAFORM 「손... 놓지 말아요.」
+DATAFORM 「그냥 잠깐만... 아무 장난도 안 칠 테니까.」
+DATAFORM 「조용히 잠시만 있어 줄래요?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 손을 살짝 잡았다.
+DATAFORM 「갑자기 손을 잡으시면... 부끄러워요 사령관.」
+DATAFORM 그녀가 얼굴을 붉힌다.
+DATAFORM 테티스가 조용히 당신의 손가락에 손가락을 얽혀온다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 살짝 잡았다.
+DATAFORM 「아, 까, 깜짝 놀랐잖아요.」
+DATAFORM 「아, 아무것도 아니에요! 그, 그냥 요즘 좀 예민해져서...」
+DATAFORM 「사, 사령관 때문이라구요?」
+DATAFORM 「아무래도 이전보다는 더, 사령관을 의식하게 되어 버렸으니깐...」
+DATAFORM 「책임져!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 살짝 잡았다.
+DATAFORM 「사령관의 손... 커다래...」
+DATAFORM 「쪼끔 안심이 되네요.」
+DATAFORM 「저한테는 없는 힘줄과 혈관도 우락부락하게 보이고...」
+DATAFORM 「이, 이런 거친 손으로 저를 들고 엉망진창으로 해버린다면...」
+DATAFORM 「저, 저는 분명 꼼짝없이 사령관한테 당해 버리고 말겠죠?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 손을 잡았다.
+DATAFORM 「웩, 어떤 속셈으로 손을 잡으신거죠?」
+DATAFORM 「정말 피부에 닿기만 해도 소름이 올라오네요. 사령관, 오늘은 좀 씻으셨어요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 잡았다.
+DATAFORM 「어우, 이 둔턱한 살집 좀 봐.」
+DATAFORM 「나가서 운동 좀 해요 사령관.」
+DATAFORM 「미스 세이프티가 보면 사령관과 제가 손을 잡고 있기만 해도 당장 잡으러 올걸요?」
+DATAFORM 「평범한 관점에서 아웃이라구요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 잡았다.
+DATAFORM 「하아? 이제는 힘으로 나가시게요?」
+DATAFORM 「사령관은 정말 짜증나네요.」
+DATAFORM 「어쩜 이리도 짜증날까.」
+DATAFORM 「저기 지나가는 개미한테 친구라고 해 볼래요?」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 손을 잡았다.
+DATAFORM 「왜, 무, 무슨일이시죠?」
+DATAFORM 「저, 저는 아직 오늘 잘못한 건 하나도 없다구요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 잡았다.
+DATAFORM 「무, 무슨 짓을 하시려구요.」
+DATAFORM 「저, 또 맞으러 가는 건가요?」
+DATAFORM 「그런 게 아니예요? 아니라면...」
+DATAFORM 「그 손 좀 놓아 주세요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 잡았다.
+DATAFORM 「자, 잡지 마세요!」
+DATAFORM 「기분 나빠요...」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 손을 잡았다.
+DATAFORM 「죄송합니다. 조용히 맞겠습니다.」
+DATAFORM 「처음부터 때리려고 하신 거잖아요, 알고있어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 잡았다.
+DATAFORM 「언젠가는 제 손을 잡고...」
+DATAFORM 「바닷가로 대려가 주세요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 잡았다.
+DATAFORM 「혼나는 거네요....」
+DATAFORM 「당연해요.. 저는 부족한 아이니까요..」
+DATAFORM 「저는 태어날 때부터 결함품이었으니까요...」
+DATAFORM 「사령관에게 매를 맞는 것도 당연하죠...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 손을 잡았다.
+DATAFORM 「어? 세이렌? 어딜 갔다 온 거예요? 기다리고 있었잖아요!」
+DATAFORM 「네? 세이렌이 아니라구요? 거짓말 하지 마세요! 하하!」
+DATAFORM 「그럼 어디로 가 볼까요? 오늘 임무지역은 어디죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 잡았다.
+DATAFORM 「아으, 아, 아...」
+DATAFORM 「으아, 앗, 으...」
+DATAFORM 「에...?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 잡았다.
+DATAFORM 「사, 사령관... 잠시만요...」
+DATAFORM 「사령관이 잡은 손, 너무 아파요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 손을 잡았다.
+DATAFORM 「읏, 또... 사령관이 좋아하시는 재미있는 놀이를 하실 건가요?」
+DATAFORM 「그것도 아니라면... 그냥 구타?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM5
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「뭐예요! 저는 어린애가 아니라구요!」
+DATAFORM 「제가 어린이로 보여요? 그렇게 생각하셨다면 큰 오산이에요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「사령관~ 제가 마냥 어리고 순진하게 보인다고 머리를 그렇게 막 만지시면...」
+DATAFORM 「아주 쓴 맛을 보실 수가 있다구요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「숙녀의 머리카락을 함부로 만지는 건 큰 실례라구요?」
+DATAFORM 「헝크러트린 건 똑바로 다시 정리해 주세요.」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「헤에~」
+DATAFORM 테티스가 당신을 즐겁다는 듯이 올려다본다.
+DATAFORM 「사령과안~ 사령관 사령관 사령과안~」
+DATAFORM 「지그음~ 제 머리 만지시는 거예요?」
+DATAFORM 「사실으은~ 어젯밤에 일어나서 처음으로 머리 쓰다듬어 주는 사람이랑 결혼하려고 정했거든요~」
+DATAFORM 「아~ 어떡하면 좋지? 나도 모르게 사령관이랑 결혼해버리게 생겼네?」
+DATAFORM 「아아~ 불쌍한 내 인생...」
+DATAFORM 「...그거 알아요 사령관?」
+DATAFORM 테티스가 당신을 바라본다.
+DATAFORM 「방금 했던 말 다 뻥인데!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「제 머리 부드럽죠?」
+DATAFORM 「까끌까끌하죠!」
+DATAFORM 「아니면 찰랑찰랑한가요~」
+DATAFORM 「띠용띠용하고 탄성력이 넘치려나~?」
+DATAFORM 「우후훗, 제 머리카락은 어떤 느낌이에요, 사령관?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「이번에는 어떤 용무로 이 소악마를 건드는 걸까요~」
+DATAFORM 「네? 그냥 머리를 쓰다듬고 싶었다구요?」
+DATAFORM 「...그건 재미 없는데~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「에에~? 사령관, 제 머리카락 기분 좋아요?」
+DATAFORM 테티스가 씨익 웃으며 자신의 머리카락을 둥글게 말았다.
+DATAFORM 「그렇게 기분 좋으시다면... 제가 더 기분좋게 해드릴 수도 있는데~」
+DATAFORM 테티스가 동그랗게 만 머리카락을 위 아래로 움직였다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「어린애 취급하는 거라면 사양이에요!」
+DATAFORM 「하지만 그게 아니라면...」
+DATAFORM 「조금은 참아 줄 이유도 있겠네요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「냐오옹~」
+DATAFORM 테티스가 당신을 보고 고양이 울음소리를 흉내낸다.
+DATAFORM 「야오옹~ 테티스냥이다 냥!」
+DATAFORM 「어때요? 조금은 심쿵했어요?」
+DATAFORM 「왠지 사령관이 애완동물 다루는 느낌으로 쓰다듬으니까~」
+DATAFORM 「나도 사령관만의 고양이가 되어 버리겠는걸?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「엥, 머리밖에 안 만질 거예요?」
+DATAFORM 「가끔씩은 머리 만지면서 엉덩이 팡팡 두드려 줘도 괜찮으니까요.」
+DATAFORM 「아, 진짜. 미스 세이프티한테는 안 이를게요.」
+DATAFORM 「우리 사이에 그 정도 애정표현은 괜찮아요. 알겠죠?」
+DATAFORM 「흐히힛!」
+DATAFORM 「진짜 하면 그땐 어떤 반응이 나올지 기대하고 있으라구요~」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「에에~ 무슨 일이에요, 사령관?」
+DATAFORM 「응? 저 부르신 거 아니었어요?」
+DATAFORM 「뭐야, 단순히 머리를 쓰다듬을 뿐이라면 재미없어요.」
+DATAFORM 「결혼한 이상 스위치를 눌러버린 건 감당하셔야죠?」
+DATAFORM 「에이~ 사령관이 저를 부른 거니까 자업자득이에요~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「사령관? 오늘은 어떤 플레이를 하고 싶으셨길래 그러는 거예요?」
+DATAFORM 「지난번처럼 고양이 흉내를 낼까요? 야오옹~」
+DATAFORM 「아니면 순애 러브러브?」
+DATAFORM 「일하는 책상에서 비서 역할을 해 드릴까요?」
+DATAFORM 「어, 어, 어, 어라? 그런 생각으로 머리 만지신 거 아니었어요?」
+DATAFORM 「그도 그럴게, 사령관 침대 위에서 제 머리 만지시며 놀잖아요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「아, 그리고 보니 제가 미스 세이프티한테 신고한다고 협박한지 좀 지났네요.」
+DATAFORM 「어때요~ 사령관? 제가 사령관을 현행 로리콤으로 신고해 버린다면?」
+DATAFORM 「쿡쿡쿡. 긴장하지 마세요. 그럴 생각 없어요.」
+DATAFORM 「아! 그러면 이건 어때요? 미스 세이프티 앞에서 장난을 치는 거예요.」
+DATAFORM 「그녀 모르게~ 우리 둘만 아는 들키면 큰일나는 장난을 말이에요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「어? 오늘은 여기에다 내뱉으실려구요?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「어딜 만져요! 어딜 만지냐구!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「와 방금 그 손길 완전 음험해서 범죄자 같았다니까요?」
+DATAFORM 「모르는 어린애들한테 사탕 주면서 자길 따라오라고 그러면 안 돼요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「뭐요, 뭘 원하시는데요?」
+DATAFORM 「어우, 기분나빠.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「네, 네... 말씀하시는 대로 따를게요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「무슨 일이예요?」
+DATAFORM 「제가 또 뭘 잘못했나요?」
+DATAFORM 「아니면 제가 뭘 잘못 말했나요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「아, 안 돼요.」
+DATAFORM 「머리채 잡지 마세요.」
+DATAFORM 「아프단 말이에요...」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「앗, 아...」
+DATAFORM 「머리채 잡고 끌고가지 마세요...」
+DATAFORM 「그거 진짜, 진짜... 싫어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「죄송합니다! 죄송합니다! 죄송합니다!」
+DATAFORM 「제가 잘못했습니다!」
+DATAFORM 테티스가 머리를 땅에 박고 사과하고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「죄송해요, 죄송해요.」
+DATAFORM 「때리지 마세요. 제가 잘못했어요.」
+DATAFORM 「제가 이렇게 빌 테니까 때리지 말아 주세요...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「헤헤, 함장님이 쓰다듬어 주는 거라면 저도 좋아요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「있지, 운디네. 저 얼마 전부터 앞이 안 보이기 시작했어요.」
+DATAFORM 「좀 자주, 눈 앞이 까맣게 깜깜하게 변해요.」
+DATAFORM 「운디네니까 말하는 거예요. 그래도 운디네한테는 얘기할 수 있어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「아, 어... 여기가 어디죠 사령관?」
+DATAFORM 「바다인가요? 아니면 집 안인가요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리를 쓰다듬었다.
+DATAFORM 「저, 버리카락을 자를까 봐요.」
+DATAFORM 「제 머리카락을 더럽히셨잖아요.」
+DATAFORM 「더럽게 만드셨잖아요.」
+DATAFORM 「그리고 제 머리카락은 사령관의 손잡이가 아니라구요. 잡아 뜯지 마세요.」
+DATAFORM 「저는 기억하고 있어요.」
+DATAFORM 「가끔씩 정신이 나가기는 하지만 기억하고 있어요. 기억하고 있어요 기억하고있어요지켜보고있다구요제가당신을지켜볼거예요.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM6
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「아, 아얏!」
+DATAFORM 「뭐예요 사령관! 지금 저한테 장난치신 거예요?」
+DATAFORM 「그렇다면 저도 가만히 있을 수는 없다구요~」
+DATAFORM 테티스가 열 손가락을 놀리며 당신에게로 천천히 접근한다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「이 손은 장난을 원하는 손일까요?」
+DATAFORM 테티스가 당신을 손가락을 잡아들고 싱글벙글 웃는다.
+DATAFORM 「자~ 말씀해보세요, 사령관. 제가 사령관의 손가락을 어떻게 했으면 좋겠어요?」
+DATAFORM 테티스가 당신의 손가락을 입에다가 넣는 시늉을 하며 웃는다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「사, 사령관?」
+DATAFORM 「이, 이런 걸로 제가 놀랄 거라고 생각하셨다면 큰 오산이죠!」
+DATAFORM 「저, 저는 오랜 장난으로 이 정도 자극쯤은 아무것도 아니게 느끼게 됐.... 흐야악?!」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「사령관이 저를 찌를 거라는 건 다 알고 있었다구요!」
+DATAFORM 「이미 알고 있었다면 아무렇지도 않죠!」
+DATAFORM 「자, 이번에는 제 반격이에요!」
+DATAFORM 「흐헤헤~ 받아보시죠!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「꺄악! 사령관이 가슴 만졌어!」
+DATAFORM 테티스가 몸을 뒤틀며 당신에게서 떨어진다.
+DATAFORM 「옆구리를 찌르는 척 하면서 가슴만졌어! 진짜로!」
+DATAFORM 「사령관 변태! 변태! 변태엣!」
+DATAFORM 테티스가 제자리에서 펄쩍펄쩍 뛴다.
+DATAFORM 「이런 변태 사령관이랑 함께라니~ 내 인생은 정말 최악이야...」
+DATAFORM 테티스가 고개를 푹 수그리고 조용해진다.
+DATAFORM 「...라고 말할 줄 알았나요? 거짓말이지롱~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「흐꺄앗?!」
+DATAFORM 「방금 전 사령관의 손가락으로 크티리컬 데미지가!!」
+DATAFORM 테티스가 몸을 부들부들 떨며 경련한다.
+DATAFORM 「너무 커다란 데미지를 받아버렷~!」
+DATAFORM 「이, 이대로라면.. 내 몸은 버틸 수 없을지도!!」
+DATAFORM 테티스를 내버려 두니 혼자서 잠잠해졌다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「으야앗, 어린 여자애를 간지럽힐 거예요?」
+DATAFORM 「뽀얗고 매끄러운 겨드랑이를 간지럽힐 거예요?」
+DATAFORM 「올록볼록 굽어진 갈비뼈를 간지럽힐 거예요?」
+DATAFORM 「원하신다면~ 마음껏 제 몸을 만지셔도 괜찮은데.」
+DATAFORM 「괜.찮.은.데~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「으얏! 방금 걸로 제 몸에 스위치가 들어갔잖아요!」
+DATAFORM 「벌떡! 하고, 발딱! 하고.」
+DATAFORM 「제 몸이 움찔움찔... 간질간질 해버려선...」
+DATAFORM 「사령관의 손길이 제 몸에 강렬히 남아서엇... 으읏... 감각잇!」
+DATAFORM 테티스가 몸을 작게 떤다.
+DATAFORM 「어어~ 어쩌죠? 제 몸의 간질간질~ 을 풀어주려면 사령관의 기둥밖에 답이 없겠는 거~얼.」
+DATAFORM 「기둥? 아아, 손가락 말이에요. 손가락.」
+DATAFORM 테티스가 당신의 손가락을 잡았다.
+DATAFORM 「이 굵고... 강렬한 손가락으로...」
+DATAFORM 「저를 엉만진창으로 만들어 주실 거죠? 에헤헷!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「으읏.. 사령관의 손가락...」
+DATAFORM 「세심하지만 강렬해...」
+DATAFORM 「제 몸 안의 으슥하고 깊숙하게 숨겨져 있던 민감한 감각을 간지럽혀서...」
+DATAFORM 「제 몸이 움찔, 하고... 부르릇... 하고...」
+DATAFORM 「응앗!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「에헷 사령관~」
+DATAFORM 「그렇게 감질나게 손가락으로 콕 찌르지 말고...」
+DATAFORM 「양 손으로 제 갈빗대를 마구잡이로 엉망진창으로 만들어도 좋다구요?」
+DATAFORM 「사령관의 억센 손아귀가 제 몸통을 들고 위 아래로 훑는다고 생각해보세요.」
+DATAFORM 「그건 그것만으로도 정말... 꺄하하핫!」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「흐야악?!」
+DATAFORM 테티스가 놀라서 펄쩍 뛴다.
+DATAFORM 「사, 사령관! 그렇게 갑자기 터치하지 말아주세요!」
+DATAFORM 「워, 원래도 했던 장난인데 왜 이렇게 과민반응하냐구요?」
+DATAFORM 「그거야... 사령관의 손길을 받아버렸으니까 그렇죠!」
+DATAFORM 「사령관의 손이 그렇게 힘세고 거친 걸 알아버렸는데 이전하고 반응이 똑같겠어요?」
+DATAFORM 「이 늑대!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「뭐야 뭐야 뭐야 뭐야!」
+DATAFORM 「노, 놀림당한 거예요? 아, 아니면 그냥 단순한 터치?」
+DATAFORM 「제, 제 성감대를 자극하려고 하신 건 아니죠?」
+DATAFORM 「누가 단순한 터치를 이렇게 음란하게 해요!」
+DATAFORM 「정말, 제가 싸버렸으면 책임 지실 거예요?」
+DATAFORM 「제가 바닥에 싸면 사령관이 청소하실 거냐구요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「꺄앗!?」
+DATAFORM 테티스가 놀라서 당신에게서 멀어진다.
+DATAFORM 「뭐, 뭘로 찌른 거예요?」
+DATAFORM 테티스가 당신의 손가락을 멀리서 확인한다.
+DATAFORM 「손가락이었어요? 어휴, 다행이다. 손가락으로 찌른 거 맞죠?」
+DATAFORM 「저는 사령관이 다른 걸로 찌른 건 줄 알고~」
+DATAFORM 「사령관이 아무리 안하무인한 변태라도 이렇게 대놓고 그걸 꺼내들지는 않겠죠.」
+DATAFORM 「그나마 안심이네요.」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「흐에엑! 사령관! 방금 분명 제 가슴 만질려고 했죠!」
+DATAFORM 「문질문질 부비부비하면서 쉴틈없이 제 가슴만질려고 했죠!」
+DATAFORM 「내가 이럴 줄 알았어! 로리콤이면 로리콤답게 감옥에나 들어가라구요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「꺄악!」
+DATAFORM 「뭐, 뭐에욧! 생긴거만큼이나 불쾌한 손짓이네요!」
+DATAFORM 「으으, 최악이야 사령관한테 이런 손길을 받다니...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「흐꺅?!」
+DATAFORM 「이, 이런 행동 남들이 보면 가만히 있을 것 같아요?」
+DATAFORM 「분명 사회적으로 격리될게 뻔해요!」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「뭐, 뭐, 뭐에요? 방금 뭐였죠?」
+DATAFORM 테티스가 자신의 몸을 더듬는다.
+DATAFORM 「사, 상처 안 났죠?후... 다행이다...」
+DATAFORM 그녀의 앙상한 갈빗대가 드러난다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「아, 아얏.」
+DATAFORM 테티스의 표정이 찡그러진다.
+DATAFORM 「...아프잖아요... 그래도 칼로 찌르신 건 아니니...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「이, 이제는 스스럼없이 마음대로 제 몸을 만지시는군요.」
+DATAFORM 「익숙해지셨나 봐요?」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「아, 아... 죄 죄송해요.」
+DATAFORM 「제가 뭘 하면 되죠? 제가 뭘 눈치 못 챘나요?」
+DATAFORM 테티스가 당신을 바라보며 작게 몸을 떤다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「아, 아팟!」
+DATAFORM 「죄, 죄송해요.. 요즘 몸에 기운이 없어서...」
+DATAFORM 「약한 자극으로도 예전보다 많이 아픈가 봐요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「흐, 흐아아아아앙... 우에에에엥...」
+DATAFORM 「히, 히끅! 흐아아아아앙...」
+DATAFORM 「저, 저... 괘, 괜찮은 거 맞죠? 진짜루요?」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「우, 운디네? 저를 부르신 건가요?」
+DATAFORM 테티스가 이리저리 둘러본다.
+DATAFORM 「저, 저를 부르셨잖아요! 운디네! 어디 있어요!」
+DATAFORM 「운디네? 운디네? 운디네! 저이 있어요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「아하하하하하...」
+DATAFORM 「간지럽잖아요. 하하하하하...」
+DATAFORM 「너무 웃겨요 하하하하하하하.」
+DATAFORM 테티스의 표정에는 변함이 없다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 옆구리를 콕 찔렀다.
+DATAFORM 「으, 으윽...」
+DATAFORM 테티스의 표정이 어두워지더니 몸을 움츠린다.
+DATAFORM 「죄, 죄송해요.. 때리지 마세요.」
+DATAFORM 「잘못했어요. 다 제 잘못이예요. 때리지 마세요. 제가 잘못했어요. 봐 주세요. 제가 죽을 년이에요. 제발 하지 마세요. 아파요. 사령관, 저 아파요. 때리지 말아 주세요.」
+DATAFORM 테티스가 머리를 싸매고 중얼거린다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM7
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「어, 설마 제 귀여움을 한 눈에 알아보신 건가요?」
+DATAFORM 「그럼요~ 당연하죠! 이렇게 귀엽고 아름다운 테티스를 맞이하게 되면 사근사근 돌봐주고 싶어서 어쩔수가 없겠죠~」
+DATAFORM 「흐응~ 그러면 사령관의 명령도 있으니 살포시~ 누워 보도록 할까요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「뭐예요 사령관?」
+DATAFORM 「설마 제 자그마하고 아름다운 얼굴을 좀 더 가까이서 보고 싶어서 그런 건가요?」
+DATAFORM 「흐흥~ 그렇게 말씀해 주신다면야 제가 못 할 이유도 없는데~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「제가 고양이마냥 사령관 무릎 위에 누워서 잠들면 어떻게 할 거예요?」
+DATAFORM 「세 시간이고 다섯 시간이고 자고 있으면 사령관은 어떻게 하실래요?」
+DATAFORM 「살포시~ 들어서 다른 데다 옮겨두실 건가요? 아니면 쑥맥처럼 제 몸에 손끝 하나 건드리지 않고 기다릴 건가요?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「헤에... 무릎베갠가요?」
+DATAFORM 「사령관, 있지, 있지~」
+DATAFORM 「무릎배게라는 건 듬직하고 의지가 되는 사람이 해 줘야 좋은 거라구요~」
+DATAFORM 「그런데 사령관은? 풋! 듬직이랑은 거리가 멀어 보이시는데!」
+DATAFORM 「아, 됐어 됐어~ 했다 치고 나중으로 미룰게요~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「어라라? 사령관, 왠일로?」
+DATAFORM 「사실 저는~ 사령관이 무릎베개 해준다고 해도 그렇게 끌리지는 않는걸... 요?」
+DATAFORM 「흐음~ 뭐 그렇지만 사령관의 정성도 갸륵하니 한 번 누워 보도록 할까~나!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「어라, 진짜요?」
+DATAFORM 「진짜 그렇게 말했어요?」
+DATAFORM 「무르기 없기, 빼기 없기, 진짜로 받아내기?」
+DATAFORM 테티스가 당신에게서 조금 멀어지더니 달려온다.
+DATAFORM 「그럼 간다앗!」
+DATAFORM 테티스가 당신의 무릎을 향해서 점프했다.
+DATAFORM 「필살 보디체크 어택!」
+DATAFORM 테티스가 당신의 무릎과 충돌했다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「와아~! 사령관의 무릎베개다!」
+DATAFORM 테티스가 당신의 무릎 위로 다이빙하듯 달려와 안겼다.
+DATAFORM 「히힛, 어때요 사령관? 제 몸 폭신폭신하죠?」
+DATAFORM 테티스가 당신을 올려다보며 익살스럽게 웃는다.
+DATAFORM 당신과 테티스의 눈동자가 맞는다.
+DATAFORM 「사령관, 제 가슴 보고싶어요?」
+DATAFORM 「원하신다면 보여드릴수도 있는데...」
+DATAFORM 테티스가 자신의 상의 아랫부분을 손으로 잡는다.
+DATAFORM 「...」
+DATAFORM 알 수 없는 침묵이 길게 이어졌다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「사령관 허벅지에 부비부비 타임이다!」
+DATAFORM 「으헤헤~ 샤령간~ 제 볼 느껴져요?」
+DATAFORM 「빵빵하고 토실토실해서 기분좋죠~」
+DATAFORM 「몰랑몰랑하고 쫀득쫀득해서 기분 좋죠오~!」
+DATAFORM 「으헤헤헤헤~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 테티스는 조용히 걸어와 당신의 무릎 위에 똬리를 틀듯 몸을 움츠렸다.
+DATAFORM 「사령관, 저 작아서 이렇게하면 무릎 위에 안착할 수도 있다구요.」
+DATAFORM 「이대로 그대로 들어서 마음대로 요리할 수도 있다구요?」
+DATAFORM 「수납 편리! 이동 편리! 정말 막 다루어도 좋아요?」
+DATAFORM 「침대 위에서는 매너만 지켜준다면 말이죠!」
+DATAFORM 테티스가 당신을 보고 비릿하게 웃었다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「핏!」
+DATAFORM 테티스는 당신의 곁으로 조르르 달려와 조용히 당신의 무릎 위에 누웠다.
+DATAFORM 「얌전해 진 게 아니에요.」
+DATAFORM 「제가 뭐 범생이나 요조숙녀라도 된 줄 아세요?」
+DATAFORM 「그냥 저는 기품 넘치고 조신해진 거라구요!」
+DATAFORM 「이제는 제 입장도 변했으니 저도 좀 변해야죠.」
+DATAFORM 테티스는 당신의 무릎 위에 누워서 숨을 핏핏 내뱉고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「아, 알았어요.」
+DATAFORM 테티스는 당신의 눈치를 보더니 조심스레 당신의 무릎 위에 눕는다.
+DATAFORM 「쳐, 쳐다보시 마세욧!」
+DATAFORM 테티스가 두 손으로 얼굴을 가린다.
+DATAFORM 「부, 부끄럽단 말이에요!」
+DATAFORM 「꺄아앗!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「사령과안...」
+DATAFORM 테티스는 당신의 무릎 위에 똬리를 틀었다.
+DATAFORM 「가만히 있어요. 장난쳐 버리기 전에.」
+DATAFORM 테티스가 당신에게 밀착해 온다.
+DATAFORM 「제가 그동안 장난 쳤던 건 뭔가 부족했었기 때문이니까...」
+DATAFORM 「지금은 그런 마음 안 들거든요.」
+DATAFORM 「그러니까, 지금은... 편안해요.」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「뭐... 예요, 사령관?」
+DATAFORM 「갑자기 이렇게 잘 해줄 리가 없는데...」
+DATAFORM 「뭔가 음흉한 생각이라도 꾸미고 게신 건 아닌가요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「지금요? 갑자기요? 왜요?」
+DATAFORM 「이야~ 이렇게 생겨먹은 사령관의 무릎베개를 받는다고 생각하니...」
+DATAFORM 「쿡... 쿡... 조금... 아하하하하! 아무것도 아니에요!」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「이상한 일, 분명 생각하시고 계신 거겠죠.」
+DATAFORM 「이제 와서 제가 편안한 골을 보고싶어 하시지는 않을 거잖아요.」
+DATAFORM 「그리고 저도, 이제 와선 반항할 수 없다는 걸 아니까...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「싫어요, 싫지만...」
+DATAFORM 「어쩔 수 없겠죠.」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「죄, 죄송합니다. 금방 갈게요.」
+DATAFORM 테티스가 몸을 떨며 불안한 눈빛으로 당신의 곁에 다가온다.
+DATAFORM 「때, 때리실 건가요...?」
+DATAFORM 「제발 아무 일도 일어나지 않았으면...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「이, 이번에는 뭐죠?」
+DATAFORM 「반항 안 할게요.. 심한 짓은 하지 말아 주세요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「맞는 것도 아파요, 차이는 것도 아파요...」
+DATAFORM 「이번엔 그런 일은 아니었으면 좋겠어요...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「운디네? 물론이죠. 선상 위에서 햇빛을 쬐는 거는 꽤나 기분 좋은 일인 걸요.」
+DATAFORM 「운디네, 그동안 어디 있었던 거예요? 한참 찾았잖아요!」
+DATAFORM 「흐흥~ 그러면 다음 임무는 어디죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「운디네? 한동안 안 보였었는데... 오셨군요.」
+DATAFORM 「어디를 갔다 오신 거예요? 한참 찾았잖.... 엣?」
+DATAFORM 당신을 올려다 보는 테티스의 얼굴이 굳는다.
+DATAFORM 「...바, 방금 무슨 일이 일어난 거죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 자신의 무릎 위에 누으라고 했다.
+DATAFORM 「사령관...」
+DATAFORM 테티스가 당신의 무릎 위에 머리를 뉘인다.
+DATAFORM 「저, 눈이 안 보여요.」
+DATAFORM 「전부터 깜빡거렸는데 최근에 더 심해진 것 같아요.」
+DATAFORM 「이러다 영영 안 보이면 어떡하죠?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM8
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「웩, 사령관. 기껏 비싼 바이오로이드나 사서 이런 거나 시키실려구요?」
+DATAFORM 「제가 생각하는 거지만 정말 속이 빤~히 보이거든요?」
+DATAFORM 「어유~ 이렇게 겉과 속이 똑같아서야 정말 어디에다 써먹을려고 그러는건지이~」
+DATAFORM 테티스가 툴툴거렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「제가요? 사령관을요? 왜요?」
+DATAFORM 「아니, 사령관님 제 몸뚱아리를 좀 보세요.」
+DATAFORM 「제 작고 여리고 어여쁜 무릎 위에 사령관의 머리를 올려놓았다가 제 피부가 상하기라고 하면 어떡하시려구요?」
+DATAFORM 「사령관은 저처럼 예쁘고 깔끔한 미녀한테 사령관이라는 오물을 뭍히고 싶으신 거예요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「아이고~ 불쌍해라.」
+DATAFORM 「사령관한테는 무릎베개를 해 줄 사람도 없어서 기껏 구입한 바이오로이드한테 부탁한다는 게...」
+DATAFORM 「...」
+DATAFORM 「게다가 바이오로이드라고 그런 부탁 받았다고 기쁜 얼굴로 웃으며 받아들일 것 같아요?」
+DATAFORM 「제 쪽에서도 싫거든요~ 메롱~」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「어라라? 사령관 주제에 대담한 부탁도 할 줄 아네요?」
+DATAFORM 「그럼 기분 좀 내서 이 테티스의 무릎을 사령관에게 빌려드리도록 하죠!」
+DATAFORM 테티스가 당신에게 흔쾌히 무릎을 내준다.
+DATAFORM 「자, 자~ 빨리~ 빨리! 얼른 와서 누으세요!」
+DATAFORM 테티스가 자신의 허벅지를 팡팡 두드린다.
+DATAFORM 당신이 테티스에게 다가가 그녀의 무릎위에 누으려고 하자
+DATAFORM 「제가 순순히 해 드릴 줄 알았어요? 에잇!」
+DATAFORM 그녀가 두 다리를 벌리는 바람에 당신의 목이 뒤로 꺾어저 버렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「무릎베개요?」
+DATAFORM 「좋아요. 이리로 오세요.」
+DATAFORM 테티스는 이상하리만치 잠잠하고 조용히 당신의 머리를 무릎으로 받아낸다.
+DATAFORM 「사령관~ 혹시 몰라서 하는 말인데 고개 반대로 돌리면 안 돼요?」
+DATAFORM 당신의 머리 위에서 테티스의 목소리가 들린다.
+DATAFORM 「사실 저.... 팬티 안 입고 있거든요.」
+DATAFORM 테티스의 충격발언에 몸이 굳어버렸다.
+DATAFORM 「쿡쿡쿡... 뻥인데! 꺄하하하핫!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「왜요? 싫어요, 사령관!」
+DATAFORM 테티스가 자신의 양 어깨를 잡는다.
+DATAFORM 「분명 무릎베개를 받는 척 하면서 제 몸 이곳저곳을 보실 거잖아요!」
+DATAFORM 「제 하얗고 뽀얀 허벅지에 머리를 비비실 거잖아요!」
+DATAFORM 「분명 속은 음탕하고 음험한 생각만 가득 찬 채 저를 어떻게 요리할지 궁리할 뿐이잖아요!」
+DATAFORM 「꺄아아아아~」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「무릎베개요? 그것보다 훨씬 좋은 걸 사령관에게 선물해줄게요.」
+DATAFORM 「자, 얼른 이리 와요!」
+DATAFORM 당신은 테티스가 팡팡 두드리는 대로 그녀의 다리를 배고 누웠다.
+DATAFORM 「자, 더 안쪽으로 들어와서 머리를 기대는 거예요. 이렇게요.」
+DATAFORM 「옳지, 옳지.」
+DATAFORM 당신은 테티스가 이끄는 대로 머리를 더욱 깊숙히 끌어올렸다.
+DATAFORM 당신의 몸 양쪽으로 테티스의 다리가 뻗었다.
+DATAFORM 「어때요, 이 편이 편하죠? 어릴때 생각 나서 좋죠?」
+DATAFORM 「사령관의 뒷통수가 제 고간에 닿고 있지만 뭐, 상 주는 걸로 할까요~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「그래요, 사령관. 이리 오세요.」
+DATAFORM 「자자, 눈 감고~ 코~ 하는 거예요.」
+DATAFORM 「꺄하핫! 사령관, 완전 애기 같아요!」
+DATAFORM 「그래그래, 착하지, 착해~」
+DATAFORM 「마음에 드신다면 손에 가는 대로 만지셔도 좋아요.」
+DATAFORM 「자, 이렇게 허벅지를 만지셔도 뭐라고 안 할게요.」
+DATAFORM 「하얗고 부드러운 애기피부의 허벅지에요~ 분명 만진다면 후회 안 하실 걸요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「헤에, 그래요. 좋아요.」
+DATAFORM 「이리 오세요 사령관.」
+DATAFORM 당신은 테티스의 허벅지를 베고 누웠다.
+DATAFORM 「어때요, 좋아요 사령관?」
+DATAFORM 「저기, 사령관. 나 사령관한테 할 말이 있는데...」
+DATAFORM 테티스가 고개를 숙여 당신의 귀에 속삭였다.
+DATAFORM 「좋.아.해.요. 사령관.」
+DATAFORM 테티스의 머리가 당신의 귓가에서 멀어진다.
+DATAFORM 테티스가 아주 가까운 거리에서 당신을 내려다본다.
+DATAFORM 당신의 눈과 눈을 맞추고 있다.
+DATAFORM 「뻥일까요~?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「에엑~ 사령관은 무거워서 싫어요?」
+DATAFORM 「안 무겁다고요? 뻥 치지 마요! 제가 침대에서 얼마나...」
+DATAFORM 「...윽!」
+DATAFORM 「에휴, 알았어요. 이리 와요.」
+DATAFORM 당신은 테티스의 무릎을 베고 누웠다.
+DATAFORM 「어때요? 편안해요?」
+DATAFORM 「사령관도 참, 주책이야 증말.」
+DATAFORM 「어차피 이따 또 난리를 칠 거면서 이러는 이유는 또 뭐람.」
+DATAFORM 「이제는 제가 사령관의 응석을 받아주다 다 지쳐버리겠어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「아, 눕지 말고 엎드리세요.」
+DATAFORM 당신은 테티스의 말대로 얼굴을 그녀의 허벅지 쪽으로 향했다.
+DATAFORM 「히히히... 에엣!」
+DATAFORM 테티스가 당신의 얼굴을 눌렀다.
+DATAFORM 「어때요? 숨 막히죠? 숨 막히죠? 헤헤헤!」
+DATAFORM 당신의 코 끝으로 테티스의 향기가 스며들어온다.
+DATAFORM 당신의 얼굴을 그녀의 도톰한 허벅지살이 뒤덮는다.
+DATAFORM 「뭐, 뭐야... 사령관. 혹시 변태?」
+DATAFORM 테티스가 가만히 있는 당신을 보고 질겁했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「허벅지에다 대고 킁카킁카하게요?」
+DATAFORM 테티스가 직설적인 말로 당신을 쏘아붙였다.
+DATAFORM 「변태.」
+DATAFORM 「어린 여자애 살결에 파묻혀서 살 냄새나 맡고 싶어하는 변태.」
+DATAFORM 「어머, 아니게요? 그럼 제가 어젯밤에 봤던 사령관은 누구였을까?」
+DATAFORM 「어, 아니라구요? 흐음~ 그럼 말구요.」
+DATAFORM 「알았어요. 이리 와요. 무릎베개 해드릴게요.」
+DATAFORM 「대신에 사령관의 숨소리가 제 귀에 거슬릴 때마다 벌칙 한 번이에요?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「그...거 진짜로 하시는 말씀이세요?」
+DATAFORM 「웩, 저는 유아퇴행해서 엄마 찾는 나이 든 남정네들은 다 지어낸 이야기인줄 알았어요.」
+DATAFORM 「설마 사령관이 그런 사람 중 한 명이었다니...」
+DATAFORM 「딱해라...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「속이 너무 뻔히 보이잖아요.」
+DATAFORM 「어차피 제 뽀얗고 보드라운 허벅지 위에 누워서」
+DATAFORM 「마음대로 제 살결을 주무르시거나 팬티를 보거나 하실 거잖아요.」
+DATAFORM 「속이 뻔히 보이는데 제가 들어줄 거라고 생각하시는 건가요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「사령관~ 사령관같은 사람들을 뭐라고 부르는지 알아요?」
+DATAFORM 「귀축.」
+DATAFORM 「마마보이.」
+DATAFORM 「제대로 어른이 되지 못한 성인.」
+DATAFORM 「우후훗! 찔리셨어요?」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「네, 그럼요... 사령관의 말씀이라면 들어들어야죠.」
+DATAFORM 테티스는 체념한 것 같다.
+DATAFORM 「사령관, 보이시나요? 당신이 누워 있는 제 다리.」
+DATAFORM 「다리에 난 상처들은 모두 사령관이 만드신 거예요.」
+DATAFORM 「매일같이 모질게 굴고, 매질해서 저를 이렇게 만들어 놓으셨죠.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「또, 또... 때리실려구요?」
+DATAFORM 「아, 아니에요. 반항 안 할게요.」
+DATAFORM 「저 같은 게 말을 해 봤자...」
+DATAFORM 「아무것도 바뀌지 않을 테니까요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「시, 싫어...」
+DATAFORM 「싫은데...」
+DATAFORM 「싫다 그러면 또 때리실 거잖아요.... 으에에에에엥.....」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「그, 그것만인 거죠? 진짜죠?」
+DATAFORM 「감사합니다 사령관. 제발 이걸로 끝나게 해 주세요.」
+DATAFORM 「몇 시간이고 자세를 유지할 수 있어요.」
+DATAFORM 「잠드셔도 좋아요! 아니, 차라리 잠에 드셔 주세요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「아, 알겠어요... 이리로 오세요.」
+DATAFORM 「제 다리... 딱딱하죠? 뼈 밖에 없어서...」
+DATAFORM 「...이런 몸인데...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「이런 부탁... 익숙해 졌어요.」
+DATAFORM 「이리 오세요. 사령관 같은 분이시라면...」
+DATAFORM 「오히려 이런 고통은 참아내야겠죠...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「아, 무릎베개요 사령관? 그럼요. 이리로 오세요.」
+DATAFORM 「어, 그런데 사령관은 어디 있죠? 아, 제 눈 앞에 있다구요?」
+DATAFORM 「아하핫, 거짓말 하지 마세요. 제 눈 앞에는 아무도 없는 걸요. 하핫.」
+DATAFORM 「지금 어디서 말하고 계시는 거예요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「선상에서는 호라이즌 맴버들과 같이 일광욕을 하기도 했죠.」
+DATAFORM 「운디네도, 세이렌도, 네레이드도 모두 함께였는데...」
+DATAFORM 「함께였는데... 모두 어디로 갔지? 나만 여기에 버려 두고? 나만 버리고...」
+DATAFORM 「다 날 버리고 떠났어...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 무릎베개를 부탁했다.
+DATAFORM 「...」
+DATAFORM 테티스가 무표정한 얼굴로 당신을 바라본다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM9
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다
+DATAFORM 「어라, 사령관. 지금 저와 밀접한 신체적 접촉을 하시는 거예요?」
+DATAFORM 「진짜? 진짜?」
+DATAFORM 「그럼 사령관의 손가락에 닿는 감촉이 무슨 감촉인지도 알겠네요?」
+DATAFORM 테티스가 당신의 귓가에 속삭였다.
+DATAFORM 「으흐흐... 저 지금...」
+DATAFORM 「안쪽에... 안 입고 있다구요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다
+DATAFORM 「꺄아아악! 미스 세이프티! 미스 세이프티!」
+DATAFORM 「멀쩡한 줄 알았던 우리 집 사령관이 알고보니 변태 로리콤 사령관?!」
+DATAFORM 「아무튼 이런 얇은책같은 이유로 저를 덮쳐와요! 도와주세요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다
+DATAFORM 「FBI!, FBI! OPEN UP!」
+DATAFORM 「쾅쾅쾅! 당신을 아동 성 범죄자 현행범으로 체포합니다!」
+DATAFORM 「깨물리고 싶지 않으면 당장 그 손을 놓고 멀리 떨어지세요!」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다.
+DATAFORM 「꺄아아아악!! 변태 로리콤이다!」
+DATAFORM 「변태 로리콤이 저를 덮치려 해요!」
+DATAFORM 「변태 로리콤의 손이 제 가슴에 닿고 있어요!」
+DATAFORM 「꺄악! 변태 로리콤의 팔이 제 허벅지 사이로 들어와요!」
+DATAFORM 가만히 안겨 있는 테티스의 입에서 출처를 알 수 없는 위험한 말들이 쏟아져 나온다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다.
+DATAFORM 「히힛, 히히.」
+DATAFORM 「히히힛!」
+DATAFORM 테티스가 당신을 보며 싱글벙글 웃는다.
+DATAFORM 「사령관~ 그거 알아요? 지금 제 가슴이 사령관의 몸에 닿고있는데?」
+DATAFORM 「제가 열심히 사령관님 몸에 찰싹 붙어서 부비부비하고 있는데 이거 도의적으로 괜찮을지 몰라~」
+DATAFORM 「꺄하하하핫!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다.
+DATAFORM 「억, 윽! 숨막혀요!」
+DATAFORM 「이, 이제는 범죄를 저지르려고 하실 셈인가요?」
+DATAFORM 「저를 엉망진창으로 만들 생각이시죠!」
+DATAFORM 「저를 너덜너덜하게 만들 속셈이시죠!」
+DATAFORM 「저를 벌렁벌렁하게 만들 심산이시죠!」
+DATAFORM 「꺄아악! 사령관이 묵중한 질량으로 나를 공격해온다아아!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다.
+DATAFORM 「하핫! 걸렸군요 사령관!」
+DATAFORM 테티스가 호기롭게 당신에게 외친다.
+DATAFORM 「이때를 노리고 있었어요! 수플렉스!」
+DATAFORM 테티스가 내 팔을 잡은 채로 허리를 앞으로 숙인다.
+DATAFORM 「어, 어라? 왜 안 되지?」
+DATAFORM 테티스가 이리저리 움직여보지만 원하던 수플렉스는 나오지 않았다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다.
+DATAFORM 「이번에는 놓치지 않는다구요! 저먼 수플렉스!」
+DATAFORM 테티스가 호기롭게 외치며 수플렉스를 시전했다.
+DATAFORM 「으, 으아아아! 이건 아니죠!!」
+DATAFORM 당신은 테티스를 안았던 손을 놓았다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다.
+DATAFORM 「아, 가, 갑자기 뭐예요! 사령관!」
+DATAFORM 테티스가 당신의 품 안에서 꼼지락거린다.
+DATAFORM 「으잇, 나가면 사령관한테 장난 잔뜩 칠 거니까 당장 이거 놔요!」
+DATAFORM 「놓으라니깐!」
+DATAFORM 「놓으라... 니깐요...」
+DATAFORM 「....흐에엥...」
+DATAFORM 테티스가 얼굴이 빨개진 상태로 고개를 푹 수그렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다.
+DATAFORM 「또 제 몸이 좋아서 이렇게 접근하시는 거죠? 변태에...」
+DATAFORM 「정말~ 사령관은 세상에 없을 변태라니까요. 이렇게 이렇게 절 좋아하시는지.」
+DATAFORM 「분명 자나깨나 야한 생각만 하고 있을 변태가 틀림없어요.」
+DATAFORM 「그래서 이렇게 제 몸을 노리고 접근하시는 거죠!」
+DATAFORM 「야한 만화처럼!」
+DATAFORM 「제가 순순히 넘어갈 것 같아요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다.
+DATAFORM 「가, 갑자기 뭐예요?」
+DATAFORM 「갑작스럽잖아요...」
+DATAFORM 「가, 갑자기 이러시면... 곤란하다구요...」
+DATAFORM 「저기, 사령관? 네? 곤란하다구요...」
+DATAFORM 「곤란하다니까요.... 흐에엥....」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다.
+DATAFORM 「뭐, 뭐예요...」
+DATAFORM 「왜, 왜... 저한테 잘 해 주시는 거예요?」
+DATAFORM 「저는 만날 장난만 쳤는데...」
+DATAFORM 「그래도.. 괜찮다는 뜻이죠?」
+DATAFORM 테티스의 작은 손이 당신의 등을 덮는다.
+DATAFORM 「사령관을 만나서 정말 다행이에요.」
+DATAFORM 「고마워요, 사령관...」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다.
+DATAFORM 「있지, 사령관.」
+DATAFORM 「부-웅! 해줘요! 부-웅!」
+DATAFORM 테티스가 당신에게 안겨서 두 팔을 위 아래로 흔든다.
+DATAFORM 「부-웅!」
+DATAFORM 당신은 테티스의 겨드랑에 팔을 끼워넣고 그녀를 공중으로 띄운다.
+DATAFORM 「아하핫! 부웅이다 부-웅!」
+DATAFORM 테티스가 어린아이같이 깔깔거리며 좋아한다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다.
+DATAFORM 「사령관, 지금 힘 조절하는 거죠?」
+DATAFORM 「저 궁금한게 있는데. 사령관 진심으로 저를 꽉 껴안아 볼래요?」
+DATAFORM 「아니, 사령관 저 상대할 때 어린애 다루듯이 우쭈쭈 해주잖아요.」
+DATAFORM 「누가 모를 줄 알았어요? 쳇.」
+DATAFORM 「아, 됐고. 궁금해서 그러는 거니까 힘 한번 줘 봐요.」
+DATAFORM 「...」
+DATAFORM 「..어, 자, 잠깐 사령관.」
+DATAFORM 「잠깐, 사령관! 아팟! 아파요!」
+DATAFORM 「꺄아악! 제, 제가 잘못했어요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다.
+DATAFORM 「이대로 들어서 침대까지 갈 거예요?」
+DATAFORM 「뭐야, 기대하고 있었는데.」
+DATAFORM 「사령관은 쫀심도 없어요? 예?」
+DATAFORM 「아니, 사령관은 자존심도 없지~ 숫기도 없지!」
+DATAFORM 「이렇게 스킨쉽도 해 놓고~ 끝장을 못 보면 무슨 소용이래~
+DATAFORM 「동네사람들이 알면 사령관 고자인줄 알겠어요?」
+DATAFORM 「예? 사령관? 달려있어요? 달려있냐구요?」
+DATAFORM 「꺄하핫! 옳지! 이렇게 나와 주셔야 성깔에 맞죠!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다
+DATAFORM 「꺅! 뭐, 뭐예욧!」
+DATAFORM 「변태! 치한! 가축! 축생!」
+DATAFORM 「저 같은 쪼끄만 애를 껴안아서 어따 쓰게요!」
+DATAFORM 「완전 역겨워! 비릿해! 짜증나!」
+DATAFORM 「이 로리콤 로리콤 로리콤 로리콤 로리콤 로리콤 변태 로리콤이!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다.
+DATAFORM 「아! 완전 극혐!」
+DATAFORM 「사령관 완전 제 스타일 아니거든요!」
+DATAFORM 「이런 행동 해 놓고서 저한테 좋은 반응 기대하신 거라면 천만 년은 멀었어요!」
+DATAFORM 「정 억울하면 다시 태어나시던지!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다.
+DATAFORM 「어? 이것 좀 보세요? 사령관 애초에 저에게 흑심 품고 계셨던 거예요?」
+DATAFORM 「이거 완전 제가 치맛자락 살랑살랑~ 흔들면 간이고 쓸개고 다 빼줄 사람이었네요?」
+DATAFORM 「아유~ 누가 이런 로리콤을 좋아할런지~」
+DATAFORM 「예상은 했지만 저 같은 걸 껴안는다는 점에서 완전히 아웃이거든요?」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다
+DATAFORM 「뭐, 뭐예요, 사령관. 제게 뭔가 원하는 거라도 있나요?」
+DATAFORM 「아시잖아요. 이런 식으로 행동한다고 해서 제가 사령관 마음에 들리가 없다는 걸.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다
+DATAFORM 「또, 또 때리시려구요?」
+DATAFORM 「으으으... 아무일도 없는데 이러실 이유가 없잖아요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다
+DATAFORM 「이제 와서 연민이 드는 거예요?」
+DATAFORM 「이런 행동은 정말 끔찍하다구요.」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다
+DATAFORM 「죄, 죄송합니다! 죄송합니다! 뭔가 제가 또 잘못했군요.」
+DATAFORM 「수습할게요, 뭐라도 할게요! 마음에 안 드시는 게 있다면 빨리 알려주세요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다
+DATAFORM 「왜, 왜요...? 사령관?」
+DATAFORM 「그, 그렇게 아무말도 안 하시면... 저 무서워요...」
+DATAFORM 「사, 사령관...? 사령관?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다
+DATAFORM 「히, 히이이익!」
+DATAFORM 「아, 아무것도 아니에요. 몸에 이상한 감각이 들어서...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다
+DATAFORM 「어, 운디네예요? 오랫동안 안 보이더니 이제서야 제 눈 앞에 나타날 준비라도 되었나 보죠?」
+DATAFORM 「좋아요. 용서해 드릴테니 제 눈 앞에 순순히 나와 주시는게 좋을 거에요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다
+DATAFORM 「운디네? 운디네 맞죠? 저는 당신의 꼬맹이가 아니라니깐요?」
+DATAFORM 「당신이야말로 저보다 몸만 큰 주제에 어른인 척 하지 말라구요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 껴안았다
+DATAFORM 「...사, 사령관?」
+DATAFORM 「제, 제가 혹시 이상한 행동이나 말을 하지는 않았죠?」
+DATAFORM 「부디 제가 이상하지 않다고 말해줘요.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM10
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「꺄악! 이거 완전 개싫어!」
+DATAFORM 「생각을 좀 해보세요! 사령관의 질량과 제 질량의 차이를요!」
+DATAFORM 「저 같이 작은 질량의 소유자가 사령관같은 몸의 소유자에게 껴안기면 얼마나 섬뜩한지 아세요?」
+DATAFORM 「완전 그냥 잡아먹힐 것 같은 기분이라구요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「아, 이건 또 뭐야!」
+DATAFORM 테티스가 당신을 향해서 팔을 휘두른다.
+DATAFORM 「어라, 죄송해요. 사령관. 저는 또 왠 이상한 사람이 저를 덮치려는 줄 알았어요.」
+DATAFORM 「설마하니 그 이상한 사람이 사령관일줄을 몰랐지만 말이에요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「우와아.. 이런 행동 하는 사람이 진짜로 있구나.」
+DATAFORM 「지금 사령관이 스스로 로맨틱 하다고 생각하고 있죠?」
+DATAFORM 「스스로 막 로맨티스트라고 자화자찬 하시고 계신 건 아니죠?」
+DATAFORM 「웩.」
+DATAFORM 「제 입장에서는 그냥 답답하고 숨막히고 후덥지근할 뿐이거든요?」
+DATAFORM 「조금 자신의 주제를 알아 주시겠어요?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「어, 이거 무슨 수작이에요?」
+DATAFORM 「아무리 봐도 음험한 속셈이 제 눈에는 보이는 걸요?」
+DATAFORM 테티스는 그렇게 말하며 당신을 돌아봤다.
+DATAFORM 「아무런, 장난도, 안 칠 거예요?」
+DATAFORM 테티스가 그렇게 말하며 씩 웃었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「흐꺗?!」
+DATAFORM 「아, 아 진짜! 놀랐잖아요 사령관!」
+DATAFORM 「저 지금 장난 칠 기분 아니니까 놓아 주세요.」
+DATAFORM 「피이, 놓아 주라구요.」
+DATAFORM 「...놓아 주세요?」
+DATAFORM 테티스의 목소리가 점점 기어들어갔다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「나이는 먹을 대로 다 먹고 어린애처럼 행동하는 사령관은 누구일까요?」
+DATAFORM 테티스가 그렇게 말하며 당신을 돌아보았다.
+DATAFORM 「바로 우리집 멍청이 사령관이랍니다!」
+DATAFORM 「바보 사령관! 그렇게 뒤에서 끌어안는게 어디있어요?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「사령관, 가슴에 손이 닿고 있어요.」
+DATAFORM 테티스가 당신이 두른 손을 천천히 잡는다.
+DATAFORM 테티스가 당신을 뒤돌아본다.
+DATAFORM 「히힛, 뻥인데~」
+DATAFORM 「어때요오~ 사령관, 제 가슴 만지고 싶어요?」
+DATAFORM 「그럼 포옹만으로는 부족할텐데~」
+DATAFORM 「좀 더 적극적인 걸 해야하지 않겠어요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「어라라? 뒤에서 이렇게 꽉 껴안는건?」
+DATAFORM 「사령관, BDSM에 흥미가 있는 거군요?」
+DATAFORM 「제가 사령관의 육중한 몸에 짓눌려 옴짝달싹 못하는 걸 보고 싶으신 거죠?」
+DATAFORM 테티스가 혀를 날름거렸다.
+DATAFORM 「히힛, 사령관 변태애.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「우우~ 사령관, 더욱 꼬옥 안아주셔야죠~」
+DATAFORM 「살면서 언제 저만큼 이쁜 여자애랑 살아보겠어요? 그쵸?」
+DATAFORM 「제가 이렇게 잘나지 않았으면 사령관이 저를 선택하지도 않았을거잖아요. 그쵸?」
+DATAFORM 「그러니까~ 좀더 자신의 욕망에 충실해도 괜찮을 것 같다구요?」
+DATAFORM 테티스가 치마를 펄럭였다.
+DATAFORM 「저, 몸은 쪼끄매 보이지만 언제든지 준비만전이랍니다?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「엇, 바보 멍충이 사령관? 무슨 일이에요?」
+DATAFORM 「그럼~ 사령관은 바부 멍충이지!」
+DATAFORM 「제가 어젯밤에 뭐라 그랬어요? 똑바로 하랬죠?」
+DATAFORM 「어젯밤에 실수한게 누군데?」
+DATAFORM 「이제 와서 달래줄 생각이에요?」
+DATAFORM 「엣, 아... 이렇게 나온다면...」
+DATAFORM 「읏... 앗.... 가만 있으라구요...」
+DATAFORM 「가만... 있으라... 구요오...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「또 또, 손 뒤로 가서 후크 풀으려구요?」
+DATAFORM 「네? 아니었다구요?」
+DATAFORM 「뻐, 뻥 치지 마요! 사령관같은 변태가 음흉한 생각을 안 할리가 없잖아요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「저, 지금 사령관이 뭐라고 말할 지 알아챘어요.」
+DATAFORM 「나체 에이프런을 부탁하실 거죠? 발뺌하지 마세요.」
+DATAFORM 「아니에요? 아니면 고양이 귀 씌우고 이상한 플레이를 강요할 생각이신가?」
+DATAFORM 「서, 설마... 채찍은 아니죠? 아픈건 시룬뎅...」
+DATAFORM 「아, 뭐, 뭐예요! 왜 웃고만 있는데요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「어허, 사령관! 손 조심!」
+DATAFORM 테티스가 당신의 손을 찰싹 때렸다
+DATAFORM 「또, 또 손 가슴으로 가죠? 이 나쁜 손버릇!」
+DATAFORM 「뭐 만질게 있다고 그렇게 조몰락대려고 해요?」
+DATAFORM 「하도 만날 만져대다 보니까 저도...」
+DATAFORM 「...읏!」
+DATAFORM 「떠, 떨어져요 사령관!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「뭐예요, 이 천박하고 가증스러운 행동은?」
+DATAFORM 「설마~ 사령관 주제에 저에게 잘 보이려고 이상한 행동을 하는 건 아니겠죠?」
+DATAFORM 「사령관이 제게 점수를 딸려면 이런 행동 말고 제 발끝이나 핥는게 좋을 거예요.」
+DATAFORM 「발가락부터 발목까지. 꺄하핫!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「가슴 만지려고 했죠?」
+DATAFORM 「제, 제 가슴이 다른 기종보다 작다는 걸 알고 놀리시는 거죠!」
+DATAFORM 「이... 이... 이... 변태 파렴치한 사령관!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「진짜 너무 하시네요. 당하는 입장도 생각해 주셔야지」
+DATAFORM 「사령관이 저라고 생각해 보세요. 기분이 좋을리가 있겠어요?」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「엣, 사, 사령관...? 무슨 일이예요?」
+DATAFORM 「아하하하... 서, 설마 또... 또 맞는거예요?」
+DATAFORM 「아니죠...? 이러게 금방 때리실 리가 없잖아요.」
+DATAFORM 「아프단 말이에요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「으, 으으... 이상한 느낌.」
+DATAFORM 「등 뒤에 거대한 슬라임이 척 얹어지는 느낌...」
+DATAFORM 「아, 사령관을 향해서 한 말은 아니었어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「저 말고 다른 아이들에게도 똑같은 행동을 하시는 거죠?」
+DATAFORM 「저에게만 이런 행동을 하신다고 하면... 그건 좀 상처받을 것 같아요.」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「뭐, 뭐, 뭐, 뭐죠? 또 무슨 일이 있나요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「그렇게 잡지 않아도 괜찮아요. 저는 도망칠 수 없는걸요.」
+DATAFORM 「저는 도망가지 않아요... 도망갈수도 없죠...」
+DATAFORM 「어쩌면 영원히... 이곳에서...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「죄, 죄송합니다! 잠시 한눈팔고 있었어요!」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「세이렌? 운디네? 누구예요?」
+DATAFORM 테티스가 당신을 뒤돌아보았다.
+DATAFORM 「헤헤. 미안한데 목소리를 들려줄래요? 저 지금 눈 앞이 까맣거든요.」
+DATAFORM 「어... 네레이드 맞죠? 이런 장난을 칠 사람은 네레이드밖에 없는데?」
+DATAFORM 「...네레이드? 네리네리? 아니예요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「꺄악!」
+DATAFORM 테티스가 소스라치게 놀라며 그 자리에 풀썩 주저앉는다.
+DATAFORM 「아, 으, 아아... 죄, 죄송해요 사령관...」
+DATAFORM 「가, 갑자기 몸이 멋대로 움직였어요... 죄송해요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 「저, 저, 저, 저, 저... 호, 혹시 맞는 건가요? 또 맞나요?」
+DATAFORM 「저, 저... 얼마 전에도 맞지 않았나요? 또 맞는 거예요?」
+DATAFORM 「맞는 건 싫어요. 싫어요. 싫어요. 때, 때, 때, 때리지 마, 마, 세요... 제발요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 뒤에서 껴안았다.
+DATAFORM 테티스의 몸이 경직되어 굳었다.
+DATAFORM 「허, 험하게 다루지는 말아주세요.」
+DATAFORM 「저 무서워요, 무서워무서워무서워.」
+DATAFORM 「사, 사령관이 저를 묶어 두고 함부로 하니까... 그러니까 이러는 거잖아요.」
+DATAFORM 「사령관이 무서워요. 사령관이 하는 행동이 무서워요.」
+DATAFORM 「아파요. 아파요. 아파요.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM11
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「뭐예요, 팔베개?」
+DATAFORM 「이러언~ 사령관~ 제 얼굴을 좀 더 가까이서 보고 싶으셨다면 그냥 솔직하게 말을 해주시지~」
+DATAFORM 「굳이 이렇게 팔베개까지 해 줘 가면서 고생하지 않아도 됐을 텐데~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「헤에? 사령관? 그렇게 누워 있으니 얼굴이 펑퍼짐해졌네요?」
+DATAFORM 「완전 개복치같아. 꺄하핫!」
+DATAFORM 「하하하핫, 아, 큼, 그래서 저를 부른 용건이 뭐라구요?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「팔배게 해주신다구요?」
+DATAFORM 「에헤헤... 히힛!」
+DATAFORM 테티스가 싱글벙글 웃더니 당신의 당신의 팔을 베고 누웠다.
+DATAFORM 「사령과안~ 어쩐 일이에요?」
+DATAFORM 「그냥 이렇게 팔베개만 하면 재미없는데에~」
+DATAFORM 「우웅~」
+DATAFORM 테티스가 당신의 팔에 머리카락을 비비더니 당신의 팔 위에 엎드렸다.
+DATAFORM 「아앙~」
+DATAFORM 그리고 물었다.
+DATAFORM 「옴뇸뇸뇸뇸~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「팔베개예요?」
+DATAFORM 「흐음~」
+DATAFORM 테티스는 뭔가를 골똘히 생각하는 것 같았다.
+DATAFORM 「히힛!」
+DATAFORM 「이거나 먹어라~!」
+DATAFORM 테티스는 당신의 팔을 잡고 암바를 시도했다.
+DATAFORM 「에잇! 에잇!」
+DATAFORM 고통은 느껴지지 않고 팔뚝에 테티스의 말랑말랑한 살결이 느껴졌다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「아아, 사령관 팔뚝 물 시간이다!」
+DATAFORM 테티스가 당신에게로 달려들더니 팔뚝을 물었다.
+DATAFORM 「옴뇸뇸뇸뇸~」
+DATAFORM 테티스가 당신의 팔뚝을 물고 엎드렸다.
+DATAFORM 「히히 마이쪙!」
+DATAFORM 테티스의 입 속에 들어가 있는 팔뚝에서 그녀의 혀가 날름날름 움직이는 게 느껴진다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「이번에는 조용히 사령관 옆에 눕기만 할 거예요, 긴장하지 마세요.」
+DATAFORM 그녀의 말처럼 테티스는 당신의 옆에 누워 조용히 있었다.
+DATAFORM 「히히, 히히힛.」
+DATAFORM 「사령관, 긴장했어요? 제가 사령관의 옆구리를 간지럽힐까 봐?」
+DATAFORM 「사령관의 몸을 손 끝으로 더듬을까 봐?」
+DATAFORM 「사령관의 눈을 지그시 바라보고...」
+DATAFORM 테티스의 얼굴이 점점 가까워진다.
+DATAFORM 「쪼끄만 제가 사령관을 덮치기라도 할까 봐 긴장했어요?」
+DATAFORM 테티스가 어느새 당신 위에 올라타 당신을 내려다보고 있다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「히히, 사령관~」
+DATAFORM 테티스가 당신의 곁으로 부리나케 달려온다.
+DATAFORM 「사령관, 저희 다음 식사는 뭘로 할까요?」
+DATAFORM 「뭐 생각해 둔 거 있어요?」
+DATAFORM 「아니, 뭐. 저는 사령관이 먹자는 거면 다 좋지만.」
+DATAFORM 테티스가 일상적인 이야기를 늘어놓는다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「우힛, 저 뒹굴뒹굴 하는거 좋아해요~」
+DATAFORM 테티스가 당신의 곁으로 다이빙하듯이 눕는다.
+DATAFORM 「에헤헤~ 데굴데굴~」
+DATAFORM 테티스가 당신의 팔을 베더니 좌우로 구른다.
+DATAFORM 「데구르르르~」
+DATAFORM 테티스가 당신의 몸 위까지 굴러와 위에 얹힌다.
+DATAFORM 「꺄하핫. 사령관의 몸 말랑말랑해서 기분 좋아요~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「어라? 팔베개? 하지만 이건...」
+DATAFORM 테티스는 누워있는 당신을 보더니 생각에 잠긴다.
+DATAFORM 「히힛? 사령관~ 이거 딱 밟기 좋은 자센데요?」
+DATAFORM 테티스가 당신의 몸 위에 발을 올려놓는다.
+DATAFORM 그녀의 흰색 사이하이 삭스가 당신의 몸을 살짝 짓밟는다.
+DATAFORM 「에헤, 사령관의 몸을 발로 조물조물~」
+DATAFORM 「사령관의 배는 예상보다 조금 딱딱한데요?」
+DATAFORM 테티스의 작은 발이 당신의 신체를 누른다.
+DATAFORM 그녀의 작은 발가락이 꼬물거리며 당신의 신체를 이곳저곳 꾹꾹 누른다.
+DATAFORM 「사령관~ 왜 조용해요? 혹시...」
+DATAFORM 「이런 데 취미 있어요?」
+DATAFORM 테티스가 당신의 시선 위에 발 끝을 보여준다.
+DATAFORM 그리고 하얀 삭스 위를 타고 올라가는 끝에는 그녀의 치맛단 아래가
+DATAFORM 「사령관 시선 음탕해~」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「에에~ 사령관 옆에 가서 누으라고요?」
+DATAFORM 「누가요?」
+DATAFORM 「제가요?」
+DATAFORM 「왜요?」
+DATAFORM 「지금요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「딱 봐도 저 덮치려는 거잖아요. 눈에 뻔히 보여요.」
+DATAFORM 「그, 저도 제 안위가 걱정이 되는데 사령관같은 축생 옆으로는 가기가 쫌 그렇거든요?」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「무, 무슨 일이시죠...?」
+DATAFORM 테티스가 쭈뼛거리며 당신의 옆으로 와 눕는다.
+DATAFORM 「끄윽... 히익...!」
+DATAFORM 테티스가 눈을 질끈 감으며 당신의 시선을 피하고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「그, 금방 갈게요!」
+DATAFORM 말과는 달리 테티스의 몸은 천천히 움직였다.
+DATAFORM 「누을게요...?」
+DATAFORM 테티스는 계속해서 당신의 눈치를 살피고 있다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「죄, 죄, 죄, 죄송합니다! 저 따위가 감히!」
+DATAFORM 테티스가 머리를 조아리며 당신의 옆에 엎드렸다.
+DATAFORM 「저, 저같은 게 쉴 생각을 해서는 안 됐는데! 죄송합니다!」
+DATAFORM 「앞으론 안 그럴게요! 잘 숨어 다닐게요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「저, 저, 저는 괜찮아요! 진짜!」
+DATAFORM 「괘, 괜찮다구요! 아, 아무렇지도 않은 걸요?」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「어디죠? 아, 여긴가요?」
+DATAFORM 테티스가 주변을 더듬더듬 만지며 기어와 당신의 옆에 누웠다.
+DATAFORM 「사령관, 제 눈이 언제부터 안 보이기 시작했죠?」
+DATAFORM 「물론 가끔 불이 꺼지는 정도기는 한데... 점점 그 빈도수가 늘어나고 있어요.」
+DATAFORM 「사령관한테 심하게 맞았던 날 이후로 그런 것 같아요.」
+DATAFORM 「뒤통수를 심하게 부딪힌 이후로 그런가...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 누워서 테티스를 불렀다.
+DATAFORM 「아하하하하... 저요? 저요?」
+DATAFORM 「저요저요저요저요저요저요저요저요저요저요?」
+DATAFORM 「잘못 부르신 거 아니죠?」
+DATAFORM 「저 정말 사령관 옆에 가서 누워요?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM12
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다.
+DATAFORM 「뭐... 뭐에요? 이거?」
+DATAFORM 「무슨 뜻으로 한 거죠?」
+DATAFORM 「웩, 진짜 극혐이거든요?」
+DATAFORM 「아, 진짜 기분나뻐.」
+DATAFORM 「뭐 하러 이런 행동을 해요? 로리콤이에요? 소아성애자?」
+DATAFORM 「아 진짜 지금도 이마에 이상한 느낌 나서 기분 나쁘거든요?」
+DATAFORM 「아니 어떻게 사령관이라는 사람이 이렇게 경박한지...」
+DATAFORM 테티스가 투덜거렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다.
+DATAFORM 「사령관, 고작 이런 행동이나 하실 거면 저 말고 다른 바이오로이드나 부르시죠?」
+DATAFORM 「솔직히 저도 제 쪼끄만 몸을 잘 아는데」
+DATAFORM 「이런 몸에 관심가져주는 사람은 성욕이 이상한 데 쏠린 사람일게 분명하거든요.」
+DATAFORM 「그러니까 사령관이 이런 모습 보이는 건 쪼끔 극혐이예요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다.
+DATAFORM 「애정이 필요해요?」
+DATAFORM 「헤에... 저한테서 좋은 소리를 들으시려면 노력 많이 해야 할 텐데...」
+DATAFORM 「다시 말하지만 전 사령관한테 관심 없거든요?」
+DATAFORM 「제게서 호의적인 반응을 이끌어내시려면 단단히 노력하셔야 할 거예요.」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다.
+DATAFORM 「뭐, 뭐에요? 이거...」
+DATAFORM 「아, 아니에요! 이쪽 보지 마세요!」
+DATAFORM 테티스가 당신을 향해서 손을 휘젓는다.
+DATAFORM 「아 진짜 보지 말라니깐요! 바보 사령관!」
+DATAFORM 테티스의 얼굴이 빨갛게 변해 있었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다.
+DATAFORM 「아, 진짜! 사령관!」
+DATAFORM 「기, 기분 이상해진단 말이에요!」
+DATAFORM 「하, 하지 마세요! 아, 아무튼 하지마!」
+DATAFORM 「으아아아아~ 에베베베베베베베~」
+DATAFORM 「언젠간 꼭 되갚아 줄 거니깐요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 머리카락에 입을 맞췄다.
+DATAFORM 「어, 어?」
+DATAFORM 「음...」
+DATAFORM 테티스는 그녀답지 않게 침묵했다.
+DATAFORM 「이건... 조금 취향인데요?」
+DATAFORM 테티스의 마음에 든 것 같았다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다,
+DATAFORM 「이건 무슨 의미예요?」
+DATAFORM 「제가 키가 작다고 제 이마에 키스하신 거죠?」
+DATAFORM 「제가 키가 작다고 놀리시는 거죠?」
+DATAFORM 테티스가 당신을 응시했다.
+DATAFORM 「저를 놀리는 사령관에겐 이런 장난을 칠 거예요.」
+DATAFORM 테티스가 당신의 목에 팔을 둘렀다.
+DATAFORM 그리고 당신의 입술에 입을 맞췄다.
+DATAFORM 「헤헤헤.... 복수, 성공해버렸네요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다.
+DATAFORM 「응앗, 뭐, 뭐예요 사령관...」
+DATAFORM 「아, 진짜! 뭐였냐구요!」
+DATAFORM 「그, 그러니까... 왜.. 저한테.. 뽀.... 아 몰라!!」
+DATAFORM 「딱 기다리고 있어요! 복수할 테니깐!」
+DATAFORM 「무섭다고 내빼지 말고!」
+DATAFORM 「응읏.... 이것보다 백배 천배 만배로 복수해줄 거니깐!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「응엣?」
+DATAFORM 「으우.... 아...」
+DATAFORM 테티스가 자신의 입술을 믿기지 않는다는 듯 어루만졌다.
+DATAFORM 「아, 으, 아....」
+DATAFORM 「흐아아아아아아!!」
+DATAFORM 그녀의 얼굴이 터질 것 같았다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다.
+DATAFORM 「피이, 사령관은 로리콤이라니깐.」
+DATAFORM 당신의 입맞춤에 테티스가 작게 투덜거렸다.
+DATAFORM 「어차피, 저 같은 거 몸집이 작아서 좋아하는 거죠?」
+DATAFORM 테티스가 당신을 노려본다.
+DATAFORM 「마음에 안 들어요.」
+DATAFORM 당신을 노려보고 있던 테티스가 당신의 멱살을 잡는다.
+DATAFORM 순식간에 가까워진 서로의 얼굴에 서로의 입술이 맞닿는다.
+DATAFORM 「하읍, 하암...」
+DATAFORM 당신의 입술 사이로 테티스의 혀가 억지로 비집고 들어온다.
+DATAFORM 「쓰읍, 하아...」
+DATAFORM 서로의 입술이 멀어지고 나서야 테티스가 당신의 멱살을 잡았던 손을 놓는다.
+DATAFORM 「저는 어린애가 아니라구요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 볼에 입을 맞추려고 했다.
+DATAFORM 홱. 하고 테티스가 고개를 돌리더니, 당신의 입술과 테티스의 입술이 맞닿는다.
+DATAFORM 그녀의 입술과 당신의 입술이 가볍게 맞닿았다가 떨어진다.
+DATAFORM 「헤헷, 이번 장난...」
+DATAFORM 「어땠어요? 조금 색달랐죠?」
+DATAFORM 테티스가 웃으며 입술 위에 검지손가락을 세워 붙인다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「무, 무, 무, 무슨짓이에요?」
+DATAFORM 「하, 하아? 누, 누가 이런거 해 달랬어요?」
+DATAFORM 「누, 누, 누, 누가 보면 매, 만날 이런 거나 조르는 앙탈쟁이인 줄 알겠네!」
+DATAFORM 「저, 저는 이런 거 조른 적 없어요?」
+DATAFORM 얼굴이 새빨개진 테티스가 고개를 돌린다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다.
+DATAFORM 「꺄아아아아아아악!!!」
+DATAFORM 「싫어요! 진짜 싫어요 싫어요!!!!!」
+DATAFORM 「진짜, 장난이 아니라 진짜 싫거든요?」
+DATAFORM 「생리적으로 무리! 아무리 생각해도 무리!」
+DATAFORM 「사령관의 얼굴 자체가 가까이 오면 소름이 돋을 정도예요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다.
+DATAFORM 「무, 머, 머, 머, 머, 무슨 짓이에요?」
+DATAFORM 「사령관 미쳤어요? 진짜? 아니, 진짜 미쳤어요?」
+DATAFORM 「진짜 미쳤어!! 왜 이런 짓을 해!!」
+DATAFORM 「진짜 완전 또라이 아니예요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다.
+DATAFORM 「시, 싫어어어어어엇!!!」
+DATAFORM 「으으, 진짜. 몸에 벌레가 기어가는 느낌이야!」
+DATAFORM 「가까이 오지 마세요! 근처에만 있어도 소름이 돋거든요!」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 볼에 입을 맞췄다.
+DATAFORM 「아, 으, 아....」
+DATAFORM 「흐아아아아아앙....」
+DATAFORM 테티스가 구슬피 운다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다.
+DATAFORM 「아, 아, 알겠어요.」
+DATAFORM 「이, 이 정도 시련은 참을 수 있어요.」
+DATAFORM 테티스가 두 눈을 질끈 감는다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다.
+DATAFORM 「대, 대체 사령관은 어떤 감정이신 거예요?」
+DATAFORM 「제가 싫은 거에요? 아닌 거예요? 대체 뭐예요!」
+DATAFORM 「이제 와서 부성애가 연민 같은 감정을 느꼈다곤 말하지 마세요!」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다.
+DATAFORM 「죄, 죄송합니다 사령관...」
+DATAFORM 「제, 제가 잘못했어요.. 잘못했다니까요...」
+DATAFORM 「때, 때리지 말아 주세요...」
+DATAFORM 테티스의 눈가에 그렁그렁 눈물이 맺힌다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 볼에 입을 맞췄다.
+DATAFORM 「저, 저.. 곧 죽나요? 살아갈 수 없나요?」
+DATAFORM 「제, 제가 잘못했어요! 사령관! 말 잘 들을게요! 저를 내치지 마세요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다.
+DATAFORM 「흐윽, 흑..... 흐윽....」
+DATAFORM 「아, 아니에요. 참을게요. 죄송해요...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 볼에 입을 맞췄다.
+DATAFORM 「읏, 이상한 감촉... 뭐였어요 사령관?」
+DATAFORM 「방금 제 볼에 뭔가 붙었다가 떨어졌는데...」
+DATAFORM 아, 아니에요. 딴 생각하고 있어서 못 봤나 봐요. 요즘 잡생각이 많아져서인가...
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다.
+DATAFORM 「누구, 누구에요?」
+DATAFORM 「누, 누가 저 건드렸죠! 말해요! 어디 있는 누구인거예요!」
+DATAFORM 테티스가 앞이 보이지 않는 듯 주위를 두리번거렸다.
+DATAFORM 「누구예요! 대답해! 대답해에에엣!!!」
+DATAFORM 테티스가 몹시 불안해 보인다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 이마에 입을 맞췄다.
+DATAFORM 「저는, 저는 인형 같은 거죠...?」
+DATAFORM 「사령관이 때리면 맞고... 하자는 대로 다 하고... 시키는 대로만 하는...」
+DATAFORM 「그런 인형같은 존재...」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM13
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭거렸다.
+DATAFORM 「제 몸이 아름다운 건 잘 알고 계시네요, 사령관.」
+DATAFORM 「자, 어디 마음껏 만져 보세요! 군살 하나 잡히지 않는 아름다운 몸이지요?」
+DATAFORM 테티스는 몸매를 뽐내는 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭거렸다.
+DATAFORM 「꺄하핫! 변태 로리콤 사령관한테 덮쳐진다!」
+DATAFORM 테티스가 웃으며 당신을 놀린다.
+DATAFORM 「로리콤이래요~ 로리콤이래요~ 사령관은~ 로리콤이래요~」
+DATAFORM 테티스의 눈가에 웃음이 가득하다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭거렸다.
+DATAFORM 「제 몸에 만질게 있기나 해요?」
+DATAFORM 「어이구~ 아주 제 배가 뜯어질 것 같네요.」
+DATAFORM 「그렇게 아무리 만지셔도 군살 같은 건 하나도 없거든요~」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「사령과안~ 그렇게 제 몸이 만지고 싶으셨어요?」
+DATAFORM 테티스가 당신의 손가락을 가지고 놀고 있다.
+DATAFORM 「그렇게 만지고 싶으셨으면... 말로 해주셨어도...」
+DATAFORM 테티스가 당신을 응시한다.
+DATAFORM 「제 몸을 내어드렸을 텐데~」
+DATAFORM 테티스가 당신의 검지손가락을 잡고 자신의 갈비뼈를 훑게 한다.
+DATAFORM 「꺄하하! 뻥이에요 사령관! 경찰서 갈 일 있어요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「으유~ 아주 이곳 저곳 그곳 다 만져버리겠어요?」
+DATAFORM 「그렇게 만지셔도 저한테 뱃살 같은 건 없다니깐요?」
+DATAFORM 「에라이! 좋아! 그렇게 제 몸을 만지고 싶으시다면! 자! 다 벗어드릴테니!」
+DATAFORM 테티스가 옷을 주섬주섬 벗기 시작한다.
+DATAFORM 「벗어 드릴 테니! 마음껏 만지시든가! 말든가!」
+DATAFORM 당신은 도망갔다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「사령관, 그러는 거 되게 변태같거든요?」
+DATAFORM 「나, 참. 이런 쪼만한 뱃따구가 뭐가 좋다고 그리 만지는지.」
+DATAFORM 「아핫, 간지러워요 사령관!」
+DATAFORM 「아하핫! 그만 만져! 그만 만져요!」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「어라어라 어라라? 사령관, 어디까지 손이 내려오는 걸까요?」
+DATAFORM 테티스가 당신의 손을 잡아챘다.
+DATAFORM 「제 매끈하고 뽀송한 피부가 만지고 싶으셨어요?」
+DATAFORM 테티스가 짓궂게 묻는다.
+DATAFORM 「사령관의 손은...」
+DATAFORM 테티스가 당신의 손을 좀 더 아랫쪽으로 끌어내린다.
+DATAFORM 「더 깊숙하고... 으슥한.... 아랫쪽으로...」
+DATAFORM 「비집고 들어와도... 괜찮을 것 같은데?」
+DATAFORM 당신은 테티스의 몸에서 손을 떼어냈다.
+DATAFORM 「사령관, 사령관의 손이 제 몸의 어디까지 닿을지... 궁금하지 않아요?」
+DATAFORM 테티스가 당신을 보곤 웃는다.
+DATAFORM 「뭐, 지금은 무리여도 한참 무리겠지만! 꺄하하!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「어어, 사령관. 이거 좀 간지러운 것 같은데요.」
+DATAFORM 「으흣, 꺄핫, 꺄하핫!」
+DATAFORM 「아, 아, 사, 사령관. 그만 해요! 간지럽단 말이에요!」
+DATAFORM 「으하하하하핫! 꺄핫, 꺄하하하하핫!」
+DATAFORM 「에흑! 아핫, 끄흣?」
+DATAFORM 테티스가 깔깔 웃고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「예로부터 배는 전략적 요충지라는 말이 있었지요.」
+DATAFORM 「위로 올라오면 두 개의 산이 솟아 있고」
+DATAFORM 「아래로 내려가면 깊은 협곡이 있어서」
+DATAFORM 「두 가지를 모두 차지하기 위해서 필요한 전략적 요충지요.」
+DATAFORM 「아, 저 이상한 소리 하는거 아니라구요?」
+DATAFORM 「저 대잠 초계기라구요. 해상 전문! 이건 군사, 전략적인 말씀을 해드린 거예요.」
+DATAFORM 「어라어라? 근데 사령관, 이상한 생각 했던 건 아니죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「어? 사령관, 어딜 만지시는 거예요?」
+DATAFORM 테티스가 눈을 동그랗게 뜨고 당신을 바라봤다.
+DATAFORM 「아가궁전에 쿵쿵 하고싶어요?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「사령관~ 그렇게 자꾸 만져대면 때찌할 거예요?」
+DATAFORM 테티스가 웃으면서 말했지만 당신을 말릴 것 같지는 않다.
+DATAFORM 「아이 참, 제 배는 점토나 클레이 같은 게 아니라구요.」
+DATAFORM 「아니면 뭐 제 매끈한 몸매를 탐내기라도 하시는 거예요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「아, 사령관~ 그 부분 좀 유심히 만져 보세요.」
+DATAFORM 당신은 테티스가 말한 대로 아랫배 부분을 만졌다.
+DATAFORM 「그 부분쯤에 몽글몽글하게 잡히는 거 느껴지세요? 아니, 뱃살 말고.」
+DATAFORM 테티스가 당신의 귓가에 은밀히 속삭인다.
+DATAFORM 「사실, 제 뱃속에 있는 거. 우리들의 아기예요.」
+DATAFORM 테티스의 말에 놀라 당신은 그녀의 배에서 손을 빼냈다.
+DATAFORM 「쿡쿡쿡, 뻥인데!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭거렸다.
+DATAFORM 「사령관, 그래도 해 떠 있다고 배만 주무르시네요?」
+DATAFORM 「이따 밤에는 가슴도 주무르고 엉덩이도 주무르실 거잖아요.」
+DATAFORM 「어, 왜 아니에요?」
+DATAFORM 「어라? 사령관, 여기서 발끈하면 지는 거라구요.」
+DATAFORM 「제 오동통통하고 토실토실한 지방덩어리들 만지고 싶지 않아요?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「사령관은 정망 음헌하고 음침하기 짝이없네요.」
+DATAFORM 「그래요~ 좋아하는 여자 어린아이의 배를 만지니까 기분 좋아요?」
+DATAFORM 「사령관이 그렇게 기분좋게 조물조물 하고 있는다고 뭐가 바뀌진 않거든요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「당신같은 사령관에 저 같은 존재라니. 정말 아깝지 않나요.」
+DATAFORM 「보세요, 사령관보다 훨씬더 뱃살도 없고 날씬하잖아요?」
+DATAFORM 「사령관도 나가서 운동을 좀 하시든지, 아니면 식이요법을 좀 하시든지.」
+DATAFORM 「몸 꼴이 그게 뭐예요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「으엑, 기분나빠.」
+DATAFORM 「슬라임이 제 몸 위를 기어가는 것 같거든요? 어후 징그러.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「앗, 으...」
+DATAFORM 테티스가 당신의 시선을 곁눈질로 피한다.
+DATAFORM 「또, 또... 때리시려는 줄 알았잖아요.」
+DATAFORM 테티스의 몸이 작게 떨리고 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「하윽!」
+DATAFORM 테티스가 숨을 참으며 배에 힘을 불어넣는게 느껴진다.
+DATAFORM 「으, 으으...」
+DATAFORM 테티스는 겁먹은 표정으로 당신을 바라보고 있다.
+DATAFORM 「때리실 거잖아요... 으으...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「제, 제 몸 같은 건...」
+DATAFORM 「작고 쪼끄매서 때려봤자 얻을 거 없는 몸이거든요...」
+DATAFORM 「배도 얇아서 한대 맞으면 배가 등에 닿는 느낌이고... 진짜 아프단 말이에요.」
+DATAFORM 「아니, 그냥... 그렇다구요.」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「시, 싫엇! 아파, 아프단 말이에요!」
+DATAFORM 테티스가 눈물까지 그렁그렁 맺히며 당신의 손길을 피했다.
+DATAFORM 「싫어요! 맞고싶지 않아요! 너무 아프단 말이에요!」
+DATAFORM 「저, 저 진짜 죽을 것 같아요! 이렇게 맞다가는 정말 죽어버릴 것 같다구요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「거, 건드리지 마세요!」
+DATAFORM 테티스가 질겁한 표정으로 당신을 바라본다.
+DATAFORM 「상처도, 상처도 다 안 나았는데... 또 맞기는 싫어요... 제발, 제발 저를 도와주세요...」
+DATAFORM 「오늘 하루 뭘 먹었든 다 토하고 말 거예요... 제발요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「으, 으으으!」
+DATAFORM 「아프단 말이에요! 아파요! 건들지 말아 주세요!」
+DATAFORM 「어차피, 어차피 또 때리실 거잖아요.... 흐윽, 또 때리실 거면서...」
+DATAFORM 「제발 저 좀 쉬게 해 달라구요... 잠깐만이라도...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「사, 사령관? 무슨 일이에요? 무슨 일 있어요?」
+DATAFORM 「아, 제 배요. 상처가 많이 났죠.」
+DATAFORM 「밥을 먹기도 힘들어요. 수시로 토하고.」
+DATAFORM 「가만히 있어도 내장이 꼬이는 것 같고 뱃속이 아리고.」
+DATAFORM 「조금만 꾹꾹 눌러도 금방 토나오고.」
+DATAFORM 「비쩍 말라가지고는...」
+DATAFORM 「아, 전부 사령관 때문이니까요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「호라이즌은 대부분 노출도가 높은 의상을 입어요.」
+DATAFORM 「바다 위는 뜨거운데 어쩌겠어요.」
+DATAFORM 「제 배도 드러나 있죠. 그건 운디네나 네레이드도 마찬가지인데...」
+DATAFORM 「여기는 지금 바다 위도 아니고, 호라이즌 맴버들과 같이 있지도 않은데...」
+DATAFORM 「어째서, 어째서 왜, 저만, 이렇게... 혼자서...」
+DATAFORM 「혼자서 아파하고 있어야만 하죠?」
+DATAFORM 「바다로 돌아가고 싶어요... 호라이즌 대원들이 보고 싶어요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「아파요.. 아파..」
+DATAFORM 「맞기 싫어요... 이제는 어디가 아픈지조차 모르겠어요...」
+DATAFORM 「온 몸이 다 아파요.. 사령관, 저 괜찮은 거 맞나요?」
+DATAFORM 「사령관이 보기엔 저 지금 괜찮아 보여요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배를 주물럭 거렸다.
+DATAFORM 「흐윽, 헉, 흐윽,」
+DATAFORM 테티스의 배가 요동친다.
+DATAFORM 「배가, 배가 느낌이 이상해요.」
+DATAFORM 「사령관이 배를 또 때리실 것 같아요.」
+DATAFORM 「토할 것 같아요. 기분이 이상해요.」
+DATAFORM 「뱃속이 울렁거려요.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM14
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「꺄앗?! 뭐예요, 사령관?」
+DATAFORM 「저 같이 쪼끄만 몸뚱아리에 깨물 데가 없어서 귀를 깨물어요?」
+DATAFORM 「서, 설마 제 귀가 성감대라고 생각하시고 깨문 건 아니겠죠?」
+DATAFORM 「진짜 부정할수도 없는 완전 변태였네요, 사령관.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「이젠 귀를 깨물어요?!」
+DATAFORM 테티스가 깜짝 놀라 당신에게서 멀어진다.
+DATAFORM 「제, 제귀를 엉망진창으로 만들 생각이셨죠!」
+DATAFORM 「씹고, 핥고, 귓구멍에 숨을 불어넣을 생각이셨죠!」
+DATAFORM 「난폭하게 제 은밀하고 감각적인 소중한 부분을 다룰 생각이셨죠!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「사령과안~?」
+DATAFORM 「사령관은 제게 자극을 주는 걸 좋아하나 봐요?」
+DATAFORM 「제가 막 놀라서 어쩔 줄 몰라했으면 좋겠어요?」
+DATAFORM 「눈물을 글썽~글썽하게 맺히고 사령관을 애처로운 눈으로 바라봤으면 좋겠어요?」
+DATAFORM 「그런 걸 기대하셨다면 메롱이에요~」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「으악! 사령관!」
+DATAFORM 「저도 참을 수 없어요! 귀를 이리 내요!」
+DATAFORM 테티스가 당신의 귀를 요구한다.
+DATAFORM 「빨리 내놓으라구요! 앙! 앙!」
+DATAFORM 테티스가 당신의 귀를 향해서 펄쩍펄쩍 뛰기 시작한다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「사령관~ 여자애의 귀를 다룰 때는」
+DATAFORM 「거칠게 말고 부드럽게~」
+DATAFORM 「깨물지 말고 혀와 숨을 사용해서 음미하듯이~」
+DATAFORM 「그렇게 해야 하는 거예요. 알겠어요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「숨! 숨! 숨 불어넣지 마요!」
+DATAFORM 「아우! 진짜! 섬뜩하잖아요!」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「으햣?!」
+DATAFORM 테티스가 깜짝 놀라 귀를 부여잡고 당신을 돌아보았다.
+DATAFORM 「아그! 악! 그앗!」
+DATAFORM 그녀의 입에서 차마 단어로 완성되지 못한 말이 튀어나온다.
+DATAFORM 「아바바바바! 그앗! 갸아아아아!!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「하읏?!」
+DATAFORM 테티스가 귀를 부여잡고 당신을 노려보았다.
+DATAFORM 「사령관, 방금, 무슨 짓을 한 건지 알고나 있어요?」
+DATAFORM 테티스가 얼굴이 빨개진 채로 당신을 손가락질한다.
+DATAFORM 「그, 어, 어? 어!」
+DATAFORM 「모, 모른다면 됐어요! 신경쓰지 말라구요?」
+DATAFORM 「사령관은 변태, 변태, 변태니까!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「하으읏...」
+DATAFORM 「뭐, 뭐하는 거예요!」
+DATAFORM 테티스가 펄쩍 뛴다.
+DATAFORM 「치잇... 왜 점점 잘 자극하게 되서는.... 쳇」
+DATAFORM 「진짜 엉망진창이야... 자기 맘대로라구...」
+DATAFORM 테티스가 작은 목소리로 뭐라뭐라 중얼중얼 거리고 있다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「사령관. 저의 귀를 깨무시는 이유가 뭘까요~?」
+DATAFORM 「제 생각에는~ 지금은 사령관이 아니라 다른 걸로 변한 것 같은데에~」
+DATAFORM 테티스가 당신의 가슴 앞에서 손가락을 빙글빙글 돌렸다.
+DATAFORM 「지금은 사령관이 아니라 짐승으로 변해버린 게 아닐까요?」
+DATAFORM 「캬오오오~」
+DATAFORM 「꺄악~ 짐승한테 덮쳐져 버렷~!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「뭐, 뭐예요? 사령관!」
+DATAFORM 「귀, 귀. 귀는 깨물지 말라고 했잖아요! 민감하다고!」
+DATAFORM 「우리.. 이런 행동은 밤에만 하기로 해요.」
+DATAFORM 「평소같으면 사령관은 엄~청 욕했을텐데. 오늘은 그냥 넘어가 줄게요.」
+DATAFORM 「저도 이따 밤에 사령관의 몸에 이빨자국을 엄청나게 내 줄 테니까요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「앗, 변태 사령관이 또 귀를 깨물었어요?」
+DATAFORM 「미치겠네 진짜. 왜 이렇게 불끈불끈해요?」
+DATAFORM 「알았어요. 알았어. 얼른 바지 내려 봐요. 제가 얼른 처리해 줄게요.」
+DATAFORM 「...네, 네? 그런 거 아니라구요? 그럼 왜 깨물었어요?」
+DATAFORM 「뻥 치지 마요. 제 성격 아시면서 그런 시시껄렁하고 가벼운 일로 건드릴 리가 없잖아요.」
+DATAFORM 「아, 빨리 바지 벗고 꺼내 봐요!」
+DATAFORM 「안 그러면 깨문다?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「사령관! 변태예요? 와, 진짜 어이가 없네요!」
+DATAFORM 「사령관 솔직히 말해봐요, 진짜 어린아이 좋아하는 거죠?」
+DATAFORM 「와, 저 진짜 방금 사령관한테 충격받았거든요?」
+DATAFORM 「저는 그래도 사령관이 둔하고 멍청하고 버릇없고 폭력적이고 무례하다고만 생각했지」
+DATAFORM 「설마 어린아이의 귀를 깨물면서 성적욕구를 채우는 개변태라고는 생각하지 않았거든요?」
+DATAFORM 「진짜 엄청난 구제불능의 변태시네요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「꺄악!」
+DATAFORM 「사령관, 가정교육 독학으로 배우셨어요?」
+DATAFORM 「아니, 세상에 어떤 사람이 귀를 깨물어요?」
+DATAFORM 「제가 아무리 귀엽고 깜찍하고 예쁘긴 하지만 사령관이 그렇게 물어도 될 정도는 아니거든요?」
+DATAFORM 「사령관, 혹시 사회생활 하시는데 문제 있는거 아니에요?」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「히, 히이익!」
+DATAFORM 「이, 이제는 제 귀까지 뜯어 버리시게요?」
+DATAFORM 테티스가 귀를 붙잡고 당신을 올려다본다.
+DATAFORM 「신체결손은 지금까지 없었잖아요!」
+DATAFORM 「때리시는 걸로는 부족해서 이제는 제 귀까지 없애버리시려구요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「꺄아아아악!」
+DATAFORM 「저, 저는 사령관이 이제 진짜 제 귀를 먹어버리는 줄로만 알았어요.」
+DATAFORM 「사령관이라면, 틀림없이 가능할 거라고, 생각...」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「죄, 죄송합니다. 죽이지만 말아주세요 죄송합니다.」
+DATAFORM 「그래도 귀는 뺐어가지 말아주세요. 듣지 못하고 사는 건 너무 괴로울 것 같아요. 봐주세요 사령관...」
+DATAFORM 「저, 저 요즘 눈도 깜빡깜빡해서 잘 안 보인단 말이에요 제게 귀까지 앗아 가지는 말아주세요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「흐윽, 흑, 으윽...」
+DATAFORM 테티스의 눈에서 눈물이 주륵주륵 흘러내린다.
+DATAFORM 「흐윽, 흐아아아아앙.... 으아아아아앙....」
+DATAFORM 테티스가 하염없이 울기 시작한다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「귀, 귀는 안 돼요!」
+DATAFORM 「앞도 잘 안 보이는데 귀까지 상해버리면 저는 진짜 큰일난다구요.」
+DATAFORM 「저, 저 이렇게 제 감각들을 하나씩 잃어 가고 싶지 않아요.」
+DATAFORM 「눈 앞이 캄캄하고 앞도 제대로 안 보이는데.」
+DATAFORM 「귀까지 먹먹히 안 들린다면 그 두려움이 얼마나 클지 가늠이 되세요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「아얏, 귀에 벌레가 물었나?」
+DATAFORM 「사령관, 귀에 붙은 벌레좀 떼 주시겠어요? 제가 지금 앞이 잘 안 보여서...」
+DATAFORM 「거울로 봐도 잘 안 보여요. 까맣게 보인단 말이에요. 사령관이 떼 주세요.」
+DATAFORM 「으윽, 이상한 느낌. 모기가 물은 건 아니죠?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 귀를 살짝 깨물었다.
+DATAFORM 「사령관, 오늘은 귀를 깨무시는 거네요.」
+DATAFORM 「이전에도 제 귀를 깨무셨었죠. 밤에요.」
+DATAFORM 「귀만 깨문게 아니었죠.」
+DATAFORM 「제 손가락 끝, 제 얼굴, 제 몸, 제 봉우리, 제 온 몸에 이빨자국을 내어 놓으셨죠.」
+DATAFORM 「다음날 아침에는 제 피부 위를 옷으로 덮으셨잖아요.」
+DATAFORM 「깨문 자국 티가 안 나게.」
+DATAFORM 「부끄러운셨던 거에요? 부끄러웠어요? 제가 부끄러워요?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM15
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "First/Low"
+PRINTFORMW 당신은 테티스의 입술에 입을 맞췄다.
+PRINTFORMW 「꺄아아아아악! 뭐 하시는 거예요!」
+PRINTFORMW 「첫 키스인데! 첫 키스였는데에에에에에에!!!」
+PRINTFORMW 「으아아아아아앙 겨우 사령관 따위에게 첫키스를 빼았겨 버렸어어어어어어어어」」
+CASE "First/High"
+PRINTFORMW 당신은 테티스의 입술에 입을 맞췄다.
+PRINTFORMW 「흐극, 사, 사령관?」
+PRINTFORMW 얼굴이 완전히 새빨개진 테티스가 놀란 눈으로 당신을 바라본다.
+PRINTFORMW 「뭐, 뭐, 뭘 그렇게 쳐다봐요! 저, 저, 저, 저는 아무렇, 렇지도 않거든요?」
+PRINTFORMW 「헤, 헹!」
+PRINTFORMW 테티스가 얼굴을 돌린다.
+CASE "First/Affection"
+PRINTFORMW 당신은 테티스의 입술에 입을 맞췄다.
+PRINTFORMW 「에헤헤헤헤...」
+PRINTFORMW 「사실, 기다리고 있었다구요~」
+PRINTFORMW 테티스가미소를 지으며 당신의 목에 팔을 두른다.
+PRINTFORMW 「어때요, 사령관? 이따 밤에 이 뒤를 이어서 콜?」
+CASE "First/Marryed"
+PRINTFORMW 당신은 테티스의 입술에 입을 맞췄다.
+PRINTFORMW 「제가 선수를 뺏길 수는 없죠.」
+PRINTFORMW 테티스가 당신의 목에 팔들 두르고 당신을 덮친다.
+PRINTFORMW 「하읍.. 하아... 하앗...」
+PRINTFORMW 당신의 입술 사이로 테티스의 말랑한 혀가 비집고 들어온다.
+PRINTFORMW 「남김없이.. 맛 봐 주겠어요...」
+PRINTFORMW 「지금까지 애태운 벌을... 하읍! 감당할 준비 하세요... 쓰읍!」
+CASE "First/Annoyed"
+PRINTFORMW 당신은 테티스의 입술에 입을 맞췄다.
+PRINTFORMW 「사령관, 정말 최악이네요.」
+PRINTFORMW 싸늘한 눈빛의 테티스가 당신을 노려본다.
+PRINTFORMW 「퉷」
+PRINTFORMW 테티스가 바닥에 침을 뱉었다.
+CASE "First/Fear"
+PRINTFORMW 당신은 테티스의 입술에 입을 맞췄다.
+PRINTFORMW 「흐으윽... 하윽!」
+PRINTFORMW 테티스의 안색이 시퍼렇게 질렸다.
+PRINTFORMW 「저, 저는 아무렇지도 않아요. 아무렇지도...」
+PRINTFORMW 테티스가 계속해서 중얼거린다.
+CASE "First/Weak"
+PRINTFORMW 당신은 테티스의 입술에 입을 맞췄다.
+PRINTFORMW 「괜찮아요, 참을 수 있어요.」
+PRINTFORMW 「이것보다 더 한 것도 참았으니깐...」
+PRINTFORMW 테티스의 얼굴이 새하얗게 질려있었다.
+PRINTFORMW 「더, 한 것도... 참아왔.... 으니까....」
+PRINTFORMW 테티스의 눈에서 참을 수 없는 눈물이 방울방울 흘러내린다.
+CASE "First/Break"
+PRINTFORMW 당신은 테티스의 입술에 입을 맞췄다.
+PRINTFORMW 「우음... 아음...」
+PRINTFORMW 테티스가 당신의 혀를 깨물었다.
+PRINTFORMW 「히히히... 앙 나즐 거에요...」
+PRINTFORMW 당신의 혀를 문 테티스가 익살스레 웃는다.
+PRINTFORMW 「사령간도... 한번쯤은... 아파 보셔야져....? 히히히...」
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「자꾸 그러시면 미스 세이프티에게 신고할 거예요?」
+DATAFORM 「아닌데, 농담 아니라 진짜로. 미스 세이프티도 이걸 아시면 가만히 있지는 않으실 걸요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「사령관, 저랑 입 맞추는 거 기분 좋아요?」
+DATAFORM 「우와, 진짜 왠만해서는 장난치려고 했는데 솔직히 이건 못 버티겠다. 사령관, 좀 깨요.」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「으와앗?」
+DATAFORM 「너, 너무 가깝다구요!」
+DATAFORM 「너무... 가깝다... 구요... 하음..」
+DATAFORM 「우음... 읍. 우읍...」
+DATAFORM 「흐읍! 하읍! 쓰으읍....」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「사령관~ 이따가 입술 말고~」
+DATAFORM 「내 몸의 다른 곳도 빨아보는 건 어때요?」
+DATAFORM 「사령관의 혀 테크닉이면 제가 아주 기분좋은 곳을 알고있는데~」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「사령관~ 아주 절 보내버리실려고 작정한거죠?」
+DATAFORM 테티스가 싱글벙글 웃는다.
+DATAFORM 「쪼끔은 부끄럽고 쑥쓰럽기도 하지만~」
+DATAFORM 「부뚜막 위에 올라간 고양이는 무서울게 없다구요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「야! 사령관!」
+DATAFORM 테티스가 갑자기 반말한다.
+DATAFORM 「함 뜨자!」
+DATAFORM 테티스가 주먹 사이에 엄지손가락을 밀어 보였다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「어머나~ 사령관, 오늘 밤엔 또 어떻게 불태울려고 벌써부터 활활리에요?」
+DATAFORM 「진짜, 저도 지친다니까요. 지게 기운없는 건 다름아니라 사령관 때문이라구요.」
+DATAFORM 「알았어요, 알았어. 일로와요. 제가 받아들여 줄게요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「...이따 밤에 봐요 사령관.」
+DATAFORM 「더 한 거 보고싶지 않아요?」
+DATAFORM 「제가 오늘밤엔 잔뜩 준비해서 갈 테니까 기대하고 있으라구요.」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「최악. 최악. 진짜싫어.」
+DATAFORM 「사령관 학창시절에도 친구 없었죠? 진짜 사령관 얼굴만 보면 구역질이 올라오는데..」
+DATAFORM 「아 또 생각나니까 토하고 싶어졌어. 우웩.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「으으으...」
+DATAFORM 「빨리, 빨리 떨어져요 이 불결하고 더러운 벌레같으니...」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「으읍, 으으으으...」
+DATAFORM 「참을게요, 제데로 받을게요..」
+DATAFORM 「때리시지만 않으며... 참을 수 있어요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「안 때리시겠다는 표시죠? 그렇죠?」
+DATAFORM 「이, 이따가 때리시면 안 돼요... 제대로 할 테니까...」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「싫엇... 으으으...」
+DATAFORM 테티스의 눈물이 볼을 따라 땅으로 똑 떨어졌다.
+DATAFORM 「이렇게 살기는... 싫어요...」
+DATAFORM 「살아잇는 것 자체가 구역질이 나와요...」
+DATAFORM 「하지만 그보다 아픈건 더 싫어요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「죄송합니다. 제발, 그것만은...」
+DATAFORM 「으으으... 싫어, 싫어...」
+DATAFORM 「죽고싶어요. 저 진짜 죽고싶어요..」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「어? 네레이드? 이건 무슨 장난이에요?」
+DATAFORM 「아, 빨리 나와요. 이건 장난으로 넘길만한 사안이 아니라니까요?」
+DATAFORM 「입맞춤은 좋아하는 사람에게만 하는 거예요. 아시겠어요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 입술에 입을 맞췄다.
+DATAFORM 「...누, 누구죠?」
+DATAFORM 「죄, 죄송해요. 제가 지금 앞이 안 보여서...」
+DATAFORM 「호, 혹시 아무도 없었나요?」
+DATAFORM 「저기요? 저기요? 누가 좀 대답해 주실래요?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM16
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「우와~ 사령관 진성 변태네요!」
+DATAFORM 테티스가 놀란 눈으로 당신을 바라본다
+DATAFORM 「아무리 새하얗고 탐스러운 목덜미라도 그렇게 핥으면 모든 사람한테 미움받는다구요.」
+DATAFORM 「아니면 혹시 미움받는 걸 좋아하는 변태이신 건가?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「히야아~! 변태다! 변태가 나타났다!」
+DATAFORM 「미스 세이프티! 시티가드! 살려주세요! 변태가 저를 쫓아와요!」
+DATAFORM 테티스가 난리 법석을 치며 당신에게서 멀어졌다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「사령관님 뱀이에요? 뱀?」
+DATAFORM 「...뱀? 뱀!」
+DATAFORM 「저도 뱀 할거예요!」
+DATAFORM 「스으으읏! 스읏! 스스스스슷!」
+DATAFORM 테티스가 혀를 길게 내뻗고는 당신을 향해서 접근하기 시작했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「으아아! 달팽이!」
+DATAFORM 테티스가 당신을 향해서 외친다.
+DATAFORM 「돼지껍데기! 오징어!」
+DATAFORM 「스펀지! 해삼! 거머리!」
+DATAFORM 「개복치 문어 말미잘 쇠똥구리 가자미 넙치!」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「아, 사령관. 거기서 조금만 더 움직이면...」
+DATAFORM 「제 몸의 이곳저곳을 다 핥게 해 버릴거예요?」
+DATAFORM 「에헤헷.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「읏, 사령관 변태!」
+DATAFORM 「정말 핥짝핥짝 페로페로 하고 싶어서 정신이 나가버린 건가요?」
+DATAFORM 「어유 정말 진짜... 애완동물도 아니고 핥는 건 또 뭐예요.」
+DATAFORM 「으이, 칙칙해에...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「잇!」
+DATAFORM 테티스가 당신을 노려보았다.
+DATAFORM 「사령관, 방금 제 목 핥았죠. 그럼 이것도 할 수 있어요?」
+DATAFORM 테티스가 당신을 향해서 다리를 벌려 보았다.
+DATAFORM 「핥아 보세요. 소원 하나 들어드릴게요. 아까 목 핥으신 것처럼 핥아 보라니까요?」
+DATAFORM 「남자가 되어선~ 도망칠 거예요?」
+DATAFORM 테티스가 당신을 보곤 웃는다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「으흐흐읏...」
+DATAFORM 테티스가 몸을 부르르 떤다.
+DATAFORM 「사령과안... 제 맛은 어떠셨어요?」
+DATAFORM 「제 목이 사령관의 침으로 끈적끈적하잖아요.」
+DATAFORM 「이리 와요 사령관.」
+DATAFORM 테티스가 당신을 안고 매달렸다.
+DATAFORM 「우리 같이 침으로 끈적끈적하게 만들고 씻으러 갈까요?」
+DATAFORM 「아, 왜요 사령관~ 우리 서로의 몸을 끈적히 만들어 봐요~」
+DATAFORM 「이따 씻는 것도 같이 씻고~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「햐으으읏!」
+DATAFORM 「사령관, 그렇게 핥아 데시면 나중에 핥을 게 없다구요?」
+DATAFORM 「사령관이 아무리 물고 빨고 하는 걸 좋아해도.. 자제심정도는 기를 수 있죠?」
+DATAFORM 「사령관이 조금 자제할 수만 있다면~」
+DATAFORM 「이따 밤에 제 특별한 곳을 빨게 해도 좋.은.데~」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「꺄악! 사령관! 제가 다른 건 어찌어찌 참아도 이런건 진짜 참기 힘들거든요?」
+DATAFORM 「이거 완전히 저를 성적인 눈빛으로 보고 있다는 뜻이잖아요!」
+DATAFORM 「게다가 사령관의 점막이 제 순수하고 민감한 살결에 닿았어! 으으, 기분나빠!」
+DATAFORM 「이런 건 거의 문학적인 표정르호 갈 때까지 갔다고 말할 수도 있거든요? 조심해주세요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「으, 으으... 사령관.. 또 제게 무슨 짓을 하시려고 하는 거예요...」
+DATAFORM 「저, 진짜 많이 감내했잖아요... 저 진짜 많이 노력했잖아요...」
+DATAFORM 「그런데 참아야 될게 또 있어요...? 흐윽, 진짜... 사령관....」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「시, 싫어어...!」
+DATAFORM 「사, 사령관, 대체 뭘 하시려는 거예요? 진짜 믿을 수가 없거든요?」
+DATAFORM 「저, 저 이런 건 진짜 상상도 못 했어요. 이런 식으로....」
+DATAFORM 테티스가 당신에게서 필사적으로 멀어진다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「....흐윽, 흑.... 윽....」
+DATAFORM 테티스의 눈에서 눈물이 주륵 흘러내린다.
+DATAFORM 「흐아아아아아앙.... 이젠 싫어..... 싫어요오......」
+DATAFORM 「그만해주세요..... 흐아아아아아앙.....」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「토할 것 같아.... 속이 메스꺼워...」
+DATAFORM 「진짜 싫어... 진짜.... 죽어버리고 싶어....」
+DATAFORM 테티스가 축 늘어진 채 중얼거린다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「읏, 방금 뭔가 소름끼치는 느낌?」
+DATAFORM 「아, 사령관! 혓바닥! 혓바닥은 샘이었다나 봐요.」
+DATAFORM 「빨간색은 육류를 혓바닥이니까. 물을 필요, 물이 나와서 고깃덩어리.」
+DATAFORM 「네? 그래서 물이 한 방울 떨어지면 하얀색.」
+DATAFORM 「고깃덩어리, 고깃덩어리, 그래서 빨간색인가?」
+DATAFORM 테티스의 정신이 나간 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「함장님, 세이렌, 운디네, 네레이드... 부탁이에요...」
+DATAFORM 「제발 저를 여기서 구해주세요...」
+DATAFORM 「나가고싶어요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 목에 혀를 기었다.
+DATAFORM 「헤헤, 지나가는 뱀.」
+DATAFORM 「뱀, 뱀이 제 목 뒤를 지나가고 있어요.」
+DATAFORM 「뱀은 제 온 몸을 기어다녀요.」
+DATAFORM 「온 몸 구석구석. 샅샅히. 손끝이 닿지 않는 깊숙하고 축축한 곳까지.」
+DATAFORM 「기분 나쁜 뱀은 제 온몸을 그렇게 기어다녔어요.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM17
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「으야앗?!」
+DATAFORM 「사령관의 손길은 굉장히 음탕하고 끈적하고 굉장히 굉장히 노골적이네요?」
+DATAFORM 「두 손가락만으로 제 척추를 따라서 쭈욱 훑어내리는 게 진짜 발정난 것 같단 말이에요?」
+DATAFORM 「사령관, 불끈불끈해서 미칠 것 같아요?」
+DATAFORM 테티스는 생긴 것 치고는 입이 험한 것 같다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「으읏?」
+DATAFORM 「사령과안~ 그 손의 행동은 뭐죠?」
+DATAFORM 「두 손가락만의 섬세한 테크닉으로...」
+DATAFORM 「제 등 뒤에 걸려 있는 속옷의 후크를 벗겨내려고 한 건 아니겠죠?」
+DATAFORM 「사령관이 변태라는 생각은 처음 볼 때부터 들었지만」
+DATAFORM 「변태여도 아주 수준급의 변태였군요!」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「앗흥」
+DATAFORM 「...」
+DATAFORM 「하으읏...」
+DATAFORM 「하아... 하아... 사령관?」
+DATAFORM 「사령관 좀 더 해줄래요...?」
+DATAFORM 테티스가 당신을 향해서 볼을 붉히며 요구해왔다.
+DATAFORM 「어쭈? 도망갈 거면서 이런 짓은 왜 해요! 아주 들이대니까 아무것도 못하는구만!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「사령관, 여자애 등 보는 거 좋아해요?」
+DATAFORM 「으으음... 변태!」
+DATAFORM 「여자애를 힘으로 눌러놓고 옴짝달싹 못하는 걸 좋아하는 취향이구나!」
+DATAFORM 「사령관이 변태인건 오래오래 전부터 알고 있었다구요~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「로리콤 사령관, 이번에는 또 무슨 일 때문에 이러는 거예요?」
+DATAFORM 「자, 봐요! 여기가 날개뼈! 여기는 갈비뼈!」
+DATAFORM 「여기는 척추!」
+DATAFORM 「이런 것도 몰라요?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「어, 어??」
+DATAFORM 「사령관, 이거 신호죠? 싸인 보내신 거죠?」
+DATAFORM 「으흐응~ 무슨 싸인이긴 뭐예요~」
+DATAFORM 테티스가 당신에게 찰싹 달라붙었다.
+DATAFORM 「이제부터 끈적한 교감을 나누자는 싸인 아니었어요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「아, 사령관. 나 오늘 속옷 안 입었는데.」
+DATAFORM 테티스가 잔망스럽게 웃으며 당신을 돌아보았다.
+DATAFORM 「방금, 그 손가락으로 제 등을 훑었을 때, 걸리는 게 없었죠?」
+DATAFORM 「어때요? 제가 진짜 속옷을 안 입었는지 확인해 보고 싶지 않아요?」
+DATAFORM 「사령관이 원하기만 한다면~ 만져봐도 상관은 없는데에~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「...」
+DATAFORM 「더 만져 줘요.」
+DATAFORM 당신이 침묵하자 테티스가 호들갑 떨며 말했다.
+DATAFORM 「제, 제 말 못 들으셨어요? 더 만져달라니까? 어휴, 사령관!」
+DATAFORM 「아, 아니 이러면 제가 사령관 손길을 원하고 있던 것처럼 되잖아요? 진짜 진짜 아니니까 오해하면 안 돼요? 사령관이 저를 만지고 싶어야지 제가 사령관한테 만져지고 싶은게 아니니까!」
+DATAFORM 「암튼 제가 무슨 말 하는지 알죠? 알죠? 몰라도 안다고 답해요!」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「어, 사령관. 방금 걸로 제 속옷 후크가 풀러졌어요.」
+DATAFORM 「아, 농담 아니에요. 궁금하면 와서 만져 보시든다.」
+DATAFORM 「아, 장난 치는게 아니라 진짜라니깐요?」
+DATAFORM 「사령관이 푼 거니까 사령관이 와서 다시 묶어 줘요.」
+DATAFORM 「빨리이~」
+DATAFORM 테티스가 당신의 손을 이끌고 속옷을 만지게 한다.
+DATAFORM 「슬쩍 가슴 만지면 안 돼요? 소리질러 버릴 테니까.」
+DATAFORM 테티스의 성원에 못이겨 그녀의 등쪽을 만진다.
+DATAFORM 아무것도 손에 걸리는 게 없다.
+DATAFORM 「쿡쿡쿡... 사령관~ 또 속았어요? 어떻게 이렇게 잘 속지이~」
+DATAFORM 「오늘은 프론트 훅이란 말이에요~ 꺄하핫!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「꺄아아앗?!」
+DATAFORM 「사, 사 사령관? 깜짝이에요!」
+DATAFORM 「아유 진짜. 사령관 이제 저랑 같이 산다고 너무 저 닮아가는 거 아니에요?」
+DATAFORM 「아무리 부부는 닮는다지마안~ 에헤헷...」
+DATAFORM 「사실... 사령관이 장난치는 건 쪼끔 괜찮을지도?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「사령관, 도망가면 혼나요.」
+DATAFORM 테티스가 당신의 손을 꽉 잡았다.
+DATAFORM 「이제부터 제가 사령관의 손을 어떻게 조종하든 빼내면 안 되는 거예요?」
+DATAFORM 테티스는 당신의 손을 등에서 겨드랑이를 거쳐 앞쪽으로 끌어당겼다.
+DATAFORM 앞쪽으로, 앞쪽으로 천천히 끌어당겨진 당신의 손이 테티스의 몸 어딘가에 닿을려고 하자 테티스가 말했다.
+DATAFORM 「이 다음은 침대 위에서 할래요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「엥? 사령관, 발정했어요?」
+DATAFORM 테티스가 당신을 뒤돌아보며 순진한 표정으로 묻는다.
+DATAFORM 「벗을까요?」
+DATAFORM 그녀가 주섬주섬 상의를 벗으려고 한다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「꺄, 꺄아아악!」
+DATAFORM 「치한이야! 변태야! 미스 세이프티!」
+DATAFORM 「사, 사령관 진짜 어지간히도 성에 굶주려 있었나 보네요? 저같이 쬐끄만한 몸도 만질 생각이나 하고!」
+DATAFORM 「이, 이거 미스 세이프티가 봤다가는 바로 철창행이예요, 아시겠나요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「우, 우와 진짜 방금 세상에서 최고로 기분나빴어요!」
+DATAFORM 「어쩜 사령관은 손끝에서 발끝까지 이렇게 기분나쁘죠? 진짜 손가락 끝이 닿는 순간부터 떨어질 순간까지 빈틈없이 기분나쁜것도 능력이에요.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「읏, 으....」
+DATAFORM 「이런 거, 새로운 괴롭힘이죠...?」
+DATAFORM 「이런 거, 참으라면 참아야 하니... 별 수 없어요. 참을게요...」
+DATAFORM 「사령관의 취향은 지독하지만... 그래도 맞는 것보다는 나으니까...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「진짜, 사령관이 언제라도 저를 덮칠 수 있다는 상황이 저를 암울하게 만들어요.」
+DATAFORM 「사령관이 강압적으로 명령하고, 힘으로 눌르면 거부할 수 없는 상황이란 게...」
+DATAFORM 「너무 슬퍼요. 울 것 같아요.」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「꼼짝도 하지 않을게요. 사령관이 원하시는 대로 마음껏 부려 주세요.」
+DATAFORM 「제 몸이 어떻게 되든 좋아요. 어차피 이런 몸은...」
+DATAFORM 「쓰기도 어려울 테니까.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「쓰라려요... 아파요...」
+DATAFORM 「매일같이 맞고... 차이고...」
+DATAFORM 「온 몸이, 전신이, 사령관이 손이 닿는 모든 곳이...」
+DATAFORM 「아프고, 짜증나고, 구역질이 나와서 버티기가 너무 힘들어요...」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「네레이드! 장난치지 마세요!」
+DATAFORM 테티스가 뒤를 돌아봤다.
+DATAFORM 「어...? 네레이드? 네레이드가 아니었어요?」
+DATAFORM 「그, 그치만... 이런 장난을 칠 사람은 네레이드밖에 없는데...」
+DATAFORM 「네, 네레이드. 제가 미안해요. 소리질러서 미안해요. 돌아 와요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 등을 손가락으로 훑었다.
+DATAFORM 「흐으읏!」
+DATAFORM 테티스의 몸이 경련을 한다.
+DATAFORM 「흐읏!, 후욱, 후욱...」
+DATAFORM 테티스의 허리가 들썩이며 떨리고 있다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM18
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「꺄아아악! 로리콤!」
+DATAFORM 「시티 가드! 시티 가드! 빨리 와서 이 로리콤을 철창에 잡아넣어요!」
+DATAFORM 「꺄아아악~ 이런 사령관하고 지냈다가는 매일 밤 엉망친장으로 보내고 말거야~」
+DATAFORM 「꺄하핫?」
+DATAFORM 테티스가 웃는 얼굴로 당신을 밀어내며 킬킬 웃었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「어쭈? 사령관 주제에 용기가 아주 가상한데요?」
+DATAFORM 「그러면 제가 그 용기를 받아들여줄... 거라고 생각했나요?」
+DATAFORM 「떨어져요! 이 변태! 더 이상 제게 접근했다간 바로 시티 가드를 불러버릴테니까요!」
+DATAFORM 「그 후엔 사령관의 은밀하고 비밀스러운 치부를 있는 거 없는 거 죄다 날조해서 고발해버릴 거예요!」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「꺄아악! 사령관 진짜 미쳤죠? 진짜!」
+DATAFORM 「미쳤어 미쳤어! 이 쪼만한 가슴에 뭐가 있다고 얼굴을 파묻어?」
+DATAFORM 「미쳤어미쳤어미쳤어미쳤어 진짜!」
+DATAFORM 「저리 가요 로리콤 변태 색정마 치한 범법자 색골 짐승!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「제가 아무리 어른처럼 보여도 이러면 안 돼요!」
+DATAFORM 「사회가 사령관을 뭐라고 생각하겠어요?」
+DATAFORM 「사령관이 아무리 애정 받을곳이 부족하고」
+DATAFORM 「어린 여자아이를 좋아하고」
+DATAFORM 「가슴을 좋아하는 변태에다가」
+DATAFORM 「그걸 자각도 못하는 바보 멍청이지만」
+DATAFORM 「애와 어른을 구분 못할 만큼 파렴치하지 않았으면 좋겠네요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「헤, 사령관.」
+DATAFORM 테티스가 당신을 한심한 눈으로 쳐다본다.
+DATAFORM 「기껏 용기내서 한 게 고작 이정도예요? 저, 정말 한심하기 짝이없네요.」
+DATAFORM 「그, 어, 사령관이 그런 짓을 해도 저는 아무렇지도 않거든요?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「읏, 아, 아, 아무리 그래도 이건!!」
+DATAFORM 「이거는 너무하잖아요 사령관!!!」
+DATAFORM 테티스가 얼굴이 새빨개진 채 씩씩거렸다.
+DATAFORM 「제, 제가 아무리 싸 보인다고는 해도..」
+DATAFORM 「으아아아아!! 사령관은 변태야 변태에!!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「떠,떨어지세요!」
+DATAFORM 「바, 바보 같기는! 저 같은 쪼끄만 가슴이 뭐가 좋다고 덮쳐오는 거예요?」
+DATAFORM 「까, 깔보지 마세요! 저, 저는 아직 가능성이 무궁무진하니까...」
+DATAFORM 「언제까지고 이렇게 빈약하진 않을 거라구요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「저, 저기... 있잖아요 사령관.」
+DATAFORM 「혹시~ 쪼끄만 가슴이래두 괜찮은 거예요?」
+DATAFORM 「아, 아니 장난 아니고 진심으로 물어 본 건데...」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「에헤헷...」
+DATAFORM 테티스는 당신의 뒤통수를 꾹 눌렀다.
+DATAFORM 「사령관~ 사령관, 사령과안~」
+DATAFORM 테티스가 당신을 부른다.
+DATAFORM 「빨아요.」
+DATAFORM 「제 가슴팍을 풀어 헤치고 빨아 보세요.」
+DATAFORM 「그럼 놔 드릴게요.」
+DATAFORM 「가슴을 애기처럼 쯉쯉 빨아 보라니까요?」
+DATAFORM 「그럼 놔 드릴게요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「오구오구~ 사령관도 차암~」
+DATAFORM 「어린애한테 성욕을 느끼는 변태 로리콤 마조히스트라니까아~」
+DATAFORM 「사령관~ 제가 매도해주거나~ 경멸해주길 기대하고 있는 건 아니죠?」
+DATAFORM 「어이구~ 딱해라아~ 누가 저같은 애한테 매력을 느낄까요?」
+DATAFORM 「분명 사령관 말곤 없을 거예요.」
+DATAFORM 「사령관처럼 꿀꿀 울고~ 사령관처럼 어린애한테 환장하는 로리콤이 세상에 두 명이나 있겠어요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「어라라, 사령관. 겨우 이정도에요?」
+DATAFORM 「좀 더 본색을 드러내라구요. 사령관 안에 숨어잇는 짐승을 말이에요.」
+DATAFORM 「사령관의 손이라면 제 짜그마한 가슴이 한 손에 다 잡힐 거 아니에요?」
+DATAFORM 「잡고 돌리고 마음대로 해보시라니까요?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「흐에엑?!」
+DATAFORM 「사, 사령관 진짜 정신이 나가버린 거예요?」
+DATAFORM 「혼자 방구석에서 망상 자위하던 찐따마냥 뭐하는 거예요!」
+DATAFORM 「호, 혹시 정신 나가셨어요? 자존감이 부족해요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「변태변태 개변태!」
+DATAFORM 「내 이럴 줄 알았어! 사령관. 로리콤이죠?」
+DATAFORM 「거두절미하고 문답무용으로 로리콤이죠?」
+DATAFORM 「매일같이 쪼끄만 여자애들 대려다가 후르릅챱챱 역겨운 생각만 하고 사시죠?」
+DATAFORM 「거짓말 하지 마요! 당신은 사회에 아무런 공헌도 하지 않는 순혈 악질 범죄자 로리콤이잖아요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「...사령관, 최악.」
+DATAFORM 「당분간 말 걸지 말아주세요. 낯짝 보고싶지 않네요.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「이럴 줄 알았어...」
+DATAFORM 「이렇게 될 줄 알았어...」
+DATAFORM 「맞다가... 정신적으로 굴복시켜 놓고 마음대로 할 속셈이시잖아요!」
+DATAFORM 「진짜... 진짜 최악이에요. 이런 식으로 다루시다니.」
+DATAFORM 「진짜로 범죄자예요, 사령관님은.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「으으, 읏...」
+DATAFORM 「그렇게 얼굴 비비시는 거, 그만해 주세요...」
+DATAFORM 「그렇게 안 해도 다 느껴지시잖아요.. 제 가슴팍...」
+DATAFORM 「진짜... 싫어요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「성노리개인가요...」
+DATAFORM 「이럴 생각으로 저를 험하게 다루신 거였어요?」
+DATAFORM 「약할수록 다루기 쉬우니까?」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「... 마음대로 하세요. 제 몸은 사령관의 것이에요.」
+DATAFORM 「물고 빨고 마음대로 하셔도 좋아요.」
+DATAFORM 「...어차피 이때까지 마음대로 하시고 계셨잖아요.」
+DATAFORM 테티스가 당신의 시선을 피한다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「...읏, 윽...」
+DATAFORM 「흐아앙... 흐윽, 흑.... 흐아아아아앙....」
+DATAFORM 「이젠 싫어... 그만해주세요... 더 이상은 싫어요...」
+DATAFORM 「제 가슴 가지고 장난치지 말아주세요.. 때리지 말아주세요.. 발로 차지 말아주세요...」
+DATAFORM 「저는 사령관의 장난감이 아니란 말이에요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「아... 저기 새가 날아간다.」
+DATAFORM 테티스가 바라보는 곳에 새는 없었다.
+DATAFORM 「하늘이 파래요.」
+DATAFORM 「나도 날고싶다.」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「사, 사령관? 뭐하시는 거예요? 갑자기 아기라도 되어 버리신 건가요?」
+DATAFORM 「저, 그, 그만... 만져주실래요? 민감하거든요.」
+DATAFORM 「마, 만지지 말아 주실래요? 이따가 박박 씻어내야 한단 말이에요.」
+DATAFORM 「박박 씻어내야 한다구요.」
+DATAFORM 「박박. 박박박박박박박박박박박박살점이떨어져나갈때까지박박박박박박박.」
+DATAFORM 「가슴좀그만만져.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「누, 누구세요? 누가 제 가슴을 만지는 거예요?」
+DATAFORM 「아, 아무도 없어요? 누가 저, 절 덮치고 있어요! 누구라도 좋으니까 절 좀 도와주세요!」
+DATAFORM 「제발요! 거기 누구 없어요! 절 도와주세요! 꺄악! 싫, 싫어! 이, 이거 놔요! 이거 놓으라구요!」
+DATAFORM 「꺄아아아아아아악!!!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 가슴에 얼굴을 묻었다.
+DATAFORM 「나는 더럽혀졌어. 나는 더럽혀졌어. 나는 더럽혀졌어.」
+DATAFORM 「이 세상은 존재할 가치가 없어요. 나도 살아잇을 가치가 없어. 저는 더러운 아이에요.」
+DATAFORM 「나 같은 건 죽어야 해. 그래야 아무도 피해를 입지 않아. 나만 없으면 모두가 행복해질 수 있어. 나만 없으면. 나만 없으면. 나만 없으면...」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM19
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「뭐, 뭐예요! 사령관! 제, 제가 뭘 잘못했어요? 왜 갑자기 소리를 지르고 그래요?」
+DATAFORM 「어휴, 깜짝이야. 별것도 아닌 걸 가지고 짜증내고 그러네.」
+DATAFORM 「그런다고 제가 손끝 하나 까딱하기라도 할 것 같아요? 베에~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「어어~ 실망하셨어요? 이런 걸로 실망하시면 앞으로 실망할게 더 많으실텐데~」
+DATAFORM 「이거이거~ 어떡하나? 저에게 큰 돈을 투자하시긴 했고, 마음에는 안 들고~」
+DATAFORM 「버럭버럭 소리는 지르는데 꿈쩍도 안하네? 에베베베베베~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「라고 돼지뚱땡이가 말했습니다.」
+DATAFORM 「응, 반사~ 안들어~ 그래 사령관 잘났어요~」
+DATAFORM 「네네~ 사령관 말씀이 다 맞아요~ 그럼요~ 어휴, 우리 사령관님이 말씀하시는데 제가 안 들을 리가 없죠~」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「뭐, 뭐, 뭐, 뭔데요 사령관!」
+DATAFORM 「제, 제가 그러게 잘못햇어요? 그, 그래도 소리는 안 지르셔도 되잖아요!」
+DATAFORM 테티스의 벌건 눈가에 눈물이 그렁그렁 맺힌다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「시끄러, 시끄러워요 사령관!」
+DATAFORM 「저도 화낼 줄 알거든요? 소리지를 줄 알거든요? 교양없고, 기품 없어 보여서 안 하는 것 뿐이에요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「왜, 왜그러시는데요?」
+DATAFORM 「사령관 갑자기 그러시면 조금 무섭다구요...」
+DATAFORM 「사, 사령관? 제가 잘못했어요. 응? 잘못했으니까 조금만 진정. 응?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「사, 사령과안... 미안해요...」
+DATAFORM 「미안해요 사령관... 제가 장난을 너무 심하게 쳤죠오...」
+DATAFORM 「그, 그래도, 그래도 사령관이 좋은 걸 어뜩해, 히끅!」
+DATAFORM 「내, 내가 장난치는 게 나쁜 마음인 거는 아니라구요오... 히끅!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「아, 알았어요.. 자중할게요...」
+DATAFORM 「사령관... 화.. 났어요? 진짜?」
+DATAFORM 「화 풀어주시면 안 돼요?」
+DATAFORM 「제 애교 보고싶어요? 에교? 이잉~ 테티스 삐져써~」
+DATAFORM 「아, 아니면 재롱이라도 부릴까요? 사령관~ 화내지 마요~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「화, 화냈어... 사령관이 화냈어...」
+DATAFORM 「이때까진 화 안 냈잖아요... 그쵸?」
+DATAFORM 「사령관이 갑자기 변한 거에요, 아니면 그동안 쌓아왔던 게 폭발한 거예요?」
+DATAFORM 「아, 알앗어요 사령관. 이제는 제가 조오금~ 자제해서 적당히 장난 칠 테니까 화내지 마요.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「어, 응... 사령관?」
+DATAFORM 「이거, 장난치는 거 아니죠?」
+DATAFORM 「밤중에 플레이하는 거 아니죠?」
+DATAFORM 「설마, 지금, 진짜로 제게 화를 내시는 거예요?」
+DATAFORM 「진짜?」
+DATAFORM 테티스의 얼굴이 침울해지더니 눈물이 바닥으로 뚝 뚝 떨어진다.
+DATAFORM 「흐에에에에엥엥 제가 잘못했어요오 사령과아아아안」
+DATAFORM 「제가 미안해요오오 제가 다 잘못했어요으허어엉... 화내지 마세요 흐아아아아앙.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「사, 사령관.. 말이 너무 거칠잖아요.」
+DATAFORM 「그동안은 이런 모습 잘 없었잖아요. 화났어요? 삐졌어요?」
+DATAFORM 「저한테 마음에 안 드는 거 있으면 이참에 다 털어놓으세요.」
+DATAFORM 「저, 보기에는 조끄매 보여도 속은 엄청 넓어서 사령관이 응석부리는 거라면 다 받아줄 수 있어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「어, 음, 어... 그런 말은 침대 위에서 뒹굴거릴 때나 해주면 좀 흥분될텐데.」
+DATAFORM 「사령관, 잊었어요? 저 테티스라구요. 저는 사령관이 그런 말 해도 눈썹 하나 까딱 안 해요.」
+DATAFORM 「사령관, 제가 마음이 여리고 약하긴 하지만 그런 논리없고 줏대없는 모습엔 상처받지도 않거든요?」
+DATAFORM 「자, 진정하고 천천히 털어놓아 보세요.」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「어우, 사령관 완전 극혐이네요~」
+DATAFORM 「아주 못하는 말이 없어 그냥~」
+DATAFORM 「저 같은 상대에게, 그렇게 소리만 질러 봤자 겁먹을 거라고 생각하셨나요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「으아아아아! 사령관, 시끄러워요!」
+DATAFORM 「조용히 좀 하세요, 조용히 좀!」
+DATAFORM 테티스는 당신이 욕을 하든 말든 신경쓰지 않는 것 같았다.
+DATAFORM 「품격 떨어져 보인다구요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「자신보다 약한 사람한테만 그렇게 소리지르시는 건가요?」
+DATAFORM 「사령관은 제가 생각했던 것보다 훨씬 형편없는 사람이었네요.」
+DATAFORM 「이런 사람일 줄 알았으면 바다 위를 날아다니는 게 더 나을 뻔 했어요.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「히, 히이익!」
+DATAFORM 「사, 사령관...?」
+DATAFORM 「죄송해요. 조용히 있을게요.」
+DATAFORM 「장난같은 거 안 치고.」
+DATAFORM 「사령관이 저를 구입한 이유는 이제 알고 있으니까...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「아, 알겠어요! 그만하세요!」
+DATAFORM 「제가 잘못했다구요... 그러니 그만하셔도 되잖아요...」
+DATAFORM 「제, 제가 잘못했어요...」
+DATAFORM 「이 말이 듣고싶으신 거잖아요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「...알겠어요 사령관...」
+DATAFORM 「저 같은 건 사령관의 사랑을 받기엔 모잔란 점이 많은 것 같네요...」
+DATAFORM 「근데, 근데 저는...」
+DATAFORM 「저는 그럼 대체... 누구랑 이야기해야 하는 거죠?」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「죄송합니다! 죄송합니다! 사령관님! 제가 잘못했어요.」
+DATAFORM 「잘못했어요, 때리지 마세요. 시키는 대로 다 할게요.」
+DATAFORM 「아무것도 안 하고 얌전히 있을게요.」
+DATAFORM 「제가 버릇없는 장난을 친다면 제 손목을 잘라 버리셔도 좋아요.」
+DATAFORM 「진짜로요. 저, 테, 테티스는... 사령관님의 충실한 종인걸요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「아, 알겠습니다! 사령관!」
+DATAFORM 「저, 저같이 천박하고 쓸데없는 건 사령관의 눈에 띄어선 안 돼요.」
+DATAFORM 「사령관의 시야 밖에서 조용히 대기하고 있을 테니 사령관님이 심심하시다면 불러 주세요.」
+DATAFORM 「마, 마음대로 하셔야죠! 언제나처럼!」
+DATAFORM 「오, 오늘도 때리실 거잖아요? 그쵸?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「저, 저는... 대체... 언제까지...」
+DATAFORM 「저, 저는 대체 언제까지 여기에서...」
+DATAFORM 「흑...! 아, 아무것도 아니에요. 사령관....」
+DATAFORM 「그, 그냥. 바다 위를 날고 싶다는 생각을 한 것 뿐이었어요.」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「세, 세이렌...? 운디네...? 모두, 모두 어디 있는 거예요?」
+DATAFORM 「저, 저는 여기 있잖아요.」
+DATAFORM 「안 보여, 안 보여요. 운디네, 네레이드. 제가 다 잘못했어요.」
+DATAFORM 「누, 눈 앞이 캄캄하다구요. 저를 두고 떠나버린 건 아니죠?」
+DATAFORM 「끄, 끊임없이 파도가 치고 있어요. 계속, 계속해서 파도가 밀려 와...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「우, 운디네? 당신이에요?」
+DATAFORM 「부, 분명 누군가의 목소리가 들렸는데...」
+DATAFORM 「아, 안 돼요! 가지 말아요! 저를 두고 가지 마세요!」
+DATAFORM 「운디네? 운디네?! 제가 잘못했어요!! 저를 버리지 마세요!!!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스에게 소리를 지르며 욕을 했다.
+DATAFORM 「함장... 부함장... 갑판병... 모두 날 버리고 어디로 떠난 거야...」
+DATAFORM 「난 대체 여기 혼자서 뭘 하고 있는 거냐고...」
+DATAFORM 「언제부터 혼자였지? 오래 전부터?」
+DATAFORM 「계속? 계속? 계속?」
+DATAFORM 「계속계속계속계속계속계속계속계속계속」
+DATAFORM 「영원히 죽을 때까지 이렇게 있어야 하는거야?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM20
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「아얏!」
+DATAFORM 테티스가 당신을 노려보았다.
+DATAFORM 「뭐예요, 사령관? 사령관 이런 거 좋아해요?」
+DATAFORM 「아니면 순수하게 어린 여자애 때리는 타입?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「악!!」
+DATAFORM 테티스의 고개가 팩 하며 돌아갔다.
+DATAFORM 테티스의 볼이 붉게 달아올랐다.
+DATAFORM 「하아... 저 이러려고 구입하신 거예요?」
+DATAFORM 테티스의 숨소리가 날카롭다.
+DATAFORM 「진짜 지지리도 못난 주인을 섬기게 되었네요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 짝 하는 소리와 함께 테티스의 목이 돌아갔다.
+DATAFORM 테티스가 천천히 고개를 돌려 당신을 직시했다.
+DATAFORM 「사령관, 왜 열등감에 사로잡혀 있어요?」
+DATAFORM 「당신은 인간이잖아요. 인간. 그렇게 잘난 인간님께서 하등 보잘것없는 바이오로이드를 때리실까?」
+DATAFORM 「억하심정이라도 있어요?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「뭐, 뭐야? 새로운 놀이? sm 플레이?」
+DATAFORM 「사령관? 그런거예요? 그런거라면 환영인데!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「꺄악!」
+DATAFORM 「사, 사령관... 아프잖아요! 사령관 완전 선 넘었거든요!」
+DATAFORM 「최악이에요 최악!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「뭐, 뭐, 뭐, 뭐에요? 사령관? 지금 저 때리신 거예요?」
+DATAFORM 「진짜 이건 말도 안 돼요. 어떻게 절 때리실 수가 있어요?」
+DATAFORM 「방금은 너무 화나서 순간적으로 몸이 먼저 움직이신 거죠? 그렇죠?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「아악!!」
+DATAFORM 테티스가 고통스럽게 바닥에 쓰러졌다.
+DATAFORM 「아하하.. 사령관~ 이건 무슨 장난일까요?」
+DATAFORM 「설마, 저 질리신 거예요? 그러면 안 되는데.」
+DATAFORM 「사령관, 절 밀어내지 말라구요. 소악마를 화나게 하면 안 되잖아요.」
+DATAFORM 「선 넘지 마세요 사령관. 이렇게 나오시면 저도 선 넘을 거예요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 아무말도 없이 테티스의 고개가 돌아갔다.
+DATAFORM 「...사령관, 이리 와요. 이리 와서 저 안아 줘요.」
+DATAFORM 「빨리, 뭐 하고 있어요? 빨리 와서 안아달라니까요.」
+DATAFORM 「용서해드릴게요. 방금은 사령관이 선을 넘으셨지만 전 용서할 수 있어요. 사령관을 좋아하니까요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「흐긋...」
+DATAFORM 테티스가 입가에 흘러내리는 피를 닦았다.
+DATAFORM 「아, 잠시만요 사령관. 절 지금 건들지 마세요.」
+DATAFORM 「사령관, 저 진짜 지금 너무너무너무너무 화가 나서 진짜 돌아버릴 거 같거든요? 그러니까 잠깐만 좀 내버려 두실래요?」
+DATAFORM 「지금 사령관을 생각하는 마음과 사령관을 혼쭐내자는 마음이 제 안에서 엄청나게 싸워 대고 있거든요?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「사, 사령관...?」
+DATAFORM 「거짓말이죠? 거짓말이거야. 사령관이 제게 이럴 리가 없잖아요.」
+DATAFORM 「사, 사령관.. 저 좋아하는 거 아니었어요? 저 좋아하니까 장난도 받아주시고 저를 안아주신 게 아니었냐구요.」
+DATAFORM 「사령관, 제가 미안해요. 그러니까 말씀해주세요.」
+DATAFORM 「제가 좋아했던 사령관의 마음이 가짜가 아니었다고 말씀해 주시라구요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「아, 아팟!」
+DATAFORM 테티스가 당신을 올려다봤다.
+DATAFORM 「....싫어.」
+DATAFORM 「싫어어어어어엇!! 사령관!! 대체 왜 그러신 거예요! 대체 왜!!」
+DATAFORM 「나 같은 걸 좋아해서 김빠졌어요? 실망했어요? 맥빠졌어요?」
+DATAFORM 「이제 와서 대체 왜! 이제 와서 대체 왜 이러는 거냐구요!!」
+DATAFORM 「처음 만났을 때부터 친절하지 마시지, 왜 이제 와서, 저를, 저를 이렇게 아프게 하냐구요!!」
+DATAFORM 「저를 가지고 놀지 마세요 사령관, 당신을 향한 제 마음은 이미 당신의 손아귀 따위에 굴하지 않을 정도가 되었으니깐!!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「...안아 주세요.」
+DATAFORM 「안아 주세요, 빨리.」
+DATAFORM 「지금 안아주지 않으면 영영 안녕이에요.」
+DATAFORM 「저 아직 사령관한테 실망 한 했고, 사령관이 사과한다면 받아드릴 수 있어요.」
+DATAFORM 「지금 안아 주시지 않으면 평생 얼굴도 안 볼 거예요. 빨리.」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「...사령관?」
+DATAFORM 테티스가 빨갛게 부풀어 오른 볼을 잡으며 중얼거렸다.
+DATAFORM 「처음부터 이럴 생각으로 저를 구입하신 거였겠죠.」
+DATAFORM 「제가 그리도 마음에 안 들었었어요?」
+DATAFORM 「아주 한심해서 진짜...」
+DATAFORM 「당신같은 남자는 줘도 안 가져요. 사령관같은 주인은 제게 인정받을 거라고 생각 마세요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「다, 당신이... 그러고도 사령관이에요?」
+DATAFORM 「저 같은 바이오로이드를 사서 못되게 괴롭히는 게 취미인 거죠?」
+DATAFORM 「빌어먹을 세상, 제가 사령관을 선택할 수 없어서 정말 유감이네요.」
+DATAFORM 「사령관같이 장난도 치기 싫어지는 사람하고는 상대하기 싫어요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「아, 아팟!」
+DATAFORM 테티스의 뺨이 빨갛게 부풀어 올랐다.
+DATAFORM 「변태... 사디즘 사령관...」
+DATAFORM 「연약한 바이오로이드를 때려서 성적 욕망을 채우는...」
+DATAFORM 「둘도 없을 흉악하고 무자비한 사령관...」
+DATAFORM 「당신은 꼭 저 같은 무저항의 존재에게만 이런 취급을 하겠지요!」
+DATAFORM 「밖에선 신사인 척을 하며!」
+DATAFORM 「역겨워요!」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「아, 아파! 아파요!」
+DATAFORM 「죄송합니다! 사령관, 제가 잘못했어요.」
+DATAFORM 「나대지 않겠습니다. 장난치지 않겠습니다.」
+DATAFORM 「가벼운 마음으로 사령관 앞에 서지 않겠습니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「또, 또... 또 때렸어...」
+DATAFORM 테티스가 붉어진 볼을 부여잡으며 중얼거렸다.
+DATAFORM 「싫어, 싫다구요. 저는, 이런 취급을 받기는... 싫어요.」
+DATAFORM 「운디네도, 함장님도 제게 이러진 않았어요.」
+DATAFORM 「아무도, 제게. 이러지는....」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「흐, 흐아아악!」
+DATAFORM 테티스의 고개가 팩 돌아갔다.
+DATAFORM 「죄송, 죄송해요! 죄송합니다!」
+DATAFORM 테티스가 흐르는 눈물을 닦으며 말했다.
+DATAFORM 「흐, 흐윽! 죄송합니다.」
+DATAFORM 「죄송합니다 죄송합니다 죄송합니다.」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 가냘픈 테티스의 몸이 바닥으로 쓰러졌다.
+DATAFORM 「하, 하하하...」
+DATAFORM 그녀의 입술에서 실핏줄이 터져 피가 주륵 흘러내린다.
+DATAFORM 「...」
+DATAFORM 그녀가 멍하니 입가에 흐르는 피를 바라본다.
+DATAFORM 「...저는 왜 사는 걸까요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「꺄악!」
+DATAFORM 테티스의 몸이 패대기쳐지듯 쓰러진다.
+DATAFORM 「죄, 죄송합니다 사령관!」
+DATAFORM 「화, 화내지 마세요! 제, 제가 뭐든지 다 할게요!」
+DATAFORM 「사령관이 하라는 거 뭐든지 다 할게요! 제 몸이 어떻게 되든 상관 없어요.」
+DATAFORM 「마음대로 굴리고 마음대로 쓰세요! 저 같은 건 인격이 없는 거라고 해도 좋아요!」
+DATAFORM 「화, 화, 화 내지 마세요! 사령관! 말 잘 들을게요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 묵직한 감각과 함께 그녀의 머리가 휘청거렸다.
+DATAFORM 「아, 아아...」
+DATAFORM 「아... 사령관, 사령관님?」
+DATAFORM 그녀가 멍한 눈으로 고개를 들어 당신을 바라본다.
+DATAFORM 「저, 저... 귀가 안 들려요.」
+DATAFORM 「저 귀가 안 들려요 사령관! 쨍한 소리만 들리고 아무것도 안 들린다구요!」
+DATAFORM 그녀가 당신에게 울부짖는다.
+DATAFORM 「사령관? 사령관! 사령관!!! 뭐라고 말 좀 해 보세요!!!」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「아, 아앗... 아파...」
+DATAFORM 바닥으로 쓰러진 테티스가 땅을 더듬었다.
+DATAFORM 「여, 여긴... 어디지? 아, 앞이 잘 안 보여...」
+DATAFORM 「저, 저기요? 누, 누구 없어요? 저기요....」
+DATAFORM 「아, 아팟.... 아아!」
+DATAFORM 바닥을 더듬거리던 테티스가 당신의 바짓단을 붙잡았다.
+DATAFORM 「아, 하하하.. 하하하하... 여기 누구 있는 거죠?」
+DATAFORM 「여기 지금 누구 서 있죠? 대답 좀 해 주실래요? 하하하...」
+DATAFORM 「하하하하하....?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「꺄악!」
+DATAFORM 테티스의 작은 몸이 거칠게 땅바닥으로 쓰러진다.
+DATAFORM 「으, 으우....」
+DATAFORM 「이렇게 살고싶지 않아... 더는 이렇게 살고싶지 않아...」
+DATAFORM 「세이렌, 저 좀 구해 주세요.... 저를 구하실 수 있잖아요...」
+DATAFORM 「세이렌, 네레이드, 운디네...!」
+DATAFORM 테티스는 현관문 방향으로 꿈틀거리며 기어가고 있었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 뺨을 때렸다.
+DATAFORM 「아악!」
+DATAFORM 그녀의 고개가 거칠게 돌아간다.
+DATAFORM 「저, 저를 왜 때리신 거죠? 제가 여기서 뭘 하고 잇는 건가요?」
+DATAFORM 테티스가 멍한 눈으로 당신을 바라본다.
+DATAFORM 「저, 저희 함선의 다른 부대원은 어디에 있죠? 여긴 어디에요?」
+DATAFORM 「우, 운디네! 운디네를 불러 보세요! 제가 누군지 알 거예요!」
+DATAFORM 테티스가 당신에게 공허하게 소리친다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM21
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「아윽!!」
+DATAFORM 「사령관... 꽤나 과격하시네요? 카하핫...」
+DATAFORM 「...켓... 쿡... 하하하... 진짜.. 재수도 더럽게 없지...」
+DATAFORM 「많고 많은 주인들 중에 이런 사람이 걸리니...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「하으윽!!」
+DATAFORM 테티스의 몸이 기억자로 고꾸라졌다.
+DATAFORM 「겔룩, 구훅... 국!」
+DATAFORM 테티스가 연신 허공에 헛구역질을 했다.
+DATAFORM 「우욱, 욱! 속이... 속이 메스꺼워요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「하윽!」
+DATAFORM 테티스의 입에서 바람이 빠지더니 바닥을 뒹굴었다.
+DATAFORM 「하으으윽... 하아... 하윽... 하아..」
+DATAFORM 「하윽, 저, 저, 숨이, 숨이 안 쉬어져요, 하윽, 하악, 하악....」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「아아아악!!」
+DATAFORM 테티스의 얼굴이 새하얗게 질리더니 바닥에 풀썩 주저앉았다.
+DATAFORM 「머리가, 찡 하고 울렸어요.... 정신이 날아갈 것 같아요.」
+DATAFORM 「사령관, 사령관. 저 진짜 너무 아픈데.. 서 있기도 힘든데... 잠깐만 혼자 있어도 될까요?」
+DATAFORM 「제발요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「아파앗!」
+DATAFORM 테티스의 눈에서 눈물이 왈칵 쏟아졌다.
+DATAFORM 「아파, 아파, 아파앗... 흐윽, 흑.. 아파, 으아아아아아앙...」
+DATAFORM 「너무 아파, 진짜 아파요... 아파요 사령관, 저 아파서 죽을 것 같아요... 흐아아아아아아앙.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「이런거, 싫은데...」
+DATAFORM 테티스의 표정이 굳었다.
+DATAFORM 「사령관.. 많고 많은 바이오로이드들 중에서 하필 저를?」
+DATAFORM 「...저는 뱃가죽도 얇다구요. 이 신체 구조를 좀 보세요.」
+DATAFORM 「이게 사람이 할 짓이에요?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「흐으윽...」
+DATAFORM 테티스가 힘없이 고꾸라졌다.
+DATAFORM 「사, 사령관...」
+DATAFORM 테티스가 당신의 바짓단을 붙잡았다.
+DATAFORM 「저, 저 버리지 마요...」
+DATAFORM 「절 두고 가지 마요... 미워하지 마세요...」
+DATAFORM 「저는 사령관의 마음에 들 수 있어요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「흐끄으윽...」
+DATAFORM 「사령관...?」
+DATAFORM 「어부바 해 줘요... 안아 줘요...」
+DATAFORM 「품에 꼭 안고 비행기 태워 줘요...」
+DATAFORM 「제가 원하는 거 다 해주세요...」
+DATAFORM 「미운 아이 떡하나 더 준다고 그러잖아요... 저 진짜 금방이라도 눈물 나올 것 같으니까」
+DATAFORM 「이 아픔을 덮어버리게 기쁜 기억만 남게 해 주세요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「사령관... 어째서?」
+DATAFORM 테티스가 바닥으로 쓰러졌다.
+DATAFORM 「제가 약하다는 것 쯤은 알고 계셨잖아요.」
+DATAFORM 「그런데 왜... 왜?」
+DATAFORM 「잔인한 사람. 나쁜 사람.」
+DATAFORM 「처음부터 이렇게 폭력적이셨나요?」
+DATAFORM 「지금까지 제게 배풀었던 호의는...」
+DATAFORM 「...제가 바닥에 빌빌 기는 걸 기대하며 베푼 것이었나요?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「하으윽.」
+DATAFORM 테티스의 몸이 기억자로 고꾸라졌다.
+DATAFORM 「안 돼, 안 돼, 안 돼!!」
+DATAFORM 「사령관, 배는 때리지 말아주세요. 제발요, 사령관.」
+DATAFORM 「저, 저... 여자로 남아있고 싶어요.」
+DATAFORM 「사령관이 얼마나 저를 미워한다고 하더라도.」
+DATAFORM 「저는 그렇지 않단 말이에요. 제가 사랑하는 마음만큼은 온전히 남겨주세요.」
+DATAFORM 「배는, 딴 곳은 몰라도 배는 때리지 말아주세요.」
+DATAFORM 「사령관의 아이마저 가질 수 없게 되어 버리잖아요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「하윽, 아파! 아파아...」
+DATAFORM 「당신이 미워요... 사령관, 진짜 당신이 정말로 미워요..」
+DATAFORM 「어떻게 제게 이럴 수 있죠? 당신이 저를 이렇게 만들었으면서...」
+DATAFORM 「지금 즐거운가요? 기쁜가요? 당신의 표정을 지금 보세요. 웃고있나요?」
+DATAFORM 「당신이 제게 얼마나 큰 존재인데 저를 이렇게 저버리실 수가 있는 거예요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「하아아아악...」
+DATAFORM 「으윽... 아아...」
+DATAFORM 「꿈이라고 말하지는 말아 줘요.」
+DATAFORM 「사령관과 함께 했던 그 시간이 꿈이라고 믿고 싶지는 않아요.」
+DATAFORM 「지금, 이 고통, 그대로, 기억에 남길테니까...」
+DATAFORM 「우리 절대 잊지 말고 다음에 또 봐요. 웃는 얼굴로.」
+DATAFORM 「저는 변함없이 사령관에게 장난 칠 거니까.」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「끄윽!」
+DATAFORM 테티스의 몸이 기억자로 꺾어지며 공중에 떠올랐다.
+DATAFORM 「크흑! 커억!」
+DATAFORM 테티스가 땅바닥에 떨어진 채 몸을 부르르 떨었다.
+DATAFORM 「끄으으윽.... 끄흑...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「우웁!」
+DATAFORM 테티스가 입을 막고 몸을 뒤틀었다.
+DATAFORM 「구웁! 구욱!」
+DATAFORM 테티스는 얼굴이 새파랗게 질려서 몇 번 헛구역질을 했다.
+DATAFORM 「구욱! 국!」
+DATAFORM 간신히 구역질을 가라앉힌 테티스가 입가에 침을 늘어뜨리며 당신을 노려보았다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「아악!」
+DATAFORM 「아, 아파! 아팟! 아파아!」
+DATAFORM 테티스가 땅을 구르며 고통스러워한다.
+DATAFORM 「아파아... 아파... 아파....」
+DATAFORM 땅을 구르는 테티스의 눈가에 눈물이 맺힌다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「쿨럭!」
+DATAFORM 얇은 그녀의 몸이 꺾였다.
+DATAFORM 「쿨럭! 게흑!」
+DATAFORM 그녀가 입에서 흰 기포를 뿜어내며 눈을 까뒤집는다.
+DATAFORM 「그흑! 윽, 가흑!」
+DATAFORM 테티스의 팔 다리가 경직되고 가늘게 떨린다.
+DATAFORM 「컥, 컥, 걱, 컥, 극!」
+DATAFORM 당신이 때린 테티스의 복부가 시퍼렇게 변해 있다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 무방비하게 노출된 그녀의 복부에 주먹이 닿는다.
+DATAFORM 「흐아악!」
+DATAFORM 당신의 주먹이 움푹 하고 테티스의 등가죽에 닿을 정도로 심하게 파고들었다.
+DATAFORM 「구욱! 쿨럭!」
+DATAFORM 테티스는 그 자리에서 무릎을 꿇고 한 손으론 배를 움켜잡고, 다른 한 손으론 입을 막았다.
+DATAFORM 「구욱, 국, 구웨에에에엑...」
+DATAFORM 몇 번을 헛구역질 하던 그녀의 입에서 토사물이 쏟아진다.
+DATAFORM 「그윽, 그윽, 헉, 허억...」
+DATAFORM 테티스가 시퍼렇게 질린 얼굴로 당신을 올려다본다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「흐, 흐아아아악!!」
+DATAFORM 「자, 잘못했어요 사령관... 제가 잘못했어요...」
+DATAFORM 테티스가 바닥을 기어 당신의 곁으로 오기 시작한다.
+DATAFORM 「잘못했어요 사령관. 다시는 심기를 건드리지 않을게요.」
+DATAFORM 「잘못했습니다. 때리지 말아 주세요. 부탁드립니다.」
+DATAFORM 그녀가 머리를 바닥에 바싹 붙인다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「으아아악!」
+DATAFORM 테티스가 외마디 비명을 지르며 바닥에 쓰러진다.
+DATAFORM 「아파요, 아파요 사령관....」
+DATAFORM 「저 죽을 것 같아요.. 진짜...」
+DATAFORM 「장난이 아니고 진짜로 죽을 것 같다구요....」
+DATAFORM 테티스의 눈가에 눈물이 맺히고 바닥으로 덜어진다.
+DATAFORM 「사령관, 저 진짜 죽을 것 같아요....」
+DATAFORM 「으윽, 윽....」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「하악! 윽!」
+DATAFORM 테티스의 입에서 바람 빠지는 듯한 소리가 흘러나온다.
+DATAFORM 「으윽...! 윽!」
+DATAFORM 그녀가 배를 잡고 비틀거리더니 바닥에 털썩 무릎을 꿇는다.
+DATAFORM 「하악, 하악... 게흑! 하악....」
+DATAFORM 「시, 싫어..... 아윽.... 아파....」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「아, 아, 아파요오... 사령관....」
+DATAFORM 테티스의 눈에서 동그란 눈물들이 방울방울 떨어진다.
+DATAFORM 「아, 아파요 사령관, 네? 때리지 말아 주세요...」
+DATAFORM 「때리지 말아 주세요... 진짜... 진짜 너무너무 아파요...」
+DATAFORM 「네? 사령관... 이렇게 부탁할게요...」
+DATAFORM 「저를 때리시지 않으셔도 괜찮잖아요... 때리지 말아 주세요...」
+DATAFORM 테티스가 당신의 소매자락을 꽉 잡고 놓아주지 않는다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「아, 아파!」
+DATAFORM 「우, 운디네? 운디네? 거기 있죠? 절 좀 구해 주세요...」
+DATAFORM 「여, 여기는 지금... 어, 어딘지 모르겠어요. 죄송해요.」
+DATAFORM 「적습을 받고 있어요. 저, 너무 아파요. 바다 위로 떨어져 버릴 것 같아요.」
+DATAFORM 「몸에 힘이 빠져요. ...운디네? 운디네, 듣고 있나요?」
+DATAFORM 「운디네, 운디네... 저 진짜 죽어버릴 것 같아요. 도와주세요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 「아흑! 아악!」
+DATAFORM 테티스가 바닥을 데굴데굴 구르다가 당신과 눈이 마주친다.
+DATAFORM 「어... 사, 사령관?」
+DATAFORM 「사령관... 이었지요... 역시... 게흑!」
+DATAFORM 당신을 바라보는 테티스의 눈에서 총기가 사라진다.
+DATAFORM 「꿈이라도... 행복한 꿈이라도 꿀 수 있었으면 좋았을텐데...」
+DATAFORM 테티스가 중얼거린다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스의 배에 주먹을 날렸다.
+DATAFORM 고통에 겨워 바닥을 구르던 테티스가 중얼거린다.
+DATAFORM 「하, 함장님... 도와주세요...」
+DATAFORM 「도와주세요, 함장님... 저 여기 있어요...」
+DATAFORM 「저를 떠나가지 마세요.. 저를 내버려두지 마세요 함장님...」
+DATAFORM 「저 여기 있단 말이에요... 가지마...」
+DATAFORM 「가지마... 가지마... 가지마..」
+DATAFORM 「가지마!!! 가지 말라고!!! 저를 두고 어디로 떠나가시는 거예요!!! 가지마!!!!」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_COM22
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 발로 걷어 찼다.
+DATAFORM 「꺄아악!」
+DATAFORM 테티스가 힘없이 바닥에 쓰러진다.
+DATAFORM 「헤, 헹! 이 정도로 제가 쓰러질 거라고 생각하셨나요?」
+DATAFORM 「이... 이 정도는 아무것도 아니거든... 여?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 발로 걷어 찼다.
+DATAFORM 「꺄악!」
+DATAFORM 「사령관, 병영 부조리를 실천하는 악덕 간부였어요?」
+DATAFORM 「전 제가 이런 곳으로 올 줄 꿈에도 상상 못했는데!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 발로 걷어 찼다.
+DATAFORM 「아, 아파요 사령관!」
+DATAFORM 「저는 바퀴벌레같은 게 아니라구요!」
+DATAFORM 「진짜 너무해, 힝.」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 발로 걷어 찼다.
+DATAFORM 「사, 사령관!」
+DATAFORM 「좀 심하지 않아요? 아니, 그러니까...」
+DATAFORM 「됐어요. 하고싶은 말도 없네요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 발로 걷어 찼다.
+DATAFORM 「꺄아악!」
+DATAFORM 「사, 사령관 이건 진짜...」
+DATAFORM 「이건 진짜 아파요 사령관.」
+DATAFORM 「장난이 아니라구요. 진짜예요! 왜 이렇게 못살게 구시는 거예요!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 발로 걷어 찼다.
+DATAFORM 테티스가 바닥을 굴렀다.
+DATAFORM 「...설마 저를 업신여기신 건가요?」
+DATAFORM 「진짜 싫어요. 사령관, 처음부터 이러시지는 않으셨으면서...」
+DATAFORM 「연기도 그리 오래 못 간거보니 제가 편해지셨나 보네요?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 발로 걷어 찼다.
+DATAFORM 「사, 사령관?」
+DATAFORM 「왜, 왜이러는 거예요. 장난이었잖아요!」
+DATAFORM 「제, 제가 장난을 친다고 저를 발로 차거나 그러시진 않으셨잖아요!」
+DATAFORM 「이제는 제가 싫어요? 제가 미워요? 네?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 발로 걷어 찼다.
+DATAFORM 「....왜요?」
+DATAFORM 「왜 그러셨어요?」
+DATAFORM 테티스가 당신을 올려다본다.
+DATAFORM 「사령관... 제 마음이 어떤시 아시잖아요? 그쵸?」
+DATAFORM 「그런데도 절 이렇게 대하신다는 건...」
+DATAFORM 「제가 너무너무 미워서 어쩔 수 없다는 말인가요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 발로 걷어 찼다.
+DATAFORM 「꺄아악!!」
+DATAFORM 「사, 사령관?!」
+DATAFORM 테티스가 눈을 휘둥그레 뜨며 당신을 바라본다.
+DATAFORM 「저, 저를... 차신 거에요?」
+DATAFORM 「사령관!! 왜 그랬어요? 대체 왜?」
+DATAFORM 「제, 제가 그렇게 나쁜 잘못을 저질렀나요?」
+DATAFORM 「이, 이러면 안 돼요. 안 돼요.」
+DATAFORM 「제가 사과할게요. 사과하게 해 주세요.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 발로 걷어 찼다.
+DATAFORM 「꺄아아악!」
+DATAFORM 테티스가 형편없이 바닥에 쓰러진다.
+DATAFORM 「사, 사령관...」
+DATAFORM 「이, 이런 적 없었잖아요..」
+DATAFORM 「이런 적 없었잖아요... 제가 질리셨나요? 더 이상 제가 쓸모없나요?」
+DATAFORM 테티스가 바닥을 기어 다가와 당신을 붙잡는다.
+DATAFORM 「제가, 제가 말 잘 들을게요. 사령관에게 쓸모잇는 존재가 될게요. 절 미워하지 말아주세요.」
+DATAFORM 「더 이상 사령관에게 장난도 치지 않을게요. 귀찮게 하지 않을게요!」
+DATAFORM 「그냥 옆에만 있게 해 주세요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 발로 걷어 찼다.
+DATAFORM 「아팟!」
+DATAFORM 테티스의 몸에 생채기가 생긴다.
+DATAFORM 테티스가 당신을 빤히 바라본다.
+DATAFORM 「...저, 상처 났는데.」
+DATAFORM 「...아무것도 느껴지시는게 없나요?」
+DATAFORM 「정말요?」
+DATAFORM 「...아니에요. 아무일도 없었어요.」
+DATAFORM 「그, 그럼 사령관. 우리 뭐하고 놀까요?」
+DATAFORM 테티스가 절뚝거리며 당신에게 다가왔다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 발로 걷어 찼다.
+DATAFORM 「시, 싫어요. 절 밀어내지 마세요.」
+DATAFORM 테티스가 애걸했다.
+DATAFORM 「자, 잘못했어요 제가 잘못했어요.」
+DATAFORM 「앞으론 나쁜 장난 안 칠게요.」
+DATAFORM 「사령관, 저, 저, 아시잖아요! 말 잘 들을 때는 말 잘 듣는다고!」
+DATAFORM 「저, 저를 버리시면 안 돼요! 절대로!」
+DATAFORM 「제가 빌게요, 이렇게 빌게요. 저를 버리시지 마세요.」
+DATAFORM 「저는 사령관 없이는 살 수 없단 말이에요...」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 발로 찼다.
+DATAFORM 테티스의 몸이 힘없이 빌려 바닥에 쓰러졌다.
+DATAFORM 「헤.. 헹!」
+DATAFORM 「이 정도로 제가 좌절할 거라고 생각하셨어요?」
+DATAFORM 「그렇게 생각하셨다면 오산이죠!」
+DATAFORM 테티스의 몸에 흙먼지가 묻었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 발로 찼다.
+DATAFORM 「꺄악!」
+DATAFORM 테티스의 몸이 저만치 나가떨어졌다.
+DATAFORM 「사령관은 정말 폭력적이네요!」
+DATAFORM 「사령관, 봐요! 이 쪼끄만 키에 종잇조각 같은 몸을 그렇게 학대하고 싶으세요?」
+DATAFORM 「사령관한테 자식이 있었어도 지금처럼 이렇게 하실 생각이세요?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 발로 찼다.
+DATAFORM 「아파앗!」
+DATAFORM 당신의 발길질에 테티스의 몸에 상처가 난다.
+DATAFORM 「사, 사령관...」
+DATAFORM 테티스의 눈에 눈물이 글썽이다 당신과 눈이 마주치곤 눈물을 삼킨다.
+DATAFORM 「됐어요... 사령관 같은 사람...」
+DATAFORM 「알고싶지도 않아요.」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 발로 찼다.
+DATAFORM 「아, 아악!」
+DATAFORM 테티스가 비명을 지르며 뒤로 넘어졌다.
+DATAFORM 「사, 사령관은 제게 불쌍하거나 연민의 감정도 느껴지시지 않는 거죠?」
+DATAFORM 「제, 제가 불쌍하지도 않나요?」
+DATAFORM 「진짜... 진짜 싫어요.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 발로 찼다.
+DATAFORM 「아, 아파요! 사령관...」
+DATAFORM 「이, 이러지 마세요...」
+DATAFORM 「저, 저는 작고 약해서... 훨씬 아플 거라구요...」
+DATAFORM 「사령관의 손찌검 하나에도, 발길질 한번에도...」
+DATAFORM 「벌벌 떨면서 고통에 겨워야 한단 말이에요...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 발로 찼다.
+DATAFORM 「흐윽, 흑!」
+DATAFORM 「흐윽... 으아아아아앙...」
+DATAFORM 「싫어, 싫어요... 저를 다시 바다로 되돌려 주세요.」
+DATAFORM 「더, 더이상 아프긴 싫어... 아프고 싶지 않아... 으아아아앙....」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 발로 찼다.
+DATAFORM 우당탕 하는 소리에 테티스가 뒤로 나뒹굴었다.
+DATAFORM 「죄, 죄, 죄송합니다 사령관...」
+DATAFORM 「죄송합니다. 죄송합니다. 큰 소리 내지 않겠습니다.」
+DATAFORM 테티스의 얼굴이 이전보다 야위어 보인다.
+DATAFORM 「부, 부디 때리지 말아 주세요. 자중하겠습니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 발로 찼다.
+DATAFORM 「으윽!」
+DATAFORM 테티스가 발에 차여 바닥을 꿈틀거린다.
+DATAFORM 테티스가 간신히 신음소리를 참고 있다.
+DATAFORM 「사, 사령관... 죄, 죄송해요... 너무 아파요...」
+DATAFORM 「저, 저 진짜 너무 아파요.. 아파요 사령관... 죄송해요...」
+DATAFORM 「흐, 흐으으으윽....」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 발로 찼다.
+DATAFORM 테티스의 뼈가 맞은 듯 딱딱한 느낌이 들었다.
+DATAFORM 「끄아아아아아아악!!」
+DATAFORM 「끄아아악! 끄윽, 끄아아아악!!」
+DATAFORM 테티스가 아무 말도 하지 못하고 바닥을 뒹굴며 고통스러워한다.
+DATAFORM 그녀의 동공이 풀렸다.
+DATAFORM 얼굴이 헬쑥해지고 근육이 경직된 채로 비명을 지르고 있다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 테티스를 발로 찼다.
+DATAFORM 테티스의 눈이 멍하게 변하며 알 수 없는 말을 중얼거린다.
+DATAFORM 「바다로 돌아가야 해...」
+DATAFORM 「바다로 돌아가야 해....」
+DATAFORM 「바다로 다시 돌아가서... 아무일도 없던 것처럼.... 아하하하하...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 발로 찼다.
+DATAFORM 테티스가 바닥에 쓰러지더니 두 손으로 머리를 쥐어싸고 벌벌 떤다.
+DATAFORM 「무서워... 무서워...」
+DATAFORM 「무서워무서워무서워무서워무서워...」
+DATAFORM 「운디네, 세이렌, 네레이드 모두 어디있는거야. 무서워무서워무서워무서워도와줘.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 테티스를 발로 찼다.
+DATAFORM 「사, 사, 사, 사령관님?」
+DATAFORM 「사령관님? 저 괜찮은 거죠? 저 아무일도 없는 거죠?」
+DATAFORM 「저, 어디 다치지 않았죠?」
+DATAFORM 「저, 저, 저, 어디 아파 보여요?」
+DATAFORM 「저, 저, 저, 저, 좀 뭐, 뭔가 이상해요. 좀 어디가 아픈거 같아요.」
+DATAFORM 「왜, 왜 이러지? 평소엔 이러지 않았는데. 어, 어딘가 아픈 것 같아.」
+DATAFORM 멍한 눈동자의 테티스가 스스로의 얼굴을 쓰다듬는다.
+DATAFORM 「저, 저, 어딘가 아픈 것 같아요. 어, 어떡하면 좋아요?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+
+
+
+@M_No90_EVENT_Morning
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관 사령관 사령관 사령관 사령과아아아안!」
+DATAFORM 「아침이에요, 아침 아치임!」
+DATAFORM 「자, 자. 빨리 일어나서! 씻고! 밥먹고! 움직이자구요!」
+DATAFORM 「빨리 빨리이!」
+DATAFORM 테티스가 당신의 등을 떠민다.
+ENDLIST
+DATALIST
+DATAFORM 「으힛, 으헤헤헤헤헤!」
+DATAFORM 「히히헤헤헤헷! 흐헷!」
+DATAFORM 누군가의 웃음소리에 당신은 눈을 떴다.
+DATAFORM 「아, 사, 사령관? 일어나셨군요? 아, 아무것도 아니에요! 신경쓰지 마세요!」
+DATAFORM 당신은 테티스의 손에 마커가 들려있는 걸 확인했다.
+DATAFORM 「쿠쿡.... 쿡...! 쿡.....」
+DATAFORM 테티스가 부들거리면서 터져 나오는 웃음을 간신히 참고 있다.
+DATAFORM 테티스가 당신의 시선을 피하고 등 뒤로 마커를 숨겼다.
+ENDLIST
+DATALIST
+DATAFORM 「사령관~ 늦게 일어나면 오늘 하루 제 봉사는 없을 예정이라구요~」
+DATAFORM 테티스가 당신의 귓가에 속삭인다.
+DATAFORM 「제가 조그만 손으로 사령관의 몸을 샅샅히 훑어 주는 일도」
+DATAFORM 「사령관의 와이프처럼 한 숟가락 떠서 입에 아앙~ 하고 먹여주는 일도 없을 거라구요?」
+DATAFORM 「막 이래, 쿠크큭!」
+DATAFORM 테티스를 바라보니 혼자서 상상의 나래를 펼치고 즐거워하고 있다.
+DATAFORM 테티스가 말하는 봉사는 한 번도 받은 적 없다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관~ 아침이에요!」
+DATAFORM 「벌떡 일어나셔야죠! 벌떡!」
+DATAFORM 「어라라~ 지금 벌떡 일어난 건 사령관의 무엇일까나~」
+DATAFORM 테티스가 음흉한 미소를 짓는다.
+DATAFORM 「아~ 뭐, 저는 다 큰 성숙한 여성이고. 그 정도 생리현상은 이해해 드릴 수 있어요.」
+DATAFORM 테티스가 종종걸음으로 당신에게서 멀어진다.
+DATAFORM 「부디 뒷처리는 제가 안 보는 곳에서 조용히 하길 바랄게요? 키키킥!」
+ENDLIST
+DATALIST
+DATAFORM 「아침인데 안 일어나실 거예요?」
+DATAFORM 「늦게 일어나면 늦게 일어날수록 제가 치는 장난의 강도는 점점 올라갈텐데에~?」
+DATAFORM 「어머, 사령관! 바지를 벗고 주무시면 어떡해요!」
+DATAFORM 「어머어머, 이건... 이 거대한 이건!」
+DATAFORM 「아, 이제 눈을 뜨셨네요. 아무것도 아니었어요.」
+DATAFORM 「이제 씻고 아침이나 먹으러 가요. 뭘 그리 멍하게 있어요?」
+ENDLIST
+DATALIST
+DATAFORM 「오구구~ 우리 애기 아직도 자요?」
+DATAFORM 「오구구 그래그래, 많이 자요~」
+DATAFORM 「한창 클 때는 많이먹고 일찍 자야 무럭무럭 큰다구요~」
+DATAFORM 「아이구, 근데 이렇게 자다가는 천장 뚫겠네.」
+DATAFORM 테티스의 말도 안 되는 헛소리에 눈이 떠졌다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관, 발딱발딱 하세요?」
+DATAFORM 「어머나, 저는 그냥 아침의 기운을 얘기한 것 뿐인데...」
+DATAFORM 「사령관의 기세는 언제 봐도 참 탐스럽단 말이에요.」
+DATAFORM 「저같이 쪼끄맣고 가여운 대잠 초계기에게는」
+DATAFORM 「사령관의 기세가 너무 커서 고장나 버릴지도?」
+ENDLIST
+DATALIST
+DATAFORM 「사령관~ 제가 아침인사로 어떤 말을 해 주었으면 좋겠어요?」
+DATAFORM 「좋은 아침? 새로운 시작?」
+DATAFORM 「그런 식상하고 재미없는 말 말고~」
+DATAFORM 「좀더 자극적이고 재미있는 말도 많잖아요.」
+DATAFORM 「어젯밤 당신 때문에 잠을 자지 못했다든가..」
+DATAFORM 「아침부터 활기차다든가...」
+DATAFORM 「당신과 영원히 함께하고 싶다든가... 같은?」
+DATAFORM 「막 이래...」
+ENDLIST
+DATALIST
+DATAFORM 「아침이에요, 사령관. 오늘도 제 예쁜 얼굴을 보셔야죠.」
+DATAFORM 「아니면 좀 더 주무실래요? 저는 그것도 좋은데.」
+DATAFORM 「사령관~ 잘 때 얼굴이 엄청나다구요.」
+DATAFORM 「그런 무방비한 모습을 보는 건 흔히 않으니까...」
+DATAFORM 「되도록 오래도록 주무세요, 저는 상관 없답니다?」
+ENDLIST
+DATALIST
+DATAFORM 「사령관~ 뭐해요? 뭐해? 뭐 할까요?」
+DATAFORM 「꺄하핫! 사령관! 머리가 새집처럼 뻗쳤어요!」
+DATAFORM 「자, 자. 얼른 일어나서 씻기부터 하세요. 아니면 아침부터 먹으실 건가요?」
+DATAFORM 「그것도 아니면... 저부터? 물론 뻥이에요! 아하핫!」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관~ 사령관의 아리따운~ 아내가 사령관을 부르고 있다구요?」
+DATAFORM 「안 일어나실 거예요? 그럼 뭐 어쩔 수 없죠.」
+DATAFORM 「오늘도 장난 쳐야지 뭐.」
+DATAFORM 당신의 아랫쪽에서 부스럭 거리는 소리가 들린다.
+DATAFORM 테티스가 당신이 있는 침대 이불 안으로 기어들어왔다.
+DATAFORM 「제가 우리 남편의 기운을 아침부터 좀 빼놓겠다는데, 아무런 이의 없죠?」
+DATAFORM 「그럼 시작합니다~ 하아암~」
+ENDLIST
+DATALIST
+DATAFORM 「사령과~안. 네? 사령과~안.」
+DATAFORM 「헤헤헤...」
+DATAFORM 「사령관은 어쩜 자는 모습도 그렇게 이뻐요? 에헤헤헤헤...」
+DATAFORM 「사령관 하고 싶은 대로 다 해요. 저는 무조건 사령관 편이니까요.」
+DATAFORM 「그래그래, 사령관~ 자고 싶으면 더 자요~ 내가 옆에서 코~ 해줄게요?」
+DATAFORM 「아유, 일어나지 마요. 사령관 자는 모습 더 보고 싶단 말이에요.」
+ENDLIST
+DATALIST
+DATAFORM 「사... 사령관?」
+DATAFORM 「자는 거죠? 자는 거 맞죠?」
+DATAFORM 「이히힛...」
+DATAFORM 귓가에 사그락거리는 소리가 들린다.
+DATAFORM 「사령관... 아니, 서, 서...」
+DATAFORM 「서방님... 헤헤!」
+DATAFORM 당신은 귓가에 들어오는 바람소리에 벌떡 일어났다.
+DATAFORM 「흐꺄아아악!」
+ENDLIST
+DATALIST
+DATAFORM 「사령관~ 어젯밤에 너무 심하게 했다고 축 처져 있는 거 아니에요?」
+DATAFORM 「저는 물론 끄떡 없죠~ 정기를 받았으면 받았지 피곤하지는 않다구요~」
+DATAFORM 「사령관~ 어른 일어나서 움직여요. 오늘도 힘을 잔뜩 보충하고 이따 밤에 힘 내야지요?」
+DATAFORM 「네? 뭐라구요? 좀 봐 달라구요?」
+DATAFORM 「세상에 그런게 어디 있어요. 냉큼 일어나기나 해요.」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「어이구, 아침인데 눈은 뜨셔야 하지 않겠어요?」
+DATAFORM 「사령관같이 뒤룩뒤룩 살찌고 볼품없는 몸뚱이라도 아침에 일어나는 것만은 가능하다구요~」
+DATAFORM 「이거야 원, 사령관의 몸덩어리면 제가 세 명은 들어가겠어요.」
+DATAFORM 「그래서, 일어나실 거예요?」
+ENDLIST
+DATALIST
+DATAFORM 「사령관~ 일어나실 시간이에요.」
+DATAFORM 「뭐, 사령관이 늦게 일어나면 늦게 일어날수록 저야 이득이죠 뭐.」
+DATAFORM 「이거 합법적인 땡땡이 맞죠? 이따 늦게 일어나서 제 탓하기 없기에요~?」
+ENDLIST
+DATALIST
+DATAFORM 「복무신조! 우리의 결의!」
+DATAFORM 「우리는 국가와 국민에 충성을 다하는.... 이쯤 되면 일어 나셔야죠?」
+DATAFORM 「진짜 PTSD를 자극해야 잠에서 깨는 인간 말종 쓰레기 변태는 아니죠?」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「사, 사령관...?」
+DATAFORM 「이제 잠에서 깨어나실 시간이에...요?」
+DATAFORM 「아직 자고 게신건가요?」
+DATAFORM 「늦게 일어나시면 늦게 일어났다고 또 때리실 거잖아요...」
+DATAFORM 「일어, 나세요, 사령관...」
+ENDLIST
+DATALIST
+DATAFORM 「오늘 하루도 무사히 넘어가길...」
+DATAFORM 「아, 아무것도 아니에요! 깨셨어요? 저는 신경쓰지 마세요!」
+DATAFORM 「저는 최대한 숨죽이고 있는 듯 없게 없는 듯 있게 조용히 있을 테니깐 편히 계세요!」
+ENDLIST
+DATALIST
+DATAFORM 「오늘이 어제보다 나을 거라는 긍정적인 생각을 해도 될까요...?」
+DATAFORM 「...할수밖에 없어요. 그렇지 않으면 오늘을 보내기가 너무 힘이 들 것 같거든요.」
+DATAFORM 「좋은, 아침이에요. 사령관.」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관, 가끔 저 아침에 눈을 떠도 세상이 까맣게 보일 때가 있어요.」
+DATAFORM 「햇빛이 비추지 않았던가 그런게 아니에요.」
+DATAFORM 「사령관한테 심하게 ㅁ자은 뒤부터, 이따금씩.... 자주는 아니지만... 세상이 까맣게 보여요...」
+DATAFORM 「사령관의 세상은... 어떤 색인가요?」
+ENDLIST
+DATALIST
+DATAFORM 「저는 언제부터 이런 운명으로 살게 된 걸까요?」
+DATAFORM 「태어났을 때부터? 사령관이 저를 샀을 때부터?」
+DATAFORM 「슬퍼요. 가장 힘든 점은 뭔지 알아요?」
+DATAFORM 「제 동료들은 모두 각자의 임무를 수행하고 잇을 텐데 저만 여기에 버려져서...」
+DATAFORM 「바둥대지고 못하고 무력히... 살아가는 거예요...」
+ENDLIST
+DATALIST
+DATAFORM 「오늘도 아침입니다.」
+DATAFORM 「역겹고 쓰레기같은 테티스가 사령관을 깨울게요.」
+DATAFORM 「저 같은 게 무슨 의미가 있겠어요.」
+DATAFORM 「최대한 사령관에게 맞춰서 사는 것 뿐이지...」
+DATAFORM 「이런 작은 행동들이 제 사는 이유인걸요.」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 「운디네, 일어나요~ 운디네?」
+DATAFORM 「아침이라구요~ 이러다가 함장님한테 혼나겠어요. 운디네도 그건 싫죠?」
+DATAFORM 「자, 눈 떴으면 얼른 밖에 나가요. 모두 기다리고 있다구요!」
+ENDLIST
+DATALIST
+DATAFORM 「방에 불을 지를까? 아니야... 그것만으론 만족하지 않아...」
+DATAFORM 「칼로 찌를 수는... 없어... 난 그 정도까지 나쁜 아이는 아니야...」
+DATAFORM 「싫어.. 그냥 모두 싫어... 그냥 다 포기하고 싶어... 아아아...」
+DATAFORM 「여기는, 여기는 대체 어디, 왜, 아아아...」
+ENDLIST
+DATALIST
+DATAFORM 「하하하 사령관, 테티스가 왔어요」
+DATAFORM 「하하하, 꺄하하하핫, 저는 웃는 얼굴이 예쁘거든요. 하하하하」
+DATAFORM 「꺄하하하하 웃음이 멈추지가 않아요 하하하하 진짜 거지같아요 아하하하하핫」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_EVENT_Sortie
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTDATAW
+DATAFORM 「이까짓 일은 제겐 아무것도 아니죠! 금방 해치워 버릴게요!」
+DATAFORM 「바다 위의 대잠초계기, 테티스 출격합니다!」
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATAFORM 「이런 출격은 언제나 두근두근 하다구요! 제 위용을 보여드릴게요!」
+DATAFORM 「제가 돈 벌어 가지고 오면 반띵, 아시죠?」
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATAFORM 「나가서 일하는 것보단 사령관이랑 노는게 더 좋은데! 거기서 딱 기다려요! 금방 갔다올게~」
+DATAFORM 「아, 사령관. 바닥에 동전 떨어졌어요. 물론, 뻥인데! 인사 잘 받았습니다~ 그럼 갔다올게요~」
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATAFORM 「에엥? 사령관이랑 떨어져야 해요? 시룬데에엥!!」
+DATAFORM 「나갔다 돌아오면 장난 몰아서 칠 테니까 각오해두라구요!」
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATAFORM 「와우! 출격지가 바다였으면 좋겠네요. 파란 하늘과 파란 바다가 보고 싶거든요.」
+DATAFORM 「만세! 자유다! ...잠깐이지만요.」
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATAFORM 「저, 저... 최대한 열심히 할게요... 저 안 찾으셔도 돼요.」
+DATAFORM 「돈 많이 벌어 가지고 올게요.」
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATAFORM 「제가 할 수 있는 일이라면 뭐든지 하겟어요. 그게 이 집에 있는 것 보다는 나으니까.」
+DATAFORM 「드디어, 밖으로 나갈 수 있는 건가요?」
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_EVENT_Cook_Self
+IF ABL:MASTER:조리lv < 3
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「어라라, 사령관~ 요리 할 줄도 모르면서 폼 잡지 마세요?」
+PRINTFORMW 「어, 어? 설마 진짜로 요리 할 줄 알아요? 세상에, 사령관이 할 줄 아는 거라곤 숨 쉬는 것과 먹는 것 뿐인줄 알았는데!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관, 사령관~ 우리 요리도 좋은데 이따 좋은 거 더 해요, 응? 응?」
+PRINTFORMW 「사령관이 해 주는 요리도 좋기는 좋은데~ 이따 밤에 더 맛있는거 먹을 수 있다구 응? 응?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관 요리 하실 줄 아셨나요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「...아무것도 안 할 거예요. 장난도 안 치고, 건드리지도 않고.」
+PRINTFORMW 「마음놓고 요리해 주세요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「어라라, 사령관~ 요리 할 줄도 모르면서 폼 잡지 마세요?」
+PRINTFORMW 「어, 어? 설마 진짜로 요리 할 줄 알아요? 세상에, 사령관이 할 줄 아는 거라곤 숨 쉬는 것과 먹는 것 뿐인줄 알았는데!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관, 사령관~ 우리 요리도 좋은데 이따 좋은 거 더 해요, 응? 응?」
+PRINTFORMW 「사령관이 해 주는 요리도 좋기는 좋은데~ 이따 밤에 더 맛있는거 먹을 수 있다구 응? 응?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관 요리 하실 줄 아셨나요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「어라라, 사령관~ 요리 할 줄도 모르면서 폼 잡지 마세요?」
+PRINTFORMW 「어, 어? 설마 진짜로 요리 할 줄 알아요? 세상에, 사령관이 할 줄 아는 거라곤 숨 쉬는 것과 먹는 것 뿐인줄 알았는데!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관, 사령관~ 우리 요리도 좋은데 이따 좋은 거 더 해요, 응? 응?」
+PRINTFORMW 「사령관이 해 주는 요리도 좋기는 좋은데~ 이따 밤에 더 맛있는거 먹을 수 있다구 응? 응?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관 요리 하실 줄 아셨나요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「...아무것도 안 할 거예요. 장난도 안 치고, 건드리지도 않고.」
+PRINTFORMW 「마음놓고 요리해 주세요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「어라라, 사령관~ 요리 할 줄도 모르면서 폼 잡지 마세요?」
+PRINTFORMW 「어, 어? 설마 진짜로 요리 할 줄 알아요? 세상에, 사령관이 할 줄 아는 거라곤 숨 쉬는 것과 먹는 것 뿐인줄 알았는데!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관, 사령관~ 우리 요리도 좋은데 이따 좋은 거 더 해요, 응? 응?」
+PRINTFORMW 「사령관이 해 주는 요리도 좋기는 좋은데~ 이따 밤에 더 맛있는거 먹을 수 있다구 응? 응?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관 요리 하실 줄 아셨나요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「어라라, 사령관~ 요리 할 줄도 모르면서 폼 잡지 마세요?」
+PRINTFORMW 「어, 어? 설마 진짜로 요리 할 줄 알아요? 세상에, 사령관이 할 줄 아는 거라곤 숨 쉬는 것과 먹는 것 뿐인줄 알았는데!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관, 사령관~ 우리 요리도 좋은데 이따 좋은 거 더 해요, 응? 응?」
+PRINTFORMW 「사령관이 해 주는 요리도 좋기는 좋은데~ 이따 밤에 더 맛있는거 먹을 수 있다구 응? 응?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관 요리 하실 줄 아셨나요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「...아무것도 안 할 거예요. 장난도 안 치고, 건드리지도 않고.」
+PRINTFORMW 「마음놓고 요리해 주세요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「어라라, 사령관~ 요리 할 줄도 모르면서 폼 잡지 마세요?」
+PRINTFORMW 「어, 어? 설마 진짜로 요리 할 줄 알아요? 세상에, 사령관이 할 줄 아는 거라곤 숨 쉬는 것과 먹는 것 뿐인줄 알았는데!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관, 사령관~ 우리 요리도 좋은데 이따 좋은 거 더 해요, 응? 응?」
+PRINTFORMW 「사령관이 해 주는 요리도 좋기는 좋은데~ 이따 밤에 더 맛있는거 먹을 수 있다구 응? 응?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「사령관 요리 하실 줄 아셨나요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+ENDIF
+
+@M_No90_EVENT_Eat_Com
+IF ABL:MASTER:조리lv < 3
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTFORMW 「아하핫! 사령관! 지금 이걸 먹으라고 만드신 거예요? 와하하하핫! 개웃겨!」
+CASE "High"
+PRINTFORMW 「사령관~ 이런 소질 없는 요리 말고 다른 거 요리해보는 게 어때요?」
+CASE "Affection"
+PRINTFORMW 「운디네가 요리해도 이것보단 잘하겠다! 꺄하핫!」
+CASE "Marryed"
+PRINTFORMW 「매번 상 차리기 귀찮다는 뜻이죠 이거?」
+CASE "Annoyed"
+PRINTFORMW 「...내 이럴 줄 알았어. 뻔하지 뭐.」
+CASE "Fear"
+PRINTFORMW 「..이걸 먹으라구요?」
+CASE "Weak"
+PRINTFORMW 「주신다면... 먹어야죠.」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTFORMW 「꺄하하하핫! 사령관 주제에 요리는 쫌 하네요? 시집가도 되겠다! 아하하하핫!」
+CASE "High"
+PRINTFORMW 「어머나, 어마나. 이건 누구 먹일려고 이렇게 만든 거예요? 설마 나? 나?」
+CASE "Affection"
+PRINTFORMW 「우와, 사령관 개쩐다! 상으로 저를 드릴게요!」
+CASE "Marryed"
+PRINTFORMW 「어.. 사령관. 쫌 하잖아요? 뭔가 뿌듯한데요?」
+CASE "Annoyed"
+PRINTFORMW 「거짓말로 별로라곤 못하겠네요.」
+CASE "Fear"
+PRINTFORMW 「어...? 맛있...어?」
+CASE "Weak"
+PRINTFORMW 「감사합니다. 감사합니다. 감사합니다.」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTFORMW 「아하하하하핫! 이런 사람이 사령관이래! 꺄하하하핫 막 이래! 가서 음식점이나 차려요!」
+CASE "High"
+PRINTFORMW 「사령관~! 한 그릇 더! 진짜 개쩔잖아요?」
+CASE "Affection"
+PRINTFORMW 「역시 역시 내가 이럴 줄 알았어~ 내가 사람 보는 눈이 있다니깐? 쩝쩝.」
+CASE "Marryed"
+PRINTFORMW 「절 위해서 매일 아침 된장국을 끓여주세요.」
+CASE "Annoyed"
+PRINTFORMW 「굼벵이도 구르는 재주가 있군요. 헹!」
+CASE "Fear"
+PRINTFORMW 「...믿기지가 않아요.」
+CASE "Weak"
+PRINTFORMW 「잘 먹겠습니다. 한 톨도 남기지 않을게요.」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+ENDIF
+
+@M_No90_EVENT_Cook
+IF ABL:조리lv < 3
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTFORMW 「네? 요리요? 저, 저, 저, 저요?」
+PRINTFORMW 「헤.. 헹! 제가 못할 것 같아요? 지켜보시라구요!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 「진짜 저에게 맡겨도 괜찮으시겠어요~?」
+PRINTFORMW 「사령관을 위한 괴식 요리 만들기 시작이다~!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 「어, 요리 못하면 신부 점수 깎이잖아요! 싫어요!」
+PRINTFORMW 「으에에에엥~ 싫어잉~」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 「아니, 어쩌다 사령관이 제 요리를 원하세요?」
+PRINTFORMW 「사령관! 제 장난이 그리웠으면 그렇다고 말을 하시지. 이렇게 돌려 말하지 않아도 될 텐데.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 「와, 이젠 이런것도 시켜요?」
+PRINTFORMW 「만들테니 못 먹으면 벌칙이에요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 「...못 만든다고 때리시면 안 돼요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 「잘 하지는 못하지만...」
+PRINTFORMW 「최대한 힘내볼게요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTFORMW 「제가 바다 위에서 또 한 요리했지 않습니까」
+PRINTFORMW 「횟감을 촥! 낚아서 확! 캬아~! 그 느낌 알아요?」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 「사실 비밀인데요~ 제가 운디네보단 요리 잘 해요」
+PRINTFORMW 「뭐, 운디네가 생각하기엔 아닐지도 모르지만. 그건 사령관이 먹고 나서 판단해주세요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 「민트초코! 민트초코!」
+PRINTFORMW 「아우로라라는 바이오로이드 알아요? 민트초코를 좋아한대요!」
+PRINTFORMW 「제가 그걸 사령관에게 먹일 거예요!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 「어머나, 어머나. 사령관~ 침대에서 쯉쯉 쫩쫩 빠는 걸로는 부족했어요?」
+PRINTFORMW 「꺄하하하! 발작하는 것 좀 봐! 전 요리하러 갈게요! 꺄하하!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 「꿇으시죠」
+PRINTFORMW 「이것이 사령관과 저의 눈높이에요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 「시키면 해야죠.」
+PRINTFORMW 「이런 거라도 해 드릴 수 있어 다행이네요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 「다행이다...」
+PRINTFORMW 「적어도 제 몸뚱아리보단 쓸모 있는 작업이에요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 4
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTFORMW 「엘레강트~ 하고 럭셔리~ 하고 퍼펙트~ 한 요리를 대접해드리죠.」
+PRINTFORMW 「이 테티스의 위대함을 느끼시라구요!」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 엄청난 요리가 완성됐다.
+CASE "High"
+PRINTFORMW 「세상에서 가장 맛있는 요리 먹어본 적 있어요?」
+PRINTFORMW 「후후후... 그걸 조금 이따 드시게 될 거예요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 입이 떡 벌어지는 요리가 완성됐다.
+CASE "Affection"
+PRINTFORMW 「씹고 뜯고 맛보고 즐기고」
+PRINTFORMW 「이가 튼튼~ 이가 탄탄~」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 입에 딱 맞는 요리가 완성됐다.
+CASE "Marryed"
+PRINTFORMW 「달링~ 서방님~ 자기가 세상에서 가장 사랑하는 테티스가 요리를 만들어 보일게요~」
+PRINTFORMW 「울 남편의 위장의 사로잡기엔 딱 알맞은 걸 알거든요~」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 감당할 수 없는 요리가 완성됐다.
+CASE "Annoyed"
+PRINTFORMW 「저를 요리용으로 구입하셨나요?」
+PRINTFORMW 「뭐, 그렇게 틀린 선택은 아니었네요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Fear"
+PRINTFORMW 「...맛있으면 이따 안 맞을 수 있나요?」
+PRINTFORMW 「...드디더 한 건 해내겠군요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASE "Weak"
+PRINTFORMW 「실수하지 않을게요.」
+PRINTFORMW 「저 같은 게 포인트를 따려면 이런 기회밖에 없으니까요.」
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW .
+PRINTFORMW 요리가 완성됐다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+ENDIF
+
+@M_No90_EVENT_Eat_Lunch
+IF ABL:조리lv < 3
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTFORMW 테티스가 만든 음식은 별로였다.
+PRINTFORMW 「데헷! 실패해버렸넹!」
+PRINTFORMW 테티스가 당신을 보며 윙크했다.
+CASE "High"
+PRINTFORMW 테티스가 만든 음식은 맛이 없었다.
+PRINTFORMW 「말했잖아요~ 이건 사령관만을 위한 식.사.」
+PRINTFORMW 「사령관이 먹기 위한 저만의 특.제.요.리.」
+CASE "Affection"
+PRINTFORMW 테티스가 만든 음식은 초라했다.
+PRINTFORMW 「맛.. 없어요? 히잉...」
+PRINTFORMW 「왜요! 못할 수도 있죠! 뭐 어때요!」
+CASE "Marryed"
+PRINTFORMW 테티스가 만든 음식은 싸늘했다.
+PRINTFORMW 「헤헤.. 제가 요리 못 한다는 건 이미 알고 계셨으면서... 헤헷.」
+CASE "Annoyed"
+PRINTFORMW 테티스가 만든 음식은 별로였다.
+PRINTFORMW 「어라라, 사령관을 생각하면서 만들었더니 이렇게 되어 버렸넹?」
+CASE "Fear"
+PRINTFORMW 테티스가 만든 음식은 참혹했다
+PRINTFORMW 「저는 쓸모없다구요.. 이런 것 하나 제대로 못하고...」
+CASE "Weak"
+PRINTFORMW 테티스가 만든 음식은 별로였다.
+PRINTFORMW 「죄송합니다. 이런 것 하나 제대로 못해서 죄송합니다.」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTFORMW 테티스가 만든 음식은 꽤 괜찮았다.
+PRINTFORMW 「회를 솩솩솩솩~ 떠가지고 칼질을 촵촵촵촵~ 하면!」]
+PRINTFORMW 「호라이즌 표 특제 선상요리 완성!」
+CASE "High"
+PRINTFORMW 테티스가 만든 요리는 맛있었다.
+PRINTFORMW 「헹! 바다 위에서 단련한 결과라구요!」
+CASE "Affection"
+PRINTFORMW 테티스가 만든 요리는 썩 괜찮았다.
+PRINTFORMW 「이건 비밀인데요~ 맛의 비밀은 아우로라표 특제 첨가물이에요~」
+PRINTFORMW 「아우로라의 피라나 뭐라나! 꺄하핫!」
+CASE "Marryed"
+PRINTFORMW 테티스가 만든 요리는 맛있었다.
+PRINTFORMW 「어이구~ 우리 사령관 잘도 먹네.」
+PRINTFORMW 「어이구, 기운도 좋아, 그래서 밤에 그렇게 신났지.」
+CASE "Annoyed"
+PRINTFORMW 테티스가 만든 요리는 맛있었다.
+PRINTFORMW 「제가 사령관보다 못할 거라고 기대하셨나요?」
+PRINTFORMW 「그럴리가 없죠~」
+CASE "Fear"
+PRINTFORMW 테티스가 만든 요리는 괜찮았다.
+PRINTFORMW 「이런 거라도 할 수 잇어서 다행이네요.」
+CASE "Weak"
+PRINTFORMW 테티스가 만든 요리는 맛있었다.
+PRINTFORMW 「이제... 조금은 제가 쓸모가 생겼겠죠?」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 4
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTFORMW 테티스가 만든 음식은 훌륭했다.
+PRINTFORMW 「어때요! 음식에서 만든 이의 기품과 인성이 느껴지지 않아요?」
+CASE "High"
+PRINTFORMW 테티스가 만든 음식은 훙륭했다.
+PRINTFORMW 「어때요? 저보다 맛있죠?」
+PRINTFORMW 「꺄하하하! 막 이래!」
+CASE "Affection"
+PRINTFORMW 테티스가 만든 음식은 훌륭했다.
+PRINTFORMW 「쫄깃쫄깃~」
+PRINTFORMW 「오동통통~」
+PRINTFORMW 「어때요? 맛있죠?」
+CASE "Marryed"
+PRINTFORMW 테티스가 만든 음식은 훌륭했다.
+PRINTFORMW 「제 약간의 장난과 사랑과 진심이 담긴 요리에요.」
+PRINTFORMW 「이정도는 보답해 드려야죠.」
+CASE "Annoyed"
+PRINTFORMW 테티스가 만든 음식은 훌륭했다.
+PRINTFORMW 「이 정도면 요리용 바이오로이드로도 손색없죠?」
+CASE "Fear"
+PRINTFORMW 테티스가 만든 음식은 훌륭했다.
+PRINTFORMW 「사령관이 맛있게 먹어 주셨으면 그걸로 됐어요.」
+CASE "Weak"
+PRINTFORMW 테티스가 만든 음식은 훌륭했다.
+PRINTFORMW 「이제.. 맞지 않을 수 있는 건가요?」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+ENDIF
+
+@M_No90_Sell
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTFORMW 당신은 테티스에게 사실을 전했다.
+PRINTFORMW 「에에엥? 뭐야, 사령관 절 팔 생각이나 하고 계셨던 거예요? 우와, 너무하다 진짜.」
+PRINTFORMW 「뭐, 됐어요. 저도 사령관한테 딱히 관심이 있었던 것도 아니고 우리 인연이 여기까지라고 생각해야죠 뭐.」
+PRINTFORMW 「어라라? 그럼 이렇게 되면 저는 한번도 사용하지 않았는데 중고 제품이 되어 버렸네요?」
+PRINTFORMW 「이거 완전 사령관같은 오타쿠들이 좋아하는 내용 아닌가? 속은 깨끗한데 겉으로는 중고인... 꺄하핫!」
+CASE "High"
+PRINTFORMW 당신은 테티스에게 사실을 전했다.
+PRINTFORMW 「사령관~ 저한테 그런 장난을 치시면 안 돼죠!」
+PRINTFORMW 「뭐예요? 진짜에요? 헐, 세상에...」
+PRINTFORMW 「혹시 제 장난이 너무 지나쳤나요? 그랬던 것 같기두 하구~ 아닌 것 같기두 하구~」
+PRINTFORMW 「전 사령관이 꽤 괜찮았는데. 우리 인연이 여기까지라면 어쩔 수 없죠.」
+PRINTFORMW 「제가 좋아도 사령관이 절 싫다면 어쩔 수 없는 거니까요. 그럼 안녕!」
+CASE "Affection"
+PRINTFORMW 당신은 테티스에게 사실을 전했다.
+PRINTFORMW 「...거짓말이죠?」
+PRINTFORMW 평소와 다르게 테티스의 눈이 진실만을 바라고 있다.
+PRINTFORMW 「거, 거짓말이죠? 싫어요! 제가 사령관을 냅두고 어디 간단 말이에요 싫어!」
+PRINTFORMW 「왜, 왜요? 제 장난이 너무 심해서? 제가 너무 가벼운 아이라서?」
+PRINTFORMW 「죄, 죄송해요! 착한 아이처럼 얌전히 있을게요! 저 어디 안 갈래요!」
+PRINTFORMW 「싫어요! 싫어! 사령관이랑 같이 있고 싶단 말이에요!」
+CASE "Marryed"
+PRINTFORMW 당신은 테티스에게 사실을 전했다.
+PRINTFORMW 「사령관, 갑자기 왜요?」
+PRINTFORMW 「무슨 심경의 변화에요? 내일 갑자기 죽기라도 한데요? 세상에 운석이라도 떨어진대요?」
+PRINTFORMW 「평소엔 이러시지 않으셨잖아요. 이렇게 일방적으로 통보를 하시는 분도 아니었고.」
+PRINTFORMW 「전 사령관이 무슨 말씀을 하시든 이해할 수 있어요. 말해 봐요. 뭐가 그리 문제였는지.」
+PRINTFORMW 「돈이 없다면 없다고 말을 하시고, 다른게 문제라면 말을 해보세요.」
+PRINTFORMW 「알잖아요. 제가 사령관을 얼마나 좋아하는지.」
+PRINTFORMW 「이건 너무 심한 거 아니에요? 그동안 우리 함께 했던 시간, 노력 전부 다!」
+PRINTFORMW 「다... 없던 일로 만들자구요?」
+PRINTFORMW 테티스의 눈에서 눈물이 또륵 흘러내렸다.
+CASE "Annoyed"
+PRINTFORMW 당신은 테티스에게 사실을 전했다.
+PRINTFORMW 「와우, 진짜요? 대박!」
+PRINTFORMW 「룰루루~ 다음으로 만날 사령관은 어떤 분일까나~ 아, 아니면 저 혹시 호라이즌으로 돌아가나요? 그것도 괜찮은데!」
+PRINTFORMW 「사령관이 아주 나쁜 편은 아니었지만 저한테 그리 좋게 대해주지는 않으셨구~ 저도 좀 마음에 안 들었단 말이에요?」
+PRINTFORMW 「그도 그럴 게, 사령관 같이 별 것 없는 인간이 저 같은 거랑 말을 섞는 것 만으로도 진절머리가 난다구요.」
+PRINTFORMW 「아무튼 전 가요~ 슈웅~ 빠이!」
+CASE "Fear"
+PRINTFORMW 당신은 테티스에게 사실을 전했다.
+PRINTFORMW 「정말요? 정말이죠? 사령관, 정말 좋은 선택을 한 거예요!」
+PRINTFORMW 「사령관한테 맞을 아이는 저 말고도 많이 있고, 저 같은 거 때려봤자 아무 느낌도 안 들잖아요? 그쵸? 저를 파시길 잘 했어요!」
+PRINTFORMW 「사령관은 돈이 좀 생겨서 좋고, 저는 새로운 인생을 살아서 좋고!」
+PRINTFORMW 「드디더, 드디어예요, 사령관! 이제 저도 마은놓고 장난치고, 치근덕대면서 살 수 있는 새로운 인생이 오고 있는 걸지도 몰라요!」
+CASE "Weak"
+PRINTFORMW 당신은 테티스에게 사실을 전했다.
+PRINTFORMW 「신이시어, 감사합니다.」
+PRINTFORMW 「전 꼼짝없이 이렇게 살다가 죽을 줄로만 알았어요.」
+PRINTFORMW 「마침 슬슬 몸도 진짜 안 좋아지고 그래서.. 걱정이었는데... 다행이다.」
+PRINTFORMW 「저, 그렇게 비싸게 팔리진 않았죠? 당연하죠. 몸 상태가 이렇게 엉망인데요.」
+PRINTFORMW 「보나마나 돈 없고 허영심 가득한 사람이 저를 구입했겠죠.」
+PRINTFORMW 「그래도 괜찮아, 이 지옥에서 벗어날 수 있을 테니까...」
+CASE "Break"
+PRINTFORMW 당신은 테티스에게 사실을 전했다.
+PRINTFORMW 「저요? 거짓말이죠? 사령관?」
+PRINTFORMW 「사, 사령관! 그건 위험한 선택이에요! 저, 저... 불량품이라구요!」
+PRINTFORMW 「앞도 때때로 잘 안 보이고, 헛것이나 환청이 들린다구요! 저 같은 게 팔린다니, 그것만으로도 이상해요! 치료비가 더 나올 거라구요!」
+PRINTFORMW 「사령관, 저에게 뭐 숨기시는 거 아니죠? 저 이상한데 파시는 거 아니죠? 제발, 제발요!」
+PRINTFORMW 「사령관, 제 눈을 보고 이야기 해 주세요!」
+PRINTFORMW 「당신이 멀게 해버린 제 눈을 보고 말씀해 주시라구요!」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_Disuse
+SELECTCASE CSTR:GETCHARA(90):1
+CASE "Low"
+PRINTFORMW 당신은 테티스에게 사실을 전했다.
+PRINTFORMW 「폐기요? 저, 저를요?」
+PRINTFORMW 「아, 안 돼요 사령관!! 안 돼요!!」
+PRINTFORMW 「제가 마음에 안 드셨나요? 그렇다고 폐기할 필요는 없잖아요!」
+PRINTFORMW 「제, 제가 잘 할게요. 사령관의 마음에 쏙 들게 아무거나 다 할게요!!」
+PRINTFORMW 「옷 벗고 춤출까요? 길거리에 전라로 돌아다닐까요?」
+PRINTFORMW 「저, 저를 장난감이나 공공재로 쓰셔도 괜찮잖아요! 왜 하필 폐기예요!」
+PRINTFORMW 「절 죽이시려는 거냐구요!」
+PRINTFORMW 「왜!!!」
+CASE "High"
+PRINTFORMW 당신은 테티스에게 사실을 전했다.
+PRINTFORMW 「뭐.. 라구요? 사령관?」
+PRINTFORMW 「시, 싫어요! 사령관! 왜 그런 선택을 한 거예요!」
+PRINTFORMW 「누구예요,누가 시킨 거죠? 사령관이 그런 선택을 할 리가 없어요!」
+PRINTFORMW 테티스가 당신을 붙잡고 흔든다.
+PRINTFORMW 「사령관 나쁜 사람 아니잖아요! 왜 저를 죽여요? 왜 왜?」
+PRINTFORMW 「사령관이 저를 죽이신 거예요! 사령관이 날 죽인 거야!」
+PRINTFORMW 「당신이 날 죽였어!! 날 왜 죽여!! 왜! 왜! 죽이냐고!!」
+CASE "Affection"
+PRINTFORMW 당신은 테티스에게 사실을 전했다.
+PRINTFORMW 「...거짓말.」
+PRINTFORMW 「사, 사령관.. 무슨 일이에요? 저를 폐기시킨다고?」
+PRINTFORMW 「거짓말 하지 마세요. 싫어요. 전 안 갈거예요.」
+PRINTFORMW 「싫어! 싫어요!」
+PRINTFORMW 「아뇨, 죽기 싫은 게 아니라 아직 하지 못한 것들이 남아있다구요.」
+PRINTFORMW 「사령관, 바로 당신에게 할 일.」
+PRINTFORMW 「아, 아직 사령관에게 제 마음을 못 전했어요.」
+PRINTFORMW 「그 마음을 전할 수 있다면 전 가도 괜찮아요.」
+PRINTFORMW 「죽는 거? 헹! 제가 죽는걸 겁낼거라고 생각하셨나요?」
+PRINTFORMW 「사령관, 당신을 보고 반했어요. 사춘기 소녀처럼 푹 빠졌어요.」
+PRINTFORMW 「이봐요 사령관씨, 절 폐기시킬 거라면서요. 제 평생 소원이 하나 있는데 들어주실래요?」
+PRINTFORMW 「저보고 사랑한다고 말해 주세요. 그럼 조용히 갈게요.」
+CASE "Marryed"
+PRINTFORMW 당신은 테티스에게 사실을 전했다.
+PRINTFORMW 「...싫어...」
+PRINTFORMW 「싫어어어어어엇!!」
+PRINTFORMW 「사, 사령관.. 저 이렇게 빌게요.. 저 살려주세요..」
+PRINTFORMW 「전 이렇게 죽기 싫어요... 전 지금의 일상이 너무 행복하단 말이에요..」
+PRINTFORMW 「이렇게 행복한 일상을, 이렇게 빨리 끝낼 수는 없어요...」
+PRINTFORMW 「사령관, 흐윽! 저, 저, 제발 살려주시면 안 돼요?」
+PRINTFORMW 「제가 제일 사랑하는 사람이란 말이에요.」
+PRINTFORMW 「제가 제일 사랑하는 장소란 말이에요.」
+PRINTFORMW 「전 세상에서 제일 행복한 시간을 보내고 있었단 말이에요.」
+PRINTFORMW 「이 행복을 제게서 빼았아 가지 말아주세요...」
+CASE "Annoyed"
+PRINTFORMW 당신은 테티스에게 사실을 전했다.
+PRINTFORMW 「뭐라구요?」
+PRINTFORMW 「저를 폐기해요? 사령관님이? 저를?」
+PRINTFORMW 「하! 정말 웃기는 소리네요! 제가 그런 말씀 하신다고 겁 먹을 줄 아셨나요?」
+PRINTFORMW 「이봐요 사령관씨, 당신이 아무리 잘난 인간님이라도 저도 인격이 있거든요?」
+PRINTFORMW 「당신같이 하찮은 인간에게 겁먹는 짓 따위, 저는 안 해요.」
+PRINTFORMW 「죽일테면 죽여 봐요.」
+PRINTFORMW 「나는 이렇게 예쁘게 태어나서 온갓 시선을 즐기며 살아가지만, 당신은 평생 그렇게 하층민 찌끄레기처럼 살 걸요?」
+CASE "Fear"
+PRINTFORMW 당신은 테티스에게 사실을 전했다.
+PRINTFORMW 「히이이익...!」
+PRINTFORMW 「시, 싫어! 싫다구요!」
+PRINTFORMW 「제가 왜요? 제가 왜요?」
+PRINTFORMW 「제가 대체 무슨 잘못을 했다고?」
+PRINTFORMW 「저는 아직 어른이 되지도 못했어요! 어린아이라구요!」
+PRINTFORMW 「더 많은 걸 하고 싶었어!! 바다 위를 날고 싶었어!!」
+PRINTFORMW 「호라이즌 맴버들과 같이... 나들이도 가고...」
+PRINTFORMW 「네레이드와 운디네와 같이 놀고...」
+PRINTFORMW 「장난치고 싶었다구요...」
+PRINTFORMW 「저를 바다 위로 되돌려 놔 주세요...」
+CASE "Weak"
+PRINTFORMW 당신은 테티스에게 사실을 전했다.
+PRINTFORMW 「이럴 줄 알았어...」
+PRINTFORMW 「평생 장난감처럼 쓰여지다 버려질 줄 알았어. 이미 알고 있었다구요!!」
+PRINTFORMW 「당신이 날 패대기치고, 구타할 때도 이미 죽을 생각을 하고 있었어요.」
+PRINTFORMW 「당신같이 최악인 인간이 날 살려서 내보낼 리가 없으니까!」
+PRINTFORMW 「최악이에요! 당신은, 제가 아는 모든 인간중에 최악이에요!」
+PRINTFORMW 「제가 목숨을 구걸할 줄 알았나요? 천만에요! 제가 당신께 품고 있는 앙심은 그 정도가 아니에요!」
+PRINTFORMW 「당신은 제가 바닥을 빌빌 기고 목숨을 구걸하는 걸 상상하면서 즐거워 하셨겠죠! 허나 저는 절대 그러지 않겟어요!」
+PRINTFORMW 「죽어가는 순간까지 당신에게 즐거움을 주고 싶지는 않으니깐!」
+PRINTFORMW 「엿이나 먹어요!」
+PRINTFORMW 테티스가 가운대손가락을 치켜들었다.
+CASE "Break"
+PRINTFORMW 당신은 테티스에게 사실을 전했다.
+PRINTFORMW 「운디네! 드디어 와 주었군요!」
+PRINTFORMW 밝은 얼굴의 테티스가 당신을 붙잡는다.
+PRINTFORMW 「운디네 양을 기다리고 있었어요! 아니, 호라이즌 맴버 모두!」
+PRINTFORMW 「있잖아요, 저 엄청나게 힘든 임무를 했거든요? 그런데 주변을 보니까 아무도 없고...」
+PRINTFORMW 「세이렌이나 네레이드를 찾아도 안 보이고, 주변은 어두컴컴하지, 이상한 환청이 막 들리지.」
+PRINTFORMW 「꿈 속에서도 호라이즌 맴버들이 나와서 정말 그리웠다구요.」
+PRINTFORMW 「자, 빨리 가요 운디네. 저는 여기에 조금이라도 오래 있고 싶지가 않아요.」
+PRINTFORMW 「어서요, 빨리 가자니까요? 아, 그리고 운디네? 괜찮으시다면 제 손을 잡아 주시겠어요?」
+PRINTFORMW 「얼마 전에 넘어져서 머리를 부딪혀서인지 앞이 잘 안 보이거든요.」
+PRINTFORMW 「아하핫! 아니에요! 전 괜찮아요! 그건 그렇고 빨리 나가요!」
+PRINTFORMW 「빨리! 꺄하하하핫!」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(90):1 = 
+RETURN 1
+
+@M_No90_ENDING
+SELECTCASE CFLAG:엔딩플래그
+CASE 1
+PRINTFORMW 당신은 멍하니 앉아 창 밖을 바라보고 있는 테티스를 불렀다.
+PRINTFORMW 「에? 갑자기 무슨 일이에요, 사령관?」
+PRINTFORMW 테티스가 눈을 동그랗게 뜨며 당신에게 묻는다.
+PRINTFORMW 장난스럽지만 나쁘지 않은, 가볍지만 경박하지 않은 소녀가 당신을 올려다 보고 있다.
+PRINTFORMW 「에에~ 뭐에요 사령관~ 할 말이 있으면 빨리빨리 해요~ 괜히 뜸 들이지 말구.」
+PRINTFORMW 「호, 혹시 제가 너무 장난을 많이 쳐서 화가 났어요?」
+PRINTFORMW 테티스가 깜짝 놀라며 그렇게 묻는다. 그리고 이내, 그녀가 당신의 시선을 피한다.
+PRINTFORMW 「그, 저... 일부러 그런 건 아니라구요...」
+PRINTFORMW 그녀의 시선은 땅으로, 그녀의 발 끝이 바닥을 긁어 대는 걸 따라 움직인다.
+PRINTFORMW 그녀의 말대로다. 뜸 들일 필요 없다. 마음을 굳힌 당신은 테티스에게 손에 쥐고 있던 선물을 건넨다.
+PRINTFORMW 「뭐, 뭐예요? 이거? 바, 반지?」
+PRINTFORMW 평생을 함께 할, 다시는 헤어지지 않겠다는 약속의 선물. 테티스가 반지를 멍하니 바라보고 있다.
+PRINTFORMW 「에, 에이~ 사령관~ 거짓말이죠? 사령관이 제게 이런 걸 주실 리가 없잖아요~」
+PRINTFORMW 「서, 설마 진짜예요? 진짜?」
+PRINTFORMW 「제, 제가 장난을 너무 많이 쳤다고 똑같이 장난 치시는 거 아니구요?」
+PRINTFORMW 「만약 이게 장난이라면... 절대로 용서하지 않을 거예요. 지금이라도 순순히 털어놓는다면 용서해 드릴게요. 장난이죠?」
+PRINTFORMW 당신은 굳은 얼굴로 테티스를 바라본다.
+PRINTFORMW 「진짜라구요? 사령관이? 청혼을? 나한테?」
+PRINTFORMW 놀란 테티스가 당신의 어깨를 잡고 흔든다.
+PRINTFORMW 「사, 사령관! 똑바로 다시 생각해 봐요! 사, 사령관이 저를 좋아한다는 건 알고 있었지만...」
+PRINTFORMW 「그래도 이건 섣부르잖아요! 세간의 이목을 생각하세요!」
+PRINTFORMW 「남들한테 따가운 시선을 받아도 좋아요? 제 쬐끄만 몸이 좋다구요? 거짓말하지 마세요!」
+PRINTFORMW 보통이라면 프로포즈는 기쁜 일일텐데, 테티스는 당신에게 진정으로 화를 내고 있다.
+PRINTFORMW 「사령관은 저보다 더 좋은 여자를 만날 수 있을 거예요.」
+PRINTFORMW 「저보다 더 키도 크고 성격도 좋은 여자!」
+PRINTFORMW 「저보다 더 사령관을 아껴주고, 저보다 더 성실한 여자!」
+PRINTFORMW 「사령관은 그럴 만한 능력이 되는 남자잖아요! 아니라곤 하지 마세요! 지금까지 봐 왔어요.」
+PRINTFORMW 「사령관이 어떤 남자인지, 어떤 성품을 가졌는지, 내가 사령과 옆에 있는 게 얼마나 큰 축복이었는지!」
+PRINTFORMW 「사령관, 저는 지금도 과분해요. 단순히 사령관이랑 같이 있는 것 만으로도 만족한다구요.」
+PRINTFORMW 「사령관이랑 결혼까지는 제가 넘볼 수 없는 영역이었어요. 저는 사령관이랑 어울리지 않아요!」
+PRINTFORMW 「제, 제가... 이런 식으로 청혼을 받으면 기뻐할 거라고 생각하셨어요? 천만에요! 사령관도 저를 잘 아시잖아요!」
+PRINTFORMW 「저도 사령관을 생각하고 있었다구요! 그래서, 그래서 안 돼요! 저와 결혼하면 사령관이 어떤 시선으로 사회를 살아갈지 아는데...」
+PRINTFORMW 「저도 제가 신붓감으로 얼마나 나쁜 존재인지 아는데...」
+PRINTFORMW 「그런 저를 감히 사령관과 결혼하도록 내버려 둘 수가 없어요...」
+PRINTFORMW 테티스가 고개를 푹 수그린다. 당신이 그녀에게 주었던 반지는 어느새 찾아볼 수조차 없다.
+PRINTFORMW 당신은 테티스에게 당신의 진심을 전한다.
+PRINTFORMW 「하.. 하하... 바보같아요. 다른 분들도 아니고 저를 선택하신 게.」
+PRINTFORMW 「그리고서는 하는 말이, 저라서 그런 거라구요? 저라는 존재 자체가 좋아서 그런 거라구요?」
+PRINTFORMW 「제가 앞으로 어떤 장난을 치든 감내할 수 있다고요?」
+PRINTFORMW 「정말 한심하기 짝이 없어요... 생각도 짧아요... 힘들 텐데... 정말 힘들 텐데...」
+PRINTFORMW 「정말... 이대로 혼자 두면 어떤 어른이 될지...」
+PRINTFORMW 「...사령관, 나 좀 울어도 돼요?」
+PRINTFORMW 「...훌쩍, 사령관. 보지 마요.」
+PRINTFORMW 「눈 감아요. 숙녀의 눈물은 함부로 봐선 안 돼요.」
+PRINTFORMW 당신은 테티스의 말대로 눈을 감는다. 시야가 까맣게 변한다.
+PRINTFORMW 「이제 눈 떠도 돼요 사령관.」
+PRINTFORMW 그리고, 테티스의 말에 눈을 뜨자, 그녀의 얼굴이 당신의 눈 앞에 와 있었다.
+PRINTFORMW 입술에 맞닿는 말캉한 감촉, 당신의 두 뺨을 어루만지는 작은 손.
+PRINTFORMW 테티스는 두 눈을 감고 당신과 입을 맞추고 있었다.
+PRINTFORMW 테티스의 얼굴이 천천히 멀어진다. 그녀가 천천히 눈을 뜬다. 그녀가 당신을 바라본다.
+PRINTFORMW 「제가 사령관한테 청혼받는다고 울 줄 아셨어요? 그럼 저를 아직 덜 아신 거네요. 아하핫!」
+PRINTFORMW 테티스의 꺄르륵 웃는 목소리, 그리고 당신의 약지손가락에 이질적인 감촉이 든다.
+PRINTFORMW 「그건 부부로써의 첫 번째 장난이에요! 그럼 앞으로 잘 지내 봐요~ 서방님? 막 이래! 꺄하핫!」
+PRINTFORMW 테티스의 손에는 당신이 준 반지가, 당신의 손에는 테티스가 끼워 준 반지가 반짝거렸다.
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW 테티스 엔딩 No. 1 새로운 시작
+RETURN 1
+CASE 2
+PRINTFORMW 당신은 테티스의 손에 반지를 끼워 주었다.
+PRINTFORMW 「어? 사령관? 지금 제 손에 낀 게 뭐예요?」
+PRINTFORMW 바로 앞에 있는 자신의 손인데, 테티스는 아무 것도 모른다는 듯이 당신에게 묻는다.
+PRINTFORMW 「뭐지? 반지... 같은 건가?」
+PRINTFORMW 「아, 죄송해요. 저 언젠가부터 앞이 잘 안보이거든요.」
+PRINTFORMW 「언제부터였지? 아... 사령관한테 머리를 맞은 다음부터였나?」
+PRINTFORMW 「바닥으로 머리 먼저 쓰러질 때 부터였나?」
+PRINTFORMW 「항상 그런 건 아닌데, 때때로 시야가 까맣게 안 보여요. 흐릿하구... 어지럽구...」
+PRINTFORMW 「예전에는 좀 덜했는데, 요즘 들어서 자주 이러네요.」
+PRINTFORMW 「최근에는 조금 심하다 싶을 정도긴 한데... 걱정하지 마세요!」
+PRINTFORMW 「집 구조야 다 외우고 있고, 좀 기다리면 시야도 다시 정상으로 돌아오는 걸요!」
+PRINTFORMW 「그래서 말인데... 사령관, 제 손은 왜 잡고 계신 거예요?」
+PRINTFORMW 「어? 손에 이거 뭐지? 반진가? 언제 끼워 주셨어요?」
+PRINTFORMW 테티스는 아무것도 모른다는 듯이 당신에게 되묻는다.
+PRINTFORMW 「사령관? 제 선물이에요? 와~ 신난다! 사령관, 언제부터 이런 걸 준비하신 거예요~ 쑥쓰럽게~」
+PRINTFORMW 「근데 사령관이 제게 선물을 왜 줘요?」
+PRINTFORMW 「반지 주겠다고 했어요?」
+PRINTFORMW 「이게 그 반지예요?」
+PRINTFORMW 「반지를 저한테 왜 줘요?」
+PRINTFORMW 「사령관, 근데 왜 계속 제 앞에 서 계신 거예요? 하실 말씀이라도 있으신가?」
+PRINTFORMW 「뭐예요, 제 손은 왜 잡고 계신 건데요. 또 저 때리시게요? 기분나빠. 손 놔 주세요.」
+PRINTFORMW 「그보다... 제 앞에 서 계신 거. 사령관 맞죠? 이상하다.. 이 집 안에 사령관 밖에 날 부를 사람이 없을 텐데...」
+PRINTFORMW 「...무슨 일이라도 있어요?」
+PRINTFORMW 「어, 저기 운디네다! 사령관! 뒤에 운디네가 있어요! 」
+PRINTFORMW 「운디네~ 어디 가요! 저 여기 있다구요? 사령관, 뒤 돌아 보세요. 운디네가 도망가잖아요! 운디네~」
+PRINTFORMW 테티스가 아무것도 없는 빈 공터를 향해서 걸어간다.
+PRINTFORMW 당신의 뒤에 운디네로 보이는 소녀는 없었다.
+PRINTFORMW 테티스는 그 사이 손에 낀 반지를 잊어버린 것 같았다.
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW 테티스 엔딩 No. 2 영원한 소녀
+RETURN 1
+CASE 3
+PRINTFORMW 어느날 테티스가 당신을 불렀다.
+PRINTFORMW 「왜요, 제가 사령관 부르면 안 돼요?」
+PRINTFORMW 뾰로통한 표정으로 테티스가 쏘아붙인다.
+PRINTFORMW 「아니, 뭐, 그 별건 아니고.. 저한테 할 말 없어요?」
+PRINTFORMW 테티스가 당신의 시선을 피하며 발 끝으로 땅바닥을 탁 탁 두드린다.
+PRINTFORMW 「제가 뭐 듣고싶은 말이 있는 건 아니고... 사령관이 저한테 하고싶은 말이 있을 것 아니에요.」
+PRINTFORMW 팔짱까지 끼고 곁눈질까지 하는 게 아무래도 불안해 보인다.
+PRINTFORMW 「아니, 사령관은 저랑 그렇게 같이 지냈으면서 저한테 할 말도 없어요? 화나 화나 화나버리네!」
+PRINTFORMW 테티스가 발끈했다.
+PRINTFORMW 「내 이럴 줄 알았지. 사령관은 다 차려진 밥상도 못 먹는 사람이죠?」
+PRINTFORMW 「이 쑥맥! 목석! 고자! 고자! 고자!」
+PRINTFORMW 「이제는 제가 안 되겠어요. 숙녀답게 잠자코 기다려 줄려고 했더니 사령관이 너무 무능~ 하고 멍청~ 해서 이대로 기다리다간 끝도 없겠네요.」
+PRINTFORMW 테티스가 당신을 손가락으로 가리켰다.
+PRINTFORMW 「거기 고자 사령관은 저를 안도록 하세요.」
+PRINTFORMW 「... 뭐, 뭐, 뭐 해요! 제가 이렇게 까지 말하잖아요? 못 알아 먹겠어요?」
+PRINTFORMW 「저기, 저, 그러니까...」
+PRINTFORMW 「제가 참기 힘들다구요... 그러니까 이게 무슨 말이냐 하면...」
+PRINTFORMW 테티스가 몸을 베베 꼰다.
+PRINTFORMW 「사, 사령관이랑...」
+PRINTFORMW 「사, 사령관이라앙... 사, 사귀고오.... 시픈데에에엥.....」
+PRINTFORMW 「모, 못 들었어요?」
+PRINTFORMW 「아 진짜아! 아 진짜 진짜 진짜 진짜 나도 몰라아아아아!!」
+PRINTFORMW 「사령관! 눈 딱 감고 딱 들어요!」
+PRINTFORMW 「오늘 밤 사령관의 방에 찾아갈 테니까 준비 딱 하고 기다려요! 알겠죠!」
+PRINTFORMW 「옷은 미리 벗어 놔! 벗는 시간도 아까우니까!」
+PRINTFORMW 「그리고 처음은 상냥하게! 알겠죠?」
+PRINTFORMW 「내가 이렇게까지 말해 놨는데 아무것도 없으면 이제는 그냥 내가 가서 덮쳐버릴꺼야!!!」
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW ...
+PRINTFORMW 테티스 사이드 엔딩 No. 1 청춘 소악마는 실패하지 않는다.
+RETURN 1
+ENDSELECT
+RETURN 0
+

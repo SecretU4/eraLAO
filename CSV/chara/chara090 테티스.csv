@@ -1,0 +1,13 @@
+﻿NO,90
+NAME,MH-4 테티스,
+CALLNAME,테티스,
+TALENT,소속,14,;호라이즌
+
+TALENT,등급,3,;S
+TALENT,분류,2,;기동
+TALENT,체형,0,;작은체구
+TALENT,군인,1,
+TALENT,긍정도,1,;긍정적
+
+ABL,전투lv,2
+EXP,출격경험,25

@@ -1,0 +1,14 @@
+﻿NO,16,
+NAME,블랙 리리스,
+CALLNAME,리리스,
+TALENT,소속,4,;컴패니언
+
+TALENT,등급,4,;SS
+TALENT,분류,1,;경장
+TALENT,체형,1,;보통체구
+TALENT,약한얀데레,1,
+TALENT,메가데레,1,
+TALENT,경호원,1,
+
+ABL,전투lv,1
+EXP,출격경험,10
