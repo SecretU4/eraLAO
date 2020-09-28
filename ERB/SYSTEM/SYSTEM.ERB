@@ -26,7 +26,7 @@ IF GETBIT(FLAG:VER_UP_CHECK, 1) != 1
     FLAG:연모인수 = 연모인수처리:1
     SETBIT FLAG:VER_UP_CHECK, 1
 ENDIF
-
+;TODO CFLAG:etc 이관 후 처리
 FLAG:LAST_LAOVERSION = GAMEBASE_VERSION
 RETURN 1
 ;=========================================================================
