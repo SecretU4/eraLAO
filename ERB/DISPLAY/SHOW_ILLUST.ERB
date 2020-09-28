@@ -2,6 +2,7 @@
 ;ARGS = 호출 위치, LOCALS = 출력할 파일명
 @ILLUST(ARG, ARG:1, ARGS)
 #DIM CSV_ID
+#DIMS IMAGE_EXT, 3 = "webp","png","jpg"
 CSV_ID = NO:ARG
 
 VARSET LOCALS
@@ -189,7 +190,20 @@ SELECTCASE ARGS
         ENDSELECT
     CASE "BIOSHOP"
         LOCALS '= @"BIO_IMG_{ARG:1}"
-        GCREATEFROMFILE ARG:1, @"SHOP_SELECTION/{ARG:1}.png"
+        ;IMAGE_EXT의 확장자 지원 (최대 3개)
+        LOCAL = 0
+        REPEAT 3
+            GCREATEFROMFILE ARG:1, @"SHOP_SELECTION/{ARG:1}.%IMAGE_EXT:COUNT%"
+            IF !RESULT
+                GCREATED ARG:1 ;인게임 내 존재 여부 판별
+                LOCAL = RESULT
+            ELSE ;첫생성
+                LOCAL = RESULT
+            ENDIF
+
+            SIF LOCAL
+                BREAK
+        REND
         SPRITECREATE @"%LOCALS%", ARG:1
 ENDSELECT
 
