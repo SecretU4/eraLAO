@@ -193,59 +193,19 @@ DRAWLINE
 PRINTL
 LOCALS = 능력: 
 FOR LOCAL, 21, 100
-    IF TALENTNAME:LOCAL == ""
+    ;해당 능력을 가지고 있지 않은 경우 패스
+    SIF !TALENT:ARG:LOCAL
         CONTINUE
-    ELSEIF !TALENT:ARG:LOCAL
+
+    CALL TALENTNAME_EX(LOCAL, TALENT:ARG:LOCAL)
+    ;CSV에 존재하지 않는 경우 패스
+    IF RESULTS == ""
         CONTINUE
-    ;-1 < 0 > 1 형 TALENT
-    ELSEIF GROUPMATCH(LOCAL, 30,62,70)
-        SELECTCASE LOCAL
-            CASE 30 ;나이속성
-                IF TALENT:ARG:LOCAL == -1
-                    LOCALS += "[동생]"
-                ELSEIF TALENT:ARG:LOCAL == 1
-                    LOCALS += "[누님]"
-                ENDIF
-            CASE 62 ;긍정도
-                IF TALENT:ARG:LOCAL == -1
-                    LOCALS += "[비관적]"
-                ELSEIF TALENT:ARG:LOCAL == 1
-                    LOCALS += "[긍정적]"
-                ENDIF
-            CASE 70 ;지능
-                IF TALENT:ARG:LOCAL == -1
-                    LOCALS += "[무식]"
-                ELSEIF TALENT:ARG:LOCAL == 1
-                    LOCALS += "[지식]"
-                ENDIF
-        ENDSELECT
-    ;0 > 1 > 2 형 TALENT
-    ELSEIF GROUPMATCH(LOCAL, 25,26,72)
-        SELECTCASE LOCAL
-            CASE 25 ;사랑
-                IF TALENT:ARG:LOCAL == 1
-                    LOCALS += "[연모]"
-                ELSEIF TALENT:ARG:LOCAL == 2
-                    LOCALS += "[사랑]"
-                ENDIF
-            CASE 26 ;혼인
-                IF TALENT:ARG:LOCAL == 1
-                    LOCALS += "[혼인]"
-                ELSEIF TALENT:ARG:LOCAL == 2
-                    LOCALS += "[입양]"
-                ENDIF
-            CASE 72 ;정신쇠약
-                IF TALENT:ARG:LOCAL == 1
-                    LOCALS += "[정신쇠약]"
-                ELSEIF TALENT:ARG:LOCAL == 2
-                    LOCALS += "[정신붕괴]"
-                ENDIF
-        ENDSELECT
     ;실종 등 SPECIAL_STATUS에서 표시되는 것
     ELSEIF GROUPMATCH(LOCAL, 79)
         CONTINUE
     ELSE
-        LOCALS += @"[%TALENTNAME:LOCAL%]"
+        LOCALS += @"[%RESULTS%]"
     ENDIF
 NEXT
 PRINTSL LOCALS
@@ -314,7 +274,7 @@ WEND
 RETURN 1
 
 ;===========================================================
-;함수명: SEE_BIOSTATUS
+;함수명: SHOW_SPECIAL_STATUS
 ;출격중, 실종 등 캐릭터 특수상태 표출
 ;ARG = 선택한 캐릭터 인게임 ID
 ;===========================================================
@@ -332,4 +292,80 @@ ELSEIF TALENT:ARG:실종
     PRINTPLAIN [실종]
     RESETCOLOR
 ENDIF
-        
+;===========================================================
+;함수명: TALENTNAME_EX(TALENT_NO, TALENT_STAT)
+;특정 능력치값일 때 표시해야 하는 능력 문자열 반환
+;===========================================================
+@TALENTNAME_EX(TALENT_NO, TALENT_STAT)
+#DIM TALENT_NO ;TALENT.CSV 내 번호
+#DIM TALENT_STAT ;해당 능력치의 현재값
+
+;-1 < 0 > 1 형 TALENT
+IF GROUPMATCH(TALENT_NO, 23,30,62,70)
+    SELECTCASE TALENT_NO
+        CASE 23 ;얀데레
+            IF TALENT_STAT == -1
+                LOCALS '= "[약한 얀데레]"
+            ELSEIF TALENT_STAT == 1
+                LOCALS '= "[얀데레]"
+            ELSE
+                LOCALS = [약한 얀데레]/[얀데레]
+            ENDIF
+        CASE 30 ;나이속성
+            IF TALENT_STAT == -1
+                LOCALS '= "[동생]"
+            ELSEIF TALENT_STAT == 1
+                LOCALS '= "[누님]"
+            ELSE
+                LOCALS = [동생]/[누님]
+            ENDIF
+        CASE 62 ;긍정도
+            IF TALENT_STAT == -1
+                LOCALS '= "[비관적]"
+            ELSEIF TALENT_STAT == 1
+                LOCALS '= "[긍정적]"
+            ELSE
+                LOCALS = [비관적]/[긍정적]
+            ENDIF
+        CASE 70 ;지능
+            IF TALENT_STAT == -1
+                LOCALS '= "[무식]"
+            ELSEIF TALENT_STAT == 1
+                LOCALS '= "[지식]"
+            ELSE
+                LOCALS = [무식]/[지식]
+            ENDIF
+    ENDSELECT
+;0 > 1 > 2 형 TALENT
+ELSEIF GROUPMATCH(TALENT_NO, 25,26,72)
+    SELECTCASE TALENT_NO
+        CASE 25 ;사랑
+            IF TALENT_STAT == 1
+                LOCALS '= "[연모]"
+            ELSEIF TALENT_STAT == 2
+                LOCALS '= "[사랑]"
+            ELSE
+                LOCALS = [연모]/[사랑]
+            ENDIF
+        CASE 26 ;혼인
+            IF TALENT_STAT == 1
+                LOCALS '= "[혼인]"
+            ELSEIF TALENT_STAT == 2
+                LOCALS '= "[입양]"
+            ELSE
+                LOCALS = [혼인]/[입양]
+            ENDIF
+        CASE 72 ;정신쇠약
+            IF TALENT_STAT == 1
+                LOCALS '= "[정신쇠약]"
+            ELSEIF TALENT_STAT == 2
+                LOCALS '= "[정신붕괴]"
+            ELSE
+                LOCALS = [정신쇠약]/[정신붕괴]
+            ENDIF
+    ENDSELECT
+ELSE
+    LOCALS '= TALENTNAME:TALENT_NO
+ENDIF
+
+RETURN LOCALS

@@ -162,6 +162,7 @@ WEND
 ;-------------------------------------------------------------------------
 @DEBUG_CHARA
 #DIM 대상
+#DIM STAT_DATA, 2 ;TALENT 이름 표출 조건
 ;대상 선택
 CALL CURRENT_BIOLIST("DEBUG")
 SIF RESULT == -1
@@ -185,58 +186,22 @@ PRINTL
 DRAWLINE
 IF 대상 != MASTER
     FOR LOCAL, 21, 90
-    LOCALS =
-        IF TALENTNAME:LOCAL == ""
+        CALL TALENTNAME_EX(LOCAL, TALENT:대상:LOCAL)
+        IF RESULTS == ""
             CONTINUE
-        ELSEIF GROUPMATCH(LOCAL, 30,62,70,72)
-            SELECTCASE LOCAL
-                CASE 30
-                    IF TALENT:대상:LOCAL == -1
-                        LOCALS '= "[동생]"
-                    ELSEIF TALENT:대상:LOCAL == 1
-                        LOCALS '= "[누님]"
-                    ELSE
-                        LOCALS = [동생]/[누님]
-                    ENDIF
-                CASE 62
-                    IF TALENT:대상:LOCAL == -1
-                        LOCALS += "[비관적]"
-                    ELSEIF TALENT:대상:LOCAL == 1
-                        LOCALS += "[긍정적]"
-                    ELSE
-                        LOCALS = [비관적]/[긍정적]
-                    ENDIF
-                CASE 70
-                    IF TALENT:대상:LOCAL == -1
-                        LOCALS += "[무식]"
-                    ELSEIF TALENT:대상:LOCAL == 1
-                        LOCALS += "[지식]"
-                    ELSE
-                        LOCALS = [무식]/[지식]
-                    ENDIF
-                CASE 72
-                    IF TALENT:대상:LOCAL == 1
-                        LOCALS += "[정신쇠약]"
-                    ELSEIF TALENT:대상:LOCAL == 2
-                        LOCALS += "[정신붕괴]"
-                    ELSE
-                        LOCALS = [정신쇠약]/[정신붕괴]
-                    ENDIF
-            ENDSELECT
-        ELSE
-            LOCALS += @"[%TALENTNAME:LOCAL%]"
-        ENDIF
-        SIF TALENT:대상:LOCAL != 0
+        ELSEIF TALENT:대상:LOCAL != 0
             SETCOLOR 0, 255, 0
-        PRINTFORMLC [{LOCAL}] %LOCALS, 8%
+        ENDIF
+        PRINTFORMLC [{LOCAL}] %RESULTS, 8%
         RESETCOLOR
     NEXT
 ELSE ;MASTER 일때
     FOR LOCAL, 90, 100
-        SIF TALENTNAME:LOCAL == ""
+        IF TALENTNAME:LOCAL == ""
             CONTINUE
-        SIF TALENT:대상:LOCAL != 0
+        ELSEIF TALENT:대상:LOCAL != 0
             SETCOLOR 0, 255, 0
+        ENDIF
         PRINTFORMLC [{LOCAL}] %TALENTNAME:LOCAL%
         RESETCOLOR
     NEXT
@@ -245,9 +210,9 @@ ENDIF
 VARSET LOCAL
 LOCALS =
 LOCALS:1 '= "바꾸지 않는다"
-LOCALS:2 =
-LOCALS:3 =
-LOCALS:4 '= "값을 지운다"
+LOCALS:2 '= "값을 지운다"
+LOCALS:3 '= "(으)로 한다"
+LOCALS:4 '= "(으)로 한다"
 ;실제 구동부
 WHILE 1
     INPUT
@@ -364,104 +329,40 @@ WHILE 1
             PRINTFORML 선택 능력 : %TALENTNAME:LOCAL%
             PRINT 현재 상태 : 
             ;단순 on/off 아님
-            ;-1 < 0 > 1 형 TALENT
-            IF GROUPMATCH(LOCAL, 30,62,70)
-                ;ASK_M용 선택지 처리
-                LOCALS:2 '= "(으)로 한다"
-                LOCALS:3 '= "(으)로 한다"
+            IF GROUPMATCH(LOCAL, 23,30,62,70, 25,26,72)
                 SELECTCASE LOCAL
-                    CASE 30 ;나이속성
-                        LOCALS:2 '= "[동생]" + LOCALS:2
-                        LOCALS:3 '= "[누님]" + LOCALS:3
-                        IF TALENT:대상:LOCAL == -1
-                            PRINTL [동생]
-                        ELSEIF TALENT:대상:LOCAL == 1
-                            PRINTL [누님]
-                        ELSE
-                            PRINTL 없음
-                        ENDIF
-                    CASE 62 ;긍정도
-                        LOCALS:2 '= "[비관적]" + LOCALS:2
-                        LOCALS:3 '= "[긍정적]" + LOCALS:3
-                        IF TALENT:대상:LOCAL == -1
-                            PRINTL [비관적]
-                        ELSEIF TALENT:대상:LOCAL == 1
-                            PRINTL [긍정적]
-                        ELSE
-                            PRINTL 없음
-                        ENDIF
-                    CASE 70 ;지능
-                        LOCALS:2 '= "[무식]" + LOCALS:2
-                        LOCALS:3 '= "[지식]" + LOCALS:3
-                        IF TALENT:대상:LOCAL == -1
-                            PRINTL [무식]
-                        ELSEIF TALENT:대상:LOCAL == 1
-                            PRINTL [지식]
-                        ELSE
-                            PRINTL 없음
-                        ENDIF
+                    ;-1 < 0 > 1 형 TALENT
+                    CASE 23,30,62,70
+                        STAT_DATA:0 = -1
+                        STAT_DATA:1 = 1
+                    ;0 > 1 > 2 형 TALENT
+                    CASE 25,26,72
+                        STAT_DATA:0 = 1
+                        STAT_DATA:1 = 2
                 ENDSELECT
+
+                ;ASK_M용 선택지 처리
+                LOCALS:3 '= TALENTNAME_EX(LOCAL, STAT_DATA:0) + LOCALS:3
+                LOCALS:4 '= TALENTNAME_EX(LOCAL, STAT_DATA:1) + LOCALS:4
+                IF TALENT:대상:LOCAL
+                    PRINTSL TALENTNAME_EX(LOCAL, TALENT:대상:LOCAL)
+                ELSE
+                    PRINTL [없음]
+                ENDIF
+
                 PRINTL 어떻게 변경할까요?
-                CALL ASK_M(LOCALS:1, 1, LOCALS:2, TALENT:대상:LOCAL != -1, LOCALS:3, TALENT:대상:LOCAL != 1, LOCALS:4, TALENT:대상:LOCAL != 0)
+                CALL ASK_M(LOCALS:1, 1, LOCALS:3, TALENT:대상:LOCAL != STAT_DATA:0, LOCALS:4, TALENT:대상:LOCAL != STAT_DATA:1, LOCALS:2, TALENT:대상:LOCAL != 0)
                 SELECTCASE RESULT
                     CASE 0 ;현상태 유지
                         CONTINUE
                     CASE 1 ;상단값으로 변경
-                        TALENT:대상:LOCAL = -1
+                        TALENT:대상:LOCAL = STAT_DATA:0
                     CASE 2 ;하단값으로 변경
-                        TALENT:대상:LOCAL = 1
+                        TALENT:대상:LOCAL = STAT_DATA:1
                     CASE 3 ;비활성화
                         TALENT:대상:LOCAL = 0
                 ENDSELECT
-            ;0 > 1 > 2 형 TALENT
-            ELSEIF GROUPMATCH(LOCAL, 25,26,72)
-                ;ASK_M용 선택지 처리
-                LOCALS:2 '= "(으)로 한다"
-                LOCALS:3 '= "(으)로 한다"
-                SELECTCASE LOCAL
-                    CASE 25 ;사랑
-                        LOCALS:2 '= "[연모]" + LOCALS:2
-                        LOCALS:3 '= "[사랑]" + LOCALS:3
-                        IF TALENT:대상:LOCAL == 1
-                            PRINTL [연모]
-                        ELSEIF TALENT:대상:LOCAL == 2
-                            PRINTL [사랑]
-                        ELSE
-                            PRINTL 없음
-                        ENDIF
-                    CASE 26 ;혼인                  
-                        LOCALS:2 '= "[혼인]" + LOCALS:2
-                        LOCALS:3 '= "[입양]" + LOCALS:3
-                        IF TALENT:대상:LOCAL == 1
-                            PRINTL [혼인]
-                        ELSEIF TALENT:대상:LOCAL == 2
-                            PRINTL [입양]
-                        ELSE
-                            PRINTL 없음
-                        ENDIF
-                    CASE 72 ;정신쇠약
-                        LOCALS:2 '= "[정신쇠약]" + LOCALS:2
-                        LOCALS:3 '= "[정신붕괴]" + LOCALS:3
-                        IF TALENT:대상:LOCAL == 1
-                            PRINTL [정신쇠약]
-                        ELSEIF TALENT:대상:LOCAL == 2
-                            PRINTL [정신붕괴]
-                        ELSE
-                            PRINTL 없음
-                        ENDIF
-                ENDSELECT
-                PRINTL 어떻게 변경할까요?
-                CALL ASK_M(LOCALS:1, 1, LOCALS:2, TALENT:대상:LOCAL != 1, LOCALS:3, TALENT:대상:LOCAL != 2, LOCALS:4, TALENT:대상:LOCAL != 0)
-                SELECTCASE RESULT
-                    CASE 0 ;현상태 유지
-                        CONTINUE
-                    CASE 1 ;상단값으로 변경
-                        TALENT:대상:LOCAL = 1
-                    CASE 2 ;하단값으로 변경
-                        TALENT:대상:LOCAL = 2
-                    CASE 3 ;비활성화
-                        TALENT:대상:LOCAL = 0
-                ENDSELECT
+            ;단순 on/off
             ELSE
                 PRINTFORML \@ TALENT:대상:LOCAL ? 활성화 # 비활성화 \@
                 PRINTL 현재 값을 변경합니까?
