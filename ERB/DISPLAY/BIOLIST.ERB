@@ -197,7 +197,7 @@ FOR LOCAL, 21, 100
     SIF !TALENT:ARG:LOCAL
         CONTINUE
 
-    CALL TALENTNAME_EX(LOCAL, TALENT:ARG:LOCAL)
+    RESULTS '= TALENTNAME_EX(LOCAL, TALENT:ARG:LOCAL)
     ;CSV에 존재하지 않는 경우 패스
     IF RESULTS == ""
         CONTINUE
@@ -297,6 +297,7 @@ ENDIF
 ;특정 능력치값일 때 표시해야 하는 능력 문자열 반환
 ;===========================================================
 @TALENTNAME_EX(TALENT_NO, TALENT_STAT)
+#FUNCTIONS
 #DIM TALENT_NO ;TALENT.CSV 내 번호
 #DIM TALENT_STAT ;해당 능력치의 현재값
 
@@ -368,4 +369,4 @@ ELSE
     LOCALS '= TALENTNAME:TALENT_NO
 ENDIF
 
-RETURN LOCALS
+RETURNF LOCALS
