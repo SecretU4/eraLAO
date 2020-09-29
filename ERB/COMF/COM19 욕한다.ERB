@@ -11,14 +11,6 @@ ELSE
     SOURCE:스트레스 += 20
 ENDIF
 
-SELECTCASE NO:TARGET
-    CASE 21
-        CFLAG:etc1 ++ ;마리 엔딩 3 카운트
-    CASE 126
-        CFLAG:etc2 ++ ;아자젤 줘팸 횟수 카운트
-ENDSELECT
-
-;TODO 위의 SELECTCASE문과 대응
 EXP:학대COM경험 ++
 
 RETURN 1
