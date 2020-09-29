@@ -185,7 +185,7 @@ SIF FLAG:속박상태
 RETURNF 유지비
 ;========================================================================
 ;함수명: TURNEND_DAY_to_NIGHT
-;마지막 수정: v0.9
+;마지막 수정: v1.0
 ;원본 api/uptime1 대응
 ;낮>밤시 CFLAG:etc의 처리
 ;========================================================================
@@ -200,17 +200,17 @@ FOR 대상, 1, CHARANUM
         CASE 132 ;유미
             IF 대상 == TARGET
                 SIF TALENT:대상:혼인 == 1
-                    CFLAG:대상:etc1 = 0 ;유미 엔딩 3 카운트(혼인 5일 방치)
+                    CFLAG:대상:엔딩조건카운트1 = 0 ;유미 엔딩 3 카운트(혼인 5일 방치)
                 SIF TALENT:대상:정신쇠약 == 2
-                    CFLAG:대상:etc2 = 0 ;유미 엔딩 4 카운트(정신쇠약 5일 방치)
+                    CFLAG:대상:엔딩조건카운트2 = 0 ;유미 엔딩 4 카운트(정신쇠약 5일 방치)
             ENDIF
         CASE 71 ;네오딤 ;TARGET 아니어도 처리
             SIF CFLAG:대상:스트레스 < 100
-                CFLAG:대상:etc1 = 0 ;네오딤 스트레스 100상태 카운트
+                CFLAG:대상:엔딩조건카운트1 = 0 ;네오딤 스트레스 100상태 카운트
         CASE 76 ;닥터
             IF 대상 == TARGET
                 CFLAG:대상:etc1 = 0 ;닥터 성장이벤 카운트
-                CFLAG:대상:etc4 = 0 ;닥터 엔딩 3 카운트
+                CFLAG:대상:엔딩조건카운트1 = 0 ;닥터 엔딩 3 카운트
             ENDIF
     ENDSELECT
 NEXT
@@ -249,41 +249,41 @@ RETURNF 총유지비
 SELECTCASE NO:ARG
     CASE 7 ;리제
         IF CFLAG:ARG:공포 > 299 && !TALENT:ARG:혼인
-            CFLAG:ARG:etc1 ++ ;etc1 = 리제 엔딩 3 카운트
+           CFLAG:ARG:엔딩조건카운트1 ++ ;etc1 = 리제 엔딩 3 카운트
         ELSE
-            CFLAG:ARG:etc1 = 0
+            CFLAG:ARG:엔딩조건카운트1 = 0
         ENDIF
         IF TALENT:ARG:짜증 && !TALENT:ARG:혼인
-            CFLAG:ARG:etc2 ++ ;etc2 = 리제 엔딩 4
+            CFLAG:ARG:엔딩조건카운트2 ++ ;etc2 = 리제 엔딩 4
         ELSE
-            CFLAG:ARG:etc2 = 0
+            CFLAG:ARG:엔딩조건카운트2 = 0
         ENDIF
     CASE 12 ;소완
         IF TALENT:ARG:정신쇠약 == 1 && ARG != TARGET
-            CFLAG:ARG:etc1 ++ ;etc1 = 소완 엔딩 3 카운트
+            CFLAG:ARG:엔딩조건카운트1 ++ ;etc1 = 소완 엔딩 3 카운트
         ELSE
-            CFLAG:ARG:etc1 = 0
+            CFLAG:ARG:엔딩조건카운트1 = 0
         ENDIF
     CASE 68 ;에밀리
         IF TALENT:ARG:사랑 == 2 && TALENT:ARG:정신쇠약 == 1
-            CFLAG:ARG:etc2 += 1 ;etc2 = 에밀리 엔딩 4 카운트
+            CFLAG:ARG:엔딩조건카운트1 += 1 ;etc2 = 에밀리 엔딩 4 카운트
         ELSE
-            CFLAG:ARG:etc2 = 0
+            CFLAG:ARG:엔딩조건카운트1 = 0
         ENDIF
     CASE 71 ;네오딤
         IF CFLAG:ARG:스트레스 >= 100
-            CFLAG:ARG:etc1 += 1 ;etc1 = 네오딤 스트레스 100상태 카운트
+            CFLAG:ARG:엔딩조건카운트1 += 1 ;etc1 = 네오딤 스트레스 100상태 카운트
         ELSE
-            CFLAG:ARG:etc1 = 0
+            CFLAG:ARG:엔딩조건카운트1 = 0
         ENDIF
     CASE 73 ;팬텀
         IF FLAG:현캐릭터수 > 2
             CFLAG:ARG:etc2 = 1 ;etc2 = 팬텀 엔딩 4 바이오구매 유무
         ELSEIF TALENT:ARG:사랑 == 2 && !TALENT:ARG:짜증 && !TALENT:ARG:정신쇠약
             SIF !TALENT:ARG:혼인 && !CFLAG:ARG:etc2
-                CFLAG:ARG:etc3 ++ ;etc3 팬텀 엔딩 4 카운트
+                CFLAG:ARG:엔딩조건카운트1 ++ ;etc3 팬텀 엔딩 4 카운트
         ELSE
-            CFLAG:ARG:etc3 = 0
+            CFLAG:ARG:엔딩조건카운트1 = 0
         ENDIF
     CASE 76 ;닥터
         IF ARG != TARGET && FLAG:현캐릭터수 > 2
@@ -293,9 +293,9 @@ SELECTCASE NO:ARG
                 CFLAG:ARG:etc1 = 0
             ENDIF
             IF TALENT:ARG:혼인 == 1 && TALENT:ARG:체형 == 2
-                CFLAG:ARG:etc4 ++ ;etc4 = 닥터 엔딩 3 카운트
+                CFLAG:ARG:엔딩조건카운트1 ++ ;etc4 = 닥터 엔딩 3 카운트
             ELSE
-                CFLAG:ARG:etc4 = 0
+                CFLAG:ARG:엔딩조건카운트1 = 0
             ENDIF
         ENDIF
     CASE 106 ;오드리
@@ -303,25 +303,25 @@ SELECTCASE NO:ARG
             CFLAG:ARG:etc1 ++ ;etc1 = 오드리 더치와 이벤트 일수
     CASE 108 ;더치 걸
         IF TALENT:ARG:짜증 && CFLAG:ARG:호감도 < 500
-            CFLAG:ARG:etc1 ++ ;etc1 = 더치 걸 엔딩 3 카운트
+            CFLAG:ARG:엔딩조건카운트1 ++ ;etc1 = 더치 걸 엔딩 3 카운트
         ELSE
-            CFLAG:ARG:etc1 = 0
+            CFLAG:ARG:엔딩조건카운트1 = 0
         ENDIF
     CASE 132 ;유미
         IF !TALENT:ARG:의존증 && ARG != TARGET
             IF TALENT:ARG:혼인 == 1
-                CFLAG:ARG:etc1 ++  ;etc1 = 유미 엔딩 3 카운트(혼인 5일 방치)
+                CFLAG:ARG:엔딩조건카운트1 ++  ;etc1 = 유미 엔딩 3 카운트(혼인 5일 방치)
             ELSE
-                CFLAG:ARG:etc1 = 0
+                CFLAG:ARG:엔딩조건카운트1 = 0
             ENDIF
             IF TALENT:ARG:정신쇠약 == 2
-                CFLAG:ARG:etc2 ++ ;etc2 = 유미 엔딩 4 카운트(정신붕괴 5일 방치)
+                CFLAG:ARG:엔딩조건카운트2 ++ ;etc2 = 유미 엔딩 4 카운트(정신붕괴 5일 방치)
             ELSE
-                CFLAG:ARG:etc2 = 0
+                CFLAG:ARG:엔딩조건카운트2 = 0
             ENDIF
         ELSE
-            CFLAG:ARG:etc1 = 0
-            CFLAG:ARG:etc2 = 0
+            CFLAG:ARG:엔딩조건카운트1 = 0
+            CFLAG:ARG:엔딩조건카운트2 = 0
         ENDIF
     CASE 138 ;베로니카
         SIF CFLAG:ARG:etc2 > 0 && CFLAG:ARG:etc2 < 11
