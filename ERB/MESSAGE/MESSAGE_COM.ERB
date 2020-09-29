@@ -307,7 +307,7 @@ SELECTCASE NO:TARGET
 ENDSELECT
 
 ;꼬릿말 처리
-IF NO:TARGET == 21 && CFLAG:etc1 > 9 && CSTR:1 == "Yboy"
+IF NO:TARGET == 21 && EXP:학대COM경험 > 9 && CSTR:1 == "Yboy"
     꼬릿말 = %CALLNAME:TARGET%의 상태가 어딘가 이상하다/이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다
     IF GROUPMATCH(SELECTCOM, 20,21,22)
         CSTR:1 += "/Danger"
