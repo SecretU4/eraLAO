@@ -110,6 +110,10 @@ SELECTCASE NO:TARGET
         ELSEIF TALENT:짜증 && TALENT:사랑 == 2
             CSTR:1 = Annoyed2
         ENDIF
+    CASE 73 ;팬텀
+        IF TALENT:정신쇠약 == 2 && GETBIT(CFLAG:특수출력유무체크, 8) == 0
+            CSTR:1 = Awaken
+        ENDIF
     CASE 76
         IF CSTR:1 == "Affection" || CSTR:1 == "Marryed"
             IF TALENT:체형 == 0
@@ -126,6 +130,10 @@ SELECTCASE NO:TARGET
             CSTR:1 = Marryed
         ELSEIF TALENT:혼인 == 1
             CSTR:1 = Love
+        ENDIF
+    CASE 123 ;모모
+        IF TALENT:정신쇠약 == 2 && GETBIT(CFLAG:특수출력유무체크, 8) == 0
+            CSTR:1 = Awaken
         ENDIF
 ENDSELECT
 
