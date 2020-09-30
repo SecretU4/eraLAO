@@ -2,9 +2,8 @@
 @COM100
 
 IF !TALENT:짜증 && !TALENT:정신쇠약
-    CFLAG:etc1 += 1 ;아자젤 설교 횟수 카운트
     SOURCE:호감도 += 1
-    EXP:고유COM경험 ++ ;TODO etc1과 바꾸기
+    EXP:고유COM경험 ++ ;아자젤 설교 횟수 카운트
 ELSE
     RETURN 0
 ENDIF
