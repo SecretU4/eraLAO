@@ -200,13 +200,15 @@ IF CFLAG:개별그림유무
 ENDIF
 
 REPEAT 10
+    IF COUNT == 9
+        DEBUGPRINTFORML 조건(%CSTR:1%)에 맞는 %CALLNAME:TARGET%의 조교시작시 지문이 발견되지 않음
+        BREAK
+    ENDIF
     DEBUGPRINTFORML %CSTR:1% 조교여부 = {CFLAG:조교여부}
 
     TRYCALLFORM M_No{NO:TARGET}_TRAIN_START_{CFLAG:조교여부}
     IF RESULT == 0
-        CSTR:1 '= Alternative_CSTR(TARGET)
-        SIF COUNT == 9
-            DEBUGPRINTFORML 조건(%CSTR:1%)에 맞는 %CALLNAME:TARGET%의 조교시작시 지문이 발견되지 않음
+        CSTR:1 '= Alternative_CSTR(TARGET, COUNT)
     ELSE
         BREAK
     ENDIF
@@ -333,17 +335,21 @@ ENDSELECT
 
 PRINTL
 REPEAT 10
+    IF COUNT == 9
+        DEBUGPRINTFORML 조건(%CSTR:1%)에 맞는 %CALLNAME:TARGET%의 %SELECTCOM% 지문이 발견되지 않음
+        BREAK
+    ENDIF
     DEBUGPRINTFORML 선정된 메시지 태그 : %CSTR:1%
     TRYCCALLFORM M_No{NO:TARGET}_COM{SELECTCOM}
         IF RESULT == 0 ;해당 구문을 찾을 수 없을때
-            CSTR:1 '= Alternative_CSTR(TARGET)
+            CSTR:1 '= Alternative_CSTR(TARGET, COUNT)
         ELSE
             BREAK
         ENDIF
     CATCH
         TRYCALLFORM M_No{NO:TARGET}_COM{COM_ALTER_SELECT_Rev(SELECTCOM)}
         IF RESULT == 0 ;해당 구문을 찾을 수 없을때
-            CSTR:1 '= Alternative_CSTR(TARGET)
+            CSTR:1 '= Alternative_CSTR(TARGET, COUNT)
         ELSE
             BREAK
         ENDIF
@@ -357,12 +363,12 @@ SIF CFLAG:개별그림유무 && 그림번호 != -1
 SIF 꼬릿말 != ""
     CALL SPLIT_MSG(꼬릿말, 1)
 ;----------------------------------------------
-;함수명: Alternative_CSTR(ARG)
+;함수명: Alternative_CSTR(ARG, ARG:1)
 ;결과가 없는 메시지 태그값 변환용
 ;변환한 CSTR값 반환
-;ARG = 인게임 캐릭터 ID
+;ARG = 인게임 캐릭터 ID, ARG:1 = 루프 횟수, 기본값 0
 ;----------------------------------------------
-@Alternative_CSTR(ARG)
+@Alternative_CSTR(ARG, ARG:1=0)
 #FUNCTIONS
 #DIMS SELECTED_CSTR, 5
 ;아래 DIM/DIMS 변수는 구동중이면 계속 저장되어 있으니 취급 요주의
@@ -370,53 +376,65 @@ SIF 꼬릿말 != ""
 #DIM FIRST_SWITCH ;First계열 변환 실행시 켜짐
 
 LOCALS = 
-DEBUGPRINTFORML 대상 : %CALLNAME:ARG%, 태그 : %CSTR:ARG:1%
+DEBUGPRINTFORML 대상 : %CALLNAME:ARG%, 태그 : %CSTR:ARG:1% 루프수 : {ARG:1}
+DEBUGPRINTFORML 스위치 : {FIRST_SWITCH} 이전태그 : %SAVED_CSTR%
 
-IF FIRST_SWITCH && STRFINDU(SAVED_CSTR, "First") != -1
-    IF STRFINDU(SAVED_CSTR, CSTR:ARG:1) != -1
-        DEBUGPRINTL 태그 재시도 First
-        LOCALS += "First/"
-    ELSE ;저장된 CSTR값이 원 값과 아예 다른 경우 통과
-        FIRST_SWITCH = 0
+;첫구동일때 로컬변수 초기회
+IF ARG:1 == 0
+    FIRST_SWITCH = 0
+    SAVED_CSTR =
+ELSE
+    IF FIRST_SWITCH && STRFINDU(SAVED_CSTR, "First") != -1
+        IF STRFINDU(SAVED_CSTR, CSTR:ARG:1) != -1
+            DEBUGPRINTL 태그 재시도 First
+            LOCALS += "First/"
+        ELSE
+            FIRST_SWITCH = 0
+        ENDIF
     ENDIF
+ENDIF
+
+IF STRFINDU(CSTR:ARG:1, "First") != -1
+    FIRST_SWITCH = 1
+ELSE
+    FIRST_SWITCH = 0
 ENDIF
 
 SAVED_CSTR '= CSTR:ARG:1
 
 SPLIT CSTR:ARG:1, "/", SELECTED_CSTR
-REPEAT RESULT
-    IF SELECTED_CSTR:COUNT == ""
+FOR LOCAL, 0, RESULT
+    IF SELECTED_CSTR:LOCAL == ""
         BREAK
     ENDIF
 
     ;현재 First가 있다면 해당 값을 지움
-    IF STRFINDU(CSTR:ARG:1, "First") != -1
-        FIRST_SWITCH = 1
-        IF COUNT == 0
+    IF FIRST_SWITCH
+        IF !LOCAL
             DEBUGPRINTL 태그 삭제 First
         ELSE
-            SIF COUNT > 1
+            SIF LOCAL > 1
                 LOCALS += "/"
-            LOCALS += SELECTED_CSTR:COUNT
+            LOCALS += SELECTED_CSTR:LOCAL
         ENDIF
+    ;태그 변경은 여기서 진행
     ELSE
-        FIRST_SWITCH = 0
-        IF COUNT > 0
+        IF LOCAL > 0
             LOCALS += "/"
         ENDIF
 
-        IF STRFINDU(SELECTED_CSTR:COUNT, "Love") != -1
+        IF STRFINDU(SELECTED_CSTR:LOCAL, "Love") != -1
             DEBUGPRINTL 태그 변경 Love > Affection
             LOCALS += "Affection"
-        ELSEIF STRFINDU(SELECTED_CSTR:COUNT, "Marryed") != -1
+        ELSEIF STRFINDU(SELECTED_CSTR:LOCAL, "Marryed") != -1
             DEBUGPRINTL 태그 변경 Marryed > Love
             LOCALS += "Love"
         ELSE
-            LOCALS += SELECTED_CSTR:COUNT
+            LOCALS += SELECTED_CSTR:LOCAL
         ENDIF
     ENDIF
-REND
-
+NEXT
+DEBUGPRINTL 
 RETURNF LOCALS
 ;----------------------------------------------
 ;question 대용 클래스

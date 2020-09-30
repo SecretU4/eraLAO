@@ -228,7 +228,7 @@ FOR 주회, 1, CHARANUM
                 ENDIF
             ENDIF
         CASE 90 ;테티스 ;etc1 = 테티스 연모이상 연애커맨드 카운트
-            IF !GETBIT(CFLAG:주회:특수출력유무, 3) && EXP:주회:연애COM경험2 >= 20
+            SIF !GETBIT(CFLAG:주회:특수출력유무, 3) && EXP:주회:연애COM경험2 >= 20
                 SETBIT CFLAG:MASTER:엔딩플래그, 26
         CASE 106 ;오드리
             SIF CFLAG:주회:이벤트카운트1 == 4 ;etc1 = 오드리 더치 이벤트 일수

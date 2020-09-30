@@ -154,11 +154,11 @@ PRINTFORML %CALLNAME:TARGET%의
 IF TALENT:MASTER:관심법
     PRINTFORML 호감도 \@ SOURCE:호감도 > 0 ? + # \@{SOURCE:호감도}
     PRINTFORML 스트레스 \@ SOURCE:스트레스 > 0 ? + # \@{SOURCE:스트레스}
-    PRINTFORMW 공포 \@ SOURCE:공포 > 0 ? + # \@{SOURCE:공포}
+    PRINTFORML 공포 \@ SOURCE:공포 > 0 ? + # \@{SOURCE:공포}
 ELSE
     PRINTFORML 호감도 + ???
     PRINTFORML 스트레스 + ???
-    PRINTFORMW 공포 + ???
+    PRINTFORML 공포 + ???
 ENDIF
 PRINTL
 
