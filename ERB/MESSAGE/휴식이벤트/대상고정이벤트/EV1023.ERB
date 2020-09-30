@@ -179,7 +179,7 @@ PRINTFORMW 이제까지의 어느 겨울날보다 따스했다고 당신은 느�
 PRINTFORMW 매섭게 내리던 진눈깨비는 어느세.
 PRINTFORMW 당신과 그녀들을 덮어주듯.
 PRINTFORMW 상냥하게 내리는 눈으로 바뀌어 있었다.
-CFLAG:ARG:etc1 = 1
-CFLAG:(ARG:1):etc1 = 1
+SETBIT CFLAG:ARG:특수출력유무, 21
+SETBIT CFLAG:(ARG:1):특수출력유무, 21
 SETBIT CFLAG:MASTER:엔딩플래그, 12
 RETURN 1
