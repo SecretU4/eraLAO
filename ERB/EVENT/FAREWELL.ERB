@@ -23,10 +23,10 @@ WHILE 1
     ENDIF
     CSV_ID = NO:RESULT
 
-    IF CSV_ID == 106 && CFLAG:TARGET:etc1 > 0 && CFLAG:TARGET:etc1 < 4
+    ;오드리 더치걸 이벤트중
+    IF GROUPMATCH(CSV_ID, 106,108) && CFLAG:GETCHARA(106):이벤트카운트1 > 0 && CFLAG:GETCHARA(106):이벤트카운트1 < 4
         PRINTFORML %타겟은% 이별 불가능한 상태입니다.
-    ELSEIF CSV_ID == 108 && CFLAG:GETCHARA(106):etc1 > 0 && CFLAG:GETCHARA(106):etc1 < 4
-        PRINTFORML %타겟은% 이별 불가능한 상태입니다.
+    ;베로니카 실종
     ELSEIF CSV_ID == 138 && TALENT:TARGET:실종
         PRINTFORML %타겟은% 이별 불가능한 상태입니다.
     ELSE
