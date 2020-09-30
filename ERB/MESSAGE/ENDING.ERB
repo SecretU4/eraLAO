@@ -228,7 +228,7 @@ FOR 주회, 1, CHARANUM
                 ENDIF
             ENDIF
         CASE 90 ;테티스 ;etc1 = 테티스 연모이상 연애커맨드 카운트
-            SIF EXP:주회:연애COM경험2 >= 20
+            IF !GETBIT(CFLAG:주회:특수출력유무, 3) && EXP:주회:연애COM경험2 >= 20
                 SETBIT CFLAG:MASTER:엔딩플래그, 26
         CASE 106 ;오드리
             SIF CFLAG:주회:이벤트카운트1 == 4 ;etc1 = 오드리 더치 이벤트 일수
@@ -241,7 +241,7 @@ FOR 주회, 1, CHARANUM
                 PRINTW 이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다.
             ENDIF
         CASE 132 ;유미
-            IF GETBIT(CFLAG:LOCAL:특수출력조건, 3) ;etc1 = 유미 엔딩 3 카운트
+            IF GETBIT(CFLAG:주회:특수출력조건, 3) ;etc1 = 유미 엔딩 3 카운트
                 SELECTCASE CFLAG:주회:방치일수
                     CASE 12
                         PRINTL 아침에 일어나 스마트폰을 열어보니 유미에게서 메세지가 와 있었다.
@@ -260,7 +260,7 @@ FOR 주회, 1, CHARANUM
                     CASE IS > 14
                         SETBIT CFLAG:MASTER:엔딩플래그, 16
                 ENDSELECT
-            ELSEIF GETBIT(CFLAG:LOCAL:특수출력조건, 4) ;etc2 = 유미 엔딩 4 카운트
+            ELSEIF GETBIT(CFLAG:주회:특수출력조건, 4) ;etc2 = 유미 엔딩 4 카운트
                 SELECTCASE CFLAG:주회:방치일수
                     CASE 12
                         PRINTL 아침에 일어나 스마트폰을 열어보니 유미에게서 메세지가 와 있다.
@@ -488,7 +488,7 @@ SELECTCASE NO:TARGET
         ELSEIF CFLAG:엔딩플래그 == 2
             그림번호 = 10
         ELSEIF CFLAG:엔딩플래그 == 3
-            그림번호 = 6 ;TODO 아마도 그림 2개인듯
+            그림번호 = 6
             LOCAL = 1 ;exc = 1
         ELSEIF CFLAG:엔딩플래그 == 4 ;리제 히든 엔딩
             그림번호 = 11
@@ -537,6 +537,10 @@ SELECTCASE NO:TARGET
             그림번호 = 4
         ELSEIF CFLAG:엔딩플래그 == 2
             그림번호 = 5
+        ENDIF
+    CASE 90 ;
+        IF CFLAG:엔딩플래그 == 3
+            SETBIT CFLAG:주회:특수출력유무, 3
         ENDIF
     CASE 106 ;오드리
         SIF CFLAG:엔딩플래그 == 3
