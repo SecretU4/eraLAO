@@ -121,8 +121,7 @@ ENDIF
 
 IF !TALENT:ARG:정신쇠약 && CFLAG:ARG:공포 > 299
     TALENT:ARG:정신쇠약 = 1
-    SIF NO:ARG == 51 && CFLAG:ARG:etc3 < 5 ;etc3 = 메이 쇠약 획득수
-        CFLAG:ARG:etc3 ++
+    EXP:ARG:쇠약획득경험 ++
     RETURN 1
 ENDIF
 RETURN 0
@@ -151,9 +150,11 @@ RETURN 0
 
 IF !TALENT:ARG:짜증 && CFLAG:ARG:스트레스 > 299
     TALENT:ARG:짜증 = 1
+    EXP:ARG:짜증획득경험 ++
     RETURN 1
 ELSEIF TALENT:ARG:짜증 && CFLAG:ARG:스트레스 < 200
     TALENT:ARG:짜증 = 0
+    EXP:ARG:짜증소멸경험 ++
     RETURN -1
 ENDIF
 RETURN 0

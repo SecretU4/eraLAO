@@ -402,8 +402,8 @@ SELECTCASE ARG
             ;원판 확률은 약 5%
             IF CFLAG:TARGET:공포 <= 0 && RAND:18
                 PRINTFORML %CALLNAME:TARGET%의 상처받은 마음 속 상처를 씻어냈습니다.
-                SIF NO:TARGET == 51 && CFLAG:TARGET:etc4 < 5
-                    CFLAG:TARGET:etc4 ++
+                TALENT:TARGET:정신쇠약 = 0
+                EXP:TARGET:쇠약소멸경험 ++
             ELSE
                 PRINTFORML %CALLNAME:TARGET%의 상처받은 마음은 치유되지 않았습니다.
             ENDIF
@@ -443,9 +443,11 @@ SIF CFLAG:TARGET:스트레스 < 0
 SIF CFLAG:TARGET:공포 < 0
     CFLAG:TARGET:공포 = 0
 
-IF TALENT:TARGET:짜증 && CFLAG:TARGET:스트레스 < 200
-    TALENT:TARGET:짜증 = 0
+CALL GET_Annoyed(TARGET)
+IF RESULT == -1
     PRINTFORMW %CALLNAME:TARGET%의 짜증이 풀린 것 같습니다.
+ELSEIF RESULT == 1
+    THROW 상정하지 않은 경우의 수 : 아이템 사용으로 짜증 획득
 ENDIF
 RETURN 0
 ;=========================================================================
