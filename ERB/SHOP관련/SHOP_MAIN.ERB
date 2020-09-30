@@ -350,7 +350,8 @@ SELECTCASE ARG
             SELECTCASE NO:TARGET
                 CASE 16 ;리리스
                     ;쇠약 없음, 연모 없음, 공포 175 이상시 특수엔딩
-                    IF TALENT:TARGET:정신쇠약 > 0 || TALENT:TARGET:사랑 || CFLAG:TARGET:공포 < 175
+                    IF !TALENT:TARGET:정신쇠약 && !TALENT:TARGET:사랑 && CFLAG:TARGET:공포 >= 175
+                    ELSE
                         PRINTFORMW %타겟은% 반지를 받아주지 않았습니다...
                         RETURN -1
                     ENDIF
