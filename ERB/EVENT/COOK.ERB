@@ -247,25 +247,25 @@ SIF TALENT:ARG:요리사
 ;소완 판매 카운트 관련 처리
 ;소완의 기본 능력: EXP:요리경험 = 1000, ABL:조리lv = 5
 IF NO:ARG == 12
-    SELECTCASE CFLAG:ARG:etc2
+    SELECTCASE CFLAG:ARG:이벤트카운트1
         CASE IS < 5
             수익 = 0
-            CFLAG:ARG:etc2 ++
+            CFLAG:ARG:이벤트카운트1 ++
         CASE 5
             수익 = 0
         CASE IS < 11
             수익 = 0
-            CFLAG:ARG:etc2 ++
+            CFLAG:ARG:이벤트카운트1 ++
         CASE 11
             수익 = 0
         CASE IS < 17
             수익 /= 2
-            CFLAG:ARG:etc2 ++
+            CFLAG:ARG:이벤트카운트1 ++
         CASE 17
             수익 /= 2
         CASEELSE ;18 이상
             수익 *= 4
-            CFLAG:ARG:etc2 ++
+            CFLAG:ARG:이벤트카운트1 ++
     ENDSELECT
 ENDIF
 
@@ -274,11 +274,11 @@ CFLAG:ARG:요리수입 += 수익
 FLAG:총요리수입 += 수익
 
 ;주체별 특수 수치 처리/메시지 출력부
-IF NO:ARG == 12 && CFLAG:ARG:etc2 < 12
+IF NO:ARG == 12 && CFLAG:ARG:이벤트카운트1 < 12
     PRINTL 요리를 팔려하자 소완이 막아섰다.
 ELSE
     PRINTFORML %CALLNAME:ARG%의 요리는 %MONEYSTR(수익)%에 팔렸습니다.
-    IF NO:ARG == 12 && CFLAG:ARG:etc2 < 18
+    IF NO:ARG == 12 && CFLAG:ARG:이벤트카운트1 < 18
         PRINTL 소완은 복잡한 표정을 보였다.
         PRINTL 소완 스트레스 20 증가
         CFLAG:ARG:스트레스 += 20
