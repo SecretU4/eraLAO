@@ -286,9 +286,9 @@ SELECTCASE NO:ARG
         ENDIF
     CASE 73 ;팬텀
         IF FLAG:현캐릭터수 > 2
-            SETBIT CFLAG:LOCAL:특수출력조건, 4 ;etc2 = 팬텀 엔딩 4 바이오구매 유무
+            SETBIT CFLAG:ARG:특수출력조건, 4 ;etc2 = 팬텀 엔딩 4 바이오구매 유무
         ELSEIF TALENT:ARG:사랑 == 2 && !TALENT:ARG:짜증 && !TALENT:ARG:정신쇠약
-            SIF !TALENT:ARG:혼인 && !GETBIT(CFLAG:LOCAL:특수출력조건, 4)
+            SIF !TALENT:ARG:혼인 && !GETBIT(CFLAG:ARG:특수출력조건, 4)
                 CFLAG:ARG:엔딩조건카운트1 ++ ;etc3 팬텀 엔딩 4 카운트
         ELSE
             CFLAG:ARG:엔딩조건카운트1 = 0
