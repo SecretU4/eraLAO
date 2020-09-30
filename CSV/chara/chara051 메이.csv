@@ -12,3 +12,10 @@ TALENT,지휘관,1,
 
 ABL,전투lv,2,
 EXP,출격경험,25,
+
+;CFLAG,특수출력유무 bit 8 = fLove 출력유무 (etc1)
+;CFLAG,특수출력유무 bit 9 = fBreak 출력유무 (etc2)
+;CFLAG,특수출력유무 bit 10 = fWeak 출력유무 (etc5)
+;CFLAG,특수출력유무 bit 11 = Heal 출력유무 (etc6)
+;CFLAG,특수출력유무 bit 12 = nWeak 출력유무 (etc3 관련)
+;CFLAG,특수출력유무 bit 13 = nHeal 출력유무 (etc4 관련)

@@ -4,9 +4,9 @@
 SOURCE:호감도 += 1
 
 IF TALENT:사랑 && !TALENT:짜증 && !TALENT:정신쇠약 && CFLAG:공포 < 150
-    SIF CFLAG:etc1 < 19 ; 베로니카 고해성사 횟수 카운트
-        CFLAG:etc1 += 1
+    EXP:고유COM경험 ++ ; 베로니카 고해성사 횟수 카운트
 ENDIF
+
 
 RETURN 1
 

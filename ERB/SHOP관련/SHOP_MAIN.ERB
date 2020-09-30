@@ -323,32 +323,42 @@ WEND
 SELECTCASE ARG
     ;약혼반지
     CASE 1
-        ;특수조건: 정신붕괴 + 혼인 아님
-        IF TALENT:TARGET:정신쇠약 > 1 && !TALENT:TARGET:혼인
-        ;기본조건: 사랑/공포 30 미만/스트레스 200미만 + 혼인/입양 아님
-        ELSEIF !TALENT:TARGET:혼인
-            IF TALENT:TARGET:사랑 == 2 && CFLAG:TARGET:공포 < 30 && CFLAG:TARGET:스트레스 < 200
-                SELECTCASE NO:TARGET
-                    ;리제는 연모 이상인 사람 5명 미만시에만 가능
-                    CASE 7
-                        IF FLAG:연모인수 >= 5
-                            PRINTFORMW %타겟은% 반지를 받아주지 않았습니다...
-                            RETURN -1
-                        ENDIF
-                    ;에밀리는 CFLAG:etc1 == 1일때만 가능
-                    CASE 68
-                        IF !GETBIT(CFLAG:TARGET:개별선택지, 1)
-                            PRINTFORMW %타겟은% 반지를 받아주지 않았습니다...
-                            RETURN -1
-                        ENDIF
-                ENDSELECT
-            ELSE
-                PRINTFORMW %타겟은% 반지를 받아주지 않았습니다...
-                RETURN -1
-            ENDIF
-        ELSE
+        ;혼인시 통과
+        IF TALENT:TARGET:혼인
             PRINTFORMW %타겟은% 반지를 받아주지 않았습니다...
             RETURN -1
+        ;특수조건: 정신붕괴 + 혼인 아님
+        ELSEIF TALENT:TARGET:정신쇠약 > 1
+        ;기본조건: 사랑/공포 30 미만/스트레스 200미만 + 혼인/입양 아님
+        ELSEIF TALENT:TARGET:사랑 == 2 && CFLAG:TARGET:공포 < 30 && CFLAG:TARGET:스트레스 < 200
+            SELECTCASE NO:TARGET
+                ;리제는 리제 제외 연모 이상인 사람 5명 미만시에만 가능
+                CASE 7
+                    IF FLAG:연모인수 >= 6 ; 리제 포함한 수
+                        PRINTFORMW %타겟은% 반지를 받아주지 않았습니다...
+                        RETURN -1
+                    ENDIF
+                ;에밀리는 CFLAG:etc1 == 1일때만 가능
+                CASE 68
+                    IF !GETBIT(CFLAG:TARGET:개별선택지, 1)
+                        PRINTFORMW %타겟은% 반지를 받아주지 않았습니다...
+                        RETURN -1
+                    ENDIF
+            ENDSELECT
+        ;위 조건에 해당하지 않는 특수 엔딩처리는 여기서
+        ELSE
+            SELECTCASE NO:TARGET
+                CASE 16 ;리리스
+                    ;쇠약 없음, 연모 없음, 공포 175 이상시 특수엔딩
+                    IF !TALENT:TARGET:정신쇠약 && !TALENT:TARGET:사랑 && CFLAG:TARGET:공포 >= 175
+                    ELSE
+                        PRINTFORMW %타겟은% 반지를 받아주지 않았습니다...
+                        RETURN -1
+                    ENDIF
+                CASEELSE
+                    PRINTFORMW %타겟은% 반지를 받아주지 않았습니다...
+                    RETURN -1
+            ENDSELECT
         ENDIF
                 
         PRINTFORMW %CALLNAME:TARGET%에게 반지를 건냈다.
@@ -393,8 +403,8 @@ SELECTCASE ARG
             ;원판 확률은 약 5%
             IF CFLAG:TARGET:공포 <= 0 && RAND:18
                 PRINTFORML %CALLNAME:TARGET%의 상처받은 마음 속 상처를 씻어냈습니다.
-                SIF NO:TARGET == 51 && CFLAG:TARGET:etc4 < 5
-                    CFLAG:TARGET:etc4 ++
+                TALENT:TARGET:정신쇠약 = 0
+                EXP:TARGET:쇠약소멸경험 ++
             ELSE
                 PRINTFORML %CALLNAME:TARGET%의 상처받은 마음은 치유되지 않았습니다.
             ENDIF
@@ -434,9 +444,11 @@ SIF CFLAG:TARGET:스트레스 < 0
 SIF CFLAG:TARGET:공포 < 0
     CFLAG:TARGET:공포 = 0
 
-IF TALENT:TARGET:짜증 && CFLAG:TARGET:스트레스 < 200
-    TALENT:TARGET:짜증 = 0
+CALL GET_Annoyed(TARGET)
+IF RESULT == -1
     PRINTFORMW %CALLNAME:TARGET%의 짜증이 풀린 것 같습니다.
+ELSEIF RESULT == 1
+    THROW 상정하지 않은 경우의 수 : 아이템 사용으로 짜증 획득
 ENDIF
 RETURN 0
 ;=========================================================================

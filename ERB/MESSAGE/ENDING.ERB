@@ -40,7 +40,7 @@ ENDIF
 BEGIN TURNEND
 ;============================================================================================
 ;함수명: ENDING_MARRY_FLAG(ARG)
-;마지막 수정: v0.9
+;마지막 수정: v1.0
 ;약혼반지 사용시 메시지 + 엔딩플래그 및 수치 변환처리
 ;ARG = 인게임 캐릭터번호
 ;============================================================================================
@@ -62,16 +62,16 @@ ELSEIF TALENT:사랑 == 2
     PRINTFORML %타겟은% 눈물을 글썽이며 손에 반지를 받아들였다.
     CFLAG:엔딩플래그 = 1
     ;리제 히든, 10% 확률
-    IF REAL_NUM == 7 && !RAND:10
+    IF REAL_NUM == 7 && FLAG:현캐릭터수 >= 10 && !RAND:10
         CFLAG:엔딩플래그 = 4
     ;팬텀
     ELSEIF REAL_NUM == 73 && EXP:출격경험 > 6
         CFLAG:엔딩플래그 = 3
     ;아자젤
-    ELSEIF REAL_NUM == 126 && CFLAG:etc1 > 99 && CFLAG:etc2 == 0
+    ELSEIF REAL_NUM == 126 && EXP:고유COM경험 > 99 && EXP:학대COM경험 == 0
         CFLAG:엔딩플래그 = 3
     ;슬레이프니르
-    ELSEIF REAL_NUM == 91 && (TALENT:슈퍼스타 || CFLAG:etc4 == 1)
+    ELSEIF REAL_NUM == 91 && (TALENT:슈퍼스타 || GETBIT(CFLAG:특수출력유무, 8))
         CFLAG:엔딩플래그 = 3
     ;더치 걸
     ELSEIF REAL_NUM == 108
@@ -82,6 +82,18 @@ ELSEIF TALENT:사랑 == 2
             TALENT:혼인 = 2
         ENDIF
     ENDIF
+;위 조건에 해당하지 않는 엔딩
+ELSE
+    SELECTCASE REAL_NUM
+        CASE 16 ;리리스
+            IF !TALENT:TARGET:정신쇠약 > 0 && !TALENT:TARGET:사랑 && CFLAG:TARGET:공포 >= 175
+                CFLAG:엔딩플래그 = 3
+            ELSE
+                THROW %CALLNAME:TARGET%의 잘못된 약혼반지 엔딩설정
+            ENDIF
+        CASEELSE
+            THROW %CALLNAME:TARGET%의 잘못된 약혼반지 엔딩설정
+    ENDSELECT
 ENDIF
 
 CALL ENDING(TARGET)
@@ -155,7 +167,7 @@ ENDSELECT
 RETURN 0
 ;============================================================================================
 ;함수명: ENDING_DAYEND_FLAG
-;마지막 수정: v0.9
+;마지막 수정: v1.0
 ;원본 날짜변경/etc 대응
 ;날짜변경시 엔딩 관련 FLAG의 처리
 ;일부 경우 메시지 출력이 포함되며, 엔딩플래그가 있으면 마지막에 @ENDING 호출
@@ -168,151 +180,164 @@ FOR 주회, 1, CHARANUM
         CONTINUE
     SELECTCASE NO:주회
         CASE 7 ;리제
-            IF CFLAG:주회:etc1 > 30 ;etc1 =
+            IF CFLAG:주회:엔딩조건카운트1 > 30 ;etc1 = 리제 엔딩 3 카운트
                 SETBIT CFLAG:MASTER:엔딩플래그, 3
-            ELSEIF CFLAG:주회:etc2 > 30 ;etc2 =
+            ELSEIF CFLAG:주회:엔딩조건카운트2 > 30 ;etc2 = 리제 엔딩 4
                 SETBIT CFLAG:MASTER:엔딩플래그, 8
-            ELSEIF CFLAG:주회:etc1 > 15
+            ELSEIF CFLAG:주회:엔딩조건카운트1 > 15
                 PRINTL 리제가 공포에 휩싸인 채 혼자서 중얼거리고 있다.
                 PRINTW 이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다.
-            ELSEIF CFLAG:주회:etc2 > 15
+            ELSEIF CFLAG:주회:엔딩조건카운트2 > 15
                 PRINTL 리제의 스트레스가 심각할 정도로 쌓인 것 같다.
                 PRINTW 이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다.
             ENDIF
         CASE 12 ;소완
-            IF CFLAG:주회:etc1 > 30 ;etc1 = 
-                SETBIT CFLAG:MASTER:엔딩플래그, 5
-            ELSEIF CFLAG:주회:etc1 > 25
-                PRINTL 소완의 상태가 어딘가 이상하다.
-                PRINTW 이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다.
+            IF GETBIT(CFLAG:주회:특수출력조건, 3)
+                IF CFLAG:주회:방치일수 > 30 ;etc1 = 소완 엔딩 3 카운트
+                    SETBIT CFLAG:MASTER:엔딩플래그, 5
+                ELSEIF CFLAG:주회:방치일수 > 25
+                    PRINTL 소완의 상태가 어딘가 이상하다.
+                    PRINTW 이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다.
+                ENDIF
             ENDIF
         CASE 21 ;마리
-            SIF CFLAG:주회:etc1 > 19 ;etc1 =
+            SIF TALENT:MASTER:나이 == 0 && EXP:주회:학대COM경험 > 19 ;etc1 = 마리 엔딩 3 카운트
                 SETBIT CFLAG:MASTER:엔딩플래그, 11
         CASE 68 ;에밀리
-            SIF CFLAG:주회:etc2 > 4 ;etc2 =
+            SIF CFLAG:주회:엔딩조건카운트1 > 4 ;etc2 = 에밀리 엔딩 4 카운트
                 SETBIT CFLAG:MASTER:엔딩플래그, 15
         CASE 71 ;네오딤
-            IF CFLAG:주회:etc1 >= 5 ;etc1 =
+            IF CFLAG:주회:엔딩조건카운트1 >= 5 ;etc1 = 스트레스 100상태 카운트
                 SETBIT CFLAG:MASTER:엔딩플래그, 25
-            ELSEIF CFLAG:주회:etc1 > 0
+            ELSEIF CFLAG:주회:엔딩조건카운트1 > 0
                 PRINTL 당신은 네오딤의 자는 모습을 보면서 최근의 이상을 떠올린다.
                 PRINTL 이따금 의식이 갑자기 끊어진듯 멍한 태도를 보이는 것이었다.
                 PRINTL ...상관없겠지.
                 PRINTW 당신은 침대에 누웠다.
             ENDIF
         CASE 73 ;팬텀
-            SIF CFLAG:주회:etc3 > 19 && !TALENT:주회:혼인 ;etc3 =
+            SIF CFLAG:주회:엔딩조건카운트1 > 19 && !TALENT:주회:혼인 ;etc3 = 팬텀 엔딩 4 카운트
                 SETBIT CFLAG:MASTER:엔딩플래그, 14
         CASE 76 ;닥터
-            IF CFLAG:주회:etc4 > 19 ;etc4 =
-                SETBIT CFLAG:MASTER:엔딩플래그, 18
-            ELSEIF CFLAG:주회:etc4 > 15
-                PRINTL 저 멀리서 당신을 바라보는 닥터의 모습이 보인다.
-                PRINTW 닥터는 당신에게 불만이 있는 듯 하다.
+            IF GETBIT(CFLAG:주회:특수출력조건, 3) ;etc4 = 닥터 엔딩 3 카운트
+                IF CFLAG:주회:방치일수 > 19
+                    SETBIT CFLAG:MASTER:엔딩플래그, 18
+                ELSEIF CFLAG:주회:방치일수 > 15
+                    PRINTL 저 멀리서 당신을 바라보는 닥터의 모습이 보인다.
+                    PRINTW 닥터는 당신에게 불만이 있는 듯 하다.
+                ENDIF
             ENDIF
+        CASE 90 ;테티스 ;etc1 = 테티스 연모이상 연애커맨드 카운트
+            IF !GETBIT(CFLAG:주회:특수출력유무, 3) && EXP:주회:연애COM경험2 >= 20
+                SETBIT CFLAG:MASTER:엔딩플래그, 26
         CASE 106 ;오드리
-            SIF CFLAG:주회:etc1 == 4 ;etc1 =
+            SIF CFLAG:주회:이벤트카운트1 == 4 ;etc1 = 오드리 더치 이벤트 일수
                 SETBIT CFLAG:MASTER:엔딩플래그, 23
         CASE 108 ;더치 걸
-            IF CFLAG:주회:etc1 > 15 ;etc1 =
+            IF CFLAG:주회:엔딩조건카운트1 > 15 ;etc1 = 더치걸 엔딩 3 카운트
                 SETBIT CFLAG:MASTER:엔딩플래그, 9
-            ELSEIF CFLAG:주회:etc1 > 10
+            ELSEIF CFLAG:주회:엔딩조건카운트1 > 10
                 PRINTL 더치 걸의 상태가 어딘가 이상하다.
                 PRINTW 이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다.
             ENDIF
         CASE 132 ;유미
-            IF CFLAG:주회:etc1 == 12 ;etc1 =
-                PRINTW
-                PRINTL 아침에 일어나 스마트폰을 열어보니 유미에게서 메세지가 와 있었다.
-                PRINTL 「사령관님, 많이... 바쁘신가요?」
-                PRINTL 「별 일은 아니에요. 그, 그냥... 요즘 저희 얼굴 본지가 좀 된 것 같아서...」
-                PRINTL 「질척거리는 것 같다면 죄송해요...」
-            ELSEIF CFLAG:주회:etc1 == 13
-                PRINTL 오늘 아침에 유미에게서 메세지가 와 있었다.
-                PRINTL 「사령관님, 혹시... 지난번에 제가 보낸 메세지는 확인하셨나요?」
-                PRINTL 「확인하셨다면... 제 얼굴 좀 보러 와주시면... 안 될까요?」
-                PRINTL 「사령관님이 바쁘시다면 어쩔 수 없지만...」
-            ELSEIF CFLAG:주회:etc1 == 14
-                PRINTL 「사령관님, 보고싶어요.
-                PRINTL 사령관님이 없는 저에게 내일이 올 수 있을까요?」
-                PRINTW 출처를 알 수 없는 이에게서 메세지가 와 있다.
-            ELSEIF CFLAG:주회:etc1 > 14
-                SETBIT CFLAG:MASTER:엔딩플래그, 16
-            ELSEIF CFLAG:주회:etc2 == 12 ;etc2 =
-                PRINTL 아침에 일어나 스마트폰을 열어보니 유미에게서 메세지가 와 있다.
-                PRINTL 「사령관님? 어디 있어요? 어디 있어요? 어디 있어요?」
-                PRINTL 「뭐 해요? 저 잊어버리신 거 아니죠?」
-                PRINTL 「저를 이렇게 만들어 버리고 영영 떠나가신 건 아니죠?」
-                PRINTW 당신은 화면을 껐다.
-            ELSEIF CFLAG:주회:etc2 == 13
-                PRINTL 아침에 유미에게서 메세지가 와 있었다.
-                PRINTL 「깨진 유리창 이론이라고 알아요?」
-                PRINTL 「이미 깨진 유리창은 점점 더 깨지기 쉬워지는 거.」
-                PRINTW 「이쯤 되면 사령관님도 알아차리셨겠죠?」
-            ELSEIF CFLAG:주회:etc2 == 14
-                PRINTL 「어차피 안 보고 계시잖아요.」
-                PRINTL 「저는 신경도 안 쓰시잖아요.」
-                PRINTL 「이미 늦었어요.」
-                PRINTW 출처를 알 수 없는 이에게서 메세지가 와 있었다.
-            ELSEIF CFLAG:주회:etc2 > 14
-                SETBIT CFLAG:MASTER:엔딩플래그, 17
+            IF GETBIT(CFLAG:주회:특수출력조건, 3) ;etc1 = 유미 엔딩 3 카운트
+                SELECTCASE CFLAG:주회:방치일수
+                    CASE 12
+                        PRINTL 아침에 일어나 스마트폰을 열어보니 유미에게서 메세지가 와 있었다.
+                        PRINTL 「사령관님, 많이... 바쁘신가요?」
+                        PRINTL 「별 일은 아니에요. 그, 그냥... 요즘 저희 얼굴 본지가 좀 된 것 같아서...」
+                        PRINTW 「질척거리는 것 같다면 죄송해요...」
+                    CASE 13
+                        PRINTL 오늘 아침에 유미에게서 메세지가 와 있었다.
+                        PRINTL 「사령관님, 혹시... 지난번에 제가 보낸 메세지는 확인하셨나요?」
+                        PRINTL 「확인하셨다면... 제 얼굴 좀 보러 와주시면... 안 될까요?」
+                        PRINTW 「사령관님이 바쁘시다면 어쩔 수 없지만...」
+                    CASE 14
+                        PRINTL 「사령관님, 보고싶어요.
+                        PRINTL 사령관님이 없는 저에게 내일이 올 수 있을까요?」
+                        PRINTW 출처를 알 수 없는 이에게서 메세지가 와 있다.
+                    CASE IS > 14
+                        SETBIT CFLAG:MASTER:엔딩플래그, 16
+                ENDSELECT
+            ELSEIF GETBIT(CFLAG:주회:특수출력조건, 4) ;etc2 = 유미 엔딩 4 카운트
+                SELECTCASE CFLAG:주회:방치일수
+                    CASE 12
+                        PRINTL 아침에 일어나 스마트폰을 열어보니 유미에게서 메세지가 와 있다.
+                        PRINTL 「사령관님? 어디 있어요? 어디 있어요? 어디 있어요?」
+                        PRINTL 「뭐 해요? 저 잊어버리신 거 아니죠?」
+                        PRINTL 「저를 이렇게 만들어 버리고 영영 떠나가신 건 아니죠?」
+                        PRINTW 당신은 화면을 껐다.
+                    CASE 13
+                        PRINTL 아침에 유미에게서 메세지가 와 있었다.
+                        PRINTL 「깨진 유리창 이론이라고 알아요?」
+                        PRINTL 「이미 깨진 유리창은 점점 더 깨지기 쉬워지는 거.」
+                        PRINTW 「이쯤 되면 사령관님도 알아차리셨겠죠?」
+                    CASE 14
+                        PRINTL 「어차피 안 보고 계시잖아요.」
+                        PRINTL 「저는 신경도 안 쓰시잖아요.」
+                        PRINTL 「이미 늦었어요.」
+                        PRINTW 출처를 알 수 없는 이에게서 메세지가 와 있었다.
+                    CASE IS > 14
+                        SETBIT CFLAG:MASTER:엔딩플래그, 17
+                ENDSELECT
             ENDIF
         CASE 138 ;베로니카
-            IF CFLAG:주회:etc2 == 1 ;etc2 =
-                PRINTL 당신은 그녀를 찾기 위해 인근을 돌아다녔다.
-                PRINTL 그녀는 눈에 띄는 복장을 했기 때문에 주변 사람들을 탐문하면 찾을 수 있을지도 모른다.
-                PRINTW 악명높은 코헤이의 전투수녀 복장을 하고 있으니 누가 해코지는 할 리가 없다... 라고 당신은 계속 생각했다.
-            ELSEIF CFLAG:주회:etc2 == 2
-                PRINTL 집 근처의 사람들에게 베로니카에 대해 물었다.
-                PRINTL 「그 수녀님 말입니까? 그러고 보니 최근 본 적이 없군요.」
-                PRINTW 당신은 주변을 샅샅이 돌아다녔지만, 별 소득 없이 돌아갔다.
-            ELSEIF CFLAG:주회:etc2 == 3
-                PRINTL 집 근처의 사람들에게 베로니카에 대해 물었다.
-                PRINTL 「그 언니 말이죠? 옆 동네에 놀러 갔다가 봤어요!
-                PRINTL 빵집 앞에 서성이고 있었어요.
-                PRINTL 배가 고팠던 걸까요?」
-                PRINTW 당신은 주변을 샅샅이 돌아다녔지만, 별 소득 없이 돌아갔다.
-            ELSEIF CFLAG:주회:etc2 == 4
-                PRINTL 당신은 베로니카를 찾기 위해 지역신문에 광고를 냈다.
-                PRINTL 「제 가게에 빵 도둑이 들었던 날이 있었는데, 아마 근처에 있던 그 수녀님이 때려잡긴 했습니다.
-                PRINTL 사례를 할까 했는데 그전에 도둑이 훔친 빵을 먹어 치우곤 도망가 버렸지요.
-                PRINTL 행색이 딱해서 신고하진 않았습니다.」
-                PRINTW 당신은 그 빵집 주변을 돌아다녔지만, 별 소득 없이 돌아갔다.
-            ELSEIF CFLAG:주회:etc2 == 5
-                PRINTL 인근의 다른 지역을 돌아다녔다.
-                PRINTL 「그 수녀복 아가씨 말인가.
-                PRINTL 그저께 밤에 골목길에서 본 것 같네, 울면서 누군가를 계속 찾는 것 같았는데 그냥 미친 여자인지 알았어.」
-                PRINTL 주정뱅이로 보이는 남자가 말했다.
-                PRINTW 한동안 골목 근처를 돌아다녔지만 찾을 수 없었다.
-            ELSEIF CFLAG:주회:etc2 == 6
-                PRINTL 지역신문에 올린 광고를 보고 연락이 왔다.
-                PRINTL 「우리 애를 데리러 놀이터에 갔다가 애랑 놀고 있는 걸 봤어요.
-                PRINTL 소꿉놀이를 하던 중에 난데없이 흙을 퍼먹길래 급하게 애를 데리고 나갔죠.
-                PRINTL 근데 찾으면 사례금 주나요?」
-                PRINTW 애엄마로 보이는 여자가 말했다.
-            ELSEIF CFLAG:주회:etc2 == 7
-                PRINTL 당신은 전에 들은 놀이터를 찾아가 탐문했다.「그 누나 자주 봤어! 아침에 보면 미끄럼틀 안에서 자고 있었어. 사탕을 주면 되게 좋아해! 히히, 예쁘긴 한데 냄새나~」
-                PRINTL 코를 막는 시늉을 하는 아이가 말했다.
-                PRINTW 당신은 놀이터 주변을 한동안 돌아다녔지만, 찾을 수 없었다.",
-            ELSEIF CFLAG:주회:etc2 == 8
-                PRINTL 지역신문에 올린 광고를 보고 연락이 왔다.
-                PRINTL 「공원 벤치에서 비둘기에게 먹이를 주고 있는데, 갑자기 달려와 비둘기들이랑 같이 모이를 먹더군. 너무 충격적이라 잊히질 않아...」
-                PRINTL 노인으로 보이는 사람이 말했다.
-                PRINTW 당신은 공원 주변을 한동안 돌아다녔지만, 베로니카를 찾을 수 없었다.
-            ELSEIF CFLAG:주회:etc2 == 9
-                PRINTL 지역신문에 올린 광고를 보고 연락이 왔다.
-                PRINTL 「코믹 행사에서 봤어요!
-                PRINTL 수녀 코스프레를 하는 줄 알고 사람들이 막 사진을 찍고 있었는데, 무시하고 가판대에 핫도그를 사는 걸 봤어요.
-                PRINTL 그런데 알고 보니 돈이 없어 가게주인에게 혼나고 있었어요.
-                PRINTW 손에 핫도그 하나 쥐고 눈물만 뚝뚝 흘리는 걸 보니 불쌍해서 그냥 주더군요.」
-            ELSEIF CFLAG:주회:etc2 == 10
-                PRINTL 그 행사가 있었다던 도시를 방문했다.
-                PRINTL 탐문하기에 지나치게 넓은 도시라 눈앞이 깜깜해졌다.
-                PRINTL 당신은 전단을 뿌리고 사람들에게 말을 걸어 봤지만 결정적인 단서는 나오지 않았다.
-                PRINTL
-                PRINTW 휴식 커맨드로 이어서 진행 가능합니다.
-            ENDIF
+            SELECTCASE TALENT:주회:실종 ;etc2 = 베로니카 실종 일수
+                CASE 1
+                    PRINTL 당신은 그녀를 찾기 위해 인근을 돌아다녔다.
+                    PRINTL 그녀는 눈에 띄는 복장을 했기 때문에 주변 사람들을 탐문하면 찾을 수 있을지도 모른다.
+                    PRINTW 악명높은 코헤이의 전투수녀 복장을 하고 있으니 누가 해코지는 할 리가 없다... 라고 당신은 계속 생각했다.
+                CASE 2
+                    PRINTL 집 근처의 사람들에게 베로니카에 대해 물었다.
+                    PRINTL 「그 수녀님 말입니까? 그러고 보니 최근 본 적이 없군요.」
+                    PRINTW 당신은 주변을 샅샅이 돌아다녔지만, 별 소득 없이 돌아갔다.
+                CASE 3
+                    PRINTL 집 근처의 사람들에게 베로니카에 대해 물었다.
+                    PRINTL 「그 언니 말이죠? 옆 동네에 놀러 갔다가 봤어요!
+                    PRINTL 빵집 앞에 서성이고 있었어요.
+                    PRINTL 배가 고팠던 걸까요?」
+                    PRINTW 당신은 주변을 샅샅이 돌아다녔지만, 별 소득 없이 돌아갔다.
+                CASE 4
+                    PRINTL 당신은 베로니카를 찾기 위해 지역신문에 광고를 냈다.
+                    PRINTL 「제 가게에 빵 도둑이 들었던 날이 있었는데, 아마 근처에 있던 그 수녀님이 때려잡긴 했습니다.
+                    PRINTL 사례를 할까 했는데 그전에 도둑이 훔친 빵을 먹어 치우곤 도망가 버렸지요.
+                    PRINTL 행색이 딱해서 신고하진 않았습니다.」
+                    PRINTW 당신은 그 빵집 주변을 돌아다녔지만, 별 소득 없이 돌아갔다.
+                CASE 5
+                    PRINTL 인근의 다른 지역을 돌아다녔다.
+                    PRINTL 「그 수녀복 아가씨 말인가.
+                    PRINTL 그저께 밤에 골목길에서 본 것 같네, 울면서 누군가를 계속 찾는 것 같았는데 그냥 미친 여자인지 알았어.」
+                    PRINTL 주정뱅이로 보이는 남자가 말했다.
+                    PRINTW 한동안 골목 근처를 돌아다녔지만 찾을 수 없었다.
+                CASE 6
+                    PRINTL 지역신문에 올린 광고를 보고 연락이 왔다.
+                    PRINTL 「우리 애를 데리러 놀이터에 갔다가 애랑 놀고 있는 걸 봤어요.
+                    PRINTL 소꿉놀이를 하던 중에 난데없이 흙을 퍼먹길래 급하게 애를 데리고 나갔죠.
+                    PRINTL 근데 찾으면 사례금 주나요?」
+                    PRINTW 애엄마로 보이는 여자가 말했다.
+                CASE 7
+                    PRINTL 당신은 전에 들은 놀이터를 찾아가 탐문했다.「그 누나 자주 봤어! 아침에 보면 미끄럼틀 안에서 자고 있었어. 사탕을 주면 되게 좋아해! 히히, 예쁘긴 한데 냄새나~」
+                    PRINTL 코를 막는 시늉을 하는 아이가 말했다.
+                    PRINTW 당신은 놀이터 주변을 한동안 돌아다녔지만, 찾을 수 없었다.",
+                CASE 8
+                    PRINTL 지역신문에 올린 광고를 보고 연락이 왔다.
+                    PRINTL 「공원 벤치에서 비둘기에게 먹이를 주고 있는데, 갑자기 달려와 비둘기들이랑 같이 모이를 먹더군. 너무 충격적이라 잊히질 않아...」
+                    PRINTL 노인으로 보이는 사람이 말했다.
+                    PRINTW 당신은 공원 주변을 한동안 돌아다녔지만, 베로니카를 찾을 수 없었다.
+                CASE 9
+                    PRINTL 지역신문에 올린 광고를 보고 연락이 왔다.
+                    PRINTL 「코믹 행사에서 봤어요!
+                    PRINTL 수녀 코스프레를 하는 줄 알고 사람들이 막 사진을 찍고 있었는데, 무시하고 가판대에 핫도그를 사는 걸 봤어요.
+                    PRINTL 그런데 알고 보니 돈이 없어 가게주인에게 혼나고 있었어요.
+                    PRINTW 손에 핫도그 하나 쥐고 눈물만 뚝뚝 흘리는 걸 보니 불쌍해서 그냥 주더군요.」
+                CASE 10
+                    PRINTL 그 행사가 있었다던 도시를 방문했다.
+                    PRINTL 탐문하기에 지나치게 넓은 도시라 눈앞이 깜깜해졌다.
+                    PRINTW 당신은 전단을 뿌리고 사람들에게 말을 걸어 봤지만 결정적인 단서는 나오지 않았다.
+                    PRINTL
+                    PRINTW 휴식 커맨드로 이어서 진행 가능합니다.
+            ENDSELECT
     ENDSELECT
 NEXT
 
@@ -407,6 +432,9 @@ FOR 비트값, 1, 64
             CASE 25 ;네오딤
                 TARGET = GETCHARA(71)
                 CFLAG:TARGET:엔딩플래그 = 3
+            CASE 26 ;테티스 사이드엔딩(번호 임의설정)
+                TARGET = GETCHARA(90)
+                CFLAG:TARGET:엔딩플래그 = 3
             CASEELSE
                 THROW 미확인 엔딩 번호 {비트값}
         ENDSELECT
@@ -434,7 +462,7 @@ IF GROUPMATCH(NO:TARGET, 7,68,123,126)
 ENDIF
 ;============================================================================================
 ;함수명: Ending_Result
-;마지막 수정: v0.9
+;마지막 수정: v1.0
 ;엔딩 결과물 처리
 ;--------------------------------------------------------------------------------------------
 ;상정한 처리 조건
@@ -460,7 +488,7 @@ SELECTCASE NO:TARGET
         ELSEIF CFLAG:엔딩플래그 == 2
             그림번호 = 10
         ELSEIF CFLAG:엔딩플래그 == 3
-            그림번호 = 6 ;TODO 아마도 그림 2개인듯
+            그림번호 = 6
             LOCAL = 1 ;exc = 1
         ELSEIF CFLAG:엔딩플래그 == 4 ;리제 히든 엔딩
             그림번호 = 11
@@ -496,10 +524,8 @@ SELECTCASE NO:TARGET
             LOCAL = 3 ;exc = 3
         ENDIF
     CASE 71 ;네오딤
-        IF CFLAG:엔딩플래그 == 3
+        SIF CFLAG:엔딩플래그 == 3
             CALL RESET_CHARA(71) ;exc = 9
-            CFLAG:etc1 = 0 ;etc1 = 네오딤 스트레스 100상태 카운트
-        ENDIF
     CASE 73 ;팬텀
         SIF CFLAG:엔딩플래그 == 4
             TALENT:혼인 = 1 ;exc = 5
@@ -512,11 +538,13 @@ SELECTCASE NO:TARGET
         ELSEIF CFLAG:엔딩플래그 == 2
             그림번호 = 5
         ENDIF
-    CASE 90 ;TODO 신캐
-        ;CFLAG:etc1 = 21 ;exc = 10
+    CASE 90 ;
+        IF CFLAG:엔딩플래그 == 3
+            SETBIT CFLAG:주회:특수출력유무, 3
+        ENDIF
     CASE 106 ;오드리
         SIF CFLAG:엔딩플래그 == 3
-            CFLAG:etc1 = 5 ;exc = 7, etc1= 더치 걸 이벤트 일수
+            CFLAG:이벤트카운트1 = 5 ;exc = 7, etc1= 더치 걸 이벤트 일수
     CASE 108 ;더치걸
         SIF CFLAG:엔딩플래그 == 3
             LOCAL = 1 ;exc = 1
@@ -539,8 +567,7 @@ SELECTCASE NO:TARGET
         ELSEIF CFLAG:엔딩플래그 == 2
             그림번호 = 15
             LOCAL:1 = 1
-            CFLAG:etc2 = 1 ;etc2 = 베로니카 실종 일수
-            TALENT:실종 = 1 ;exc = 8
+            TALENT:실종 = 1 ;etc2 = 베로니카 실종 일수 ;exc = 8
         ELSEIF CFLAG:엔딩플래그 == 3
             ;순차 처리이기에 개인 메시지에서 따로 처리함
             ;여행

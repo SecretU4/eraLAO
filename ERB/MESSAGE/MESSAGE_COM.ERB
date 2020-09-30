@@ -61,46 +61,45 @@ SELECTCASE NO:TARGET
                 CSTR:1 += "/Nboy"
             ENDIF
         ENDIF
-    CASE 51
-        IF TALENT:정신쇠약 == 2 && !CFLAG:etc2
+    CASE 51 ;메이
+        IF TALENT:정신쇠약 == 2 && !GETBIT(CFLAG:특수출력유무, 9) ;etc2
             CSTR:1 = fBreak
-        ELSEIF CFLAG:etc4 == 5
+        ELSEIF EXP:쇠약소멸경험 >= 5 && !GETBIT(CFLAG:특수출력유무, 13)
             CSTR:1 = nHeal
-        ELSEIF CFLAG:etc3 == 5
+        ELSEIF EXP:쇠약획득경험 >= 5 && !GETBIT(CFLAG:특수출력유무, 12)
             CSTR:1 = nWeak
-        ELSEIF CFLAG:etc4 < 5 && CFLAG:etc4 > 0 && !CFLAG:etc6
+        ELSEIF EXP:쇠약소멸경험 < 5 && !GETBIT(CFLAG:특수출력유무, 11) ;etc6
             CSTR:1 = Heal
-        ELSEIF CFLAG:etc3 < 5 && CFLAG:etc3 > 0 && !CFLAG:etc5
+        ELSEIF EXP:쇠약획득경험 < 5 && !GETBIT(CFLAG:특수출력유무, 10) ;etc5
             CSTR:1 = fWeak
-        ELSEIF TALENT:사랑 == 2 && !CFLAG:etc1 ;메이 fLove 취득대사 유무
+        ELSEIF TALENT:사랑 == 2 && !GETBIT(CFLAG:특수출력유무, 8) ;etc1
             CSTR:1 = fLove
         ENDIF
-    CASE 52
+    CASE 52 ;나엔
         IF CFLAG:공포 < 200 && !TALENT:짜증 && !TALENT:정신쇠약
-            IF ITEM:ITEM_BIO(51) > 0 && CFLAG:etc1 == 0 ;메이 이벤트
+            IF ITEM:ITEM_BIO(51) > 0 && !GETBIT(CFLAG:특수출력유무, 8) ;메이 이벤트
                 LOCAL = GETCHARA(51)
                 IF CFLAG:LOCAL:공포 < 200 && !TALENT:LOCAL:짜증 && !TALENT:LOCAL:정신쇠약
-                    IF TALENT:사랑 && TALENT:LOCAL:사랑 ;메이/나엔 모두 연모 이상, 원본에서는 연모만
-                        CFLAG:etc1 = 1
+                    IF TALENT:TARGET:사랑 && TALENT:LOCAL:사랑 ;메이/나엔 모두 연모 이상, 원본에서는 연모만
                         CSTR:1 = mayE2
                     ELSE
-                        CFLAG:etc1 = 1
                         CSTR:1 = mayE1
                     ENDIF
                 ENDIF
-            ELSEIF ITEM:ITEM_BIO(106) > 0 && CFLAG:etc2 != 2 && TALENT:사랑 ;오드리 이벤트, 원본에서는 연모만
+            ELSEIF ITEM:ITEM_BIO(106) > 0 && TALENT:사랑 ;오드리 이벤트, 원본에서는 연모만
                 LOCAL = GETCHARA(106)
                 IF CFLAG:LOCAL:공포 < 200 && !TALENT:LOCAL:짜증 && !TALENT:LOCAL:정신쇠약
-                    IF CFLAG:etc2 == 0
-                        CSTR:1 = audreyE1
-                    ELSEIF CFLAG:etc2 == 1
-                        CSTR:1 = audreyE2
-                    ENDIF
-                    CFLAG:etc2 += 1
+                    SELECTCASE CFLAG:이벤트카운트1
+                        CASE 0
+                            CSTR:1 = audreyE1
+                        CASE 1
+                            CSTR:1 = audreyE2
+                        CASEELSE
+                    ENDSELECT
                 ENDIF
             ENDIF
         ENDIF
-    CASE 68
+    CASE 68 ;에밀리
         IF TALENT:정신쇠약 == 1 && TALENT:사랑 == 2
             CSTR:1 = Weak2
         ELSEIF CFLAG:공포 > 199 && TALENT:사랑 == 2
@@ -109,6 +108,10 @@ SELECTCASE NO:TARGET
             CSTR:1 = Love
         ELSEIF TALENT:짜증 && TALENT:사랑 == 2
             CSTR:1 = Annoyed2
+        ENDIF
+    CASE 73 ;팬텀
+        IF TALENT:정신쇠약 == 2 && !GETBIT(CFLAG:특수출력유무, 8)
+            CSTR:1 = Awaken
         ENDIF
     CASE 76
         IF CSTR:1 == "Affection" || CSTR:1 == "Marryed"
@@ -119,13 +122,20 @@ SELECTCASE NO:TARGET
             ENDIF
         ENDIF
     CASE 91
-        SIF !CFLAG:조교여부 ;슬레이프니르 첫 연애
+        IF !CFLAG:조교여부 ;슬레이프니르 첫 연애
             SETBIT CFLAG:개별선택지, 0
+        ELSEIF EXP:가창경험 > 19 && !GETBIT(CFLAG:특수출력유무, 8)
+            CSTR:1 = Superstar
+        ENDIF
     CASE 108
         IF TALENT:혼인 == 2
             CSTR:1 = Marryed
         ELSEIF TALENT:혼인 == 1
             CSTR:1 = Love
+        ENDIF
+    CASE 123 ;모모
+        IF TALENT:정신쇠약 == 2 && !GETBIT(CFLAG:특수출력유무, 8)
+            CSTR:1 = Awaken
         ENDIF
 ENDSELECT
 
@@ -212,8 +222,7 @@ REND
 
 CSTR:1 = 
 
-;아직 첫키스 말고 다른 경우의 첫시도 구상은 찾은 적이 없으므로
-SIF SELECTCOM == 15 && FIRSTTIME(SELECTCOM)
+SIF FIRSTTIME(SELECTCOM)
     CSTR:1 = First/
 
 CALL SET_MSG_CSTR(TARGET)
@@ -289,7 +298,7 @@ SELECTCASE NO:TARGET
             ENDIF
         ENDIF
     CASE 106
-        SIF SELECTCOM == 2 && (CFLAG:etc1 > 0 && CFLAG:etc1 < 4)
+        SIF SELECTCOM == 2 && (CFLAG:이벤트카운트1 > 0 && CFLAG:이벤트카운트1 < 4)
             CSTR:1 = Cloth
     CASE 108
         IF TALENT:혼인 == 2
@@ -300,7 +309,7 @@ SELECTCASE NO:TARGET
 ENDSELECT
 
 ;꼬릿말 처리
-IF NO:TARGET == 21 && CFLAG:etc1 > 9 && CSTR:1 == "Yboy"
+IF NO:TARGET == 21 && EXP:학대COM경험 > 9 && CSTR:1 == "Yboy"
     꼬릿말 = %CALLNAME:TARGET%의 상태가 어딘가 이상하다/이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다
     IF GROUPMATCH(SELECTCOM, 20,21,22)
         CSTR:1 += "/Danger"
@@ -356,25 +365,55 @@ SIF 꼬릿말 != ""
 @Alternative_CSTR(ARG)
 #FUNCTIONS
 #DIMS SELECTED_CSTR, 5
+;아래 DIM/DIMS 변수는 구동중이면 계속 저장되어 있으니 취급 요주의
+#DIMS SAVED_CSTR ;실행 당시 태그값 저장
+#DIM FIRST_SWITCH ;First계열 변환 실행시 켜짐
+
 LOCALS = 
 DEBUGPRINTFORML 대상 : %CALLNAME:ARG%, 태그 : %CSTR:ARG:1%
+
+IF FIRST_SWITCH && STRFINDU(SAVED_CSTR, "First") != -1
+    IF STRFINDU(SAVED_CSTR, CSTR:ARG:1) != -1
+        DEBUGPRINTL 태그 재시도 First
+        LOCALS += "First/"
+    ELSE ;저장된 CSTR값이 원 값과 아예 다른 경우 통과
+        FIRST_SWITCH = 0
+    ENDIF
+ENDIF
+
+SAVED_CSTR '= CSTR:ARG:1
 
 SPLIT CSTR:ARG:1, "/", SELECTED_CSTR
 REPEAT RESULT
     IF SELECTED_CSTR:COUNT == ""
         BREAK
-    ELSEIF COUNT > 0
-        LOCALS += "/"
     ENDIF
 
-    IF STRFINDU(SELECTED_CSTR:COUNT, "Love") != -1
-        DEBUGPRINTL 태그 변경 Love > Affection
-        LOCALS += "Affection"
-    ELSEIF STRFINDU(SELECTED_CSTR:COUNT, "Marryed") != -1
-        DEBUGPRINTL 태그 변경 Marryed > Love
-        LOCALS += "Love"
+    ;현재 First가 있다면 해당 값을 지움
+    IF STRFINDU(CSTR:ARG:1, "First") != -1
+        FIRST_SWITCH = 1
+        IF COUNT == 0
+            DEBUGPRINTL 태그 삭제 First
+        ELSE
+            SIF COUNT > 1
+                LOCALS += "/"
+            LOCALS += SELECTED_CSTR:COUNT
+        ENDIF
     ELSE
-        LOCALS += SELECTED_CSTR:COUNT
+        FIRST_SWITCH = 0
+        IF COUNT > 0
+            LOCALS += "/"
+        ENDIF
+
+        IF STRFINDU(SELECTED_CSTR:COUNT, "Love") != -1
+            DEBUGPRINTL 태그 변경 Love > Affection
+            LOCALS += "Affection"
+        ELSEIF STRFINDU(SELECTED_CSTR:COUNT, "Marryed") != -1
+            DEBUGPRINTL 태그 변경 Marryed > Love
+            LOCALS += "Love"
+        ELSE
+            LOCALS += SELECTED_CSTR:COUNT
+        ENDIF
     ENDIF
 REND
 

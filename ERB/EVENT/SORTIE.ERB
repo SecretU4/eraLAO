@@ -46,21 +46,12 @@ WHILE 1
             PRINTFORML %조사처리(NAME:출격대상,"은")% 출격 불가능한 상태입니다.
             CONTINUE
         ENDIF
-    ELSE
-        SELECTCASE NO:출격대상
-            ;오드리
-            CASE 106
-                IF CFLAG:출격대상:etc1 > 0 && CFLAG:출격대상:etc1 < 4
-                    PRINTFORML %조사처리(NAME:출격대상,"은")% 출격 불가능한 상태입니다.
-                    CONTINUE
-                ENDIF
-            ;더치걸
-            CASE 108
-                IF CFLAG:GETCHARA(106):etc1 > 0 && CFLAG:GETCHARA(106):etc1 < 4
-                    PRINTFORML %조사처리(NAME:출격대상,"은")% 출격 불가능한 상태입니다.
-                    CONTINUE
-                ENDIF
-        ENDSELECT
+    ;오드리 더치걸 이벤트중
+    ELSEIF GROUPMATCH(NO:출격대상, 106,108)
+        IF CFLAG:GETCHARA(106):이벤트카운트1 > 0 && CFLAG:GETCHARA(106):이벤트카운트1 < 4
+            PRINTFORML %조사처리(NAME:출격대상,"은")% 출격 불가능한 상태입니다.
+            CONTINUE
+        ENDIF
     ENDIF
     PRINTFORML %조사처리(NAME:출격대상,"을")% 출격시키겠습니까?
     PRINTL

@@ -376,7 +376,7 @@ ELSE ;!CFLAG:(ARG:1):출격중
                 SIF NO:(ARG:1) == 51 && CFLAG:(ARG:1):공포 < 150 && !TALENT:(ARG:1):짜증
                     RETURNF 1
             CASE 1021 ;닥터, 짜증 아님, 공포 150 미만, 호감도 499 초과, etc3 닥터 장발이벤 출력 유무
-                SIF NO:(ARG:1) == 76 && CFLAG:(ARG:1):공포 < 150 && CFLAG:(ARG:1):호감도 > 499 && !TALENT:(ARG:1):짜증 && !CFLAG:(ARG:1):etc3
+                SIF NO:(ARG:1) == 76 && CFLAG:(ARG:1):공포 < 150 && CFLAG:(ARG:1):호감도 > 499 && !TALENT:(ARG:1):짜증 && !GETBIT(CFLAG:(ARG:1):특수출력유무, 21)
                     RETURNF 1
             CASE 1027 ;리제, 짜증 아님, 공포 150 미만, 호감도 499 초과
                 SIF NO:(ARG:1) == 7 && CFLAG:(ARG:1):공포 < 150 && CFLAG:(ARG:1):호감도 > 499
@@ -497,7 +497,7 @@ IF !CFLAG:(ARG:1):출격중 && !TALENT:(ARG:1):정신쇠약
                 ENDIF
             CASE 12
                 IF ARG:2 == 0  ;오드리 etc1 = 더치와 이벤트 일수
-                    SIF NO:(ARG:1) == 106 && TALENT:(ARG:1):혼인 == 1 && CFLAG:(ARG:1):etc1 == 0
+                    SIF NO:(ARG:1) == 106 && TALENT:(ARG:1):혼인 == 1 && CFLAG:(ARG:1):이벤트카운트1 == 0
                         RETURNF 1
                 ELSEIF ARG:2 == 1
                     SIF NO:(ARG:1) == 108 && TALENT:(ARG:1):사랑 == 2 && TALENT:(ARG:1):체형 == 0
@@ -532,10 +532,10 @@ SELECTCASE ARG
     CASE 5 ;레오나/발키리 etc1 = 레오나/발키리 공용이벤 출력유무
         IF !CFLAG:(ARG:1):출격중 && (TALENT:(ARG:1):사랑 == 2 && !TALENT:(ARG:1):혼인) && (CFLAG:(ARG:1):공포 < 30 && CFLAG:(ARG:1):스트레스 < 200)
             IF ARG:2 == 0
-                SIF NO:(ARG:1) == 31 && !CFLAG:(ARG:1):etc1
+                SIF NO:(ARG:1) == 31 && !GETBIT(CFLAG:(ARG:1):특수출력유무, 21)
                     RETURNF 1
             ELSEIF ARG:2 == 1
-                SIF NO:(ARG:1) == 32 && !CFLAG:(ARG:1):etc1
+                SIF NO:(ARG:1) == 32 && !GETBIT(CFLAG:(ARG:1):특수출력유무, 21)
                     RETURNF 1
             ENDIF
         ENDIF
@@ -544,7 +544,7 @@ SELECTCASE ARG
             SIF NO:(ARG:1) == 126
                 RETURNF 1
         ELSEIF ARG:2 == 1 ;베로니카 etc1 = 베로니카 고해성사 횟수 카운트 ,etc3 = 베로니카 휴식이벤 이력 유무
-            SIF NO:(ARG:1) == 138 && CFLAG:(ARG:1):출격중 == 3 && TALENT:정신쇠약 != 2 && TALENT:(ARG:1):혼인 == 1 && TALENT:(ARG:1):사랑 == 2 && (CFLAG:(ARG:1):etc3 == 0 && CFLAG:(ARG:1):etc1 > 18)
+            SIF NO:(ARG:1) == 138 && CFLAG:(ARG:1):출격중 == 3 && TALENT:정신쇠약 != 2 && TALENT:(ARG:1):혼인 == 1 && TALENT:(ARG:1):사랑 == 2 && (!GETBIT(CFLAG:(ARG:1):특수출력유무, 21) && EXP:(ARG:1):고유COM경험 > 18)
                 RETURNF 1
         ENDIF
     CASE 15
@@ -552,7 +552,7 @@ SELECTCASE ARG
             SIF NO:(ARG:1) == 126 && !CFLAG:(ARG:1):출격중 && !TALENT:(ARG:1):정신쇠약
                 RETURNF 1
         ELSEIF ARG:2 == 1 ;베로니카 etc1 = 베로니카 고해성사 횟수 카운트 ,etc3 = 베로니카 휴식이벤 이력 유무
-            SIF NO:(ARG:1) == 138 && CFLAG:(ARG:1):출격중 == 3 && TALENT:정신쇠약 != 2 && TALENT:(ARG:1):혼인 == 1 && TALENT:(ARG:1):사랑 == 2 && (CFLAG:(ARG:1):etc3 == 0 && CFLAG:(ARG:1):etc1 > 18)
+            SIF NO:(ARG:1) == 138 && CFLAG:(ARG:1):출격중 == 3 && TALENT:정신쇠약 != 2 && TALENT:(ARG:1):혼인 == 1 && TALENT:(ARG:1):사랑 == 2 && (!GETBIT(CFLAG:(ARG:1):특수출력유무, 21) && EXP:(ARG:1):고유COM경험 > 18)
                 RETURNF 1
         ENDIF
     CASE 17 ;메이/나엔 정신붕괴 상태
@@ -583,23 +583,22 @@ FOR 대상, 1, CHARANUM
 
     SELECTCASE NO:대상
         CASE 12 ;소완
-            IF !CFLAG:대상:출격중 && CFLAG:대상:etc2 == 5 ;etc2 = 소완 요리 판매 카운트
+            IF !CFLAG:대상:출격중 && CFLAG:대상:이벤트카운트1 == 5 ;etc2 = 소완 요리 판매 카운트
                 RETURNF 1001
-            ELSEIF !CFLAG:대상:출격중 && CFLAG:대상:etc2 == 11 ;etc2 = 소완 요리 판매 카운트
+            ELSEIF !CFLAG:대상:출격중 && CFLAG:대상:이벤트카운트1 == 11 ;etc2 = 소완 요리 판매 카운트
                 RETURNF 1002
-            ELSEIF !CFLAG:대상:출격중 && CFLAG:대상:etc2 == 17 ;etc2 = 소완 요리 판매 카운트
+            ELSEIF !CFLAG:대상:출격중 && CFLAG:대상:이벤트카운트1 == 17 ;etc2 = 소완 요리 판매 카운트
                 RETURNF 1003
             ENDIF
         CASE 76 ;닥터
             ;원본은 사랑 말고 연모만
             ;etc1 = 닥터 성장이벤 카운트, etc2 = 닥터 성장이벤 출력 유무
-            SIF !CFLAG:대상:출격중 && (CFLAG:대상:공포 < 150 && TALENT:대상:사랑 && !TALENT:대상:정신쇠약 && !TALENT:대상:짜증) && CFLAG:대상:etc1 > 9 && CFLAG:대상:etc2 == 0
+            SIF !CFLAG:대상:출격중 && (CFLAG:대상:공포 < 150 && TALENT:대상:사랑 && !TALENT:대상:정신쇠약 && !TALENT:대상:짜증) && (!GETBIT(CFLAG:대상:특수출력조건, 22) && CFLAG:대상:방치일수 > 9) && !GETBIT(CFLAG:대상:특수출력유무, 22)
                 RETURNF 1022
         CASE 138 ;베로니카
-            ;etc2 = 베로니카 실종 일수, etc3 = 베로니카 휴식이벤 이력 유무
-            IF TALENT:대상:실종 && CFLAG:대상:etc2 == 11
+            IF TALENT:대상:실종 == 11 ;etc2 = 베로니카 실종 일수
                 RETURNF 1041
-            ELSEIF CFLAG:대상:etc3 == 2 && !TALENT:대상:정신쇠약
+            ELSEIF GETBIT(CFLAG:대상:특수출력조건, 22) && !TALENT:대상:정신쇠약 ;etc3 = 베로니카 휴식이벤 이력 유무
                 RETURNF 1044
             ENDIF
     ENDSELECT
@@ -617,10 +616,14 @@ RETURNF -1
 #DIM 랜덤대상, 2
 
 VARSET 선택캐릭터, -1
+VARSET 랜덤대상
 
 ;1명째 대상 선정
 WHILE 선택캐릭터:0 == -1
-    랜덤대상 = RAND(1, CHARANUM)
+    랜덤대상 = RAND:CHARANUM
+    SIF 랜덤대상 == 0
+        CONTINUE
+
     IF GROUPMATCH(ARG, 0,1,2,3,4)
     ;보유여부 체크
     ELSEIF ITEM:(ITEM_BIO(NO:랜덤대상)) < 1
@@ -697,13 +700,17 @@ WHILE 선택캐릭터:1 == -1
     SIF FLAG:현캐릭터수 < 2
         BREAK
 
-    랜덤대상:1 = RAND(1, CHARANUM)
+    랜덤대상:1 = RAND:CHARANUM
+
+    IF 랜덤대상:1 == 0
+        CONTINUE
     ;1명째와 동일하면 루프
-    SIF 랜덤대상:1 == 선택캐릭터:0
+    ELSEIF 랜덤대상:1 == 선택캐릭터:0
         CONTINUE
     ;보유여부 체크
-    SIF ITEM:(ITEM_BIO(NO:랜덤대상)) < 1
+    ELSEIF ITEM:(ITEM_BIO(NO:랜덤대상)) < 1
         CONTINUE
+    ENDIF
 
     SELECTCASE ARG
         CASE 201 ;대상배열 4번

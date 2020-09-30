@@ -2,6 +2,7 @@
 ;ARGS = 호출 위치, LOCALS = 출력할 파일명
 @ILLUST(ARG, ARG:1, ARGS)
 #DIM CSV_ID
+#DIMS IMAGE_EXT, 3 = "webp","png","jpg"
 CSV_ID = NO:ARG
 
 VARSET LOCALS
@@ -187,13 +188,34 @@ SELECTCASE ARGS
             CASE 17 ;베로니카 3번 엔딩플래그 2번째
                 LOCALS = End_138_3-2
         ENDSELECT
+    CASE "BIOSHOP"
+        LOCALS '= @"BIO_IMG_{ARG:1}"
+        ;IMAGE_EXT의 확장자 지원 (최대 3개)
+        LOCAL = 0
+        REPEAT 3
+            GCREATEFROMFILE ARG:1, @"SHOP_SELECTION/{ARG:1}.%IMAGE_EXT:COUNT%"
+            IF !RESULT
+                GCREATED ARG:1 ;인게임 내 존재 여부 판별
+                LOCAL = RESULT
+            ELSE ;첫생성
+                LOCAL = RESULT
+            ENDIF
+
+            SIF LOCAL
+                BREAK
+        REND
+        SPRITECREATE @"%LOCALS%", ARG:1
 ENDSELECT
 
 ;출력해야 하는 이미지가 없을 때
 SIF LOCALS == ""
     RETURN 0
 
-CALL PRINT_ILLUST(LOCALS)
+IF ARG:1
+    CALL PRINT_ILLUST(LOCALS, 20)
+ELSE
+    CALL PRINT_ILLUST(LOCALS)
+ENDIF
 
 ;출력해야 하는 이미지가 2개일 때
 IF LOCALS:1 != ""
@@ -209,12 +231,11 @@ ENDIF
 RETURN 1
 
 ;ARGS = 출력 대상 파일 문자열
-@PRINT_ILLUST(ARGS)
+@PRINT_ILLUST(ARGS, 배율=30)
 #DIMS PRINT_HTML
 #DIM 배율
 
 PRINT_HTML = 
-배율 = 30
 PRINT_HTML += @"<img src='%ARGS%' height='{배율}00'>"
 REPEAT 배율
     PRINT_HTML += "<br>"

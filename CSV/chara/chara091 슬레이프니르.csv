@@ -11,3 +11,5 @@ TALENT,군인,1,
 
 ABL,전투lv,2,
 EXP,출격경험,25,
+
+;CFLAG,특수출력유무 bit 8 = Superstar 대사 출력유무 (etc4)

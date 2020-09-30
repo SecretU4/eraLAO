@@ -8,3 +8,6 @@ TALENT,분류,1,;경장
 TALENT,체형,1,;보통체구
 TALENT,쿨데레,1,
 
+;CFLAG,특수출력조건 bit 4 = 엔딩4 조건 충족여부 (1이면 엔딩 접근불가) (etc2)
+
+;CFLAG,특수출력유무 bit 8 = Awaken 출력여부 확인 (etc1)

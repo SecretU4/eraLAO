@@ -15,18 +15,172 @@ RETURNF LOCALS
 @VERSION_UP
 #DIM 연모인수처리, 2
 VARSET 연모인수처리
+
 SIF FLAG:LAST_LAOVERSION == GAMEBASE_VERSION
     RETURN 0
-
+;v0.991 이전 버전 호환용
 IF GETBIT(FLAG:VER_UP_CHECK, 1) != 1
-    FOR 연모인수처리, 1, CHARANUM
-        SIF TALENT:연모인수처리:사랑
-            연모인수처리:1 ++
-    NEXT
-    FLAG:연모인수 = 연모인수처리:1
+    IF FLAG:LAST_LAOVERSION
+        FOR 연모인수처리, 1, CHARANUM
+            SIF TALENT:연모인수처리:사랑
+                연모인수처리:1 ++
+        NEXT
+        FLAG:연모인수 = 연모인수처리:1
+    ENDIF
     SETBIT FLAG:VER_UP_CHECK, 1
 ENDIF
-
+;v1.00 이전 버전 호환용
+;etc 플래그 정리
+IF GETBIT(FLAG:VER_UP_CHECK, 2) != 1
+    IF FLAG:LAST_LAOVERSION
+        FOR LOCAL, 1, CHARANUM
+            SELECTCASE NO:LOCAL
+                CASE 7 ;리제
+                    ;etc1 = 엔딩3 카운트 (공포 299 초과, 혼인 아님 30일 이상)
+                    CFLAG:LOCAL:엔딩조건카운트1 = CFLAG:LOCAL:30
+                    ;etc2 = 엔딩4 카운트 (짜증 상태, 혼인 아님 30일 이상)
+                    CFLAG:LOCAL:엔딩조건카운트2 = CFLAG:LOCAL:31
+                CASE 12 ;소완
+                    ;etc1 = 엔딩3 카운트 (정신쇠약 상태, 방치 30일 이상)
+                    SIF CFLAG:LOCAL:30
+                        SETBIT CFLAG:LOCAL:특수출력조건, 3
+                    CFLAG:LOCAL:방치일수 = CFLAG:LOCAL:30
+                    ;etc2 = 소완 요리 판매 카운트
+                    CFLAG:LOCAL:이벤트카운트1 = CFLAG:LOCAL:31
+                CASE 16 ;리리스
+                CASE 21 ;마리
+                    ;etc1 = 엔딩3 카운트 (소년 줘팸횟수 20회)
+                    EXP:LOCAL:학대COM경험 = CFLAG:LOCAL:30
+                CASE 31 ;레오나
+                    ;etc1 = 공용이벤(EV1023, EV1024) 출력유무
+                    SIF CFLAG:LOCAL:30
+                        SETBIT CFLAG:LOCAL:특수출력유무, 21
+                CASE 32 ;발키리
+                    ;etc1 = 공용이벤(EV1023, EV1024) 출력유무
+                    SIF CFLAG:LOCAL:30
+                        SETBIT CFLAG:LOCAL:특수출력유무, 21
+                CASE 51 ;메이
+                    ;etc1 = LOVE 취득대사 유무
+                    SIF CFLAG:LOCAL:30
+                        SETBIT CFLAG:LOCAL:특수출력유무, 8
+                    ;etc2 = Break 취득대사 유무
+                    SIF CFLAG:LOCAL:31
+                        SETBIT CFLAG:LOCAL:특수출력유무, 9
+                    ;etc3 = 쇠약 획득수
+                    SIF CFLAG:LOCAL:32
+                        SETBIT CFLAG:LOCAL:특수출력유무, 12
+                    EXP:LOCAL:쇠약획득경험 = CFLAG:LOCAL:32
+                    ;etc4 = 쇠약 소멸수
+                    SIF CFLAG:LOCAL:33
+                        SETBIT CFLAG:LOCAL:특수출력유무, 13
+                    EXP:LOCAL:쇠약소멸경험 = CFLAG:LOCAL:33
+                    ;etc5 = fWeak 출력유무
+                    SIF CFLAG:LOCAL:34
+                        SETBIT CFLAG:LOCAL:특수출력유무, 10
+                    ;etc6 = Heal 출력유무
+                    SIF CFLAG:LOCAL:35
+                        SETBIT CFLAG:LOCAL:특수출력유무, 11
+                CASE 52 ;나앤
+                    ;etc1 = 메이 이벤트
+                    SIF CFLAG:LOCAL:30
+                        SETBIT CFLAG:LOCAL:특수출력유무, 8
+                    ;etc2 = 오드리 이벤트
+                    CFLAG:LOCAL:이벤트카운트1 = CFLAG:LOCAL:31
+                CASE 68 ;에밀리
+                    ;etc1 = 고백 선택 가부
+                    ;이식 당시 CFLAG:개별선택지 bit 1값으로 처리되었음
+                    ;etc2 = 엔딩4 카운트 (사랑 + 정신쇠약 5일)
+                    CFLAG:LOCAL:엔딩조건카운트1 = CFLAG:LOCAL:31
+                CASE 71 ;네오딤
+                    ;etc1 = 스트레스 100상태 카운트 (엔딩 3 카운트, 5일 이상)
+                    CFLAG:LOCAL:엔딩조건카운트1 = CFLAG:LOCAL:30
+                CASE 73 ;팬텀
+                    ;etc1 = 붕괴대사 Awaken
+                    ;이전버전까지 누락되어 있었으며, CFLAG:특수출력유무 bit 8 값으로 이관
+                    ;etc2 = 엔딩4 바이오구매 유무 (한번이라도 2명 이상일시 활성화, 이후 변동 없음.)
+                    SIF CFLAG:LOCAL:31
+                        SETBIT CFLAG:LOCAL:특수출력조건, 4
+                    ;etc3 = 엔딩4 카운트 (혼인조건 만족 + 혼인 아님, etc2 비활성화 20일 이상)
+                    CFLAG:LOCAL:엔딩조건카운트1 = CFLAG:LOCAL:32
+                CASE 76 ;닥터
+                    ;etc2 = 성장이벤 출력유무
+                    IF !CFLAG:LOCAL:31
+                        IF CFLAG:LOCAL:30 > CFLAG:LOCAL:33
+                            ;etc1 = 성장이벤 카운트
+                            SETBIT CFLAG:LOCAL:특수출력조건, 22
+                        ELSEIF CFLAG:LOCAL:30 < CFLAG:LOCAL:33
+                            ;etc4 = 엔딩3 카운트 (캐릭터수 2명 초과, 혼인 + 보통체구 20일 이상 방치)
+                            SETBIT CFLAG:LOCAL:특수출력조건, 3
+                        ELSEIF CFLAG:LOCAL:30 != 0 && CFLAG:LOCAL:30 == CFLAG:LOCAL:33
+                            ;서로 같다면 편의상 성장이벤 우선 처리
+                            SETBIT CFLAG:LOCAL:특수출력조건, 22
+                        ENDIF
+                        CFLAG:LOCAL:방치일수 = MAX(CFLAG:LOCAL:30, CFLAG:LOCAL:33)
+                    ELSE ;성장이벤 이미 출력된 경우
+                        SETBIT CFLAG:LOCAL:특수출력유무, 22
+                        IF CFLAG:LOCAL:33
+                            SETBIT CFLAG:LOCAL:특수출력조건, 3
+                            CFLAG:LOCAL:방치일수 = CFLAG:LOCAL:33
+                        ENDIF
+                    ENDIF
+                    ;etc3 = 장발이벤 출력유무
+                    ;이전버전까지 출력유무가 누락되어 있었으며, CFLAG:특수출력유무 bit 21값으로 이관
+                CASE 89 ;세이렌
+                CASE 90 ;테티스
+                    ;etc1 = 연모이상 꽁냥계 연애커맨드 카운트
+                    ;이식 당시 EXP:연애COM경험2 으로 처리되었음
+                CASE 91 ;슬레이프니르
+                    ;etc2 = 101 첫실행유무
+                    ;이식 당시 FIRSTTIME 함수로 처리되었음
+                    ;etc3 = 가창경험
+                    ;이식 당시 EXP:가창경험 으로 처리되었음
+                    ;etc4 = 슈퍼스타 대사 출력유무
+                    ;이전버전까지 누락되어 있었으며, CFLAG:특수출력유무 bit 8 값으로 이관
+                CASE 106 ;오드리
+                    ;etc1 = 더치 이벤트(EV1040)일수
+                    CFLAG:LOCAL:이벤트카운트1 = CFLAG:LOCAL:30
+                CASE 108 ;더치 걸
+                    ;etc1 = 엔딩3 카운트 (짜증 + 호감도 500 미만 16일 이상)
+                    CFLAG:LOCAL:엔딩조건카운트1 = CFLAG:LOCAL:30
+                CASE 113 ;켈베로스
+                CASE 123 ;모모
+                    ;etc1 = 붕괴대사 Awaken
+                    ;이전버전까지 누락되어 있었으며, CFLAG:특수출력유무 bit 8 값으로 이관
+                CASE 126 ;아자젤
+                    ;etc1 = 설교 횟수 카운트 (엔딩3 조건)
+                    EXP:LOCAL:고유COM경험 = CFLAG:LOCAL:30
+                    ;etc2 = 줘팸 횟수 카운트 (엔딩3 조건)
+                    EXP:LOCAL:학대COM경험 = CFLAG:LOCAL:31
+                CASE 132 ;유미
+                    IF CFLAG:LOCAL:30 > CFLAG:LOCAL:31
+                        ;etc1 = 엔딩3 카운트 (의존증 아님, 혼인 방치 15일 이상)
+                        SETBIT CFLAG:LOCAL:특수출력조건, 3
+                    ELSEIF CFLAG:LOCAL:30 < CFLAG:LOCAL:31
+                        ;etc2 = 엔딩4 카운트 (의존증 아님, 정신붕괴 방치 15일 이상)
+                        SETBIT CFLAG:LOCAL:특수출력조건, 4
+                    ELSEIF CFLAG:LOCAL:30 != 0 && CFLAG:LOCAL:30 == CFLAG:LOCAL:31
+                        ;서로 같다면 편의상 엔딩3 우선 처리
+                        SETBIT CFLAG:LOCAL:특수출력조건, 3
+                    ENDIF
+                    CFLAG:LOCAL:방치일수 = MAX(CFLAG:LOCAL:30, CFLAG:LOCAL:31)
+                CASE 138 ;베로니카
+                    ;etc1 = 고해성사 횟수 카운트
+                    EXP:LOCAL:고유COM경험 = CFLAG:LOCAL:30
+                    ;etc2 = 실종 일수 (사실상 카운트. 11일 이후로는 휴식 이벤트에서만 진행가능)
+                    TALENT:LOCAL:실종 = CFLAG:LOCAL:31
+                    ;etc3 = 휴식이벤 이력 유무
+                    IF CFLAG:LOCAL:32
+                        SETBIT CFLAG:LOCAL:특수출력유무, 21
+                        SIF CFLAG:LOCAL:32 == 2
+                            SETBIT CFLAG:LOCAL:특수출력조건, 22
+                    ENDIF
+            ENDSELECT
+            ;변환 후 etc값 초기화
+            VARSET CFLAG:LOCAL, 0, 30, 36
+        NEXT
+    ENDIF
+    SETBIT FLAG:VER_UP_CHECK, 2
+ENDIF
 FLAG:LAST_LAOVERSION = GAMEBASE_VERSION
 RETURN 1
 ;=========================================================================
@@ -36,6 +190,7 @@ RETURN 1
 PRINTL 디버그 모드입니다.
 
 ;세이브파일의 현 버전 설정
+CALL VERSION_UP
 FLAG:LAST_LAOVERSION = GAMEBASE_VERSION
 
 ;전역변수 초기화
@@ -162,6 +317,7 @@ WEND
 ;-------------------------------------------------------------------------
 @DEBUG_CHARA
 #DIM 대상
+#DIM STAT_DATA, 2 ;TALENT 이름 표출 조건
 ;대상 선택
 CALL CURRENT_BIOLIST("DEBUG")
 SIF RESULT == -1
@@ -185,58 +341,22 @@ PRINTL
 DRAWLINE
 IF 대상 != MASTER
     FOR LOCAL, 21, 90
-    LOCALS =
-        IF TALENTNAME:LOCAL == ""
+        LOCALS '= TALENTNAME_EX(LOCAL, TALENT:대상:LOCAL)
+        IF LOCALS == ""
             CONTINUE
-        ELSEIF GROUPMATCH(LOCAL, 30,62,70,72)
-            SELECTCASE LOCAL
-                CASE 30
-                    IF TALENT:대상:LOCAL == -1
-                        LOCALS '= "[동생]"
-                    ELSEIF TALENT:대상:LOCAL == 1
-                        LOCALS '= "[누님]"
-                    ELSE
-                        LOCALS = [동생]/[누님]
-                    ENDIF
-                CASE 62
-                    IF TALENT:대상:LOCAL == -1
-                        LOCALS += "[비관적]"
-                    ELSEIF TALENT:대상:LOCAL == 1
-                        LOCALS += "[긍정적]"
-                    ELSE
-                        LOCALS = [비관적]/[긍정적]
-                    ENDIF
-                CASE 70
-                    IF TALENT:대상:LOCAL == -1
-                        LOCALS += "[무식]"
-                    ELSEIF TALENT:대상:LOCAL == 1
-                        LOCALS += "[지식]"
-                    ELSE
-                        LOCALS = [무식]/[지식]
-                    ENDIF
-                CASE 72
-                    IF TALENT:대상:LOCAL == 1
-                        LOCALS += "[정신쇠약]"
-                    ELSEIF TALENT:대상:LOCAL == 2
-                        LOCALS += "[정신붕괴]"
-                    ELSE
-                        LOCALS = [정신쇠약]/[정신붕괴]
-                    ENDIF
-            ENDSELECT
-        ELSE
-            LOCALS += @"[%TALENTNAME:LOCAL%]"
-        ENDIF
-        SIF TALENT:대상:LOCAL != 0
+        ELSEIF TALENT:대상:LOCAL != 0
             SETCOLOR 0, 255, 0
+        ENDIF
         PRINTFORMLC [{LOCAL}] %LOCALS, 8%
         RESETCOLOR
     NEXT
 ELSE ;MASTER 일때
     FOR LOCAL, 90, 100
-        SIF TALENTNAME:LOCAL == ""
+        IF TALENTNAME:LOCAL == ""
             CONTINUE
-        SIF TALENT:대상:LOCAL != 0
+        ELSEIF TALENT:대상:LOCAL != 0
             SETCOLOR 0, 255, 0
+        ENDIF
         PRINTFORMLC [{LOCAL}] %TALENTNAME:LOCAL%
         RESETCOLOR
     NEXT
@@ -245,9 +365,9 @@ ENDIF
 VARSET LOCAL
 LOCALS =
 LOCALS:1 '= "바꾸지 않는다"
-LOCALS:2 =
-LOCALS:3 =
-LOCALS:4 '= "값을 지운다"
+LOCALS:2 '= "값을 지운다"
+LOCALS:3 '= "(으)로 한다"
+LOCALS:4 '= "(으)로 한다"
 ;실제 구동부
 WHILE 1
     INPUT
@@ -364,104 +484,40 @@ WHILE 1
             PRINTFORML 선택 능력 : %TALENTNAME:LOCAL%
             PRINT 현재 상태 : 
             ;단순 on/off 아님
-            ;-1 < 0 > 1 형 TALENT
-            IF GROUPMATCH(LOCAL, 30,62,70)
-                ;ASK_M용 선택지 처리
-                LOCALS:2 '= "(으)로 한다"
-                LOCALS:3 '= "(으)로 한다"
+            IF GROUPMATCH(LOCAL, 23,30,62,70, 25,26,72)
                 SELECTCASE LOCAL
-                    CASE 30 ;나이속성
-                        LOCALS:2 '= "[동생]" + LOCALS:2
-                        LOCALS:3 '= "[누님]" + LOCALS:3
-                        IF TALENT:대상:LOCAL == -1
-                            PRINTL [동생]
-                        ELSEIF TALENT:대상:LOCAL == 1
-                            PRINTL [누님]
-                        ELSE
-                            PRINTL 없음
-                        ENDIF
-                    CASE 62 ;긍정도
-                        LOCALS:2 '= "[비관적]" + LOCALS:2
-                        LOCALS:3 '= "[긍정적]" + LOCALS:3
-                        IF TALENT:대상:LOCAL == -1
-                            PRINTL [비관적]
-                        ELSEIF TALENT:대상:LOCAL == 1
-                            PRINTL [긍정적]
-                        ELSE
-                            PRINTL 없음
-                        ENDIF
-                    CASE 70 ;지능
-                        LOCALS:2 '= "[무식]" + LOCALS:2
-                        LOCALS:3 '= "[지식]" + LOCALS:3
-                        IF TALENT:대상:LOCAL == -1
-                            PRINTL [무식]
-                        ELSEIF TALENT:대상:LOCAL == 1
-                            PRINTL [지식]
-                        ELSE
-                            PRINTL 없음
-                        ENDIF
+                    ;-1 < 0 > 1 형 TALENT
+                    CASE 23,30,62,70
+                        STAT_DATA:0 = -1
+                        STAT_DATA:1 = 1
+                    ;0 > 1 > 2 형 TALENT
+                    CASE 25,26,72
+                        STAT_DATA:0 = 1
+                        STAT_DATA:1 = 2
                 ENDSELECT
+
+                ;ASK_M용 선택지 처리
+                LOCALS:3 '= TALENTNAME_EX(LOCAL, STAT_DATA:0) + LOCALS:3
+                LOCALS:4 '= TALENTNAME_EX(LOCAL, STAT_DATA:1) + LOCALS:4
+                IF TALENT:대상:LOCAL
+                    PRINTSL TALENTNAME_EX(LOCAL, TALENT:대상:LOCAL)
+                ELSE
+                    PRINTL [없음]
+                ENDIF
+
                 PRINTL 어떻게 변경할까요?
-                CALL ASK_M(LOCALS:1, 1, LOCALS:2, TALENT:대상:LOCAL != -1, LOCALS:3, TALENT:대상:LOCAL != 1, LOCALS:4, TALENT:대상:LOCAL != 0)
+                CALL ASK_M(LOCALS:1, 1, LOCALS:3, TALENT:대상:LOCAL != STAT_DATA:0, LOCALS:4, TALENT:대상:LOCAL != STAT_DATA:1, LOCALS:2, TALENT:대상:LOCAL != 0)
                 SELECTCASE RESULT
                     CASE 0 ;현상태 유지
                         CONTINUE
                     CASE 1 ;상단값으로 변경
-                        TALENT:대상:LOCAL = -1
+                        TALENT:대상:LOCAL = STAT_DATA:0
                     CASE 2 ;하단값으로 변경
-                        TALENT:대상:LOCAL = 1
+                        TALENT:대상:LOCAL = STAT_DATA:1
                     CASE 3 ;비활성화
                         TALENT:대상:LOCAL = 0
                 ENDSELECT
-            ;0 > 1 > 2 형 TALENT
-            ELSEIF GROUPMATCH(LOCAL, 25,26,72)
-                ;ASK_M용 선택지 처리
-                LOCALS:2 '= "(으)로 한다"
-                LOCALS:3 '= "(으)로 한다"
-                SELECTCASE LOCAL
-                    CASE 25 ;사랑
-                        LOCALS:2 '= "[연모]" + LOCALS:2
-                        LOCALS:3 '= "[사랑]" + LOCALS:3
-                        IF TALENT:대상:LOCAL == 1
-                            PRINTL [연모]
-                        ELSEIF TALENT:대상:LOCAL == 2
-                            PRINTL [사랑]
-                        ELSE
-                            PRINTL 없음
-                        ENDIF
-                    CASE 26 ;혼인                  
-                        LOCALS:2 '= "[혼인]" + LOCALS:2
-                        LOCALS:3 '= "[입양]" + LOCALS:3
-                        IF TALENT:대상:LOCAL == 1
-                            PRINTL [혼인]
-                        ELSEIF TALENT:대상:LOCAL == 2
-                            PRINTL [입양]
-                        ELSE
-                            PRINTL 없음
-                        ENDIF
-                    CASE 72 ;정신쇠약
-                        LOCALS:2 '= "[정신쇠약]" + LOCALS:2
-                        LOCALS:3 '= "[정신붕괴]" + LOCALS:3
-                        IF TALENT:대상:LOCAL == 1
-                            PRINTL [정신쇠약]
-                        ELSEIF TALENT:대상:LOCAL == 2
-                            PRINTL [정신붕괴]
-                        ELSE
-                            PRINTL 없음
-                        ENDIF
-                ENDSELECT
-                PRINTL 어떻게 변경할까요?
-                CALL ASK_M(LOCALS:1, 1, LOCALS:2, TALENT:대상:LOCAL != 1, LOCALS:3, TALENT:대상:LOCAL != 2, LOCALS:4, TALENT:대상:LOCAL != 0)
-                SELECTCASE RESULT
-                    CASE 0 ;현상태 유지
-                        CONTINUE
-                    CASE 1 ;상단값으로 변경
-                        TALENT:대상:LOCAL = 1
-                    CASE 2 ;하단값으로 변경
-                        TALENT:대상:LOCAL = 2
-                    CASE 3 ;비활성화
-                        TALENT:대상:LOCAL = 0
-                ENDSELECT
+            ;단순 on/off
             ELSE
                 PRINTFORML \@ TALENT:대상:LOCAL ? 활성화 # 비활성화 \@
                 PRINTL 현재 값을 변경합니까?
