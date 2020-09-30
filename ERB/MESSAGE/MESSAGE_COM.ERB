@@ -77,7 +77,7 @@ SELECTCASE NO:TARGET
         ENDIF
     CASE 52 ;나엔
         IF CFLAG:공포 < 200 && !TALENT:짜증 && !TALENT:정신쇠약
-            IF ITEM:ITEM_BIO(51) > 0 && !GETBIT(CFLAG:LOCAL:특수출력유무, 8) ;메이 이벤트
+            IF ITEM:ITEM_BIO(51) > 0 && !GETBIT(CFLAG:특수출력유무, 8) ;메이 이벤트
                 LOCAL = GETCHARA(51)
                 IF CFLAG:LOCAL:공포 < 200 && !TALENT:LOCAL:짜증 && !TALENT:LOCAL:정신쇠약
                     IF TALENT:TARGET:사랑 && TALENT:LOCAL:사랑 ;메이/나엔 모두 연모 이상, 원본에서는 연모만
