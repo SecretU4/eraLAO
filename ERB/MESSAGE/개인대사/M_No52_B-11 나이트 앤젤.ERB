@@ -35,7 +35,7 @@ PRINTFORMW 소란스러운 소리와 함께 두 사람이 서로 머리채를 �
 PRINTFORMW 「너 이거 하극상이야- 아니 오자마자 이러는게 어딨어? 미쳤어?」
 PRINTFORMW 「대장은 말넘심이라는 단어도 모르세요? 악- 이거 놓으세요 진짜!」
 PRINTFORMW 당신은 진땀을 빼며 겨우 둘을 떨어뜨리는데 성공했고 둘의 기분을 풀어주는데만 한시간을 보내고 말았다.
-CFLAG:etc2 = 1
+SETBIT CFLAG:LOCAL:특수출력유무, 8
 CASE "mayE2"
 PRINTFORMW 「와- 설마 여기서 존만한 대장을 볼 줄은 몰랐는데...」
 PRINTFORMW 방에 들어서자 나이트앤젤이 기묘한 표정으로 침대 위에 앉아 있는 메이를 보고 있었다.
@@ -57,7 +57,7 @@ PRINTFORMW 「뭐, 그렇게 된겁니다. 존만한 대장님?」
 PRINTFORMW 「너...」
 PRINTFORMW 「같은 처지끼리 잘 해보자고요?」
 PRINTFORMW 떨떠름한 표정을 짓는 메이와 달리 나이트앤젤은 미소를 지으며 당신의 팔에 팔짱을 낀채 메이를 쳐다보고 있었다.
-CFLAG:etc2 = 1
+SETBIT CFLAG:LOCAL:특수출력유무, 8
 CASE "audreyE1"
 PRINTFORMW 「이게 대체 뭐야!?」
 PRINTFORMW 소란스러운 소리에 당신은 무슨 일인가 떠들썩한 곳으로 발걸음을 옮겼다.
@@ -78,7 +78,7 @@ PRINTFORMW 소리를 치던 나이트앤젤이 문을 박차고는 자리에서 
 PRINTFORMW 그 모습을 보던 오드리가 고개를 갸우뚱거리며 당신에게 말을 걸었다.
 PRINTFORMW 「뭐가 마음에 안 들었던 걸까요? 나이트앤젤 양에겐 정말 잘 어울리는 수영복인데...」
 PRINTFORMW 당신은 복잡한 심정으로 오드리를 쳐다볼 뿐이었다.
-CFLAG:etc2 += 1
+CFLAG:이벤트카운트1 += 1
 CASE "audreyE2"
 PRINTFORMW 당신이 문을 열자 나이트앤젤이 한번 힐끗 쳐다보더니 다시 고개를 돌렸다.
 PRINTFORMW 아무래도 아까전에 있었던 소동 때문에 복잡한 심정이었나보다.
@@ -99,7 +99,7 @@ PRINTFORMW 「꼭이에요?」
 PRINTFORMW 그렇게 이야기하는 나이트앤젤이 당신의 품에 파고들어 얼굴을 묻고는 미소를 지었다.
 PRINTFORMW ...
 PRINTFORMW 그런 두 사람의 모습을 조금 열린 문 틈으로 오드리가 미소 지으며 쳐다보고 있었다.
-CFLAG:etc2 += 1
+CFLAG:이벤트카운트1 += 1
 CASE "Confession"
 PRINTFORMW 조금은 쌀쌀한 바람이 부는 저녁의 혼잡한 어느 거리.
 PRINTFORMW 당신과 나이트앤젤은 마치 연인처럼 즐겁게 웃으며 길을 걷고 있었다.

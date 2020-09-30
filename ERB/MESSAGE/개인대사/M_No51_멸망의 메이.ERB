@@ -84,7 +84,7 @@ SELECTCASE CSTR:GETCHARA(51):1
 		PRINTFORMW 「사랑해...사랑해...사령관...」
 		PRINTFORMW 「고마워...사랑해...그러니까...그러니까...」
 		PRINTFORMW 「앞으로도...이렇게 날...사랑해줘...」
-		CFLAG:etc1 = 1
+		SETBIT CFLAG:LOCAL:특수출력유무, 8
 	CASE "fWeak"
 		PRINTFORMW 메이를 만나기 위해 방문으로 들어서자
 		PRINTFORMW 당신의 존재를 알아챈 메이가 겁에 질려 몸을 떨기 시작했다.
@@ -96,13 +96,13 @@ SELECTCASE CSTR:GETCHARA(51):1
 		PRINTFORMW 그녀는 울고 있었다.
 		PRINTFORMW 뺨 아래로 눈물 자국이 보일 정도로 확실하게 울고 있었다.
 		PRINTFORMW 당신은 알 수 없는 미소를 지으며 메이에게 천천히 다가갔다.
-		CFLAG:etc5 = 1
+		SETBIT CFLAG:LOCAL:특수출력유무, 10
 	CASE "nWeak"
 		PRINTFORMW 「사령관...정말이지...구제불능이야...」
 		PRINTFORMW 「무슨 생각으로 또 이러는거야...?」
 		PRINTFORMW 「아니, 하긴...당신이라면 충분히 그럴거 같았어...」
 		PRINTFORMW 「...믿고 있었던 내가 바보지...」
-		CFLAG:etc3 ++
+		SETBIT CFLAG:LOCAL:특수출력유무, 12
 	CASE "Heal"
 		PRINTFORMW 「...또 온거야? 사령관?」
 		PRINTFORMW 꺼져가는 촛불마냥 생기를 잃어가는 메이의 눈빛을 본 당신은
@@ -115,7 +115,7 @@ SELECTCASE CSTR:GETCHARA(51):1
 		PRINTFORMW 「...흐극...윽...흐윽...흐아아아아아아앙-」
 		PRINTFORMW 잠시동안 말없이 서로를 끌어안고 그저 울뿐인 두 사람이었다.
 		PRINTFORMW 당신과 메이의 관계가 회복되었습니다.
-		CFLAG:etc6 = 1
+		SETBIT CFLAG:LOCAL:특수출력유무, 11
 	CASE "nHeal"
 		PRINTFORMW 「......」
 		PRINTFORMW 메이는 그저 아무 말 없이 당신을 쳐다볼 뿐이었다.
@@ -125,7 +125,7 @@ SELECTCASE CSTR:GETCHARA(51):1
 		PRINTFORMW 한숨을 내쉬며 당신을 쳐다보던 메이는 고개를 젓고선
 		PRINTFORMW 곧 평소와 같이 환한 미소로 당신을 맞이하였다.
 		PRINTFORMW 당신과 메이의 관계가 회복되었습니다...?
-		CFLAG:etc4 ++
+		SETBIT CFLAG:LOCAL:특수출력유무, 13
 	CASE "fBreak"
 		PRINTFORMW 당신이 메이를 만나기 위해 방문을 여는 순간
 		PRINTFORMW 가장 처음으로 눈에 보인 것은
@@ -141,7 +141,7 @@ SELECTCASE CSTR:GETCHARA(51):1
 		PRINTFORMW 당신이 새로 만들어낸 메이,
 		PRINTFORMW 당신이 새로 만들어낸 앨리스를 보며
 		PRINTFORMW 당신은 알 수 없는 미소를 지었다.
-		CFLAG:etc2 = 1
+		SETBIT CFLAG:LOCAL:특수출력유무, 9
 	CASE "Low"
 		A = RAND:4
 		IF A == 0
