@@ -8,3 +8,4 @@ TALENT,분류,2,;기동
 TALENT,체형,1,;보통체구
 TALENT,긍정도,1,;긍정적
 
+;CFLAG,특수출력유무 bit 8 = Awaken 출력여부 확인 (etc1)
