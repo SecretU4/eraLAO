@@ -38,93 +38,145 @@ IF GETBIT(FLAG:VER_UP_CHECK, 2) != 1
                 CASE 7 ;리제
                     ;etc1 = 엔딩3 카운트 (공포 299 초과, 혼인 아님 30일 이상)
                     CFLAG:LOCAL:엔딩조건카운트1 = CFLAG:LOCAL:30
-                    CFLAG:LOCAL:30 = 0
                     ;etc2 = 엔딩4 카운트 (짜증 상태, 혼인 아님 30일 이상)
                     CFLAG:LOCAL:엔딩조건카운트2 = CFLAG:LOCAL:31
-                    CFLAG:LOCAL:31 = 0
                 CASE 12 ;소완
                     ;etc1 = 엔딩3 카운트 (정신쇠약 상태, 방치 30일 이상)
-                    CFLAG:LOCAL:엔딩조건카운트1 = CFLAG:LOCAL:30
-                    CFLAG:LOCAL:30 = 0
+                    SIF CFLAG:LOCAL:30
+                        SETBIT CFLAG:LOCAL:특수출력조건, 3
+                    CFLAG:LOCAL:방치일수 = CFLAG:LOCAL:30
                     ;etc2 = 소완 요리 판매 카운트
+                    CFLAG:LOCAL:이벤트카운트1 = CFLAG:LOCAL:31
                 CASE 16 ;리리스
                 CASE 21 ;마리
                     ;etc1 = 엔딩3 카운트 (소년 줘팸횟수 20회)
                     EXP:LOCAL:학대COM경험 = CFLAG:LOCAL:30
-                    CFLAG:LOCAL:30 = 0
                 CASE 31 ;레오나
-                    ;etc1 = 공용이벤 출력유무
+                    ;etc1 = 공용이벤(EV1023, EV1024) 출력유무
+                    SIF CFLAG:LOCAL:30
+                        SETBIT CFLAG:LOCAL:특수출력유무, 21
                 CASE 32 ;발키리
-                    ;etc1 = 공용이벤 출력유무
+                    ;etc1 = 공용이벤(EV1023, EV1024) 출력유무
+                    SIF CFLAG:LOCAL:30
+                        SETBIT CFLAG:LOCAL:특수출력유무, 21
                 CASE 51 ;메이
                     ;etc1 = LOVE 취득대사 유무
+                    SIF CFLAG:LOCAL:30
+                        SETBIT CFLAG:LOCAL:특수출력유무, 8
                     ;etc2 = Break 취득대사 유무
+                    SIF CFLAG:LOCAL:31
+                        SETBIT CFLAG:LOCAL:특수출력유무, 9
                     ;etc3 = 쇠약 획득수
+                    SIF CFLAG:LOCAL:32
+                        SETBIT CFLAG:LOCAL:특수출력유무, 12
+                    EXP:LOCAL:쇠약획득경험 = CFLAG:LOCAL:32
                     ;etc4 = 쇠약 소멸수
+                    SIF CFLAG:LOCAL:33
+                        SETBIT CFLAG:LOCAL:특수출력유무, 13
+                    EXP:LOCAL:쇠약소멸경험 = CFLAG:LOCAL:33
                     ;etc5 = fWeak 출력유무
+                    SIF CFLAG:LOCAL:34
+                        SETBIT CFLAG:LOCAL:특수출력유무, 10
                     ;etc6 = Heal 출력유무
+                    SIF CFLAG:LOCAL:35
+                        SETBIT CFLAG:LOCAL:특수출력유무, 11
                 CASE 52 ;나앤
-                    ;1:메이 이벤트 2:오드리 이벤트
+                    ;etc1 = 메이 이벤트
+                    SIF CFLAG:LOCAL:30
+                        SETBIT CFLAG:LOCAL:특수출력유무, 8
+                    ;etc2 = 오드리 이벤트
+                    CFLAG:LOCAL:이벤트카운트1 = CFLAG:LOCAL:31
                 CASE 68 ;에밀리
                     ;etc1 = 고백 선택 가부
                     ;이식 당시 CFLAG:개별선택지 bit 1값으로 처리되었음
                     ;etc2 = 엔딩4 카운트 (사랑 + 정신쇠약 5일)
                     CFLAG:LOCAL:엔딩조건카운트1 = CFLAG:LOCAL:31
-                    CFLAG:LOCAL:31 = 0
                 CASE 71 ;네오딤
                     ;etc1 = 스트레스 100상태 카운트 (엔딩 3 카운트, 5일 이상)
                     CFLAG:LOCAL:엔딩조건카운트1 = CFLAG:LOCAL:30
-                    CFLAG:LOCAL:30 = 0
                 CASE 73 ;팬텀
                     ;etc1 = 붕괴대사 Awaken
-                    ;이전버전까지 누락되어 있었으며, CFLAG:특수출력유무체크 bit 8 값으로 이관
+                    ;이전버전까지 누락되어 있었으며, CFLAG:특수출력유무 bit 8 값으로 이관
                     ;etc2 = 엔딩4 바이오구매 유무 (한번이라도 2명 이상일시 활성화, 이후 변동 없음.)
+                    SIF CFLAG:LOCAL:31
+                        SETBIT CFLAG:LOCAL:특수출력조건, 4
                     ;etc3 = 엔딩4 카운트 (혼인조건 만족 + 혼인 아님, etc2 비활성화 20일 이상)
                     CFLAG:LOCAL:엔딩조건카운트1 = CFLAG:LOCAL:32
-                    CFLAG:LOCAL:32 = 0
                 CASE 76 ;닥터
-                    ;etc1 = 성장이벤 카운트
                     ;etc2 = 성장이벤 출력유무
+                    IF !CFLAG:LOCAL:31
+                        IF CFLAG:LOCAL:30 > CFLAG:LOCAL:33
+                            ;etc1 = 성장이벤 카운트
+                            SETBIT CFLAG:LOCAL:특수출력조건, 22
+                        ELSEIF CFLAG:LOCAL:30 < CFLAG:LOCAL:33
+                            ;etc4 = 엔딩3 카운트 (캐릭터수 2명 초과, 혼인 + 보통체구 20일 이상 방치)
+                            SETBIT CFLAG:LOCAL:특수출력조건, 3
+                        ELSEIF CFLAG:LOCAL:30 != 0 && CFLAG:LOCAL:30 == CFLAG:LOCAL:33
+                            ;서로 같다면 편의상 성장이벤 우선 처리
+                            SETBIT CFLAG:LOCAL:특수출력조건, 22
+                        ENDIF
+                        CFLAG:LOCAL:방치일수 = MAX(CFLAG:LOCAL:30, CFLAG:LOCAL:33)
+                    ELSE ;성장이벤 이미 출력된 경우
+                        SETBIT CFLAG:LOCAL:특수출력유무, 22
+                        IF CFLAG:LOCAL:33
+                            SETBIT CFLAG:LOCAL:특수출력조건, 3
+                            CFLAG:LOCAL:방치일수 = CFLAG:LOCAL:33
+                        ENDIF
+                    ENDIF
                     ;etc3 = 장발이벤 출력유무
-                    ;etc4 = 엔딩3 카운트 (캐릭터수 2명 초과, 혼인 + 보통체구 20일 이상 방치)
-                    CFLAG:LOCAL:엔딩조건카운트1 = CFLAG:LOCAL:33
-                    CFLAG:LOCAL:33 = 0
+                    ;이전버전까지 출력유무가 누락되어 있었으며, CFLAG:특수출력유무 bit 21값으로 이관
                 CASE 89 ;세이렌
                 CASE 90 ;테티스
                     ;etc1 = 연모이상 꽁냥계 연애커맨드 카운트
                     ;이식 당시 EXP:연애COM경험2 으로 처리되었음
                 CASE 91 ;슬레이프니르
                     ;etc2 = 101 첫실행유무
+                    ;이식 당시 FIRSTTIME 함수로 처리되었음
                     ;etc3 = 가창경험
                     ;이식 당시 EXP:가창경험 으로 처리되었음
                     ;etc4 = 슈퍼스타 대사 출력유무
+                    ;이전버전까지 누락되어 있었으며, CFLAG:특수출력유무 bit 8 값으로 이관
                 CASE 106 ;오드리
-                    ;etc1 = 더치 이벤트일수
+                    ;etc1 = 더치 이벤트(EV1040)일수
+                    CFLAG:LOCAL:이벤트카운트1 = CFLAG:LOCAL:30
                 CASE 108 ;더치 걸
                     ;etc1 = 엔딩3 카운트 (짜증 + 호감도 500 미만 16일 이상)
                     CFLAG:LOCAL:엔딩조건카운트1 = CFLAG:LOCAL:30
-                    CFLAG:LOCAL:30 = 0
                 CASE 113 ;켈베로스
                 CASE 123 ;모모
                     ;etc1 = 붕괴대사 Awaken
-                    ;이전버전까지 누락되어 있었으며, CFLAG:특수출력유무체크 bit 8 값으로 이관
+                    ;이전버전까지 누락되어 있었으며, CFLAG:특수출력유무 bit 8 값으로 이관
                 CASE 126 ;아자젤
                     ;etc1 = 설교 횟수 카운트 (엔딩3 조건)
+                    EXP:LOCAL:고유COM경험 = CFLAG:LOCAL:30
                     ;etc2 = 줘팸 횟수 카운트 (엔딩3 조건)
                     EXP:LOCAL:학대COM경험 = CFLAG:LOCAL:31
-                    CFLAG:LOCAL:31 = 0
                 CASE 132 ;유미
-                    ;etc1 = 엔딩3 카운트 (의존증 아님, 혼인 방치 15일 이상)
-                    CFLAG:LOCAL:엔딩조건카운트1 = CFLAG:LOCAL:30
-                    CFLAG:LOCAL:30 = 0
-                    ;etc2 = 엔딩4 카운트 (의존증 아님, 정신붕괴 방치 15일 이상)
-                    CFLAG:LOCAL:엔딩조건카운트2 = CFLAG:LOCAL:31
-                    CFLAG:LOCAL:31 = 0
+                    IF CFLAG:LOCAL:30 > CFLAG:LOCAL:31
+                        ;etc1 = 엔딩3 카운트 (의존증 아님, 혼인 방치 15일 이상)
+                        SETBIT CFLAG:LOCAL:특수출력조건, 3
+                    ELSEIF CFLAG:LOCAL:30 < CFLAG:LOCAL:31
+                        ;etc2 = 엔딩4 카운트 (의존증 아님, 정신붕괴 방치 15일 이상)
+                        SETBIT CFLAG:LOCAL:특수출력조건, 4
+                    ELSEIF CFLAG:LOCAL:30 != 0 && CFLAG:LOCAL:30 == CFLAG:LOCAL:31
+                        ;서로 같다면 편의상 엔딩3 우선 처리
+                        SETBIT CFLAG:LOCAL:특수출력조건, 3
+                    ENDIF
+                    CFLAG:LOCAL:방치일수 = MAX(CFLAG:LOCAL:30, CFLAG:LOCAL:31)
                 CASE 138 ;베로니카
                     ;etc1 = 고해성사 횟수 카운트
-                    ;etc2 = 실종 일수
+                    EXP:LOCAL:고유COM경험 = CFLAG:LOCAL:30
+                    ;etc2 = 실종 일수 (사실상 카운트. 11일 이후로는 휴식 이벤트에서만 진행가능)
+                    TALENT:LOCAL:실종 = CFLAG:LOCAL:31
                     ;etc3 = 휴식이벤 이력 유무
+                    IF CFLAG:LOCAL:32
+                        SETBIT CFLAG:LOCAL:특수출력유무, 21
+                        SIF CFLAG:LOCAL:32 == 2
+                            SETBIT CFLAG:LOCAL:특수출력조건, 22
+                    ENDIF
             ENDSELECT
+            ;변환 후 etc값 초기화
+            VARSET CFLAG:LOCAL, 0, 30, 36
         NEXT
     ENDIF
     SETBIT FLAG:VER_UP_CHECK, 2
