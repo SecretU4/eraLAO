@@ -1,10 +1,9 @@
-﻿; 발마사지해주기
-@COM94
+﻿;볼비비기 ;16번 목덜미핥기 대응
+@COM208
 
 IF TALENT:사랑
     SOURCE:호감도 += 20
     SOURCE:스트레스 -= 5
-    SOURCE:공포 -= 1
 ELSE
     SOURCE:공포 += 10
     SOURCE:스트레스 += 20
@@ -16,12 +15,12 @@ SIF TALENT:사랑 ;연모 이상
 
 RETURN 1
 
-@COM94_MSG
-PRINTFORML 당신은 %CALLNAME:TARGET%에게 발을 마사지 해주겠다고 했다.
+@COM208_MSG
+PRINTFORML 당신은 %CALLNAME:TARGET%에게 볼을 비볐다.
 
-@COM_ABLE94
+@COM_ABLE208
 SIF !TFLAG:연애중여부
     RETURN 0
-SIF NO:TARGET != 108
+SIF NO:TARGET != 118
     RETURN 0
 RETURN 1

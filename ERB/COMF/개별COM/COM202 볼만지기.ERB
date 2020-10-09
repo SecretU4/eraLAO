@@ -1,10 +1,9 @@
-﻿; 배를만진다
-@COM13
+﻿; 볼만지기 ;14번 귀깨물기 대응
+@COM202
 
-IF CFLAG:호감도 > 499
+IF CFLAG:호감도 > 799
     SOURCE:호감도 += 10
     SOURCE:스트레스 -= 5
-    SOURCE:공포 -= 1
 ELSE
     SOURCE:공포 += 5
     SOURCE:스트레스 += 10
@@ -16,12 +15,12 @@ SIF TALENT:사랑 ;연모 이상
 
 RETURN 1
 
-@COM13_MSG
-PRINTFORML 당신은 %CALLNAME:TARGET%의 배를 주물럭 거렸다.
+@COM202_MSG
+PRINTFORML 당신은 %CALLNAME:TARGET%의 볼을 살짝 찔렀다.
 
-@COM_ABLE13
+@COM_ABLE202
 SIF !TFLAG:연애중여부
     RETURN 0
-SIF NO:TARGET == 108
+SIF NO:TARGET != 108
     RETURN 0
 RETURN 1

@@ -1,8 +1,8 @@
-﻿; 파후파후
-@COM18
+﻿; 이마맞대기 ;15번 키스 대응
+@COM203
 
-IF TALENT:사랑
-    SOURCE:호감도 += 20
+IF CFLAG:호감도 > 799
+    SOURCE:호감도 += 15
     SOURCE:스트레스 -= 5
     SOURCE:공포 -= 1
 ELSE
@@ -16,12 +16,12 @@ SIF TALENT:사랑 ;연모 이상
 
 RETURN 1
 
-@COM18_MSG
-PRINTFORML 당신은 %CALLNAME:TARGET%의 가슴에 얼굴을 묻었다.
+@COM203_MSG
+PRINTFORML 당신은 %CALLNAME:TARGET%의 이마에 당신의 이마를 댔다.
 
-@COM_ABLE18
+@COM_ABLE203
 SIF !TFLAG:연애중여부
     RETURN 0
-SIF NO:TARGET == 108
+SIF NO:TARGET != 108
     RETURN 0
 RETURN 1

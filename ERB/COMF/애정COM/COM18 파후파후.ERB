@@ -1,0 +1,25 @@
+﻿; 파후파후
+@COM18
+
+IF TALENT:사랑
+    SOURCE:호감도 += 20
+    SOURCE:스트레스 -= 5
+    SOURCE:공포 -= 1
+ELSE
+    SOURCE:공포 += 10
+    SOURCE:스트레스 += 20
+ENDIF
+
+EXP:연애COM경험1 ++
+SIF TALENT:사랑 ;연모 이상
+    EXP:연애COM경험2 ++
+
+RETURN 1
+
+@COM18_MSG
+PRINTFORML 당신은 %CALLNAME:TARGET%의 가슴에 얼굴을 묻었다.
+
+@COM_ABLE18
+SIF !TFLAG:연애중여부
+    RETURN 0
+RETURN 1

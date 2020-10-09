@@ -1,27 +1,25 @@
-﻿; 머리빗어주기
-@COM93
+﻿; 키스
+@COM15
 
-IF TALENT:사랑
-    SOURCE:호감도 += 20
+IF CFLAG:호감도 > 799
+    SOURCE:호감도 += 15
     SOURCE:스트레스 -= 5
+    SOURCE:공포 -= 1
 ELSE
     SOURCE:공포 += 10
     SOURCE:스트레스 += 20
 ENDIF
 
-RETURN 1
-
 EXP:연애COM경험1 ++
 SIF TALENT:사랑 ;연모 이상
     EXP:연애COM경험2 ++
 
-@COM93_MSG
-PRINTFORML 당신은 %CALLNAME:TARGET%에게 머리를 빗어주겠다고 했다.
-
-@COM_ABLE93
-SIF !TFLAG:연애중여부
-    RETURN 0
-SIF NO:TARGET != 108
-    RETURN 0
 RETURN 1
 
+@COM15_MSG
+PRINTFORML 당신은 %CALLNAME:TARGET%의 입술에 당신의 입술을 맞췄다.
+
+@COM_ABLE15
+SIF !TFLAG:연애중여부
+    RETURN 0
+RETURN 1

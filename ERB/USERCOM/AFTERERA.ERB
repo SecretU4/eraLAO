@@ -1,9 +1,8 @@
 ﻿;SYSTEM_CALL
 ;BEGIN AFTERTRAIN 이후 호출
 @EVENTEND
+CSTR:1 '= SET_MSG_CSTR(TARGET)
 
-CSTR:1 = 
-CALL SET_MSG_CSTR(TARGET)
 REPEAT 10
     TRYCALLFORM M_No{NO:TARGET}_TRAIN_END
     IF RESULT == 0
@@ -133,8 +132,14 @@ RETURN 0
 @GET_MindBreak(ARG)
 
 IF !TALENT:ARG:정신쇠약 != 2 && CFLAG:ARG:공포 > 799
-    SIF NO:ARG == 68 && TALENT:ARG:사랑 == 2;에밀리는 사랑이면 제외
-        RETURN 0
+    SELECTCASE NO:ARG
+        CASE 68
+            SIF TALENT:ARG:사랑 == 2;에밀리는 사랑이면 제외
+                RETURN 0
+        CASE 118
+            SIF !TALENT:ARG:사랑 ;LRL은 연모 없으면 제외
+                RETURN 0
+    ENDSELECT
     TALENT:ARG:정신쇠약 = 2
     CFLAG:ARG:호감도 = 0
     CFLAG:ARG:스트레스 = 0

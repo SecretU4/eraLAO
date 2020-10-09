@@ -109,13 +109,7 @@ CALL ENDING(TARGET)
 REAL_NUM = NO:ARG
 
 TARGET = ARG
-CSTR:ARG:1 = 
-CALL SET_MSG_CSTR(ARG)
-
-IF REAL_NUM == 68
-    SIF TALENT:ARG:정신쇠약 == 1 && TALENT:ARG:사랑 == 2
-        CSTR:ARG:1 = Weak2
-ENDIF
+CSTR:ARG:1 '= SET_MSG_CSTR(ARG)
 
 SELECTCASE ARGS
     CASE "판매"
@@ -239,6 +233,16 @@ FOR 주회, 1, CHARANUM
             ELSEIF CFLAG:주회:엔딩조건카운트1 > 10
                 PRINTL 더치 걸의 상태가 어딘가 이상하다.
                 PRINTW 이대로 두면 돌이킬 수 없는 일이 벌어질 것 같다.
+            ENDIF
+        CASE 118 ;LRL
+            IF GETBIT(CFLAG:주회:특수출력조건, 3)
+                SELECTCASE CFLAG:주회:방치일수
+                    CASE 3
+                        PRINTL 평소처럼 힘없이 쓰러져 있는 LRL
+                        PRINTW 그런 LRL을 보며 당신은 오늘따라 무언가 불길한 느낌을 받았다.
+                    CASE 5
+                        SETBIT CFLAG:MASTER:엔딩플래그, 27
+                ENDSELECT
             ENDIF
         CASE 132 ;유미
             IF GETBIT(CFLAG:주회:특수출력조건, 3) ;etc1 = 유미 엔딩 3 카운트
@@ -435,6 +439,9 @@ FOR 비트값, 1, 64
             CASE 26 ;테티스 사이드엔딩(번호 임의설정)
                 TARGET = GETCHARA(90)
                 CFLAG:TARGET:엔딩플래그 = 3
+            CASE 27 ;LRL (번호 임의설정)
+                TARGET = GETCHARA(118)
+                CFLAG:TARGET:엔딩플래그 = 3
             CASEELSE
                 THROW 미확인 엔딩 번호 {비트값}
         ENDSELECT
@@ -456,9 +463,11 @@ RETURN -1
 ;============================================================================================
 @ENDING_CHARA_Goodbye
 
-IF GROUPMATCH(NO:TARGET, 7,68,123,126)
+IF GROUPMATCH(NO:TARGET, 7,68,118,123,126)
     CALL Goodbye_CHARA(TARGET, 4)
     TARGET = 0
+ELSE
+    THROW 상정하지 않은 엔딩시 강제이별 대상 %CALLNAME:TARGET%, ENDING{CFLAG:TARGET:엔딩플래그}
 ENDIF
 ;============================================================================================
 ;함수명: Ending_Result
@@ -548,6 +557,9 @@ SELECTCASE NO:TARGET
     CASE 108 ;더치걸
         SIF CFLAG:엔딩플래그 == 3
             LOCAL = 1 ;exc = 1
+    CASE 118 ;LRL
+        SIF GROUPMATCH(CFLAG:엔딩플래그, 2,3)
+            LOCAL = 3
     CASE 123 ;모모
         IF CFLAG:엔딩플래그 == 1
             그림번호 = 7

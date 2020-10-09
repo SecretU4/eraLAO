@@ -1,8 +1,8 @@
-﻿; 키스
-@COM15
+﻿; 발마사지해주기 ;18번 파후파후 대응
+@COM205
 
-IF CFLAG:호감도 > 799
-    SOURCE:호감도 += 15
+IF TALENT:사랑
+    SOURCE:호감도 += 20
     SOURCE:스트레스 -= 5
     SOURCE:공포 -= 1
 ELSE
@@ -16,12 +16,12 @@ SIF TALENT:사랑 ;연모 이상
 
 RETURN 1
 
-@COM15_MSG
-PRINTFORML 당신은 %CALLNAME:TARGET%의 입술에 당신의 입술을 맞췄다.
+@COM205_MSG
+PRINTFORML 당신은 %CALLNAME:TARGET%에게 발을 마사지 해주겠다고 했다.
 
-@COM_ABLE15
+@COM_ABLE205
 SIF !TFLAG:연애중여부
     RETURN 0
-SIF NO:TARGET == 108
+SIF NO:TARGET != 108
     RETURN 0
 RETURN 1

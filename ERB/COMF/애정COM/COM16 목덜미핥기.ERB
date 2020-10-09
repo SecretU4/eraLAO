@@ -1,10 +1,9 @@
-﻿; 이마맞대기
-@COM92
+﻿; 목덜미핥기
+@COM16
 
-IF CFLAG:호감도 > 799
-    SOURCE:호감도 += 15
+IF TALENT:사랑
+    SOURCE:호감도 += 20
     SOURCE:스트레스 -= 5
-    SOURCE:공포 -= 1
 ELSE
     SOURCE:공포 += 10
     SOURCE:스트레스 += 20
@@ -16,12 +15,10 @@ SIF TALENT:사랑 ;연모 이상
 
 RETURN 1
 
-@COM92_MSG
-PRINTFORML 당신은 %CALLNAME:TARGET%의 이마에 당신의 이마를 댔다.
+@COM16_MSG
+PRINTFORML 당신은 %CALLNAME:TARGET%의 목에 혀를 기었다.
 
-@COM_ABLE92
+@COM_ABLE16
 SIF !TFLAG:연애중여부
-    RETURN 0
-SIF NO:TARGET != 108
     RETURN 0
 RETURN 1

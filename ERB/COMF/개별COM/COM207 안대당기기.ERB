@@ -1,9 +1,10 @@
-﻿; 목덜미핥기
-@COM16
+﻿;안대당기기 ;15번 키스 대응
+@COM207
 
-IF TALENT:사랑
-    SOURCE:호감도 += 20
+IF CFLAG:호감도 > 799
+    SOURCE:호감도 += 15
     SOURCE:스트레스 -= 5
+    SOURCE:공포 -= 1
 ELSE
     SOURCE:공포 += 10
     SOURCE:스트레스 += 20
@@ -15,12 +16,12 @@ SIF TALENT:사랑 ;연모 이상
 
 RETURN 1
 
-@COM16_MSG
-PRINTFORML 당신은 %CALLNAME:TARGET%의 목에 혀를 기었다.
+@COM207_MSG
+PRINTFORML 당신은 %CALLNAME:TARGET%의 안대를 잡아당겼다.
 
-@COM_ABLE16
+@COM_ABLE207
 SIF !TFLAG:연애중여부
     RETURN 0
-SIF NO:TARGET == 108
+SIF NO:TARGET != 118
     RETURN 0
 RETURN 1

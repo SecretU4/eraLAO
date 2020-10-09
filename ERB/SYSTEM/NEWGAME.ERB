@@ -26,15 +26,7 @@ CALL MESSAGE_OPENING
 CALL COMMANDER_MAKING
 
 ;게임 시작시 변수 데이터 처리
-CALL ADD_ALL_CHARA
-CALL UPDATE_STOCK
-
-;약혼반지는 하나만
-CALL SET_EX_ITEM_SALES(1, 1)
-
-CALL SET_ITEM_SALES(2, 50, 20)
-CALL SET_EX_ITEM_SALES(50, 60)
-CALL SET_EX_ITEM_SALES(200, 205)
+CALL SET_DEFAULT_VARS
 
 ;보너스 퀴즈
 PRINTL 스타트 퀴즈가 있습니다.
@@ -230,3 +222,20 @@ ELSEIF GROUPMATCH(RESULTS, "복","규동","아이샤","오렌지","에이드","�
 ELSE
 	CALLNAME:MASTER = %RESULTS%
 ENDIF
+
+;===========================================================
+;함수명:SET_DEFAULT_VARS
+;기본 변수 설정
+;===========================================================
+@SET_DEFAULT_VARS
+
+CALL ADD_ALL_CHARA
+CALL SET_BIO_INTRODUCTION
+CALL UPDATE_STOCK
+
+;약혼반지는 하나만
+CALL SET_EX_ITEM_SALES(1, 1)
+
+CALL SET_ITEM_SALES(2, 50, 20)
+CALL SET_EX_ITEM_SALES(50, 60)
+CALL SET_EX_ITEM_SALES(200, 203)

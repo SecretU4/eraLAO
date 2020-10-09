@@ -5,34 +5,59 @@
 ;ARG = 인게임 캐릭터번호
 ;----------------------------------------------
 @SET_MSG_CSTR(ARG)
+#FUNCTIONS
+#DIMS LINES
 
 IF TALENT:ARG:백치
-    CSTR:ARG:1 += "regress"
+    LINES '= "regress"
 ELSEIF TALENT:ARG:정신쇠약 == 2
-    CSTR:ARG:1 += "Break"
+    LINES '= "Break"
 ELSEIF TALENT:ARG:정신쇠약 == 1
-    CSTR:ARG:1 += "Weak"
+    LINES '= "Weak"
 ELSEIF TALENT:ARG:혼인
-    CSTR:ARG:1 += "Marryed"
+    LINES '= "Marryed"
 ELSEIF TALENT:ARG:사랑 == 2
-    CSTR:ARG:1 += "Love"
+    LINES '= "Love"
 ELSEIF TALENT:ARG:혼인 == 1 || TALENT:ARG:사랑
-    CSTR:ARG:1 += "Affection"
+    LINES '= "Affection"
 ELSEIF CFLAG:ARG:공포 > 199
-    CSTR:ARG:1 += "Fear"
+    LINES '= "Fear"
 ELSEIF TALENT:ARG:짜증
-    CSTR:ARG:1 += "Annoyed"
+    LINES '= "Annoyed"
 ELSEIF CFLAG:ARG:호감도 > 499
-    CSTR:ARG:1 += "High"
+    LINES '= "High"
 ELSEIF CFLAG:ARG:호감도 < 500
-    CSTR:ARG:1 += "Low"
+    LINES '= "Low"
 ELSE
-    CSTR:ARG:1 += 
+    LINES '= 
 ENDIF
 
-SIF FLAG:히든메시지
-    CSTR:ARG:1 '= "Hidden"
+;개별 캐릭터 중 대부분의 경우 포함하게 되어있는 특수태그 입력
+SELECTCASE NO:ARG
+    CASE 7 ;리제
+        SIF FLAG:히든메시지
+            LINES '= "Hidden"
+    CASE 68 ;에밀리
+        IF TALENT:ARG:사랑 == 2
+            IF TALENT:ARG:정신쇠약 == 1 ;범용 LINES = Weak
+                LINES '= "Weak2"
+            ELSEIF CFLAG:ARG:공포 > 199
+                LINES '= "Fear2"
+            ELSEIF TALENT:ARG:짜증
+                LINES '= "Annoyed2"
+            ENDIF
+        ENDIF
+    CASE 118 ;LRL
+        IF TALENT:ARG:사랑 ;원본은 연모만
+            IF TALENT:ARG:정신쇠약 == 1
+                LINES '= "Weak2"
+            ELSEIF CFLAG:ARG:공포 > 199
+                LINES '= "Fear2"
+            ENDIF
+        ENDIF
+ENDSELECT
 
+RETURNF LINES
 ;================================================
 ;함수명: EVENTTRAIN
 ;SYSTEM_CALL
@@ -44,7 +69,7 @@ SIF FLAG:히든메시지
 CSTR:1 = 
 LOCAL = 0
 
-CALL SET_MSG_CSTR(TARGET)
+CSTR:1 '= SET_MSG_CSTR(TARGET)
 
 SIF !CFLAG:조교여부 ;첫조교시
     CSTR:1 = First
@@ -98,16 +123,6 @@ SELECTCASE NO:TARGET
                     ENDSELECT
                 ENDIF
             ENDIF
-        ENDIF
-    CASE 68 ;에밀리
-        IF TALENT:정신쇠약 == 1 && TALENT:사랑 == 2
-            CSTR:1 = Weak2
-        ELSEIF CFLAG:공포 > 199 && TALENT:사랑 == 2
-            CSTR:1 = Fear2
-        ELSEIF TALENT:혼인 == 1 || TALENT:사랑 == 2
-            CSTR:1 = Love
-        ELSEIF TALENT:짜증 && TALENT:사랑 == 2
-            CSTR:1 = Annoyed2
         ENDIF
     CASE 73 ;팬텀
         IF TALENT:정신쇠약 == 2 && !GETBIT(CFLAG:특수출력유무, 8)
@@ -222,12 +237,9 @@ REND
 그림번호 = -1
 꼬릿말 = 
 
-CSTR:1 = 
-
+CSTR:1 '= SET_MSG_CSTR(TARGET)
 SIF FIRSTTIME(SELECTCOM)
-    CSTR:1 = First/
-
-CALL SET_MSG_CSTR(TARGET)
+    CSTR:1 '= "First/" + CSTR:1
 
 DEBUGPRINTFORML 스트레스 {SOURCE:스트레스} 호감도 {SOURCE:호감도}
 
@@ -278,16 +290,6 @@ SELECTCASE NO:TARGET
             ELSE
                 CSTR:1 += "/Nboy"
             ENDIF
-        ENDIF
-    CASE 68
-        IF TALENT:정신쇠약 == 1 && TALENT:사랑 == 2
-            CSTR:1 = Weak2
-        ELSEIF CFLAG:공포 > 199 && TALENT:사랑 == 2
-            CSTR:1 = Fear2
-        ELSEIF TALENT:혼인 == 1 || TALENT:사랑 == 2
-            CSTR:1 = Love
-        ELSEIF TALENT:짜증 && TALENT:사랑 == 2
-            CSTR:1 = Annoyed2
         ENDIF
     CASE 76 ;닥터
         IF GROUPMATCH(SELECTCOM, 2,3,12)
@@ -347,7 +349,7 @@ REPEAT 10
             BREAK
         ENDIF
     CATCH
-        TRYCALLFORM M_No{NO:TARGET}_COM{COM_ALTER_SELECT_Rev(SELECTCOM)}
+        TRYCALLFORM M_No{NO:TARGET}_COM{COM_ALTER_SELECT_Rev(TARGET, SELECTCOM)}
         IF RESULT == 0 ;해당 구문을 찾을 수 없을때
             CSTR:1 '= Alternative_CSTR(TARGET, COUNT)
         ELSE
@@ -423,15 +425,27 @@ FOR LOCAL, 0, RESULT
             LOCALS += "/"
         ENDIF
 
-        IF STRFINDU(SELECTED_CSTR:LOCAL, "Love") != -1
-            DEBUGPRINTL 태그 변경 Love > Affection
-            LOCALS += "Affection"
-        ELSEIF STRFINDU(SELECTED_CSTR:LOCAL, "Marryed") != -1
-            DEBUGPRINTL 태그 변경 Marryed > Love
-            LOCALS += "Love"
-        ELSE
-            LOCALS += SELECTED_CSTR:LOCAL
-        ENDIF
+        ;특정 태그별 치환 시도
+        ;순서에 따른 우선도가 적용됨.
+        SELECTCASE SELECTED_CSTR:LOCAL
+            CASE "Love"
+                DEBUGPRINTL 태그 변경 Love > Affection
+                LOCALS += "Affection"
+            CASE "Marryed"
+                DEBUGPRINTL 태그 변경 Marryed > Love
+                LOCALS += "Love"
+            CASE "Weak2"
+                DEBUGPRINTL 태그변경 Weak2 > Weak
+                LOCALS += "Weak"
+            CASE "Fear2"
+                DEBUGPRINTL 태그변경 Fear2 > Fear
+                LOCALS += "Fear"
+            CASE "Annoyed2"
+                DEBUGPRINTL 태그변경 Annoyed2 > Annoyed
+                LOCALS += "Annoyed"
+            CASEELSE
+                LOCALS += SELECTED_CSTR:LOCAL
+        ENDSELECT
     ENDIF
 NEXT
 DEBUGPRINTL 

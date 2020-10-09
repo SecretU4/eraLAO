@@ -1,10 +1,9 @@
-﻿; 안마부탁
-@COM90
+﻿; 귀에바람 ;14번 귀를깨문다 대응
+@COM206
 
-IF CFLAG:호감도 > 499
+IF CFLAG:호감도 > 799
     SOURCE:호감도 += 10
     SOURCE:스트레스 -= 5
-    SOURCE:공포 -= 1
 ELSE
     SOURCE:공포 += 5
     SOURCE:스트레스 += 10
@@ -16,12 +15,12 @@ SIF TALENT:사랑 ;연모 이상
 
 RETURN 1
 
-@COM90_MSG
-PRINTFORML 당신은 %CALLNAME:TARGET%에게 안마를 부탁했다.
+@COM206_MSG
+PRINTFORML 당신은 %CALLNAME:TARGET%의 귀에 바람을 불었다.
 
-@COM_ABLE90
+@COM_ABLE206
 SIF !TFLAG:연애중여부
     RETURN 0
-SIF NO:TARGET != 108
+SIF NO:TARGET != 118
     RETURN 0
 RETURN 1
