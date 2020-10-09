@@ -1,5 +1,5 @@
 ﻿; 머리빗어주기 ;16번 목덜미핥기 대응
-@COM93
+@COM204
 
 IF TALENT:사랑
     SOURCE:호감도 += 20
@@ -15,10 +15,10 @@ EXP:연애COM경험1 ++
 SIF TALENT:사랑 ;연모 이상
     EXP:연애COM경험2 ++
 
-@COM93_MSG
+@COM204_MSG
 PRINTFORML 당신은 %CALLNAME:TARGET%에게 머리를 빗어주겠다고 했다.
 
-@COM_ABLE93
+@COM_ABLE204
 SIF !TFLAG:연애중여부
     RETURN 0
 SIF NO:TARGET != 108
