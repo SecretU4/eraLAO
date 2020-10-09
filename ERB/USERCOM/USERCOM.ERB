@@ -4,11 +4,12 @@
 TFLAG:연애중여부 = 1
 FOR LOCAL, 0, 200
     CALL TOTAL_COMABLE(LOCAL)
-    IF !RESULT
+    SIF !RESULT
         CONTINUE
     ;개별 캐릭터의 특정 커맨드번호가 다른 경우
-    ELSEIF COM_ALTER_CHECK(TARGET, LOCAL)
-        PRINTBUTTONLC @"[{LOCAL, 3}] %COM_ALTER_NAME(LOCAL)%", COM_ALTER_CHECK(TARGET, LOCAL)
+    LOCAL:1 = COM_ALTER_CHECK(TARGET, LOCAL)
+    IF LOCAL:1 != LOCAL
+        PRINTBUTTONLC @"[{LOCAL, 3}] %COM_ALTER_NAME(LOCAL:1)%", LOCAL:1
         CONTINUE
     ENDIF
     ;일반적인 경우
@@ -67,8 +68,6 @@ SIF !STRLENS(TRAINNAME:ARG)
 
 ;개별커맨드 여부 처리
 LOCAL = COM_ALTER_CHECK(TARGET, ARG)
-SIF LOCAL
-    ARG = LOCAL
 
 TRYCALLFORM COM_ABLE{ARG}
 IF RESULT
@@ -147,7 +146,7 @@ ENDSELECT
 RETURNF -1
 
 ;ARG = 선택한 커맨드(SELECTCOM)
-;해당 커맨드의 어레인지가 있다면 해당 어레인지의 번호를 반환, 없다면 0 반환
+;해당 커맨드의 어레인지가 있다면 해당 어레인지의 번호를 반환, 없다면 ARG 반환
 @COM_ALTER_CHECK(C_ID, ARG)
 #FUNCTION
 #DIM C_ID ;인게임 캐릭터번호
@@ -156,13 +155,13 @@ FOR LOCAL, 201, 300 ;개별COM 범위
     SIF COM_ALTER_SELECT_Rev(C_ID, LOCAL) == ARG
         RETURNF LOCAL
 NEXT
-RETURNF 0
+RETURNF ARG
 
 ;ARG = 선택한 커맨드(SELECTCOM)
 ;해당 커맨드번호의 다른 어레인지가 있다면 해당 어레인지의 이름을 반환함
 @COM_ALTER_NAME(ARG)
 #FUNCTIONS
 
-REPLACE TALENTNAME:ARG, "_", " "
+REPLACE @"%TRAINNAME:ARG%", "_", " "
 
 RETURNF RESULTS
