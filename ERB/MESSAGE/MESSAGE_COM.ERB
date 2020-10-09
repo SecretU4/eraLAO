@@ -349,7 +349,7 @@ REPEAT 10
             BREAK
         ENDIF
     CATCH
-        TRYCALLFORM M_No{NO:TARGET}_COM{COM_ALTER_SELECT_Rev(SELECTCOM)}
+        TRYCALLFORM M_No{NO:TARGET}_COM{COM_ALTER_SELECT_Rev(TARGET, SELECTCOM)}
         IF RESULT == 0 ;해당 구문을 찾을 수 없을때
             CSTR:1 '= Alternative_CSTR(TARGET, COUNT)
         ELSE
