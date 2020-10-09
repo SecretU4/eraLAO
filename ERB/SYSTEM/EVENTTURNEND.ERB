@@ -311,6 +311,11 @@ SELECTCASE NO:ARG
         ELSE
             CFLAG:ARG:엔딩조건카운트1 = 0
         ENDIF
+    CASE 118 ;LRL
+        CLEARBIT CFLAG:ARG:특수출력조건, 3
+        IF !TALENT:ARG:사랑 && TALENT:ARG:정신쇠약 && ARG != TARGET ;LRL 엔딩 3 카운트(연모x, 쇠약 5일 방치)
+            SETBIT CFLAG:ARG:특수출력조건, 3
+        ENDIF
     CASE 132 ;유미
         CLEARBIT CFLAG:ARG:특수출력조건, 3
         CLEARBIT CFLAG:ARG:특수출력조건, 4
