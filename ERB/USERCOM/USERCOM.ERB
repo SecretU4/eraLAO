@@ -65,6 +65,7 @@ SIF TIME:2 >= TIMELIMIT
 SIF !STRLENS(TRAINNAME:ARG)
     RETURN 0
 
+;개별커맨드 여부 처리
 LOCAL = COM_ALTER_CHECK(TARGET, ARG)
 SIF LOCAL
     ARG = LOCAL
@@ -118,28 +119,28 @@ RETURN 선택지
 SELECTCASE NO:C_ID
     CASE 108 ;더치 걸
         SELECTCASE ARG
-            CASE 201
+            CASE 201 ;안마부탁
                 RETURNF 13
-            CASE 202
+            CASE 202 ;볼만지기
                 RETURNF 14
-            CASE 203
+            CASE 203 ;이마맞대기
                 RETURNF 15
-            CASE 204
+            CASE 204 ;머리빗어주기
                 RETURNF 16
-            CASE 205
+            CASE 205 ;발마사지
                 RETURNF 18
         ENDSELECT
     CASE 118 ;LRL
         SELECTCASE ARG
-            CASE 206
+            CASE 206 ;귀에바람
                 RETURNF 14
-            CASE 207
+            CASE 207 ;안대당기기
                 RETURNF 15
-            CASE 208
+            CASE 208 ;볼비비기
                 RETURNF 16
-            CASE 209
+            CASE 209 ;볼꼬집기
                 RETURNF 17
-            CASE 210
+            CASE 210 ;꿀밤
                 RETURNF 18
         ENDSELECT
 ENDSELECT
