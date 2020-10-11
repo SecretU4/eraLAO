@@ -211,18 +211,19 @@ SIF 선택이벤트번호 == -1
 SIF 선택이벤트번호 == -1
     선택이벤트번호 = TOINT(TEXTR(이벤트배열))
 
+DEBUGPRINTFORM 선택된 이벤트 : {선택이벤트번호}, 
+
 CALL SELECT_EVENT_CHARA(선택이벤트번호)
 
 선택캐릭터_A = RESULT:0
 선택캐릭터_B = RESULT:1
 
-DEBUGPRINTFORML 선택된 이벤트 : {선택이벤트번호}
-
 ;현 캐릭터수는 2명 미만인데 2명 이상이 필요한 경우 재산정
 WHILE 선택캐릭터_B == -1
     IF GROUPMATCH(선택이벤트번호, 201,202,1023,1024,1040)
         선택이벤트번호 = TOINT(TEXTR(이벤트배열))
-        DEBUGPRINTFORML 재선택된 이벤트 : {선택이벤트번호}
+
+        DEBUGPRINTFORM 재선택된 이벤트 : {선택이벤트번호}, 
 
         CALL SELECT_EVENT_CHARA(선택이벤트번호)
         선택캐릭터_A = RESULT:0
@@ -621,12 +622,14 @@ VARSET 랜덤대상
 ;1명째 대상 선정
 WHILE 선택캐릭터:0 == -1
     랜덤대상 = RAND:CHARANUM
+    DEBUGPRINTFORM 1명째 시도 : {랜덤대상} 
     SIF 랜덤대상 == 0
         CONTINUE
 
     IF GROUPMATCH(ARG, 0,1,2,3,4)
     ;보유여부 체크
     ELSEIF ITEM:(ITEM_BIO(NO:랜덤대상)) < 1
+        DEBUGPRINTL 미보유중이라 통과
         CONTINUE
     ENDIF
     SELECTCASE ARG
@@ -693,7 +696,7 @@ WHILE 선택캐릭터:0 == -1
             THROW 미상정된 이벤트번호 {ARG}
     ENDSELECT
 WEND
-
+DEBUGPRINTFORM 캐릭터 1번 : {선택캐릭터:0}, 
 ;2명째 대상 선정
 WHILE 선택캐릭터:1 == -1
     ;현재 보유중인 캐릭터가 1명뿐이라면 루프 불가능
@@ -701,14 +704,17 @@ WHILE 선택캐릭터:1 == -1
         BREAK
 
     랜덤대상:1 = RAND:CHARANUM
-
+    DEBUGPRINTFORM 2명째 시도 : {랜덤대상:1} 
     IF 랜덤대상:1 == 0
+        DEBUGPRINTL MASTER라 통과
         CONTINUE
     ;1명째와 동일하면 루프
     ELSEIF 랜덤대상:1 == 선택캐릭터:0
+        DEBUGPRINTL 1명째와 동일해서 통과
         CONTINUE
     ;보유여부 체크
-    ELSEIF ITEM:(ITEM_BIO(NO:랜덤대상)) < 1
+    ELSEIF ITEM:(ITEM_BIO(NO:(랜덤대상:1))) < 1
+        DEBUGPRINTL 미보유중이라 통과
         CONTINUE
     ENDIF
 
@@ -744,4 +750,5 @@ WHILE 선택캐릭터:1 == -1
             BREAK
     ENDSELECT
 WEND
+DEBUGPRINTFORML 캐릭터 2번 : {선택캐릭터:1}
 RETURN 선택캐릭터:0, 선택캐릭터:1
