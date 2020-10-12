@@ -10,7 +10,7 @@ CFLAG:ARG:호감도 += 5
 RETURN 1
 CASE 1
 PRINTFORMW 당신은 게임을 하다가 상대의 플레이에 화가 나 소리쳤다.
-PRINTFORMW 문득 인기척이 느껴져 뒤를 돌아보니 %CALLNAME:ARG%(이)가 서 있었다.
+PRINTFORMW 문득 인기척이 느껴져 뒤를 돌아보니 %ARG가% 서 있었다.
 PRINTFORMW 당신은 %CALLNAME:ARG% 보기가 멋쩍어서 웃었다.
 RETURN 1
 CASE 2
@@ -50,7 +50,7 @@ PRINTFORML .
 PRINTFORML !
 PRINTFORML 당신은 별 모양 달고나를 쪽쪽 빨며 손에 들린 잉어 모양 달고나를 내려다 보았다.
 PRINTFORML 홀로 먹기엔 너무 커다란 잉어였다.
-PRINTFORML 흐음, %CALLNAME:ARG%(와)과 같이 먹을까?
+PRINTFORML 흐음, %ARG와% 같이 먹을까?
 PRINTFORML 소지금-1000
 PRINTFORML 호감도+14
 PRINTFORMW 스트레스-7
@@ -64,7 +64,7 @@ PRINTFORMW 과감하게 얼굴을 씻어내리고 거울을 보니, 멋진 당�
 PRINTFORMW 전등불 아래 적당히 그늘지고 도드라진 얼굴에 취해, 당신은 손으로 턱날을 쓸어내리며 얼굴을 관찰한다.
 PRINTFORMW 내가 이렇게 잘 생겼나?
 PRINTFORMW 자아도취에 빠져있던 당신의 등 뒤로, 뭐하냐는 목소리가 들린다.
-PRINTFORMW 화들짝 놀라 뒤를 돌아본니, 열린 문 너머 %CALLNAME:ARG%(이)가 서 있었다.
+PRINTFORMW 화들짝 놀라 뒤를 돌아본니, 열린 문 너머 %ARG가% 서 있었다.
 PRINTFORMW 당신은 부끄러움에 얼굴이 화끈거린다.
 RETURN 1
 ENDSELECT
