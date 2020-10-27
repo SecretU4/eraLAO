@@ -5,6 +5,9 @@ SOURCE:공포 += 30
 SOURCE:스트레스 += 50
 SOURCE:소요시간 += 3
 
+SIF TCVAR:TARGET:외출중 && NO:TARGET == 52 ;나앤 외출중
+    SOURCE:스트레스 = 300
+
 EXP:학대COM경험 ++
 
 RETURN 1

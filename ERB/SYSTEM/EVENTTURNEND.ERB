@@ -142,6 +142,11 @@ ELSEIF TIME == 1 ;밤 > 낮
 ENDIF
 
 $NULL_TARGET
+
+;문제될 여지가 있는 TFLAG 미리 초기화
+TFLAG:시간스킵 = 0
+TFLAG:연애중스킵 = 0
+
 PRINTL
 IF FLAG:속박상태
     PRINTW ??이 되었습니다.

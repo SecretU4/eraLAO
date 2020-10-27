@@ -67,7 +67,7 @@ RETURNF LINES
 
 ;초기화
 CSTR:1 = 
-LOCAL = 0
+VARSET LOCAL
 
 CSTR:1 '= SET_MSG_CSTR(TARGET)
 
@@ -122,6 +122,21 @@ SELECTCASE NO:TARGET
                         CASEELSE
                     ENDSELECT
                 ENDIF
+            ELSEIF TALENT:사랑 && !RAND:10 ;원본에서는 연모만, 10% 확률 ;naEvent4
+                SELECTCASE RAND:4 ;4개 중 랜덤 선택. 추후 원본 경우의 수 추가시 조정 필요
+                    CASE 0
+                        CSTR:1 = NAE1
+                    CASE 1
+                        CSTR:1 = NAE2
+                    CASE 2 ;취함
+                        IF TIME == 1 ;밤일때만 적용
+                            TCVAR:취함 = 1
+                            CSTR:1 = Drunk
+                        ENDIF
+                    CASE 3 ;외출중
+                        TCVAR:외출중 = 1
+                        CSTR:1 = Date_1
+                ENDSELECT
             ENDIF
         ENDIF
     CASE 73 ;팬텀
@@ -291,6 +306,16 @@ SELECTCASE NO:TARGET
                 CSTR:1 += "/Nboy"
             ENDIF
         ENDIF
+    CASE 52 ;나앤
+        IF TCVAR:취함
+            IF STRFIND(CSTR:1, "First/")
+                CSTR:1 '= "First/Drunk"
+            ELSE
+                CSTR:1 '= "Drunk"
+            ENDIF
+        ELSEIF TCVAR:외출중
+            CSTR:1 '= "Date_1"
+        ENDIF
     CASE 76 ;닥터
         IF GROUPMATCH(SELECTCOM, 2,3,12)
             IF TALENT:사랑
@@ -301,10 +326,10 @@ SELECTCASE NO:TARGET
                 ENDIF
             ENDIF
         ENDIF
-    CASE 106
+    CASE 106 ;오드리
         SIF SELECTCOM == 2 && (CFLAG:이벤트카운트1 > 0 && CFLAG:이벤트카운트1 < 4)
             CSTR:1 = Cloth
-    CASE 108
+    CASE 108 ;더치 걸
         IF TALENT:혼인 == 2
             CSTR:1 = Marryed
         ELSEIF TALENT:혼인 == 1

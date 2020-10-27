@@ -17,6 +17,15 @@ SIF TARGET == 0
 
 CSTR:1 '= SET_MSG_CSTR(TARGET)
 
+;개별 캐릭터 특수
+SELECTCASE NO:TARGET
+    CASE 52 ;나앤
+        SIF TCVAR:취함
+            CSTR:1 = "Drunk"
+        SIF GETBIT(CFLAG:특수출력조건, 51) ;morningE ;취함 상태에서 첫키스
+            CSTR:1 '= "Drunk_F"
+ENDSELECT
+
 REPEAT 10
     TRYCALLFORM M_No{NO:TARGET}_EVENT_Morning
     IF RESULT == 0

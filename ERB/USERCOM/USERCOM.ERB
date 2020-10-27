@@ -60,6 +60,9 @@ CALLFORM COM{SELECTCOM}_MSG
 ;횟수 오버시 강제 탈출
 SIF TIME:2 >= TIMELIMIT
     BEGIN AFTERTRAIN
+;특수대사로 인한 스킵시 강제탈출
+SIF TFLAG:시간스킵 || TFLAG:연애중스킵
+    BEGIN AFTERTRAIN
 
 ;커맨드 실행 가능 여부 전역처리 함수
 @TOTAL_COMABLE(ARG)

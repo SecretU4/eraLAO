@@ -6,6 +6,18 @@ SIF TALENT:변태
 
 SOURCE:공포 += 20
 SOURCE:스트레스 += 50
+
+;취함 상태
+IF TCVAR:TARGET:취함
+    SOURCE:공포 = 0
+    SOURCE:스트레스 = 0
+    SOURCE:호감도 = 0
+;외출중 상태
+ELSEIF TCVAR:TARGET:외출중
+    SIF NO:TARGET == 52 ;나앤
+        SOURCE:스트레스 = 300
+ENDIF
+
 SOURCE:소요시간 += 3
 
 EXP:학대COM경험 ++
