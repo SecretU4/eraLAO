@@ -276,7 +276,7 @@ WHILE 1
         RETURN -1
     ELSEIF ARG == 1 ;약혼반지
         ;warning 경고문
-        IF GROUPMATCH(NO:TARGET, 51,52) && (TALENT:GETCHARA(51):정신쇠약 == 2 || TALENT:GETCHARA(52):정신쇠약 == 2 ;메이/나앤 etc7
+        IF GROUPMATCH(NO:TARGET, 51,52) && (TALENT:GETCHARA(51):정신쇠약 == 2 || TALENT:GETCHARA(52):정신쇠약 == 2) ;메이/나앤 etc7
             PRINTFORML 한번 반지를 주면 되돌릴 수 없습니다.
             PRINTFORMW 그래도 주시겠습니까?
             CALL ASK_YN()

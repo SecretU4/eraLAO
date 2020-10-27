@@ -68,10 +68,10 @@ ELSEIF TALENT:사랑 == 2
             SIF FLAG:현캐릭터수 >= 10 && !RAND:10 ;히든, 10% 확률
                 CFLAG:엔딩플래그 = 4
         CASE 51 ;메이
-            SIF TALENT:GETCHARA(52)정신쇠약 == 2 || TALENT:정신쇠약 == 2 ;etc7 =
+            SIF TALENT:GETCHARA(52):정신쇠약 == 2 || TALENT:정신쇠약 == 2 ;etc7 =
                 CFLAG:엔딩플래그 = 5
         CASE 52 ;나앤
-            SIF TALENT:GETCHARA(51)정신쇠약 == 2 || TALENT:정신쇠약 == 2 ;etc7 =
+            SIF TALENT:GETCHARA(51):정신쇠약 == 2 || TALENT:정신쇠약 == 2 ;etc7 =
                 CFLAG:엔딩플래그 = 3
         CASE 73 ;팬텀
             SIF EXP:출격경험 > 6
