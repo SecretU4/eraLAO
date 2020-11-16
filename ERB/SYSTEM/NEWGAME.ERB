@@ -152,6 +152,8 @@ REPEAT TOTAL_CHARANUM
         ;업데이트시 그림 처리용
         SIF SET_ILLUST_FLAG(COUNT)
             CFLAG:(GETCHARA(COUNT)):개별그림유무 = 1
+        ;상점 내 바이오로이드 소개문 업데이트용
+        TRYCALLFORM SHOP_INTRO_M_NO{COUNT}
         CONTINUE
     ENDIF
 
@@ -162,6 +164,8 @@ REPEAT TOTAL_CHARANUM
     ;그림 유무 처리
     SIF SET_ILLUST_FLAG(COUNT)
         CFLAG:(GETCHARA(COUNT)):개별그림유무 = 1
+    ;상점 내 바이오로이드 소개
+    TRYCALLFORM SHOP_INTRO_M_NO{COUNT}
 
     RESULT = 0
     TRYCALLFORM IS_M_No{COUNT}
