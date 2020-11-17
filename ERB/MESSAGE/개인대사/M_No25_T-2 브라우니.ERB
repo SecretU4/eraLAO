@@ -1,0 +1,3544 @@
+﻿@IS_M_No25
+RETURN 1
+
+@SHOP_INTRO_M_NO25
+CSTR:25:캐릭터소개 '= "브라우니는 스틸라인 부대의 보병 바이오로이드입니다.\n이들은 전장에서의 스트레스를 환기시키기 위해 낙천적인 성격으로 설계되었습니다.\n간혹 일부 정신적 트라우마를 가지게 된 브라우니가 사고를 일으키거나 도주를 시도하는 경우가 있으므로, 사용자 분께서는 관리에 주의해주시길 바랍니다."
+
+@M_No25_TRAIN_START_0
+PRINTFORMW 「헤헤, 드디어 합류했지 말입니다!」
+PRINTFORMW 마중 나온 당신을 보자, 브라우니는 웃음지으며 경례를 올렸다.
+PRINTFORMW 「승리!」
+PRINTFORMW 브라우니의 경례는 절도있으면서도 장난스러웠다.
+PRINTFORMW 「저는 T-2 브라우니라고 합니다.」
+PRINTFORMW 「새 지휘관님이심니까? 잘 부탁드립니다!」
+CFLAG:조교여부 = 1
+RETURN 1
+
+@M_No25_TRAIN_START_1
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Confession"
+PRINTFORMW 「저, 사령관님.」
+PRINTFORMW 「이런 말 해도 되는지 모르겠지만...」
+PRINTFORMW 브라우니는 평소의 쾌활한 모습과는 다르게 쭈뼛거리다 겨우 입을 열었다.
+PRINTFORMW 「저, 사령관님을 좋아하는 것 같슴다.」
+PRINTFORMW 브라우니의 갑작스러운 고백에 당신은 멈춰선다.
+PRINTFORMW 잠시 서로를 바라보는 당신과 브라우니.
+PRINTFORMW 처음에는 잘 짜여진 장난이 아닐까 의심했던 당신이었지만,
+PRINTFORMW 두 눈 가득한 브라우니의 진지한 마음에,
+PRINTFORMW 당신은 그녀에게 보답하듯 당신의 마음을 전해주었다.
+PRINTFORMW 「저, 정말임까? 사령관님도...」
+PRINTFORMW 브라우니는 마치 충격받은 것 마냥 비틀거렸고, 당신은 다급히 그녀에게 다가갔다.
+PRINTFORMW 「아님다! 별거 아님다.」
+PRINTFORMW 「그냥, 눈이 핑핑 돌아서 그렇슴다. 무슨 술 마신 것 같지 말입니다.」
+PRINTFORMW 진짜 술 취한 것처럼 비틀거리는 브라우니를,
+PRINTFORMW 당신은 꼭 껴안아서 중심을 잡아주었다.
+PRINTFORMW 「아...」
+PRINTFORMW 「사령관님의 품, 되게 따뜻하지 말입니다.」
+PRINTFORMW 브라우니가 두 손으로 당신을 안아주었고,
+PRINTFORMW 당신 또한 그녀를 꼭 안아주었다.
+TFLAG:고백함 = 1
+CASE "Low"
+PRINTDATAW
+DATAFORM 「승리! 부르셨슴니까?」
+DATALIST
+DATAFORM 방바닥에 누워 있던 브라우니는 당신을 보자마자 헐래벌떡 자리에서 일어났다.
+DATAFORM 「승리! 어, 어쩐일로 오셨슴까?」
+ENDLIST
+DATAFORM 「승리! 일병 브라우니임다!」
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATAFORM 「오늘은 무슨 일이심니까?」
+DATAFORM 「일병 브라우니임다. 부르셨슴까?」
+DATAFORM 「절 찾으셨슴까, 사령관님?」
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATAFORM 「헤헤, 전 여깄지 말입니다!」
+DATAFORM 「헤헤, 부르셨슴까?」
+DATAFORM 「일병 브라우니, 여깄슴다!」
+DATAFORM 「사령관님! 할 이야기가 많지 말입니다!」
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATAFORM 「헤헤, 사령관님.」
+DATAFORM 「헤헤, 부르셨슴까?」
+DATAFORM 「사령관님! 할 이야기가 많지 말입니다!」
+DATAFORM 「오늘은 무슨 일이심니까?」
+DATAFORM 「보고싶었지 말임니다!」
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATAFORM 「일병 브라우니!」
+DATAFORM 「찾으셨습니까, 사령관님?」
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATAFORM 「이, 일병 브라우니!」
+DATAFORM 「차, 찾으셨습니까, 사령관님?」
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「...」
+DATAFORM 브라우니는 인사 없이 당신을 물끄러미 바라보고 있었다.
+DATAFORM 마치 여기 왜 왔냐는 눈빛으로.
+ENDLIST
+DATALIST
+DATAFORM 「어, 오셨음까?」
+DATAFORM 브라우니는 단말기에서 눈을 떼지 않은 채로 건성으로 경례를 했다.
+ENDLIST
+DATALIST
+DATAFORM 「하아, 또 왔네.」
+DATAFORM 브라우니는 대놓고 혼잣말로 경멸을 내뿜었다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 「...!」
+DATAFORM 브라우니는 당신을 보기 무섭게 벽에 찰싹 달라붙어 중얼거렸다.
+DATAFORM 「전능하신아자젤님이시여영원한빛으로날보호하소서전능하신아자젤님이시여영원한빛으로날보호하... 히익?!」
+DATAFORM 당신은 브라우니에게 다가가 여기에 아자젤은 없다고 말해주었다.
+DATAFORM 「아, 아아...」
+ENDLIST
+DATALIST
+DATAFORM 「...」
+DATAFORM 「또 왔어...」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_TRAIN_END
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATAFORM 「살펴가시지 말입니다. 승리!」
+DATAFORM 「사령관님, 고생하셨슴다!」
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATAFORM 「고생하셨슴다! 헤헤.」
+DATAFORM 「편히 쉬시지 말입니다. 승리!」
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATAFORM 「다음에 또 오셨음 좋겠지 말입니다.」
+DATAFORM 「헤헤, 살펴가시지 말입니다!」
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「자기야, 잘 가.」
+DATAFORM 당신은 익숙치 않은 단어에 놀라 돌아보았다.
+DATAFORM 당신과 눈이 마주찬 브라우니는 새빨개진 얼굴로 손사래쳤다.
+DATAFORM 「아, 아무것도 아니지 말입니다! 살펴가시지 말입니다!」
+ENDLIST
+DATAFORM 「벌써 가심까? 아쉽다...」
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATAFORM 「살펴가시지 말입니다. 승리!」
+DATAFORM 「고생하셨습니다!」
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATAFORM 「...들어가시지 말입니다.」
+DATALIST
+DATAFORM 「고, 고생하셨습니다!」
+DATAFORM 브라우니는 부리나캐 당신의 앞에서 사라졌다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「가심니까?」
+DATAFORM 브라우니는 당신에게 고개로 인사한 뒤, 건성건성 경례를 올렸다.
+DATAFORM 「살펴가시지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 나가는 당신의 뒤로, 브라우니의 목소리가 들렸다.
+DATAFORM 「하, 저 새끼 드디어 가네.」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 「으, 으...」
+DATAFORM 브라우니는 배웅 대신 구석에 웅크려 떨고 있었다.
+ENDLIST
+DATALIST
+DATAFORM 「승...리...」
+DATAFORM 당신은 쥐어짜듯 나오는 경례를 받고 나서야 만족한 듯 고개를 끄덕이며 나갔다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM2
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니와 실없는 대화를 주고받았다.
+DATAFORM 「이렇게 넓은 곳에서 잘 수 있다니 꿈만 같습니다. 전 부대에서는 한 생활관 안에서 열댓명씩 잤지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 실없는 대화를 주고받았다.
+DATAFORM 「사령관님, 오늘 훈련 일정은 없는 겁니까?」
+DATAFORM 브라우니는 뭔가 불안한 듯 물었다 이내 다급히 말했다.
+DATAFORM 「아, 제가 훈련을 원한다는 건 아님다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 실없는 대화를 주고받았다.
+DATAFORM 「불침번을 서지 않아도 된다니, 그럼 늦잠도 잘 수 있는 겁니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 실없는 대화를 주고받았다.
+DATAFORM 「부식은 언제 나옵니까? 출출하지 말입니다.」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니와 실없는 대화를 주고받았다.
+DATAFORM 「전 노래부르는 걸 좋아함다. 사령관님은 어떻슴까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 실없는 대화를 주고받았다.
+DATAFORM 「사령관님, 출출하지 않으심까?」
+DATAFORM 「간단하게 뭐라도 드시지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 실없는 대화를 주고받았다.
+DATAFORM 「사령관님, 심심한데 게임이나 한 판 하지 않겠습니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 실없는 대화를 주고받았다.
+DATAFORM 「더 많은 부대원들이 왔음 좋겠슴다. 많으면 바글바글하고 좋지 않겠슴까?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니와 대화를 주고받았다.
+DATAFORM 「사령관님, 여긴 외출 외박 같은 거 없슴까? 사령관님이랑 나가서 놀고 싶지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 대화를 주고받았다.
+DATAFORM 「제 복장 말입니까? 」
+DATAFORM 「이 복장은 마리 대장님부터 시작해서 모든 부대원들이 똑같지 말입니다.」
+DATAFORM 「사령관님은 이런 스타일을 좋아하십니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 대화를 주고받았다.
+DATAFORM 「기름에 튀긴 양파가 좋다네~」
+DATAFORM 브라우니는 기분 좋은지 콧노래를 흥얼거리고 있었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 대화를 주고받았다.
+DATAFORM 「사령관님, 출출한데 스햄 하나 드시지 말입니다?」
+DATAFORM 당신이 무어라 말하기도 전에 브라우니는 스햄의 뚜껑을 땄다.
+DATAFORM 「생으로 먹어도 맛있지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 대화를 주고받았다.
+DATAFORM 「사령관님, 혹시 스틸라인 온라인 하십니까?」
+DATAFORM 「다음에 같이 듀오하시지 말입니다. 캐리해드리겠슴다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 대화를 주고받았다.
+DATAFORM 「사령관님, 제 춤 한 번 보시겠슴까?」
+DATAFORM 당신이 대답하기도 전에 브라우니는 일어나더니 양 손을 허리에 얹고 엉덩이를 흔들었다.
+DATAFORM 「사령관님도 따라해보시지 말입니다!」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니와 대화를 주고받았다.
+DATAFORM 「말투는 쉽게 바뀌는게 아님다.」
+DATAFORM 「하지만 사령관님이 원하신다면... 노력해볼께요.」
+DATAFORM 자신이 무슨 말을 했는지 알아차린 브라우니는 얼굴이 새빨개졌다.
+DATAFORM 「으아, 제가 미쳤나봅니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 대화를 주고받았다.
+DATAFORM 「사령관님, 아이는 몇 명이 좋을 것 같슴까?」
+DATAFORM 「전 사령관님이 원하시는만큼 낳을 자신이 있슴다!」
+DATAFORM 브라우니의 돌직구에 당신은 머리가 띵해졌다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 대화를 주고받았다.
+DATAFORM 「결혼을 했어도 스틸라인 온라인은 재밌지 말입니다.」
+DATAFORM 「물론, 사령관님이랑 있는게 더 재밌슴다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 대화를 주고받았다.
+DATAFORM 「그러고보니 저희 신혼 여행도 안 갔지 말임다.」
+DATAFORM 브라우니는 불만과 장난기를 양 볼에 가득 담아 부풀렸다.
+DATAFORM 「나중에 여유가 생기면, 꼭 신혼여행 가는 겁니다?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 대화를 주고받았다.
+DATAFORM 「가끔 사령관님을 보면 빨리 사회로 안 나간게 다행이라는 생각이 듭니다.」
+DATAFORM 「전역했었음, 사령관님을 만나지 못 했을 거 아님니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 대화를 주고받았다.
+DATAFORM 「결혼까지 했는데 각방을 쓰는건 너무한 것 같슴다.」
+DATAFORM 브라우니는 입을 툭 내만채 볼맨소리를 했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 대화를 주고받았다.
+DATAFORM 「전 사령관님이 너무 좋슴다.」
+DATAFORM 「그러니깐 더 자주 찾아오셨음 좋겠습니다.」
+DATAFORM 「아님, 제가 사령관님을 찾아가도 되겠슴까?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니와 실없는 대화를 주고받았다.
+DATAFORM 「하하, 정말 재밌는 이야기였습니다!」
+DATAFORM 당신은 브라우니의 기계적인 반응에 의아해했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 실없는 대화를 주고받았다.
+DATAFORM 「와아, 정말 흥미로운 이야기입니다.」
+DATAFORM 당신은 브라우니의 기계적인 반응이 불만족스러웠다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 실없는 대화를 주고받았다.
+DATAFORM 「그래서 다음 작전 날짜는 언제입니까?」
+DATAFORM 브라우니는 대화 내용에 큰 관심을 두고 있지 않는 것 같았다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니와 대화를 주고받았다.
+DATAFORM 「그, 그렇슴까?」
+DATAFORM 대답하는 브라우니의 눈은 불안하게 떨렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 당신의 이야기를 들러주었다.
+DATAFORM 당신이 너무 혼자만 떠든 것 같아 브라우니를 쳐다보자, 
+DATAFORM 「이, 일병 브라우니!」
+DATAFORM 브라우니는 화들짝 놀라며 관등성명을 읊었다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니와 실없는 대화를 주고받았다.
+DATAFORM 브라우니는 얼굴 한 가득 네 이야기는 노잼이다라고 어필하다 툭 말했다.
+DATAFORM 「사령관님, 저 이제 가봐도 됩니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 실없는 이야기들을 들려주었다.
+DATAFORM 하지만 브라우니는 당신의 말은 듣지도 않고 단말기 속 게임에만 열중하고 있었다.
+DATAFORM 브라우니가 한 말은「그렇슴까?」라는 추임새 뿐이었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 실없는 이야기들을 들려주었다.
+DATAFORM 브라우니는 대답 대신 고개를 끄덕일 뿐이었다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 브라우니와 대화를 주고받으려 다가가자, 브라우니는 경계하면서 물러났다.
+DATAFORM ...대화를 지속하기는 힘들어보인다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니와 실없는 대화를 주고받았다.
+DATAFORM 하지만 브라우니는 당신의 말은 듣지도 않고 단말기 액정에만 열중하고 있었다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM3
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 탱탱한 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+DATAFORM 「으앗! 이거 성군기 위반이지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 탱탱한 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+DATAFORM 「에엣? 잘못 들었슴다?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 탱탱한 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+DATAFORM 「으앗! 이거 성군기 위반이지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 탱탱한 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+DATAFORM 「에엣? 잘못 들었슴다?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 탱탱한 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+DATAFORM 「에~ 이거 성군기 위반이지 말입니다?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 탱탱한 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+DATAFORM 「히히, 제가 이래봬도 몸매는 자신있지 말입니다!」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 탱탱한 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+DATAFORM 「헤에, 알고 있었지 말입니다?」
+DATAFORM 브라우니는 음흄하게 웃으면서 칭찬받은 곳을 들이밀었다.
+DATAFORM 「보기만 하지 말고 한 번 만져보시지 말입니다?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 탱탱한 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+DATAFORM 「사령관님, 생각보다 음흉하지 말입니다?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 탱탱한 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+DATAFORM 「히히...」
+DATAFORM 브라우니는 당신의 하반신으로 눈을 내렸다.
+DATAFORM 「사령관님도 칭찬받을만하지 말입니다.」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 탱탱한 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+DATAFORM 「사령관님...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 탱탱한 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+DATAFORM 「...」
+DATAFORM 브라우니는 무표정하게 당신의 말을 듣고만 있었다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 탱탱한 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+DATAFORM 「읏...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 탱탱한 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+DATAFORM 브라우니는 당황한 표정으로 되물었다.
+DATAFORM 「잘못... 들었슴다?」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTFORMW 당신은 브라우니의 탱탱한 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+PRINTFORMW 「...」
+PRINTFORMW 브라우니는 대답 대신 경멸 어린 시선만 보낼 뿐이었다.
+CASE "Break"
+PRINTFORMW 당신은 브라우니의 탱탱한 %TEXTR("가슴을/엉덩이를")% 칭찬했다.
+PRINTFORMW 「...」
+PRINTFORMW ...심할 정도로 반응이 없었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM4
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 손에 살며시 손을 겹쳤다.
+DATAFORM 「엑, 저 손 안 씻었지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 손에 살며시 손을 겹쳤다.
+DATAFORM 「제 손에 뭐라도 묻었슴까, 사령관님?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 손에 살며시 손을 겹쳤다.
+DATAFORM 「사령관님은 손 페티시가 있으심까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 손에 살며시 손을 겹쳤다.
+DATAFORM 「제 손에 뭐라도 묻었슴까, 사령관님?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 손에 살며시 손을 겹쳤다.
+DATAFORM 「제 손이 좋으십니까, 사령관님?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 손에 살며시 손을 겹쳤다.
+DATAFORM 「헤헤, 사령관님은 제 손을 정말 좋아하시는 것 같슴다!」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 손에 살며시 손을 겹쳤다.
+DATAFORM 「제 손이 좋으심까? 그럼 마구 만져도 됨니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 손에 살며시 손을 겹쳤다.
+DATAFORM 브라우니는 당신의 손을 매만졌다.
+DATAFORM 「저랑 같이 있고나서부터 사령관님의 손이 더 거칠어진 것 같슴다.」
+DATAFORM 「일도 좋지만, 저랑 같이 노는 것도 중요하지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 손에 살며시 손을 겹쳤다.
+DATAFORM 「손만 만지실겁니까? 다른 곳도 만지시지 말입니다!」
+DATAFORM 당신은 브라우니가 당신의 손을 %TEXTR("가슴으로/배 아랫쪽으로")% 가져가려는 것을 보고 황급히 손을 뺀다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 손에 살며시 손을 겹쳤다.
+DATAFORM 브라우니는 당신의 손아귀에서 꼼지락거리더니 당신의 손에 깍지를 꼈다.
+DATAFORM 「헤헤...」
+DATAFORM 그러고선 브라우니는 당신을 보며 웃었다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 손에 살며시 손을 겹쳤다.
+DATAFORM 「일병. 브라우니!」
+DATAFORM 무어라 말하기도 전에, 브라우니가 빳빳하게 대답한다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 손에 살며시 손을 겹쳤다.
+DATAFORM 「아닙니다!」
+DATAFORM 무어라 말하기도 전에, 브라우니가 빳빳하게 대답한다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW 당신은 브라우니의 손에 살며시 손을 겹치려고 했다.
+PRINTFORMW 하지만 당신의 손이 브라우니의 손에 닿는 그 순간, 
+PRINTFORMW 「이, 일병. 브라우니!」
+PRINTFORMW 브라우니는 관등성명을 외치며 반사적으로 손을 빼 버린다.
+PRINTFORMW 「으앗! 죄,죄송함다!」
+CASE "Weak"
+PRINTFORMW 당신은 당신의 손을 피하는 브라우니의 손을 휘어잡았다.
+PRINTFORMW 브라우니는 매섭게 당신을 노려보고선 이내 당신의 손을 뿌리친다.
+CASE "Break"
+PRINTFORMW 당신은 브라우니의 손에 살며서 손을 겹쳤다.
+PRINTFORMW 브라우니는 당신의 손을 멍하게 바라볼 뿐, 반응이 없었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM5
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 머리를 쓰다듬었다.
+DATAFORM 「머, 머리는 항상 규정에 맞게 정돈하고 있지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 머리를 쓰다듬었다.
+DATAFORM 「저, 이러시는 이유를 여쭤봐도 되겠슴까?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 머리를 쓰다듬었다.
+DATAFORM 「머, 머리는 항상 규정에 맞게 정돈하고 있지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 머리를 쓰다듬었다.
+DATAFORM 「사령관님은 머리 만지는 걸 좋아하심니까?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 머리를 쓰다듬었다.
+DATAFORM 「이 머리가 마음에 드심니까? 다행임다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 머리를 쓰다듬었다.
+DATAFORM 「저, 사령관님?」
+DATAFORM 「헤어스타일... 바꿔도 되지 말입니까?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 머리를 쓰다듬었다.
+DATAFORM 「사령관님, 저도 쓰다듬어봐도 되지 말임니까?」
+DATAFORM 당신이 무어라 답하기도 전에 브라우니의 손이 당신의 머리를 쓰다듬었다.
+DATAFORM 「헤헤, 이런 기분이었지 말입니다?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 머리를 쓰다듬었다.
+DATAFORM 「저 머리 길러도 되지 말입니까?」
+DATAFORM 「대답은 됐슴다! 새로운 모습의 브라우니를 기다리시지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 머리를 쓰다듬었다.
+DATAFORM 「저, 더 쓰다듬어주심 안 됩니까?」
+DATAFORM 브라우니는 그렇게 말하며 머리를 들이밀었다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 머리를 쓰다듬었다.
+DATAFORM 「저, 이러시는 이유를 여쭤봐도 되겠슴까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 머리를 쓰다듬었다.
+DATAFORM 「일병 브라우니!」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW 당신은 브라우니의 머리를 쓰다듬었다.
+PRINTFORMW 「이, 일병 브라우니!」
+PRINTFORMW 브라우니는 그대로 굳어버렸다.
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 머리를 쓰다듬었다.
+DATAFORM 「마음대로 하시지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 머리를 쓰다듬었다.
+DATAFORM 「이번엔 또 무슨 바람이 불었습니까?」
+DATAFORM 브라우니는 이죽거렸다.
+DATAFORM 「다른 애들이 사령관에게 머리를 안 내주기라도 했습니까?」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 브라우니의 머리를 쓰다듬었다.
+PRINTFORMW 「...」
+PRINTFORMW 브라우니는 멍하니 당신을 올려다볼 뿐이었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM6
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 당신은 브라우니의 옆구리를 찔렀다.
+PRINTFORMW 「으힉?!」
+PRINTFORMW 깜짝 놀란 브라우니믜 몸이 공중으로 튀었다.
+PRINTFORMW 「사령관님? 뭐하시는겁니까?」
+CASE "High"
+PRINTFORMW 당신은 브라우니의 옆구리를 찔렀다.
+PRINTFORMW 「으힉?!」
+PRINTFORMW 깜짝 놀란 브라우니믜 몸이 공중으로 튀었다.
+PRINTFORMW 「사령관님? 뭐하시는겁니까?」
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 옆구리를 찔렀다.
+DATAFORM 「으힉?!」
+DATAFORM 깜짝 놀란 브라우니의 몸이 공중으로 튀었다.
+DATAFORM 「이런거 좋아하십니까, 사령관님?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 옆구리를 찔렀다.
+DATAFORM 「으하하핫!」
+DATAFORM 「사령관님, 간지러우니 그만 해 주시지 말입니다, 꺄하하핫!」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 옆구리를 찔렀다.
+DATAFORM 「으핫? 간지럽지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 옆구리를 찔렀다.
+DATAFORM 「이거, 신호입니까? 그럼...」
+DATAFORM 당신은 사악한 표정으로 다가오는 브라우니를 간신히 밀어냈다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 옆구리를 찔렀다.
+DATAFORM 「크흣, 으히히, 으히히힛, 꺄하하핫!」
+DATAFORM 연이은 간지럼 공세에 브라우니는 몸을 비틀며 웃었다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 옆구리를 찔렀다.
+DATAFORM 「일병, 브라우니!」
+DATAFORM 브라우니의 귀 뒤로 한 줄기 땀이 흘러나왔다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 옆구리를 찔렀다.
+DATAFORM 「히잇?!」
+DATAFORM 신음을 흘린 브라우니는 놀란 눈으로 당신을 쳐다보았다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 옆구리를 찔렀다.
+DATAFORM 「이, 일병, 브라우니!」
+DATAFORM 브라우니의 귀 뒤로 한 줄기 땀이 흘러나온다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 옆구리를 찔렀다.
+DATAFORM 「히잇?!」
+DATAFORM 신음을 흘린 브라우니는 놀란 눈으로 당신을 쳐다보았다.
+DATAFORM 「시, 시정하겠습니다!!」
+DATAFORM 당신이 무어라 말하기 전에, 브라우니는 머리를 바닥에 박았다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 옆구리를 찔렀다.
+DATAFORM 「으악!」
+DATAFORM 비명을 지른 브라우니는 곧바로 정색했다.
+DATAFORM 「사령관님, 어린애도 아니고 이런 장난이나 치십니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 옆구리를 찔렀다.
+DATAFORM 「아, 진짜...!」
+DATAFORM 진심 어린 짜증이 브라우니의 목소리에 묻어나왔다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 브라우니의 옆구리를 찔렀다.
+PRINTFORMW 「...!」
+PRINTFORMW 브라우니는 움찔할 뿐 대답이 없었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM7
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 당신은 브라우니에게 당신의 무릎에 누우라고 했다.
+PRINTFORMW 「엣?! 아닙니다! 제가 어떻게 감히...」
+CASE "High"
+PRINTFORMW 당신은 브라우니에게 당신의 무릎에 누우라고 했다.
+PRINTFORMW 「엣?! 아닙니다! 제가 어떻게 감히...」
+PRINTFORMW 말은 그러면서도 당신의 무릎을 흘끔거리며 보는 브라우니였다.
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 당신의 무릎에 누우라고 했다.
+DATAFORM 브라우니는 망설이다가 당신의 무릎에 누웠다.
+DATAFORM 「이, 이래도 되는지 모르겠슴다.」
+DATAFORM 그렇게 말하는 브라우니의 입꼬리는 올라가 있었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 당신의 무릎에 누우라고 했다.
+DATAFORM 「으으, 이런 건 익숙치 않지 말입니다.」
+DATAFORM 「그래도...편하긴 하지 말임다.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 당신의 무릎에 누우라고 했다.
+DATAFORM 브라우니는 기다렸다는 듯 당신의 무릎으로 뛰어들었다.
+DATAFORM 「히히, 사령관님의 허벅지는 언제나 딱딱하지 말입니다.」
+DATAFORM 「...세 번째 허벅지는 언제 딱딱해집니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 당신의 무릎에 누우라고 했다.
+DATAFORM 「베개가 안 딱딱했음 좋겠슴다.」
+DATAFORM 브라우니는 당신의 무릎에 눕더니 씩 웃었다.
+DATAFORM 「베개가 또 딱딱해져버렸지 말입니다. 풀어야겠슴다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 당신의 무릎에 누우라고 했다.
+DATAFORM 「히히히...」
+DATAFORM 당신의 무릎에 누운 브라우니는 당신을 올려다보며 생긋 웃었다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 브라우니에게 당신의 무릎에 누우라고 했다.
+PRINTFORMW 「아닙니다! 제가 어떻게 감히.」
+CASE "Fear"
+PRINTFORMW 당신은 브라우니에게 당신의 무릎에 누우라고 했다.
+PRINTFORMW 「아, 아닙니다! 제가 어떻게 감히...」
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 당신의 무릎에 누우라고 했다.
+DATAFORM 「제가 거기에 왜 누워야 합니까?」
+DATAFORM 「더럽고 냄새나지 않습니까.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 당신의 무릎에 누우라고 했다.
+DATAFORM 「누우면 뭐라도 사 주실겁니까? 그럼 눕겠습니다.」
+DATAFORM 협상은 결렬되었다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 브라우니에게 당신의 무릎에 누우라고 했다.
+PRINTFORMW 「...」
+PRINTFORMW 브라우니는 당신의 무릎을 힐끔 바라보고선 관심을 끊어버렸다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM8
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 당신은 브라우니에게 무릎베게를 부탁했다.
+PRINTFORMW 「에? 제 무릎에 눕고 싶으신겁니까?」
+PRINTFORMW 「안 됩니다. 사령관님 머리는 너무 무겁지 말입니다.」
+CASE "High"
+PRINTFORMW 당신은 브라우니에게 무릎베게를 부탁했다.
+PRINTFORMW 「에? 제 무릎에 눕고 싶으신겁니까?」
+PRINTFORMW 「안 됩니다. 사령관님 머리는 너무 무겁지 말입니다.」
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 무릎베게를 부탁했다.
+DATAFORM 「이리 오시지 말입니다.」
+DATAFORM 브라우니는 무릎을 내어주었다.
+DATAFORM 「사령관님 머리 말임다, 생각보다 가벼운 것 같지 말입니다?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 무릎베게를 부탁했다.
+DATAFORM 무릎을 내어준 브라우니는 무릎 위 누운 당신을 내려다 보았다.
+DATAFORM 「사령관님을 이렇게 보니, 이것도 색다르지 말입니다.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 무릎베게를 부탁했다.
+DATAFORM 브라우니는 무릎에 누운 당신의 머리카락을 꼬며 가지고 놀았다.
+DATAFORM 「히히~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 무릎베게를 부탁했다.
+DATAFORM 브라우니는 무릎에 누운 당신을 내려다보았다.
+DATAFORM 「제 무릎은 좀 편하십니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 무릎베게를 부탁했다.
+DATAFORM 무릎을 내어준 브라우니는 별안간 몸을 숙여 당신을 짓눌렀다.
+DATAFORM 「히힛, 방심은 금물이지 말입니다!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 브라우니에게 무릎베게를 부탁했다.
+PRINTFORMW 「아닙니다! 지금 제가 깨끗하지 않아서...」
+CASE "Fear"
+PRINTFORMW 당신은 브라우니에게 무릎베게를 부탁했다.
+PRINTFORMW 「아, 아닙니다! 지금 제가 깨끗하지 않아서...」
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 무릎베게를 부탁했다.
+DATAFORM 「...」
+DATAFORM 브라우니는 대답 대신 경멸 어린 시선을 보냈다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 무릎베게를 부탁했다.
+DATAFORM 「싫습니다. 사령관님.」
+DATAFORM 브라우니는 딱 잘라 거절했다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 브라우니에게 무릎베게를 부탁했다.
+PRINTFORMW 「...」
+PRINTFORMW 브라우니는 당신을 쳐다만 볼 뿐, 대답하지 않았다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM9
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 당신은 브라우니를 껴안았다.
+PRINTFORMW 「히익?!」
+PRINTFORMW 브라우니는 반사적으로 당신을 밀어내더니 안절부절했다.
+PRINTFORMW 「그, 죄송합니다! 놀라서 그만...」
+CASE "High"
+PRINTFORMW 당신은 브라우니를 껴안았다.
+PRINTFORMW 「히익?!」
+PRINTFORMW 브라우니는 반사적으로 당신을 밀어내더니 안절부절했다.
+PRINTFORMW 「그, 죄송합니다! 놀라서 그만...」
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니를 껴안았다.
+DATAFORM 「저, 이런 건 익숙치 않아 어찌해야할지 모르겠슴다.」
+DATAFORM 브라우니는 우물쭈물하다가 겨우 입을 열었다.
+DATAFORM 「그, 감사함다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니를 껴안았다.
+DATAFORM 「읏...」
+DATAFORM 「생각보다 편안하지 말입니다.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니를 껴안았다.
+DATAFORM 브라우니는 당신의 가슴팍에 얼굴을 박았다.
+DATAFORM 「쓰으읍. 하.」
+DATAFORM 「사령관님의 냄새는 묘하게 매력적이지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니를 껴안았다.
+DATAFORM 「이렇게 얼굴이 가까우니, 뭔가 더 해야할 것 같지 않슴까?」
+DATAFORM 브라우니의 눈이 부담스래 빛났다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니를 껴안았다.
+DATAFORM 브라우니는 갑자기 두 손으로 당신의 얼굴을 붙잡더니 마구 볼을 비볐다.
+DATAFORM 「으, 정말 참을 수 없지 말입니다!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 브라우니를 껴안았다.
+PRINTFORMW 「히익?!」
+PRINTFORMW 브라우니는 반사적으로 당신을 밀어내더니 안절부절했다.
+PRINTFORMW 「그, 죄송합니다!」
+CASE "Fear"
+PRINTFORMW 당신은 브라우니를 껴안았다.
+PRINTFORMW 「히익?!」
+PRINTFORMW 브라우니는 반사적으로 당신을 밀어내더니 안절부절했다.
+PRINTFORMW 「그, 그게...」
+PRINTFORMW 「시정하겠습니다!」
+PRINTFORMW 당신이 무어라 말하기도 전에, 브라우니의 머리는 땅에 박혀 있었다.
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니를 껴안았다.
+DATAFORM 「어딜 달라붙습니까?」
+DATAFORM 브라우니는 거칠게 당신을 밀어내며 쏘아붙었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니를 껴안았다.
+DATAFORM 「하, 이 새끼 또 왜 이래.」
+DATAFORM 브라우니는 한숨을 쉬며 당신을 밀어냈다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 브라우니를 껴안았다.
+PRINTFORMW 「...」
+PRINTFORMW 브라우니는 말 없이 당신을 밀어냈다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM10
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 당신은 브라우니의 뒤로 가 그녀를 껴안았다.
+PRINTFORMW 「히익?!」
+PRINTFORMW 「드, 등 뒤에서 뭐하시는 겁니까?」
+CASE "High"
+PRINTFORMW 당신은 브라우니의 뒤로 가 그녀를 껴안았다.
+PRINTFORMW 「히익?!」
+PRINTFORMW 「드, 등 뒤에서 뭐하시는 겁니까?」
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 뒤로 가 그녀를 껴안았다.
+DATAFORM 「흐읏?!」
+DATAFORM 브라우니는 놀란 듯 움찔했다.
+DATAFORM 「이, 이거 생각보다 좋은 것 같지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 뒤로 가 그녀를 껴안았다.
+DATAFORM 「읏, 사령관님?」
+DATAFORM 당신은 혹시 몰라 불편한지 물어보았다.
+DATAFORM 「아닙니다. 따뜻한 게 좋지 말입니다.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 뒤로 가 그녀를 껴안았다.
+DATAFORM 「헤헤...」
+DATAFORM 브라우니는 당신과 볼을 부비며 웃었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 뒤로 가 그녀를 껴안았다.
+DATAFORM 브라우니는 당신의 손을 매만졌다.
+DATAFORM 「저랑 같이 있고나서부터 사령관님의 손이 더 거칠어진 것 같슴다.」
+DATAFORM 「일도 좋지만, 저랑 같이 노는 것도 중요하지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 뒤로 가 그녀를 껴안았다.
+DATAFORM 브라우니는 눈을 감고 가만히 서 있었다.
+DATAFORM 「히히...」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 브라우니의 뒤로 가 그녀를 껴안았다.
+PRINTFORMW 「흡?!」
+PRINTFORMW 브라우니는 그대로 뻣뻣하게 굳어버렸다.
+CASE "Fear"
+PRINTFORMW 당신은 브라우니의 뒤로 가 그녀를 껴안았다.
+PRINTFORMW 「이, 일병 브라우니이?!」
+PRINTFORMW 브라우니는 그대로 뻣뻣하게 굳어버렸다.
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 뒤로 가 그녀를 껴안았다.
+DATAFORM 「뭐하시는 겁니까 지금?」
+DATAFORM 몸부림치는 브라우니의 머리 너머로 단말기 속 게임 화면이 보였다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 뒤로 가 그녀를 껴안았다.
+DATAFORM 그 순간, 브라우니가 당신을 업어쳤다.
+DATAFORM 「아이고, 죄송합니다. 사령관님.」
+DATAFORM 브라우니는 전혀 안 미안한 표정으로 쓰러진 당신을 내려다보았다.
+DATAFORM 「치한인 줄 알았지 뭡니까.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 뒤로 가 그녀를 껴안았다.
+DATAFORM 그 순간, 브라우니의 팔꿈치가 당신의 갈비뼈를 벼락 같이 때렸다.
+DATAFORM 「아이고, 거기 계셨슴까? 몰랐슴다.」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 뒤로 가 그녀를 껴안았다.
+DATAFORM 「...」
+DATAFORM 하지만 브라우니는 개의치 않고 게임에 열중하고 있었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 뒤로 가 그녀를 껴안았다.
+DATAFORM 「홀딩... 당했다.」
+DATAFORM 브라우니는 힘 없이 말하곤 씩 웃었다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM11
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 당신은 브라우니에게 팔베게를 해 주겠다고 말했다.
+PRINTFORMW 「아님니다! 제가 어떻게 감히...」
+CASE "High"
+PRINTFORMW 당신은 브라우니에게 팔베게를 해 주겠다고 말했다.
+PRINTFORMW 브라우니는 쭈뼛거리면서 당신 옆에 누웠다.
+PRINTFORMW 「제가 이래도 되는지 모르겠슴다.」
+PRINTFORMW 브라우니는 불편해 보였다.
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 팔베게를 해 주겠다고 말했다.
+DATAFORM 브라우니는 조심스래 당신 옆에 누웠다.
+DATAFORM 「이렇게 사령관님의 얼굴을 보는 것도 새롭지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 팔베게를 해 주겠다고 말했다.
+DATAFORM 브라우니는 조심스래 당신 옆에 누웠다.
+DATAFORM 「사령관님, 팔 안 불편하심까?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 팔베게를 해 주겠다고 말했다.
+DATAFORM 브라우니는 기꺼히 당신 옆에 누웠다.
+DATAFORM 「킁, 킁.」
+DATAFORM 「여기선 사령관의 냄새가 더 강렬하지 말입니다. 그래서 좋습니다.」
+DATAFORM 당신은 좀 더 자주 씻어야겠다고 생각했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 팔베게를 해 주겠다고 말했다.
+DATAFORM 브라우니는 기꺼히 당신 옆에 누웠다.
+DATAFORM 「이러고 있으니 뭔가... 하지도 않았는데 마무리한 것 같은 느낌이지 말입니다.」
+DATAFORM 「그런 의미에서, 한 번 하시지 말입니까?」
+DATAFORM 당신은 더 달라붙으려는 브라우니에게서 슬그머니 몸을 뺐다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 팔베게를 해 주겠다고 말했다.
+DATAFORM 브라우니는 기꺼히 당신 옆에 누워 찰싹 달라붙었다.
+DATAFORM 「이걸로는 부족함다. 더 강렬한 자극이 필요하지 말임다.」
+DATAFORM 「흐흐흐~」
+DATAFORM 거머리마냥 붙어서 당신 위로 기어오르려는 브라우니를, 당신은 기겁하며 밀어냈다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 브라우니에게 팔베게를 해 주겠다고 말했다.
+PRINTFORMW 「아닙니다! 제가 어떻게 감히 그럴 수 있겠습니까?」
+CASE "Fear"
+PRINTFORMW 당신은 브라우니에게 팔베게를 해 주겠다고 말했다.
+PRINTFORMW 「아, 아님니다! 제가 어떻게 감히...」
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 팔베게를 해 주겠다고 말했다.
+DATAFORM 브라우니는 거절했다.
+DATAFORM 「제가 왜 땀내나는 사령관 몸 옆에 누워야합니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 팔베게를 해 주겠다고 말했다.
+DATAFORM 브라우니는 어쩔 수 없다는 표정으로 당신 옆에 누워 단말기만 보고 있었다.
+DATAFORM 「저 건들지 마시지 말입니다, 사령관님.」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 브라우니에게 팔베게를 해 주겠다고 말했다.
+PRINTFORMW 「...」
+PRINTFORMW 브라우니는 당신의 말을 들은 것 같지 않아 보였다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM12
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 당신은 브라우니의 %TEXTR("볼/이마")%에 입을 맞췄다.
+PRINTFORMW 「히이익?!」
+PRINTFORMW 브라우니는 당황해하며 물러났다.
+PRINTFORMW 「가, 갑자기 왜 이러시는검까?」
+CASE "High"
+PRINTFORMW 당신은 브라우니의 %TEXTR("볼/이마")%에 입을 맞췄다.
+PRINTFORMW 「히이익?!」
+PRINTFORMW 브라우니는 당황해하며 물러났다.
+PRINTFORMW 「가, 갑자기 왜 이러시는검까?」
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 %TEXTR("볼/이마")%에 입을 맞췄다.
+DATAFORM 「헤헤~」
+DATAFORM 「정말 단순한데, 정말 기분이 좋슴다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 %TEXTR("볼/이마")%에 입을 맞췄다.
+DATAFORM 「으으...」
+DATAFORM 브라우니는 얼굴을 붉혔다.
+DATAFORM 「이래도 되는지 모르겠슴다.」
+DATAFORM 「너무... 행복하지 말입니다.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 %TEXTR("볼/이마")%에 입을 맞췄다.
+DATAFORM 「저도 해봐도 됩니까?」
+DATAFORM 브라우니는 당신의 대답은 듣지도 않고 당신에게 달려들어 볼에 입을 맞췄다.
+DATAFORM 「헤헤, 이래야 쌤쌤이지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 %TEXTR("볼/이마")%에 입을 맞췄다.
+DATAFORM 「히히...」
+DATAFORM 「사령관님, 정말 좋아합니다.」
+DATAFORM 「그러니, 한 번 더 해주시면 안 됩니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 %TEXTR("볼/이마")%에 입을 맞췄다.
+DATAFORM 브라우니는 당신을 지그시 바라보더니 당신의 볼에 입을 맞추었다.
+DATAFORM 「히히히~」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 브라우니의 %TEXTR("볼/이마")%에 입을 맞췄다.
+PRINTFORMW 「힉!」
+PRINTFORMW 브라우니는 신음을 삼키며 격하게 움찔했다.
+CASE "Fear"
+PRINTFORMW 당신은 브라우니의 %TEXTR("볼/이마")%에 입을 맞췄다.
+PRINTFORMW 「이, 일병 브라우니이익?!」
+PRINTFORMW 브라우니는 격하게 움찔했다.
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 %TEXTR("볼/이마")%에 입을 맞추기 위해 다가갔다.
+DATAFORM 「윽!」
+DATAFORM 브라우니는 코를 싸매고 뒤로 물러났다.
+DATAFORM 「입냄새나지 말입니다. 다가오지 마십쇼.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 %TEXTR("볼/이마")%에 입을 맞추기 위해 다가갔다.
+DATAFORM 당신의 인기척을 느낀 브라우니는 당신에게서 멀어지다가,
+DATAFORM 「아! 사령관 땜에 죽었지 않슴까!」
+DATAFORM 하고 역정을 내었다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 브라우니의 %TEXTR("볼/이마")%에 입을 맞췄다.
+PRINTFORMW 「...」
+PRINTFORMW 브라우니는 당신이 입술이 닿은 곳에 손을 가져갔다.
+PRINTFORMW 그리고선 당신을 빤히 쳐다보더니, 다시 게임으로 눈을 돌렸다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM13
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 당신은 브라우니의 배를 주물럭거렸다.
+PRINTFORMW 「으왓?! 뭐하시는검까?!」
+PRINTFORMW 브라우니는 도망치듯 당신의 손에서 빠져나갔다.
+PRINTFORMW 「으으, 정말 이상한 기분이었지 말입니다.」
+CASE "High"
+PRINTFORMW 당신은 브라우니의 배를 주물럭거렸다.
+PRINTFORMW 「으왓?! 뭐하시는검까?!」
+PRINTFORMW 브라우니는 도망치듯 당신의 손에서 빠져나갔다.
+PRINTFORMW 「으으, 정말 이상한 기분이었지 말입니다.」
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 배를 주물럭거렸다.
+DATAFORM 「으으, 이거 기분이 묘하지 말입니다.」
+DATAFORM 브라우니는 난처해하면서도 당신의 손을 피하지 않았다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 배를 주물럭거렸다.
+DATAFORM 「솔직히 말해서, 배는 정말 자신없지 말입니다...」
+DATAFORM 브라우니는 난처해하면서도 당신의 손을 피하지 않았다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 배를 주물럭거렸다.
+DATAFORM 「사령관님, 그거 아심니까? 배는 생각보다 중요한 전략적 요충지임다.」
+DATAFORM 당신은 이유를 물었다.
+DATAFORM 「그 이유는 위로 갈 수도 있고, 아래로도 갈 수 있기 때문임다.」
+DATAFORM 브라우니는 말을 끝마치기 무섭게 당신의 손을 낚아챘다.
+DATAFORM 「히히히~」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 배를 주물럭거렸다.
+DATAFORM 「헤헤...」
+DATAFORM 「그렇게도 빨리 뱃속의 아이를 만져보고 싶으신 겁니까?」
+DATAFORM 귀를 의심한 당신이 토끼눈으로 쳐다보자, 브라우니는 박장대소를 터트렸다.
+DATAFORM 「흐하하핫! 농담입니다, 농담!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 배를 주물럭거렸다.
+DATAFORM 「흐하하하핫! 간지럽슴다, 사령관님!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 브라우니의 배를 주물럭거렸다.
+PRINTFORMW 「읏...」
+PRINTFORMW 브라우니는 새어나오는 신음을 입 안에 삼키는 것 같았다.
+CASE "Fear"
+PRINTFORMW 당신은 브라우니의 배를 주물럭거렸다.
+PRINTFORMW 「읏...」
+PRINTFORMW 브라우니는 새어나오는 신음을 입 안에 삼키는 듯 같았다.
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 배를 향해 손을 내밀었다.
+DATAFORM 브라우니는 당신의 손을 쳐 냈다.
+DATAFORM 「어딜 만집니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 배를 주물럭거렸다.
+DATAFORM 「으악! 이 ㅆ...」
+DATAFORM 브라우니는 소스라치게 놀라며 당신의 손아귀를 빠져나갔다.
+DATAFORM 「하, 이러는 이유라도 들어봅시다.」
+DATAFORM 「왜 이러는 겁니까?」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 브라우니의 배를 주물럭거렸다.
+PRINTFORMW 브라우니는 당신의 손을 흘끗 보더니 다시 게임에 열중하였다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM14
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 당신은 브라우니의 귀를 살짝 깨물었다.
+PRINTFORMW 「으악!」
+PRINTFORMW 「사, 사령관님?!」
+PRINTFORMW 브라우니는 귀를 부여잡고 호들갑이었다.
+CASE "High"
+PRINTFORMW 당신은 브라우니의 귀를 살짝 깨물었다.
+PRINTFORMW 「으악!」
+PRINTFORMW 「사, 사령관님?!」
+PRINTFORMW 브라우니는 귀를 부여잡고 호들갑이었다.
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 귀를 살짝 깨물었다.
+DATAFORM 「윽.」
+DATAFORM 「사령관님이 이런 걸 좋아하실줄은 몰랐슴다.」
+DATAFORM 「전 이런걸 즐기진 않지 말임다.」
+DATAFORM 말은 그래도 빼지는 않는 브라우니였다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 귀를 살짝 깨물었다.
+DATAFORM 「으읏...」
+DATAFORM 브라우니의 신음이 당신의 귓가를 스쳤다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 귀를 살짝 깨물었다.
+DATAFORM 「아흣!?」
+DATAFORM 「사령관님의 취향은 참 감당하기 어려운 것 같슴다.」
+DATAFORM 「저 아님 누가 이런걸 받아주겠슴까, 감사하시지 말입니다!」
+DATAFORM 브라우니는 어깨를 으쓱했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 귀를 살짝 깨물었다.
+DATAFORM 「으읏...」
+DATAFORM 브라우니의 신음이 당신의 귓가를 스쳤다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 귀를 살짝 깨물었다.
+DATAFORM 「으앗?!」
+DATAFORM 당신의 급습에 브라우니는 귀를 부여잡았다.
+DATAFORM 「이, 이런건 좀 예고하고 해 주시지 말입니다!」
+DATAFORM 「...그래서, 더 무실겁니까?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 브라우니의 귀를 살짝 깨물었다.
+PRINTFORMW 「읏.」
+PRINTFORMW 브라우니는 조용히 신음을 삼켰다.
+CASE "Fear"
+PRINTFORMW 당신은 브라우니의 귀를 살짝 깨물었다.
+PRINTFORMW 「읏...」
+PRINTFORMW 브라우니는 조용히 신음을 삼켰다.
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 귀를 살짝 깨물었다.
+DATAFORM 「아악!」
+DATAFORM 「지금 뭐하시는검니까?!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 귀를 살짝 깨물었다.
+DATAFORM 「아으, 이 또라이 새끼가!」
+DATAFORM 브라우니는 욕지거래를 내뱉으며 당신을 밀어냈다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 브라우니의 귀를 살짝 깨물었다.
+PRINTFORMW 「앗...」
+PRINTFORMW 브라우니는 당신 쪽을 돌아보더니 물린 귀를 만지며 중얼거렸다.
+PRINTFORMW 「뭐야, 버그 아니야?」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM15
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "First/Low"
+PRINTFORMW 당신은 브라우니에게 입을 맞추려 했다.
+PRINTFORMW 브라우니는 다가오는 당신을 조심스래 당신을 밀어냈다.
+PRINTFORMW 「그, 사령관님께서 무엇을 원하는지는 알겠지만, 아직은 안 되지 말임다.」
+CASE "First/High"
+PRINTFORMW 당신은 브라우니에게 입을 맞추려 했다.
+PRINTFORMW 브라우니는 다가오는 당신을 조심스래 당신을 밀어냈다.
+PRINTFORMW 「그, 사령관님께서 무엇을 원하는지는 알겠지만, 아직...은 마음의 준비가 안 되었지 말임다.」
+CASE "First/Affection"
+PRINTFORMW 당신은 브라우니에게 입을 맞췄다.
+PRINTFORMW 「음...」
+PRINTFORMW 아득한 여운을 즐기고 난 뒤, 브라우니는 얼굴을 붉혔다.
+PRINTFORMW 「그, 저는 이게 첫키스이지 말입니다.」
+PRINTFORMW 「어떻게 좀... 괜찮았지 말입니다?」
+PRINTFORMW 당신은 브라우니를 꼬옥 안아 주는 것으로 대답을 대신했다.
+CASE "First/Marryed"
+PRINTFORMW 당신은 브라우니에게 입을 맞췄다.
+PRINTFORMW 「음...」
+PRINTFORMW 아득한 여운을 즐기고 난 뒤, 브라우니는 입을 삐죽 내밀었다.
+PRINTFORMW 「너무 늦었지 말입니다. 적어도 결혼 전에는 한 번 했어야 하지 말입니다.」
+PRINTFORMW 당신은 토라진듯한 브라우니를 꼬옥 안아 주었다.
+CASE "First/Annoyed"
+PRINTFORMW 당신은 브라우니에게 입을 맞추려 했다.
+PRINTFORMW 브라우니는 다가오는 당신을 조심스래 당신을 밀어냈다.
+PRINTFORMW 「사령관님, 이건 성 군기 위반이지 말입니다.」
+CASE "First/Fear"
+PRINTFORMW 당신은 브라우니에게 입을 맞췄다.
+PRINTFORMW 「읍?!」
+PRINTFORMW 브라우니는 갑작스러운 키스에 심히 당황했다.
+PRINTFORMW 「사, 사령관님, 이건...」
+CASE "First/Weak"
+PRINTFORMW 당신은 브라우니에게 입을 맞추려 했다.
+PRINTFORMW 브라우니는 경멸하면서 당신에게서 떨어진다.
+PRINTFORMW 「하, 진짜 미쳤나봐.」
+CASE "First/Break"
+PRINTFORMW 당신은 브라우니에게 입을 맞추려 다가갔다.
+PRINTFORMW 브라우니는 게임하느라 당신을 전혀 신경쓰고 있지 않아서, 당신에게 입술을 기습당하고 말았다.
+PRINTFORMW 「힉?!」
+PRINTFORMW 기습을 당한 브라우니는 화들짝 놀라며 물러섰다.
+CASE "Low"
+PRINTFORMW 당신은 브라우니에게 입을 맞추려 했다.
+PRINTFORMW 「사령관님?」
+PRINTFORMW 「저번에 말씀드렸지만, 안 되었지 말임다.」
+CASE "High"
+PRINTFORMW 당신은 브라우니에게 입을 맞추려 했다.
+PRINTFORMW 「사령관님?」
+PRINTFORMW 「저번에 말씀드렸지만, 아직은 안 되었지 말임다.」
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 입을 맞췄다.
+DATAFORM 「음...」
+DATAFORM 당신과 브라우니는 한동안 서로를 느꼈다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 입을 맞췄다.
+DATAFORM 브라우니는 눈을 감고 당신과 교감했다.
+DATAFORM 서로의 입술이 떨어지고, 브라우니는 당신을 보며 웃었다.
+DATAFORM 「히히... 너무 좋지 말입니다. 사령관님.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 입을 맞췄다.
+DATAFORM 「음...」
+DATAFORM 당신과 브라우니는 한동안 진득하게 서로를 느꼈다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 입을 맞췄다.
+DATAFORM 「음...」
+DATAFORM 브라우니는 눈을 감고 당신과 교감했다.
+DATAFORM 「히히, 이건 언제 해도 두근거리지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 입을 맞췄다.
+DATAFORM 브라우니의 입에 집중하던 당신의 허벅지를 브라우니의 손이 쓸고 올라갔다.
+DATAFORM 당황한 당신이 물러서자, 브라우니는 실망한 듯 입을 삐죽 내밀었다.
+DATAFORM 「에이, 이 다음은 없는 겁니까?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 브라우니에게 입을 맞추려 했다.
+PRINTFORMW 브라우니는 다가오는 당신을 조심스래 당신을 밀어냈다.
+PRINTFORMW 「사령관님, 이건 성 군기 위반이지 말입니다.」
+CASE "Fear"
+PRINTFORMW 당신은 브라우니에게 입을 맞추려 했다.
+PRINTFORMW 브라우니가 멀어지려 하자, 당신은 그녀에게 차렷을 명했다.
+PRINTFORMW 당신은 부동자세인 브라우니의 입술을 탐했다.
+PRINTFORMW 「으읍...」
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 입을 맞추려 했다.
+DATAFORM 「다, 다가오지 마시지 말입니다.」
+DATAFORM 당신이 다가오는 것을 본 브라우니는 심히 경계하며 뒤로 물러섰다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 입을 맞추려 했다.
+DATAFORM 「다, 다가오지 마시지 말입니다.」
+DATAFORM 당신이 다가오는 것을 본 브라우니는 심히 경계하며 뒤로 물러섰다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 입을 맞추려 했다.
+DATAFORM 「다, 다가오지 마시지 말입니다.」
+DATAFORM 당신이 다가오는 것을 본 브라우니는 심히 경계하며 뒤로 물러섰다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 입을 맞추려 했다.
+DATAFORM 「다, 다가오지 마시지 말입니다.」
+DATAFORM 당신이 다가오는 것을 본 브라우니는 심히 경계하며 뒤로 물러섰다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 입을 맞추려 했다.
+DATAFORM 브라우니가 멀어지려 하자, 당신은 그녀에게 차렷을 명했다.
+DATAFORM 당신은 부동자세인 브라우니의 입술을 탐했다.
+DATAFORM 「읍! 으읍!!」
+DATAFORM 일련의 과정 속에서, 브라우니는 격하게 저항했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 입을 맞추려 했다.
+DATAFORM 브라우니가 멀어지려 하자, 당신은 그녀에게 차렷을 명했다.
+DATAFORM 당신은 부동자세인 브라우니의 입술을 탐했다.
+DATAFORM 「읍! 으읍!!」
+DATAFORM 일련의 과정 속에서, 브라우니는 격하게 저항했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 입을 맞추려 했다.
+DATAFORM 브라우니가 멀어지려 하자, 당신은 그녀에게 차렷을 명했다.
+DATAFORM 당신은 부동자세인 브라우니의 입술을 탐했다.
+DATAFORM 「읍! 으읍!!」
+DATAFORM 일련의 과정 속에서, 브라우니는 격하게 저항했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 입을 맞추려 했다.
+DATAFORM 브라우니가 멀어지려 하자, 당신은 그녀에게 차렷을 명했다.
+DATAFORM 당신은 부동자세인 브라우니의 입술을 탐했다.
+DATAFORM 「읍! 으읍!!」
+DATAFORM 일련의 과정 속에서, 브라우니는 격하게 저항했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 입을 맞추려 했다.
+DATAFORM 브라우니가 멀어지려 하자, 당신은 그녀를 붙잡고 억지로 입을 맞추려 했다.
+DATAFORM 「아, 진짜!」
+DATAFORM 「내가 당신 욕구 해소하는 인형으로 보입니까?」
+DATAFORM 브라우니는 당신을 뿌리치고선 자리를 떴다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 브라우니에게 차렷을 명하고 입을 맞췄다.
+PRINTFORMW 「읍...」
+PRINTFORMW 당신은 격하게 그녀를 탐한 뒤 그녀를 밀쳐냈다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM16
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 당신은 브라우니의 목덜미를 핥았다.
+PRINTFORMW 「으갸라아아악?!」
+PRINTFORMW 괴상한 소리를 내며 브라우니는 당신에게서 떨어졌다.
+PRINTFORMW 「사, 사령관님?! 이 무슨...」
+CASE "High"
+PRINTFORMW 당신은 브라우니의 목덜미를 핥았다.
+PRINTFORMW 「으갸라아아악?!」
+PRINTFORMW 괴상한 소리를 내며 브라우니는 당신에게서 떨어졌다.
+PRINTFORMW 「사, 사령관님?! 이 무슨...」
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 목덜미를 핥았다.
+DATAFORM 「으읏...」
+DATAFORM 브라우니의 신음이 당신의 귓가를 스쳤다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 목덜미를 핥았다.
+DATAFORM 「으으, 정말 적응 안 되지 말입니다.」
+DATAFORM 「어쩌다 이런걸 좋아하시게 된 겁니까?」
+DATAFORM 브라우니는 칭얼거리며 당신에게 달라붙었다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 목덜미를 핥았다.
+DATAFORM 「아흣...」
+DATAFORM 「사령관님의 취향은 참 감당하기 어려운 것 같슴다.」
+DATAFORM 「저 아님 누가 이런걸 받아주겠슴까, 감사하시지 말입니다!」
+DATAFORM 브라우니는 어깨를 으쓱했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 목덜미를 핥았다.
+DATAFORM 「으으...」
+DATAFORM 「이거 아무리 겪어도 익숙해지지 않지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 목덜미를 핥았다.
+DATAFORM 「사령관님, 이런 행동은 태교에 안 좋지 말입니다!」
+DATAFORM 브라우니의 자다가 봉창 두드리는 소리에 당신은 어이를 잃어버렸다.
+DATAFORM 「어, 헤헤헤...」
+DATAFORM 당신의 표정을 본 브라우니는 멋쩍게 웃었다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 브라우니의 목덜미를 핥았다.
+PRINTFORMW 「읍!」
+PRINTFORMW 브라우니는 신음을 삼키며 당신의 혀를 참아냈다.
+CASE "Fear"
+PRINTFORMW 당신은 브라우니의 목덜미를 핥았다.
+PRINTFORMW 「으흡...」
+PRINTFORMW 브라우니는 꼿꼿히 선 생태로 부들거릴 뿐이었다.
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 목덜미를 핥으려고 했다.
+DATAFORM 「왜 다가오시는겁니까?」
+DATAFORM 브라우니는 심하게 경계하며 당신을 피했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 목덜미를 핥으려 다가갔다.
+DATAFORM 하지만 브라우니가 너무 경계하고 있었기에, 당신은 그녀에게 차렷을 명하고선 하고 싶은 일을 이어갔다.
+DATAFORM 「으으, 개쓰레기같아!」
+DATAFORM 브라우니는 부들부들떨며 경멸했다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 브라우니의 목덜미를 핥았다.
+PRINTFORMW 「히히히...」
+PRINTFORMW 브라우니는 당신의 귓가에서 장난스럽게 웃더니 느닷없이 목덜미에 당수를 날렸다.
+PRINTFORMW 「넥슬라이스!」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM17
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 당신은 브라우니의 등줄기를 손가락으로 훝었다.
+PRINTFORMW 「으핫?!」
+PRINTFORMW 「사, 사령관님?!」
+CASE "High"
+PRINTFORMW 당신은 브라우니의 등줄기를 손가락으로 훝었다.
+PRINTFORMW 「으핫?!」
+PRINTFORMW 「사, 사령관님?!」
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 등줄기를 손가락으로 훝었다.
+DATAFORM 「으아아앗...」
+DATAFORM 브라우니의 등이 당신의 손가락을 피해 활처럼 휘었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 등줄기를 손가락으로 훝었다.
+DATAFORM 「으흐흐흐흐흐~」
+DATAFORM 브라우니는 이 사이로 간지러움을 흘렸다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 등줄기를 손가락으로 훝었다.
+DATAFORM 「이히히힝~」
+DATAFORM 브라우니는 간지러움에 몸서리쳤다.
+DATAFORM 「사령관님! 애태우지 말고 그냥 바로 하시지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 등줄기를 손가락으로 훝었다.
+DATAFORM 「으읏...」
+DATAFORM 브라우니는 몸을 배배 꼬더니 그대로 당신에게 안겼다.
+DATAFORM 「히히, 더는 못 참겠지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 등줄기를 손가락으로 훝었다.
+DATAFORM 「으하앗...」
+DATAFORM 「손, 더 안내려가시는 겁니까?」
+DATAFORM 「혹시나 해서 요새 힙업도 엄청 열심히 해놨는데 말임다.」
+DATAFORM 브라우니는 아쉽다는 듯 입을 빼죽 내밀었다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 브라우니의 등줄기를 손가락으로 훝었다.
+PRINTFORMW 「흣!」
+PRINTFORMW 브라우니는 이를 악물고 신음을 삼켰다.
+CASE "Fear"
+PRINTFORMW 당신은 차렷 자세로 서 있는 브라우니의 등줄기를 손가락으로 훝었다.
+PRINTFORMW 「으, 으읏...」
+PRINTFORMW 브라우니는 아랫입술을 씹으며 신음을 삼켰다.
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 등줄기를 손가락으로 훝으려 했다.
+DATAFORM 하지만 브라우니는 당신에게 등을 내어주지 않았다.
+DATAFORM 「...제 뒤에서 뭘 하시려는 겁니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은  브라우니를 차렷 자세로 세우고 그녀의 등줄기를 손가락으로 훝었다.
+DATAFORM 「으으... 이 쓰레기 새끼가...」
+DATAFORM 브라우니의 어금니가 뿌득, 분노를 삼켰다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 브라우니의 등줄기를 손가락으로 훝었다.
+PRINTFORMW 「으히이이익!」
+PRINTFORMW 브라우니는 몸을 배배 꼬며 당신에게서 도망쳤다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM18
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 당신은 브라우니의 가슴에 얼굴을 들이밀었다.
+PRINTFORMW 「으앗?!」
+PRINTFORMW 「사, 사령관님?!」
+PRINTFORMW 브라우니는 크게 당황해하며 뒤로 물러섰다.
+CASE "High"
+PRINTFORMW 당신은 브라우니의 가슴에 얼굴을 들이밀었다.
+PRINTFORMW 「으앗?!」
+PRINTFORMW 「사, 사령관님?!」
+PRINTFORMW 브라우니는 크게 당황해하며 뒤로 물러섰다.
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 가슴에 얼굴을 파묻었다.
+DATAFORM 「까핫! 간지럽지 말임다. 사령관님.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 가슴에 얼굴을 파묻었다.
+DATAFORM 「제가 본 남자들은 전부 다 가슴을 좋아했지 말입니다.」
+DATAFORM 「사령관님도 결국 남자이지 말입니다.」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 가슴에 얼굴을 파묻었다.
+DATAFORM 「까핫! 간지럽지 말임다. 사령관님.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 가슴에 얼굴을 파묻었다.
+DATAFORM 「뭔가 흰 액체가 나와도 마시면 안 됩니다.」
+DATAFORM 「그거... 애기 꺼지 말입니다.」
+DATAFORM 당신은 귀를 의심했고, 브라우니는 웃음을 터트렸다.
+DATAFORM 「꺄하핫! 사령관님은 정말 놀리는 맛이 있지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 가슴에 얼굴을 파묻었다.
+DATAFORM 「제가 본 남자들은 전부 다 가슴을 좋아했지 말입니다.」
+DATAFORM 「하지만 제 가슴을 좋아해준건 사령관님 뿐임다. 다른 사람들은 다 레후 상병님 가슴을 좋아했지 말임다.」
+DATAFORM 브라우니는 입을 삐죽 내밀더니 두 팔로 당신의 머리를 감싸안았다.
+DATAFORM 「그러니, 마음껏 즐기시지 말입니다!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 브라우니의 가슴에 얼굴을 들이밀었다.
+PRINTFORMW 「...이 행동의 진의를 여쭈어봐도 되겠슴까?」
+CASE "Fear"
+PRINTFORMW 당신은 브라우니의 가슴에 얼굴을 파묻었다.
+PRINTFORMW 「엣?!」
+PRINTFORMW 「으, 으아으...」
+PRINTFORMW 브라우니는 뜻모를 소리를 중얼거리며 안절부절못했다
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 가슴에 얼굴을 들이밀었다.
+DATAFORM 「그 더러운 얼굴 저리 치우지 말입니다.」
+DATAFORM 브라우니는 대놓고 경멸을 표했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 가슴에 얼굴을 들이밀었다.
+DATAFORM 「그 더러운 얼굴 저리 치우지 말입니다.」
+DATAFORM 브라우니는 대놓고 경멸을 표했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 가슴에 얼굴을 들이밀었다.
+DATAFORM 「그 더러운 얼굴 저리 치우지 말입니다.」
+DATAFORM 브라우니는 대놓고 경멸을 표했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 가슴에 얼굴을 들이밀었다.
+DATAFORM 「그 더러운 얼굴 저리 치우지 말입니다.」
+DATAFORM 브라우니는 대놓고 경멸을 표했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 차렷을 명하고 그녀의 가슴에 얼굴을 들이밀었다.
+DATAFORM 「으... 이 개새끼가...」
+DATAFORM 브라우니의 아랫턱이 분노로 부들부들 떨렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 차렷을 명하고 그녀의 가슴에 얼굴을 들이밀었다.
+DATAFORM 「으... 이 개새끼가...」
+DATAFORM 브라우니의 아랫턱이 분노로 부들부들 떨렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 차렷을 명하고 그녀의 가슴에 얼굴을 들이밀었다.
+DATAFORM 「으... 이 개새끼가...」
+DATAFORM 브라우니의 아랫턱이 분노로 부들부들 떨렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 차렷을 명하고 그녀의 가슴에 얼굴을 들이밀었다.
+DATAFORM 「으... 이 개새끼가...」
+DATAFORM 브라우니의 아랫턱이 분노로 부들부들 떨렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 가슴에 얼굴을 들이밀었다.
+DATAFORM 브라우니가 멀어지려 하자, 당신은 그녀를 붙잡고 억지로 얼굴을 파묻으려 했다.
+DATAFORM 「아, 진짜!」
+DATAFORM 「내가 당신 욕구 해소하는 인형으로 보입니까?」
+DATAFORM 브라우니는 당신을 뿌리치고선 자리를 떴다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 브라우니의 가슴에 얼굴을 파묻었다.
+PRINTFORMW 브라우니는 자신의 가슴팍에 들어온 당신을 물끄러미 내려다볼 뿐이었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM19
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 욕설을 날렸다.
+DATAFORM 「사령관님?」
+DATAFORM 「제가... 무슨 잘못을 했지 말입니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 욕설을 날렸다.
+DATAFORM 「저, 갑자기 이러시는 이유를 모르겠슴다...」
+DATAFORM 브라우니의 목소리는 떨리고 있었다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 욕설을 날렸다.
+DATAFORM 「사령관님?」
+DATAFORM 「제가... 무슨 잘못을 했지 말입니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 욕설을 날렸다.
+DATAFORM 「저, 갑자기 이러시는 이유를 모르겠슴다...」
+DATAFORM 브라우니의 목소리는 떨리고 있었다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 욕설을 날렸다.
+DATAFORM 「사령관님...?」
+DATAFORM 「제가... 무슨 잘못을 했습니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 욕설을 날렸다.
+DATAFORM 「사령관님, 갑자기 왜 이러시는겁니까?」
+DATAFORM 브라우니의 목소리는 짙게 떨리고 있었다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 욕설을 날렸다.
+DATAFORM 「사령관님...?」
+DATAFORM 「제가... 무슨 잘못을 했습니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 욕설을 날렸다.
+DATAFORM 「사, 사령관님.」
+DATAFORM 「자, 장난이 너무 심하지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 욕설을 날렸다.
+DATAFORM 「사령관님, 왜...」
+DATAFORM 「왜 갑자기 왜 욕을 하시는 겁니까? 네?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 욕설을 날렸다.
+DATAFORM 「사령관님?」
+DATAFORM 「제가 무슨 잘못을 했는지 여쭈어봐도 되겠습니까?」
+DATAFORM 브라우니는 담담한 것처럼 보였다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 욕설을 날렸다.
+DATAFORM 「...」
+DATAFORM 브라우니는 묵묵히 당신의 욕설을 듣고만 있을 뿐이었다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 욕설을 날렸다.
+DATAFORM 「사, 사령관님...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 욕설을 날렸다.
+DATAFORM 「죄, 죄송합니다. 사령관님!」
+DATAFORM 당신은 머리를 박으려는 브라우니에게 뭘 잘못했는지 말해보라고 했다.
+DATAFORM 「그, 그게...」
+DATAFORM 브라우니는 안절부절 못 하다가 대뜸 머리를 박았다.
+DATAFORM 「시, 시정하겠습니다!!」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니에게 욕설을 날렸다.
+DATAFORM 「아, 이 인간 또 이러네.」
+DATAFORM 브라우니의 작은 혼잣말이 당신의 귀에 꽃혔다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니에게 욕설을 날렸다.
+DATAFORM 「이런다고 뭐가 바뀔 것 같습니까? 퍽이나!」
+DATAFORM 「어디 한 번 마음껏 떠들어보십쇼.」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 브라우니에게 욕설을 날렸다.
+PRINTFORMW 브라우니는 시선을 바닥으로 내리고 대답 없이 듣고만 있을 뿐이었다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM20
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM 「어윽?!」
+DATAFORM 넘어진 브라우니는 뺨을 부여잡고 당신을 바라보았다.
+DATAFORM 「사령관님, 이거 병영 부조리이지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM 「사...령관님?」
+DATAFORM 「제가... 무슨 잘못을 했지 말입니까?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM 「어윽?!」
+DATAFORM 넘어진 브라우니는 뺨을 부여잡고 당신을 바라보았다.
+DATAFORM 「사령관님, 이거 병영 부조리이지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM 「사...령관님?」
+DATAFORM 「제가... 무슨 잘못을 했지 말입니까?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM 「어윽?!」
+DATAFORM 넘어진 브라우니는 뺨을 부여잡고 당신을 바라보았다.
+DATAFORM 「사령관...님? 대체 왜...?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM 「어째서...」
+DATAFORM 브라우니는 빰을 부여잡고 놀란 눈으로 당신을 바라보았다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM 「어윽?!」
+DATAFORM 넘어진 브라우니는 뺨을 부여잡고 당신을 바라보았다.
+DATAFORM 「사령관...님? 대체 왜...?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM 「윽...」
+DATAFORM 쓰러져 있던 브라우니는 일어나더니 소리질렀다.
+DATAFORM 「이, 이건 가정폭력이지 말입니다!!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM 「제가 무슨 잘못을 했다고 이렇게 모질게 대하시지 말입니까?!」
+DATAFORM 「흑...」
+DATAFORM 브라우니는 눈물 한 방울을 뺨에 흘려보내더니, 이내 울음을 터트렸다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM 「윽...」
+DATAFORM 브라우니는 신음을 삼키고 있었다.
+DATAFORM 마치 자신은 굴하지 않겠다는 것처럼.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM 브라우니는 이를 악문 채 천천히 고개를 원위치로 돌려보냈다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM 「...」
+DATAFORM 브라우니는 말 없이 돌아간 고개를 원상복귀시켰다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM 「윽!」
+DATAFORM 당신의 손길에 넘어졌던 브라우니는 금방 오뚜기처럼 다시 일어났다.
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM 으득, 이 갈리는 소리가 당신의 귀에 선명하게 들렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM 「아이, 진짜!」
+DATAFORM 욱한 브라우니가 당신에게 달려들려 하자, 당신은 생명의 위협을 느끼고 그녀에게 차렷을 명했다.
+DATAFORM 부동자세로 멈춰버린 브라우니는 이만 으득으득 갈 뿐이었다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM ...
+DATAFORM 고개만 돌아갈 뿐, 반응이 없다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 뺨을 후려갈겼다.
+DATAFORM 「윽!」
+DATAFORM 브라우니는 그 반동으로 바닥에 넘어졌다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM21
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 배에 힘껏 주먹을 날렸다.
+DATAFORM 「커억?!」
+DATAFORM 브라우니는 배를 감싸고 무너져내렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 배에 힘껏 주먹을 날렸다.
+DATAFORM 「케엑! 컥! 컥!」
+DATAFORM 주먹이 명치를 정확히 쳤는지, 브라우니는 주저 앉아 숨을 몰아쉬며 고통스러워했다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 배에 힘껏 주먹을 날렸다.
+DATAFORM 「커억?!」
+DATAFORM 브라우니는 배를 감싸고 무너져내렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 배에 힘껏 주먹을 날렸다.
+DATAFORM 「케엑! 컥! 컥!」
+DATAFORM 주먹이 명치를 정확히 쳤는지, 브라우니는 주저 앉아 숨을 몰아쉬며 고통스러워했다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 배에 힘껏 주먹을 날렸다.
+DATAFORM 「커억?!」
+DATAFORM 브라우니는 배를 감싸고 무너져내렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 배에 힘껏 주먹을 날렸다.
+DATAFORM 「커억?!」
+DATAFORM 「사, 사령관님...?」
+DATAFORM 브라우니는 의아한 눈을 한 채 무너져내렸다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 배에 힘껏 주먹을 날렸다.
+DATAFORM 「커억?!」
+DATAFORM 「사, 사령관님...?」
+DATAFORM 브라우니는 의아한 눈을 한 채 무너져내렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 배에 힘껏 주먹을 날렸다.
+DATAFORM 「커억?!」
+DATAFORM 브라우니는 배를 감싸고 무너져내렸다.
+DATAFORM 「아, 안 돼...」
+DATAFORM 쓰러진 그녀의 눈에서 눈물 한 방울이 흘러나왔다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 배에 힘껏 주먹을 날렸다.
+DATAFORM 브라우니는 외마디 비명조차 지르지 못 하고 풀썩 쓰러졌다.
+DATAFORM 「어째서... 왜...?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 배에 힘껏 주먹을 날렸다.
+DATAFORM 「읍...!」
+DATAFORM 브라우니는 부들부들 떨면서도 어떻게든 서 있으려 참고 있었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 배에 힘껏 주먹을 날렸다.
+DATAFORM 「크윽!」
+DATAFORM 브라우니는 고통을 참아내며 어금니를 악물었다.
+DATAFORM 그녀는 쓰러지지 않았다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW 당신은 브라우니의 배에 힘껏 주먹을 날렸다.
+PRINTFORMW 「컥?!」
+PRINTFORMW 브라우니는 폐건물처럼 와르르 무너져내렸다.
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 배에 힘껏 주먹을 날렸다.
+DATAFORM 「큭!」
+DATAFORM 부들부들 떨면서도, 브라우니는 당신을 매섭게 노려보고 있었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 배에 힘껏 주먹을 날렸다.
+DATAFORM 맞았나? 생각하는 순간, 당신은 당신의 주먹을 부서지라 붙잡고 있는 브라우니를 보았다.
+DATAFORM 「와, 씨 좆될뻔했네.」
+DATAFORM 브라우니는 퉤, 하고 옆으로 침을 뱉었다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTFORMW 당신은 브라우니의 배에 힘껏 주먹을 날렸다.
+PRINTFORMW 「컥.」
+PRINTFORMW 신음을 삼키며, 브라우니는 배를 감싸고 무너져내렸다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_COM22
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 정강이를 걷어찼다.
+DATAFORM 「끄악!」
+DATAFORM 브라우니는 정강이를 붙들고 뛰었다.
+DATAFORM 「사령관님, 제가 뭘 잘못했지 말입니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 가슴팍에 앞차기를 날렸다.
+DATAFORM 「커억?!」
+DATAFORM 브라우니는 그대로 날아가 바닥에 굴렀다.
+DATAFORM 「사령관님... 이거 병영 부조리이지 말입니다!」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 정강이를 걷어찼다.
+DATAFORM 「끄악!」
+DATAFORM 브라우니는 정강이를 붙들고 뛰었다.
+DATAFORM 「사령관님, 제가 뭘 잘못했지 말입니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 가슴팍에 앞차기를 날렸다.
+DATAFORM 「커억?!」
+DATAFORM 브라우니는 그대로 날아가 바닥에 굴렀다.
+DATAFORM 「사령관님... 이거 병영 부조리이지 말입니다!」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 정강이를 걷어찼다.
+DATAFORM 「아악!」
+DATAFORM 브라우니는 정강이를 붙잡고 쓰러졌다.
+DATAFORM 「제, 제가 뭘 잘못했지 말입니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 가슴팍에 앞차기를 날렸다.
+DATAFORM 「커억?!」
+DATAFORM 브라우니는 그대로 넘어져 당신을 쳐다보았다.
+DATAFORM 「결국... 사령관님도 다른 사람들과 똑같았슴다...」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 정강이를 걷어찼다.
+DATAFORM 「끄악!」
+DATAFORM 「제, 제가 뭘 잘못 했습니까?!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 가슴팍에 앞차기를 날렸다.
+DATAFORM 「으헉?!」
+DATAFORM 브라우니는 뒤로 구르더니 바닥에 엎어졌다.
+DATAFORM 「이, 이거 가정폭력이지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 %TEXTR("정강이를배를")% 걷어찼다.
+DATAFORM 「아악!」
+DATAFORM 브라우니는 쓰러지더니 당신을 원망스럽게 노려보았다.
+DATAFORM 「결국... 사령관님도 다른 사람들과 똑같았습니다...」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 정강이를 걷어찼다.
+DATAFORM 「윽!!」
+DATAFORM 브라우니는 이를 악물고 신음을 참아냈다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 가슴팍에 앞차기를 날렸다.
+DATAFORM 브라우니는 날아갔다가 쏜살같이 일어나 당신 앞에 섰다.
+DATAFORM 「이, 일병, 브라우니!」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTFORMW 당신은 브라우니의 %TEXTR("정강이를배를")% 걷어찼다.
+PRINTFORMW 「커억?!」
+PRINTFORMW 브라우니는 바닥을 구르더니 기어서 당신에게서 도망쳤다.
+PRINTFORMW 「사, 사령관님 제발...」
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 차렷을 명하고선 브라우니의 정강이를 걷어찼다.
+DATAFORM 「크윽!」
+DATAFORM 신음과 함께 브라우니의 어금니가 갈리는 소리가 들렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 차렷을 명하고선 브라우니의 가슴팍에 앞차기를 날렸다.
+DATAFORM 「크악!」
+DATAFORM 뒤로 날아간 브라우니에게, 당신은 빨리 일어날 것을 명했다.
+DATAFORM 「시발새끼가...」
+DATAFORM 브라우니의 욕지거리가 산들바람처럼 들렸다.
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 브라우니의 정강이를 걷어찼다.
+DATAFORM 「아흑!」
+DATAFORM 브라우니는 정강이를 잡고 고통스러워했다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 브라우니의 가슴팍에 앞차기를 날렸다.
+DATAFORM 「커흑?!」
+DATAFORM 브라우니는 배를 감싸고 무너져내렸다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+
+
+
+@M_No25_EVENT_Morning
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATAFORM 「기상! 기상임다!」
+DATALIST
+DATAFORM 「일어나셨슴까, 사령관님!」
+DATAFORM 「승리! 좋은 아침임다!」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATAFORM 「기상! 기상임다!」
+DATALIST
+DATAFORM 「자자, 일어나셔야 되지 말입니다 사령관님!」
+DATAFORM 브라우니는 아직 잠이 덜 깬 당신을 일으켜 세운 뒤 경례했다.
+DATAFORM 「승리! 좋은 아침임다!」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「자자, 일어나셔야 되지 말입니다 사령관님!」
+DATAFORM 브라우니는 아직 잠이 덜 깬 당신을 일으켜 세운 뒤 경례했다.
+DATAFORM 「승리! 좋은 아침임다!」
+ENDLIST
+DATALIST
+DATAFORM 「기상! 기상임다!」
+DATAFORM 「사령관님! 오늘도 힘내셔야하지 말입니다!」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「...님...」
+DATAFORM 「사령관님...」
+DATAFORM 당신은 라이트 불빛에 눈이 부셔 오만상을 지었다.
+DATAFORM 「사령관님. 일어나셔야 합니다.」
+DATAFORM 당신은 부스스 일어났고, 브라우니는 재밌다는 듯 함박미소였다.
+DATAFORM 「역시, 자는 사람 깨우는데는 이게 직빵이지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님... 일어나셔야 합니다...」
+DATAFORM 귓가에 속삭이는 브라우니의 목소리가 간지러워, 당신은 일어났다.
+ENDLIST
+DATALIST
+DATAFORM 눈을 떠 보니, 당신 앞에 브라우니의 엉덩이가 떡 하니 있었다.
+DATAFORM 「아, 사령관님. 일어나셨습니까?」
+DATAFORM 브라우니는 능청스럽게 일어나는 당신을 맞이했다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 「사령관님.」
+PRINTFORMW 당신을 깨우러 온 브라우니의 말에도 불구하고 당신이 밍기적거리고 있자, 브라우니는 이불을 확 걷었다.
+PRINTFORMW 「기상시간입니다. 일어나십시오.」
+CASE "Fear"
+PRINTFORMW 「저, 그, 일어나셔야 하지 말입니다.」
+PRINTFORMW 브라우니의 들릴락말락하는 목소리대신 그녀의 인기척이 당신을 깨웠다.
+CASE "Weak"
+PRINTDATAW LOCAL:99
+DATALIST
+DATAFORM 빠 바 바바바 빠바 빠빠빠빠라빠빠빠 빠 빠빠라~
+DATAFORM 당신은 우렁찬 나팔 소리에 깜짝 놀라 일어났다.
+DATAFORM 옆에서 그 모습을 본 브라우니는,
+DATAFORM 「하! 사령관도 이딴 기상 나팔 소리에 일어납니까? 쫄병이나 다름 없지 말입니다!」
+DATAFORM 라고 하고선 방을 나갔다.
+ENDLIST
+DATALIST
+DATAFORM 「그만 일어나시지 말입니다.」
+DATAFORM 브라우니는 들릴랑말랑한 목소리로 당신을 깨웠다.
+DATAFORM 애매한 시간에 애매하게 깨 버린 당신은 뒤척이다 다시 잠들어버렸다.
+ENDLIST
+DATALIST
+DATAFORM 빠 바 바바바 빠바 빠빠빠빠라빠빠빠 빠 빠빠라~
+DATAFORM 당신은 우렁찬 나팔 소리에 깜짝 놀라 일어났다.
+DATAFORM 옆에서 그 모습을 본 브라우니는,
+DATAFORM 「하! 사령관도 이딴 기상 나팔 소리에 일어납니까? 쫄병이나 다름 없지 말입니다!」
+DATAFORM 라고 하고선 방을 나갔다.
+ENDLIST
+DATALIST
+DATAFORM 「그만 일어나시지 말입니다.」
+DATAFORM 브라우니는 들릴랑말랑한 목소리로 당신을 깨웠다.
+DATAFORM 애매한 시간에 애매하게 깨 버린 당신은 뒤척이다 다시 잠들어버렸다.
+ENDLIST
+DATALIST
+DATAFORM 「그만 일어나시지 말입니다.」
+DATAFORM 브라우니는 들릴랑말랑한 목소리로 당신을 깨웠다.
+DATAFORM 애매한 시간에 애매하게 깨 버린 당신은 뒤척이다 다시 잠들어버렸다.
+DATAFORM ...그게 이렇게 오래 자 버릴 줄이야.
+ENDLIST
+ENDDATA
+SIF LOCAL:99 == 5 ;...그게 이렇게 오래 자 버릴 줄이야.
+    TFLAG:시간스킵 = 1
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 당신이 눈을 떴을 때, 브라우니는 당신의 컴퓨터 앞에 앉아 온라인 게임을 하고 있었다.
+DATAFORM 당신이 뭐하는 거냐고 묻자,
+DATAFORM 「랭겜.」
+DATAFORM 라고 답하고선 다시 모니터로 얼굴을 돌려버렸다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 눈을 떴을 때, 브라우니는 당신의 컴퓨터 앞에 앉아 온라인 게임을 하고 있었다.
+DATAFORM 당신이 뭐하는 거냐고 묻자,
+DATAFORM 「오전 9시, 일일 퀘스트가 초기화되는 시간이야.」
+DATAFORM 라고 답하고선 다시 모니터로 얼굴을 돌려버렸다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_EVENT_Sortie
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 「다녀오겠슴다. 승리!」
+CASE "High"
+PRINTFORMW 「다녀오겠슴다. 승리!」
+CASE "Affection"
+PRINTDATAW
+DATAFORM 「헤헤, 다녀오겠슴다!」
+DATAFORM 「승리! 브라우니, 출격하겠습니다!」
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATAFORM 「헤헤, 다녀오겠슴다!」
+DATAFORM 「저 보고싶더라도 잘 참고 계셔야 함다. 헤헤.」
+DATAFORM 「사령관님을 위하여! 승리!」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 「다녀오겠습니다! 승리!」
+CASE "Fear"
+PRINTFORMW 「다, 다녀오겠습니다! 승리!」
+CASE "Weak"
+PRINTDATAW
+DATAFORM 「저 없는 동안 제 관물대 열어보심 안 됩니다. 사령관님.」
+DATAFORM 「아, 씨. 또 제가 출격해야합니까?」
+ENDDATA
+CASE "Break"
+PRINTFORMW 「관물대... 열어보지 마.」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_EVENT_Cook_Self
+IF ABL:MASTER:조리lv < 3
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「오오! 밥 해주시는 겁니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「사령관님의 요리... 기대되지 말입니다!」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「오오! 밥 해주시는 겁니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「사령관님의 요리... 기대되지 말입니다!」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「사령관님의 요리... 기대되지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「오오! 밥 해주시는 겁니까?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「요리해주시는 겁니까? 그럼 설거지는 제가 하겠슴다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 재료 손질을 하던 당신은 그만 손가락을 베였다.
+DATAFORM 「사령관님? 괜찮으심니까?!」
+DATAFORM 브라우니는 잽싸게 달려와 당신의 손을 살펴주었다.
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「언젠간 저도 요리를 해 드리도록 하겠슴다. 기대하시지 말입니다!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 브라우니는 말 없이 식탁에 정자세로 앉아 기다릴 뿐이었다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「저, 괜찮지 말입니다...」
+PRINTFORMW 브라우니는 식탁에 앉아 들릴락말락하게 중얼거렸다.
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「하, 또 뭔 난리를 치려고...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「그리도 배가 고픕니까? 그딴 요리 실력으로 요리하게?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 재료 손질을 하던 당신은 그만 손가락을 베였다.
+DATAFORM 「하, 이딴 실력으로 요리를 하겠다고...」
+DATAFORM 브라우니는 당신을 한심하게 쳐다보더니 자리로 돌아갔다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「사령관님의 요리, 기대되지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「오오! 밥 해주시는 겁니까?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「사령관님의 요리, 기대되지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「오오! 밥 해주시는 겁니까?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「사령관님의 요리, 기대되지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「오오! 밥 해주시는 겁니까?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「사령관님, 양파튀김 해 주시면 안 됩니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「마침 출출했는데 잘 됐지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「요리해주시는 겁니까? 그럼 설거지는 제가 하겠슴다.」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 브라우니는 말 없이 식탁에 정자세로 앉아 기다릴 뿐이었다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「저, 괜찮지 말입니다...」
+PRINTFORMW 브라우니는 식탁에 앉아 들릴락말락하게 중얼거렸다.
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 재료 손질을 하던 당신은 그만 손가락을 베였다.
+DATAFORM 「뭐하는겁니까? 아직도 그딴 실수 합니까?」
+DATAFORM 브라우는 당신의 손을 힐끗 본 뒤 힐난하며 자리로 돌아갔다.
+DATAFORM 「음식에서 피맛 안 나게 하시지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「하, 또 뭔 난리를 치려고...」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「사령관님의 요리는 언제나 기대되지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「오오! 밥 해주시는 겁니까?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「사령관님의 요리는 언제나 기대되지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「오오! 밥 해주시는 겁니까?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「사령관님의 요리는 언제나 기대되지 말입니다!」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「오오! 밥 해주시는 겁니까?」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「사령관님, 양파튀김 해 주시면 안 됩니까?」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「오, 요리해주시는 겁니까? 그럼 설거지는 제가 하겠슴다.」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「헤헤, 벌써부터 입에 침이 고이지 말입니다.」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 브라우니는 말 없이 식탁에 정자세로 앉아 기다릴 뿐이었다.
+CASE "Fear"
+PRINTFORMW 당신은 요리를 시작했다.
+PRINTFORMW 「저, 괜찮지 말입니다...」
+PRINTFORMW 브라우니는 식탁에 앉아 들릴락말락하게 중얼거렸다.
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「하, 또 뭔 난리를 치려고...」
+ENDLIST
+DATALIST
+DATAFORM 당신은 요리를 시작했다.
+DATAFORM 「마침 배고팠는데 잘 됐슴다. 어디 한 번 해 보시지 말입니다.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+ENDIF
+
+@M_No25_EVENT_Eat_Com
+IF ABL:MASTER:조리lv < 3
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 몇 숟가락 먹다가 눈치를 살피던 브라우니가 조심스래 말했다. 
+DATAFORM 「저, 사령관님.」
+DATAFORM 「제가 가진 양념장 좀 넣어도 되지 말임니까?」
+DATAFORM 양념장을 넣고 난 뒤에야 밥그릇을 비워내는 브라우니였다.
+ENDLIST
+DATALIST
+DATAFORM 「어, 저가 훈련할 때 봉지에 밥을 비벼서 줬는데, 딱 이 맛이었지 말입니다.」
+DATAFORM 그러면서도 밥그릇을 비워내는 브라우니였다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「어, 음. 잘먹었지 말입니다. 사령관님!」
+DATAFORM 브라우니는 밥그릇을 비우자마자 쏜살같이 어딘가로 달려갔다.
+ENDLIST
+DATALIST
+DATAFORM 몇 숟가락 먹다가 눈치를 살피던 브라우니가 조심스래 말했다. 
+DATAFORM 「저, 사령관님.」
+DATAFORM 「제가 가진 양념장 좀 넣어도 되지 말임니까?」
+DATAFORM 양념장을 넣고 난 뒤에야 밥그릇을 비워내는 브라우니였다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「어, 음. 잘먹었지 말입니다. 사령관님!」
+DATAFORM 브라우니는 밥그릇을 비우자마자 쏜살같이 어딘가로 달려갔다.
+ENDLIST
+DATALIST
+DATAFORM 몇 숟가락 먹다가 눈치를 살피던 브라우니가 조심스래 말했다. 
+DATAFORM 「저, 사령관님.」
+DATAFORM 「제가 가진 양념장 좀 넣어도 되지 말임니까?」
+DATAFORM 양념장을 넣고 난 뒤에야 밥그릇을 비워내는 브라우니였다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 몇 숟가락 먹다가 눈치를 살피던 브라우니가 조심스래 말했다. 
+DATAFORM 「저, 사령관님.」
+DATAFORM 「제가 가진 양념장 좀 넣어도 되지 말임니까?」
+DATAFORM 양념장을 넣고 난 뒤에야 밥그릇을 비워내는 브라우니였다.
+ENDLIST
+DATALIST
+DATAFORM 「우욱!」
+DATAFORM 밥 먹다 말고 갑자기 헛구역질을 하는 브라우니를 당신이 걱정스럽게 쳐다보자, 브라우니는 능청스럽게 대답했다.
+DATAFORM 「아, 별 거 아닙니다. 입덧입니다 입덧.」
+DATAFORM 눈가에 고인 눈물이 그녀의 거짓말을 증명했다.
+ENDLIST
+DATALIST
+DATAFORM 「처음부터 잘 하는 사람은 없슴다. 저도 처음엔 총 하나 제대로 못 쐈지 말입니다.」
+DATAFORM 식사를 마친 뒤, 브라우니는 당신의 기운을 북돋아주었다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「감사히 잘 먹겠습니다!」
+DATAFORM 브라우니는 우렁찬 감사 인사 후 재빨리 밥그릇을 싹싹 비워냈다.
+ENDLIST
+DATALIST
+DATAFORM 「잘 먹겠습니다!」
+DATAFORM 브라우니는 한 입 먹더니 굳은 얼굴로 밥그릇을 비워냈다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「자, 잘 먹겠습니다!」
+DATAFORM 브라우니는 강박적이다 싶을 정도로 음식들을 싹싹 긁어먹었다.
+ENDLIST
+DATALIST
+DATAFORM 「우욱?!」
+DATAFORM 브라우니는 헛구역질을 했음에도 불구하고 밥그릇을 싹싹 비워냈다.
+DATAFORM 「자, 잘 먹었습니다!!」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「하아, 이딴 걸 먹어야한다니.」
+DATAFORM 첫 술을 뜬 브라우니는 깨작거리기만 하다가 자리에서 일어났다.
+DATAFORM 「다 먹었지 말입니다.」
+ENDLIST
+DATALIST
+DATAFORM 첫 술은 뜬 브라우니는 당신을 노려보았다.
+DATAFORM 「이 요리는 너무 구려서 이그니스가 바로 태워버릴 맛입니다!」
+DATAFORM 브라우니는 자리를 박차고 일어나 가버렸다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「잘 먹겠슴다!」
+DATAFORM 브라우니는 당신의 음식을 와구와구 먹어치웠다.
+ENDLIST
+DATALIST
+DATAFORM 「역시 집밥이 최고지 말입니다!」
+DATAFORM 브라우니의 얼굴에는 만족감이 가득했다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「잘 먹겠슴다!」
+DATAFORM 브라우니는 당신의 음식을 와구와구 먹어치웠다.
+ENDLIST
+DATALIST
+DATAFORM 「역시 집밥이 최고지 말입니다!」
+DATAFORM 브라우니의 얼굴에는 만족감이 가득했다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「잘 먹겠슴다!」
+DATAFORM 브라우니는 당신의 음식을 와구와구 먹어치웠다.
+ENDLIST
+DATALIST
+DATAFORM 「사령관님, 언제 요리 연습 하셨지 말입니까?」
+DATAFORM 브라우니는 볼에 음식을 빵빵하게 채우고선 물었다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「이, 이렇게 많은 양파튀김을 먹을 줄은 몰랐지 말입니다.」
+DATAFORM 브라우니는 당황해하면서도 접시를 깨끗이 비워냈다.
+ENDLIST
+DATALIST
+DATAFORM 「사령관님, 언제 요리 연습 하셨지 말입니까?」
+DATAFORM 브라우니는 볼에 음식을 빵빵하게 채우고선 물었다.
+ENDLIST
+DATALIST
+DATAFORM 「잘 먹었습니다!」
+DATAFORM 브라우니는 배를 호탕하게 팡팡 두드렸다.
+DATAFORM 「이야, 정말 맛있었지 말입니다!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「감사히 잘 먹겠습니다!」
+DATAFORM 브라우니는 우렁찬 감사 인사 후 재빨리 밥그릇을 싹싹 비워냈다.
+ENDLIST
+DATALIST
+DATAFORM 「잘 먹겠습니다!」
+DATAFORM 밥 먹는 내내 브라우니는 말이 없었다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「자, 잘 먹겠습니다!」
+DATAFORM 브라우니는 급하게 음식을 쑤셔먹더니 사레에 들려 켁켁거렸다.
+DATAFORM 당신은 그녀의 등을 두드려주었다.
+DATAFORM 「가, 감사합니다...」
+ENDLIST
+DATALIST
+DATAFORM 「자, 잘 먹겠습니다!」
+DATAFORM 브라우니는 한 숟가락 뜨더니 눈이 휘둥그래지며 마구 퍼먹기 시작했다.
+DATAFORM 「마, 맛있어?!」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「하, 요리 연습 좀 하나봅니다?」
+DATAFORM 브라우니는 이죽대면서도 밥그릇을 싹싹 비워냈다.
+ENDLIST
+DATALIST
+DATAFORM 브라우니는 한 입 먹고 난 뒤, 놀란 눈으로 당신을 쳐다본다.
+DATAFORM 「이거 정말 직접 만든겁니까? 산 게 아니고?」
+DATAFORM 그렇게 맛있냐고 물으니, 브라우니의 표정이 확 썩어버렸다.
+DATAFORM 「무슨 소리입니까? 조미료 맛이 너무 세서 물어본겁니다. 조미료 없으면 요리도 못 합니까?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+ELSEIF ABL:MASTER:조리lv > 4
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「잘 먹겠슴다!」
+DATAFORM 브라우니는 우렁차게 소리친 뒤 게눈 감추듯 밥그릇을 비워냈다.
+ENDLIST
+DATALIST
+DATAFORM 「지금까지 먹었던 밥 중에서 사령관님의 밥이 제일 맛있습니다!」
+DATAFORM 브라우니는 엄지를 척 하고 들어보인 뒤, 밥그릇을 비워냈다.
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「잘 먹겠슴다!」
+DATAFORM 브라우니는 우렁차게 소리친 뒤 게눈 감추듯 밥그릇을 비워냈다.
+ENDLIST
+DATALIST
+DATAFORM 「지금까지 먹었던 밥 중에서 사령관님의 밥이 제일 맛있습니다!」
+DATAFORM 브라우니는 엄지를 척 하고 들어보인 뒤, 밥그릇을 비워냈다.
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「잘 먹겠슴다!」
+DATAFORM 브라우니는 우렁차게 소리친 뒤 게눈 감추듯 밥그릇을 비워냈다.
+ENDLIST
+DATALIST
+DATAFORM 「지금까지 먹었던 밥 중에서 사령관님의 밥이 제일 맛있습니다!」
+DATAFORM 브라우니는 엄지를 척 하고 들어보인 뒤, 밥그릇을 비워냈다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「이, 이렇게 맛있는 양파튀김은 처음입니다!」
+DATAFORM 브라우니는 게 눈 감추듯 그릇을 비워냈다.
+ENDLIST
+DATALIST
+DATAFORM 「후아, 잘 먹었지 말입니다.」
+DATAFORM 브라우니가 비워낸 그릇들을 보며, 당신은 굳이 설거지가 필요할까 진지하게 고민했다.
+ENDLIST
+DATALIST
+DATAFORM 「다음에는 제가 요리를 해드려야겠습니다.」
+DATAFORM 「이렇게 맛있는 요리를 먹고, 입 싹 닫고 있을 순 없지 말입니다!」
+DATAFORM 기대하라며 눈을 찡긋하는 브라우니였다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「감사히 잘 먹겠습니다!」
+DATAFORM 브라우니는 우렁찬 감사 인사 후 재빨리 밥그릇을 싹싹 비워냈다.
+ENDLIST
+DATALIST
+DATAFORM 「잘 먹겠습니다!」
+DATAFORM 밥 먹는 내내 브라우니는 말이 없다가,
+DATAFORM 「잘 먹었습니다!」
+DATAFORM 라고 우렁차게 외쳤다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「자, 잘 먹겠습니다!」
+DATAFORM 브라우니는 급하게 음식을 쑤셔먹더니 사레에 들려 켁켁거렸다.
+DATAFORM 당신은 그녀의 등을 두드려주었다.
+DATAFORM 「가, 감사합니다...」
+ENDLIST
+DATALIST
+DATAFORM 「자, 잘 먹겠습니다!」
+DATAFORM 브라우니는 한 숟가락 뜨더니 눈이 휘둥그래지며 마구 퍼먹기 시작했다.
+DATAFORM 「마, 맛있어!!」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「음~」
+DATAFORM 무심코 감탄을 뱉은 브라우니를 흐뭇하게 바라보는 당신을, 브라우니는 쏘아보았다.
+DATAFORM 「뭐, 뭘 봅니까?」
+ENDLIST
+DATALIST
+DATAFORM 첫 술을 뜬 브라우니는 고개를 끄덕인다.
+DATAFORM 「그래, 맨날 집에만 박혀 있으면 이 정도는 해야지 말입니다.」
+DATAFORM 브라우니는 이죽거리면서도 밥그릇을 깨끗이 비워냈다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+ENDIF
+
+@M_No25_EVENT_Cook
+IF ABL:조리lv < 3
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 「에엣? 전 취사병은 아니지 말입니다.」
+PRINTFORMW 브라우니는 꿍얼거리면서도 요리를 했다.
+CASE "High"
+PRINTFORMW 「에엣? 전 취사병은 아니지 말입니다.」
+PRINTFORMW 브라우니는 꿍얼거리면서도 요리를 했다.
+CASE "Affection"
+PRINTFORMW 「에엣? 전 취사병은 아니지 말입니다.」
+PRINTFORMW 브라우니는 꿍얼거리면서도 요리를 했다.
+CASE "Marryed"
+PRINTFORMW 「에엣? 저 아직 신부수업도 안 받았는데...」
+PRINTFORMW 브라우니는 얼굴을 붉히면서도 요리를 했다.
+CASE "Annoyed"
+PRINTFORMW 「네, 알겠습니다!」
+CASE "Fear"
+PRINTFORMW 「네? 아, 알겠습니다아!」
+CASE "Weak"
+PRINTFORMW 「하, 짬찌에게 밥 얻어억을 생각입니까?」
+PRINTFORMW 「뭐, 정 원한다면야 해드리겠슴다.」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 「에엣? 전 요리를 할 준 알지만 취사병은 아니지 말입니다.」
+PRINTFORMW 브라우니는 꿍얼거리면서도 요리를 했다.
+CASE "High"
+PRINTFORMW 「에엣? 전 요리를 할 준 알지만 취사병은 아니지 말입니다.」
+PRINTFORMW 브라우니는 꿍얼거리면서도 요리를 했다.
+CASE "Affection"
+PRINTFORMW 「에엣? 전 요리를 할 준 알지만 취사병은 아니지 말입니다.」
+PRINTFORMW 「그래도 사령관님의 부탁이라면 해드려야지 말입니다!」
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「제 밥이 입에 맞으시는 모양입니다.」
+DATAFORM 「금방 요리해드리도록 하겠슴다!」
+ENDLIST
+DATAFORM 「헤헤, 기대하시지 말입니다!」
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 「네, 알겠습니다!」
+CASE "Fear"
+PRINTFORMW 「네? 아, 알겠습니다!」
+CASE "Weak"
+PRINTFORMW 「하, 짬찌에게 밥 얻어억을 생각입니까?」
+PRINTFORMW 「뭐, 정 원한다면야 해드리겠슴다.」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 4
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 「네! 당연히 해드려야지 말입니다!」
+CASE "High"
+PRINTFORMW 「네! 당연히 해드려야지 말입니다!」
+CASE "Affection"
+PRINTFORMW 「네! 사령관님의 부탁이라면 당연히 해드려야지 말입니다!」
+CASE "Marryed"
+PRINTDATAW
+DATAFORM 「헤헤, 기대하시지 말입니다!」
+DATALIST
+DATAFORM 「자, 주부 구단 브라우니의 요리 실력을 보시지 말입니다!」
+DATAFORM 브라우니는 팔을 걷어붙히고 요리를 시작했다.
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTFORMW 「네, 알겠습니다!」
+CASE "Fear"
+PRINTFORMW 「네? 아, 알겠습니다!」
+CASE "Weak"
+PRINTFORMW 「하, 짬찌에게 밥 얻어억을 생각입니까?」
+PRINTFORMW 「뭐, 제 밥 아니면 다른 것도 못 먹을테니 해드리겠슴다.」
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+ENDIF
+
+@M_No25_EVENT_Eat_Lunch
+IF ABL:조리lv < 3
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「저, 맛이 어떻...습니까?」
+DATAFORM 브라우니는 물어보면서도 안절부절 못 했다.
+ENDLIST
+DATAFORM 「으으, 제가 만들었지만 진짜 맛 없지 말입니다.」
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「저, 맛이 어떻...습니까?」
+DATAFORM 브라우니는 물어보면서도 안절부절 못 했다.
+ENDLIST
+DATAFORM 「으으, 제가 만들었지만 진짜 맛 없지 말입니다.」
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관님, 맛 없는 거 억지로 드시지 말지 말입니다!」
+DATAFORM 첫 술을 뜬 브라우니는 황급히 당신의 앞에 차려진 음식들을 치워버렸다.
+ENDLIST
+DATALIST
+DATAFORM 「으으, 이런 걸 해드리고 싶었던 건 아니었는데...」
+DATAFORM 브라우니의 목소리가 바닥을 기었다.
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관님, 맛 없는 거 억지로 드시지 말지 말입니다!」
+DATAFORM 첫 술을 뜬 브라우니는 황급히 당신의 앞에 차려진 음식들을 치워버렸다.
+ENDLIST
+DATALIST
+DATAFORM 「으으, 이런 걸 해드리고 싶었던 건 아니었는데...」
+DATAFORM 브라우니의 목소리가 바닥을 기었다.
+ENDLIST
+DATALIST
+DATAFORM 브라우니는 식탁 아래에서 눈만 내놓고 당신의 식사를 보고 있었다.
+DATAFORM 「그, 다음엔 더 맜있게 해 드리겠슴다...」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATAFORM 「식사 맛있게 하시지 말입니다!」
+DATALIST
+DATAFORM 음식을 입에 넣은 당신의 표정이 굳자, 브라우니는 재빨리 자리에서 일어났다.
+DATAFORM 「시정하겠습니다!」
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATAFORM 「시, 식사 맛있게 하시지 말입니다!」
+DATALIST
+DATAFORM 음식을 입에 넣은 당신의 표정이 굳자, 브라우니는 재빨리 자리에서 일어나 머리를 박았다.
+DATAFORM 「시, 시정하겠습니다!」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「...왜 그렇게 보십니까?」
+DATAFORM 「설마 요리 잘 할 줄 아셨던겁니까?」
+ENDLIST
+DATALIST
+DATAFORM 브라우니는 당신이 음식을 밀어넣는 모습을 보며 이죽거린다.
+DATAFORM 「맛있슴까? 꼭꼭 씹어서 다 먹으셔야 함다.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「어떴슴까? 좀 괜찮습니까?」
+DATAFORM 「괜찮습니까? 하... 다행입니다!」
+ENDLIST
+DATALIST
+DATAFORM 「요리책을 본 보람이 있지 말입니다.」
+DATAFORM 「그 책 말대로 설탕을 잔뜩 넣으니 다 맛있어졌지 말입니다!」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「어떴슴까? 좀 괜찮습니까?」
+DATAFORM 「괜찮습니까? 하... 다행입니다!」
+ENDLIST
+DATALIST
+DATAFORM 「요리책을 본 보람이 있지 말입니다.」
+DATAFORM 「그 책 말대로 설탕을 잔뜩 넣으니 다 맛있어졌지 말입니다!」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「어떴슴까? 좀 괜찮습니까?」
+DATAFORM 「괜찮습니까? 하... 다행입니다!」
+ENDLIST
+DATAFORM 「다음에는 더 맛있는 요리를 해 드리겠슴다. 기대하시지 말입니다!」
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관님, 맛이 괜찮습니까?」
+DATAFORM 「맛있슴까? 다행입니다!」
+ENDLIST
+DATALIST
+DATAFORM 「헤헤, 연습한 보람이 있지 말입니다.」
+DATAFORM 「더 먹고 싶으면 말씀하시지 말입니다. 얼마든지 더 해드리겠습니다!」
+ENDLIST
+DATALIST
+DATAFORM 「음, 제가 한 요리라 그러는 건 아니지만, 정말 맛있지 말입니다!」
+DATAFORM 「사령관님도 그렇게 생각하지 않으십니까?」
+ENDLIST
+DATALIST
+DATAFORM 「식사 잘 하셧슴까?」
+DATAFORM 「밥 먹고 바로 누우면 살찌지 말입니다.」
+DATAFORM 「그러니깐...」
+DATAFORM 브라우니는 몸을 배배 꼬았다.
+DATAFORM 「저랑... 침대에서 운동 한 번 하시고 눕는게 어떻슴까?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「맛있으십니까, 사령관님?」
+DATAFORM 「맛있으시다니 다행입니다.」
+ENDLIST
+DATAFORM 「다음 번에는 더 나은 요리를 할 수 있도록 하겠습니다.」
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「마, 맛있으십니까...?」
+DATAFORM 브라우니는 안절부절하면서 당신의 표정을 살폈다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 밥을 다 먹고 수저를 탁 소리나게 내려놓자, 브라우니는 화들짝 놀라더니 머리를 박았다.
+DATAFORM 「ㅈ, 죄송합니다 사령관님! 시정하겠습니다!」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「...왜 그렇게 보십니까?」
+DATAFORM 「생각보다 잘 해서 놀라셨습니까?」
+ENDLIST
+DATALIST
+DATAFORM 「하, 좋다고 먹는거 보시지 말입니다.」
+DATAFORM 「짬찌에게 밥 얻어먹고 그러는거 정말 꼴사납다고 생각되지 않습니까?」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+ELSEIF ABL:조리lv > 4
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「어떴슴까? 좀 괜찮습니까?」
+DATAFORM 「맛있습니까? 하... 다행입니다!」
+ENDLIST
+DATALIST
+DATAFORM 「제가 한 요리지만, 정말 맛있지 말입니다!」
+DATAFORM 브라우니는 자신이 요리한 음식들을 와구와구 쓸어먹고 있었다.
+DATAFORM 「에? 왜 그렇게 보십니까?」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「어떴슴까? 좀 괜찮습니까?」
+DATAFORM 「맛았습니까? 하... 다행입니다!」
+ENDLIST
+DATALIST
+DATAFORM 「제가 한 요리지만, 정말 맛있지 말입니다!」
+DATAFORM 브라우니는 자신이 요리한 음식들을 와구와구 쓸어먹고 있었다.
+DATAFORM 「에? 왜 그렇게 보십니까?」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「어떴슴까? 좀 괜찮습니까?」
+DATAFORM 「맛있습니까? 하... 다행입니다!」
+ENDLIST
+DATAFORM 「처, 천천히 꼭꼭 씹어드시지 말입니다. 급하게 먹으면 탈납니다.」
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATAFORM 「어떻슴까, 요리는 이제 합격이지 않습니까?」
+DATALIST
+DATAFORM 「이 정도면 이제 식당 차려도 되지 않겠습니까?」
+DATAFORM 「만약 식당을 차린다면, 제가 노래할 수 있는 작은 공연장을 넣을겁니다!」
+DATAFORM 브라우니는 꿈에 부풀어 마구 떠들었다.
+ENDLIST
+DATALIST
+DATAFORM 「식사 잘 하셧슴까?」
+DATAFORM 「밥 먹고 바로 누우면 살찌지 말입니다.」
+DATAFORM 「그러니깐...」
+DATAFORM 브라우니는 몸을 배배 꼬았다.
+DATAFORM 「저랑... 침대에서 운동 한 번 하시고 눕는게 어떻슴까?」
+ENDLIST
+DATALIST
+DATAFORM 「다음 요리로는 명태순살튀김을 해드리겠슴다. 단백질이 풍부해서 몸에 좋을 겁니다.」
+DATAFORM 「네? 다른 요리를 해달라니...?」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「맛있으십니까, 사령관님?」
+DATAFORM 「맛있으시다니 다행입니다.」
+ENDLIST
+DATAFORM 「다음 요리로는 명태순살튀김을 해드리겠습니다. 단백질이 풍부해 사령관님의 몸에 좋을 것입니다.」
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「마, 맛있으십니까...?」
+DATAFORM 브라우니는 안절부절하면서 당신의 표정을 살폈다.
+ENDLIST
+DATALIST
+DATAFORM 당신이 밥을 다 먹고 수저를 탁 소리나게 내려놓자, 브라우니는 화들짝 놀라더니 머리를 박았다.
+DATAFORM 「ㅈ, 죄송합니다 사령관님! 시정하겠습니다!」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「하, 좋다고 먹는거 보시지 말입니다.」
+DATAFORM 「짬찌에게 밥 얻어먹고 그러는거 정말 꼴사납다고 생각되지 않습니까?」
+ENDLIST
+DATALIST
+DATAFORM 「맛이 있습니까?」
+DATAFORM 브라우니는 당신이 맛있게 먹는 모습을 보며 이죽거렸다.
+DATAFORM 「어떻습니까? 짬찌에게 밥 얻어 먹는 기분은.」
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+ENDIF
+
+@M_No25_Sell
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTDATAW
+DATALIST
+DATAFORM 「네? 전출나가야 됩니까?」
+DATAFORM 「네, 알겠습니다. 그동안 감사했습니다.」
+DATAFORM 「승리!」
+DATAFORM 브라우니는 환하게 웃으며 당신의 집을 나섰다.
+ENDLIST
+DATALIST
+DATAFORM 「네? 전출나가야 됩니까?」
+DATAFORM 「네, 알겠습니다. 그동안 감사했...」
+DATAFORM 브라우니는 작별 인사를 하려다 어느새 다가온 판매원들의 어깨에 박혀있는 스틸라인의 로고를 보고 사색이 되었다.
+DATAFORM 「사, 사령관님. 이건...」
+DATAFORM 그 순간, 판매원들이 브라우니를 붙잡아 끌고 갔다.
+DATAFORM 「안 돼! 다시 부대로 돌아갈 수는 없어!」
+DATAFORM 「사령관님!! 사령관니이이임!!!」
+ENDLIST
+ENDDATA
+CASE "High"
+PRINTDATAW
+DATALIST
+DATAFORM 「네? 전출나가야 됩니까?」
+DATAFORM 「네, 알겠습니다. 그동안 감사했습니다.」
+DATAFORM 「승리!」
+DATAFORM 브라우니는 환하게 웃으며 당신의 집을 나섰다.
+ENDLIST
+DATALIST
+DATAFORM 「네? 전출나가야 됩니까?」
+DATAFORM 「네, 알겠습니다. 그동안 감사했...」
+DATAFORM 브라우니는 작별 인사를 하려다 어느새 다가온 판매원들의 어깨에 박혀있는 스틸라인의 로고를 보고 사색이 되었다.
+DATAFORM 「사, 사령관님. 이건...」
+DATAFORM 그 순간, 판매원들이 브라우니를 붙잡아 끌고 갔다.
+DATAFORM 「안 돼! 다시 부대로 돌아갈 수는 없어!」
+DATAFORM 「사령관님!! 사령관니이이임!!!」
+ENDLIST
+ENDDATA
+CASE "Affection"
+PRINTDATAW
+DATALIST
+DATAFORM 「네? 전출... 말입니까?」
+DATAFORM 브라우니는 판매원들 사이에서 머뭇거렸다.
+DATAFORM 「저, 사령관님. 안 가면 안 됩니까?」
+DATAFORM 「전 여기가 좋지 말입니다...」
+DATAFORM 하지만 당신의 손짓은 차가웠고, 브라우니는 판매원의 손에 끌려나갔다.
+DATAFORM 「안 돼! 이거 놔!! 놔!!! 놓으라고!!!」
+DATAFORM 「사령관님!! 사령관님!!!」
+ENDLIST
+DATALIST
+DATAFORM 「네? 전출... 말입니까?」
+DATAFORM 머뭇거리던 브라우니는 어느새 다가온 판매원들의 어깨에 박혀있는 스틸라인의 로고를 보고 사색이 되었다.
+DATAFORM 「사, 사령관님?」
+DATAFORM 「안 돼! 이거 놔!! 놔!!! 놓으라고!!!」
+DATAFORM 「사령관님!! 사령관님!!!」
+ENDLIST
+ENDDATA
+CASE "Marryed"
+PRINTDATAW
+DATALIST
+DATAFORM 「사령관님? 그게 무슨 말씀이심까?」
+DATAFORM 브라우니의 질문에 대답하는 대신, 판매원들이 그녀의 어깨를 붙잡았다.
+DATAFORM 「누, 누구십니까? 이거 놓으시지 말입니다!」
+DATAFORM 「사령관님! 도와주시지 말입니다!」
+DATAFORM 「사령관님!! 사령관님!!!」
+ENDLIST
+DATALIST
+DATAFORM 「사령관님? 그게 무슨 말씀이심까?」
+DATAFORM 브라우니의 질문에 대답하는 대신, 판매원들이 그녀의 어깨를 붙잡았다.
+DATAFORM 「누, 누구십니까? 이거 놓으시지 말입니다!」
+DATAFORM 브라우니는 몸부림치다 판매원들의 어깨에 박혀있는 스틸라인의 로고를 보고 더 격하게 날뛰기 시작했다.
+DATAFORM 「아, 안돼! 이제 행복해졌는데, 다시 거기로 갈 순 없어!!」
+DATAFORM 「사령관님! 도와주십시요!! 사령관님!!!」
+ENDLIST
+ENDDATA
+CASE "Annoyed"
+PRINTDATAW
+DATALIST
+DATAFORM 「전출 말씀이십니까?」
+DATAFORM 「알겠습니다. 사령관님. 명령에 따르겠습니다.」
+DATAFORM 「몸 건강히 지내시지 말입니다. 승리!」
+DATAFORM 브라우니는 마지막까지 너무도 담담했다.
+ENDLIST
+DATALIST
+DATAFORM 「전출 말씀이십니까?」
+DATAFORM 「알겠습니다. 사령관님. 명령에 따르겠습니다.」
+DATAFORM 브라우니는 판매원들의 어깨에 박혀있는 스틸라인의 로고를 보고 그대로 굳어버렸다.
+DATAFORM 「스, 승리!」
+DATAFORM 판매원들은 브라우니의 딱딱해진 경례를 받아준 뒤, 그녀를 붙잡아 데리고 갔다.
+ENDLIST
+ENDDATA
+CASE "Fear"
+PRINTDATAW
+DATALIST
+DATAFORM 「저, 전출 말씀이십니까?」
+DATAFORM 「그럼 전 의과사제대 처리 되는 겁니까?」
+DATAFORM 당신은 없어진 어이를 찾으며 브라우니를 판매원들에게 넘겼다.
+DATAFORM 「고, 고생하셨습니다. 승리!」
+ENDLIST
+DATALIST
+DATAFORM 「저, 전출 말씀이십니까?」
+DATAFORM 「그럼 전 의과사제대 처리 되는 겁니까?」
+DATAFORM 당신은 대답 대신 판매원들의 어깨에 박혀있는 스틸라인의 로고를 가리켰다.
+DATAFORM  브라우니는 사색이 되었고, 판매원들은 그녀를 붙잡아 끌고 갔다.
+DATAFORM 「아, 안 돼... 두 번째 군생활은 싫어...!」
+ENDLIST
+ENDDATA
+CASE "Weak"
+PRINTDATAW
+DATALIST
+DATAFORM 「하, 드디어 이 엿 같은 곳을 떠나네.」
+DATAFORM 브라우니는 바닥에 침을 탁 하고 뱉더니 휙 돌아섰다.
+DATAFORM 「그 동안 엿같았습니다. 잘 먹고 살 사십쇼.」
+ENDLIST
+DATALIST
+DATAFORM 「하, 드디어 이 엿 같은 곳을 떠나네.」
+DATAFORM 「그 동안 엿같았...」
+DATAFORM 브라우니는 작별 인사를 하려다 판매원들의 어깨에 박혀있는 스틸라인의 로고를 보더니 날뛰었다.
+DATAFORM 「씨발 내가 이러려고 버틴 줄 알아?!」
+DATAFORM 판매원들은 잽싸게 도망치려던 브라우니의 사지를 붙잡아 끌고 갔고,
+DATAFORM 「놔! 놓으라고 이 새끼들아!」
+DATAFORM 브라우니는 멀어지는 당신에게 온갖 욕설을 내뱉었다.
+DATAFORM 「이 개새끼가! 꼭 탈영해서 죽여버릴꺼야!! 죽여버릴거라고!!!」
+ENDLIST
+ENDDATA
+CASE "Break"
+PRINTDATAW
+DATALIST
+DATAFORM 「...드디어...」
+DATAFORM 브라우니는 판매원들을 따라가다 그들의 어깨에 박혀있는 스틸라인의 로고를 보고 도망치려 했다.
+DATAFORM 하지만 얼마 가지 못하고 판매원들에게 붙잡힌 브라우니.
+DATAFORM 「안 돼!! 난 이러려고 버틴게 아니란 말이야!!!」
+ENDLIST
+DATALIST
+DATAFORM 「...드디어...」
+DATAFORM 브라우니는 조용히 판매원을 따라갔다.
+ENDLIST
+ENDDATA
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_Disuse
+SELECTCASE CSTR:GETCHARA(25):1
+CASE "Low"
+PRINTFORMW 「네? 전출나가야 됩니까?」
+PRINTFORMW 「네, 알겠습니다. 그동안 감사했습니다.」
+PRINTFORMW 「승리!」
+PRINTFORMW 브라우니는 아무것도 모른 채 환하게 웃으며 당신의 집을 나섰다.
+CASE "High"
+PRINTFORMW 「네? 전출나가야 됩니까?」
+PRINTFORMW 「네, 알겠습니다. 그동안 감사했습니다.」
+PRINTFORMW 「승리!」
+PRINTFORMW 브라우니는 아무것도 모른 채 환하게 웃으며 당신의 집을 나섰다.
+CASE "Affection"
+PRINTFORMW 「네? 전출 말입니까?」
+PRINTFORMW 「갑자기 전출이라니...」
+PRINTFORMW 브라우니가 망설이는 것 같기에, 당신은 그녀 뒤에서 기다리던 폐기원들에게 브라우니를 넘겼다.
+PRINTFORMW 「엑? 이거 놓으시지 말입니다!」
+PRINTFORMW 「사령관님! 도와주시지 말입니다! 사령관님!!」
+CASE "Marryed"
+PRINTFORMW 「네? 그게 무슨 말씀입니까?」
+PRINTFORMW 「잠시 떨어져 있어야 한다니... 혹시 저에 대한 사랑이 식으신 겁니까?」
+PRINTFORMW 브라우니가 무어라 더 떠들기 전에, 당신은 그녀 뒤에서 기다리던 폐기원들에게 브라우니를 넘겼다.
+PRINTFORMW 「뭐, 뭡니까?! 이거 놓으시지 말입니다! 이대로는 못 가지 말입니다!」
+PRINTFORMW 「사령관님! 도와주시지 말입니다!! 사령관님!!!」
+CASE "Annoyed"
+PRINTFORMW 「전출 말씀이십니까?」
+PRINTFORMW 「네, 알겠습니다. 그동안 감사했습니다.」
+PRINTFORMW 「승리!」
+PRINTFORMW 브라우니는 당당한 발걸음으로 당신의 집을 나섰다.
+CASE "Fear"
+PRINTFORMW 「네? 전출... 말입니까?」
+PRINTFORMW 「네, 알겠슴다.」
+PRINTFORMW 「그동안 고생하셨습니다.」
+PRINTFORMW 브라우니는 꾸벅 인사한 뒤 당신의 집을 나섰다.
+CASE "Weak"
+PRINTFORMW 「...그래, 이럴 줄 알았어.」
+PRINTFORMW 「그래도 여기 있는것보단 덜 좆같겠지.」
+PRINTFORMW 브라우니는 순순히 폐기원들을 따라가다 홱 뒤돌아서 중지를 세웠다.
+PRINTFORMW 「잘 먹고 잘 살아라, 개새끼야.」
+CASE "Break"
+PRINTFORMW 「...드디어.」
+PRINTFORMW 브라우니는 그 한마디만 남기고 순순히 폐기원들을 따라갔다.
+CASEELSE
+RETURN 0
+ENDSELECT
+CSTR:GETCHARA(25):1 = 
+RETURN 1
+
+@M_No25_ENDING
+SELECTCASE CFLAG:엔딩플래그
+CASE 1
+PRINTFORMW ...
+PRINTFORMW 노을이 이불되어 하늘을 덮은 날,
+PRINTFORMW 당신은 브라우니를 햇빛이 잘 내려다 볼 수 있는 언덕으로 데리고 갔다.
+PRINTFORMW 「와아, 이런 곳도 있었슴까?」
+PRINTFORMW 브라우니는 언덕 위를 신나게 뛰어다녔고, 당신은 그녀를 기다려주었다.
+PRINTFORMW 한참 뛰놀던 브라우니는 가만히 자신을 기다려주는 당신에게 다가와 물었다.
+PRINTFORMW 「오늘 여기엔 왜 온 겁니까?」
+PRINTFORMW 「뭔가... 그냥 놀러온 것 같진 않아서 말입니다.」
+PRINTFORMW 환하게 웃어주는 브라우니에게, 당신은 준비한 반지를 건내주었다.
+PRINTFORMW 「이, 이건...」
+PRINTFORMW 브라우니는 반지를 받아들고 한참을 쳐다보더니, 달려들어 당신을 껴안았다.
+PRINTFORMW 「사령관님!!」
+PRINTFORMW 말 없이 꼭 안으며 서로를 느낀 뒤, 브라우니가 먼저 입을 열었다.
+PRINTFORMW 「저, 이런 날이 오면 꼭 하고 싶었던 것이 있었지 말입니다.」
+PRINTFORMW 「그걸... 해봐도 되겠습니까?」
+PRINTFORMW 당신이 흔쾌히 그래도 된다고 하자, 브라우니는 장난스러운 표정을 짓더니 당신을 풀숲 위로 쓰러뜨렸다.
+PRINTFORMW 당신이 상황파악을 하기도 전에, 브라우니는 당신의 허리춤에 주저앉았다.
+PRINTFORMW 「전 '속도위반'이라는 걸 해보고 싶었지 말입니다.」
+PRINTFORMW 「정식으로 식을 올리러면 준비할 시간이 걸릴테니... 지금부터 준비해도 문제 없지 말입니다!」
+PRINTFORMW 그 말을 듣는 순간, 당신은 등골이 오싹해졌다...
+PRINTFORMW 브라우니 엔딩 No. 1 사랑의 각개전투
+RETURN 1
+CASE 2
+PRINTFORMW 방 안에 틀여박혀 스틸라인 온라인이나 주구장창 하고 있는 그녀에게,
+PRINTFORMW 당신은 반지를 끼워 주었다.
+PRINTFORMW 「이건...」
+PRINTFORMW 브라우니는 멍하게 손가락에 끼여있는 반지를 물끄러미 쳐다보더니,
+PRINTFORMW 「하, 씨발 이건 또 뭐야.」
+PRINTFORMW 어이없다는 듯 하늘로 한숨을 내뱉고선 자신의 관물대를 열어 무언가를 꺼냈다.
+PRINTFORMW 돌아보는 브라우니의 눈빛에는 생기가 없었다.
+PRINTFORMW 「하아, 사령관님. 그거 아십니까?」
+PRINTFORMW 「제가 있던 부대에서는 브라우니가 불성실하거나 반항기가 보이면 폐기했습니다.」
+PRINTFORMW 「그래서 전 폐기된 애들이 했던 것처럼 똑같이 했습니다.」
+PRINTFORMW 「그러면 나를 버릴 줄 알았는데,」
+PRINTFORMW 틱-
+PRINTFORMW 「그러면 적어도 이 지옥에서는 벗어날 줄 알았는데...」
+PRINTFORMW 그제서야 당신은 브라우니의 손에 들린, 안전핀이 뽑힌 수류탄을 발견했다.
+PRINTFORMW 「이런 식으로 엿을 먹일 줄은 상상도 못 했지 말임다.」
+PRINTFORMW 당신이 어찌하기도 전에, 브라우니는 당신을 강하게 껴안았다.
+PRINTFORMW 당신과 그녀 가슴 사이에는 수류탄이 끼여 있었다.
+PRINTFORMW 「그 동안 참 고마웠다. 이 씨발새끼야.」
+PRINTFORMW 팅.
+PRINTFORMW 안전손잡이가 당신과 그녀의 사이로 떨어졌고,
+PRINTFORMW 곧 파열적인 폭음이 당신의 몸을 감쌌다.
+PRINTFORMW 브라우니 엔딩 No. 2 호 안에 수류탄
+RETURN 1
+CASE 3
+PRINTFORMW ...당신은 오래간만에 브라우니를 찾아가보기로 했다.
+PRINTFORMW 꽤 오랬동안 브라우니를 방치해 두었는데, 이상하리만큼 그녀가 조용했던 탓이었다.
+PRINTFORMW 본래 그녀의 성격보다 조용한 건 둘째치고, 아얘 방에 없는 것마냥 조용하니 안 궁금하고 배길 수 없던 당신은,
+PRINTFORMW 정말 오랜만에 브라우니가 머물던 방문을 열었다.
+PRINTFORMW 덜컹-
+PRINTFORMW 힘없이 연린 문 너머로 퀴퀴한 냄새가 코를 찔렀다.
+PRINTFORMW 마구 어질러지고 쓰레기가 널부러진 방 안에는 브라우니가 없었다.
+PRINTFORMW 당신은 쓰레기들을 피하면서 브라우니를 찾아다니다 침대 옆에 붙어있는 포스터를 발견한다.
+PRINTFORMW 라커룸을 배경으로 팬티만 입은 두 남자가 레슬링을 하는 장면이 그려진 포스터...
+PRINTFORMW 도데체 이런 외설적인 사진은 왜 붙여놓고 있는거야.
+PRINTFORMW 당신은 충동적으로 포스터를 확 뜯어버렸다.
+PRINTFORMW 그리고 당신은 포스터 뒤에 있는 것을 보고 우뚝 멈춰서버렸다.
+PRINTFORMW 겨우 컴퓨터 본체 하나 들어갈 정도로 좁은 틈과 미끈미끈한 바디젤...
+PRINTFORMW 그제서야 당신은 왜 브라우니가 그동안 조용했는지 알았다.
+PRINTFORMW ...
+PRINTFORMW 브라우니 엔딩 No. 3 탈영
+RETURN 1
+ENDSELECT
+RETURN 0
+

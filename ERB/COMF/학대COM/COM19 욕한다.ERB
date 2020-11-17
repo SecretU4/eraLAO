@@ -4,11 +4,23 @@
 SIF TALENT:변태
     SOURCE:호감도 += 5
 
+SOURCE:공포 += 10
+SOURCE:스트레스 += 20
+
 ;에밀리 연모아님
 IF NO:TARGET == 68 && !TALENT:사랑
-ELSE
-    SOURCE:공포 += 10
-    SOURCE:스트레스 += 20
+    SOURCE:공포 = 0
+    SOURCE:스트레스 = 0
+    SOURCE:호감도 = 0
+;취함 상태
+ELSEIF TCVAR:TARGET:취함
+    SOURCE:공포 = 0
+    SOURCE:스트레스 = 0
+    SOURCE:호감도 = 0
+;외출중 상태
+ELSEIF TCVAR:TARGET:외출중
+    SIF NO:TARGET == 52 ;나앤
+        SOURCE:스트레스 = 300
 ENDIF
 
 EXP:학대COM경험 ++

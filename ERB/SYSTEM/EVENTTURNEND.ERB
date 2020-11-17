@@ -142,6 +142,11 @@ ELSEIF TIME == 1 ;밤 > 낮
 ENDIF
 
 $NULL_TARGET
+
+;TFLAG 스킵 처리
+SIF SKIP_CONTROL()
+    BEGIN TURNEND
+
 PRINTL
 IF FLAG:속박상태
     PRINTW ??이 되었습니다.
@@ -272,6 +277,10 @@ SELECTCASE NO:ARG
         CLEARBIT CFLAG:ARG:특수출력조건, 3
         SIF TALENT:ARG:정신쇠약 == 1 && ARG != TARGET
             SETBIT CFLAG:ARG:특수출력조건, 3 ;etc1 = 소완 엔딩 3 카운트
+    CASE 25 ;브라우니
+        CLEARBIT CFLAG:ARG:특수출력조건, 3
+        SIF TALENT:ARG:정신쇠약 == 2 && FLAG:자택상황 && ARG != TARGET
+            SETBIT CFLAG:ARG:특수출력조건, 3
     CASE 68 ;에밀리
         IF TALENT:ARG:사랑 == 2 && TALENT:ARG:정신쇠약 == 1
             CFLAG:ARG:엔딩조건카운트1 += 1 ;etc2 = 에밀리 엔딩 4 카운트
@@ -366,3 +375,24 @@ WHILE 1
 WEND
 
 BEGIN TITLE
+;========================================================================
+;함수명: SKIP_CONTROL
+;스킵 관련 TFLAG 처리
+;========================================================================
+@SKIP_CONTROL
+#FUNCTION
+VARSET LOCAL
+
+SELECTCASE TFLAG:시간스킵
+    CASE 1 ;시간대
+        LOCAL = 1
+    CASE 2 ;날짜
+        LOCAL = 2
+ENDSELECT
+
+;문제될 여지가 있는 TFLAG 미리 처리
+TFLAG:시간스킵 = MAX(TFLAG:시간스킵 - 1, 0)
+SIF TIME == 1 && LOCAL == 2 ;낮 > 밤 시 날짜변경 발생 플래그 처리
+    TFLAG:시간스킵 = 0
+
+RETURNF LOCAL

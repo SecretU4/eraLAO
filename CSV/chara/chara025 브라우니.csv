@@ -1,0 +1,16 @@
+﻿NO,25,
+NAME,T-2 브라우니,
+CALLNAME,브라우니,
+TALENT,소속,5,;스틸라인
+
+TALENT,등급,1,;B
+TALENT,분류,1,;경장
+TALENT,체형,1,;보통체구
+TALENT,군인,1,
+TALENT,긍정도,1,;긍정적
+TALENT,지능,-1,;무식
+
+ABL,전투lv,2,
+EXP,출격경험,25,
+
+;CFLAG:특수출력조건 bit 3 = 엔딩3 조건충족 여부 (카운트는 FLAG:방치일수)
