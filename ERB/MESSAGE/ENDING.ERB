@@ -68,10 +68,10 @@ ELSEIF TALENT:사랑 == 2
             SIF FLAG:현캐릭터수 >= 10 && !RAND:10 ;히든, 10% 확률
                 CFLAG:엔딩플래그 = 4
         CASE 51 ;메이
-            SIF TALENT:GETCHARA(52):정신쇠약 == 2 || TALENT:정신쇠약 == 2 ;etc7 =
+            SIF TALENT:GETCHARA(52):정신쇠약 || GETBIT(CFLAG:특수출력조건, 5) ;may5 = 1, etc7 = 메이/나앤 상대 이별 여부
                 CFLAG:엔딩플래그 = 5
         CASE 52 ;나앤
-            SIF TALENT:GETCHARA(51):정신쇠약 == 2 || TALENT:정신쇠약 == 2 ;etc7 =
+            SIF TALENT:GETCHARA(51):정신쇠약 || GETBIT(CFLAG:특수출력조건, 3) ;may5 = 2, etc7 = 메이/나앤 상대 이별 여부
                 CFLAG:엔딩플래그 = 3
         CASE 73 ;팬텀
             SIF EXP:출격경험 > 6
@@ -119,6 +119,7 @@ REAL_NUM = NO:ARG
 TARGET = ARG
 CSTR:ARG:1 '= SET_MSG_CSTR(ARG)
 
+;판매/폐기 구별 처리
 SELECTCASE ARGS
     CASE "판매"
         REPEAT 10
@@ -134,8 +135,6 @@ SELECTCASE ARGS
         
         IF REAL_NUM == 123 && TALENT:ARG:사랑 == 1
             SETBIT CFLAG:MASTER:엔딩플래그, 7
-        ELSEIF REAL_NUM == 138 && TALENT:ARG:사랑 == 2 && TALENT:ARG:혼인 && TALENT:ARG:정신쇠약 != 2
-            SETBIT CFLAG:MASTER:엔딩플래그, 24
         ENDIF
     CASE "폐기"
         REPEAT 10
@@ -159,11 +158,22 @@ SELECTCASE ARGS
             ELSEIF TALENT:ARG:사랑 == 2 && EXP:ARG:출격경험 > 49
                 SETBIT CFLAG:MASTER:엔딩플래그, 10
             ENDIF
-        ELSEIF REAL_NUM == 138 && TALENT:ARG:사랑 == 2 && TALENT:ARG:혼인 && TALENT:ARG:정신쇠약 != 2
-            SETBIT CFLAG:MASTER:엔딩플래그, 24
         ENDIF
     CASEELSE
         THROW 상정외 %ARGS% 입니다.
+ENDSELECT
+
+;이별 공통 처리
+SELECTCASE REAL_NUM
+    CASE 51 ;메이
+        SIF ITEM:ITEM_BIO(52) > 0 ;etc7 (나앤 존재시)
+            SETBIT CFLAG:GETCHARA(52):특수출력조건, 3
+    CASE 52 ;나앤
+        SIF ITEM:ITEM_BIO(51) > 0 ;etc7 (메이 존재시)
+            SETBIT CFLAG:GETCHARA(51):특수출력조건, 5
+    CASE 138 ;베로니카
+        SIF TALENT:ARG:사랑 == 2 && TALENT:ARG:혼인 && TALENT:ARG:정신쇠약 != 2
+            SETBIT CFLAG:MASTER:엔딩플래그, 24
 ENDSELECT
 
 RETURN 0

@@ -13,6 +13,7 @@ TALENT,지휘관,1,
 ABL,전투lv,2,
 EXP,출격경험,25,
 
+;CFLAG,특수출력조건 bit 5 = 나앤 이별여부 (etc7)
 ;CFLAG,특수출력유무 bit 8 = fLove 출력유무 (etc1)
 ;CFLAG,특수출력유무 bit 9 = fBreak 출력유무 (etc2)
 ;CFLAG,특수출력유무 bit 10 = fWeak 출력유무 (etc5)

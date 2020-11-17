@@ -13,5 +13,6 @@ TALENT,긍정도,-1,;비관적
 ABL,전투lv,2,
 EXP,출격경험,25,
 
+;CFLAG,특수출력조건 bit 3 = 메이 이별여부 (etc7)
 ;CFLAG,특수출력유무 bit 8 = 연애시작시 메이 이벤트 출력유무 (etc1)
 ;CFLAG,특수출력조건 bit 51 ;morningE 대응
