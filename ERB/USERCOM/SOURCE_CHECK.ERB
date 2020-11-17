@@ -21,107 +21,101 @@ VARSET LOCAL, 1000, 0, 5
 
 ;호감도 배율 처리
 SIF TALENT:짜증
-    LOCAL:0 = LOCAL:0 / 2
+    TIMES LOCAL:0, 0.50
 SIF TALENT:사랑
-    LOCAL:0 = LOCAL:0 * 2
+    TIMES LOCAL:0, 2.00
 SIF TALENT:혼인 == 1
-    LOCAL:0 = LOCAL:0 * 2
+    TIMES LOCAL:0, 2.00
 SIF TALENT:정신쇠약 == 1
-    LOCAL:0 = LOCAL:0 / 2
+    TIMES LOCAL:0, 0.50
 SIF TALENT:얀데레
-    LOCAL:0 = LOCAL:0 * 13 / 10
+    TIMES LOCAL:0, 1.30
 SIF TALENT:메가데레
-    LOCAL:0 = LOCAL:0 * 13 / 10
+    TIMES LOCAL:0, 1.30
 SELECTCASE TALENT:MASTER:나이
     CASE 0 ;소년
         SIF TALENT:체형 == 0 ;작은체구
-            LOCAL:0 = LOCAL:0 * 6 / 5
+            TIMES LOCAL:0, 1.20
         SIF TALENT:체형 == 2 ;큰체구
-            LOCAL:0 = LOCAL:0 * 10 / 9
+            TIMES LOCAL:0, 0.90
         SIF TALENT:나이속성 == 1 ;누님
-            LOCAL:0 = LOCAL:0 * 6 / 5
+            TIMES LOCAL:0, 1.20
         SIF TALENT:쇼타콘
-            LOCAL:0 = LOCAL:0 * 6 / 5
+            TIMES LOCAL:0, 1.20
     CASE 1 ;청년
     CASE 2 ;중년
         SIF TALENT:딜프
-            LOCAL:0 = LOCAL:0 * 6 / 5
+            TIMES LOCAL:0, 1.20
 ENDSELECT
 SIF TALENT:MASTER:매력
-    LOCAL:0 = LOCAL:0 * 3 / 2
+    TIMES LOCAL:0, 1.50
 SIF TALENT:억압
-    LOCAL:0 = LOCAL:0 * 10 / 7
-
-LOCAL:0 = LOCAL:0 / 1000
+    TIMES LOCAL:0, 0.70
 
 ;스트레스 배율 처리
 IF SOURCE:스트레스 < 0
     SIF TALENT:사랑 == 2
-        LOCAL:1 = LOCAL:1 * 2
+        TIMES LOCAL:1, 2.00
     SIF TALENT:정신쇠약 == 1
-        LOCAL:1 = LOCAL:1 / 2
+        TIMES LOCAL:1, 0.50
 ELSEIF SOURCE:스트레스 > 0
     SIF TALENT:사랑 == 1
-        LOCAL:1 = LOCAL:1 * 4 / 5
+        TIMES LOCAL:1, 0.80
     SIF TALENT:사랑 == 2
-        LOCAL:1 = LOCAL:1 / 2
+        TIMES LOCAL:1, 0.50
     SIF TALENT:혼인 == 1
-        LOCAL:1 = LOCAL:1 / 10
+        TIMES LOCAL:1, 0.10
     SIF TALENT:정신쇠약 == 1
-        LOCAL:1 = LOCAL:1 * 2
+        TIMES LOCAL:1, 2.00
     SIF TALENT:메가데레
-        LOCAL:1 = LOCAL:1 / 2
+        TIMES LOCAL:1, 0.50
     SIF TALENT:긍정도 == 1
-        LOCAL:1 = LOCAL:1 * 4 / 5
+        TIMES LOCAL:1, 0.80
     SIF TALENT:긍정도 == -1
-        LOCAL:1 = LOCAL:1 * 6 / 5
+        TIMES LOCAL:1, 1.20
     SIF TALENT:겁쟁이
-        LOCAL:1 = LOCAL:1 * 6 / 5
+        TIMES LOCAL:1, 1.20
 ENDIF
-
-LOCAL:1 = LOCAL:1 / 1000
 
 ;공포 배율 처리
 IF SOURCE:공포 > 0
     SIF TALENT:사랑 == 1
-        LOCAL:2 = LOCAL:2 * 4 / 5
+        TIMES LOCAL:2, 0.80
     SIF TALENT:사랑 == 2
-        LOCAL:2 = LOCAL:2 / 2
+        TIMES LOCAL:2, 0.50
     SIF TALENT:혼인 == 1
-        LOCAL:2 = LOCAL:2 / 10
+        TIMES LOCAL:2, 0.10
     SIF TALENT:정신쇠약 == 1
-        LOCAL:2 = LOCAL:2 * 2
+        TIMES LOCAL:2, 2.00
     SIF TALENT:얀데레
-        LOCAL:2 = LOCAL:2 * 10 / 3
+        TIMES LOCAL:2, 0.50
     SIF TALENT:메가데레
-        LOCAL:2 = LOCAL:2 / 2
+        TIMES LOCAL:2, 0.50
     SIF TALENT:긍정도 == 1
-        LOCAL:2 = LOCAL:2 * 4 / 5
+        TIMES LOCAL:2, 0.80
     SIF TALENT:긍정도 == -1
-        LOCAL:2 = LOCAL:2 * 6 / 5
+        TIMES LOCAL:2, 1.20
     SIF TALENT:변태
-        LOCAL:2 = LOCAL:2 / 2
+        TIMES LOCAL:2, 0.50
     SIF TALENT:군인
-        LOCAL:2 = LOCAL:2 * 7 / 10
+        TIMES LOCAL:2, 0.70
     SIF TALENT:겁쟁이
-        LOCAL:2 = LOCAL:2 * 13 / 10
+        TIMES LOCAL:2, 1.30
     SELECTCASE TALENT:MASTER:나이
         CASE 0 ;소년   
-            LOCAL:2 = LOCAL:2 * 4 / 5
+            TIMES LOCAL:2, 0.80
         CASE 1 ;청년
         CASE 2 ;중년
-            LOCAL:2 = LOCAL:2 * 6 / 5
+            TIMES LOCAL:2, 1.20
     ENDSELECT
 ENDIF
-
-LOCAL:2 = LOCAL:2 / 1000
 
 SIF TALENT:정신쇠약 == 2
     VARSET LOCAL, 0, 0, 5
 IF !FLAG:속박상태
-    SOURCE:호감도 = SOURCE:호감도 * LOCAL:0
-    SOURCE:스트레스 = SOURCE:스트레스 * LOCAL:1
-    SOURCE:공포 = SOURCE:공포 * LOCAL:2
+    SOURCE:호감도 = (SOURCE:호감도 * LOCAL:0) / 1000
+    SOURCE:스트레스 = (SOURCE:스트레스 * LOCAL:1) / 1000
+    SOURCE:공포 = (SOURCE:공포 * LOCAL:2) / 1000
 ELSE
     SOURCE:호감도 = 1000
     SOURCE:스트레스 = -1000
