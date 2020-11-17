@@ -215,6 +215,15 @@ FOR 주회, 1, CHARANUM
         CASE 21 ;마리
             SIF TALENT:MASTER:나이 == 0 && EXP:주회:학대COM경험 > 19 ;etc1 = 마리 엔딩 3 카운트
                 SETBIT CFLAG:MASTER:엔딩플래그, 11
+        CASE 25 ;브라우니
+            IF GETBIT(CFLAG:주회:특수출력조건, 3)
+                IF CFLAG:주회:방치일수 > 15
+                    CFLAG:캐릭터히든 = 1 ;연애 진입시 엔딩 구현용
+                ELSEIF CFLAG:주회:방치일수 == 14
+                    PRINTL ...요 근래 브라우니가 너무 조용한 것 같다.
+                    PRINTL 그 생각이 머릿 속을 스치자, 당신은 브라우니가 사라졌을지도 모른다는 생각에 그녀의 방을 돌아보았다.
+                ENDIF
+            ENDIF
         CASE 68 ;에밀리
             SIF CFLAG:주회:엔딩조건카운트1 > 4 ;etc2 = 에밀리 엔딩 4 카운트
                 SETBIT CFLAG:MASTER:엔딩플래그, 15
@@ -460,6 +469,9 @@ FOR 비트값, 1, 64
             CASE 27 ;LRL (번호 임의설정)
                 TARGET = GETCHARA(118)
                 CFLAG:TARGET:엔딩플래그 = 3
+            CASE 28 ;브라우니 (번호 임의설정)
+                TARGET = GETCHARA(25)
+                CFLAG:TARGET:엔딩플래그 = 3
             CASEELSE
                 THROW 미확인 엔딩 번호 {비트값}
         ENDSELECT
@@ -532,6 +544,9 @@ SELECTCASE NO:TARGET
     CASE 21 ;마리
         SIF CFLAG:엔딩플래그 == 3
             LOCAL = 1 ;exc = 1
+    CASE 25 ;브라우니
+        SIF CFLAG:엔딩플래그 == 3
+            LOCAL = 3
     CASE 31, 32 ;레오나, 발키리
         SIF CFLAG:엔딩플래그 == 3
             TALENT:혼인 = 1 ;exc = 4

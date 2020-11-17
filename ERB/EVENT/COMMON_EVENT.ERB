@@ -42,7 +42,7 @@ BEGIN TURNEND
 
 VARSET LOCAL
 선택이벤트번호 = -1
-EVENTNO_LAST = 17
+EVENTNO_LAST = 18
 
 IF ITEM:(ITEM_BIO(12)) > 0 ;소완 보유시 4번 이벤트 제외
     이벤트배열 '= "0/0"
@@ -100,7 +100,7 @@ FOR 대상, 1, CHARANUM
 ;대상배열과 관계없는 개별 이벤트 처리
 ;---------------------------------------------------------------
     이벤트번호 = 0
-    FOR 이벤트번호, 1004, 1050
+    FOR 이벤트번호, 1004, 1055
         ;이벤트배열에서 제어하는 번호 추가시 이곳에도 추가바람
         SIF GROUPMATCH(이벤트번호, 1015,1016,1019,1023,1024,1025,1026,1036,1037,1038,1040)
             CONTINUE
@@ -191,6 +191,8 @@ FOR 이벤트bit값, 1, (EVENTNO_LAST + 1)
                 ENDIF
             CASE 17
                 이벤트배열 += "/1047"
+            CASE 18
+                이벤트배열 += "/1049"
         ENDSELECT
     ENDIF
 
@@ -397,6 +399,12 @@ ELSE ;!CFLAG:(ARG:1):출격중
             CASE 1048 ;에밀리, 짜증 아님, 공포 150 미만
                 SIF NO:(ARG:1) == 68 && CFLAG:(ARG:1):공포 < 150 && !TALENT:(ARG:1):짜증
                     RETURNF 1
+            CASE 1050 ;브라우니, 짜증 아님, 공포 150 미만, 호감도 299 초과, 연모 이상(원본 연모만)
+                SIF NO:(ARG:1) == 25 && CFLAG:(ARG:1):공포 < 150 && CFLAG:(ARG:1):호감도 > 299 && !TALENT:(ARG:1):짜증 && TALENT:(ARG:1):사랑
+                    RETURNF 1
+            CASE 1051 ;브라우니, 짜증 아님, 공포 150 미만, 호감도 299 초과
+                SIF NO:(ARG:1) == 25 && CFLAG:(ARG:1):공포 < 150 && CFLAG:(ARG:1):호감도 > 299 && !TALENT:(ARG:1):짜증
+                    RETURNF 1
         ENDSELECT
     ENDIF            
 ENDIF
@@ -480,6 +488,14 @@ IF !CFLAG:(ARG:1):출격중 && !TALENT:(ARG:1):정신쇠약
                         RETURNF 1
                 ELSEIF ARG:2 == 1
                     SIF NO:(ARG:1) == 52 && !TALENT:(ARG:1):짜증
+                        RETURNF 1
+                ENDIF
+            CASE 18 ;세이렌 테티스 이벤트 (번호 임의설정)
+                IF ARG:2 == 0
+                    SIF NO:(ARG:1) == 89 && !TALENT:(ARG:1):짜증 && CFLAG:(ARG:1):호감도 > 499
+                        RETURNF 1
+                ELSEIF ARG:2 == 1
+                    SIF NO:(ARG:1) == 90 && !TALENT:(ARG:1):짜증 && CFLAG:(ARG:1):호감도 > 499
                         RETURNF 1
                 ENDIF
         ENDSELECT
@@ -692,6 +708,10 @@ WHILE 선택캐릭터:0 == -1
             선택캐릭터:0 = GETCHARA(51)
         CASE 1048 ;에밀리 개인 이벤트
             선택캐릭터:0 = GETCHARA(68)
+        CASE 1049 ;세이렌/테티스 이벤트
+            선택캐릭터:0 = GETCHARA(89)
+        CASE 1050, 1051 ;브라우니 개인 이벤트
+            선택캐릭터:0 = GETCHARA(25)
         CASEELSE
             THROW 미상정된 이벤트번호 {ARG}
     ENDSELECT
@@ -746,6 +766,8 @@ WHILE 선택캐릭터:1 == -1
             선택캐릭터:1 = GETCHARA(108)
         CASE 1045 TO 1047 ;메이/나엔 이벤트
             선택캐릭터:1 = GETCHARA(52)
+        CASE 1049 ;세이렌/테티스 이벤트
+            선택캐릭터:1 = GETCHARA(90)
         CASEELSE ; 1명만 뽑는 경우
             BREAK
     ENDSELECT

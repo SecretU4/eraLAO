@@ -69,6 +69,15 @@ RETURNF LINES
 CSTR:1 = 
 VARSET LOCAL
 
+;연애 커맨드 진입시에만 가능한 특수이벤 처리용
+SELECTCASE NO:TARGET
+    CASE 25 ; 브라우니 엔딩 3 처리용
+        IF CFLAG:TARGET:캐릭터히든 == 1
+            SETBIT CFLAG:MASTER:엔딩플래그, 28
+            BEGIN TURNEND
+        ENDIF
+ENDSELECT
+
 CSTR:1 '= SET_MSG_CSTR(TARGET)
 
 SIF !CFLAG:조교여부 ;첫조교시
