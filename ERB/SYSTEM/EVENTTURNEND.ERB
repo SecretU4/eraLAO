@@ -143,9 +143,9 @@ ENDIF
 
 $NULL_TARGET
 
-;문제될 여지가 있는 TFLAG 미리 초기화
-TFLAG:시간스킵 = 0
-TFLAG:연애중스킵 = 0
+;TFLAG 스킵 처리
+SIF SKIP_CONTROL()
+    BEGIN TURNEND
 
 PRINTL
 IF FLAG:속박상태
@@ -371,3 +371,24 @@ WHILE 1
 WEND
 
 BEGIN TITLE
+;========================================================================
+;함수명: SKIP_CONTROL
+;스킵 관련 TFLAG 처리
+;========================================================================
+@SKIP_CONTROL
+#FUNCTION
+VARSET LOCAL
+
+SELECTCASE TFLAG:시간스킵
+    CASE 1 ;시간대
+        LOCAL = 1
+    CASE 2 ;날짜
+        LOCAL = 2
+ENDSELECT
+
+;문제될 여지가 있는 TFLAG 미리 처리
+TFLAG:시간스킵 = MAX(TFLAG:시간스킵 - 1, 0)
+SIF TIME == 1 && LOCAL == 2 ;낮 > 밤 시 날짜변경 발생 플래그 처리
+    TFLAG:시간스킵 = 0
+
+RETURNF LOCAL

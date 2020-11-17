@@ -2318,7 +2318,7 @@ CASE "Fear"
 PRINTFORMW 「저, 그, 일어나셔야 하지 말입니다.」
 PRINTFORMW 브라우니의 들릴락말락하는 목소리대신 그녀의 인기척이 당신을 깨웠다.
 CASE "Weak"
-PRINTDATAW
+PRINTDATAW LOCAL:99
 DATALIST
 DATAFORM 빠 바 바바바 빠바 빠빠빠빠라빠빠빠 빠 빠빠라~
 DATAFORM 당신은 우렁찬 나팔 소리에 깜짝 놀라 일어났다.
@@ -2350,6 +2350,8 @@ DATAFORM 애매한 시간에 애매하게 깨 버린 당신은 뒤척이다 다�
 DATAFORM ...그게 이렇게 오래 자 버릴 줄이야.
 ENDLIST
 ENDDATA
+SIF LOCAL:99 == 5 ;...그게 이렇게 오래 자 버릴 줄이야.
+    TFLAG:시간스킵 = 1
 CASE "Break"
 PRINTDATAW
 DATALIST
