@@ -276,16 +276,16 @@ RETURN 1
 @M_No21_COM3
 SELECTCASE CSTR:GETCHARA(21):1
 CASE "Low"
-PRINTFORMW 당신은 마리의 %TEXTR("가슴/허벅지")%(을)를 칭찬했다.
+PRINTFORMW 당신은 마리의 %조사처리(TEXTR("가슴/허벅지"), "를")% 칭찬했다.
 PRINTFORMW  마리는 당황하는 기색 없이 답했다.
 PRINTFORMW %TEXTR("「칭찬은 감사합니다만, 성희롱은 자제해주시길 바랍니다.」/「품행은 방정해야 합니다.」/「조금 조심해서 말씀하십시오… 자매들이 들을 수도 있습니다.」")%
 CASE "High/Yboy"
-PRINTFORMW 당신은 마리의 %TEXTR("가슴/허리/허벅지/다리")%(을)를 칭찬했다.
+PRINTFORMW 당신은 마리의 %조사처리(TEXTR("가슴/허리/허벅지/다리"), "를")% 칭찬했다.
 PRINTFORMW 마리는 살짝 당황하며 대답했다.
 PRINTFORMW %TEXTR("「각하, 그런 말은 누구에게서 배우셨습니까? 어린 각하께 그런걸 가르친 자에게 주의를 좀 줘야겠습니다.」/「각하에겐 아직 이릅니다. 좀 더 건전한 쪽으로 관심을 돌리시길.」/「각하께서 저를 그런 눈으로 보셨다니..」")%
 PRINTFORMW 마리의 볼이 빨개졌다.
 CASE "High/Nboy"
-PRINTFORMW 당신은 마리의 %TEXTR("가슴/허리/허벅지/다리")%(을)를 칭찬했다.
+PRINTFORMW 당신은 마리의 %조사처리(TEXTR("가슴/허리/허벅지/다리"), "를")% 칭찬했다.
 PRINTFORMW 마리는 살짝 당황하며 대답했다.
 PRINTDATAW
 DATALIST
@@ -301,7 +301,7 @@ DATAFORM 「정말.... 그렇게 흥미가 있으신 겁니까?」
 ENDDATA
 PRINTFORMW 마리의 볼이 빨개졌다.
 CASE "Affection"
-PRINTFORMW 당신은 마리의 %TEXTR("가슴/허리/허벅지/다리/골반")%(을)를 칭찬했다.
+PRINTFORMW 당신은 마리의 %조사처리(TEXTR("가슴/허리/허벅지/다리/골반"),"를")% 칭찬했다.
 PRINTFORMW 마리는 쑥스러워 하면서도 최대한 차분한 목소리로 대답했다.
 PRINTDATAW
 DATALIST
@@ -317,23 +317,23 @@ DATAFORM 「각하, 여기 말고도 다른 곳도 칭찬해주셨으면..」
 ENDLIST
 ENDDATA
 CASE "Marryed"
-PRINTFORMW 당신은 마리의 %TEXTR("가슴/허리/허벅지/다리/골반/엉덩이/배/머릿결/쇄골")%(을)를 칭찬했다.
+PRINTFORMW 당신은 마리의 %조사처리(TEXTR("가슴/허리/허벅지/다리/골반/엉덩이/배/머릿결/쇄골"),"를")% 칭찬했다.
 PRINTFORMW 마리는 요염한 눈길로 답했다.
 PRINTFORMW %TEXTR("「.. 궁금하지 않으십니까...?」/「말로만 하지 마시고 직접..」/「각하, 그런 말씀을 하시면 저, 참기 힘들어집니다..」/「각하도 만만치 않으십니다..후후..」")%
 CASE "Annoyed"
-PRINTFORMW 당신은 마리의 %TEXTR("가슴/허벅지")%(을)를 칭찬했다.
+PRINTFORMW 당신은 마리의 %조사처리(TEXTR("가슴/허벅지"),"를")% 칭찬했다.
 PRINTFORMW %TEXTR("「사령관 각하, 성희롱은 옳지 않습니다.」/「전 군인입니다. 그런 발언은 삼가해주시기 바랍니다.」")%
 PRINTFORMW 목소리에서 화를 참고 있는 것이 느껴졌다.
 CASE "Fear"
-PRINTFORMW 당신은 마리의 %TEXTR("가슴/허벅지")%(을)를 칭찬했다.
+PRINTFORMW 당신은 마리의 %조사처리(TEXTR("가슴/허벅지"),"를")% 칭찬했다.
 PRINTFORMW 「...」
 PRINTFORMW 마리는 아무 말도 듣지 못했다는듯이 반응조차 하지 않았다.
 CASE "Weak"
-PRINTFORMW 당신은 마리의 %TEXTR("가슴/허벅지")%(을)를 칭찬했다.
+PRINTFORMW 당신은 마리의 %조사처리(TEXTR("가슴/허벅지"),"를")% 칭찬했다.
 PRINTFORMW 「...」
 PRINTFORMW 마리는 무표정으로 고개를 끄덕였다.
 CASE "Break"
-PRINTFORMW 당신은 마리의 %TEXTR("가슴/허벅지")%(을)를 칭찬했다.
+PRINTFORMW 당신은 마리의 %조사처리(TEXTR("가슴/허벅지"),"를")% 칭찬했다.
 PRINTFORMW 「...」
 PRINTFORMW 마리는 칭찬받은 부위를 한참이나 바라보다가 갑자기 눈물방울을 떨궜다.
 CASEELSE

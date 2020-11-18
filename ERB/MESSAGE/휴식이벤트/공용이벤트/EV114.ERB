@@ -4,33 +4,33 @@ CASE 0
 PRINTFORML 당신은 구석에 박아두었던 짐들을 정리하던 도중
 PRINTFORML 당신의 유치원 졸업 앨범을 발견한다.
 PRINTFORML 앨범을 한 장 한 장 넘기면서 옛날 생각에 빠져 있었는데
-PRINTFORML 어느새 다가온 %CALLNAME:ARG%(이)가 이 사진들은 뭐냐고 묻는다.
+PRINTFORML 어느새 다가온 %ARG가% 이 사진들은 뭐냐고 묻는다.
 PRINTFORMW 당신은 설명해주며 졸업 앨범 속에서 어렸을 적 당신을 찾아 보여준다.
-PRINTFORML %CALLNAME:ARG%(은)는 당신의 사진을 보고 말한다.
-PRINTFORML 어렸을 때는 지금과 많이 다르다고."
+PRINTFORML %ARG는% 당신의 사진을 보고 말한다.
+PRINTFORML 어렸을 때는 지금과 많이 다르다고.
 PRINTFORML 칭찬인지 욕인지는 아리송했지만, 당신은 대답의 답례로 %CALLNAME:ARG%의 머리를 쓰다듬어 주었다.
 PRINTFORMW 호감도+10
 CFLAG:ARG:호감도 += 10
 RETURN 1
 CASE 1
 PRINTFORMW 당신은 사놓고 구석에 박아두었던 체스 세트를 꺼내들었다.
-PRINTFORML 처음 보는 물건에 %CALLNAME:ARG%(이)가 흥미를 보였고,
+PRINTFORML 처음 보는 물건에 %ARG가% 흥미를 보였고,
 PRINTFORML 당신은 %CALLNAME:ARG%에게 체스를 둬보자고 권유한다.
 PRINTFORMW 간단하게 룰을 설명하고 난 뒤, 당신의 선공으로 시작된다.
 PRINTFORMW 치열한 공방전 끝에 당신은 퀸과 비숍으로 체크메이트를 만들며 승리한다.
-PRINTFORML %CALLNAME:ARG%(은)는 다음에는 지지 않겠다며 승부욕에 찬 모습이었다.
+PRINTFORML %ARG는% 다음에는 지지 않겠다며 승부욕에 찬 모습이었다.
 PRINTFORML 호감도+15
-PRINTFORMW 스트레스-5"
+PRINTFORMW 스트레스-5
 CFLAG:ARG:호감도 += 15
 CFLAG:ARG:스트레스 -= 5
 RETURN 1
 CASE 2
 PRINTFORMW 당신은 구석에 박아두었던 젠가를 꺼낸다.
-PRINTFORMW %CALLNAME:ARG%(이)가 젠가에 흥미를 보이길래, 당신은 하는 방법을 알려준 뒤 둘이서 젠가를 해보자고 한다."
-PRINTFORMW 당신과 %CALLNAME:ARG%(은)는 서로 블록을 하나씩 빼냈다.
+PRINTFORMW %ARG가% 젠가에 흥미를 보이길래, 당신은 하는 방법을 알려준 뒤 둘이서 젠가를 해보자고 한다.
+PRINTFORMW 당신과 %ARG는% 서로 블록을 하나씩 빼냈다.
 PRINTFORMW 블록이 하나씩 빠져서 맨 위에 쌓일 때마다 당신과 %CALLNAME:ARG% 사이에 긴장감도 겹겹이 쌓여나갔다.
 PRINTFORMW 규칙적으로 쌓인 블록들보다 불규칙하게 쌓인 블록이 더 많아질 때쯤, 
-PRINTFORMW %CALLNAME:ARG%(이)가 과감하게 바닥에 있는 블록을 건드렸다가 그대로 모든 블록을 무너뜨리면서 승부가 결정되었다."
+PRINTFORMW %ARG가% 과감하게 바닥에 있는 블록을 건드렸다가 그대로 모든 블록을 무너뜨리면서 승부가 결정되었다.
 PRINTFORML 나이스!
 PRINTFORML 당신은 승리의 기쁨에 환호했다.
 PRINTFORML 호감도+15
@@ -40,12 +40,12 @@ CFLAG:ARG:스트레스 -= 5
 RETURN 1
 CASE 3
 PRINTFORMW 당신은 구석에 박아두었던 젠가를 꺼낸다.
-PRINTFORMW %CALLNAME:ARG%(이)가 젠가에 흥미를 보이길래, 당신은 하는 방법을 알려준 뒤 둘이서 젠가를 해보자고 한다."
-PRINTFORMW 당신과 %CALLNAME:ARG%(은)는 서로 블록을 하나씩 빼냈다.
+PRINTFORMW %ARG가% 젠가에 흥미를 보이길래, 당신은 하는 방법을 알려준 뒤 둘이서 젠가를 해보자고 한다.
+PRINTFORMW 당신과 %ARG는% 서로 블록을 하나씩 빼냈다.
 PRINTFORMW 블록이 하나씩 빠져서 맨 위에 쌓일 때마다 당신과 %CALLNAME:ARG% 사이에 긴장감도 겹겹이 쌓여나갔다.
 PRINTFORMW 각 층마다 블록이 하나씩 빠져있을 때, 당신은 가운데 블록을 남기고 왼쪽 블록을 빼려다 균형을 무너뜨려버렸다.
 PRINTFORML 아, 이게...
-PRINTFORML 당신이 아쉬워하는 동안 %CALLNAME:ARG%(은)는 기뻐하고 있었다.
+PRINTFORML 당신이 아쉬워하는 동안 %ARG는% 기뻐하고 있었다.
 PRINTFORML 호감도+15
 PRINTFORMW 스트레스-5
 CFLAG:ARG:호감도 += 15
@@ -62,7 +62,7 @@ PRINTFORMW 규동 벅 교수는 '이 연구를 통해 현재 인터넷에 만연
 PRINTFORMW '미성년 아동을 키우는 부모들은 이러한 영상을 아이들이 보지 못 하도록 교육할 필요성이 있다.'라고 말했습니다.
 PRINTFORMW 이러한 연구 결과가 현재 인터넷 상에서 만연한 학대 영상의 무분별한 유포를 억제할 수 있을지 관심이 모아지고 있습니다.
 PRINTFORMW 당신은 무감각하게 TV를 끈다.
-PRINTFORMW 문득 인기척이 느껴져 뒤돌아보니, %CALLNAME:ARG%(이)가 당신과 TV를 번갈아 보고 있었다.
+PRINTFORMW 문득 인기척이 느껴져 뒤돌아보니, %ARG가% 당신과 TV를 번갈아 보고 있었다.
 PRINTFORML 걱정 마, 난 저런 짓은 안 하니까.
 PRINTFORML 당신은 %CALLNAME:ARG%에게 애써 환하게 웃어 보인다.
 PRINTFORML 호감도+7
@@ -73,24 +73,24 @@ CFLAG:ARG:스트레스 -= 5
 CFLAG:ARG:공포 -= 4
 RETURN 1
 CASE 5
-PRINTFORMW 당신은 %CALLNAME:ARG%(와)과 함께 시내에 나왔다.
+PRINTFORMW 당신은 %ARG와% 함께 시내에 나왔다.
 PRINTFORMW 거리를 둘러보며 걷고 있던 당신은, 광장 중앙에 악기를 들고 음향 장비들을 세팅 하는 사람들을 본다.
 PRINTFORMW 가운데에서 마이크 앞에 선 사람은 세팅이 끝나자 삼삼오오 모여든 사람들에게 인사했다.
 PRINTFORMW 안녕하십니까. 카칸 오브 더 디스코입니다!
-PRINTFORMW 당신은 %CALLNAME:ARG%(이)가 밴드에 흥미를 보이는 것 같아 잠시 그들의 노래를 듣기로 했다.
+PRINTFORMW 당신은 %ARG가% 밴드에 흥미를 보이는 것 같아 잠시 그들의 노래를 듣기로 했다.
 PRINTFORML 드러머의 비트로 시작된 음악이 시내 광장을 울린다.
 PRINTFORML 흥이 오르면서도 막 날뛰지는 않고, 잔잔하면서도 기교부리지 않는,
 PRINTFORML 그래서 더욱 좋은 인디 밴드의 노래.
-PRINTFORML 노래를 듣던 도중, 당신은 의식하지 못 한 사이%CALLNAME:ARG%(와)과 더 가까이 붙어 있는 것을 보았다.
+PRINTFORML 노래를 듣던 도중, 당신은 의식하지 못 한 사이 %ARG와% 더 가까이 붙어 있는 것을 보았다.
 PRINTFORMW 호감도+15
 CFLAG:ARG:호감도 += 15
 RETURN 1
 CASE 6
 PRINTFORMW 당신은 갑자기 그림이 그리고 싶어서 종이와 펜을 꺼냈다.
 PRINTFORML 하지만 하고 싶다고 해서 잘 될 리 만무했다.
-PRINTFORML 아무런 모델도 없이 상상만으로 그려내는 것은 힘들었고, 마침 %CALLNAME:ARG%(이)가 지나가고 있었다.
+PRINTFORML 아무런 모델도 없이 상상만으로 그려내는 것은 힘들었고, 마침 %ARG가% 지나가고 있었다.
 PRINTFORMW 당신은 %CALLNAME:ARG%에게 당신의 그림의 모델이 되어줄 것을 부탁했다.
-PRINTFORMW %CALLNAME:ARG%(은)는 갑자기 그림? 이라 말하는 듯한 표정을 지으면서도 그러겠다고 했고, 당신과 마주보고 의자에 앉았다."
+PRINTFORMW %ARG는% 갑자기 그림? 이라 말하는 듯한 표정을 지으면서도 그러겠다고 했고, 당신과 마주보고 의자에 앉았다.
 PRINTFORMW 쓱싹, 쓱싹...
 PRINTFORML 이윽고 그림이 완성되었다.
 PRINTFORML 투박하고 비율도 엉망인 그림.
@@ -104,7 +104,7 @@ PRINTFORMW 퉁.
 PRINTFORMW 벽에 부딪혀 당신에게 돌아오는 공.
 PRINTFORMW 무심하게 당신의 손을 떠난 야구공은 벽에 굴절되더니 %CALLNAME:ARG%의 발밑으로 굴러들어간다.
 PRINTFORMW 당신은 %CALLNAME:ARG%에게 야구공을 던져달라고 부탁했다.
-PRINTFORMW %CALLNAME:ARG%(은)는 야구공을 주워 당신을 향해 던졌는데,"
+PRINTFORMW %ARG는% 야구공을 주워 당신을 향해 던졌는데,
 PRINTFORMW 텅!
 PRINTFORMW 힘 조절을 잘못 했는지, 야구공은 당신의 옆을 비껴나가 벽을 세게 맞고 당신의 발치로 굴러왔다.
 PRINTFORMW 당신은 깜짝 놀랐고, %CALLNAME:ARG% 역시 놀란 눈으로 당신을 바라본다.
