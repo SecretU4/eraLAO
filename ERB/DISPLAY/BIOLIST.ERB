@@ -337,7 +337,7 @@ IF GROUPMATCH(TALENT_NO, 23,30,62,70)
             ENDIF
     ENDSELECT
 ;0 > 1 > 2 형 TALENT
-ELSEIF GROUPMATCH(TALENT_NO, 25,26,72)
+ELSEIF GROUPMATCH(TALENT_NO, 25,26,72,74)
     SELECTCASE TALENT_NO
         CASE 25 ;사랑
             IF TALENT_STAT == 1
@@ -362,6 +362,14 @@ ELSEIF GROUPMATCH(TALENT_NO, 25,26,72)
                 LOCALS '= "[정신붕괴]"
             ELSE
                 LOCALS = [정신쇠약]/[정신붕괴]
+            ENDIF
+        CASE 74 ;굴복
+            IF TALENT_STAT == 1
+                LOCALS '= "[굴복]"
+            ELSEIF TALENT_STAT == 2
+                LOCALS '= "[복종]"
+            ELSE
+                LOCALS '= "[굴복]/[복종]"
             ENDIF
     ENDSELECT
 ELSE
