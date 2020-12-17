@@ -115,10 +115,13 @@ ENDIF
 ;-------------------------------------------------------------
 ;정신쇠약 취득
 ;공포 299 초과시
+;굴복시에는 취득 안됨
 ;-------------------------------------------------------------
 @GET_WeakMind(ARG)
 
 IF !TALENT:ARG:정신쇠약 && CFLAG:ARG:공포 > 299
+    SIF TALENT:ARG:굴복
+        RETURN 0
     TALENT:ARG:정신쇠약 = 1
     EXP:ARG:쇠약획득경험 ++
     RETURN 1
@@ -126,12 +129,12 @@ ENDIF
 RETURN 0
 ;-------------------------------------------------------------
 ;정신붕괴 취득
-;공포 799 초과시
+;이미 정신쇠약 상태, 공포 799 초과시
 ;획득시 호감도, 공포, 스트레스가 0이 된다.
 ;-------------------------------------------------------------
 @GET_MindBreak(ARG)
 
-IF !TALENT:ARG:정신쇠약 != 2 && CFLAG:ARG:공포 > 799
+IF TALENT:ARG:정신쇠약 == 1 && CFLAG:ARG:공포 > 799
     SELECTCASE NO:ARG
         CASE 68
             SIF TALENT:ARG:사랑 == 2;에밀리는 사랑이면 제외
@@ -150,10 +153,11 @@ RETURN 0
 ;-------------------------------------------------------------
 ;짜증 취득/소멸
 ;스트레스 299 초과시 짜증 취득, 200 미만시 짜증 소멸
+;굴복시에는 취득 안됨
 ;-------------------------------------------------------------
 @GET_Annoyed(ARG)
 
-IF !TALENT:ARG:짜증 && CFLAG:ARG:스트레스 > 299
+IF !TALENT:ARG:짜증 && CFLAG:ARG:스트레스 > 299 && !TALENT:ARG:굴복
     TALENT:ARG:짜증 = 1
     EXP:ARG:짜증획득경험 ++
     RETURN 1
@@ -194,9 +198,9 @@ RETURN 0
 ;-------------------------------------------------------------
 @GET_LOVE(ARG)
 
-SIF TALENT:ARG:짜증 || TALENT:ARG:정신쇠약 || !TALENT:ARG:사랑
+SIF TALENT:ARG:짜증 || TALENT:ARG:정신쇠약
     RETURN 0
-IF TALENT:ARG:사랑 != 2 && CFLAG:ARG:공포 < 50
+IF TALENT:ARG:사랑 == 1 && CFLAG:ARG:공포 < 50
     ;에밀리는 호감도가 7999 초과이기만 하면 됨
     IF NO:ARG == 68 && CFLAG:ARG:호감도 > 7999
         TALENT:사랑 = 2
@@ -210,6 +214,31 @@ IF TALENT:ARG:사랑 != 2 && CFLAG:ARG:공포 < 50
         ELSE
             RETURN 1
         ENDIF
+    ENDIF
+ENDIF
+RETURN 0
+;-------------------------------------------------------------
+;굴복 취득
+;연모미보유, 쇠약미보유, 호감도 1000이상 공포 300이상
+;v1.20 현재 턴종료시에만 체크
+;v1.20 현재 113(켈베로스)에만 실장됨.
+;이후 특정 아이템(개목걸이?)을 사용해 복종 취득 가능
+;억압 처리시 2 반환
+;-------------------------------------------------------------
+@GET_Submit(ARG)
+;이 아래 SIF는 추후 굴복 범용화시 삭제
+SIF ARG != GETCHARA(113) ;켈베로스가 아니라면 제외
+    RETURN 0
+
+SIF TALENT:ARG:사랑 || TALENT:ARG:정신쇠약 || TALENT:ARG:굴복
+    RETURN 0
+IF CFLAG:ARG:호감도 >= 1000 && CFLAG:ARG:공포 >= 300
+    TALENT:ARG:굴복 = 1
+    IF TALENT:ARG:억압 ;억압 소멸
+        TALENT:ARG:억압 = 0
+        RETURN 2
+    ELSE
+        RETURN 1
     ENDIF
 ENDIF
 RETURN 0
