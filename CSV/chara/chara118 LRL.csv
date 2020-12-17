@@ -7,3 +7,5 @@ TALENT,등급,1,;B
 TALENT,분류,1,;경장
 TALENT,체형,0,;작은체구
 TALENT,겁쟁이,1
+
+;CFLAG,특수출력조건 bit 3 = 엔딩3 조건충족 여부 (카운트는 FLAG:방치일수)(etc1)
