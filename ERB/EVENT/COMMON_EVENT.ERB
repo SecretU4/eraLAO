@@ -104,6 +104,9 @@ FOR 대상, 1, CHARANUM
         ;이벤트배열에서 제어하는 번호 추가시 이곳에도 추가바람
         SIF GROUPMATCH(이벤트번호, 1015,1016,1019,1023,1024,1025,1026,1036,1037,1038,1040,1048)
             CONTINUE
+        ;3인 이상 이벤트면서 실행 불가한 경우
+        SIF !IS_MULTIPLE_EVENT_AVAILABLE(이벤트번호)
+            CONTINUE
         ;보유캐릭터가 1명 이하면 일부 이벤트 제외
         SIF FLAG:현캐릭터수 <= 1 && GROUPMATCH(이벤트번호, 1004,1005,1006,1007,1008,1012,1020,1021,1027,1028,1029,1030,1033,1039)
             CONTINUE
@@ -112,6 +115,9 @@ FOR 대상, 1, CHARANUM
         IF IS_SINGLE_EVENT_AVAILABLE(이벤트번호, 대상)
             SIF STRFIND(이벤트배열, 이벤트번호문자열:1) != -1
                 THROW 중복된 개별 이벤트 {이벤트번호}
+            이벤트배열 += 이벤트번호문자열:1
+        ;3인 이상 이벤트는 대상과 같이 루프할 필요는 없지만 이벤트번호 루프를 이 안에서 돌리므로 이곳에 추가
+        ELSEIF IS_MULTIPLE_EVENT_AVAILABLE(이벤트번호) == 1 && STRFIND(이벤트배열, 이벤트번호문자열:1) == -1
             이벤트배열 += 이벤트번호문자열:1
         ENDIF
     NEXT
@@ -621,10 +627,53 @@ FOR 대상, 1, CHARANUM
 NEXT
 RETURNF -1
 ;=================================================================
+;함수명: IS_MULTIPLE_EVENT_AVAILABLE(ARG)
+;이벤트 대상이 2인 초과일 때 가능 여부 판별 함수
+;가능하면 1, 아니라면 0 반환
+;주어진 이벤트가 대상이 2인 이하라면 -1 반환
+;ARG = 이벤트번호
+;=================================================================
+@IS_MULTIPLE_EVENT_AVAILABLE(ARG)
+#FUNCTION
+#DIM 대상배열, 3
+#DIM 대상
+;대상 존재 여부 확인 데이터베이스
+VARSET 대상배열, -1
+SELECTCASE ARG
+    CASE 1052
+        대상배열:0 = 51 ;메이
+        대상배열:1 = 52 ;나앤
+        대상배열:2 = 118 ;LRL
+    CASEELSE ;해당하는 이벤트번호가 아니라면 통과(-1 반환)
+        RETURNF -1
+ENDSELECT
+
+REPEAT VARSIZE("대상배열")
+    ;배열이 끝났다면 REPEAT 종료
+    SIF 대상배열:COUNT == -1
+        BREAK
+    ;보유여부 체크
+    SIF ITEM:(ITEM_BIO(대상배열:COUNT)) != 1
+        RETURNF 0
+
+    대상 = GETCHARA(대상배열:COUNT)
+    SIF 대상 == -1
+        THROW 존재하지 않는 캐릭터번호 {대상배열:COUNT}
+
+    SELECTCASE ARG
+        CASE 1052 ;출격중 아님, 쇠약 없음, 굴복 없음, 짜증없음, 공포 150미만, 연모 이상(원본은 연모만)
+            SIF CFLAG:대상:출격중 || TALENT:대상:정신쇠약 || TALENT:대상:굴복 || CFLAG:대상:공포 >= 150 || !TALENT:대상:사랑
+                RETURNF 0
+    ENDSELECT
+REND
+
+RETURNF 1
+;=================================================================
 ;함수명: SELECT_EVENT_CHARA(ARG, ARG:1)
 ;이벤트 대상 캐릭터 랜덤선출
 ;선택캐릭터:0 = 1명째, 선택캐릭터:1 = 2명째
 ;선택캐릭터:1 이 -1로 반환하는 경우 선출 불가함을 뜻함
+;3인 이상인 이벤트의 경우 2명만 선출하고 넘어감.
 ;ARG = 이벤트번호
 ;=================================================================
 @SELECT_EVENT_CHARA(ARG)
@@ -711,6 +760,8 @@ WHILE 선택캐릭터:0 == -1
             선택캐릭터:0 = GETCHARA(89)
         CASE 1050, 1051 ;브라우니 개인 이벤트
             선택캐릭터:0 = GETCHARA(25)
+        CASE 1052 ;메이/나엔/LRL 이벤트 (메이)
+            선택캐릭터:0 = GETCHARA(51)
         CASEELSE
             THROW 미상정된 이벤트번호 {ARG}
     ENDSELECT
@@ -767,6 +818,8 @@ WHILE 선택캐릭터:1 == -1
             선택캐릭터:1 = GETCHARA(52)
         CASE 1049 ;세이렌/테티스 이벤트
             선택캐릭터:1 = GETCHARA(90)
+        CASE 1052 ;메이/나엔/LRL 이벤트 (LRL)
+            선택캐릭터:1 = GETCHARA(118)
         CASEELSE ; 1명만 뽑는 경우
             BREAK
     ENDSELECT
