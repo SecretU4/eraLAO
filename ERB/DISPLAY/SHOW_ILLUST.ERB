@@ -1,201 +1,84 @@
-﻿;ARG = 인게임 캐릭터번호, ARG:1 = 원본상의 일러스트 번호
+﻿;ARG = 인게임 캐릭터번호, IMG_no = 일러스트 일련번호
 ;ARGS = 호출 위치, LOCALS = 출력할 파일명
-@ILLUST(ARG, ARG:1, ARGS)
+@ILLUST(ARG, ARGS, IMG_no=0)
 #DIM CSV_ID
+#DIM DYNAMIC IMG_no
 #DIMS IMAGE_EXT, 3 = "webp","png","jpg"
 CSV_ID = NO:ARG
 
-VARSET LOCALS
 SIF ARG == -1
     RETURN 0
 
+LOCALS '= @"%ARGS%_{CSV_ID}_"
+
 SELECTCASE ARGS
-    CASE "DATESTART"
-        SELECTCASE ARG:1
-            CASE 1 ;메이, 연애시작, 정신붕괴
-                IF CSV_ID != 51
+    CASE "DateStart"
+        SELECTCASE CSV_ID
+            CASE 7 ;리제, 그림번호 = 2
+                SIF CSTR:ARG:1 == "Confession"
                     RETURN 0
-                ELSE
-                    SIF TALENT:ARG:정신쇠약 != 2
-                        RETURN 0
-                    LOCALS = DateStart_51_Break
-                ENDIF
-            CASE 2 ;리제, 연애시작
-                IF CSV_ID != 7
+                LOCALS '= FACE_DATESTART(ARG)
+            CASE 12 ;소완, 그림번호 = 3
+                SIF CSTR:ARG:1 == "Confession"
                     RETURN 0
-                ELSEIF CSTR:ARG:1 == "Confession" ;고백시 일러 표출 X
-                    RETURN 0
-                ELSEIF TALENT:ARG:정신쇠약 == 2
-                    LOCALS = Face_7_break
-                ELSEIF TALENT:ARG:정신쇠약 == 1
-                    LOCALS = Face_7_weak
-                ELSEIF TALENT:ARG:짜증
-                    LOCALS = Face_7_annoyed
-                ELSEIF TALENT:ARG:혼인 == 1
-                    LOCALS = Face_7_marryed
-                ELSEIF CFLAG:ARG:공포 > 149
-                    LOCALS = Face_7_fear
-                ELSEIF TALENT:ARG:사랑 ;원판은 연모시에만
-                    LOCALS = Face_7_affection
-                ELSEIF CFLAG:ARG:호감도 > 499
-                    LOCALS = Face_7_high
-                ELSE
-                    LOCALS = Face_7_low
-                ENDIF
-            CASE 3 ;소완, 연애시작
-                IF CSV_ID != 12
-                    RETURN 0
-                ELSEIF TALENT:ARG:정신쇠약 == 2
-                    LOCALS = Face_12_break
-                ELSEIF TALENT:ARG:정신쇠약 == 1
-                    LOCALS = Face_12_weak
-                ELSEIF TALENT:ARG:짜증
-                    LOCALS = Face_12_annoyed
-                ELSEIF TALENT:ARG:혼인 == 1
-                    LOCALS = Face_12_marryed
-                ELSEIF CFLAG:ARG:공포 > 149
-                    LOCALS = Face_12_fear
-                ELSEIF TALENT:ARG:사랑 ;원판은 연모시에만
-                    LOCALS = Face_12_affection
-                ELSEIF CFLAG:ARG:호감도 > 499
-                    LOCALS = Face_12_high
-                ELSE
-                    LOCALS = Face_12_low
-                ENDIF
-            CASE 4 ;메이, 연애시작, fLove
-                IF CSV_ID != 51
-                    RETURN 0
-                ELSE
-                    SIF CSTR:ARG:1 != "fLove"
-                        RETURN 0
-                    LOCALS = DateStart_51_fLove
-                ENDIF
-            CASE 5 ;베로니카, 연애시작, First
-                IF CSV_ID != 138
-                    RETURN 0
-                ELSE
-                    SIF CFLAG:ARG:조교여부
-                        RETURN 0
-                    LOCALS = DateStart_138_First
-                ENDIF
-            CASE 6 ;베로니카, 연애시작, 고백
-                IF CSV_ID != 138
-                    RETURN 0
-                ELSE
-                    SIF CSTR:ARG:1 != "Confession"
-                        RETURN 0
-                    LOCALS = DateStart_138_Confession
-                ENDIF
-            CASEELSE
-                DEBUGPRINTFORML %ARGS% 조건에 맞지 않는 {ARG:1}
-                RETURN 0
+                LOCALS '= FACE_DATESTART(ARG)
+            CASEELSE             
+            ;메이 Break - 그림번호 1 / fLove - 그림번호 4
+            ;베로니카 Confession - 그림번호 6 / First - 그림번호 5
+                LOCALS += CSTR:ARG:1
         ENDSELECT
-    CASE "DATECOM"
-        SELECTCASE ARG:1
-            CASE 1 ;메이 파후파후
-                IF SELECTCOM != 18 || CSV_ID != 51
-                    RETURN 0
-                ELSEIF TALENT:ARG:짜증 || TALENT:ARG:정신쇠약 || !TALENT:ARG:사랑
-                    RETURN 0
-                ELSE
-                    LOCALS = DateCom_51_pahu
-                ENDIF
-            CASE 3 ;유미 배만지기
-                IF SELECTCOM != 13 || CSV_ID != 132
-                    RETURN 0
-                ELSEIF GROUPMATCH(CSTR:ARG:1, "High","Affection")
-                    LOCALS = DateCom_132_tummy
-                ELSE
-                    RETURN 0
-                ENDIF
-            ;베로니카 연애커맨드 일부 경우, 임의 번호 산정
-            CASE 10 ;배설기관
-                LOCALS = DateCom_138_Penance_1
-            CASE 11 ;불경한
-                LOCALS = DateCom_138_Penance_1
-            CASEELSE
-                DEBUGPRINTFORML %ARGS% 조건에 맞지 않는 {ARG:1}
-                RETURN 0
+    CASE "DateCom"
+        SELECTCASE CSV_ID
+            CASE 51 ;메이
+                ;메이 파후파후, 원본은 연모만. ;그림번호 = 1
+                SIF SELECTCOM == 18 && !TALENT:ARG:짜증 && !TALENT:ARG:정신쇠약 && TALENT:ARG:사랑
+                    LOCALS += "pahu"
+            CASE 132 ;유미
+                ;유미 술배 ;그림번호 = 3
+                SIF SELECTCOM == 13 && GROUPMATCH(CSTR:ARG:1, "High","Affection")
+                    LOCALS += "tummy"
+            CASE 138 ;베로니카
+            ;베로니카 연애커맨드 그림은 해당 캐릭터 메시지 코드 안에서 처리
+            ;그림번호 10: 배설기관, 11: 뚝배기
+                SELECTCASE IMG_no
+                    ;베로니카 연애커맨드 일부 경우, 임의 번호 산정
+                    CASE 10 ;배설기관
+                        LOCALS += "Penance_1"
+                    CASE 11 ;불경한
+                        LOCALS += "_2"
+                ENDSELECT
         ENDSELECT
-    CASE "REST_1"
-        SELECTCASE ARG:1
-            CASE 1
-                LOCALS = Rest_1021
-            CASE 2
-                LOCALS = Rest_1025
-            CASE 3
-                LOCALS = Rest_1004
-            CASE 4
-                LOCALS = Rest_1027
-            CASE 5
-                LOCALS = Rest_1030
-            CASE 6
-                LOCALS = Rest_1033
-            CASE 7
-                LOCALS = Rest_1041
-        ENDSELECT
-    CASE "REST_2"
-        SELECTCASE ARG:1
-            CASE 1
-                LOCALS = Rest_1009
-            CASE 2
-                LOCALS = Rest_1010
-            CASE 3
-                LOCALS = Rest_1011
-        ENDSELECT
-    CASE "COOKING"
-        SELECTCASE ARG:1
-            CASE 1 ;메이 실패
-                LOCALS = Cook_51_1
-            CASE 2 ;발키리 5분
-                LOCALS = Cook_32_1
-        ENDSELECT
+    CASE "Rest"
+            ;REST_1
+            ;그림번호 1: 1021, 2: 1025, 3: 1004, 4:1027, 5: 1030, 6: 1033, 7: 1041
+            ;REST_2
+            ;그림번호 1: 1009, 2: 1010, 3: 1011
+            LOCALS '= @"Rest_{IMG_no}"
+    CASE "Cook"
+        SIF IMG_no ;메이 실패/발키리 5분
+            LOCALS += "_1"
     CASE "ENDING"
-        SELECTCASE ARG:1
-            CASE 1 ;메이 1번 엔딩플래그
-                LOCALS = End_51_1
-            CASE 2 ;메이 2번 엔딩플래그
-                LOCALS = End_51_2
-            CASE 3 ;리제 1번 엔딩플래그
-                LOCALS = End_7_1
-            CASE 4 ;세이렌 1번 엔딩플래그
-                LOCALS = End_89_1
-            CASE 5 ;세이렌 2번 엔딩플래그
-                LOCALS = End_89_2
+        ;그림번호 1: 52_1, 2: 51_2, 3: 7_1, 4: 89_1, 5:89_2, 6:7_3-1/7_3-2,
+        ;7: 123_1, 8: 123_2, 9: 51_4, 10: 7_2, 11: 7_5, 12: 7_4
+        ;13: 12_1, 14: 138_1, 15: 138_2, 16: 138_3-1, 17: 138_3-2
+        LOCALS += CFLAG:ARG:엔딩플래그
+        SELECTCASE IMG_no
             CASE 6 ;리제 3번 엔딩플래그
-                LOCALS = End_7_3-1
-                LOCALS:1 = End_7_3-2
-            CASE 7 ;모모 1번 엔딩플래그
-                LOCALS = End_123_1
-            CASE 8 ;모모 2번 엔딩플래그
-                LOCALS = End_123_2
-            CASE 9 ;메이 4번 엔딩플래그
-                LOCALS = End_51_4
-            CASE 10 ;리제 2번 엔딩플래그
-                LOCALS = End_7_2
-            CASE 11 ;리제 히든 엔딩(4번 엔딩플래그)
-                LOCALS = End_7_5
-            CASE 12 ;리제 5번 엔딩플래그(4번 엔딩)
-                LOCALS = End_7_4
-            CASE 13 ;소완 1번 엔딩플래그
-                LOCALS = End_12_1
-            CASE 14 ;베로니카 1번 엔딩플래그
-                LOCALS = End_138_1
-            CASE 15 ;베로니카 2번 엔딩플래그
-                LOCALS = End_138_2
+                LOCALS:1 '= @"%LOCALS%-2"
+                LOCALS += "-1"
             CASE 16 ;베로니카 3번 엔딩플래그 1번째
-                LOCALS = End_138_3-1
+                LOCALS += "-1"
             CASE 17 ;베로니카 3번 엔딩플래그 2번째
-                LOCALS = End_138_3-2
+                LOCALS += "-2"
         ENDSELECT
     CASE "BIOSHOP"
-        LOCALS '= @"BIO_IMG_{ARG:1}"
+        LOCALS '= @"BIO_IMG_{CSV_ID}"
         ;IMAGE_EXT의 확장자 지원 (최대 3개)
         LOCAL = 0
         REPEAT 3
-            GCREATEFROMFILE ARG:1, @"SHOP_SELECTION/{ARG:1}.%IMAGE_EXT:COUNT%"
+            GCREATEFROMFILE CSV_ID, @"SHOP_SELECTION/{CSV_ID}.%IMAGE_EXT:COUNT%"
             IF !RESULT
-                GCREATED ARG:1 ;인게임 내 존재 여부 판별
+                GCREATED CSV_ID ;인게임 내 존재 여부 판별
                 LOCAL = RESULT
             ELSE ;첫생성
                 LOCAL = RESULT
@@ -204,14 +87,16 @@ SELECTCASE ARGS
             SIF LOCAL
                 BREAK
         REND
-        SPRITECREATE @"%LOCALS%", ARG:1
+        SPRITECREATE @"%LOCALS%", CSV_ID
 ENDSELECT
 
 ;출력해야 하는 이미지가 없을 때
-SIF LOCALS == ""
+IF LOCALS == "" || !SPRITECREATED(LOCALS)
+    DEBUGPRINTFORML %LOCALS%에 해당하는 이미지를 발견하지 못함 - 조건 %ARGS%, 캐릭터 %NAME:ARG%, 일련번호 {IMG_no}
     RETURN 0
+ENDIF
 
-IF ARG:1
+IF IMG_no
     CALL PRINT_ILLUST(LOCALS, 20)
 ELSE
     CALL PRINT_ILLUST(LOCALS)
@@ -220,7 +105,7 @@ ENDIF
 ;출력해야 하는 이미지가 2개일 때
 IF LOCALS:1 != ""
     IF ARGS == "ENDING"
-        SELECTCASE ARG:1
+        SELECTCASE IMG_no
             CASE 6 ;리제 3번 엔딩플래그 
                 PRINTBUTTON @"[계속]", ""
                 INPUTS
@@ -229,6 +114,31 @@ IF LOCALS:1 != ""
     CALL PRINT_ILLUST(LOCALS:1)
 ENDIF
 RETURN 1
+
+;연애 시작시 얼굴 표정 처리(존재시)
+;ARG = 인게임 캐릭터번호
+@FACE_DATESTART(ARG)
+#FUNCTIONS
+LOCALS '= @"Face_{NO:ARG}_"
+IF TALENT:ARG:정신쇠약 == 2
+    LOCALS += "break"
+ELSEIF TALENT:ARG:정신쇠약 == 1
+    LOCALS += "weak"
+ELSEIF TALENT:ARG:짜증
+    LOCALS += "annoyed"
+ELSEIF TALENT:ARG:혼인 == 1
+    LOCALS += "marryed"
+ELSEIF CFLAG:ARG:공포 > 149
+    LOCALS += "fear"
+ELSEIF TALENT:ARG:사랑 ;원판은 연모시에만
+    LOCALS += "affection"
+ELSEIF CFLAG:ARG:호감도 > 499
+    LOCALS += "high"
+ELSE
+    LOCALS += "low"
+ENDIF
+
+RETURNF LOCALS
 
 ;ARGS = 출력 대상 파일 문자열
 @PRINT_ILLUST(ARGS, 배율=30)

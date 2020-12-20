@@ -4525,227 +4525,227 @@ RETURN 1
 
 @M_No51_EVENT_Cook_Self
 IF ABL:MASTER:조리lv < 3
-SELECTCASE CSTR:GETCHARA(51):1
-CASE "Low"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
-PRINTFORMW %TEXTR("「의외인걸? 사령관이 요리도 할줄 아네?」/메이는 별로 기대하지 않는 눈으로 당신이 요리하는 모습을 보고 있었다./「바보 사령관이? 믿어도 돼?」/「맛 없기만 해봐?」")%
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 보잘 것 없는 요리가 완성됐다.
-CASE "Affection"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
-PRINTFORMW %TEXTR("「이번에는 연습 많이 했겠지?」/메이는 걱정되는 눈빛으로 당신이 요리하는 모습을 보고 있었다./「식사? 기대해볼까?」")%
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 보잘 것 없는 요리가 완성됐다.
-CASE "Love"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
-PRINTFORMW %TEXTR("「저기 무리 안해도 되니까...오늘은 그냥 시켜먹으면 안될까?」/「사령관, 난 괜찮아.」")%
-PRINTFORMW 살짝 걱정스런 눈빛으로 당신을 보던 메이였다.
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 보잘 것 없는 요리가 완성됐다.
-CASE "Annoyed"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
-PRINTFORMW 「하아...」
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 보잘 것 없는 요리가 완성됐다.
-CASE "Weak"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
-PRINTFORMW 「...」
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 보잘 것 없는 요리가 완성됐다.
-CASE "High"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
-PRINTFORMW %TEXTR("「의외인걸? 사령관이 요리도 할줄 아네?」/메이는 별로 기대하지 않는 눈으로 당신이 요리하는 모습을 보고 있었다./「바보 사령관이? 믿어도 돼?」/「맛 없기만 해봐?」")%
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 보잘 것 없는 요리가 완성됐다.
-CASE "Marryed"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
-PRINTFORMW %TEXTR("「저기 무리 안해도 되니까...오늘은 그냥 시켜먹으면 안될까?」/「사령관, 난 괜찮아.」")%
-PRINTFORMW 살짝 걱정스런 눈빛으로 당신을 보던 메이였다.
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 보잘 것 없는 요리가 완성됐다.
-CASE "Fear"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
-PRINTFORMW 「하아...」
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 보잘 것 없는 요리가 완성됐다.
-CASEELSE
-RETURN 0
-ENDSELECT
-CSTR:GETCHARA(51):1 = 
-RETURN 1
+	SELECTCASE CSTR:GETCHARA(51):1
+		CASE "Low"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트"), "이다")%.
+			PRINTFORMW %TEXTR("「의외인걸? 사령관이 요리도 할줄 아네?」/메이는 별로 기대하지 않는 눈으로 당신이 요리하는 모습을 보고 있었다./「바보 사령관이? 믿어도 돼?」/「맛 없기만 해봐?」")%
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 보잘 것 없는 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트"), "이다")%.
+			PRINTFORMW %TEXTR("「이번에는 연습 많이 했겠지?」/메이는 걱정되는 눈빛으로 당신이 요리하는 모습을 보고 있었다./「식사? 기대해볼까?」")%
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 보잘 것 없는 요리가 완성됐다.
+		CASE "Love"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트"), "이다")%.
+			PRINTFORMW %TEXTR("「저기 무리 안해도 되니까...오늘은 그냥 시켜먹으면 안될까?」/「사령관, 난 괜찮아.」")%
+			PRINTFORMW 살짝 걱정스런 눈빛으로 당신을 보던 메이였다.
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 보잘 것 없는 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트"), "이다")%.
+			PRINTFORMW 「하아...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 보잘 것 없는 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트"), "이다")%.
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 보잘 것 없는 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트"), "이다")%.
+			PRINTFORMW %TEXTR("「의외인걸? 사령관이 요리도 할줄 아네?」/메이는 별로 기대하지 않는 눈으로 당신이 요리하는 모습을 보고 있었다./「바보 사령관이? 믿어도 돼?」/「맛 없기만 해봐?」")%
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 보잘 것 없는 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트"), "이다")%.
+			PRINTFORMW %TEXTR("「저기 무리 안해도 되니까...오늘은 그냥 시켜먹으면 안될까?」/「사령관, 난 괜찮아.」")%
+			PRINTFORMW 살짝 걱정스런 눈빛으로 당신을 보던 메이였다.
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 보잘 것 없는 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트"), "이다")%.
+			PRINTFORMW 「하아...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 보잘 것 없는 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;9개의 케이스 존재
+	CSTR:GETCHARA(51):1 =
+	RETURN 1
 ELSEIF ABL:MASTER:조리lv > 2 && ABL:MASTER:조리lv < 5
-SELECTCASE CSTR:GETCHARA(51):1
-CASE "Low"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
-PRINTFORMW %TEXTR("「바보 사령관이? 믿어도 돼?」/「의외인걸? 사령관이 요리도 할줄 아네?」/「맛 없기만 해봐?」/메이는 별로 기대하지 않는 눈으로 당신이 요리하는 모습을 보고 있었다.")%
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
-CASE "Affection"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
-PRINTFORMW %TEXTR("「사령관이 직접 해주는거야?」/「오늘은 뭐야?」/메이는 기대되는 눈빛으로 당신이 요리하는 모습을 보고 있었다.")%
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
-CASE "Love"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
-PRINTDATAW
-DATAFORM 「후후- 사령관 요리라면 뭐든 맛있으니까-」
-DATALIST
-DATAFORM 「있지, 다음엔 나 말고 둠브링어 애들도 같이 모여서 식사해도 될까?」
-DATAFORM 당신은 고개를 끄덕이며 미소 지었다.
-ENDLIST
-DATAFORM 「혼자 먹긴 정말 아까운데...」
-DATAFORM 사랑스러운 눈빛으로 당신이 요리하는 모습을 지켜보는 메이가 당신을 기다리고 있었다.
-ENDDATA
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
-CASE "Annoyed"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
-PRINTFORMW 「하아...」
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
-CASE "Weak"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
-PRINTFORMW 「...」
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
-CASE "High"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
-PRINTFORMW %TEXTR("「바보 사령관이? 믿어도 돼?」/「의외인걸? 사령관이 요리도 할줄 아네?」/「맛 없기만 해봐?」/메이는 별로 기대하지 않는 눈으로 당신이 요리하는 모습을 보고 있었다.")%
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
-CASE "Marryed"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
-PRINTDATAW
-DATAFORM 「후후- 사령관 요리라면 뭐든 맛있으니까-」
-DATALIST
-DATAFORM 「있지, 다음엔 나 말고 둠브링어 애들도 같이 모여서 식사해도 될까?」
-DATAFORM 당신은 고개를 끄덕이며 미소 지었다.
-ENDLIST
-DATAFORM 「혼자 먹긴 정말 아까운데...」
-DATAFORM 사랑스러운 눈빛으로 당신이 요리하는 모습을 지켜보는 메이가 당신을 기다리고 있었다.
-ENDDATA
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
-CASE "Fear"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
-PRINTFORMW 「하아...」
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
-CASEELSE
-RETURN 0
-ENDSELECT
-CSTR:GETCHARA(51):1 = 
-RETURN 1
+	SELECTCASE CSTR:GETCHARA(51):1
+		CASE "Low"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐"),"이다")%.
+			PRINTFORMW %TEXTR("「바보 사령관이? 믿어도 돼?」/「의외인걸? 사령관이 요리도 할줄 아네?」/「맛 없기만 해봐?」/메이는 별로 기대하지 않는 눈으로 당신이 요리하는 모습을 보고 있었다.")%
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐"),"이다")%.
+			PRINTFORMW %TEXTR("「사령관이 직접 해주는거야?」/「오늘은 뭐야?」/메이는 기대되는 눈빛으로 당신이 요리하는 모습을 보고 있었다.")%
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
+		CASE "Love"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐"),"이다")%.
+			PRINTDATAW
+				DATAFORM 「후후- 사령관 요리라면 뭐든 맛있으니까-」
+				DATALIST
+					DATAFORM 「있지, 다음엔 나 말고 둠브링어 애들도 같이 모여서 식사해도 될까?」
+					DATAFORM 당신은 고개를 끄덕이며 미소 지었다.
+				ENDLIST
+				DATAFORM 「혼자 먹긴 정말 아까운데...」
+				DATAFORM 사랑스러운 눈빛으로 당신이 요리하는 모습을 지켜보는 메이가 당신을 기다리고 있었다.
+			ENDDATA
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐"),"이다")%.
+			PRINTFORMW 「하아...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐"),"이다")%.
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐"),"이다")%.
+			PRINTFORMW %TEXTR("「바보 사령관이? 믿어도 돼?」/「의외인걸? 사령관이 요리도 할줄 아네?」/「맛 없기만 해봐?」/메이는 별로 기대하지 않는 눈으로 당신이 요리하는 모습을 보고 있었다.")%
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐"),"이다")%.
+			PRINTDATAW
+				DATAFORM 「후후- 사령관 요리라면 뭐든 맛있으니까-」
+				DATALIST
+					DATAFORM 「있지, 다음엔 나 말고 둠브링어 애들도 같이 모여서 식사해도 될까?」
+					DATAFORM 당신은 고개를 끄덕이며 미소 지었다.
+				ENDLIST
+				DATAFORM 「혼자 먹긴 정말 아까운데...」
+				DATAFORM 사랑스러운 눈빛으로 당신이 요리하는 모습을 지켜보는 메이가 당신을 기다리고 있었다.
+			ENDDATA
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐"),"이다")%.
+			PRINTFORMW 「하아...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;9개의 케이스 존재
+	CSTR:GETCHARA(51):1 =
+	RETURN 1
 ELSEIF ABL:MASTER:조리lv > 4
-SELECTCASE CSTR:GETCHARA(51):1
-CASE "Low"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
-PRINTFORMW %TEXTR("「바보 사령관이? 믿어도 돼?」/「의외인걸? 사령관이 요리도 할줄 아네?」/「맛 없기만 해봐?/메이는 별로 기대하지 않는 눈으로 당신이 요리하는 모습을 보고 있었다.")%
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
-CASE "Affection"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
-PRINTDATAW
-DATAFORM 「사령관은 요리사가 더 천직이지 않을까?」
-DATALIST
-DATAFORM 「오늘은 뭐야? 응?」
-DATAFORM 재촉하는 메이에게 기대하라며 불을 지피는 당신이었다.
-ENDLIST
-DATAFORM 메이는 기대만발의 눈빛으로 당신이 요리하는 모습을 보고 있었다.
-ENDDATA
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
-CASE "Love"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
-PRINTFORMW 당신이 요리를 시작하자
-PRINTFORMW 벌써부터 콧노래를 부르는 소리가 식탁에서 들려온다.
-PRINTFORMW 당신이 요리하는 모습 하나하나를 행복한 미소로 바라보는 메이가 자리에 앉아 있었다.
-PRINTFORMW 그런 메이를 바라보며 당신은 힘차게 재료를 볶고 간을 맞추며 천상의 손놀림을 보여주었다.
-PRINTFORMW ♪
-PRINTFORMW ♩
-PRINTFORMW ♬♪
-PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
-CASE "Annoyed"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
-PRINTFORMW 「하아...」
-PRINTFORMW 짜증내면서도 당신의 요리를 알게 모르게 기대하던 메이였다.
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
-CASE "Weak"
-PRINTFORMW 당신은 요리를 시작했다.
-PRINTFORMW 「...」
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
-CASE "High"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
-PRINTFORMW %TEXTR("「바보 사령관이? 믿어도 돼?」/「의외인걸? 사령관이 요리도 할줄 아네?」/「맛 없기만 해봐?/메이는 별로 기대하지 않는 눈으로 당신이 요리하는 모습을 보고 있었다.")%
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
-CASE "Marryed"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
-PRINTFORMW 당신이 요리를 시작하자
-PRINTFORMW 벌써부터 콧노래를 부르는 소리가 식탁에서 들려온다.
-PRINTFORMW 당신이 요리하는 모습 하나하나를 행복한 미소로 바라보는 메이가 자리에 앉아 있었다.
-PRINTFORMW 그런 메이를 바라보며 당신은 힘차게 재료를 볶고 간을 맞추며 천상의 손놀림을 보여주었다.
-PRINTFORMW ♪
-PRINTFORMW ♩
-PRINTFORMW ♬♪
-PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
-CASE "Fear"
-PRINTFORMW 오늘 당신이 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
-PRINTFORMW 「하아...」
-PRINTFORMW 짜증내면서도 당신의 요리를 알게 모르게 기대하던 메이였다.
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
-CASEELSE
-RETURN 0
-ENDSELECT
-CSTR:GETCHARA(51):1 = 
-RETURN 1
+	SELECTCASE CSTR:GETCHARA(51):1
+		CASE "Low"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시"),"이다")%.
+			PRINTFORMW %TEXTR("「바보 사령관이? 믿어도 돼?」/「의외인걸? 사령관이 요리도 할줄 아네?」/「맛 없기만 해봐?/메이는 별로 기대하지 않는 눈으로 당신이 요리하는 모습을 보고 있었다.")%
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시"),"이다")%.
+			PRINTDATAW
+				DATAFORM 「사령관은 요리사가 더 천직이지 않을까?」
+				DATALIST
+					DATAFORM 「오늘은 뭐야? 응?」
+					DATAFORM 재촉하는 메이에게 기대하라며 불을 지피는 당신이었다.
+				ENDLIST
+				DATAFORM 메이는 기대만발의 눈빛으로 당신이 요리하는 모습을 보고 있었다.
+			ENDDATA
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
+		CASE "Love"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시"),"이다")%.
+			PRINTFORMW 당신이 요리를 시작하자
+			PRINTFORMW 벌써부터 콧노래를 부르는 소리가 식탁에서 들려온다.
+			PRINTFORMW 당신이 요리하는 모습 하나하나를 행복한 미소로 바라보는 메이가 자리에 앉아 있었다.
+			PRINTFORMW 그런 메이를 바라보며 당신은 힘차게 재료를 볶고 간을 맞추며 천상의 손놀림을 보여주었다.
+			PRINTFORMW ♪
+			PRINTFORMW ♩
+			PRINTFORMW ♬♪
+			PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시"),"이다")%.
+			PRINTFORMW 「하아...」
+			PRINTFORMW 짜증내면서도 당신의 요리를 알게 모르게 기대하던 메이였다.
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 당신은 요리를 시작했다.
+			PRINTFORMW 「...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시"),"이다")%.
+			PRINTFORMW %TEXTR("「바보 사령관이? 믿어도 돼?」/「의외인걸? 사령관이 요리도 할줄 아네?」/「맛 없기만 해봐?/메이는 별로 기대하지 않는 눈으로 당신이 요리하는 모습을 보고 있었다.")%
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시"),"이다")%.
+			PRINTFORMW 당신이 요리를 시작하자
+			PRINTFORMW 벌써부터 콧노래를 부르는 소리가 식탁에서 들려온다.
+			PRINTFORMW 당신이 요리하는 모습 하나하나를 행복한 미소로 바라보는 메이가 자리에 앉아 있었다.
+			PRINTFORMW 그런 메이를 바라보며 당신은 힘차게 재료를 볶고 간을 맞추며 천상의 손놀림을 보여주었다.
+			PRINTFORMW ♪
+			PRINTFORMW ♩
+			PRINTFORMW ♬♪
+			PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 오늘 당신이 요리할 음식은 %조사처리(TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시"),"이다")%.
+			PRINTFORMW 「하아...」
+			PRINTFORMW 짜증내면서도 당신의 요리를 알게 모르게 기대하던 메이였다.
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;9개의 케이스 존재
+	CSTR:GETCHARA(51):1 =
+	RETURN 1
 ENDIF
 
 @M_No51_EVENT_Eat_Com
@@ -4930,245 +4930,245 @@ ENDIF
 
 @M_No51_EVENT_Cook
 IF ABL:조리lv < 3
-SELECTCASE CSTR:GETCHARA(51):1
-CASE "Low"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
-PRINTFORMW 「나보고 요릴 하라고?」
-PRINTFORMW %TEXTR("「태워먹어도 난 모른다?」/「내가 왜 이런 걸...」")%
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 보잘 것 없는 요리가 완성됐다.
-CASE "Affection"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
-PRINTFORMW 「뭐? 내가 요리하라고?」
-PRINTFORMW %TEXTR("「...기대하진 마」/(태워먹으면 어떡하지...?)/(사령관이 실망하면 어떡하지...?)")%
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 보잘 것 없는 요리가 완성됐다.
-CASE "Annoyed"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
-PRINTFORMW 「뭐? 나보고 요리하라고?」
-PRINTFORMW 「...하아」
-PRINTFORMW .
-PRINTFORMW 뭔가 타는 소리가 들리는건 기분 탓일거다.
-PRINTFORMW .
-PRINTFORMW 뭔가 이상한 요리가 완성됐다.
-CASE "Weak"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
-PRINTFORMW 「요리? 내가?」
-PRINTFORMW %TEXTR("(...내가 왜 이런 걸...)/(꼭 해야해...?)")%
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 요리라고 부를 수 있을지 모를 요리가 완성됐다.
-CASE "High"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
-PRINTFORMW 「나보고 요릴 하라고?」
-PRINTFORMW %TEXTR("「태워먹어도 난 모른다?」/「내가 왜 이런 걸...」")%
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 보잘 것 없는 요리가 완성됐다.
-CASE "Love"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
-PRINTFORMW 「뭐? 내가 요리하라고?」
-PRINTFORMW %TEXTR("「...기대하진 마」/(태워먹으면 어떡하지...?)/(사령관이 실망하면 어떡하지...?)")%
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 보잘 것 없는 요리가 완성됐다.
-CASE "Marryed"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
-PRINTFORMW 「뭐? 내가 요리하라고?」
-PRINTFORMW %TEXTR("「...기대하진 마」/(태워먹으면 어떡하지...?)/(사령관이 실망하면 어떡하지...?)")%
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 보잘 것 없는 요리가 완성됐다.
-CASE "Fear"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트")%(이)다.
-PRINTFORMW 「뭐? 나보고 요리하라고?」
-PRINTFORMW 「...하아」
-PRINTFORMW .
-PRINTFORMW 뭔가 타는 소리가 들리는건 기분 탓일거다.
-PRINTFORMW .
-PRINTFORMW 뭔가 이상한 요리가 완성됐다.
-CASEELSE
-RETURN 0
-ENDSELECT
-CSTR:GETCHARA(51):1 = 
-RETURN 1
+	SELECTCASE CSTR:GETCHARA(51):1
+		CASE "Low"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트"), "이다")%.
+			PRINTFORMW 「나보고 요릴 하라고?」
+			PRINTFORMW %TEXTR("「태워먹어도 난 모른다?」/「내가 왜 이런 걸...」")%
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 보잘 것 없는 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트"), "이다")%.
+			PRINTFORMW 「뭐? 내가 요리하라고?」
+			PRINTFORMW %TEXTR("「...기대하진 마」/(태워먹으면 어떡하지...?)/(사령관이 실망하면 어떡하지...?)")%
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 보잘 것 없는 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트"), "이다")%.
+			PRINTFORMW 「뭐? 나보고 요리하라고?」
+			PRINTFORMW 「...하아」
+			PRINTFORMW .
+			PRINTFORMW 뭔가 타는 소리가 들리는건 기분 탓일거다.
+			PRINTFORMW .
+			PRINTFORMW 뭔가 이상한 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트"), "이다")%.
+			PRINTFORMW 「요리? 내가?」
+			PRINTFORMW %TEXTR("(...내가 왜 이런 걸...)/(꼭 해야해...?)")%
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리라고 부를 수 있을지 모를 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트"), "이다")%.
+			PRINTFORMW 「나보고 요릴 하라고?」
+			PRINTFORMW %TEXTR("「태워먹어도 난 모른다?」/「내가 왜 이런 걸...」")%
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 보잘 것 없는 요리가 완성됐다.
+		CASE "Love"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트"), "이다")%.
+			PRINTFORMW 「뭐? 내가 요리하라고?」
+			PRINTFORMW %TEXTR("「...기대하진 마」/(태워먹으면 어떡하지...?)/(사령관이 실망하면 어떡하지...?)")%
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 보잘 것 없는 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트"), "이다")%.
+			PRINTFORMW 「뭐? 내가 요리하라고?」
+			PRINTFORMW %TEXTR("「...기대하진 마」/(태워먹으면 어떡하지...?)/(사령관이 실망하면 어떡하지...?)")%
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 보잘 것 없는 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("타코야끼/소고기 삼각김밥/콩나물 해장라면/럭키돈부리/우동/덴뿌라/오코노미야끼/미니 돈까스/치킨너겟/잡탕찌개/닭꼬치/떡볶이/순대볶음/소고기무국/스팸 부대찌개/밀면/생선구이/잔치국수/바게트"), "이다")%.
+			PRINTFORMW 「뭐? 나보고 요리하라고?」
+			PRINTFORMW 「...하아」
+			PRINTFORMW .
+			PRINTFORMW 뭔가 타는 소리가 들리는건 기분 탓일거다.
+			PRINTFORMW .
+			PRINTFORMW 뭔가 이상한 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;9개의 케이스 존재
+	CSTR:GETCHARA(51):1 =
+	RETURN 1
 ELSEIF ABL:조리lv > 2 && ABL:조리lv < 5
-SELECTCASE CSTR:GETCHARA(51):1
-CASE "Low"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
-PRINTFORMW 「또? 대체 날 뭐라고 생각하는거야?」
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 「...괜찮게 됐네」
-PRINTFORMW 요리가 완성됐다.
-CASE "Affection"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
-PRINTFORMW 「요리? 어쩔 수 없지」
-PRINTFORMW 「♪~」
-PRINTFORMW 「♪♪~」
-PRINTFORMW 「♪~♪~」
-PRINTFORMW .
-PRINTFORMW 「좋아, 잘 됐어」
-PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
-CASE "Love"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
-PRINTFORMW 「있잖아? 사령관?」
-PRINTDATAW
-DATALIST
-DATAFORM 「어느날부턴가 요리하는게 너무 즐거워졌어」
-DATAFORM 「다 사령관 때문인가봐-」
-ENDLIST
-DATAFORM 「오늘도 맛있게 먹어줄거지?」
-ENDDATA
-PRINTFORMW 「♪~」
-PRINTFORMW 「♪♪~」
-PRINTFORMW 「♪~♪~」
-PRINTFORMW .
-PRINTFORMW 「좋아, 잘 됐어」
-PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
-CASE "Annoyed"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
-PRINTFORMW 「하... 대체 내가 왜...」
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 뭔가 이상한 요리가 완성됐다.
-CASE "Weak"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
-PRINTFORMW 「하... 대체 내가 왜...」
-PRINTFORMW 메이는 들리지 않는 목소리로 중얼거렸다.
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 요리라고 부를 수 있을지 모를 요리가 완성됐다.
-CASE "High"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
-PRINTFORMW 「또? 대체 날 뭐라고 생각하는거야?」
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 「...괜찮게 됐네」
-PRINTFORMW 요리가 완성됐다.
-CASE "Marryed"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
-PRINTFORMW 「있잖아? 사령관?」
-PRINTDATAW
-DATALIST
-DATAFORM 「어느날부턴가 요리하는게 너무 즐거워졌어」
-DATAFORM 「다 사령관 때문인가봐-」
-ENDLIST
-DATAFORM 「오늘도 맛있게 먹어줄거지?」
-ENDDATA
-PRINTFORMW 「♪~」
-PRINTFORMW 「♪♪~」
-PRINTFORMW 「♪~♪~」
-PRINTFORMW .
-PRINTFORMW 「좋아, 잘 됐어」
-PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
-CASE "Fear"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐")%(이)다.
-PRINTFORMW 「하... 대체 내가 왜...」
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 뭔가 이상한 요리가 완성됐다.
-CASEELSE
-RETURN 0
-ENDSELECT
-CSTR:GETCHARA(51):1 = 
-RETURN 1
+	SELECTCASE CSTR:GETCHARA(51):1
+		CASE "Low"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐"),"이다")%.
+			PRINTFORMW 「또? 대체 날 뭐라고 생각하는거야?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 「...괜찮게 됐네」
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐"),"이다")%.
+			PRINTFORMW 「요리? 어쩔 수 없지」
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW .
+			PRINTFORMW 「좋아, 잘 됐어」
+			PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
+		CASE "Love"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐"),"이다")%.
+			PRINTFORMW 「있잖아? 사령관?」
+			PRINTDATAW
+				DATALIST
+					DATAFORM 「어느날부턴가 요리하는게 너무 즐거워졌어」
+					DATAFORM 「다 사령관 때문인가봐-」
+				ENDLIST
+				DATAFORM 「오늘도 맛있게 먹어줄거지?」
+			ENDDATA
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW .
+			PRINTFORMW 「좋아, 잘 됐어」
+			PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐"),"이다")%.
+			PRINTFORMW 「하... 대체 내가 왜...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 뭔가 이상한 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐"),"이다")%.
+			PRINTFORMW 「하... 대체 내가 왜...」
+			PRINTFORMW 메이는 들리지 않는 목소리로 중얼거렸다.
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리라고 부를 수 있을지 모를 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐"),"이다")%.
+			PRINTFORMW 「또? 대체 날 뭐라고 생각하는거야?」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 「...괜찮게 됐네」
+			PRINTFORMW 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐"),"이다")%.
+			PRINTFORMW 「있잖아? 사령관?」
+			PRINTDATAW
+				DATALIST
+					DATAFORM 「어느날부턴가 요리하는게 너무 즐거워졌어」
+					DATAFORM 「다 사령관 때문인가봐-」
+				ENDLIST
+				DATAFORM 「오늘도 맛있게 먹어줄거지?」
+			ENDDATA
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW .
+			PRINTFORMW 「좋아, 잘 됐어」
+			PRINTFORMW %TEXTR("먹음직스러운/군침이 도는")% 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("동래파전/냉채족발/돼지불고기/오삼불고기/소갈비찜/크림 파스타/니우러우미엔/페퍼로니 피자/미트파이/민트미트파이/마늘갈비찜/코코뱅/뫼니에르/리에트/라따뚜이/퐁뒤 사부야르드/부야베스/비프 스튜/하와이안 피자/볼로네제/알프레도/명란젓 파스타/훈제 바베큐"),"이다")%.
+			PRINTFORMW 「하... 대체 내가 왜...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 뭔가 이상한 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;9개의 케이스 존재
+	CSTR:GETCHARA(51):1 =
+	RETURN 1
 ELSEIF ABL:조리lv > 4
-SELECTCASE CSTR:GETCHARA(51):1
-CASE "Low"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
-PRINTFORMW 「...하아 알았어」
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
-CASE "Affection"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
-PRINTFORMW 「뭐 먹고 싶은 거 있어?」
-PRINTFORMW 「기대해」
-PRINTFORMW 「♪~」
-PRINTFORMW 「♪♪~」
-PRINTFORMW 「♪~♪~」
-PRINTFORMW .
-PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
-CASE "Love"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
-PRINTFORMW 「있잖아? 사령관?」
-PRINTDATAW
-DATALIST
-DATAFORM 「어느날부턴가 요리하는게 너무 즐거워졌어
-DATAFORM 「다 사령관 때문인가봐-」
-ENDLIST
-DATAFORM 「오늘도 맛있게 먹어줄거지?」
-ENDDATA
-PRINTFORMW 「♪~」
-PRINTFORMW 「♪♪~」
-PRINTFORMW 「♪~♪~」
-PRINTFORMW .
-PRINTFORMW 「좋아, 잘 됐어」
-PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의/당신을 위해 정성껏 사랑을 담은")% 요리가 완성됐다.
-CASE "Annoyed"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
-PRINTFORMW 「하아...」
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 뭔가 이상한 요리가 완성됐다.
-CASE "Weak"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
-PRINTFORMW 「하아...」
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 요리라고 부를 수 있을지 모를 요리가 완성됐다.
-CASE "High"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
-PRINTFORMW 「...하아 알았어」
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
-CASE "Marryed"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
-PRINTFORMW 「있잖아? 사령관?」
-PRINTDATAW
-DATALIST
-DATAFORM 「어느날부턴가 요리하는게 너무 즐거워졌어
-DATAFORM 「다 사령관 때문인가봐-」
-ENDLIST
-DATAFORM 「오늘도 맛있게 먹어줄거지?」
-ENDDATA
-PRINTFORMW 「♪~」
-PRINTFORMW 「♪♪~」
-PRINTFORMW 「♪~♪~」
-PRINTFORMW .
-PRINTFORMW 「좋아, 잘 됐어」
-PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의/당신을 위해 정성껏 사랑을 담은")% 요리가 완성됐다.
-CASE "Fear"
-PRINTFORMW 오늘 메이가 요리할 음식은 %TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시")%(이)다.
-PRINTFORMW 「하아...」
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW .
-PRINTFORMW 뭔가 이상한 요리가 완성됐다.
-CASEELSE
-RETURN 0
-ENDSELECT
-CSTR:GETCHARA(51):1 = 
-RETURN 1
+	SELECTCASE CSTR:GETCHARA(51):1
+		CASE "Low"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시"),"이다")%.
+			PRINTFORMW 「...하아 알았어」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
+		CASE "Affection"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시"),"이다")%.
+			PRINTFORMW 「뭐 먹고 싶은 거 있어?」
+			PRINTFORMW 「기대해」
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
+		CASE "Love"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시"),"이다")%.
+			PRINTFORMW 「있잖아? 사령관?」
+			PRINTDATAW
+				DATALIST
+					DATAFORM 「어느날부턴가 요리하는게 너무 즐거워졌어」
+					DATAFORM 「다 사령관 때문인가봐-」
+				ENDLIST
+				DATAFORM 「오늘도 맛있게 먹어줄거지?」
+			ENDDATA
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW .
+			PRINTFORMW 「좋아, 잘 됐어」
+			PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의/당신을 위해 정성껏 사랑을 담은")% 요리가 완성됐다.
+		CASE "Annoyed"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시"),"이다")%.
+			PRINTFORMW 「하아...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 뭔가 이상한 요리가 완성됐다.
+		CASE "Weak"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시"),"이다")%.
+			PRINTFORMW 「하아...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 요리라고 부를 수 있을지 모를 요리가 완성됐다.
+		CASE "High"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시"),"이다")%.
+			PRINTFORMW 「...하아 알았어」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의")% 요리가 완성됐다.
+		CASE "Marryed"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시"),"이다")%.
+			PRINTFORMW 「있잖아? 사령관?」
+			PRINTDATAW
+				DATALIST
+					DATAFORM 「어느날부턴가 요리하는게 너무 즐거워졌어」
+					DATAFORM 「다 사령관 때문인가봐-」
+				ENDLIST
+				DATAFORM 「오늘도 맛있게 먹어줄거지?」
+			ENDDATA
+			PRINTFORMW 「♪~」
+			PRINTFORMW 「♪♪~」
+			PRINTFORMW 「♪~♪~」
+			PRINTFORMW .
+			PRINTFORMW 「좋아, 잘 됐어」
+			PRINTFORMW %TEXTR("소완도 무릎을 꿇고 지나갈/이 세상에 단 하나뿐인 전설의/당신을 위해 정성껏 사랑을 담은")% 요리가 완성됐다.
+		CASE "Fear"
+			PRINTFORMW 오늘 메이가 요리할 음식은 %조사처리(TEXTR("하몬 이베 리코/이베리코 하몽/성게알 파스타/문어 라따뚜이/키슈 로렌 오 프로마지/코트 뒤 뵈프/코트 다뇨/코코뱅/오마르 테르미도르/슈바인스학세/슈바르츠벨더 키르슈토르테/해주교반/다금바리 회/소갈비 찜/장흥 삼합/나폴리탄 스파게티/스키야키/타이메시"),"이다")%.
+			PRINTFORMW 「하아...」
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW .
+			PRINTFORMW 뭔가 이상한 요리가 완성됐다.
+		CASEELSE
+			RETURN 0
+	ENDSELECT ;9개의 케이스 존재
+	CSTR:GETCHARA(51):1 =
+	RETURN 1
 ENDIF
 
 @M_No51_EVENT_Eat_Lunch

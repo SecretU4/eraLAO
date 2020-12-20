@@ -5,10 +5,15 @@ TITLE3,TITLE/오프닝타이틀3.webp, 0,0,500,345
 TITLE4,TITLE/오프닝타이틀4.webp, 0,0,381,342
 TITLE5,TITLE/오프닝타이틀5.webp, 0,0,740,667
 TITLE6,TITLE/오프닝타이틀6.webp, 0,0,692,767
+TITLE7,TITLE/오프닝타이틀7.webp
+TITLE8,TITLE/오프닝타이틀8.webp
+TITLE9,TITLE/오프닝타이틀9.webp
 
 ;연애시작 리소스
 DateStart_51_Break,DateStart/51_메이붕괴.jpg, 0,0,740,740
 DateStart_51_fLove,DateStart/51_오프닝1.webp, 0,0,740,393
+
+DateStart_52_First,DateStart/52_첫만남.webp
 
 DateStart_138_First,DateStart/138_베로니카_연애시작시.webp, 0,0,740,1048
 DateStart_138_Confession,DateStart/138_베로니카_이벤트_confession.webp, 0,0,740,778
@@ -35,7 +40,7 @@ Face_12_break,FACE/12_break.webp, 0,0,740,690
 DateCom_51_pahu,DateCom/51_메이파후.webp
 DateCom_132_tummy,DateCom/132_술배.webp
 DateCom_138_Penance_1,DateCom/138_X문은_배설기관_1.jpg
-DateCom_138_Penance_1,DateCom/138_뚝배기.jpg
+DateCom_138_2,DateCom/138_뚝배기.jpg
 
 ;휴식이벤트 리소스
 Rest_1021,Rest/76_머리.jpg
@@ -54,21 +59,24 @@ Cook_51_1,Cook/51_메이음식먹기.jpg
 Cook_32_1,Cook/32_요리.webp
 
 ;엔딩이벤트 리소스
-End_51_1,Ending/51_메이_엔딩.jpg
-End_51_2,Ending/51_메이_엔딩2.jpg
-End_7_1,Ending/7_엔딩1.webp
-End_89_1,Ending/89_엔딩1.jpg
-End_89_2,Ending/89_엔딩2.jpg
-End_7_3-1,Ending/7_엔딩2_1.webp
-End_7_3-2,Ending/7_엔딩2_2.webp
-End_123_1,Ending/123_엔딩1.jpg
-End_123_2,Ending/123_엔딩2.webp
-End_51_4,Ending/51_엔딩4.jpg
-End_7_2,Ending/7_엔딩2.webp
-End_7_5,Ending/7_히든엔딩.webp
-End_7_4,Ending/7_엔딩4.webp
-End_12_1,Ending/12_엔딩1.webp
-End_138_1,Ending/138_베로니카_엔딩10.webp
-End_138_2,Ending/138_베로니카_엔딩_20.webp
-End_138_3-1,Ending/138_베로니카_엔딩3-1.jpg
-End_138_3-2,Ending/138_베로니카_엔딩3-2.jpg
+ENDING_51_1,Ending/51_메이_엔딩.jpg
+ENDING_51_2,Ending/51_메이_엔딩2.jpg
+ENDING_7_1,Ending/7_엔딩1.webp
+ENDING_89_1,Ending/89_엔딩1.jpg
+ENDING_89_2,Ending/89_엔딩2.jpg
+ENDING_7_3-1,Ending/7_엔딩2_1.webp
+ENDING_7_3-2,Ending/7_엔딩2_2.webp
+ENDING_123_1,Ending/123_엔딩1.jpg
+ENDING_123_2,Ending/123_엔딩2.webp
+ENDING_51_4,Ending/51_엔딩4.jpg
+ENDING_7_2,Ending/7_엔딩2.webp
+ENDING_7_5,Ending/7_히든엔딩.webp
+ENDING_7_4,Ending/7_엔딩4.webp
+ENDING_12_1,Ending/12_엔딩1.webp
+ENDING_138_1,Ending/138_베로니카_엔딩10.webp
+ENDING_138_2,Ending/138_베로니카_엔딩_20.webp
+ENDING_138_3-1,Ending/138_베로니카_엔딩3-1.jpg
+ENDING_138_3-2,Ending/138_베로니카_엔딩3-2.jpg
+ENDING_52_1,Ending/52_엔딩1.webp
+ENDING_52_2,Ending/52_엔딩2.webp
+ENDING_52_3,Ending/52_엔딩3.webp

@@ -105,7 +105,6 @@ ELSE
 ENDIF
 
 CALL ENDING(TARGET)
-
 ;============================================================================================
 ;함수명: ENDING_FAREWELL_FLAG(ARG, ARGS)
 ;마지막 수정: v0.9
@@ -376,6 +375,23 @@ SIF CFLAG:MASTER:엔딩플래그
     CALL ENDING(-1)
 RETURN 1
 ;============================================================================================
+;함수명: ENDING_OBEY_FLAG(ARG)
+;마지막 수정: v1.2
+;종의 징표를 통한 복종 생성 및 엔딩 플래그 설정
+;ARG = 인게임 캐릭터번호
+;============================================================================================
+@ENDING_OBEY_FLAG(ARG)
+
+TARGET = ARG
+TALENT:굴복 = 2 ;복종
+
+SETBIT CFLAG:MASTER:엔딩플래그, 1
+
+PRINTFORMW %타겟은% 어색하기 짝이없는 미소를 지으며 순응했다.
+CFLAG:엔딩플래그 = -1
+
+CALL ENDING(TARGET)
+;============================================================================================
 ;함수명: Classify_EndingFlag
 ;마지막 수정: v0.9
 ;CFLAG:MASTER:엔딩플래그의 bit 값을 개별 엔딩플래그 값으로 변환 후 MASTER의 해당 값 초기화
@@ -501,7 +517,7 @@ ELSE
 ENDIF
 ;============================================================================================
 ;함수명: Ending_Result
-;마지막 수정: v1.0
+;마지막 수정: v1.20
 ;엔딩 결과물 처리
 ;--------------------------------------------------------------------------------------------
 ;상정한 처리 조건
@@ -519,28 +535,30 @@ ENDIF
 @Ending_Result
 #DIM 그림번호
 VARSET LOCAL
+그림번호 = 0
 ;LOCAL = exc, LOCAL:1 = 1일때 원판에서 추가처리
 SELECTCASE NO:TARGET
     CASE 7 ;리제
         IF CFLAG:엔딩플래그 == 1
-            그림번호 = 3
+            ;그림번호 = 3
         ELSEIF CFLAG:엔딩플래그 == 2
-            그림번호 = 10
+            ;그림번호 = 10
         ELSEIF CFLAG:엔딩플래그 == 3
             그림번호 = 6
             LOCAL = 1 ;exc = 1
         ELSEIF CFLAG:엔딩플래그 == 4 ;리제 히든 엔딩
-            그림번호 = 11
+            ;그림번호 = 11
             FLAG:히든메시지 = TARGET ;exc = 2
         ELSEIF CFLAG:엔딩플래그 == 5 ;리제 엔딩 No. 4
-            그림번호 = 12
+            ;그림번호 = 12
             LOCAL = 3 ;exc = 3
         ENDIF
     CASE 12 ;소완
-        SIF CFLAG:엔딩플래그 == 3 ;소완 배드 엔딩
+        IF CFLAG:엔딩플래그 == 3 ;소완 배드 엔딩
             LOCAL = 1 ;exc = 1
-        SIF CFLAG:엔딩플래그 == 1
-            그림번호 = 13
+        ELSEIF CFLAG:엔딩플래그 == 1
+            ;그림번호 = 13
+        ENDIF
     CASE 21 ;마리
         SIF CFLAG:엔딩플래그 == 3
             LOCAL = 1 ;exc = 1
@@ -552,11 +570,11 @@ SELECTCASE NO:TARGET
             TALENT:혼인 = 1 ;exc = 4
     CASE 51 ;메이
         IF CFLAG:엔딩플래그 == 1
-            그림번호 = 1
+            ;그림번호 = 1
         ELSEIF CFLAG:엔딩플래그 == 2
-            그림번호 = 2
+            ;그림번호 = 2
         ELSEIF CFLAG:엔딩플래그 == 4
-            그림번호 = 9
+            ;그림번호 = 9
             LOCAL:1 = 1
         ENDIF
     CASE 68 ;에밀리
@@ -574,13 +592,8 @@ SELECTCASE NO:TARGET
     CASE 76 ;닥터
         SIF CFLAG:엔딩플래그 == 3
             LOCAL = 3 ;exc = 3
-    CASE 89 ;세이렌
-        IF CFLAG:엔딩플래그 == 1
-            그림번호 = 4
-        ELSEIF CFLAG:엔딩플래그 == 2
-            그림번호 = 5
-        ENDIF
-    CASE 90 ;
+    ;CASE 89 ;세이렌 엔딩플래그 1: 그림번호 4, 엔딩플래그 2: 그림번호 5
+    CASE 90 ;테티스
         IF CFLAG:엔딩플래그 == 3
             SETBIT CFLAG:주회:특수출력유무, 3
         ENDIF
@@ -595,9 +608,9 @@ SELECTCASE NO:TARGET
             LOCAL = 3
     CASE 123 ;모모
         IF CFLAG:엔딩플래그 == 1
-            그림번호 = 7
+            ;그림번호 = 7
         ELSEIF CFLAG:엔딩플래그 == 2
-            그림번호 = 8
+            ;그림번호 = 8
             LOCAL = 3 ;exc = 3
         ENDIF
     CASE 126 ;아자젤
@@ -608,9 +621,9 @@ SELECTCASE NO:TARGET
             TALENT:의존증 = 1 ;exc = 6
     CASE 138 ;베로니카
         IF CFLAG:엔딩플래그 == 1
-            그림번호 = 14
+            ;그림번호 = 14
         ELSEIF CFLAG:엔딩플래그 == 2
-            그림번호 = 15
+            ;그림번호 = 15
             LOCAL:1 = 1
             TALENT:실종 = 1 ;etc2 = 베로니카 실종 일수 ;exc = 8
         ELSEIF CFLAG:엔딩플래그 == 3
@@ -626,7 +639,7 @@ ENDSELECT
 
 ;화상 처리
 SIF CFLAG:TARGET:개별그림유무
-    CALL ILLUST(TARGET, 그림번호, "ENDING")
+    CALL ILLUST(TARGET, "ENDING", 그림번호)
 
 SIF FLAG:히든메시지 ;exc == 2
     CALL IS_DREAMING
