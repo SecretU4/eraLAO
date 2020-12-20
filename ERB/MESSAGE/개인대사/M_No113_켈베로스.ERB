@@ -1881,6 +1881,221 @@ ENDSELECT ;10개의 케이스 존재
 CSTR:GETCHARA(113):1 =
 RETURN 1
 
+@M_No113_COM103
+SELECTCASE CSTR:GETCHARA(113):1
+	CASE "Low"
+		PRINTFORMW 당신은 켈베로스에게 자신의 발을 핥으라 명령했다.
+		PRINTFORMW 켈베로스는 싫은 듯 부들부들 떨었지만 이내 당신의 발을 핥았다.
+		PRINTFORMW %TEXTR("「으으.. 이...이런 명령은 싫어요... 사령관님」/「저,전 동물이 아닌데... 으」")%
+	CASE "High"
+		PRINTFORMW 당신은 켈베로스에게 자신의 발을 핥으라 명령했다.
+		PRINTFORMW 켈베로스는 싫은 듯 부들부들 떨었지만 이내 당신의 발을 핥았다.
+		PRINTFORMW {「으으.. 이...이런 명령은 싫어요... 사령관님」/「저,전 동물이 아닌데... 으」
+	CASE "Affection"
+		PRINTFORMW 당신은 켈베로스에게 자신의 발을 핥으라 명령했다.
+		PRINTFORMW 켈베로스는 거부감을 느끼는 듯 했지만 이내 당신의 발을 핥았다.
+		PRINTFORMW 「사..사령관님? 이런 플레이는 저 조금.. 괴로워요...」
+		PRINTFORMW 켈베로스의 눈가에는 작은 눈물방울이 맺혔다.
+	CASE "Marryed"
+		PRINTFORMW 당신은 켈베로스에게 자신의 발을 핥으라 명령했다.
+		PRINTFORMW 켈베로스는 거부감을 느끼는 듯 했지만 이내 당신의 발을 핥았다.
+		PRINTFORMW 「사..사령관님? 이런 플레이는 저 조금.. 괴로워요...」
+		PRINTFORMW 켈베로스의 눈가에는 작은 눈물방울이 맺혔다.
+	CASE "Annoyed"
+		PRINTFORMW 당신은 켈베로스에게 자신의 발을 핥으라 명령했다.
+		PRINTFORMW 켈베로스는 싫은 듯 부들부들 떨었지만 이내 당신의 발을 핥았다.
+		PRINTFORMW 「저,전 동물이 아니에요!」
+		PRINTFORMW 켈베로스의 얼굴은 수치심으로 가득 차있었다.
+	CASE "Fear"
+		PRINTFORMW 당신은 켈베로스에게 자신의 발을 핥으라 명령했다.
+		PRINTFORMW 켈베로스는 싫은 듯 부들부들 떨었지만 이내 당신의 발을 핥았다.
+		PRINTFORMW %TEXTR("「으으.. 이...이런 명령은 싫어요... 사령관님」/「저,전 동물이 아닌데... 으」")%
+	CASE "Weak"
+		PRINTFORMW 당신은 켈베로스에게 자신의 발을 핥으라 명령했다.
+		PRINTFORMW 	켈베로스는 파르르 떨며 당신의 발을 핥았다.
+		PRINTFORMW 「흐으으..흐윽...」
+		PRINTFORMW 고개를 올리지 못하는 켈베로스의 아래가 점점 젖어갔다.
+	CASE "Break"
+		PRINTFORMW 당신은 켈베로스에게 자신의 발을 핥으라 명령했다.
+		PRINTFORMW 켈베로스는 당신의 발을 신나게 핥았다.
+		PRINTFORMW 「왕!」
+	CASE "Submit"
+		PRINTFORMW 당신은 켈베로스에게 자신의 발을 핥으라 명령했다.
+		PRINTFORMW 켈베로스는 당신에게 기어와 조심스레 발을 핥았다.
+		PRINTFORMW 「핵...핵핵...」
+		PRINTFORMW 바닥이 눈물로 젖어가고 있었다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;10개의 케이스 존재
+CSTR:GETCHARA(113):1 =
+RETURN 1
+
+@M_No113_COM104
+SELECTCASE CSTR:GETCHARA(113):1
+	CASE "Low"
+		PRINTFORMW 당신은 켈베로스에게 개처럼 기라고 명령했다.
+		PRINTFORMW 켈베로스는 싫은 듯 부들부들 떨었지만 이내 개처럼 기었다.
+		PRINTFORMW %TEXTR("「시..싫어.. 이,이런거 부끄러워요.. 사령관님..」/「이러면 재밌으신거에요...?」")%
+	CASE "High"
+		PRINTFORMW 당신은 켈베로스에게 개처럼 기라고 명령했다.
+		PRINTFORMW 켈베로스는 싫은 듯 부들부들 떨었지만 이내 개처럼 기었다.
+		PRINTFORMW %TEXTR("「시..싫어.. 이,이런거 부끄러워요.. 사령관님..」/「이러면 재밌으신거에요...?」")%
+	CASE "Affection"
+		PRINTFORMW 당신은 켈베로스에게 개처럼 기라고 명령했다.
+		PRINTFORMW 켈베로스는 싫은 기색이였지만 이내 개처럼 기었다.
+		A = RAND:1
+		IF A == 0
+			PRINTFORMW 「하,한번만이에요!」
+			PRINTFORMW 「으... 부끄러워요...」
+		ENDIF
+	CASE "Marryed"
+		PRINTFORMW 당신은 켈베로스에게 개처럼 기라고 명령했다.
+		PRINTFORMW 켈베로스는 싫은 기색이였지만 이내 개처럼 기었다.
+		A = RAND:1
+		IF A == 0
+			PRINTFORMW 「하,한번만이에요!」
+			PRINTFORMW 「으... 부끄러워요...」
+		ENDIF
+	CASE "Annoyed"
+		PRINTFORMW 당신은 켈베로스에게 개처럼 기라고 명령했다.
+		PRINTFORMW 켈베로스는 싫은 듯 부들부들 떨었지만 이내 개처럼 기었다.
+		PRINTFORMW %TEXTR("「으으... 싫어..싫어 진짜 싫어....」/「절 뭐라고 생각하시는 거에요...」")%
+	CASE "Fear"
+		PRINTFORMW 당신은 켈베로스에게 개처럼 기라고 명령했다.
+		PRINTFORMW 켈베로스는 싫은 듯 부들부들 떨었지만 이내 개처럼 기었다.
+		PRINTFORMW %TEXTR("「시..싫어.. 이,이런거 부끄러워요.. 사령관님..」/「이러면 재밌으신거에요...?」")%
+	CASE "Weak"
+		PRINTFORMW 당신은 켈베로스에게 개처럼 기라고 명령했다.
+		PRINTFORMW 	켈베로스는 부르르 떨며 바닥을 기었다.
+		A = RAND:2
+		IF A == 0
+			PRINTFORMW 「..싫어어....」
+		ELSEIF A == 1
+			PRINTFORMW 「흑..흑..흐아아앙」
+			PRINTFORMW 켈베로스가 지나간 자리를 따라 바닥이 젖어갔다.
+		ENDIF
+	CASE "Break"
+		PRINTFORMW 당신은 켈베로스에게 개처럼 기라고 명령했다.
+		PRINTFORMW 켈베로스는 개처럼 4발로 뛰어다녔다.
+		PRINTFORMW 「왕!」
+		PRINTFORMW 켈베로스의 표정은 세상 밝아보였다.
+	CASE "Submit"
+		PRINTFORMW 당신은 켈베로스에게 개처럼 기라고 명령했다.
+		PRINTFORMW 켈베로스는 개처럼 4발로 기어다녔다.
+		PRINTFORMW 「...」
+		PRINTFORMW 스쳐가듯 보인 켈베로스의 눈은 죽어 있었다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;10개의 케이스 존재
+CSTR:GETCHARA(113):1 =
+RETURN 1
+
+@M_No113_COM105
+SELECTCASE CSTR:GETCHARA(113):1
+	CASE "Low"
+		PRINTFORMW 당신은 켈베로스에게 자해하라고 명령했다.
+		PRINTFORMW 켈베로스는 겁에 질린 표정으로 고개를 내저었지만 이내 팔을 들어 스스로의 복부를 강하게 가격했다.
+		PRINTFORMW 「카학...아..카흑!?」
+		PRINTFORMW 숨을 돌릴틈도 없이 켈베로스는 다시한번 스스로를 가격했다.
+	CASE "High"
+		PRINTFORMW 당신은 켈베로스에게 자해하라고 명령했다.
+		PRINTFORMW 켈베로스는 겁에 질린 표정으로 고개를 내저었지만 이내 팔을 들어 스스로의 복부를 강하게 가격했다.
+		PRINTFORMW 「카학...아..카흑!?」
+		PRINTFORMW 숨을 돌릴틈도 없이 켈베로스는 다시한번 스스로를 가격했다.
+	CASE "Affection"
+		PRINTFORMW 당신은 켈베로스에게 자해하라고 명령했다.
+		PRINTFORMW 켈베로스는 겁에 질린 표정으로 고개를 내저었지만 이내 팔을 들어 스스로의 복부를 강하게 가격했다.
+		PRINTFORMW 「사령관님..? 아니야.. 싫어.. 싫,으붑!?...케핵!」
+		PRINTFORMW 숨을 돌릴틈도 없이 켈베로스는 다시한번 스스로를 가격했다.
+	CASE "Marryed"
+		PRINTFORMW 당신은 켈베로스에게 자해하라고 명령했다.
+		PRINTFORMW 켈베로스는 겁에 질린 표정으로 고개를 내저었지만 이내 팔을 들어 스스로의 복부를 강하게 가격했다.
+		PRINTFORMW 「사령관님..? 아니야.. 싫어.. 싫,으붑!?...케핵!」
+		PRINTFORMW 숨을 돌릴틈도 없이 켈베로스는 다시한번 스스로를 가격했다.
+	CASE "Annoyed"
+		PRINTFORMW 당신은 켈베로스에게 자해하라고 명령했다.
+		PRINTFORMW 켈베로스는 겁에 질린 표정으로 고개를 내저었지만 이내 팔을 들어 스스로의 복부를 강하게 가격했다.
+		PRINTFORMW 「카학...아..카흑!?」
+		PRINTFORMW 숨을 돌릴틈도 없이 켈베로스는 다시한번 스스로를 가격했다.
+	CASE "Fear"
+		PRINTFORMW 당신은 켈베로스에게 자해하라고 명령했다.
+		PRINTFORMW 켈베로스는 겁에 질린 표정으로 고개를 내저었지만 이내 팔을 들어 스스로의 복부를 강하게 가격했다.
+		PRINTFORMW 「카학...아..카흑!?」
+		PRINTFORMW 숨을 돌릴틈도 없이 켈베로스는 다시한번 스스로를 가격했다.
+	CASE "Weak"
+		PRINTFORMW 당신은 켈베로스에게 자해하라고 명령했다.
+		PRINTFORMW 	켈베로스는 힘없이 팔을 들어 자신의 복부를 가격했다.
+		PRINTFORMW 「케흑...흐윽...칵!?」
+		PRINTFORMW 구타음과 소리없는 비명만이 방에 맴돌았다.}
+	CASE "Break"
+		PRINTFORMW 당신은 켈베로스에게 자해하라고 명령했다.
+		PRINTFORMW 켈베로스는 자신의 복부를 강하게 가격했다.
+		PRINTFORMW 「...」
+		PRINTFORMW 켈베로스의 과호흡이 점점 심해진다.
+	CASE "Submit"
+		PRINTFORMW 당신은 켈베로스에게 자해하라고 명령했다.
+		PRINTFORMW 켈베로스는 자신의 복부를 강하게 가격했다.
+		PRINTFORMW 「...카흑! ...아..으..그흑...」
+		PRINTFORMW 켈베로스는 괴로운 듯 바닥에서 발버둥 쳤다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;10개의 케이스 존재
+CSTR:GETCHARA(113):1 =
+RETURN 1
+
+@M_No113_COM106
+SELECTCASE CSTR:GETCHARA(113):1
+	CASE "Low"
+		PRINTFORMW 당신은 켈베로스에게 충격봉을 자신에게 사용하라고 명령했다.
+		PRINTFORMW 켈베로스가 입을 열틈도 없이 켈베로스는 스스로 고압의 전기에 감전되었다.
+		PRINTFORMW 「...! ...!」
+		PRINTFORMW 켈베로스는 감전되어 쓰러진 체 파르르 떨고 있다.
+	CASE "High"
+		PRINTFORMW 당신은 켈베로스에게 충격봉을 자신에게 사용하라고 명령했다.
+		PRINTFORMW 켈베로스가 입을 열틈도 없이 켈베로스는 스스로 고압의 전기에 감전되었다.
+		PRINTFORMW 「...! ...!」
+		PRINTFORMW 켈베로스는 감전되어 쓰러진 체 파르르 떨고 있다.
+	CASE "Affection"
+		PRINTFORMW 당신은 켈베로스에게 충격봉을 자신에게 사용하라고 명령했다.
+		PRINTFORMW 켈베로스가 입을 열틈도 없이 켈베로스는 스스로 고압의 전기에 감전되었다.
+		PRINTFORMW 「...! ...!」
+		PRINTFORMW 켈베로스는 감전되어 쓰러진 체 파르르 떨고 있다.
+	CASE "Marryed"
+		PRINTFORMW 당신은 켈베로스에게 충격봉을 자신에게 사용하라고 명령했다.
+		PRINTFORMW 켈베로스가 입을 열틈도 없이 켈베로스는 스스로 고압의 전기에 감전되었다.
+		PRINTFORMW 「...! ...!」
+		PRINTFORMW 켈베로스는 감전되어 쓰러진 체 파르르 떨 고있다.
+	CASE "Annoyed"
+		PRINTFORMW 당신은 켈베로스에게 충격봉을 자신에게 사용하라고 명령했다.
+		PRINTFORMW 켈베로스가 입을 열틈도 없이 켈베로스는 스스로 고압의 전기에 감전되었다.
+		PRINTFORMW 「...! ...!」
+		PRINTFORMW 켈베로스는 감전되어 쓰러진 체 파르르 떨고 있다.
+	CASE "Fear"
+		PRINTFORMW 당신은 켈베로스에게 충격봉을 자신에게 사용하라고 명령했다.
+		PRINTFORMW 켈베로스가 입을 열틈도 없이 켈베로스는 스스로 고압의 전기에 감전되었다.
+		PRINTFORMW 「...! ...!」
+		PRINTFORMW 켈베로스는 감전되어 쓰러진 체 파르르 떨고 있다.
+	CASE "Weak"
+		PRINTFORMW 당신은 켈베로스에게 충격봉을 자신에게 사용하라고 명령했다.
+		PRINTFORMW 	켈베로스는 스스로 고압의 전기에 감전되었다.
+		PRINTFORMW 「...!」
+		PRINTFORMW 바닥이 더러워졌다.
+	CASE "Break"
+		PRINTFORMW 당신은 켈베로스에게 충격봉을 자신에게 사용하라고 명령했다.
+		PRINTFORMW 켈베로스는 스스로 고압의 전기에 감전되었다.
+		PRINTFORMW 「...」
+		PRINTFORMW 바닥이 더러워졌다.
+	CASE "Submit"
+		PRINTFORMW 당신은 켈베로스에게 충격봉을 자신에게 사용하라고 명령했다.
+		PRINTFORMW 켈베로스는 스스로 고압의 전기에 감전되었다.
+		PRINTFORMW 「...! ...!」
+		PRINTFORMW 켈베로스는 널부러진 체 움찔움찔 떨고 있다.
+	CASEELSE
+		RETURN 0
+ENDSELECT ;10개의 케이스 존재
+CSTR:GETCHARA(113):1 =
+RETURN 1
+
 @M_No113_EVENT_Morning
 SELECTCASE CSTR:GETCHARA(113):1
 	CASE "Low"
@@ -2934,7 +3149,7 @@ SELECTCASE CFLAG:엔딩플래그
 		PRINTFORMW 당신은 생각했다.
 		PRINTFORMW 켈베로스 엔딩 No. 3「운수 좋은 날」
 		RETURN 1
-	CASE 4
+	CASE -1
 		PRINTFORMW 철컥.
 		PRINTFORMW 우중충한 방안을 채우는 무감각한 금속의 소리.
 		PRINTFORMW 당신은 오렌지색의 귀여운 개목줄을.

@@ -1,0 +1,17 @@
+﻿;켈베로스 Lick
+@COM103
+SOURCE:소요시간 += 3
+SOURCE:공포 += 20
+SOURCE:스트레스 += 50
+
+RETURN 1
+
+@COM103_MSG
+PRINTFORML 당신은 %CALLNAME:TARGET%에게 명령권을 행사했다.
+
+@COM_ABLE103
+SIF !TFLAG:연애중여부
+    RETURN 0
+SIF NO:TARGET != 113
+    RETURN 0
+RETURN 1
