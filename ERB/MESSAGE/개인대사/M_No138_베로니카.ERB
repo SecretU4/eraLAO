@@ -854,7 +854,7 @@ CASE "Affection"
         PRINTW 「...이것은?」
         PRINTW 하필 스크린에는 그녀가 감당하기 힘든 수녀물이 비쳤다.
         SIF CFLAG:TARGET:개별그림유무
-            CALL ILLUST(TARGET, 10, "DATECOM")
+            CALL ILLUST(TARGET, "DateCom", 10)
         PRINTW 「X문은 배설기관! 가지고 노는 장난감이 아닙니다!!!」
         PRINTW 베로니카는 자리에서 펄쩍 뛰며 괜히 당신에게 화를 내었다.
     ELSEIF A == 6
@@ -1508,7 +1508,7 @@ CASE "Low", "High" ;원판 내용물이 동일하기에 합침
         PRINTW 당신은 베로니카의 옆구리를 찔렀다.
         PRINTW 「이 불경한 자가!!」
         SIF CFLAG:TARGET:개별그림유무
-            CALL ILLUST(TARGET, 11, "DATECOM")
+            CALL ILLUST(TARGET, "DateCom", 11)
         PRINTW 베로니카는 반사적으로 당신의 머리를 책으로 내려쳤다.
         PRINTW 눈알이 튀어나올 것 같다.
         PRINTW 「앗! 성도니이이임!!!」
@@ -1551,7 +1551,7 @@ CASE "Annoyed", "Fear", "Weak" ;원판 내용물이 동일하기에 합침
         PRINTW 당신은 베로니카의 옆구리를 찔렀다.
         PRINTW 「이 불경한 자가!!」
         SIF CFLAG:TARGET:개별그림유무
-            CALL ILLUST(TARGET, 11, "DATECOM")
+            CALL ILLUST(TARGET, "DateCom", 11)
         PRINTW 베로니카는 반사적으로 당신의 머리를 책으로 내려쳤다.
         PRINTW 눈알이 튀어나올 것 같다.
         PRINTW 「...자업자득입니다.」
@@ -2473,7 +2473,7 @@ CASE "Low" ,"High", "Annoyed" ;원판 내용물이 동일하기에 합침
         PRINTW 베로니카는 깜짝 놀라 소리 내었다.
         PRINTW 「이 불경한 자가!!!」
                 SIF CFLAG:TARGET:개별그림유무
-                    CALL ILLUST(TARGET, 11, "DATECOM")
+                    CALL ILLUST(TARGET, "DateCom", 11)
         PRINTW 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
         PRINTW 당신은 눈알이 튀어나올 뻔했다.
     ENDIF
@@ -2597,7 +2597,7 @@ CASE "Low", "Annoyed" ;원판 내용물이 동일하기에 합침
         PRINTW 베로니카는 비명에 가까운 소리를 내었다.
         PRINTW 「이 불경한 자가!!!」
         SIF CFLAG:TARGET:개별그림유무
-            CALL ILLUST(TARGET, 11, "DATECOM")
+            CALL ILLUST(TARGET, "DateCom", 11)
         PRINTW 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
         PRINTW 당신은 눈알이 튀어나올 뻔했다.
     ENDIF
@@ -2620,7 +2620,7 @@ CASE "High"
         PRINTW 베로니카는 비명에 가까운 소리를 내었다.
         PRINTW 「이 불경한 자가!!!」
         SIF CFLAG:TARGET:개별그림유무
-            CALL ILLUST(TARGET, 11, "DATECOM")
+            CALL ILLUST(TARGET, "DateCom", 11)
         PRINTW 베로니카는 반격하듯, 당신의 귀를 살짝 깨물었다.
     ENDIF
 CASE "Affection"
@@ -2844,7 +2844,7 @@ CASE "Low", "High", "Annoyed", "Fear" ;원판 내용물이 동일하기에 합�
         PRINTW 「하읏!」
         PRINTW 「이 불경한 자가!!!」
         SIF CFLAG:TARGET:개별그림유무
-            CALL ILLUST(TARGET, 11, "DATECOM")
+            CALL ILLUST(TARGET, "DateCom", 11)
         PRINTW 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
         PRINTW 당신은 눈알이 튀어나올 뻔했다.
     ENDIF
@@ -2942,7 +2942,7 @@ CASE "Low", "High", "Annoyed", "Fear" ;원판 내용물이 동일하기에 합�
     PRINTW 「하읏!」
     PRINTW 「이 불경한 자가!!!」
     SIF CFLAG:TARGET:개별그림유무
-        CALL ILLUST(TARGET, 11, "DATECOM")
+        CALL ILLUST(TARGET, "DateCom", 11)
     PRINTW 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
     PRINTW 당신은 눈알이 튀어나올 뻔했다.
     ENDIF
@@ -3026,7 +3026,7 @@ CASE "Low", "High", "Annoyed", "Fear" ;원판 내용물이 동일하기에 합�
     PRINTW 「아읏!」
     PRINTW 「이 불경한 자가!!!」
     SIF CFLAG:TARGET:개별그림유무
-        CALL ILLUST(TARGET, 11, "DATECOM")
+        CALL ILLUST(TARGET, "DateCom", 11)
     PRINTW 베로니카는 당신의 머리를 책으로 힘껏 내려쳤다.
     PRINTW 당신은 눈알이 튀어나올 뻔했다.
     ENDIF
@@ -5587,7 +5587,7 @@ PRINTFORMW ....
 PRINTFORMW ..
 PRINTFORMW .
 SIF CFLAG:TARGET:개별그림유무
-    CALL ILLUST(TARGET, 16, "ENDING")
+    CALL ILLUST(TARGET, "ENDING", 16)
 PRINTFORMW 베로니카 엔딩 No. 3 여행
 PRINTFORMW .
 PRINTFORMW 「성도님!!! 일어나십시오!」
@@ -5696,7 +5696,7 @@ PRINTFORMW ....
 PRINTFORMW ..
 PRINTFORMW .
 SIF CFLAG:TARGET:개별그림유무
-    CALL ILLUST(TARGET, 17, "ENDING")
+    CALL ILLUST(TARGET, "ENDING", 17)
 PRINTFORMW 베로니카 엔딩 No. 3 달콤한 꿈
 PRINTFORMW ...
 PRINTFORMW 목이 따끔해지는 감각과 함께 순간적으로 정신을 잃을뻔했다. 무슨 일이 있었던 거지?

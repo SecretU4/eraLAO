@@ -212,31 +212,8 @@ SIF GETBIT(CFLAG:개별선택지, 0)
 
 ;그림 표시 설정
 LOCAL = -1
-IF CFLAG:개별그림유무
-    SELECTCASE NO:TARGET
-        CASE 7
-            IF CSTR:1 == "Confession"
-                LOCAL = 0
-            ELSE
-                LOCAL = 2
-            ENDIF
-        CASE 12
-            LOCAL = 3
-        CASE 51
-            IF TALENT:정신쇠약 == 2
-                LOCAL = 1
-            ELSEIF CSTR:1 == "fLove"
-                LOCAL = 4
-            ENDIF
-        CASE 138
-            IF CSTR:1 == "Confession"
-                LOCAL = 6
-            ELSEIF !CFLAG:조교여부
-                LOCAL = 5
-            ENDIF
-    ENDSELECT
-    CALL ILLUST(TARGET, LOCAL, "DATESTART")
-ENDIF
+SIF CFLAG:개별그림유무
+    CALL ILLUST(TARGET, "DateStart")
 
 REPEAT 10
     IF COUNT == 9
@@ -257,8 +234,6 @@ REND
 ;----------------------------------------------
 @BIO_COM_MSG
 #DIMS 꼬릿말
-#DIM 그림번호
-그림번호 = -1
 꼬릿말 = 
 
 CSTR:1 '= SET_MSG_CSTR(TARGET)
@@ -357,19 +332,6 @@ ENDIF
 SIF CSTR:1 == ""
     CSTR:1 = %LOCALS%
 
-;그림 표시 처리
-SELECTCASE NO:TARGET
-    CASE 51 ;메이
-        SIF SELECTCOM == 18 && !TALENT:짜증 && !TALENT:정신쇠약 && TALENT:사랑 ;메이 파후파후, 원본은 연모만.
-            그림번호 = 1
-    CASE 132 ;유미
-        SIF SELECTCOM == 13 && (CSTR:1 == "High" || CSTR:1 == "Affection") ;유미 술배
-            그림번호 = 3
-    ;베로니카 연애커맨드 그림은 해당 캐릭터 메시지 코드 안에서 처리
-    ;그림번호 10: 배설기관, 11: 뚝배기
-ENDSELECT
-
-PRINTL
 REPEAT 10
     IF COUNT == 9
         DEBUGPRINTFORML 조건(%CSTR:1%)에 맞는 %CALLNAME:TARGET%의 %SELECTCOM% 지문이 발견되지 않음
@@ -393,8 +355,10 @@ REPEAT 10
 REND
 PRINTL
 
-SIF CFLAG:개별그림유무 && 그림번호 != -1
-    CALL ILLUST(TARGET, 그림번호, "DATECOM")
+SIF CFLAG:개별그림유무
+    CALL ILLUST(TARGET, "DateCom")
+
+PRINTL
 
 SIF 꼬릿말 != ""
     CALL SPLIT_MSG(꼬릿말, 1)
