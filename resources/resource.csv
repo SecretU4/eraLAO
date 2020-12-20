@@ -5,10 +5,15 @@ TITLE3,TITLE/오프닝타이틀3.webp, 0,0,500,345
 TITLE4,TITLE/오프닝타이틀4.webp, 0,0,381,342
 TITLE5,TITLE/오프닝타이틀5.webp, 0,0,740,667
 TITLE6,TITLE/오프닝타이틀6.webp, 0,0,692,767
+TITLE7,TITLE/오프닝타이틀7.webp
+TITLE8,TITLE/오프닝타이틀8.webp
+TITLE9,TITLE/오프닝타이틀9.webp
 
 ;연애시작 리소스
 DateStart_51_Break,DateStart/51_메이붕괴.jpg, 0,0,740,740
 DateStart_51_fLove,DateStart/51_오프닝1.webp, 0,0,740,393
+
+DateStart_52_First,DateStart/52_첫만남.webp
 
 DateStart_138_First,DateStart/138_베로니카_연애시작시.webp, 0,0,740,1048
 DateStart_138_Confession,DateStart/138_베로니카_이벤트_confession.webp, 0,0,740,778
@@ -72,3 +77,6 @@ ENDING_138_1,Ending/138_베로니카_엔딩10.webp
 ENDING_138_2,Ending/138_베로니카_엔딩_20.webp
 ENDING_138_3-1,Ending/138_베로니카_엔딩3-1.jpg
 ENDING_138_3-2,Ending/138_베로니카_엔딩3-2.jpg
+ENDING_52_1,Ending/52_엔딩1.webp
+ENDING_52_2,Ending/52_엔딩2.webp
+ENDING_52_3,Ending/52_엔딩3.webp
