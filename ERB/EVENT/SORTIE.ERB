@@ -121,29 +121,31 @@ RETURN 총수입
 수입 += 수입 * RAND(1,99) / 100
 SIF TALENT:ARG:정신쇠약 == 2 ;정신붕괴
     수입 = 0
+SIF TALENT:ARG:굴복
+    TIMES 수입, 2.00
 SIF TALENT:ARG:군인
-    수입 = 수입 * 6 / 5
+    TIMES 수입, 1.20
 SIF TALENT:ARG:근육
-    수입 = 수입 * 13 / 10
+    TIMES 수입, 1.30
 SIF TALENT:ARG:분류 == 3 ;중장
-    수입 = 수입 * 13 / 10
+    TIMES 수입, 1.30
 SIF TALENT:ARG:짜증
-    수입 = 수입 / 2
+    TIMES 수입, 0.50
 SIF TALENT:ARG:정신쇠약 == 1
-    수입 = 수입 / 2
+    TIMES 수입, 0.50
 
 SELECTCASE ABL:ARG:전투lv
     CASE 0
     CASE 1
-        수입 = 수입 * 3 / 2
+        TIMES 수입, 1.50
     CASE 2
-        수입 = 수입 * 2
+        TIMES 수입, 2.00
     CASE 3
-        수입 = 수입 * 5 / 2
+        TIMES 수입, 2.50
     CASE 4
-        수입 = 수입 * 3
+        TIMES 수입, 3.00
     CASE 5
-        수입 = 수입 * 7 / 2
+        TIMES 수입, 3.50
     CASEELSE
         THROW 상정되지 않은 전투lv {ABL:ARG:전투lv}
 ENDSELECT
@@ -151,21 +153,21 @@ ENDSELECT
 SELECTCASE ABL:MASTER:전투lv
     CASE 0
     CASE 1
-        수입 = 수입 * 3 / 2
+        TIMES 수입, 1.50
     CASE 2
-        수입 = 수입 * 2
+        TIMES 수입, 2.00
     CASE 3
-        수입 = 수입 * 5 / 2
+        TIMES 수입, 2.50
     CASE 4
-        수입 = 수입 * 3
+        TIMES 수입, 3.00
     CASE 5
-        수입 = 수입 * 7 / 2
+        TIMES 수입, 3.50
     CASEELSE
         THROW 상정되지 않은 전투lv {ABL:MASTER:전투lv}
 ENDSELECT
 
 SIF TALENT:MASTER:지휘능력
-    수입 = 수입 * 3 / 2
+    TIMES 수입, 1.50
 
 RETURNF 수입
 

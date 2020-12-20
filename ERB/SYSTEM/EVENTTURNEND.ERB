@@ -1,6 +1,6 @@
 ﻿;========================================================================
 ;함수명: EVENTTURNEND
-;마지막 수정: v0.9
+;마지막 수정: v1.20
 ;SYSYEM_CALL, BEGIN TURNEND 호출시
 ;시간대/날짜 변경 처리
 ;구현 방식상 ENDING 함수와 티키타카 가능
@@ -19,7 +19,8 @@ IF TIME == 0 ;낮 > 밤
     TIME = 1
 
     ;기본 아이템 재고 추가
-    CALL SET_ITEM_SALES(2, 50, 10)
+    CALL SET_ITEM_SALES(2, 4, 10)
+    CALL SET_ITEM_SALES(6, 50, 10)
 
     ;낮 > 밤 캐릭터 변동 체크 ;원본 uptime1 대응
     CALL TURNEND_DAY_to_NIGHT
@@ -43,8 +44,8 @@ ELSEIF TIME == 1 ;밤 > 낮
         SIF ITEM:(ITEM_BIO(NO:주회)) < 1
             CONTINUE
 
-        ;본인이 정신붕괴라면 통과
-        SIF TFLAG:정신붕괴인구 && TALENT:주회:정신쇠약 != 2
+        ;본인이 정신붕괴라면 통과, 본인이 굴복 상태여도 통과
+        SIF TFLAG:정신붕괴인구 && TALENT:주회:정신쇠약 != 2 && !TALENT:주회:굴복
             CFLAG:주회:공포 += 2
         ;조건에 맞으면서 본인이 대상이 아닌 경우
         ;약한 얀데레(-1)는 미포함
@@ -56,12 +57,15 @@ ELSEIF TIME == 1 ;밤 > 낮
             CFLAG:주회:스트레스 += 10
             TFLAG:비관적자학인구 ++
         ENDIF
-
+        CALL GET_Submit(주회)
+        IF RESULT
+            TFLAG:굴복획득인구 ++
+        ENDIF
         CALL GET_Annoyed(주회)
         IF RESULT == 1
             TFLAG:짜증획득인구 ++
         ELSEIF RESULT == -1
-            TFLAG:짜증소멸인구 --
+            TFLAG:짜증소멸인구 ++
         ENDIF
 
         CALL GET_WeakMind(주회)
@@ -97,9 +101,10 @@ ELSEIF TIME == 1 ;밤 > 낮
     총수입 = 총수입:2 - 총수입:1
 
     ;기본 아이템 재고 보충 처리
-    ;약혼반지는 하나만
-    CALL SET_EX_ITEM_SALES(1, 1)
     CALL SET_ITEM_SALES(2, 50, 20)
+    ;약혼반지, 종의 징표는 하나만
+    CALL SET_EX_ITEM_SALES(1, 1)
+    CALL SET_EX_ITEM_SALES(5, 5)
     ;방추가 보충처리
     CALL SET_ITEM_SALES(203, 203, 1)
 
@@ -112,11 +117,14 @@ ELSEIF TIME == 1 ;밤 > 낮
         SIF TFLAG:전투레벨변동인구
             PRINTL 전투레벨이 상승한 전투원이 있습니다.
         SIF TFLAG:정신붕괴인구
-            PRINTL 보유중인 바이오로이드 중에 [정신붕괴]를 소지한 인원이 있어, 모든 바이오로이드의 공포가 소량 상승하였습니다.
+            PRINTL 보유중인 바이오로이드 중에 [정신붕괴]를 소지한 인원이 있어, 당신에게 굴복하지 않은 모든 바이오로이드의 공포가 소량 상승하였습니다.
         SIF TFLAG:얀데레질투인구
             PRINTL [얀데레]를 소지한 인원이 질투로 인해 스트레스가 소량 상승하였습니다.
         SIF TFLAG:비관적자학인구
             PRINTL [비관적]을 소지한 인원이 자학으로 인해 스트레스가 소량 상승하였습니다.
+        SIF TFLAG:굴복획득인구
+            ;원본(대사 체크함)과는 달리 굴복 획득한 누군가가 있다면 무조건 표기
+            PRINTL 바이오로이드 중 누군가가 당신에게 절대적인 패배를 인정했습니다.
         SIF TFLAG:짜증획득인구
             PRINTL 바이오로이드 중 누군가의 짜증이 난 것 같습니다.
         SIF TFLAG:짜증소멸인구
@@ -165,7 +173,7 @@ BEGIN SHOP
 
 ;========================================================================
 ;함수명: MAINTENANCE_COST(ARG)
-;마지막 수정: v0.9
+;마지막 수정: v1.20
 ;캐릭터당 유지비 계산 후 결과값 반환
 ;ARG = 인게임 캐릭터번호
 ;========================================================================
@@ -176,28 +184,29 @@ BEGIN SHOP
 유지비 = ITEMPRICE:(ITEM_BIO(NO:ARG)) / 20
 유지비 += 유지비 * RAND(1, 100)
 IF TALENT:ARG:분류 == 2 ;기동
-    유지비 = 유지비 * 6 / 5
+    TIMES 유지비, 1.20
 ELSEIF TALENT:ARG:분류 == 3 ;중장
-    유지비 = 유지비 * 13 / 10
+    TIMES 유지비, 1.30
 ENDIF
 SIF TALENT:ARG:근육
-    유지비 = 유지비 * 11 / 10
+    TIMES 유지비, 1.10
 SIF TALENT:ARG:먹보
-    유지비 = 유지비 * 3 / 2
+    TIMES 유지비, 1.50
 IF TALENT:ARG:체형 == 0 ;작은체구
-    유지비 = 유지비 * 7 / 10
+    TIMES 유지비, 0.70
 ELSEIF TALENT:ARG:체형 == 2 ;큰체구
-    유지비 = 유지비 * 13 / 10
+    TIMES 유지비, 1.30
 ENDIF
 SIF FLAG:속박상태
     유지비 = 0
 
+TIMES 유지비, 0.50
 ;/100은 에라엔진의 랜덤변수(RAND) 후처리 목적
-유지비 = 유지비 / 2 / 100
+유지비 = 유지비 / 100
 RETURNF 유지비
 ;========================================================================
 ;함수명: TURNEND_DAY_to_NIGHT
-;마지막 수정: v1.0
+;마지막 수정: v1.20
 ;원본 api/uptime1 대응
 ;낮>밤시 CFLAG:etc의 처리
 ;========================================================================
@@ -214,11 +223,12 @@ FOR 대상, 1, CHARANUM
         CFLAG:대상:방치일수 = 0
 
     SELECTCASE NO:대상
-        CASE 132 ;유미
-            IF 대상 == TARGET
-                CLEARBIT CFLAG:대상:특수출력조건, 3 ;유미 엔딩 3 카운트(혼인 5일 방치)
-                CLEARBIT CFLAG:대상:특수출력조건, 4 ;유미 엔딩 4 카운트(정신쇠약 5일 방치)
-            ENDIF
+        CASE 12 ;소완
+            SIF 대상 == TARGET
+                CLEARBIT CFLAG:대상:특수출력조건, 3
+        CASE 25 ;브라우니
+            SIF 대상 == TARGET
+                CLEARBIT CFLAG:대상:특수출력조건, 3
         CASE 71 ;네오딤 ;TARGET 이어도 처리
             SIF CFLAG:대상:스트레스 < 100
                 CFLAG:대상:엔딩조건카운트1 = 0 ;네오딤 스트레스 100상태 카운트
@@ -226,6 +236,14 @@ FOR 대상, 1, CHARANUM
             IF 대상 == TARGET
                 CLEARBIT CFLAG:대상:특수출력조건, 22 ;닥터 성장이벤 카운트
                 CLEARBIT CFLAG:대상:특수출력조건, 3 ;닥터 엔딩 3 카운트
+            ENDIF
+        CASE 118 ;LRL
+            SIF 대상 == TARGET
+                CLEARBIT CFLAG:대상:특수출력조건, 3
+        CASE 132 ;유미
+            IF 대상 == TARGET
+                CLEARBIT CFLAG:대상:특수출력조건, 3 ;유미 엔딩 3 카운트(혼인 5일 방치)
+                CLEARBIT CFLAG:대상:특수출력조건, 4 ;유미 엔딩 4 카운트(정신쇠약 5일 방치)
             ENDIF
     ENDSELECT
 NEXT

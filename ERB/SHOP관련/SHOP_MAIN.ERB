@@ -259,7 +259,7 @@ ENDSELECT
 ;===========================================================
 @WILL_USE_ITEM(ARG)
 WHILE 1
-    IF GROUPMATCH(ARG, 1,2,3,4)
+    IF GROUPMATCH(ARG, 1,2,3,4,5)
         PRINTFORML %아이템을% 누구에게 선물하시겠습니까?
         CALL CURRENT_BIOLIST("선물")
         SIF RESULT == -1
@@ -332,12 +332,11 @@ WHILE 1
 WEND
 ;===========================================================
 ;함수명: USE_ITEM
-;ARG로 받은 아이템을 사용하는 함수.
-;추후 복수 사용 가능한 아이템 처리 필요
-;아이템 효과 처리는 이곳에서 실시함.
-;ARG = ITEM.CSV상 인덱스값
+;ARG로 받은 아이템을 사용(아이템 효과 처리도 여기서)하는 함수.
+;현재 아이템 복수 사용은 본 함수를 REPEAT하는것으로 대응중.
 ;ITEM_EFFECT:0 = +호감도 1: -공포 2: -스트레스 3: 마음속상처
 ;여기서 TARGET값은 CURRENT_BIOLIST에서 RETURN 받으며 그 값은 CSV가 아닌 현 캐릭터값
+;ARG = ITEM.CSV상 인덱스값, RETURN 0 실행완료 -1 실행불가
 ;===========================================================
 @USE_ITEM(ARG)
 #DIM ITEM_EFFECT, 4
@@ -434,6 +433,15 @@ SELECTCASE ARG
         ENDIF
 
         ITEM:ARG --
+    ;종의 징표
+    CASE 5
+        IF TALENT:TARGET:굴복
+            PRINTFORML %타겟은% ???를 받아주지 않았습니다.
+            RETURN -1
+        ENDIF
+        PRINTFORML 당신은 %CALLNAME:TARGET%에게 ???를 건냈다.
+        ITEM:ARG --
+        CALL ENDING_OBEY_FLAG(TARGET)
     ;특수능력
     CASE 51, 52, 53
         PRINTFORMW 능력 %아이템을% 얻었습니다.

@@ -26,7 +26,7 @@ SIF TALENT:사랑
     TIMES LOCAL:0, 2.00
 SIF TALENT:혼인 == 1
     TIMES LOCAL:0, 2.00
-SIF TALENT:정신쇠약 == 1
+SIF TALENT:정신쇠약 == 1 || TALENT:굴복
     TIMES LOCAL:0, 0.50
 SIF TALENT:얀데레
     TIMES LOCAL:0, 1.30
@@ -53,15 +53,17 @@ SIF TALENT:억압
     TIMES LOCAL:0, 0.70
 
 ;스트레스 배율 처리
+;스트레스 감소시
 IF SOURCE:스트레스 < 0
     SIF TALENT:사랑 == 2
         TIMES LOCAL:1, 2.00
-    SIF TALENT:정신쇠약 == 1
+    SIF TALENT:정신쇠약 == 1 || TALENT:굴복
         TIMES LOCAL:1, 0.50
+;스트레스 증가시
 ELSEIF SOURCE:스트레스 > 0
     SIF TALENT:사랑 == 1
         TIMES LOCAL:1, 0.80
-    SIF TALENT:사랑 == 2
+    SIF TALENT:사랑 == 2 || TALENT:굴복
         TIMES LOCAL:1, 0.50
     SIF TALENT:혼인 == 1
         TIMES LOCAL:1, 0.10
@@ -81,7 +83,7 @@ ENDIF
 IF SOURCE:공포 > 0
     SIF TALENT:사랑 == 1
         TIMES LOCAL:2, 0.80
-    SIF TALENT:사랑 == 2
+    SIF TALENT:사랑 == 2 || TALENT:굴복
         TIMES LOCAL:2, 0.50
     SIF TALENT:혼인 == 1
         TIMES LOCAL:2, 0.10

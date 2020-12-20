@@ -477,14 +477,14 @@ WHILE 1
             PRINTFORML 선택 능력 : %TALENTNAME:LOCAL%
             PRINT 현재 상태 : 
             ;단순 on/off 아님
-            IF GROUPMATCH(LOCAL, 23,30,62,70, 25,26,72)
+            IF GROUPMATCH(LOCAL, 23,30,62,70, 25,26,72,74)
                 SELECTCASE LOCAL
                     ;-1 < 0 > 1 형 TALENT
                     CASE 23,30,62,70
                         STAT_DATA:0 = -1
                         STAT_DATA:1 = 1
                     ;0 > 1 > 2 형 TALENT
-                    CASE 25,26,72
+                    CASE 25,26,72,74
                         STAT_DATA:0 = 1
                         STAT_DATA:1 = 2
                 ENDSELECT

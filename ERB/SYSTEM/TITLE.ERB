@@ -87,25 +87,9 @@ ENDSELECT
 @TITLE_PICTURE
 #FUNCTIONS
 #DIMS TITLE_HTML
-#DIMS TITLE_NAME
 #DIM 배율
-TITLE_HTML =
-SELECTCASE RAND:6
-    CASE 0
-        TITLE_NAME = TITLE1
-    CASE 1
-        TITLE_NAME = TITLE2
-    CASE 2
-        TITLE_NAME = TITLE3
-    CASE 3
-        TITLE_NAME = TITLE4
-    CASE 4
-        TITLE_NAME = TITLE5
-    CASE 5
-        TITLE_NAME = TITLE6
-ENDSELECT
 배율 = 30
-TITLE_HTML += @"<img src='%TITLE_NAME%' height='{배율}00'>"
+TITLE_HTML '= @"<img src='TITLE{RAND(1,10)}' height='{배율}00'>"
 REPEAT 배율
     TITLE_HTML += "<br>"
 REND

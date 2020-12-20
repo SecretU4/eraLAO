@@ -135,7 +135,7 @@ SELECTCASE ARGS
             ENDIF
         REND
         SIF NO:대상 == 51 && ABL:MASTER:조리lv < 3 ;Lowlv
-            CALL ILLUST(대상, 1, "COOKING")
+            CALL ILLUST(대상, "Cook", 1)
     CASE "Eat_Bio" ;TARGET의 요리
         IF FLAG:속박상태
             PRINTW 당신은 묶여있어, 스스로 식사를 할 수 없다.
@@ -153,7 +153,7 @@ SELECTCASE ARGS
             ENDIF
         REND
         SIF NO:대상 == 32 && ABL:대상:조리lv < 3 && TALENT:대상:사랑
-            CALL ILLUST(대상, 2, "COOKING")
+            CALL ILLUST(대상, "Cook", 2)
     CASE "Sell_Food"
         SELECTCASE NO:대상
             CASE 91

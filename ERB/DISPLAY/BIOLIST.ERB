@@ -39,28 +39,7 @@ WHILE 1
         CSV_ID = NO:LOCAL
         IF ITEM:(ITEM_BIO(CSV_ID)) > 0
             PRINTFORM [{COUNT+1}] 
-            ;노랑, 별
-            IF TALENT:LOCAL:혼인 == 1
-                SETCOLOR 255,255,102
-                LOCALS = %NAME:LOCAL%
-                LOCALS += UNICODE(0x2606)
-            ;보라
-            ELSEIF TALENT:LOCAL:혼인 == 2 ;입양
-                SETCOLOR 204,153,255
-                LOCALS = %NAME:LOCAL%
-            ;짙은 분홍, 하트
-            ELSEIF TALENT:LOCAL:사랑 == 2 ;사랑
-                SETCOLOR 255,102,255
-                LOCALS = %NAME:LOCAL%
-                LOCALS += UNICODE(0x2665)
-            ;옅은 분홍
-            ELSEIF TALENT:LOCAL:사랑 == 1 ;연모
-                SETCOLOR 255,204,255
-                LOCALS = %NAME:LOCAL%
-            ELSE
-                LOCALS = %NAME:LOCAL%
-            ENDIF
-            PRINTFORM %LOCALS% 
+            PRINTFORM %BIOLIST_LABEL(LOCAL)% 
             RESETCOLOR
             IF TALENT:MASTER:관심법
                 PRINTFORM 호감도 : {CFLAG:LOCAL:호감도} 
@@ -76,9 +55,15 @@ WHILE 1
             COUNT ++
         ENDIF
     NEXT
-    SIF !COUNT
-        PRINTL 표시 가능한 바이오로이드가 없습니다.
-
+    ;표시 대상이 아무도 없을 때
+    IF !COUNT
+        SELECTCASE ARGS
+            CASE "선물"
+                PRINTL 줄 대상이 없습니다.
+            CASEELSE
+                PRINTL 표시 가능한 바이오로이드가 없습니다.
+        ENDSELECT
+    ENDIF
     PRINTL
     DRAWLINE
     PRINTL
@@ -124,6 +109,38 @@ WHILE 1
         ENDSELECT
     ENDIF
 WEND
+;===========================================================
+;함수명: BIOLIST_LABEL(ARG)
+;BIOLIST 내 캐릭터 이름 표출용 문자열 반환
+;이름의 색깔 처리를 같이함
+;ARG = 인게임 캐릭터번호
+;===========================================================
+@BIOLIST_LABEL(ARG)
+#FUNCTIONS
+LOCALS '= NAME:ARG
+;혼인 = 노랑, 별
+IF TALENT:ARG:혼인 == 1
+    SETCOLOR 255,255,102
+    LOCALS += UNICODE(0x2606)
+;입양 = 보라
+ELSEIF TALENT:ARG:혼인 == 2
+    SETCOLOR 204,153,255
+;사랑 = 짙은 분홍, 하트
+ELSEIF TALENT:ARG:사랑 == 2
+    SETCOLOR 255,102,255
+    LOCALS += UNICODE(0x2665)
+;연모 = 옅은 분홍
+ELSEIF TALENT:ARG:사랑 == 1
+    SETCOLOR 255,204,255
+;복종 = 로얄블루, 겹칼표
+ELSEIF TALENT:ARG:굴복 == 2
+    SETCOLOR 0,0,128
+    LOCALS += UNICODE(0x2021)
+;굴복 = 청록
+ELSEIF TALENT:ARG:굴복 == 1
+    SETCOLOR 0,128,128
+ENDIF
+RETURNF LOCALS
 ;===========================================================
 ;함수명: BIO_INFO
 ;캐릭터 정보 표출
@@ -184,7 +201,7 @@ ELSE
 ENDIF
 PRINTL
 IF ARG:1
-    CALL ILLUST(ARG, NO:ARG, "BIOSHOP")
+    CALL ILLUST(ARG, "BIOSHOP")
     SIF CSTR:ARG:캐릭터소개 != ""
         PRINTFORML %CSTR:ARG:캐릭터소개%
 ENDIF
@@ -271,7 +288,6 @@ WHILE 대상 != -1
     ENDIF
 WEND
 RETURN 1
-
 ;===========================================================
 ;함수명: SHOW_SPECIAL_STATUS
 ;출격중, 실종 등 캐릭터 특수상태 표출
@@ -337,7 +353,7 @@ IF GROUPMATCH(TALENT_NO, 23,30,62,70)
             ENDIF
     ENDSELECT
 ;0 > 1 > 2 형 TALENT
-ELSEIF GROUPMATCH(TALENT_NO, 25,26,72)
+ELSEIF GROUPMATCH(TALENT_NO, 25,26,72,74)
     SELECTCASE TALENT_NO
         CASE 25 ;사랑
             IF TALENT_STAT == 1
@@ -362,6 +378,14 @@ ELSEIF GROUPMATCH(TALENT_NO, 25,26,72)
                 LOCALS '= "[정신붕괴]"
             ELSE
                 LOCALS = [정신쇠약]/[정신붕괴]
+            ENDIF
+        CASE 74 ;굴복
+            IF TALENT_STAT == 1
+                LOCALS '= "[굴복]"
+            ELSEIF TALENT_STAT == 2
+                LOCALS '= "[복종]"
+            ELSE
+                LOCALS '= "[굴복]/[복종]"
             ENDIF
     ENDSELECT
 ELSE
