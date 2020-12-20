@@ -1,10 +1,10 @@
 ﻿;----------------------------------------------
-;함수명: SET_MSG_CSTR(ARG)
+;함수명: SET_MSG_CSTR(ARG, ARG:1 = 0)
 ;원본의 line 세팅과 같음
 ;메시지 기본 조건절 처리
-;ARG = 인게임 캐릭터번호
+;ARG = 인게임 캐릭터번호, ARG:1 = 태그 탐색불가시 1
 ;----------------------------------------------
-@SET_MSG_CSTR(ARG)
+@SET_MSG_CSTR(ARG, ARG:1 = 0)
 #FUNCTIONS
 #DIMS LINES
 
@@ -20,6 +20,8 @@ ELSEIF TALENT:ARG:사랑 == 2
     LINES '= "Love"
 ELSEIF TALENT:ARG:혼인 == 1 || TALENT:ARG:사랑
     LINES '= "Affection"
+ELSEIF !ARG:1 && TALENT:ARG:굴복
+    LINES '= "Submit"
 ELSEIF CFLAG:ARG:공포 > 199
     LINES '= "Fear"
 ELSEIF TALENT:ARG:짜증
@@ -83,17 +85,40 @@ CSTR:1 '= SET_MSG_CSTR(TARGET)
 SIF !CFLAG:조교여부 ;첫조교시
     CSTR:1 = First
 
+;Confession(고백)/Obey(복종) 가부 판별
+;'조건절 추가'보다 후순위(덮어쓰기됨)로 처리됨
+IF TALENT:사랑 && CFLAG:고백함 == 0
+    VARSET LOCALS
+    IF NO:TARGET == 68 ;에밀리는 정신쇠약 있어도 사랑이면 가능
+        IF TALENT:사랑 == 2
+            LOCALS = Confession
+            SETBIT CFLAG:개별선택지, 0
+        ENDIF
+    ELSEIF !TALENT:정신쇠약
+        LOCALS = Confession
+        SELECTCASE NO:TARGET
+            CASE 52 ;나엔 비관적 삭제
+                SIF TALENT:긍정도 == -1
+                    TALENT:긍정도 = 0
+        ENDSELECT
+    ENDIF
+    SIF LOCALS != ""
+        CSTR:1 = %LOCALS%
+ELSEIF TALENT:굴복 == 2 && CFLAG:고백함 == 0
+    CSTR:1 '= "Obey"
+ENDIF
+
 ;조건절 추가
 SELECTCASE NO:TARGET
     CASE 21 ;마리
-        IF !CFLAG:조교여부
-            IF TALENT:MASTER:나이 == 0
+        IF TALENT:MASTER:나이 == 0
+            IF !CFLAG:조교여부
                 CFLAG:호감도 += 500
                 TALENT:변태 = 1
-                CSTR:1 += "/Yboy"
-            ELSE
-                CSTR:1 += "/Nboy"
             ENDIF
+            CSTR:1 += "/Yboy"
+        ELSE
+            CSTR:1 += "/Nboy"
         ENDIF
     CASE 51 ;메이
         IF TALENT:정신쇠약 == 2 && !GETBIT(CFLAG:특수출력유무, 9) ;etc2
@@ -177,31 +202,6 @@ SELECTCASE NO:TARGET
             CSTR:1 = Awaken
         ENDIF
 ENDSELECT
-
-;Confession(고백) 가부 판별
-IF TALENT:사랑 && CFLAG:고백함 == 0
-    LOCALS = 
-    IF NO:TARGET == 68 ;에밀리는 정신쇠약 있어도 사랑이면 가능
-        SIF TALENT:사랑 == 2
-            LOCALS = Confession
-            SETBIT CFLAG:개별선택지, 0
-    ELSEIF !TALENT:정신쇠약
-        LOCALS = Confession
-        SELECTCASE NO:TARGET
-            CASE 21 ;마리
-                IF TALENT:MASTER:나이 == 0
-                    LOCALS += "/Yboy"
-                ELSE
-                    LOCALS += "/Nboy"
-                ENDIF
-            CASE 52 ;나엔 비관적 삭제
-                SIF TALENT:긍정도 == -1
-                    TALENT:긍정도 = 0
-        ENDSELECT
-    ENDIF
-    SIF LOCALS != ""
-        CSTR:1 = %LOCALS%
-ENDIF
 
 ;hidden 대응
 SIF FLAG:히든메시지
@@ -477,6 +477,9 @@ FOR LOCAL, 0, RESULT
             CASE "Annoyed2"
                 DEBUGPRINTL 태그변경 Annoyed2 > Annoyed
                 LOCALS += "Annoyed"
+            CASE "Submit"
+                DEBUGPRINTL 태그변경 Submit > Submit 이외
+                LOCALS += SET_MSG_CSTR(ARG, 1)
             CASEELSE
                 LOCALS += SELECTED_CSTR:LOCAL
         ENDSELECT
