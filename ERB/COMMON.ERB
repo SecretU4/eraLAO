@@ -168,3 +168,20 @@ CALL RESET_CHARA(NO:ARG)
 FLAG:현캐릭터수 --
 SETBIT CFLAG:ARG:이별사유, ARG:1
 RETURN 1
+;===================================================
+;캐릭터의 정신쇠약/짜증/굴복 모두 없는지를 검사하는 함수
+;ARG = 인게임 캐릭터ID
+;반환값이 참이면 셋 중 하나 이상 존재함.
+;===================================================
+@IS_CHARA_UNHEALTHY(ARG)
+#FUNCTION
+VARSET LOCAL
+
+SIF TALENT:ARG:정신쇠약
+	LOCAL ++
+SIF TALENT:ARG:짜증
+	LOCAL ++
+SIF TALENT:ARG:굴복
+	LOCAL ++
+
+RETURNF LOCAL
