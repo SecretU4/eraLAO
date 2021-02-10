@@ -139,10 +139,10 @@ SELECTCASE NO:TARGET
             CSTR:1 = fLove
         ENDIF
     CASE 52 ;나엔
-        IF CFLAG:공포 < 200 && !TALENT:짜증 && !TALENT:정신쇠약
+        IF CFLAG:공포 < 200 && !IS_CHARA_UNHEALTHY(TARGET, 1)
             IF ITEM:ITEM_BIO(51) > 0 && !GETBIT(CFLAG:특수출력유무, 8) ;메이 이벤트
                 LOCAL = GETCHARA(51)
-                IF CFLAG:LOCAL:공포 < 200 && !TALENT:LOCAL:짜증 && !TALENT:LOCAL:정신쇠약
+                IF CFLAG:LOCAL:공포 < 200 && !IS_CHARA_UNHEALTHY(LOCAL, 1)
                     IF TALENT:TARGET:사랑 && TALENT:LOCAL:사랑 ;메이/나엔 모두 연모 이상, 원본에서는 연모만
                         CSTR:1 = mayE2
                     ELSE
@@ -151,7 +151,7 @@ SELECTCASE NO:TARGET
                 ENDIF
             ELSEIF ITEM:ITEM_BIO(106) > 0 && TALENT:사랑 ;오드리 이벤트, 원본에서는 연모만
                 LOCAL = GETCHARA(106)
-                IF CFLAG:LOCAL:공포 < 200 && !TALENT:LOCAL:짜증 && !TALENT:LOCAL:정신쇠약
+                IF CFLAG:LOCAL:공포 < 200 && !IS_CHARA_UNHEALTHY(LOCAL, 1)
                     SELECTCASE CFLAG:이벤트카운트1
                         CASE 0
                             CSTR:1 = audreyE1

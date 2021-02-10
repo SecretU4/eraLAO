@@ -170,18 +170,18 @@ SETBIT CFLAG:ARG:이별사유, ARG:1
 RETURN 1
 ;===================================================
 ;캐릭터의 정신쇠약/짜증/굴복 모두 없는지를 검사하는 함수
-;ARG = 인게임 캐릭터ID
+;ARG = 인게임 캐릭터ID, ARG:1 = 1이면 굴복, 2면 짜증 미체크
 ;반환값이 참이면 셋 중 하나 이상 존재함.
 ;===================================================
-@IS_CHARA_UNHEALTHY(ARG)
+@IS_CHARA_UNHEALTHY(ARG, ARG:1=0)
 #FUNCTION
 VARSET LOCAL
 
 SIF TALENT:ARG:정신쇠약
 	LOCAL ++
-SIF TALENT:ARG:짜증
+SIF ARG:1 != 2 && TALENT:ARG:짜증
 	LOCAL ++
-SIF TALENT:ARG:굴복
+SIF ARG:1 != 1 && TALENT:ARG:굴복
 	LOCAL ++
 
 RETURNF LOCAL
