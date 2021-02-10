@@ -27,6 +27,10 @@ IF !FLAG:속박상태
         PRINTLC [107] 헤어진다
     PRINTLC [108] 사령관 이름 변경
 ENDIF
+IF TARGET == GETCHARA(171) && !TALENT:짜증 && !TALENT:정신쇠약 && TALENT:가수
+    SIF TIME == 1 && !(DAY % 7) ;밤이고 현재 게임 날짜가 7의 배수
+        PRINTLC [113] 공연
+ENDIF
 PRINTL
 
 PRINTL
@@ -133,6 +137,11 @@ SELECTCASE RESULT
         ENDIF
         CALL COMMANDER_NAMESET
         RETURN 1
+    ;공연
+    ;정상 실행시 바로 TURNEND이므로 여기 오는 경우는 실패인 경우
+    CASE 113
+        CALL CONCERT
+        RETURN -1
     ;SAVE
     CASE 200
         CALL SAVEGAME_EX
