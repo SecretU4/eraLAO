@@ -174,7 +174,7 @@ SELECTCASE REAL_NUM
         SIF TALENT:ARG:사랑 == 2 && TALENT:ARG:혼인 && TALENT:ARG:정신쇠약 != 2
             SETBIT CFLAG:MASTER:엔딩플래그, 24
     CASE 171 ;뽀끄루
-        SIF TALENT:GETCHARA(171):정신쇠약 == 2 
+        SIF TALENT:ARG:정신쇠약 == 2 
             SETBIT CFLAG:MASTER:엔딩플래그, 29
 ENDSELECT
 

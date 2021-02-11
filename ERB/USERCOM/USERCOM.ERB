@@ -7,15 +7,15 @@ FOR LOCAL, 0, 200
     SIF !RESULT
         CONTINUE
     ;개별 캐릭터의 특정 커맨드번호가 다른 경우
-    LOCAL:1 = COM_ALTER_CHECK(TARGET, LOCAL,1)
-    IF LOCAL:1 == -1 ;특정 커맨드 필터링
-        CONTINUE
+    LOCAL:1 = COM_ALTER_CHECK(TARGET, LOCAL, 1)
+    ;특정 커맨드 필터링
+    IF LOCAL:1 == -1 
+        ;출력 안하고 통과
+    ;커맨드번호의 표기와 실제가 다른 경우
     ELSEIF LOCAL:1 != LOCAL
         PRINTBUTTONLC @"[{LOCAL, 3}] %COM_ALTER_NAME(LOCAL:1)%", LOCAL:1
-        CONTINUE
-    ENDIF
     ;일반적인 경우
-    IF STRLENS(TRAINNAME:LOCAL)
+    ELSEIF STRLENS(TRAINNAME:LOCAL)
         PRINTFORMLC [{LOCAL, 3}] %TRAINNAME:LOCAL%
     ENDIF
 NEXT

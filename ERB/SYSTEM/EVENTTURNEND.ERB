@@ -356,8 +356,10 @@ SELECTCASE NO:ARG
         SIF TALENT:ARG:실종 > 0 && TALENT:ARG:실종 < 11
             TALENT:ARG:실종 += 1 ;etc2 = 베로니카 실종 일수
     CASE 171 ;뽀끄루
-        IF TALENT:ARG:가수 && CFLAG:ARG:엔딩조건카운트1 <= 30
+        IF TALENT:ARG:가수 == 1 && CFLAG:ARG:엔딩조건카운트1 <= 30
             CFLAG:ARG:엔딩조건카운트1 ++
+        ELSEIF CFLAG:ARG:엔딩조건카운트 == 31
+            ;통과
         ELSE
             CFLAG:ARG:엔딩조건카운트1 = 0
         ENDIF
