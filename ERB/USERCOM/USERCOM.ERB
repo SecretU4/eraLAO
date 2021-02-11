@@ -7,13 +7,15 @@ FOR LOCAL, 0, 200
     SIF !RESULT
         CONTINUE
     ;개별 캐릭터의 특정 커맨드번호가 다른 경우
-    LOCAL:1 = COM_ALTER_CHECK(TARGET, LOCAL)
-    IF LOCAL:1 != LOCAL
+    LOCAL:1 = COM_ALTER_CHECK(TARGET, LOCAL, 1)
+    ;특정 커맨드 필터링
+    IF LOCAL:1 == -1 
+        ;출력 안하고 통과
+    ;커맨드번호의 표기와 실제가 다른 경우
+    ELSEIF LOCAL:1 != LOCAL
         PRINTBUTTONLC @"[{LOCAL, 3}] %COM_ALTER_NAME(LOCAL:1)%", LOCAL:1
-        CONTINUE
-    ENDIF
     ;일반적인 경우
-    IF STRLENS(TRAINNAME:LOCAL)
+    ELSEIF STRLENS(TRAINNAME:LOCAL)
         PRINTFORMLC [{LOCAL, 3}] %TRAINNAME:LOCAL%
     ENDIF
 NEXT
@@ -37,6 +39,9 @@ SIF RESULT != -1
     선택커맨드 = RESULT
 
 SELECTCASE 선택커맨드
+    CASE -1
+        TFLAG:연애중여부 = 0
+        RETURN
     CASE 999
         BEGIN AFTERTRAIN
     CASEELSE
@@ -72,7 +77,7 @@ SIF !STRLENS(TRAINNAME:ARG)
 ;개별커맨드 여부 처리
 LOCAL = COM_ALTER_CHECK(TARGET, ARG)
 
-TRYCALLFORM COM_ABLE{ARG}
+TRYCALLFORM COM_ABLE{LOCAL}
 IF RESULT
     RETURN 1
 ELSE
@@ -148,9 +153,9 @@ SELECTCASE NO:C_ID
 ENDSELECT
 RETURNF -1
 
-;ARG = 선택한 커맨드(SELECTCOM)
+;ARG = 선택한 커맨드(SELECTCOM), ARG:1 = 1이면 필터링용
 ;해당 커맨드의 어레인지가 있다면 해당 어레인지의 번호를 반환, 없다면 ARG 반환
-@COM_ALTER_CHECK(C_ID, ARG)
+@COM_ALTER_CHECK(C_ID, ARG, ARG:1=0)
 #FUNCTION
 #DIM C_ID ;인게임 캐릭터번호
 
@@ -158,12 +163,26 @@ FOR LOCAL, 201, 300 ;개별COM 범위
     SIF COM_ALTER_SELECT_Rev(C_ID, LOCAL) == ARG
         RETURNF LOCAL
 NEXT
+
+IF NO:C_ID == 171 ;뽀끄루 가창 연습
+    SELECTCASE ARG
+        CASE 101
+            SIF ARG:1 == 1
+                RETURNF -1
+        CASE 111
+            RETURNF 101
+    ENDSELECT
+ENDIF
 RETURNF ARG
 
 ;ARG = 선택한 커맨드(SELECTCOM)
 ;해당 커맨드번호의 다른 어레인지가 있다면 해당 어레인지의 이름을 반환함
 @COM_ALTER_NAME(ARG)
 #FUNCTIONS
+
+IF NO:TARGET == 171 && ARG == 101
+    ARG == 111
+ENDIF
 
 REPLACE @"%TRAINNAME:ARG%", "_", " "
 

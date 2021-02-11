@@ -255,7 +255,7 @@ IF CFLAG:(ARG:1):출격중
     SELECTCASE ARG
         ;공용 이벤트
         CASE 102 ;연모 이상(원본 연모만), 정신쇠약 아님, 굴복 아님
-            SIF TALENT:(ARG:1):사랑 && !TALENT:(ARG:1):정신쇠약 && !TALENT:(ARG:1):굴복
+            SIF TALENT:(ARG:1):사랑 && !IS_CHARA_UNHEALTHY(ARG:1, 2)
                 RETURNF 1
         CASE 116 ;공포 150 이상
             SIF CFLAG:(ARG:1):공포 > 150
@@ -423,7 +423,7 @@ RETURNF 0
 ;이벤트 대상선정 배열 관련 처리
 ;---------------------------------------------------------------
 ;출격중 아님, 정신쇠약/붕괴 없음, 굴복 아님
-IF !CFLAG:(ARG:1):출격중 && !TALENT:(ARG:1):정신쇠약 && !TALENT:(ARG:1):굴복
+IF !CFLAG:(ARG:1):출격중 && !IS_CHARA_UNHEALTHY(ARG:1, 2)
     ;출격중/정신쇠약/붕괴 아님, 공포 150 미만, 짜증 아님
     IF CFLAG:(ARG:1):공포 < 150 && !TALENT:(ARG:1):짜증
         SELECTCASE ARG
@@ -571,7 +571,7 @@ SELECTCASE ARG
         ENDIF
     CASE 15
         IF ARG:2 == 0
-            SIF NO:(ARG:1) == 126 && !CFLAG:(ARG:1):출격중 && !TALENT:(ARG:1):정신쇠약 && !TALENT:(ARG:1):굴복
+            SIF NO:(ARG:1) == 126 && !CFLAG:(ARG:1):출격중 && !IS_CHARA_UNHEALTHY(ARG:1, 2)
                 RETURNF 1
         ELSEIF ARG:2 == 1 ;베로니카 etc1 = 베로니카 고해성사 횟수 카운트 ,etc3 = 베로니카 휴식이벤 이력 유무
             SIF NO:(ARG:1) == 138 && CFLAG:(ARG:1):출격중 == 3 && TALENT:정신쇠약 != 2 && TALENT:(ARG:1):혼인 == 1 && TALENT:(ARG:1):사랑 == 2 && (!GETBIT(CFLAG:(ARG:1):특수출력유무, 21) && EXP:(ARG:1):고유COM경험 > 18)
@@ -615,12 +615,12 @@ FOR 대상, 1, CHARANUM
         CASE 76 ;닥터
             ;원본은 사랑 말고 연모만
             ;etc1 = 닥터 성장이벤 카운트, etc2 = 닥터 성장이벤 출력 유무
-            SIF !CFLAG:대상:출격중 && (CFLAG:대상:공포 < 150 && TALENT:대상:사랑 && !TALENT:대상:정신쇠약 && !TALENT:대상:굴복 && !TALENT:대상:짜증) && (!GETBIT(CFLAG:대상:특수출력조건, 22) && CFLAG:대상:방치일수 > 9) && !GETBIT(CFLAG:대상:특수출력유무, 22)
+            SIF !CFLAG:대상:출격중 && (CFLAG:대상:공포 < 150 && TALENT:대상:사랑 && !IS_CHARA_UNHEALTHY(대상)) && (!GETBIT(CFLAG:대상:특수출력조건, 22) && CFLAG:대상:방치일수 > 9) && !GETBIT(CFLAG:대상:특수출력유무, 22)
                 RETURNF 1022
         CASE 138 ;베로니카
             IF TALENT:대상:실종 == 11 ;etc2 = 베로니카 실종 일수
                 RETURNF 1041
-            ELSEIF GETBIT(CFLAG:대상:특수출력조건, 22) && !TALENT:대상:정신쇠약 && !TALENT:대상:굴복 ;etc3 = 베로니카 휴식이벤 이력 유무
+            ELSEIF GETBIT(CFLAG:대상:특수출력조건, 22) && !IS_CHARA_UNHEALTHY(대상, 2) ;etc3 = 베로니카 휴식이벤 이력 유무
                 RETURNF 1044
             ENDIF
     ENDSELECT
@@ -662,7 +662,7 @@ REPEAT VARSIZE("대상배열")
 
     SELECTCASE ARG
         CASE 1052 ;출격중 아님, 쇠약 없음, 굴복 없음, 짜증없음, 공포 150미만, 연모 이상(원본은 연모만)
-            SIF CFLAG:대상:출격중 || TALENT:대상:정신쇠약 || TALENT:대상:굴복 || CFLAG:대상:공포 >= 150 || !TALENT:대상:사랑
+            SIF CFLAG:대상:출격중 || IS_CHARA_UNHEALTHY(대상) || CFLAG:대상:공포 >= 150 || !TALENT:대상:사랑
                 RETURNF 0
     ENDSELECT
 REND

@@ -1,7 +1,7 @@
 ﻿; 설교듣는다
 @COM100
 
-IF !TALENT:짜증 && !TALENT:정신쇠약
+IF !IS_CHARA_UNHEALTHY(TARGET, 1)
     SOURCE:호감도 += 1
     EXP:고유COM경험 ++ ;아자젤 설교 횟수 카운트
 ELSE

@@ -1,0 +1,19 @@
+﻿; 악기 연습
+@COM112
+
+CFLAG:호감도 ++
+EXP:연주경험 ++ ;etc5 ++
+
+RETURN 1
+
+@COM112_MSG
+PRINTFORML 당신은 %CALLNAME:TARGET%에게 악기 연습을 시켰다.
+
+@COM_ABLE112
+SIF !TFLAG:연애중여부
+    RETURN 0
+SIF NO:TARGET != 171
+    RETURN 0
+SIF !TALENT:가수
+    RETURN 0
+RETURN 1

@@ -173,6 +173,9 @@ SELECTCASE REAL_NUM
     CASE 138 ;베로니카
         SIF TALENT:ARG:사랑 == 2 && TALENT:ARG:혼인 && TALENT:ARG:정신쇠약 != 2
             SETBIT CFLAG:MASTER:엔딩플래그, 24
+    CASE 171 ;뽀끄루
+        SIF TALENT:ARG:정신쇠약 == 2 
+            SETBIT CFLAG:MASTER:엔딩플래그, 29
 ENDSELECT
 
 RETURN 0
@@ -368,6 +371,12 @@ FOR 주회, 1, CHARANUM
                     PRINTL
                     PRINTW 휴식 커맨드로 이어서 진행 가능합니다.
             ENDSELECT
+        CASE 171 ;뽀끄루
+            IF CFLAG:주회:엔딩조건카운트1 >= 30
+                SETBIT CFLAG:MASTER:엔딩플래그, 30
+            ELSEIF CFLAG:주회:엔딩조건카운트1 > 0 && TALENT:주회:가수 == 1
+                CALL CONCERT_D_DAY(주회, 30 - CFLAG:주회:엔딩조건카운트1)
+            ENDIF
     ENDSELECT
 NEXT
 
@@ -488,6 +497,25 @@ FOR 비트값, 1, 64
             CASE 28 ;브라우니 (번호 임의설정)
                 TARGET = GETCHARA(25)
                 CFLAG:TARGET:엔딩플래그 = 3
+            CASE 29, 30 ;뽀끄루 (번호 임의설정)
+                TARGET = GETCHARA(171)
+                IF 비트값 == 29 ;정붕엔딩
+                    CFLAG:TARGET:엔딩플래그 = 3
+                ELSEIF 비트값 == 30 ;가수미니게임
+                    ;ENDING A
+                    IF EXP:TARGET:가창경험 >= 300 && (EXP:TARGET:연주경험 >= 150 || EXP:TARGET:퍼포먼스경험 >= 150)
+                        CFLAG:TARGET:엔딩플래그 = 41
+                    ;ENDING C
+                    ELSEIF EXP:TARGET:퍼포먼스경험 >= 300 && (EXP:TARGET:가창경험 >= 150 || EXP:TARGET:연주경험 >= 150)
+                        CFLAG:TARGET:엔딩플래그 = 43
+                    ;ENDING B
+                    ELSEIF EXP:TARGET:연주경험 >= 300 && (EXP:TARGET:가창경험 >= 150 || EXP:TARGET:퍼포먼스경험 >= 150)
+                        CFLAG:TARGET:엔딩플래그 = 42
+                    ;ENDING D
+                    ELSE
+                        CFLAG:TARGET:엔딩플래그 = 44
+                    ENDIF
+                ENDIF
             CASEELSE
                 THROW 미확인 엔딩 번호 {비트값}
         ENDSELECT
@@ -762,11 +790,25 @@ SELECTCASE CFLAG:TARGET:엔딩플래그
         PRINTW ...
         PRINTW ..
         PRINTW .
-        PRINTL 공용 엔딩 No.???
+        PRINTL 공용 엔딩 No.C
         PRINTL 나는 누구 여긴 어디.
         PRINTPLAIN 당신은 [공허함]을 얻었다.
         WAIT
         PRINTW 농담이고, 아무래도 엔딩이 들어있지 않은 것 같다. 일어나서 인터넷에 올려보자.
+    CASEELSE ;잘못 적었거나 6 이상인 수
+        PRINTW 당신은 어디론가 알 수 없는 곳으로 떨어져버렸다.
+        PRINT 당신의 눈 앞에 있는 종이에는 
+        PRINTFORML %CALLNAME:TARGET%의 \@CFLAG:MASTER:엔딩플래그 ? 방 # 침실\@ {CFLAG:TARGET:엔딩플래그}호실
+        PRINTW 이라는 문구가 쓰여 있다.
+        PRINTW 이제 어쩌지...?
+        PRINTW ...
+        PRINTW ..
+        PRINTW .
+        PRINTW 공용 엔딩 No.???
+        PRINTW 분홍 신 (아이유)
+        PRINTW
+        PRINTW ...아래를 보니 작은 글씨로 무엇인가 써 있다.
+        PRINTW 위 주소를 개발자에게 남겨주세요. 버그입니다.
 ENDSELECT
 RETURN 1
 ;============================================================================================

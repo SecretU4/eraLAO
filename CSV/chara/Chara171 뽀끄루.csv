@@ -1,0 +1,15 @@
+﻿NO,171
+NAME,뽀끄루 대마왕
+CALLNAME,뽀끄루
+TALENT,소속,20,;D엔터
+
+TALENT,등급,4,;SS
+TALENT,분류,1,;경장
+TALENT,체형,1,;보통체구
+
+;CFLAG,엔딩조건카운트1 = 데뷔남은일수(30-x로 계산해야함)
+;CFLAG,특수출력유무 bit 8 = singer_mode 출력 유무
+;CFLAG,특수출력유무 bit 9 = Momo_1 출력 유무
+;CFLAG,특수출력유무 bit 10 = Backto_1 출력 유무
+;CFLAG,특수출력유무 bit 11 = LRL_Faucre_1 출력 유무
+;CFLAG,개별선택지 bit 1 = 공연미니게임 선택 여부

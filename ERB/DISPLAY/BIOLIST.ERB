@@ -267,6 +267,12 @@ SELECTCASE NO:ARG ;추후 타 캐릭터에서도 사용 가능해지면 상단�
         PRINTFORML 가창경험 : {EXP:ARG:가창경험}
     CASE 126 ;아자젤
         PRINTFORML 설교 횟수 : {EXP:ARG:고유COM경험}
+    CASE 171 ;뽀끄루
+        IF TALENT:가수
+            PRINTFORML 가창력 : {EXP:ARG:가창경험}
+            PRINTFORML 연주 실력 : {EXP:ARG:연주경험}
+            PRINTFORML 퍼포먼스 실력 : {EXP:ARG:퍼포먼스경험}
+        ENDIF
 ENDSELECT
 PRINTL
 DRAWLINE
@@ -353,7 +359,7 @@ IF GROUPMATCH(TALENT_NO, 23,30,62,70)
             ENDIF
     ENDSELECT
 ;0 > 1 > 2 형 TALENT
-ELSEIF GROUPMATCH(TALENT_NO, 25,26,72,74)
+ELSEIF GROUPMATCH(TALENT_NO, 25,26,47,72,74)
     SELECTCASE TALENT_NO
         CASE 25 ;사랑
             IF TALENT_STAT == 1
@@ -370,6 +376,14 @@ ELSEIF GROUPMATCH(TALENT_NO, 25,26,72,74)
                 LOCALS '= "[입양]"
             ELSE
                 LOCALS = [혼인]/[입양]
+            ENDIF
+        CASE 47 ;가수
+            IF TALENT_STAT == 1
+                LOCALS '= "[가수 지망생]"
+            ELSEIF TALENT_STAT == 2
+                LOCALS '= "[가수]"
+            ELSE
+                LOCALS = [가수 지망생]/[가수]
             ENDIF
         CASE 72 ;정신쇠약
             IF TALENT_STAT == 1

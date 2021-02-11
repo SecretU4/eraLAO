@@ -1,0 +1,70 @@
+﻿;공연 관련 함수 모음
+;======================================
+;사용 변수
+;--------------------------------------
+;TALENT:가수 -
+;   1일때 지망생 2일때 가수
+;CFLAG:엔딩조건카운트1 -
+;   뽀끄루(171)에 사용, 데뷔 남은 일수 계산용
+;EXP:공연경험 -
+;   1회 공연시마다 증가하는 통계용 변수
+;--------------------------------------
+;관련 기능 위치
+;CONCERT 접근 - @SHOW_SHOP, @USERSHOP
+;======================================
+;공연 기능
+;--------------------------------------
+@CONCERT
+VARSET LOCAL
+VARSET LOCALS
+;공연 가능 여부 체크
+IF TARGET != GETCHARA(171) || !TALENT:가수
+    LOCAL ++
+    LOCALS += @"{LOCAL}. [가수] 뽀끄루를 선택 중/"
+ENDIF
+IF TIME != 1 || (DAY % 7)
+    LOCAL ++
+    LOCALS += @"{LOCAL}. 게임 날짜가 7의 배수일 것, 시간이 [밤] 일 것/"
+ENDIF
+IF IS_CHARA_UNHEALTHY(TARGET)
+    LOCAL ++
+    LOCALS += @"{LOCAL}. [짜증] [정신쇠약] [굴복] 태그가 없어야함/"
+ENDIF
+IF LOCAL
+    PRINTW 지금은 [공연] 할 수 없습니다.
+    PRINTL 
+    PRINTL 
+    PRINTL [공연] 조건 :
+    CALL SPLIT_MSG(LOCALS)
+    RETURN -1
+ENDIF
+
+PRINTFORMW 당신은 %CALLNAME:TARGET%에게 공연 일정을 전했다.
+
+PRINTL
+PRINTL
+PRINTW ~♩
+PRINTL
+PRINTL
+PRINTW ~~~♪
+PRINTL
+PRINTL
+PRINTW ~~~~~♬
+PRINTL
+PRINTL
+PRINTW 공연은 성공적이었다!
+
+MONEY += 3000000 ;수익 300만원
+CFLAG:TARGET:스트레스 -= 50
+EXP:TARGET:공연경험 ++
+
+PRINTL 300만 원을 벌었습니다.
+PRINTFORMW %CALLNAME:TARGET% 스트레스 50 감소
+
+BEGIN TURNEND
+;--------------------------------------
+;ARG = 인게임 캐릭터번호, ARG:1 = 남은일수 카운트
+@CONCERT_D_DAY(ARG, ARG:1)
+PRINTFORML %ARG가% 가수로 데뷔하기까지 앞으로
+PRINTL
+PRINTFORMW {ARG:1}일

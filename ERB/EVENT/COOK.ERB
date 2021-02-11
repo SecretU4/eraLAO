@@ -89,6 +89,14 @@ ELSE
                             PRINTFORMW %타겟은% 요리할 수 있는 상태가 아닌 것 같다.
                             RETURN 0
                         ENDIF
+                    CASE 171 ;뽀끄루
+                        IF CFLAG:TARGET:호감도 < 300 || TALENT:TARGET:정신쇠약 == 1
+                            PRINTFORMW 당신은 %CALLNAME:TARGET%에게 요리를 부탁했지만 거절당했다.
+                            RETURN 0
+                        ELSEIF TALENT:TARGET:정신쇠약 == 2 ;정신붕괴
+                            PRINTFORMW %타겟은% 요리할 수 있는 상태가 아닌 것 같다.
+                            RETURN 0
+                        ENDIF
                     CASEELSE
                         IF CFLAG:TARGET:호감도 < 300
                             PRINTFORMW 당신은 %CALLNAME:TARGET%에게 요리를 부탁했지만 거절당했다.

@@ -78,6 +78,10 @@ SELECTCASE NO:TARGET
             SETBIT CFLAG:MASTER:엔딩플래그, 28
             BEGIN TURNEND
         ENDIF
+    CASE 171 ;뽀끄루 남은일수 표기용
+        IF CFLAG:엔딩조건카운트1 > 0 && TALENT:가수 == 1
+            CALL CONCERT_D_DAY(TARGET, 30 - CFLAG:엔딩조건카운트1)
+        ENDIF
 ENDSELECT
 
 CSTR:1 '= SET_MSG_CSTR(TARGET)
@@ -135,10 +139,10 @@ SELECTCASE NO:TARGET
             CSTR:1 = fLove
         ENDIF
     CASE 52 ;나엔
-        IF CFLAG:공포 < 200 && !TALENT:짜증 && !TALENT:정신쇠약
+        IF CFLAG:공포 < 200 && !IS_CHARA_UNHEALTHY(TARGET, 1)
             IF ITEM:ITEM_BIO(51) > 0 && !GETBIT(CFLAG:특수출력유무, 8) ;메이 이벤트
                 LOCAL = GETCHARA(51)
-                IF CFLAG:LOCAL:공포 < 200 && !TALENT:LOCAL:짜증 && !TALENT:LOCAL:정신쇠약
+                IF CFLAG:LOCAL:공포 < 200 && !IS_CHARA_UNHEALTHY(LOCAL, 1)
                     IF TALENT:TARGET:사랑 && TALENT:LOCAL:사랑 ;메이/나엔 모두 연모 이상, 원본에서는 연모만
                         CSTR:1 = mayE2
                     ELSE
@@ -147,7 +151,7 @@ SELECTCASE NO:TARGET
                 ENDIF
             ELSEIF ITEM:ITEM_BIO(106) > 0 && TALENT:사랑 ;오드리 이벤트, 원본에서는 연모만
                 LOCAL = GETCHARA(106)
-                IF CFLAG:LOCAL:공포 < 200 && !TALENT:LOCAL:짜증 && !TALENT:LOCAL:정신쇠약
+                IF CFLAG:LOCAL:공포 < 200 && !IS_CHARA_UNHEALTHY(LOCAL, 1)
                     SELECTCASE CFLAG:이벤트카운트1
                         CASE 0
                             CSTR:1 = audreyE1
@@ -200,6 +204,16 @@ SELECTCASE NO:TARGET
     CASE 123 ;모모
         IF TALENT:정신쇠약 == 2 && !GETBIT(CFLAG:특수출력유무, 8)
             CSTR:1 = Awaken
+        ENDIF
+    CASE 171 ;뽀끄루
+        IF CFLAG:고백함 && !GETBIT(CFLAG:특수출력유무, 8)
+            CSTR:1 = singer_mode
+            SETBIT CFLAG:개별선택지, 0
+        ELSEIF ITEM:ITEM_BIO(118) > 0 && !GETBIT(CFLAG:특수출력유무, 11)
+            LOCAL = GETCHARA(118)
+            IF !IS_CHARA_UNHEALTHY(LOCAL) && !IS_CHARA_UNHEALTHY(TARGET)
+                CSTR:1 = LRL_Faucre_1
+            ENDIF
         ENDIF
 ENDSELECT
 
@@ -318,6 +332,27 @@ SELECTCASE NO:TARGET
             CSTR:1 = Marryed
         ELSEIF TALENT:혼인 == 1
             CSTR:1 = Love
+        ENDIF
+    CASE 171 ;뽀끄루
+        IF GROUPMATCH(SELECTCOM, 101,112,113)
+            VARSET LOCAL
+            IF SELECTCOM == 101
+                LOCAL = EXP:가창경험
+            ELSEIF SELECTCOM == 112
+                LOCAL = EXP:연주경험
+            ELSEIF SELECTCOM == 113
+                LOCAL = EXP:퍼포먼스경험
+            ENDIF
+
+            SELECTCASE LOCAL
+                CASE IS < 100
+                    CSTR:1 = Lowlv
+                CASE 100 TO 199
+                    CSTR:1 = Highlv
+                CASE IS >= 200
+                    CSTR:1 = Maxlv
+            ENDSELECT
+
         ENDIF
 ENDSELECT
 
@@ -469,7 +504,7 @@ SELECTCASE NO:대상
 
             SIF CSTR:1 != "Confession"
                 RETURN 0
-            CALLFORM M_No{NO:TARGET}_TRAIN_START_1
+            CALLFORM M_No{NO:대상}_TRAIN_START_1
 
             CALL ASK_M("에밀리의 마음을 받아들였다.", 1, "에밀리의 마음을 거절했다.", 1, "고작 이런 말을 하기 위해 불렀냐고 에밀리를 다그친다.", 1)
             ;CFLAG:개별선택지 bit 1값 = 에밀리 etc1 고백 가부 판별
@@ -492,7 +527,7 @@ SELECTCASE NO:대상
             ;일단 초기화
             CLEARBIT CFLAG:대상:개별선택지, 0
 
-            CALLFORM M_No{NO:TARGET}_TRAIN_START_{CFLAG:조교여부}
+            CALLFORM M_No{NO:대상}_TRAIN_START_{CFLAG:조교여부}
             PRINTL [1] 슈퍼 스타지!
             PRINTL [2] 블랙리버의 실험기야!
             WHILE 1 ;CFLAG:개별선택지 bit 1값 = 땡컨 etc4 슈퍼스타 출력 유무
@@ -511,6 +546,27 @@ SELECTCASE NO:대상
                     RETURN 1
                 ENDIF
             WEND
+        ENDIF
+    CASE 171 ;뽀끄루
+        ;고백 후 첫 연애시 미니게임 진행여부 선택
+        IF GETBIT(CFLAG:대상:개별선택지, 0)
+            CLEARBIT CFLAG:대상:개별선택지, 0
+            
+            SIF CSTR:1 != "singer_mode"
+                RETURN 0
+            CALLFORM M_No{NO:대상}_TRAIN_START_1
+
+            CALL ASK_M("뽀끄루의 부탁을 허락해준다", 1, "거절한다.", 1)
+            ;CFLAG:개별선택지 bit 1값 = 뽀끄루 공연 미니게임 선택 여부
+            IF RESULT == 0
+                CSTR:대상:1 = Yes
+                SETBIT CFLAG:대상:개별선택지, 1
+                RETURN 1
+            ELSEIF RESULT == 1
+                CSTR:대상:1 = No
+                 CLEARBIT CFLAG:대상:개별선택지, 1
+                RETURN 1
+           ENDIF
         ENDIF
 ENDSELECT
 RETURN 0
