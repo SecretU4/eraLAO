@@ -26,7 +26,7 @@ IF TIME != 1 || (DAY % 7)
     LOCAL ++
     LOCALS += @"{LOCAL}. 게임 날짜가 7의 배수일 것, 시간이 [밤] 일 것/"
 ENDIF
-IF TALENT:짜증 || TALENT:정신쇠약 || TALENT:굴복
+IF IS_CHARA_UNHEALTHY(TARGET)
     LOCAL ++
     LOCALS += @"{LOCAL}. [짜증] [정신쇠약] [굴복] 태그가 없어야함/"
 ENDIF
