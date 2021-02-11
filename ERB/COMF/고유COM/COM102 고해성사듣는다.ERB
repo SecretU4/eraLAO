@@ -3,7 +3,7 @@
 
 SOURCE:호감도 += 1
 
-IF TALENT:사랑 && !TALENT:짜증 && !TALENT:정신쇠약 && CFLAG:공포 < 150
+IF TALENT:사랑 && !IS_CHARA_UNHEALTHY(TARGET, 1) && CFLAG:공포 < 150
     EXP:고유COM경험 ++ ; 베로니카 고해성사 횟수 카운트
 ENDIF
 

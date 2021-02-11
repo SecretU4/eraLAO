@@ -15,7 +15,7 @@ SIF TCVAR:TARGET:외출중 && NO:TARGET == 52 ;나앤 외출중
     SOURCE:스트레스 = 300
 
 EXP:연애COM경험1 ++
-SIF TALENT:사랑 && !TALENT:정신쇠약 && !TALENT:짜증 ;연모 이상
+SIF TALENT:사랑 && !IS_CHARA_UNHEALTHY(TARGET, 1) ;연모 이상
     EXP:연애COM경험2 ++
 
 RETURN 1

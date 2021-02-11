@@ -27,7 +27,7 @@ IF !FLAG:속박상태
         PRINTLC [107] 헤어진다
     PRINTLC [108] 사령관 이름 변경
 ENDIF
-IF TARGET == GETCHARA(171) && !TALENT:짜증 && !TALENT:정신쇠약 && TALENT:가수
+IF TARGET == GETCHARA(171) && !IS_CHARA_UNHEALTHY(TARGET) && TALENT:가수
     SIF TIME == 1 && !(DAY % 7) ;밤이고 현재 게임 날짜가 7의 배수
         PRINTLC [113] 공연
 ENDIF

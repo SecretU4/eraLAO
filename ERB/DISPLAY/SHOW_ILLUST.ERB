@@ -31,7 +31,7 @@ SELECTCASE ARGS
         SELECTCASE CSV_ID
             CASE 51 ;메이
                 ;메이 파후파후, 원본은 연모만. ;그림번호 = 1
-                SIF SELECTCOM == 18 && !TALENT:ARG:짜증 && !TALENT:ARG:정신쇠약 && TALENT:ARG:사랑
+                SIF SELECTCOM == 18 && !IS_CHARA_UNHEALTHY(ARG, 1) && TALENT:ARG:사랑
                     LOCALS += "pahu"
             CASE 132 ;유미
                 ;유미 술배 ;그림번호 = 3

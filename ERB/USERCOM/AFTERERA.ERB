@@ -187,7 +187,7 @@ RETURN 0
 ;-------------------------------------------------------------
 @GET_Affection(ARG)
 
-SIF TALENT:ARG:짜증 || TALENT:ARG:정신쇠약 || TALENT:ARG:굴복
+SIF IS_CHARA_UNHEALTHY(ARG)
     RETURN 0
 IF !TALENT:ARG:사랑 && CFLAG:ARG:호감도 > 999 && CFLAG:ARG:공포 < 100
     TALENT:ARG:사랑 = 1
@@ -211,7 +211,7 @@ RETURN 0
 ;-------------------------------------------------------------
 @GET_LOVE(ARG)
 
-SIF TALENT:ARG:짜증 || TALENT:ARG:정신쇠약
+SIF IS_CHARA_UNHEALTHY(ARG, 1)
     RETURN 0
 IF TALENT:ARG:사랑 == 1 && CFLAG:ARG:공포 < 50
     ;에밀리는 호감도가 7999 초과이기만 하면 됨
@@ -242,7 +242,7 @@ RETURN 0
 SIF ARG != GETCHARA(113) ;켈베로스가 아니라면 제외
     RETURN 0
 
-SIF TALENT:ARG:사랑 || TALENT:ARG:정신쇠약 || TALENT:ARG:굴복
+SIF TALENT:ARG:사랑 || IS_CHARA_UNHEALTHY(ARG, 2)
     RETURN 0
 IF CFLAG:ARG:호감도 >= 1000 && CFLAG:ARG:공포 >= 300
     TALENT:ARG:굴복 = 1
