@@ -358,7 +358,7 @@ SELECTCASE NO:ARG
     CASE 171 ;뽀끄루
         IF TALENT:ARG:가수 == 1 && CFLAG:ARG:엔딩조건카운트1 <= 30
             CFLAG:ARG:엔딩조건카운트1 ++
-        ELSEIF CFLAG:ARG:엔딩조건카운트 == 31
+        ELSEIF CFLAG:ARG:엔딩조건카운트1 == 31
             ;통과
         ELSE
             CFLAG:ARG:엔딩조건카운트1 = 0
