@@ -131,9 +131,9 @@ SELECTCASE NO:TARGET
             CSTR:1 = nHeal
         ELSEIF EXP:쇠약획득경험 >= 5 && !GETBIT(CFLAG:특수출력유무, 12)
             CSTR:1 = nWeak
-        ELSEIF EXP:쇠약소멸경험 < 5 && !GETBIT(CFLAG:특수출력유무, 11) ;etc6
+        ELSEIF INRANGE(EXP:쇠약소멸경험, 1, 4) && !GETBIT(CFLAG:특수출력유무, 11) ;etc6
             CSTR:1 = Heal
-        ELSEIF EXP:쇠약획득경험 < 5 && !GETBIT(CFLAG:특수출력유무, 10) ;etc5
+        ELSEIF INRANGE(EXP:쇠약획득경험, 1, 4) && !GETBIT(CFLAG:특수출력유무, 10) ;etc5
             CSTR:1 = fWeak
         ELSEIF TALENT:사랑 == 2 && !GETBIT(CFLAG:특수출력유무, 8) ;etc1
             CSTR:1 = fLove
