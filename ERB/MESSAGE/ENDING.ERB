@@ -623,7 +623,7 @@ SELECTCASE NO:TARGET
     ;CASE 89 ;세이렌 엔딩플래그 1: 그림번호 4, 엔딩플래그 2: 그림번호 5
     CASE 90 ;테티스
         IF CFLAG:엔딩플래그 == 3
-            SETBIT CFLAG:주회:특수출력유무, 3
+            SETBIT CFLAG:특수출력유무, 3
         ENDIF
     CASE 106 ;오드리
         SIF CFLAG:엔딩플래그 == 3
